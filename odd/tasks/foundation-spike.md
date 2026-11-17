@@ -10,6 +10,7 @@ Feature: record the agreed design in the repo, initialize git, and run a throwaw
 - S4: No series spoilers in examples or fixtures; the user's watch progress is asked only before loading series data (Phase 4).
 - S5: Design direction: "lo que busco para el diseno es un diseno unico y especial 100% estilo mentalista, siluetas de cbi o de patrick en los casos que se resolvieron un mapa 3d donde se pueda aprecia la cara sonriente de red jhon en sus crimens o donde aparecio"
 - S6: "y para el diseno como dije 100$ estilo el mentalista paleta tipografia todo eso"
+- S7: "Implement the design artboard design/mentalist-home/02-red-room.html" — owner chose "Dentro del spike" ("Implementarla en spike/ como prueba visual. Lo más rápido, pero es código descartable.").
 
 ## Tasks
 
@@ -18,6 +19,7 @@ Feature: record the agreed design in the repo, initialize git, and run a throwaw
 - T3 [S2] Measure RAM of the built app (process tree incl. WebView2) and write `docs/spike-report.md` with pass/fail per check. Route: inline. Commit: the "docs: add foundation spike report" commit. Done: RAM FAIL vs < 300 MB (677 MB private); owner chose A, target raised to < 700 MB (L10).
 - T4 [S3, S5, S6] UI design session with gentle-design (directions on the canvas) before product code. Route: inline, needs user input. Commit: pending.
 
+- T5 [S5, S6, S7] Implement the Red room home screen in `spike/` (React): real MapLibre 3D night map of Sacramento with deck.gl Red John smiley pins gated by progress, progress gate + peek, case rail with silhouettes, legend, characters strip; stack checks stay available for RAM runs. Route: worker (context backstop). Commit: e47c787. Done.
 ## Log
 
 - L1 (original project brief, 2026-11-17 session 1, stored in Engram prompt #15): "# Proyecto: The Mentalist — Base de datos interactiva e investigación ... No quiero que empieces programando inmediatamente ni que decidas arbitrariamente qué tecnologías utilizar." (full text in Engram; truncated here).
@@ -32,3 +34,5 @@ Feature: record the agreed design in the repo, initialize git, and run a throwaw
 - L10: Owner decision on RAM: "A. Subir el objetivo" — accept ~700 MB with the 3D map open; 3D always available. Owner also authorized `gentle-ai sync --agent pi` to continue the native review.
 - L11: T4 started. Design `design/mentalist-home/` with artboards 01-cbi-case-file.html, 02-red-room.html, 03-sacramento-daylight.html (written by 3 parallel workers). Research: title card is a red smiley drawn in blood; early seasons warm California daylight with film grain; red as the Red John signal. Logo typeface not verified (Wikimedia fetch blocked); artboards use system font stacks per canvas rules.
 - L12: Artboards rendered with headless Chromium at 1440x900: no page scroll, no JS errors, no external URLs. One fix round each (01 case-list fit + roster, 02 map/river/characters, 03 legend overlap). Known gap: 02 river still not visible under the buildings (label only). Awaiting owner choice of direction.
+- L13: Owner chose artboard 02 Red room (chosen); 01 and 03 remain alternatives. Handoff to implement it inside the spike (S7). T5 opened.
+- L14: T5 verified: vite dev + headless Chromium at 1440x900 (no scroll, no JS errors); gating E5/E1/E1+peek/reload correct; cargo check OK; Tauri release build with SPIKE_CHECKS: sqlite/map/graph PASS, 707 MB private (target < 700 MB, run-to-run noise ~30 MB). Handoff of 02-red-room marked implemented. Deviations: peeked case shows as solved with "Peeking" tag; keyboard pin selection via legend list; basemap glyphs/sprites still from CDN.
