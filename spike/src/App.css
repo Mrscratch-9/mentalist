@@ -1,0 +1,10 @@
+html, body, #root { margin: 0; height: 100%; background: #111; color: #ddd; font: 13px system-ui, sans-serif; }
+.spike { display: grid; grid-template-columns: 420px 1fr; height: 100%; }
+.board { padding: 12px; overflow: auto; display: flex; flex-direction: column; gap: 8px; }
+.board h1 { font-size: 16px; margin: 0 0 4px; }
+.check { border-left: 4px solid #666; padding: 4px 8px; background: #1a1a1a; }
+.check p { margin: 4px 0 0; color: #aaa; word-break: break-word; }
+.check.ok { border-color: #3c9; }
+.check.fail { border-color: #e44; }
+.graph { flex: 1; min-height: 320px; background: #161616; }
+.map { height: 100%; }
