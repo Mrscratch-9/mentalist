@@ -20,3 +20,8 @@ powershell -File scripts/measure-ram.ps1             # runs the checks, samples 
 
 The app runs three checks on start (SQLite WASM + FTS5, 3D map with deck.gl, Cytoscape graph).
 With `SPIKE_REPORT_DIR` set, it writes `checks.json` and base64 screenshots there.
+
+## Screens
+
+- Default: the "Red room" home screen (`src/redroom/`, artboard `design/mentalist-home/02-red-room.html`), demo data only.
+- Stack checks board (`src/checks/ChecksBoard.tsx`): in Tauri when env `SPIKE_CHECKS` is set (any value, as `scripts/measure-ram.ps1` does); in a browser with `?checks` in the URL.

@@ -1,0 +1,9 @@
+.spike { display: grid; grid-template-columns: 420px 1fr; height: 100%; color: #ddd; font: 13px system-ui, sans-serif; }
+.spike .board { padding: 12px; overflow: auto; display: flex; flex-direction: column; gap: 8px; }
+.spike .board h1 { font-size: 16px; margin: 0 0 4px; }
+.spike .check { border-left: 4px solid #666; padding: 4px 8px; background: #1a1a1a; }
+.spike .check p { margin: 4px 0 0; color: #aaa; word-break: break-word; }
+.spike .check.ok { border-color: #3c9; }
+.spike .check.fail { border-color: #e44; }
+.spike .graph { flex: 1; min-height: 320px; background: #161616; }
+.spike .map { height: 100%; }

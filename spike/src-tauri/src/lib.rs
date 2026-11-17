@@ -17,10 +17,13 @@ fn report(files: HashMap<String, String>) -> Result<(), String> {
 }
 
 // Which checks to run and map options, for RAM attribution runs (see scripts/measure-ram.ps1).
+// The checks list is None when SPIKE_CHECKS is unset: the UI then shows the Red room screen instead of the checks board.
 #[tauri::command]
-fn spike_config() -> (String, String) {
-    let var = |k: &str, d: &str| std::env::var(k).unwrap_or_else(|_| d.into());
-    (var("SPIKE_CHECKS", "sqlite,map,graph"), var("SPIKE_MAP_OPTS", ""))
+fn spike_config() -> (Option<String>, String) {
+    (
+        std::env::var("SPIKE_CHECKS").ok(),
+        std::env::var("SPIKE_MAP_OPTS").unwrap_or_default(),
+    )
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
