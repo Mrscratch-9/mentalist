@@ -129,7 +129,7 @@ Global strategy — **canary test**: a fixture dataset where every field carries
 | Canon database | Read-only compiled SQLite, loaded via SQLite WASM with FTS5 |
 | User state | Small separate writable store (progress, preferences) |
 | Validation | Zod |
-| Map | MapLibre GL JS + Protomaps basemap as a regional PMTiles file bundled offline + deck.gl analytic layers |
+| Map | MapLibre GL JS 5.x (pinned: deck.gl 9.4 is incompatible with 6) + Protomaps basemap as a regional PMTiles file bundled offline + deck.gl analytic layers |
 | Graph | Cytoscape.js |
 | Tests | Vitest (+ property-based tests for the canary) |
 | Monorepo | pnpm workspaces |
@@ -144,6 +144,6 @@ No server: the earlier Hono API was dropped when the target became desktop. The 
 
 ## 8. Next steps
 
-1. Technical spike (`spike/`, throwaway): Tauri build on Windows, SQLite WASM FTS5, MapLibre + deck.gl + regional PMTiles, Cytoscape, RAM measured against a < 300 MB target.
+1. Technical spike (`spike/`, throwaway): done, see `docs/spike-report.md`. All stack checks pass; RAM target (< 300 MB) fails with the 3D map open — owner decision pending.
 2. UI design session before product code.
 3. Phase 4: ask the owner's watch progress, then start loading series data.
