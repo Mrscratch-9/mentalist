@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440, initial-scale=1">
+<title>The Mentalist — CBI case file (home / investigation board)</title>
+<style>
+:root{
+  --desk-1:#4a2e17; --desk-2:#2b180b; --lamp:#f2b24a;
+  --manila:#dfc088; --manila-hi:#ead29f; --manila-lo:#c9a768; --manila-edge:#8b6a35;
+  --paper:#f6ebcd; --paper-lo:#ebdcb4;
+  --ink:#2a1c10; --ink-2:#55401f; --ink-soft:#6b5430;
+  --navy:#1d3557; --navy-hi:#254a7c;
+  --cream:#f7e8c0;
+  --redjohn:#9c0f18; --redjohn-hi:#c4141f;
+  --serif:"Book Antiqua",Palatino,"Palatino Linotype",Georgia,serif;
+  --mono:"Courier New",Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  width:1440px;height:900px;overflow:hidden;margin:0 auto;
+  font-family:var(--serif);color:var(--ink);
+  background:
+    radial-gradient(900px 520px at 22% 0%,rgba(242,178,74,.38),transparent 70%),
+    radial-gradient(700px 500px at 100% 100%,rgba(0,0,0,.45),transparent 70%),
+    repeating-linear-gradient(92deg,rgba(255,255,255,.025) 0 2px,rgba(0,0,0,.03) 2px 5px),
+    linear-gradient(180deg,var(--desk-1),var(--desk-2));
+  display:flex;flex-direction:column;
+}
+button,select{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:3px solid #0d2a55;outline-offset:2px;box-shadow:0 0 0 6px #fff4cf}
+.mono{font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- header ---------- */
+header{
+  flex:none;height:78px;padding:10px 28px 0;display:flex;align-items:center;gap:22px;color:var(--cream);
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:318px}
+.brand svg{width:46px;height:52px;flex:none;filter:drop-shadow(0 2px 2px rgba(0,0,0,.5))}
+.wordmark{margin:0;line-height:1}
+.wordmark .the{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:#e9c77d;margin-bottom:3px}
+.wordmark .name{display:block;font-size:34px;font-weight:700;letter-spacing:.03em;font-variant:small-caps;text-shadow:0 2px 0 rgba(0,0,0,.55);color:#fbefc9}
+.agency{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#e0be76;margin-top:4px;display:block}
+
+/* progress gate: a typed index card clipped to the desk */
+.gate{
+  position:relative;flex:1;display:flex;align-items:center;gap:16px;
+  background:var(--paper);color:var(--ink);border-radius:3px;padding:9px 16px 9px 22px;
+  box-shadow:0 3px 0 rgba(0,0,0,.35),0 10px 18px rgba(0,0,0,.35);
+  border-left:6px solid var(--navy);
+}
+.gate .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.gate .big{font-size:23px;font-weight:700;line-height:1.1}
+.gate .scope{font-family:var(--mono);font-size:11.5px;color:var(--ink-2);margin-top:2px}
+.gate .grow{flex:1;min-width:0}
+.btn{
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:9px 13px;border-radius:2px;cursor:pointer;border:2px solid var(--navy);background:transparent;color:var(--navy);
+  display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+}
+.btn:hover{background:#e3d3a6}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--navy);color:#fff7dd}
+.btn.primary:hover{background:var(--navy-hi)}
+.btn[aria-pressed="true"],.btn[aria-expanded="true"]{background:var(--ink);border-color:var(--ink);color:#fff2c8;box-shadow:inset 0 0 0 2px var(--lamp)}
+.pop{
+  position:absolute;right:16px;top:calc(100% + 8px);z-index:20;background:var(--paper);color:var(--ink);
+  border:2px solid var(--ink);padding:12px 14px;display:flex;gap:10px;align-items:center;box-shadow:0 12px 24px rgba(0,0,0,.5);
+}
+.pop[hidden]{display:none}
+.pop label{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.pop select{padding:7px 8px;border:2px solid var(--ink);background:#fff9e5;font-family:var(--mono);font-size:13px}
+.peekbar{
+  display:none;position:absolute;left:0;right:0;bottom:-26px;font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  background:var(--ink);color:#ffe7a6;padding:3px 22px;border-radius:0 0 3px 3px;
+}
+body.peeking .peekbar{display:block}
+.demo{
+  flex:none;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  border:2px dashed #f0cf86;color:#f7e4ae;padding:6px 10px;transform:rotate(1.5deg);text-align:center;line-height:1.3
+}
+
+/* ---------- folder tabs (navigation) ---------- */
+nav{flex:none;padding:6px 28px 0;margin-top:14px;display:flex;align-items:flex-end;gap:5px;position:relative;z-index:2}
+nav a{
+  position:relative;text-decoration:none;display:flex;align-items:center;gap:8px;
+  padding:9px 18px 8px;min-height:40px;font-size:16px;font-weight:700;
+  background:linear-gradient(180deg,var(--manila-lo),#bf9b5b);color:#2f2210;
+  border:2px solid var(--manila-edge);border-bottom:0;border-radius:9px 9px 0 0;margin-bottom:-2px;
+  clip-path:polygon(0 100%,0 14px,10px 0,calc(100% - 14px) 0,100% 14px,100% 100%);
+}
+nav a:hover{background:linear-gradient(180deg,#e7cb92,#d1ad6c)}
+nav a[aria-current="page"]{
+  background:var(--manila);height:46px;padding-top:12px;font-size:17px;
+  box-shadow:inset 0 4px 0 var(--navy);
+}
+nav a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--manila)}
+nav a svg{width:18px;height:18px;flex:none}
+nav a:focus-visible{clip-path:none;z-index:3}
+nav .noncanon{margin-left:auto;border-style:dashed;background:repeating-linear-gradient(135deg,#d5ba80 0 8px,#cbae6f 8px 16px)}
+.badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;font-weight:700;padding:2px 6px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);text-transform:uppercase}
+
+/* ---------- folder body ---------- */
+main{
+  flex:1;min-height:0;margin:0 20px 20px;position:relative;z-index:1;
+  background:
+    radial-gradient(600px 300px at 30% 0,rgba(255,255,255,.28),transparent 70%),
+    repeating-linear-gradient(0deg,rgba(120,80,20,.035) 0 1px,transparent 1px 4px),
+    var(--manila);
+  border:2px solid var(--manila-edge);border-radius:0 6px 6px 6px;
+  box-shadow:0 18px 40px rgba(0,0,0,.55),inset 0 0 0 5px rgba(255,255,255,.12);
+  display:grid;grid-template-columns:1fr 566px;gap:20px;padding:16px 18px 16px;
+}
+.clip{position:absolute;top:-16px;right:70px;width:22px;height:62px;pointer-events:none}
+.left{display:flex;flex-direction:column;min-height:0;gap:12px}
+.cases-head{display:flex;align-items:flex-end;gap:14px;padding-bottom:6px;border-bottom:2px solid var(--ink)}
+.cases-head h1{margin:0;font-size:26px;line-height:1.05}
+.cases-head .sub{font-family:var(--mono);font-size:12px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.06em}
+.scopechip{margin-left:auto;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border:2px solid var(--navy);color:var(--navy);display:flex;align-items:center;gap:6px;background:var(--paper)}
+.scopechip svg{width:14px;height:14px}
+.cases{list-style:none;margin:0;padding:8px 6px 4px 2px;overflow:auto;flex:1;min-height:0;display:flex;flex-direction:column;gap:8px}
+.case{position:relative}
+.case a{
+  display:grid;grid-template-columns:76px 1fr auto;gap:14px;align-items:center;text-decoration:none;
+  background:var(--paper);padding:4px 16px 4px 12px;border:2px solid #b69556;border-radius:2px;min-height:60px;
+  box-shadow:0 2px 0 rgba(90,60,10,.4);
+  background-image:repeating-linear-gradient(0deg,transparent 0 23px,rgba(60,90,140,.09) 23px 24px);
+}
+.case a:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 rgba(90,60,10,.5);border-color:var(--ink)}
+.case a[aria-current="true"]{border-color:var(--navy);box-shadow:0 0 0 3px var(--navy),4px 5px 0 3px rgba(40,25,5,.45);background-color:#fff6dc}
+.case a[aria-current="true"]::before{content:"OPEN FILE";position:absolute;top:-11px;left:16px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;background:var(--navy);color:#fff7dd;padding:2px 8px}
+.sil{width:76px;height:50px;display:flex;align-items:flex-end;justify-content:center;color:#2b2a35;opacity:.92;
+  filter:url(#ink);border-right:2px dotted #b69556;padding-right:12px;width:76px}
+.sil svg{width:42px;height:48px}
+.sil.team svg{width:58px}
+.case .no{display:block;line-height:1.2;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--ink-soft);text-transform:uppercase}
+.case .title{font-size:19px;font-weight:700;line-height:1.15;margin:0}
+.case .meta{display:block;line-height:1.2;font-family:var(--mono);font-size:11.5px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.04em}
+.stamp{
+  font-family:var(--mono);font-weight:700;font-size:16px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);
+  border:3px double var(--navy);padding:4px 10px 4px 14px;transform:rotate(-6deg);background:rgba(29,53,87,.06);
+  display:inline-flex;align-items:center;gap:6px;animation:thud .5s cubic-bezier(.2,1.4,.4,1) both;
+}
+.stamp.peek{color:var(--ink);border-color:var(--ink);border-style:dashed;font-size:13px;letter-spacing:.1em;transform:rotate(3deg);animation:none}
+@keyframes thud{from{transform:rotate(-6deg) scale(1.6);opacity:0}to{transform:rotate(-6deg) scale(1);opacity:1}}
+.case.locked a{background:repeating-linear-gradient(135deg,#d6bd86 0 10px,#cfb479 10px 20px);border:2px dashed var(--ink-2);box-shadow:none;cursor:not-allowed}
+.case.locked a:hover{transform:none;border-color:var(--ink)}
+.case.locked .sil{color:var(--ink-2);filter:none;opacity:1}
+.case.locked .sil svg{width:34px;height:34px;margin-bottom:12px}
+.case.locked .stamp{color:var(--ink);border-color:var(--ink);border-style:solid;font-size:13px;letter-spacing:.12em;animation:none;transform:rotate(0);background:var(--paper)}
+.case.locked .title{color:#2f2210}
+
+/* characters strip */
+.chars{flex:none;background:rgba(255,255,255,.18);border:2px solid var(--manila-edge);border-radius:2px;padding:8px 12px 10px}
+.chars h2{margin:0 0 6px;font-size:13px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:baseline}
+.chars h2 span{font-weight:400;color:var(--ink-2);letter-spacing:.04em}
+.chars ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.chars a{display:flex;align-items:center;gap:6px;text-decoration:none;background:var(--paper);border:2px solid #b69556;padding:0 6px;height:48px;min-width:0;border-radius:2px}
+.chars a:hover{border-color:var(--ink);background:#fff6dc;transform:translateY(-2px)}
+.chars .id{flex:none;width:28px;height:28px;display:grid;place-items:center;font-weight:700;font-size:12px;color:#f6ebcd;background:var(--navy);border:2px solid var(--ink);border-radius:50%;letter-spacing:.02em}
+.chars .nm{font-weight:700;font-size:13px;line-height:1.15;display:block;white-space:nowrap}
+.chars .rl{display:block;white-space:nowrap;font-family:var(--mono);font-size:10.5px;text-transform:uppercase;color:var(--ink-2);letter-spacing:.04em}
+
+/* ---------- map evidence photo (aside) ---------- */
+aside{display:flex;flex-direction:column;gap:10px;min-height:0}
+.photo{position:relative;background:#f7f0dc;padding:10px 10px 12px;box-shadow:0 8px 18px rgba(50,30,5,.5),0 0 0 1px rgba(0,0,0,.2);transform:rotate(.6deg)}
+.photo::before,.photo::after{content:"";position:absolute;width:78px;height:22px;background:rgba(235,222,160,.72);box-shadow:0 1px 2px rgba(0,0,0,.25);z-index:3}
+.photo::before{top:-9px;left:-18px;transform:rotate(-34deg)}
+.photo::after{top:-9px;right:-18px;transform:rotate(34deg)}
+.photo h2{margin:0 0 6px;display:flex;justify-content:space-between;align-items:baseline;font-size:18px}
+.photo h2 small{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--ink-2)}
+.mapbox{position:relative;width:544px;height:372px;background:#2b2013;overflow:hidden;border:1px solid #000}
+.mapbox>svg{display:block;width:100%;height:100%}
+.pin{
+  position:absolute;transform:translate(-50%,-100%);background:none;border:0;padding:0;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;gap:1px;
+}
+.pin[hidden]{display:none}
+.pin svg{width:30px;height:34px;filter:drop-shadow(0 3px 2px rgba(0,0,0,.6))}
+.pin .tag{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.04em;white-space:nowrap;background:var(--paper);color:var(--ink);padding:2px 6px;border:1.5px solid var(--ink);order:-1}
+.pin.rj .tag{border-color:var(--redjohn);color:#6e0a11}
+.pin:hover .tag,.pin:focus-visible .tag{background:var(--ink);color:#fff2c8}
+.pin:hover svg{transform:translateY(-2px)}
+.pin.hq .badgeicon{width:28px;height:32px}
+.pin.rj svg{animation:pulse 2.6s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.mapctl{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:4px}
+.mapctl button{width:30px;height:30px;border:2px solid var(--ink);background:var(--paper);font-weight:700;font-size:16px;cursor:pointer}
+.mapctl button:hover{background:var(--ink);color:#fff2c8}
+.tilt{position:absolute;left:8px;top:8px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;background:var(--paper);padding:3px 6px;border:1.5px solid var(--ink)}
+.legend{background:var(--paper);border:2px solid #b69556;padding:9px 12px;display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;font-size:13px}
+.legend h3{grid-column:1/-1;margin:0;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid #b69556;padding-bottom:3px}
+.legend div{display:flex;align-items:center;gap:8px;line-height:1.15}
+.legend svg{width:22px;height:24px;flex:none}
+.note{font-family:var(--mono);font-size:11.5px;line-height:1.4;padding:8px 12px;border:2px dashed var(--ink-2);background:rgba(255,248,224,.55);display:flex;gap:9px;align-items:flex-start}
+.note svg{width:18px;height:18px;flex:none;margin-top:1px}
+.rjlink{
+  display:flex;align-items:center;gap:10px;text-decoration:none;padding:7px 12px;background:#2a1c10;color:#fbefc9;border:2px solid var(--ink);font-weight:700;font-size:15px;min-height:44px
+}
+.rjlink:hover{background:#3b2714;box-shadow:inset 0 0 0 2px var(--redjohn-hi)}
+.rjlink svg{width:26px;height:30px;flex:none}
+.rjlink .mono{font-size:10.5px;font-weight:400;color:#e9c77d;margin-left:auto;letter-spacing:.08em}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .case a:hover,.chars a:hover,.pin:hover svg{transform:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- rough ink bleed so silhouettes read as stamped/printed -->
+    <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/>
+    </filter>
+
+    <!-- Red John smiley: original, painted ring with drips. The ONLY red in the UI. -->
+    <symbol id="rj" viewBox="0 0 60 68">
+      <g fill="none" stroke="#a5101a" stroke-linecap="round">
+        <path d="M30 6C16 5.5 6.5 16 7 29.5 7.5 43 17 52 30.5 52.5 44 53 54 42 53.5 29 53 16 43.5 6.5 31 6" stroke-width="5"/>
+        <path d="M12 46v10M23 51v13M41 51v7M50 43v11" stroke-width="3.6"/>
+        <path d="M17.5 36C22 45 38 45 43 36" stroke-width="4.2"/>
+      </g>
+      <g fill="#a5101a"><circle cx="21" cy="23" r="3.8"/><circle cx="39.5" cy="23" r="3.8"/>
+        <circle cx="23" cy="64" r="2.4"/><circle cx="12" cy="57.5" r="2"/></g>
+    </symbol>
+
+    <!-- Jane: original generic silhouette. Three-piece suit, loose wavy hair, relaxed pose, one hand in pocket. -->
+    <symbol id="jane" viewBox="0 0 60 80">
+      <g fill="currentColor">
+        <path d="M21 11c-2-7 4-11 10-10 7-1 12 4 9 10 3 2 2 7 0 8-1 7-5 11-9.500 11S22 26 21 19c-3-1-3-6 0-8z"/>
+        <path d="M27 28h6l2 4-5 5-5-5z"/>
+        <path d="M18 32l9-3 3 8 3-8 9 3 5 15-2 9-3 21h-8l-1-20h-4l-1 20h-8l-3-21-3-8z"/>
+      </g>
+      <g fill="none" stroke="#f6ebcd" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M24 31l6 21 6-21"/><path d="M30 37v8"/><path d="M28 36l2 2 2-2"/>
+        <path d="M43 48l-5 3"/><path d="M20 12c2 2 4 2 6 0M34 11c2 2 4 2 6 0" stroke-width="1"/>
+      </g>
+    </symbol>
+
+    <!-- CBI team: three agents, badges on belts and holsters. Generic. -->
+    <symbol id="team" viewBox="0 0 90 80">
+      <g fill="currentColor">
+        <circle cx="45" cy="13" r="8"/><path d="M33 30l8-4h8l8 4 3 20h-5l-1 26h-7l-1-20h-2l-1 20h-7l-1-26h-5z"/>
+        <circle cx="19" cy="22" r="7"/><path d="M8 38l7-3h8l7 3 3 17h-5v21h-6l-1-14h-2l-1 14h-6V55H5z"/>
+        <circle cx="71" cy="22" r="7"/><path d="M60 38l7-3h8l7 3 3 17h-5v21h-6l-1-14h-2l-1 14h-6V55h-5z"/>
+      </g>
+      <g fill="#f6ebcd">
+        <rect x="41" y="40" width="5" height="6" rx="1"/><rect x="52" y="44" width="4" height="9" rx="1"/>
+        <rect x="14" y="46" width="4" height="5" rx="1"/><rect x="24" y="47" width="3" height="7" rx="1"/>
+        <rect x="66" y="46" width="4" height="5" rx="1"/><rect x="76" y="47" width="3" height="7" rx="1"/>
+      </g>
+    </symbol>
+
+    <symbol id="lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="1.5" fill="currentColor" fill-opacity=".15"/><path d="M8 11V8a4 4 0 018 0v3"/><path d="M12 15v3"/></g></symbol>
+    <symbol id="eye" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 12C5 6.500 19 6.500 22 12 19 17.500 5 17.500 2 12z"/><circle cx="12" cy="12" r="3"/></g></symbol>
+    <symbol id="shield" viewBox="0 0 28 32"><path d="M14 2l11 4v9c0 8-5 13-11 15C8 28 3 23 3 15V6z" fill="#1d3557" stroke="#f6ebcd" stroke-width="2"/><path d="M14 9l1.800 3.800 4.200.5-3.100 2.900.8 4.100L14 18.200 10.300 20.300l.8-4.100L8 13.300l4.200-.5z" fill="#f6ebcd"/></symbol>
+    <symbol id="paperclip" viewBox="0 0 22 62"><path d="M7 48V12a4 4 0 018 0v38a7 7 0 01-14 0V16" fill="none" stroke="#7d8793" stroke-width="3" stroke-linecap="round"/><path d="M7 48V12a4 4 0 018 0v38a7 7 0 01-14 0V16" fill="none" stroke="#e6ebf0" stroke-width="1" stroke-linecap="round" transform="translate(-.8 0)"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="brand">
+    <svg role="img" aria-label="Red John smiley mark"><use href="#rj"/></svg>
+    <p class="wordmark">
+      <span class="the">The</span>
+      <span class="name">Mentalist</span>
+      <span class="agency">CBI case file · Sacramento</span>
+    </p>
+  </div>
+
+  <section class="gate" aria-label="Progress gate">
+    <div class="grow">
+      <div class="lbl">Your progress · spoiler limit</div>
+      <div class="big" id="progress-text" aria-live="polite">Watched through S1 · E5</div>
+      <div class="scope" id="scope-text">Everything on this board is limited to this point.</div>
+    </div>
+    <button class="btn" id="change" aria-expanded="false" aria-controls="pop" type="button">Change progress</button>
+    <button class="btn primary" id="peek" aria-pressed="false" type="button"><svg width="16" height="16" aria-hidden="true"><use href="#eye"/></svg><span id="peek-label">Peek next episode</span></button>
+    <div class="pop" id="pop" hidden>
+      <label for="ep-select">Watched through</label>
+      <select id="ep-select">
+        <option value="1">S1 · E1 — Pilot</option>
+        <option value="2">S1 · E2 — Red Hair and Silver Tape</option>
+        <option value="3">S1 · E3 — Red Tide</option>
+        <option value="4">S1 · E4 — Ladies in Red</option>
+        <option value="5" selected>S1 · E5 — Redwood</option>
+        <option value="6">S1 · E6 — Red Handed</option>
+      </select>
+      <button class="btn" id="pop-close" type="button">Done</button>
+    </div>
+    <div class="peekbar" role="status">Peeking at S1 · E6 · temporary · never saved · closes when you leave</div>
+  </section>
+
+  <div class="demo" role="note">Demo data<br>not real records</div>
+</header>
+
+<nav aria-label="Sections">
+  <a href="#cases" aria-current="page">Cases</a>
+  <a href="#characters">Characters</a>
+  <a href="#map">Map</a>
+  <a href="#red-john"><svg aria-hidden="true"><use href="#rj"/></svg>Red John <span class="mono" style="font-size:10.5px;font-weight:400">arc</span></a>
+  <a href="#episodes">Episodes</a>
+  <a href="#geek" class="noncanon">Geek / Fans <span class="badge">Non-canon</span></a>
+</nav>
+
+<main>
+  <svg class="clip" aria-hidden="true"><use href="#paperclip"/></svg>
+
+  <section class="left" aria-labelledby="cases-title" id="cases">
+    <div class="cases-head">
+      <div>
+        <h1 id="cases-title">Case files — Season 1</h1>
+        <div class="sub">Filed by episode · newest at bottom</div>
+      </div>
+      <div class="scopechip"><svg aria-hidden="true"><use href="#lock"/></svg><span id="chip-text">Showing up to S1 · E5</span></div>
+    </div>
+    <ol class="cases" id="case-list" aria-label="Season 1 cases"></ol>
+
+    <section class="chars" id="characters" aria-labelledby="chars-title">
+      <h2 id="chars-title">Team roster <span>premise only · no spoilers</span></h2>
+      <ul>
+        <li><a href="#jane"><span class="id" aria-hidden="true">PJ</span><span><span class="nm">Patrick Jane</span><span class="rl">Consultant</span></span></a></li>
+        <li><a href="#lisbon"><span class="id" aria-hidden="true">TL</span><span><span class="nm">Teresa Lisbon</span><span class="rl">Senior agent</span></span></a></li>
+        <li><a href="#cho"><span class="id" aria-hidden="true">KC</span><span><span class="nm">Kimball Cho</span><span class="rl">Agent</span></span></a></li>
+        <li><a href="#rigsby"><span class="id" aria-hidden="true">WR</span><span><span class="nm">Wayne Rigsby</span><span class="rl">Agent</span></span></a></li>
+        <li><a href="#vanpelt"><span class="id" aria-hidden="true">GV</span><span><span class="nm">Grace Van Pelt</span><span class="rl">Agent</span></span></a></li>
+      </ul>
+    </section>
+  </section>
+
+  <aside aria-label="Evidence map and Red John arc" id="map">
+    <div class="photo">
+      <h2>Exhibit A — Sacramento <small>3D · tilted view</small></h2>
+      <div class="mapbox" id="mapbox">
+        <svg id="mapsvg" viewBox="0 0 544 372" role="img" aria-label="Illustrative tilted 3D map of Sacramento city blocks with the Sacramento River. Demo pins show where Red John appeared, limited to your progress."></svg>
+        <div class="tilt" aria-hidden="true">PITCH 58° · DEMO</div>
+        <div class="mapctl" role="group" aria-label="Map controls">
+          <button type="button" aria-label="Zoom in">+</button>
+          <button type="button" aria-label="Zoom out">−</button>
+        </div>
+        <button class="pin hq" type="button" id="pin-hq" aria-label="CBI Headquarters, Sacramento (landmark)" data-p="0.37,0.80">
+          <svg class="badgeicon" aria-hidden="true"><use href="#shield"/></svg><span class="tag">CBI Headquarters, Sacramento</span>
+        </button>
+        <button class="pin rj" type="button" id="pin-a" aria-label="Scene A, demo data. Red John appearance." data-p="0.74,0.56" data-ep="2">
+          <svg aria-hidden="true"><use href="#rj"/></svg><span class="tag">Scene A (demo)</span>
+        </button>
+        <button class="pin rj" type="button" id="pin-b" aria-label="Scene B, demo data. Red John appearance." data-p="0.20,0.34" data-ep="4">
+          <svg aria-hidden="true"><use href="#rj"/></svg><span class="tag">Scene B (demo)</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="legend" aria-label="Legend">
+      <h3>Legend</h3>
+      <div><svg aria-hidden="true"><use href="#rj"/></svg>Red John appeared (demo pin)</div>
+      <div><svg aria-hidden="true" viewBox="0 0 28 32"><use href="#shield"/></svg>CBI landmark</div>
+      <div><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" fill="#a58a5b" stroke="#2a1c10" stroke-width="1.500"/></svg>Extruded building</div>
+      <div><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M1 8c6-4 10 4 22 0v8c-12 4-16-4-22 0z" fill="#7f98a2" stroke="#2a1c10" stroke-width="1.500"/></svg>Sacramento River</div>
+    </div>
+
+    <p class="note"><svg aria-hidden="true"><use href="#lock"/></svg><span>Pins follow your progress: a pin only appears once you have watched the episode that places it. Pins here are demo data.</span></p>
+
+    <a class="rjlink" href="#red-john"><svg aria-hidden="true"><use href="#rj"/></svg>Open the Red John arc <span class="mono">limited to your progress</span></a>
+  </aside>
+</main>
+
+<script>
+(function(){
+  var EPS=[
+    {n:1,t:"Pilot",sil:"jane"},
+    {n:2,t:"Red Hair and Silver Tape",sil:"team"},
+    {n:3,t:"Red Tide",sil:"jane"},
+    {n:4,t:"Ladies in Red",sil:"team"},
+    {n:5,t:"Redwood",sil:"jane"},
+    {n:6,t:"Red Handed",sil:"jane"}
+  ];
+  var saved=5, peeking=false, selected=5;
+  var $=function(i){return document.getElementById(i)};
+  var list=$("case-list");
+
+  function visibleUpTo(){return peeking?saved+1:saved}
+  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+
+  function render(){
+    var v=visibleUpTo();
+    document.body.classList.toggle("peeking",peeking);
+    $("progress-text").textContent="Watched through S1 \u00b7 E"+saved;
+    $("scope-text").textContent=peeking
+      ? "Peek active: showing S1 \u00b7 E"+v+" temporarily. Your saved progress is unchanged."
+      : "Everything on this board is limited to this point.";
+    $("chip-text").textContent="Showing up to S1 \u00b7 E"+v+(peeking?" (peek)":"");
+    $("peek").setAttribute("aria-pressed",String(peeking));
+    $("peek-label").textContent=peeking?"End peek":"Peek next episode";
+    $("peek").disabled=false;
+    var html="";
+    EPS.forEach(function(e){
+      var no="CBI-S01-E0"+e.n;
+      if(e.n<=saved||(peeking&&e.n===v)){
+        var isPeek=e.n>saved;
+        html+='<li class="case"><a href="#case-'+e.n+'"'+(e.n===selected&&!isPeek?' aria-current="true"':'')+' data-n="'+e.n+'">'
+          +'<span class="sil'+(e.sil==="team"?' team':'')+'" aria-hidden="true"><svg viewBox="0 0 '+(e.sil==="team"?90:60)+' 80"><use href="#'+e.sil+'"/></svg></span>'
+          +'<span><span class="no">File '+no+' \u00b7 S1 E'+e.n+'</span><span class="title" style="display:block">'+esc(e.t)+'</span>'
+          +'<span class="meta">'+(e.sil==="team"?"CBI team silhouette":"Patrick Jane silhouette")+(isPeek?" \u00b7 peek only":"")+'</span></span>'
+          +(isPeek?'<span class="stamp peek">Peek \u00b7 not saved</span>':'<span class="stamp">Closed</span>')
+          +'</a></li>';
+      }else{
+        html+='<li class="case locked"><a href="#case-'+e.n+'" aria-disabled="true" aria-label="Episode '+e.n+', '+esc(e.t)+', not yet watched, details sealed" data-lock="1">'
+          +'<span class="sil" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#lock"/></svg></span>'
+          +'<span><span class="no">File '+no+' \u00b7 S1 E'+e.n+'</span><span class="title" style="display:block">'+esc(e.t)+'</span>'
+          +'<span class="meta">Details sealed until watched</span></span>'
+          +'<span class="stamp"><svg width="14" height="14" aria-hidden="true"><use href="#lock"/></svg>Not yet watched</span>'
+          +'</a></li>';
+      }
+    });
+    list.innerHTML=html;
+    ["pin-a","pin-b"].forEach(function(id){
+      var p=$(id); p.hidden=!(+p.getAttribute("data-ep")<=v);
+    });
+  }
+
+  list.addEventListener("click",function(ev){
+    var a=ev.target.closest("a"); if(!a)return; ev.preventDefault();
+    if(a.getAttribute("data-lock"))return;
+    var n=+a.getAttribute("data-n"); if(n<=saved){selected=n;render();var f=list.querySelector('a[data-n="'+n+'"]');if(f)f.focus();}
+  });
+
+  $("change").addEventListener("click",function(){
+    var open=$("pop").hidden; $("pop").hidden=!open; this.setAttribute("aria-expanded",String(open));
+    if(open)$("ep-select").focus();
+  });
+  function closePop(){$("pop").hidden=true;$("change").setAttribute("aria-expanded","false");$("change").focus()}
+  $("pop-close").addEventListener("click",closePop);
+  $("pop").addEventListener("keydown",function(e){if(e.key==="Escape")closePop()});
+  $("ep-select").addEventListener("change",function(){
+    saved=+this.value; peeking=false; if(selected>saved)selected=saved; render();
+  });
+  $("peek").addEventListener("click",function(){peeking=!peeking;render()});
+
+  /* ---- tilted 3D city, drawn from a perspective projection (no tiles) ---- */
+  var W=544,H=372;
+  function P(x,y,z){var s=.40+.60*y;return [W/2+(x-.5)*W*1.22*s, 56+y*278-(z||0)*s]}
+  function pts(a){return a.map(function(q){return q[0].toFixed(1)+","+q[1].toFixed(1)}).join(" ")}
+  function riverX(y){return .24+.52*y+.05*Math.sin(y*7)}
+  var svg=$("mapsvg"),o='';
+  o+='<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1c37a"/><stop offset=".55" stop-color="#d9a45a"/><stop offset="1" stop-color="#b98242"/></linearGradient>'
+   +'<linearGradient id="gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b69a6a"/><stop offset="1" stop-color="#8c7248"/></linearGradient>'
+   +'<linearGradient id="rv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#93aab0"/><stop offset="1" stop-color="#617c88"/></linearGradient>'
+   +'<radialGradient id="vg" cx=".5" cy=".5" r=".75"><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#1b0f04" stop-opacity=".6"/></radialGradient></defs>';
+  o+='<rect width="544" height="372" fill="url(#sky)"/>';
+  // far skyline haze
+  o+='<path d="M0 66h30v-8h14v8h18v-14h12v14h40v-6h20v6h50v-10h16v10h60v-7h22v7h60v-12h14v12h70v-8h18v8H544V80H0z" fill="#c28f4c" opacity=".7"/>';
+  var gq=[P(-.05,0),P(1.05,0),P(1.05,1.02),P(-.05,1.02)];
+  o+='<polygon points="'+pts(gq)+'" fill="url(#gr)"/>';
+  // river band
+  var L=[],R=[],i;
+  for(i=0;i<=24;i++){var y=i/24;L.push(P(riverX(y)-.075,y));R.unshift(P(riverX(y)+.075,y))}
+  o+='<polygon points="'+pts(L.concat(R))+'" fill="url(#rv)" stroke="#43606c" stroke-width="1.500"/>';
+  // river sheen lines
+  [.2,.5,.8].forEach(function(y){var a=P(riverX(y)-.04,y),b=P(riverX(y)+.04,y);o+='<line x1="'+a[0]+'" y1="'+a[1]+'" x2="'+b[0]+'" y2="'+b[1]+'" stroke="#d8e6e8" stroke-width="1.200" opacity=".7"/>'});
+  // street grid lines
+  for(i=0;i<=10;i++){var a=P(i/10,0),b=P(i/10,1);o+='<line x1="'+a[0]+'" y1="'+a[1]+'" x2="'+b[0]+'" y2="'+b[1]+'" stroke="#6e5a37" stroke-width=".6" opacity=".45"/>'}
+  // blocks, far to near
+  var C=10,Rw=9,hs=function(i,j){var v=Math.sin(i*12.9898+j*78.233)*43758.5453;return v-Math.floor(v)};
+  for(var j=0;j<Rw;j++){for(i=0;i<C;i++){
+    var x0=(i+.14)/C,x1=(i+.86)/C,y0=(j+.14)/Rw,y1=(j+.86)/Rw,cx=(x0+x1)/2,cy=(y0+y1)/2;
+    if(Math.abs(cx-riverX(cy))<.115)continue;
+    var h=22+hs(i,j)*58+Math.max(0,1-Math.abs(cx-.45))*46*(cy>.3&&cy<.8?1:.3);
+    var pal=hs(j,i)>.5?["#c9ab76","#a98d5c","#8d7447"]:["#d6bd8b","#b89c68","#9a7f50"];
+    var top=[P(x0,y0,h),P(x1,y0,h),P(x1,y1,h),P(x0,y1,h)];
+    var front=[P(x0,y1,h),P(x1,y1,h),P(x1,y1,0),P(x0,y1,0)];
+    var sideX=cx>.5?x0:x1;
+    var side=[P(sideX,y0,h),P(sideX,y1,h),P(sideX,y1,0),P(sideX,y0,0)];
+    o+='<g stroke="#4a3818" stroke-width=".7" stroke-linejoin="round"><polygon points="'+pts(side)+'" fill="'+pal[2]+'"/><polygon points="'+pts(front)+'" fill="'+pal[1]+'"/><polygon points="'+pts(top)+'" fill="'+pal[0]+'"/></g>';
+    if(h>60){var m=P(cx,cy,h+.1),n=P(cx,cy,h+14);o+='<line x1="'+m[0]+'" y1="'+m[1]+'" x2="'+n[0]+'" y2="'+n[1]+'" stroke="#4a3818" stroke-width="1"/>'}
+  }}
+  // bridge across river
+  var b1=P(riverX(.62)-.1,.6,1),b2=P(riverX(.62)+.1,.6,1),b3=P(riverX(.62)+.1,.64,1),b4=P(riverX(.62)-.1,.64,1);
+  o+='<polygon points="'+pts([b1,b2,b3,b4])+'" fill="#5b4a2b" stroke="#2a1c10" stroke-width=".8"/>';
+  o+='<rect width="544" height="372" fill="url(#vg)"/>';
+  svg.innerHTML=o;
+
+  // pins: same projection, positioned on the map box
+  document.querySelectorAll(".pin").forEach(function(p){
+    var q=p.getAttribute("data-p").split(",").map(Number),pt=P(q[0],q[1],0);
+    p.style.left=pt[0]+"px";p.style.top=pt[1]+"px";
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

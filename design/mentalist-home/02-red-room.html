@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Mentalist — Red room</title>
+<style>
+  :root {
+    --bg: #0b0a0a;
+    --panel: rgba(16, 14, 14, .82);
+    --panel-solid: #141212;
+    --line: rgba(236, 228, 216, .16);
+    --text: #ece4d8;
+    --muted: #aca295;
+    --gold: #d9b25a;
+    --gold-dim: rgba(217, 178, 90, .16);
+    --red: #e0283a;
+    --focus: #f6dc92;
+    --thin: "Segoe UI Light", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --body: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--body); font-size: 14px; line-height: 1.4; }
+  body { min-width: 1280px; min-height: 800px; overflow: hidden; display: grid; grid-template-rows: 72px 42px 1fr; position: relative; }
+  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; text-align: inherit; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .label { font-family: var(--thin); font-weight: 300; text-transform: uppercase; letter-spacing: .28em; font-size: 11px; color: var(--muted); }
+  .glass { background: var(--panel); border: 1px solid var(--line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,.5); }
+
+  /* ---------- header ---------- */
+  header.top { grid-row: 1; display: flex; align-items: center; gap: 28px; padding: 0 20px; background: linear-gradient(#050404, rgba(11,10,10,.9)); border-bottom: 1px solid var(--line); z-index: 5; }
+  .brand { display: flex; align-items: center; gap: 14px; width: 330px; flex: none; }
+  .brand svg { width: 38px; height: 44px; flex: none; filter: drop-shadow(0 0 8px rgba(224,40,58,.5)); }
+  .wordmark { font-family: var(--thin); font-weight: 200; font-size: 21px; letter-spacing: .42em; text-transform: uppercase; white-space: nowrap; }
+  .wordmark small { display: block; font-size: 10px; letter-spacing: .5em; color: var(--muted); margin-top: 2px; font-weight: 300; }
+  .gate { display: flex; align-items: center; gap: 18px; flex: 1; min-width: 0; padding: 0 0 0 28px; border-left: 1px solid var(--line); height: 48px; }
+  .gate-val b { display: block; font-family: var(--thin); font-weight: 300; font-size: 26px; letter-spacing: .08em; line-height: 1.1; color: var(--gold); }
+  .gate select { appearance: none; background: transparent; color: var(--text); border: 1px solid var(--line); border-radius: 3px; padding: 7px 28px 7px 12px; font: inherit; font-size: 13px; cursor: pointer; background-image: linear-gradient(45deg, transparent 50%, var(--text) 50%), linear-gradient(135deg, var(--text) 50%, transparent 50%); background-position: calc(100% - 15px) 14px, calc(100% - 10px) 14px; background-size: 5px 5px; background-repeat: no-repeat; }
+  .gate select option { background: #141212; }
+  .gate .field { display: flex; flex-direction: column; gap: 3px; }
+  .gate .field label { font-size: 10px; }
+  .btn { border: 1px solid var(--line); border-radius: 3px; padding: 8px 14px; font-size: 13px; letter-spacing: .04em; white-space: nowrap; transition: background .15s, border-color .15s; }
+  .btn:hover, .gate select:hover { background: rgba(236,228,216,.08); border-color: rgba(236,228,216,.5); }
+  .btn[aria-pressed="true"] { background: var(--text); color: #0b0a0a; border-color: var(--text); font-weight: 600; }
+  .gate-note { font-size: 12px; color: var(--muted); max-width: 330px; line-height: 1.35; }
+  .gate-note strong { color: var(--text); font-weight: 600; }
+  .peek-tag { display: none; border: 1px dashed var(--gold); color: var(--gold); padding: 3px 8px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; border-radius: 2px; }
+  body[data-peek="on"] .peek-tag { display: inline-block; }
+
+  /* ---------- nav ---------- */
+  nav.objects { grid-row: 2; display: flex; align-items: stretch; padding: 0 12px; background: rgba(8,7,7,.92); border-bottom: 1px solid var(--line); z-index: 5; }
+  nav.objects ul { display: flex; list-style: none; flex: 1; }
+  nav.objects button { display: flex; align-items: center; gap: 8px; height: 100%; padding: 0 18px; font-family: var(--thin); font-weight: 400; text-transform: uppercase; letter-spacing: .22em; font-size: 12px; color: var(--muted); border-bottom: 2px solid transparent; transition: color .15s, background .15s; }
+  nav.objects button:hover { color: var(--text); background: rgba(236,228,216,.06); }
+  nav.objects button[aria-current="page"] { color: var(--text); border-bottom-color: var(--gold); background: var(--gold-dim); }
+  nav.objects svg { width: 13px; height: 15px; }
+  .noncanon { font-family: var(--body); letter-spacing: .1em; font-size: 10px; font-weight: 700; color: var(--text); border: 1px solid var(--muted); padding: 1px 5px; border-radius: 2px; background: repeating-linear-gradient(135deg, transparent 0 4px, rgba(236,228,216,.14) 4px 5px); }
+  .demo-flag { align-self: center; display: flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text); border: 1px dashed var(--gold); padding: 3px 10px; border-radius: 2px; }
+  .demo-flag i { width: 7px; height: 7px; background: var(--gold); display: inline-block; transform: rotate(45deg); }
+
+  /* ---------- main: map-first ---------- */
+  main { grid-row: 3; position: relative; overflow: hidden; background: #070606; }
+  #map { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 52% 50%, transparent 40%, rgba(0,0,0,.65) 100%), linear-gradient(rgba(7,6,6,.9), transparent 18%); }
+  .grain { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: .17; mix-blend-mode: overlay; }
+
+  /* pins */
+  .pin { cursor: pointer; }
+  .pin .ring { fill: none; stroke: var(--text); stroke-width: 1.5; stroke-dasharray: 3 3; opacity: 0; }
+  .pin:hover .ring, .pin:focus-visible .ring { opacity: 1; }
+  .pin:focus { outline: none; }
+  .pin:focus-visible .ring { stroke: var(--focus); stroke-width: 2.5; stroke-dasharray: none; }
+  .pin[aria-pressed="true"] .ring { opacity: 1; stroke: var(--text); stroke-dasharray: none; }
+  .pin.linked .ring { opacity: 1; stroke: var(--gold); }
+  .pin text { font-family: var(--body); font-size: 12px; fill: var(--text); paint-order: stroke; stroke: #050404; stroke-width: 4px; letter-spacing: .04em; }
+  .pin[aria-pressed="true"] text { font-weight: 700; }
+  .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2.8s ease-out infinite; }
+  @keyframes pulse { 0% { transform: scale(.5); opacity: .8; } 100% { transform: scale(1.8); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .pulse { animation: none; opacity: .35; } * { transition: none !important; } }
+
+  /* case rail */
+  aside.rail { position: absolute; left: 14px; top: 14px; bottom: 14px; width: 356px; display: flex; flex-direction: column; z-index: 3; }
+  .panel-head { padding: 14px 16px 12px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .panel-head h2 { font-family: var(--thin); font-weight: 300; text-transform: uppercase; letter-spacing: .3em; font-size: 14px; }
+  .panel-head span { font-size: 12px; color: var(--muted); }
+  .cases { list-style: none; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .case { display: grid; grid-template-columns: 62px 1fr; gap: 12px; width: 100%; padding: 8px; border: 1px solid var(--line); border-left: 3px solid transparent; border-radius: 3px; background: rgba(255,255,255,.02); transition: background .15s, border-color .15s; align-items: center; }
+  .case:hover { background: rgba(236,228,216,.08); border-color: rgba(236,228,216,.4); }
+  .case[aria-current="true"] { background: var(--gold-dim); border-color: var(--gold); border-left-width: 3px; }
+  .plate { width: 62px; height: 78px; border-radius: 2px; background: radial-gradient(ellipse at 50% 85%, rgba(236,190,100,.75), rgba(160,100,40,.25) 48%, #17120f 78%); overflow: hidden; display: grid; place-items: end center; border: 1px solid rgba(217,178,90,.3); }
+  .plate svg { height: 74px; width: auto; filter: drop-shadow(1.5px 0 0 rgba(255,214,130,.85)) drop-shadow(-1px 0 0 rgba(255,214,130,.35)); }
+  .case .ep { font-size: 11px; letter-spacing: .24em; color: var(--muted); font-family: var(--thin); text-transform: uppercase; }
+  .case .title { font-size: 16px; font-weight: 600; line-height: 1.2; margin: 2px 0 6px; }
+  .status { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--gold); }
+  .status svg { width: 13px; height: 13px; }
+  .case.locked { border: 1px dashed rgba(236,228,216,.28); background: repeating-linear-gradient(135deg, transparent 0 6px, rgba(236,228,216,.035) 6px 7px); cursor: default; }
+  .case.locked:hover { background: repeating-linear-gradient(135deg, transparent 0 6px, rgba(236,228,216,.035) 6px 7px); border-color: rgba(236,228,216,.28); }
+  .case.locked .plate { background: #0e0c0c; border: 1px dashed rgba(236,228,216,.28); place-items: center; }
+  .case.locked .plate svg { height: 26px; filter: none; }
+  .case.locked .title { color: #d6cdc0; }
+  .case.locked .status { color: var(--muted); }
+  .case.peeking { border-color: var(--gold); border-style: dashed; }
+
+  /* right panel */
+  aside.legend { position: absolute; right: 14px; top: 14px; width: 306px; max-height: calc(100% - 28px); z-index: 3; display: flex; flex-direction: column; }
+  .legend .body { padding: 12px 16px 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; }
+  .legend ul { list-style: none; display: grid; gap: 9px; }
+  .legend li { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+  .legend li svg { width: 24px; height: 24px; flex: none; }
+  .info { border: 1px solid var(--line); border-radius: 3px; padding: 10px 12px; background: rgba(255,255,255,.03); }
+  .info h3 { font-size: 15px; font-weight: 600; margin: 4px 0; }
+  .info p { font-size: 12.5px; color: var(--muted); }
+  .note { font-size: 12px; color: var(--muted); border-left: 2px solid var(--gold); padding-left: 10px; }
+  .note strong { color: var(--text); }
+
+  /* characters strip */
+  section.cast { position: absolute; left: 384px; right: 334px; bottom: 14px; height: 104px; z-index: 3; display: flex; align-items: center; padding: 0 16px; gap: 16px; }
+  .cast-title { width: 98px; flex: none; }
+  .cast-title .label { color: var(--text); letter-spacing: .3em; font-size: 12px; }
+  .cast-title span { display: block; font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+  .cast ul { display: flex; gap: 8px; list-style: none; flex: 1; }
+  .cast li { flex: 1; min-width: 0; }
+  .cast ul { align-self: stretch; padding: 10px 0; }
+  .cast button { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 4px; padding: 6px 4px; border: 1px solid var(--line); border-radius: 3px; transition: background .15s, border-color .15s; }
+  .cast button:hover { background: rgba(236,228,216,.08); border-color: rgba(236,228,216,.45); }
+  .mono { width: 32px; height: 32px; border-radius: 50%; flex: none; display: grid; place-items: center; font-family: var(--thin); font-size: 12px; letter-spacing: .06em; background: radial-gradient(circle at 50% 100%, rgba(217,178,90,.45), #151110 70%); border: 1px solid rgba(217,178,90,.5); }
+  .cast .nm { white-space: nowrap; font-size: 12.5px; font-weight: 600; line-height: 1.2; }
+  .cast .rl { font-size: 11px; color: var(--muted); line-height: 1.25; }
+
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+</style>
+</head>
+<body data-peek="off">
+
+<!-- shared artwork -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Red John smiley: painted strokes with drips (original) -->
+    <symbol id="smiley" viewBox="0 0 64 74">
+      <g fill="none" stroke="#e0283a" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M32 6 C46 5 58 16 58 30 C58 44 47 55 32 55 C17 55 6 44 6 30 C6 16 18 6.5 33 7.5" stroke-width="5"/>
+        <path d="M20 40 C26 47 38 47 44 40" stroke-width="4.5"/>
+        <path d="M14 54 L14 66" stroke-width="3"/>
+        <path d="M33 55 L33 71" stroke-width="3.5"/>
+        <path d="M50 50 L50 60" stroke-width="2.5"/>
+      </g>
+      <g fill="#e0283a"><circle cx="22" cy="25" r="3.8"/><circle cx="42" cy="25" r="3.8"/><circle cx="14" cy="67" r="2.4"/><circle cx="33" cy="71.5" r="2.8"/><circle cx="50" cy="61" r="2"/></g>
+    </symbol>
+    <!-- Patrick Jane style silhouette: three-piece suit, wavy hair, hand in pocket (generic) -->
+    <symbol id="sil-jane" viewBox="0 0 60 80">
+      <g fill="#070606">
+        <circle cx="30" cy="14" r="7.2"/>
+        <circle cx="23.5" cy="9.5" r="4.4"/><circle cx="30" cy="6.5" r="5"/><circle cx="36.5" cy="9.5" r="4.4"/>
+        <circle cx="21.5" cy="15" r="3.4"/><circle cx="38.5" cy="15" r="3.4"/><circle cx="24" cy="19" r="2.4"/>
+        <rect x="27" y="19" width="6" height="6"/>
+        <path d="M13 80 L14 38 Q15 27 27 24 L30 30 L33 24 Q45 27 46 38 L47 80 Z"/>
+        <path d="M14 38 L8 60 L14 63 L20 48 Z"/>
+        <path d="M46 38 L50 52 Q47 58 41 58 L40 50 Z"/>
+      </g>
+      <path d="M27 24 L30 30 L33 24 L30 50 Z" fill="#1d1915"/>
+      <path d="M30 30 L24 48 L30 66 L36 48 Z" fill="none" stroke="#3b342b" stroke-width="1"/>
+      <path d="M21 56 H27 M33 56 H39" stroke="#3b342b" stroke-width="1"/>
+    </symbol>
+    <!-- CBI team silhouette: three agents with badge on belt and holster -->
+    <symbol id="sil-cbi" viewBox="0 0 90 80">
+      <g fill="#070606">
+        <circle cx="45" cy="13" r="6.5"/><rect x="42" y="18" width="6" height="5"/>
+        <path d="M31 80 L32 36 Q33 25 45 23 Q57 25 58 36 L59 80 Z"/>
+        <circle cx="20" cy="26" r="5.8"/><rect x="17.5" y="30" width="5" height="4"/>
+        <path d="M7 80 L8 46 Q9 35 20 33 Q30 35 31 46 L32 80 Z"/>
+        <circle cx="70" cy="26" r="5.8"/><rect x="67.5" y="30" width="5" height="4"/>
+        <path d="M58 80 L59 46 Q60 35 70 33 Q81 35 82 46 L83 80 Z"/>
+      </g>
+      <rect x="36" y="52" width="5" height="4" fill="#d9b25a"/>
+      <path d="M54 50 h4 v11 h-4 z" fill="#1d1915" stroke="#4a4136" stroke-width="1"/>
+      <rect x="11" y="56" width="4" height="3" fill="#d9b25a"/>
+      <path d="M26 56 h4 v9 h-4 z" fill="#1d1915" stroke="#4a4136" stroke-width="1"/>
+      <rect x="62" y="56" width="4" height="3" fill="#d9b25a"/>
+    </symbol>
+    <symbol id="check" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M4.5 8.3 L7 10.8 L11.6 5.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="1.5" fill="none" stroke="#aca295" stroke-width="1.6"/><path d="M8 11 V8 a4 4 0 0 1 8 0 V11" fill="none" stroke="#aca295" stroke-width="1.6"/><circle cx="12" cy="16" r="1.5" fill="#aca295"/></symbol>
+    <symbol id="hq" viewBox="0 0 24 24"><path d="M3 21 V10 L12 4 L21 10 V21 Z" fill="#151110" stroke="#d9b25a" stroke-width="1.6"/><path d="M8 21 V14 H16 V21 M12 4 V1.5" fill="none" stroke="#d9b25a" stroke-width="1.4"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="brand">
+    <svg viewBox="0 0 64 74" role="img" aria-label="Red John smiley mark"><use href="#smiley"/></svg>
+    <div class="wordmark">The Mentalist<small>Investigation board</small></div>
+  </div>
+
+  <section class="gate" aria-label="Progress gate">
+    <div class="gate-val">
+      <span class="label">Watched through</span>
+      <b id="gateVal">S1 · E5</b>
+    </div>
+    <div class="field">
+      <label class="label" for="progress">Change</label>
+      <select id="progress" aria-describedby="gateNote">
+        <option value="1">S1 · E1</option><option value="2">S1 · E2</option><option value="3">S1 · E3</option><option value="4">S1 · E4</option><option value="5" selected>S1 · E5</option>
+      </select>
+    </div>
+    <button class="btn" id="peek" aria-pressed="false">Peek next episode</button>
+    <span class="peek-tag" id="peekTag">Peek · temporary</span>
+    <p class="gate-note" id="gateNote"><strong>Everything here is limited to your progress.</strong> <span id="peekNote">Peek is temporary and never saved.</span></p>
+  </section>
+</header>
+
+<nav class="objects" aria-label="Browse by object">
+  <ul>
+    <li><button aria-current="page">Cases</button></li>
+    <li><button>Characters</button></li>
+    <li><button>Map</button></li>
+    <li><button><svg viewBox="0 0 64 74" aria-hidden="true"><use href="#smiley"/></svg>Red John <span style="letter-spacing:.05em;text-transform:none;font-family:var(--body);font-size:11px">(arc)</span></button></li>
+    <li><button>Episodes</button></li>
+    <li><button>Geek / Fans <span class="noncanon">NON-CANON</span></button></li>
+  </ul>
+  <div class="demo-flag" role="status"><i></i>Demo data</div>
+</nav>
+
+<main>
+  <h1 class="sr">Investigation board: cases, Sacramento map and characters</h1>
+  <svg id="map" viewBox="0 0 1440 786" preserveAspectRatio="xMidYMid slice" role="group" aria-label="3D map of Sacramento, demo geometry. Pins are buttons.">
+    <defs>
+      <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#171413"/><stop offset="1" stop-color="#0c0b0a"/></linearGradient>
+      <linearGradient id="river" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#060a0e"/><stop offset=".5" stop-color="#0f1a22"/><stop offset="1" stop-color="#060a0e"/></linearGradient>
+      <linearGradient id="fog" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b0a0a" stop-opacity="1"/><stop offset="1" stop-color="#2a2420" stop-opacity="0"/></linearGradient>
+      <radialGradient id="glow"><stop offset="0" stop-color="#e0283a" stop-opacity=".75"/><stop offset="1" stop-color="#e0283a" stop-opacity="0"/></radialGradient>
+      <radialGradient id="glowGold"><stop offset="0" stop-color="#d9b25a" stop-opacity=".45"/><stop offset="1" stop-color="#d9b25a" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="1440" height="786" fill="url(#ground)"/>
+    <g id="river"></g>
+    <g id="city"></g>
+    <rect width="1440" height="360" fill="url(#fog)" opacity=".9"/>
+    <text font-family="Segoe UI Light, Segoe UI, Arial, sans-serif" font-size="10" letter-spacing="4" fill="#8fa6b2"><textPath href="#riverLbl">SACRAMENTO RIVER</textPath></text>
+    <g id="pins"></g>
+  </svg>
+  <svg class="grain" aria-hidden="true" focusable="false"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#noise)"/></svg>
+  <div class="vignette"></div>
+
+  <aside class="rail glass" aria-label="Case list">
+    <div class="panel-head"><h2>Cases · Season 1</h2><span id="caseCount">5 of 6 watched</span></div>
+    <ol class="cases" id="cases"></ol>
+  </aside>
+
+  <aside class="legend glass" aria-label="Map legend and selection">
+    <div class="panel-head"><h2 class="label" style="color:var(--text);font-size:12px">Sacramento · 3D map</h2><span>Tilt 55° · demo</span></div>
+    <div class="body">
+      <ul aria-label="Legend">
+        <li><svg viewBox="0 0 64 74" aria-hidden="true"><use href="#smiley"/></svg>Red John smiley — where he appeared (demo)</li>
+        <li><svg aria-hidden="true"><use href="#hq"/></svg>Landmark — non-spoiler place</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="#d9b25a" stroke-width="1.6"/></svg>Gold ring — linked to the selected case</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="#ece4d8" stroke-width="1.6" stroke-dasharray="3 3"/></svg>Dashed ring — hover / focus</li>
+      </ul>
+      <div class="info" aria-live="polite">
+        <span class="label">Selected pin</span>
+        <h3 id="pinName">CBI Headquarters, Sacramento</h3>
+        <p id="pinDesc">Landmark. Where the consultant works with the team. Always visible.</p>
+      </div>
+      <p class="note"><strong>Pins follow your progress.</strong> Only places from episodes you have watched appear (now <span id="noteP">S1 · E5</span>). Scene pins are demo data.</p>
+    </div>
+  </aside>
+
+  <section class="cast glass" aria-label="Characters">
+    <div class="cast-title"><div class="label">Characters</div><span>Premise only</span></div>
+    <ul>
+      <li><button><span class="mono" aria-hidden="true">PJ</span><span><span class="nm">Patrick Jane</span><br><span class="rl">Consultant</span></span></button></li>
+      <li><button><span class="mono" aria-hidden="true">TL</span><span><span class="nm">Teresa Lisbon</span><br><span class="rl">Senior agent</span></span></button></li>
+      <li><button><span class="mono" aria-hidden="true">KC</span><span><span class="nm">Kimball Cho</span><br><span class="rl">Agent</span></span></button></li>
+      <li><button><span class="mono" aria-hidden="true">WR</span><span><span class="nm">Wayne Rigsby</span><br><span class="rl">Agent</span></span></button></li>
+      <li><button><span class="mono" aria-hidden="true">GV</span><span><span class="nm">Grace Van Pelt</span><br><span class="rl">Agent</span></span></button></li>
+    </ul>
+  </section>
+</main>
+
+<script>
+(function () {
+  var NS = document.getElementById("map").namespaceURI;
+  var CASES = [
+    { n: 1, title: "Pilot", sil: "jane" },
+    { n: 2, title: "Red Hair and Silver Tape", sil: "cbi" },
+    { n: 3, title: "Red Tide", sil: "jane" },
+    { n: 4, title: "Ladies in Red", sil: "cbi" },
+    { n: 5, title: "Redwood", sil: "jane" },
+    { n: 6, title: "Red Handed", sil: null }
+  ];
+  var PINS = [
+    { id: "a", label: "Scene A (demo)", u: .30, v: .38, from: 2, ep: 2, desc: "Demo pin: a place where the smiley was left. Placeholder text, not series data." },
+    { id: "b", label: "Scene B (demo)", u: .66, v: .62, from: 4, ep: 4, desc: "Demo pin: a second place where the smiley was left. Placeholder text, not series data." },
+    { id: "hq", label: "CBI Headquarters, Sacramento", u: .50, v: .80, from: 1, ep: 0, landmark: true, desc: "Landmark. Where the consultant works with the team. Always visible." }
+  ];
+  var state = { p: 5, peek: false, sel: null, pin: "hq" };
+
+  /* deterministic random */
+  var seed = 7; function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+  function el(name, attrs, parent) { var e = document.createElementNS(NS, name); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  function sc(v) { return .5 + .7 * v; }
+  function P(u, v, h) { var s = sc(v); return [720 + (u - .5) * 1500 * s, 70 + 700 * (.35 * v + .65 * v * v) - (h || 0) * s]; }
+  function pts(a) { return a.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" "); }
+  function vr(u) { return .5 + .28 * (u - .5) + .05 * Math.sin(u * 7); }
+
+  /* ---- 3D city ---- */
+  (function drawCity() {
+    var riverG = document.getElementById("river"), city = document.getElementById("city");
+    var cols = 24, rows = 15, du = 2 / cols, dv = 1.2 / rows, u, v, i, j;
+
+    /* street grid */
+    for (i = 0; i <= cols; i++) {
+      u = -.5 + i * du;
+      el("line", { x1: P(u, 0)[0], y1: P(u, 0)[1], x2: P(u, 1.2)[0], y2: P(u, 1.2)[1], stroke: "#2b2521", "stroke-width": 5 }, riverG);
+      el("line", { x1: P(u, 0)[0], y1: P(u, 0)[1], x2: P(u, 1.2)[0], y2: P(u, 1.2)[1], stroke: "#8a7448", "stroke-opacity": .28, "stroke-width": 1, "stroke-dasharray": "4 7" }, riverG);
+    }
+    for (j = 0; j <= rows; j++) {
+      v = j * dv;
+      el("line", { x1: P(-.5, v)[0], y1: P(-.5, v)[1], x2: P(1.5, v)[0], y2: P(1.5, v)[1], stroke: "#2b2521", "stroke-width": 2 + 6 * v }, riverG);
+      el("line", { x1: P(-.5, v)[0], y1: P(-.5, v)[1], x2: P(1.5, v)[0], y2: P(1.5, v)[1], stroke: "#8a7448", "stroke-opacity": .28, "stroke-width": 1, "stroke-dasharray": "4 7" }, riverG);
+    }
+
+    /* river: blue-black water, reflective banks, bridges, light streaks */
+    var top = [], bot = [], mid = [];
+    for (u = -.5; u <= 1.501; u += .05) { top.push(P(u, vr(u) - .05)); bot.unshift(P(u, vr(u) + .05)); mid.push(P(u, vr(u))); }
+    el("polygon", { points: pts(top.concat(bot)), fill: "url(#river)" }, riverG);
+    el("polyline", { points: pts(top), fill: "none", stroke: "#8fb0c0", "stroke-opacity": .5, "stroke-width": 1.4 }, riverG);
+    el("polyline", { points: pts(bot.slice().reverse()), fill: "none", stroke: "#8fb0c0", "stroke-opacity": .38, "stroke-width": 1.8 }, riverG);
+    el("polyline", { points: pts(mid), fill: "none", stroke: "#5b7480", "stroke-width": 1, "stroke-opacity": .3, "stroke-dasharray": "14 18" }, riverG);
+    for (i = 0; i < 18; i++) {
+      var ru = -.4 + rnd() * 1.8, rv = vr(ru) + (rnd() - .5) * .07, ww = .012 + rnd() * .02;
+      el("line", { x1: P(ru - ww, rv)[0], y1: P(ru - ww, rv)[1], x2: P(ru + ww, rv)[0], y2: P(ru + ww, rv)[1], stroke: "#f0c46a", "stroke-opacity": .22 + rnd() * .2, "stroke-width": 1.6 }, riverG);
+    }
+    [-.5 + 10 * du, -.5 + 16 * du].forEach(function (bu) {
+      var q = [P(bu - .012, vr(bu) - .062), P(bu + .012, vr(bu) - .062), P(bu + .012, vr(bu) + .062), P(bu - .012, vr(bu) + .062)];
+      el("polygon", { points: pts(q), fill: "#2c2621", stroke: "#a38d5c", "stroke-opacity": .6, "stroke-width": 1 }, riverG);
+      for (var k = 0; k < 5; k++) { var bp = P(bu, vr(bu) - .05 + k * .025); el("circle", { cx: bp[0], cy: bp[1], r: 1.4, fill: "#f0c46a", opacity: .8 }, riverG); }
+    });
+    var lbl = []; for (u = .66; u <= .821; u += .02) lbl.push(P(u, vr(u)));
+    el("path", { id: "riverLbl", d: "M" + lbl.map(function (p) { return p[0].toFixed(1) + " " + (p[1] + 3).toFixed(1); }).join(" L"), fill: "none" }, riverG);
+
+    /* buildings, taller downtown cluster near the CBI pin */
+    var blocks = [];
+    for (i = 0; i < cols; i++) for (j = 0; j < rows; j++) {
+      var cu = -.5 + (i + .5) * du, cv = (j + .5) * dv;
+      if (Math.abs(cv - vr(cu)) < .085) continue;
+      if (PINS.some(function (p) { return Math.abs(p.u - cu) < .07 && Math.abs(p.v - cv) < .07; })) continue;
+      var d = Math.sqrt(Math.pow(cu - .47, 2) + Math.pow(cv - .72, 2));
+      var h = 8 + Math.pow(rnd(), 2) * 32 + 95 * Math.exp(-Math.pow(d / .22, 2)) * (.4 + .6 * rnd());
+      blocks.push({ u0: cu - du * .33, u1: cu + du * .33, v0: cv - dv * .33, v1: cv + dv * .33, cu: cu, h: h, tall: h > 55 });
+    }
+    blocks.sort(function (a, b) { return a.v1 - b.v1; });
+    blocks.forEach(function (b) {
+      var s = sc(b.v1), g = el("g", { opacity: Math.min(1, .3 + .9 * b.v1).toFixed(2) }, city);
+      var base = [P(b.u0, b.v1), P(b.u1, b.v1)], tp = [P(b.u0, b.v1, b.h), P(b.u1, b.v1, b.h)];
+      el("polygon", { points: pts([base[0], base[1], tp[1], tp[0]]), fill: "#1b1714" }, g);
+      var sb = b.cu < .5 ? [P(b.u1, b.v1), P(b.u1, b.v0)] : [P(b.u0, b.v1), P(b.u0, b.v0)];
+      var st = b.cu < .5 ? [P(b.u1, b.v0, b.h), P(b.u1, b.v1, b.h)] : [P(b.u0, b.v0, b.h), P(b.u0, b.v1, b.h)];
+      el("polygon", { points: pts([sb[0], sb[1], st[0], st[1]]), fill: b.tall ? "#4a3d31" : "#382e27", stroke: "rgba(240,196,106,.22)", "stroke-width": .8 }, g);
+      el("polygon", { points: pts([P(b.u0, b.v0, b.h), P(b.u1, b.v0, b.h), P(b.u1, b.v1, b.h), P(b.u0, b.v1, b.h)]), fill: b.tall ? "#4d4239" : "#3f3732", stroke: b.tall ? "rgba(255,226,170,.55)" : "rgba(236,228,216,.28)", "stroke-width": .9 }, g);
+      el("polyline", { points: pts(tp), fill: "none", stroke: "rgba(255,230,180,.45)", "stroke-width": 1 }, g);
+      if (b.h > 18) {
+        var x0 = base[0][0], x1 = base[1][0], by = base[0][1], hp = b.h * s;
+        var nc = Math.max(1, Math.floor((x1 - x0) / 9)), nr = Math.floor(b.h / 10);
+        for (var r = 0; r < nr; r++) for (var c = 0; c < nc; c++) {
+          if (rnd() > .13) continue;
+          el("rect", { x: (x0 + (c + .5) * (x1 - x0) / nc - 1.2 * s).toFixed(1), y: (by - (r + .5) * hp / nr - 1.5 * s).toFixed(1), width: (2.4 * s).toFixed(1), height: (3.2 * s).toFixed(1), fill: "#f2c566", opacity: .85 }, g);
+        }
+      }
+    });
+  })();
+
+  /* ---- pins ---- */
+  function drawPins() {
+    var g = document.getElementById("pins"); g.innerHTML = "";
+    PINS.forEach(function (p) {
+      if (p.from > state.p) return;
+      var s = sc(p.v), pt = P(p.u, p.v), x = pt[0], y = pt[1];
+      var pg = el("g", { "class": "pin" + (state.sel && p.ep === state.sel ? " linked" : ""), tabindex: 0, role: "button", "aria-pressed": state.pin === p.id ? "true" : "false", "aria-label": p.label, "data-id": p.id }, g);
+      el("ellipse", { cx: x, cy: y, rx: 26 * s, ry: 9 * s, fill: "rgba(0,0,0,.55)" }, pg);
+      if (p.landmark) {
+        el("circle", { cx: x, cy: y - 26, r: 34, fill: "url(#glowGold)" }, pg);
+        el("line", { x1: x, y1: y, x2: x, y2: y - 14, stroke: "#d9b25a", "stroke-width": 1.5 }, pg);
+        var u = el("use", { href: "#hq", x: x - 15, y: y - 44, width: 30, height: 30 }, pg);
+        el("circle", { "class": "ring", cx: x, cy: y - 29, r: 22 }, pg);
+        var t = el("text", { x: x + 26, y: y - 25 }, pg); t.textContent = p.label;
+      } else {
+        el("ellipse", { "class": "pulse", cx: x, cy: y, rx: 30 * s, ry: 11 * s, fill: "none", stroke: "#e0283a", "stroke-width": 1.5 }, pg);
+        el("circle", { cx: x, cy: y - 40, r: 46, fill: "url(#glow)" }, pg);
+        el("line", { x1: x, y1: y, x2: x, y2: y - 22, stroke: "#e0283a", "stroke-width": 1.5, "stroke-opacity": .8 }, pg);
+        el("use", { href: "#smiley", x: x - 17, y: y - 64, width: 34, height: 40 }, pg);
+        el("circle", { "class": "ring", cx: x, cy: y - 44, r: 28 }, pg);
+        var t2 = el("text", { x: x + 32, y: y - 40 }, pg); t2.textContent = p.label;
+      }
+      pg.addEventListener("click", function () { selectPin(p.id); });
+      pg.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); selectPin(p.id); } });
+    });
+  }
+  function selectPin(id) {
+    state.pin = id; drawPins();
+    var p = PINS.filter(function (x) { return x.id === id; })[0];
+    document.getElementById("pinName").textContent = p.label;
+    document.getElementById("pinDesc").textContent = p.desc;
+  }
+
+  /* ---- cases ---- */
+  function lockSvg() { return '<svg viewBox="0 0 24 24" aria-hidden="true"><use href="#lock"/></svg>'; }
+  function drawCases() {
+    var ol = document.getElementById("cases"), html = "";
+    CASES.forEach(function (c) {
+      var watched = c.n <= state.p, peeking = state.peek && c.n === state.p + 1;
+      var ep = "S1 · E" + c.n;
+      if (watched) {
+        html += '<li><button class="case" data-n="' + c.n + '" aria-current="' + (state.sel === c.n) + '"><span class="plate" aria-hidden="true"><svg viewBox="' + (c.sil === "cbi" ? "0 0 90 80" : "0 0 60 80") + '"><use href="#sil-' + c.sil + '"/></svg></span><span><span class="ep">' + ep + '</span><span class="title" style="display:block">' + c.title + '</span><span class="status"><svg aria-hidden="true"><use href="#check"/></svg>Solved</span></span></button></li>';
+      } else {
+        html += '<li><div class="case locked' + (peeking ? " peeking" : "") + '" aria-disabled="true"><span class="plate" aria-hidden="true">' + lockSvg() + '</span><span><span class="ep">' + ep + '</span><span class="title" style="display:block">' + c.title + '</span><span class="status">' + (peeking ? "Peeking · temporary" : "Not yet watched") + '</span></span></div></li>';
+      }
+    });
+    ol.innerHTML = html;
+    ol.querySelectorAll("button.case").forEach(function (b) {
+      b.addEventListener("click", function () { var n = +b.getAttribute("data-n"); state.sel = state.sel === n ? null : n; drawCases(); drawPins(); var f = document.querySelector('.case[data-n="' + n + '"]'); if (f) f.focus(); });
+    });
+    document.getElementById("caseCount").textContent = Math.min(state.p, 6) + " of 6 watched";
+  }
+
+  function refresh() {
+    var label = "S1 · E" + state.p;
+    document.getElementById("gateVal").textContent = label;
+    document.getElementById("noteP").textContent = label;
+    if (state.sel && state.sel > state.p) state.sel = null;
+    var visible = PINS.some(function (p) { return p.id === state.pin && p.from <= state.p; });
+    if (!visible) { state.pin = "hq"; var h = PINS[2]; document.getElementById("pinName").textContent = h.label; document.getElementById("pinDesc").textContent = h.desc; }
+    drawCases(); drawPins();
+  }
+
+  document.getElementById("progress").addEventListener("change", function (e) { state.p = +e.target.value; refresh(); });
+  document.getElementById("peek").addEventListener("click", function (e) {
+    state.peek = !state.peek;
+    e.currentTarget.setAttribute("aria-pressed", state.peek);
+    e.currentTarget.textContent = state.peek ? "End peek" : "Peek next episode";
+    document.body.setAttribute("data-peek", state.peek ? "on" : "off");
+    document.getElementById("peekNote").textContent = state.peek ? "Peeking at E" + (state.p + 1) + " — resets on reload, progress unchanged." : "Peek is temporary and never saved.";
+    drawCases();
+  });
+  /* progress change ends any peek so p+1 stays consistent */
+  document.getElementById("progress").addEventListener("change", function () {
+    if (state.peek) document.getElementById("peek").click();
+  });
+  refresh();
+})();
+</script>
+</body>
+</html>

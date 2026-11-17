@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440, initial-scale=1">
+<title>The Mentalist · Investigation board · Sacramento daylight</title>
+<style>
+:root {
+  --cream: #fbf4e4;
+  --ivory: #fffaf0;
+  --paper: #f5ead3;
+  --sand: #ead9b9;
+  --honey: #d9981e;
+  --honey-deep: #8a5a00;
+  --leather: #6e4326;
+  --leather-soft: #a06b3f;
+  --ink: #34261a;
+  --muted: #66553f;
+  --line: #dcc9a3;
+  --porcelain: #e6eeee;
+  --porcelain-deep: #5d7f84;
+  --red: #b3121b;
+  --serif: Constantia, "Palatino Linotype", Georgia, serif;
+  --sans: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  width: 100vw; height: 100vh; overflow: hidden;
+  display: grid; grid-template-rows: 64px 82px minmax(0, 1fr);
+  font: 14px/1.4 var(--sans); color: var(--ink);
+  background:
+    radial-gradient(1100px 520px at 12% -10%, #fff3cf 0%, rgba(255,243,207,0) 70%),
+    var(--cream);
+  position: relative;
+}
+/* afternoon light through blinds */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background: repeating-linear-gradient(115deg, rgba(255,226,150,.20) 0 46px, rgba(255,226,150,0) 46px 118px);
+  -webkit-mask-image: linear-gradient(160deg, #000 0%, rgba(0,0,0,.25) 70%);
+          mask-image: linear-gradient(160deg, #000 0%, rgba(0,0,0,.25) 70%);
+}
+body > * { position: relative; z-index: 1; }
+button, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 3px solid var(--leather); outline-offset: 2px; box-shadow: 0 0 0 5px var(--ivory); border-radius: 6px; }
+.sc { font-variant: small-caps; letter-spacing: .09em; text-transform: lowercase; font-family: var(--serif); font-weight: 700; }
+
+/* ---------- header ---------- */
+header.top {
+  display: flex; align-items: center; gap: 28px; padding: 0 24px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(#fffaf0, rgba(255,250,240,.7));
+}
+.brand { display: flex; align-items: center; gap: 12px; width: 300px; flex: none; }
+.brand svg { width: 34px; height: 40px; flex: none; }
+.wordmark { font-family: var(--serif); font-size: 30px; line-height: 1; font-weight: 700; color: var(--leather); letter-spacing: .01em; }
+.wordmark i { font-weight: 400; font-size: 20px; margin-right: 2px; color: var(--honey-deep); }
+.tag { display: block; margin-top: 4px; font-size: 13px; color: var(--muted); }
+nav.objects { flex: 1; }
+nav.objects ul { list-style: none; display: flex; gap: 4px; }
+nav.objects a {
+  display: flex; align-items: center; gap: 7px; height: 38px; padding: 0 13px; border-radius: 19px;
+  font-family: var(--serif); font-size: 16px; color: var(--ink); border: 1px solid transparent;
+  transition: background .15s, border-color .15s;
+}
+nav.objects a:hover { background: var(--paper); border-color: var(--line); }
+nav.objects a[aria-current="page"] { background: var(--leather); color: #fff8ea; font-weight: 700; }
+nav.objects svg { width: 15px; height: 17px; }
+.noncanon {
+  font: 700 11px/1 var(--sans); letter-spacing: .08em; padding: 4px 6px; border: 1.5px dashed var(--porcelain-deep);
+  color: #355559; border-radius: 4px; background: var(--porcelain);
+}
+.demo-tag {
+  flex: none; display: flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 6px;
+  border: 1.5px solid var(--honey-deep); color: var(--honey-deep); background: #fff1c9; font-weight: 700; font-size: 12px; letter-spacing: .1em;
+}
+.demo-tag::before { content: ""; width: 8px; height: 8px; transform: rotate(45deg); background: var(--honey-deep); }
+
+/* ---------- progress gate ---------- */
+.gate {
+  display: flex; align-items: center; gap: 28px; padding: 0 24px;
+  background: linear-gradient(90deg, #f7e3ae, #fbeec9 55%, #fbf4e4);
+  border-bottom: 1px solid #e2c982;
+}
+.gate .now { width: 420px; flex: none; }
+.gate .now .sc { font-size: 14px; color: var(--honey-deep); display: block; }
+.gate .now h1 { font-family: var(--serif); font-size: 30px; line-height: 1.1; font-weight: 700; color: var(--ink); }
+.gate .now h1 span { color: var(--leather); }
+.controls { display: flex; align-items: flex-end; gap: 12px; }
+.field label { display: block; font-size: 12px; color: var(--muted); font-weight: 600; margin-bottom: 3px; }
+select {
+  height: 40px; min-width: 150px; padding: 0 12px; border-radius: 8px; border: 1.5px solid var(--leather-soft); background: var(--ivory); font-weight: 600;
+}
+select:hover { border-color: var(--leather); background: #fff; }
+.btn-peek {
+  height: 40px; padding: 0 16px; border-radius: 8px; border: 1.5px solid var(--leather); background: transparent; font-weight: 700; color: var(--leather);
+  display: flex; align-items: center; gap: 8px; transition: background .15s;
+}
+.btn-peek:hover { background: rgba(110,67,38,.10); }
+.btn-peek[aria-pressed="true"] { background: var(--leather); color: #fff8ea; }
+.btn-peek:disabled { opacity: .55; cursor: not-allowed; }
+.scope { flex: 1; display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--ink); max-width: 420px; margin-left: auto; }
+.scope svg { width: 26px; height: 26px; flex: none; }
+.scope strong { font-weight: 700; }
+.peekchip { display: none; font-weight: 700; font-size: 12px; padding: 3px 8px; border-radius: 4px; background: var(--ink); color: #fff8ea; margin-top: 4px; width: max-content; }
+body.peeking .peekchip { display: inline-block; }
+
+/* ---------- main ---------- */
+main {
+  display: grid; grid-template-columns: 460px minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) 112px; gap: 14px; padding: 14px 24px 16px; min-height: 0;
+}
+.panel {
+  background: rgba(255,250,240,.92); border: 1px solid var(--line); border-radius: 14px;
+  box-shadow: 0 10px 24px -14px rgba(110,67,38,.45), 0 1px 0 #fff inset; min-height: 0; display: flex; flex-direction: column;
+}
+.panel > header { display: flex; align-items: baseline; justify-content: space-between; padding: 12px 18px 8px; border-bottom: 1px solid var(--line); flex: none; }
+.panel h2 { font-family: var(--serif); font-size: 20px; color: var(--leather); }
+.panel > header small { font-size: 12px; color: var(--muted); }
+
+/* cases */
+ul.cases { list-style: none; overflow: auto; padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+.case {
+  width: 100%; display: flex; align-items: center; gap: 14px; text-align: left; padding: 8px 12px 8px 10px; min-height: 76px;
+  border-radius: 10px; border: 1px solid var(--line); background: var(--ivory); transition: background .15s, border-color .15s, box-shadow .15s;
+}
+.case:hover { background: #fff; border-color: var(--honey); box-shadow: 0 6px 14px -8px rgba(138,90,0,.6); }
+.case[aria-current="true"] { background: #fff1c9; border: 2px solid var(--honey-deep); padding: 7px 11px 7px 9px; }
+.case[aria-current="true"] .title::after { content: "  ◂ viewing"; font: 700 12px var(--sans); color: var(--honey-deep); }
+.case .cameo { width: 48px; height: 60px; flex: none; }
+.case .ep { font-size: 13px; color: var(--muted); display: block; }
+.case .title { font-family: var(--serif); font-size: 19px; font-weight: 700; display: block; line-height: 1.2; }
+.case .status { font-size: 13px; font-weight: 600; display: block; margin-top: 2px; }
+.case .status.ok { color: #3d5f2a; }
+.case .go { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--leather); white-space: nowrap; }
+.case.locked { background: var(--paper); border-style: dashed; border-color: #b9a276; cursor: not-allowed; }
+.case.locked:hover { background: var(--paper); box-shadow: none; border-color: #b9a276; }
+.case.locked .title { color: var(--ink); }
+.case.locked .status { color: var(--muted); }
+.case.peek .status { color: var(--ink); }
+.case.peek { border: 2px dotted var(--ink); }
+
+/* map */
+.mapbox { flex: 1; position: relative; min-height: 0; overflow: hidden; border-radius: 0 0 14px 14px;
+  background: linear-gradient(#fdf1d0 0%, #fbf4e4 45%, #f2e5c6 100%); }
+.mapbox::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(115deg, rgba(255,226,150,.22) 0 40px, rgba(255,226,150,0) 40px 104px); }
+#city { position: absolute; inset: 0 0 112px 0; width: 100%; height: calc(100% - 112px); }
+.pin { cursor: pointer; transition: opacity .2s; }
+.pin:focus-visible { outline: none; box-shadow: none; }
+.pin:focus-visible .ring, .pin.sel .ring { stroke: var(--ink); stroke-width: 4; }
+.pin:hover .ring { stroke: var(--honey-deep); stroke-width: 4; }
+.pin text { font: 700 12px var(--sans); fill: var(--ink); }
+aside.legend {
+  position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 2; padding: 8px 14px; border-radius: 12px;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr; grid-template-areas: "t p n" "u p n"; column-gap: 16px; align-items: start;
+  background: rgba(255,250,240,.96); border: 1px solid var(--line); box-shadow: 0 10px 22px -12px rgba(110,67,38,.55);
+}
+aside.legend h3 { grid-area: t; font-size: 14px; color: var(--leather); margin-bottom: 3px; }
+aside.legend ul { grid-area: u; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-size: 12.5px; }
+aside.legend li { display: flex; align-items: center; gap: 8px; }
+aside.legend li svg { width: 20px; height: 20px; flex: none; }
+.pinlist { grid-area: p; border-left: 1px solid var(--line); padding-left: 12px; align-self: stretch; }
+.pinlist button { width: 100%; display: flex; justify-content: space-between; gap: 6px; align-items: center; padding: 3px 8px; border-radius: 6px; border: 1px solid transparent; background: transparent; text-align: left; font-size: 13px; font-weight: 600; }
+.pinlist button:hover { background: var(--paper); border-color: var(--line); }
+.pinlist button.sel { background: #fff1c9; border-color: var(--honey-deep); }
+.pinlist .when { font-size: 12px; color: var(--muted); font-weight: 400; }
+.pinnote { grid-area: n; font-size: 12px; color: var(--muted); border-left: 1px solid var(--line); padding-left: 12px; align-self: stretch; }
+.pinnote b { color: var(--ink); }
+
+/* characters */
+.chars { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 18px; padding: 10px 18px; }
+.chars .lead { width: 150px; flex: none; }
+.chars .lead h2 { font-size: 20px; }
+.chars .lead p { font-size: 12px; color: var(--muted); }
+.chars ul { list-style: none; display: flex; gap: 10px; flex: 1; }
+.chars li { flex: 1; }
+.char { width: 100%; display: flex; align-items: center; gap: 10px; text-align: left; padding: 8px 10px; border-radius: 10px; border: 1px solid var(--line); background: var(--ivory); transition: background .15s, border-color .15s; }
+.char:hover { background: #fff; border-color: var(--honey); }
+.char svg { width: 42px; height: 54px; flex: none; }
+.char b { display: block; font-family: var(--serif); font-size: 15px; line-height: 1.2; }
+.char span { font-size: 12.5px; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- shared artwork -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Original dripping-paint smiley (the only strong red on screen) -->
+    <symbol id="rj" viewBox="0 0 48 58">
+      <g fill="none" stroke="#b3121b" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M24 4.5c10.6-.3 18.8 7.3 18.6 17.8-.2 10.4-8 18-18.6 18-10.7 0-18.6-7.8-18.4-18C5.8 12 13.6 4.8 24 4.5z" stroke-width="3.6"/>
+        <path d="M13 27.5c3.4 8 18.6 8.3 22.4.2" stroke-width="3.6"/>
+        <path d="M16 40.5v8.5M31 40v13M23.5 41.5v4" stroke-width="3"/>
+      </g>
+      <g fill="#b3121b">
+        <ellipse cx="17" cy="17.5" rx="2.8" ry="3.3"/><ellipse cx="31" cy="17.5" rx="2.8" ry="3.3"/>
+        <circle cx="16" cy="50.2" r="2.5"/><circle cx="31" cy="54.6" r="2.7"/><circle cx="23.5" cy="47" r="1.9"/>
+      </g>
+    </symbol>
+    <clipPath id="oval"><ellipse cx="28" cy="35" rx="24" ry="31"/></clipPath>
+    <!-- Cameo: Patrick Jane style silhouette (generic: three-piece suit, vest, wavy hair, relaxed tilt) -->
+    <symbol id="cameo-jane" viewBox="0 0 56 70">
+      <ellipse cx="28" cy="35" rx="26" ry="33" fill="#f3e4c2" stroke="#6e4326" stroke-width="1.6"/>
+      <ellipse cx="28" cy="35" rx="23.2" ry="30.4" fill="none" stroke="#a06b3f" stroke-width=".8"/>
+      <g clip-path="url(#oval)" fill="none" stroke="#34261a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 70c0-10 6-15 16-17l5-3h6l5 3c10 2 16 7 16 17" fill="#e3cd9f"/>
+        <path d="M26 50l2 12 2-12M21 53l7 22 7-22"/>
+        <path d="M28 52l-3 6 3 2 3-2z" fill="#34261a"/>
+        <path d="M23 49c-1 4 3 6 5 6s6-2 5-6"/>
+        <path d="M17 54l5 16M39 54l-5 16"/>
+        <circle cx="28" cy="64" r=".8" fill="#34261a"/><circle cx="28" cy="68" r=".8" fill="#34261a"/>
+        <path d="M24.5 41.5c0 3 .5 6 .8 8.5h5.4c.3-2.500.8-5.500.8-8.500"/>
+        <path d="M21.500 29c-.5-6 2-10.500 7-10.500s7.500 4 7 10.500c-.5 5-3 8.500-7 8.500s-6.500-3.500-7-8.500z" fill="#f3e4c2" transform="rotate(5 28 28)"/>
+        <path d="M20.500 27c-2-5 1-10.500 6-11 2-1.500 5-1 7 .5 4 .5 6 4.500 4.500 9-.8-3-3-4.500-6-4.500-3 .5-5-.5-7.500 1.500-1.500 1-2.500 2.500-4 4.500z" fill="#34261a"/>
+        <path d="M19 24c-2 1-2 4 0 5M37 22c2 1 2.500 3 1 5"/>
+      </g>
+    </symbol>
+    <!-- Cameo: CBI team silhouette (agents with badge and holster) -->
+    <symbol id="cameo-cbi" viewBox="0 0 56 70">
+      <ellipse cx="28" cy="35" rx="26" ry="33" fill="#f3e4c2" stroke="#6e4326" stroke-width="1.6"/>
+      <ellipse cx="28" cy="35" rx="23.2" ry="30.4" fill="none" stroke="#a06b3f" stroke-width=".8"/>
+      <g clip-path="url(#oval)" fill="#e3cd9f" stroke="#34261a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <!-- back-left agent -->
+        <circle cx="16" cy="33" r="5"/><path d="M5 62c0-10 4-15 11-15s11 5 11 15z"/>
+        <!-- back-right agent -->
+        <circle cx="40" cy="33" r="5"/><path d="M29 62c0-10 4-15 11-15s11 5 11 15z"/>
+        <!-- front agent with badge and holster -->
+        <circle cx="28" cy="29" r="6" fill="#f3e4c2"/><path d="M12 70c0-12 6-19 16-19s16 7 16 19z"/>
+        <path d="M33 59l-1 7h5l-1-8z" fill="#34261a"/>
+        <path d="M20.500 57h5v5l-2.500 2-2.500-2z" fill="#f3e4c2"/>
+        <path d="M23 59.500v2" />
+        <path d="M22 28c1-5 11-5 12 0" fill="none"/>
+      </g>
+    </symbol>
+    <!-- Cameo: locked -->
+    <symbol id="cameo-lock" viewBox="0 0 56 70">
+      <ellipse cx="28" cy="35" rx="26" ry="33" fill="#efe3c8" stroke="#8a7650" stroke-width="1.6" stroke-dasharray="4 3"/>
+      <g fill="none" stroke="#66553f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="19" y="32" width="18" height="14" rx="2.500" fill="#e3d4b0"/><path d="M23 32v-5a5 5 0 0 1 10 0v5"/>
+      </g>
+      <circle cx="28" cy="39" r="1.800" fill="#66553f"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <a class="brand" href="#" aria-label="The Mentalist — home">
+    <svg viewBox="0 0 48 58" aria-hidden="true"><use href="#rj"/></svg>
+    <span>
+      <span class="wordmark"><i>The</i> Mentalist</span>
+      <span class="tag sc">Investigation board</span>
+    </span>
+  </a>
+  <nav class="objects" aria-label="Browse by object">
+    <ul>
+      <li><a href="#" aria-current="page">Cases</a></li>
+      <li><a href="#">Characters</a></li>
+      <li><a href="#">Map</a></li>
+      <li><a href="#"><svg viewBox="0 0 48 58" aria-hidden="true"><use href="#rj"/></svg>Red John <span style="font-size:13px;color:inherit;opacity:.85">(arc)</span></a></li>
+      <li><a href="#">Episodes</a></li>
+      <li><a href="#">Geek / Fans <span class="noncanon">NON-CANON</span></a></li>
+    </ul>
+  </nav>
+  <div class="demo-tag" role="note">DEMO DATA</div>
+</header>
+
+<section class="gate" aria-label="Spoiler progress">
+  <div class="now">
+    <span class="sc">Your progress</span>
+    <h1 id="gate-title">Watched through <span>S1 · E5</span></h1>
+  </div>
+  <div class="controls">
+    <div class="field">
+      <label for="progress">Change progress</label>
+      <select id="progress">
+        <option value="1">S1 · E1 Pilot</option>
+        <option value="2">S1 · E2</option>
+        <option value="3">S1 · E3</option>
+        <option value="4">S1 · E4</option>
+        <option value="5" selected>S1 · E5</option>
+        <option value="6">S1 · E6</option>
+      </select>
+    </div>
+    <button class="btn-peek" id="peek" type="button" aria-pressed="false">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.500 12S5.500 5 12 5s10.500 7 10.500 7-4 7-10.500 7S1.500 12 1.500 12z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span id="peek-label">Peek next episode</span>
+    </button>
+  </div>
+  <div class="scope" role="status" aria-live="polite">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#8a5a00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.500 9-8 11-4.500-2-8-6-8-11V5z"/><path d="M8.500 12l2.500 2.500 4.500-5"/></svg>
+    <div>
+      <div id="scope-text">Everything on this screen is limited to <strong>S1 · E5</strong>. Peeking is temporary and never saved.</div>
+      <span class="peekchip" id="peekchip">PEEKING · NOT SAVED</span>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="panel" aria-labelledby="cases-h">
+    <header><h2 id="cases-h">Season 1 · Cases</h2><small>Demo data</small></header>
+    <ul class="cases" id="cases"></ul>
+  </section>
+
+  <section class="panel" aria-labelledby="map-h">
+    <header><h2 id="map-h">Sacramento · Case map</h2><small>Tilted city model · demo geometry, not real tiles</small></header>
+    <div class="mapbox">
+      <svg id="city" viewBox="0 0 870 600" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Tilted three-dimensional model of Sacramento city blocks beside the Sacramento River, with demo pins"></svg>
+      <aside class="legend" aria-label="Map legend">
+        <h3 class="sc" style="font-size:16px">Legend</h3>
+        <ul>
+          <li><svg viewBox="0 0 48 58" aria-hidden="true"><use href="#rj"/></svg>Red John mark — demo scene</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 18V8l7-5 7 5v10z" fill="#d9981e" stroke="#6e4326" stroke-width="1.400"/></svg>CBI Headquarters, Sacramento</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M1 12c4-4 6 4 9 0s6 4 9 0v5H1z" fill="#bcd3d6" stroke="#5d7f84" stroke-width="1.200"/></svg>Sacramento River</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 8l8-4 8 4v7l-8 4-8-4z" fill="#ead9b9" stroke="#a06b3f" stroke-width="1.200"/></svg>Extruded blocks (schematic)</li>
+        </ul>
+        <div class="pinlist" id="pinlist" aria-label="Pins"></div>
+        <p class="pinnote"><b>Pins follow your progress.</b> A pin appears only once the episode that shows it is within what you have watched.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="panel chars" aria-labelledby="chars-h">
+    <div class="lead"><h2 id="chars-h">Characters</h2><p>Premise level only</p></div>
+    <ul>
+      <li><button class="char" type="button"><svg viewBox="0 0 56 70" aria-hidden="true"><ellipse cx="28" cy="35" rx="26" ry="33" fill="#f3e4c2" stroke="#6e4326" stroke-width="1.600"/><text x="28" y="43" text-anchor="middle" font-family="Constantia,Georgia,serif" font-size="22" font-weight="700" fill="#6e4326">PJ</text></svg><div><b>Patrick Jane</b><span>Consultant</span></div></button></li>
+      <li><button class="char" type="button"><svg viewBox="0 0 56 70" aria-hidden="true"><ellipse cx="28" cy="35" rx="26" ry="33" fill="#f3e4c2" stroke="#6e4326" stroke-width="1.600"/><text x="28" y="43" text-anchor="middle" font-family="Constantia,Georgia,serif" font-size="22" font-weight="700" fill="#6e4326">TL</text></svg><div><b>Teresa Lisbon</b><span>Senior agent</span></div></button></li>
+      <li><button class="char" type="button"><svg viewBox="0 0 56 70" aria-hidden="true"><ellipse cx="28" cy="35" rx="26" ry="33" fill="#f3e4c2" stroke="#6e4326" stroke-width="1.600"/><text x="28" y="43" text-anchor="middle" font-family="Constantia,Georgia,serif" font-size="22" font-weight="700" fill="#6e4326">KC</text></svg><div><b>Kimball Cho</b><span>Agent</span></div></button></li>
+      <li><button class="char" type="button"><svg viewBox="0 0 56 70" aria-hidden="true"><ellipse cx="28" cy="35" rx="26" ry="33" fill="#f3e4c2" stroke="#6e4326" stroke-width="1.600"/><text x="28" y="43" text-anchor="middle" font-family="Constantia,Georgia,serif" font-size="22" font-weight="700" fill="#6e4326">WR</text></svg><div><b>Wayne Rigsby</b><span>Agent</span></div></button></li>
+      <li><button class="char" type="button"><svg viewBox="0 0 56 70" aria-hidden="true"><ellipse cx="28" cy="35" rx="26" ry="33" fill="#f3e4c2" stroke="#6e4326" stroke-width="1.600"/><text x="28" y="43" text-anchor="middle" font-family="Constantia,Georgia,serif" font-size="22" font-weight="700" fill="#6e4326">GV</text></svg><div><b>Grace Van Pelt</b><span>Agent</span></div></button></li>
+    </ul>
+  </section>
+</main>
+
+<script>
+(function () {
+  var EPISODES = [
+    { n: 1, title: 'Pilot', cameo: 'jane' },
+    { n: 2, title: 'Red Hair and Silver Tape', cameo: 'cbi' },
+    { n: 3, title: 'Red Tide', cameo: 'jane' },
+    { n: 4, title: 'Ladies in Red', cameo: 'cbi' },
+    { n: 5, title: 'Redwood', cameo: 'jane' },
+    { n: 6, title: 'Red Handed', cameo: 'cbi' }
+  ];
+  var PINS = [
+    { id: 'hq', label: 'CBI Headquarters, Sacramento', short: 'CBI Headquarters', when: 1, gx: 8.5, gy: 9.5, kind: 'hq' },
+    { id: 'a', label: 'Scene A (demo)', short: 'Scene A (demo)', when: 2, gx: 4.5, gy: 11.5, kind: 'rj' },
+    { id: 'b', label: 'Scene B (demo)', short: 'Scene B (demo)', when: 4, gx: 11.5, gy: 6.5, kind: 'rj' }
+  ];
+  var state = { p: 5, peek: false, sel: 5, pin: null };
+  var NS = 'http://www.w3.org/2000/svg';
+
+  /* ---------- city model ---------- */
+  var S = 33, OX = 435, OY = 96, N = 14;
+  function px(gx, gy, z) { return [OX + (gx - gy) * 0.866 * S, OY + (gx + gy) * 0.5 * S - (z || 0)]; }
+  function pts(arr) { return arr.map(function (p) { return p[0].toFixed(1) + ',' + p[1].toFixed(1); }).join(' '); }
+  function poly(parent, arr, fill, stroke) {
+    var e = document.createElementNS(NS, 'polygon');
+    e.setAttribute('points', pts(arr)); e.setAttribute('fill', fill);
+    if (stroke) { e.setAttribute('stroke', stroke); e.setAttribute('stroke-width', '0.8'); e.setAttribute('stroke-linejoin', 'round'); }
+    parent.appendChild(e); return e;
+  }
+  function hash(a, b) { var h = Math.sin(a * 127.1 + b * 311.7) * 43758.5453; return h - Math.floor(h); }
+  function isWater(x, y) { return Math.abs(y + 0.5 - (3.4 + 0.9 * Math.sin(x * 0.55))) < 1.05; }
+  function isBridge(x) { return x === 4 || x === 9; }
+  function isPark(x, y) { return (x === 2 && y === 8) || (x === 3 && y === 8) || (x === 11 && y === 11) || (x === 6 && y === 6); }
+  function hqCell(x, y) { return x === 8 && y === 9; }
+
+  function buildCity() {
+    var svg = document.getElementById('city');
+    var g = document.createElementNS(NS, 'g');
+    svg.appendChild(g);
+    // soft ground shadow slab
+    poly(g, [px(0, 0, -10), px(N, 0, -10), px(N, N, -10), px(0, N, -10)], '#d8c294', '#b99c68');
+    poly(g, [px(0, N, -10), px(N, N, -10), px(N, N, 0), px(0, N, 0)], '#c9ae7c');
+    poly(g, [px(N, 0, -10), px(N, N, -10), px(N, N, 0), px(N, 0, 0)], '#b99c68');
+    for (var s = 0; s <= 2 * (N - 1); s++) {
+      for (var x = 0; x < N; x++) {
+        var y = s - x; if (y < 0 || y >= N) continue;
+        var cell = [px(x, y), px(x + 1, y), px(x + 1, y + 1), px(x, y + 1)];
+        if (isWater(x, y)) {
+          poly(g, cell, ((x + y) % 2) ? '#bcd3d6' : '#c9dddf');
+          if (isBridge(x)) {
+            poly(g, [px(x + .3, y), px(x + .7, y), px(x + .7, y + 1), px(x + .3, y + 1)], '#e8d6ae', '#a06b3f');
+          }
+          continue;
+        }
+        poly(g, cell, '#efe2c4', '#e0cfa6');
+        var r = hash(x, y);
+        if (isPark(x, y)) {
+          poly(g, [px(x + .1, y + .1), px(x + .9, y + .1), px(x + .9, y + .9), px(x + .1, y + .9)], '#d3dcad', '#b9c58c');
+          // trees
+          [[.3, .35], [.65, .55], [.4, .75]].forEach(function (t) {
+            var b = px(x + t[0], y + t[1], 0), c = px(x + t[0], y + t[1], 13);
+            var tr = document.createElementNS(NS, 'path');
+            tr.setAttribute('d', 'M' + b[0] + ',' + b[1] + ' L' + c[0] + ',' + c[1]);
+            tr.setAttribute('stroke', '#8a6a3c'); tr.setAttribute('stroke-width', '2'); g.appendChild(tr);
+            var cr = document.createElementNS(NS, 'circle');
+            cr.setAttribute('cx', c[0]); cr.setAttribute('cy', c[1] - 3); cr.setAttribute('r', 7);
+            cr.setAttribute('fill', '#b7c68a'); cr.setAttribute('stroke', '#8da061'); g.appendChild(cr);
+          });
+          continue;
+        }
+        var i = 0.16, h = 10 + r * 34, tone = r;
+        var tall = hqCell(x, y);
+        if (tall) { i = 0.1; h = 62; }
+        var x0 = x + i, x1 = x + 1 - i, y0 = y + i, y1 = y + 1 - i;
+        var left = tall ? '#c98f2a' : (tone > .5 ? '#d3bb91' : '#dcc7a1');
+        var right = tall ? '#a9741a' : (tone > .5 ? '#b99a6c' : '#c4a77c');
+        var top = tall ? '#f3c764' : (tone > .66 ? '#f8eed7' : (tone > .33 ? '#f2e3c3' : '#e9edea'));
+        poly(g, [px(x0, y1), px(x1, y1), px(x1, y1, h), px(x0, y1, h)], left, '#a9895b');
+        poly(g, [px(x1, y0), px(x1, y1), px(x1, y1, h), px(x1, y0, h)], right, '#a9895b');
+        poly(g, [px(x0, y0, h), px(x1, y0, h), px(x1, y1, h), px(x0, y1, h)], top, '#a9895b');
+        if (tall) {
+          // crown on headquarters block
+          poly(g, [px(x0 + .25, y0 + .25, h), px(x1 - .25, y0 + .25, h), px(x1 - .25, y1 - .25, h), px(x0 + .25, y1 - .25, h)], '#fff2c9', '#8a5a00');
+          poly(g, [px(x0 + .25, y1 - .25, h), px(x1 - .25, y1 - .25, h), px(x1 - .25, y1 - .25, h + 14), px(x0 + .25, y1 - .25, h + 14)], '#e9b64e', '#8a5a00');
+          poly(g, [px(x1 - .25, y0 + .25, h), px(x1 - .25, y1 - .25, h), px(x1 - .25, y1 - .25, h + 14), px(x1 - .25, y0 + .25, h + 14)], '#c78f2b', '#8a5a00');
+          poly(g, [px(x0 + .25, y0 + .25, h + 14), px(x1 - .25, y0 + .25, h + 14), px(x1 - .25, y1 - .25, h + 14), px(x0 + .25, y1 - .25, h + 14)], '#ffe9a6', '#8a5a00');
+        } else {
+          // window ticks on the left face
+          var rows = Math.floor(h / 11);
+          for (var k = 1; k < rows; k++) {
+            var a = px(x0 + .12, y1, k * 11), b = px(x1 - .12, y1, k * 11);
+            var ln = document.createElementNS(NS, 'line');
+            ln.setAttribute('x1', a[0]); ln.setAttribute('y1', a[1]); ln.setAttribute('x2', b[0]); ln.setAttribute('y2', b[1]);
+            ln.setAttribute('stroke', 'rgba(255,255,255,.55)'); ln.setAttribute('stroke-width', '1.4'); g.appendChild(ln);
+          }
+        }
+      }
+    }
+    // river label lying along the water
+    var lab = document.createElementNS(NS, 'text');
+    var lp = px(10.6, 3.6, 0);
+    lab.setAttribute('transform', 'translate(' + lp[0] + ',' + lp[1] + ') rotate(30) skewX(-30)');
+    lab.setAttribute('font-family', 'Constantia, Georgia, serif'); lab.setAttribute('font-style', 'italic');
+    lab.setAttribute('font-size', '15'); lab.setAttribute('fill', '#3f656a'); lab.textContent = 'Sacramento River';
+    g.appendChild(lab);
+    // pins
+    PINS.forEach(function (p) {
+      var cellH = p.kind === 'hq' ? 76 : 20;
+      var base = px(p.gx, p.gy, 0), tip = px(p.gx, p.gy, p.kind === 'hq' ? cellH : 0);
+      var top = [tip[0], tip[1] - (p.kind === 'hq' ? 18 : 40)];
+      var pg = document.createElementNS(NS, 'g');
+      pg.setAttribute('class', 'pin'); pg.setAttribute('id', 'pin-' + p.id);
+      pg.setAttribute('tabindex', '0'); pg.setAttribute('role', 'img'); pg.setAttribute('aria-label', p.label + (p.kind === 'rj' ? ', Red John mark, demo data' : ''));
+      var w = p.label.length * 6.6 + 18;
+      var inner = '<ellipse cx="' + base[0] + '" cy="' + base[1] + '" rx="12" ry="5" fill="rgba(52,38,26,.28)"/>';
+      if (p.kind === 'rj') {
+        inner += '<path d="M' + base[0] + ',' + base[1] + ' L' + top[0] + ',' + top[1] + '" stroke="#34261a" stroke-width="2"/>' +
+          '<circle class="ring" cx="' + top[0] + '" cy="' + top[1] + '" r="22" fill="#fffaf0" stroke="#6e4326" stroke-width="2.5"/>' +
+          '<svg x="' + (top[0] - 15) + '" y="' + (top[1] - 18) + '" width="30" height="36" viewBox="0 0 48 58"><use href="#rj"/></svg>';
+      } else {
+        inner += '<circle class="ring" cx="' + top[0] + '" cy="' + top[1] + '" r="13" fill="#d9981e" stroke="#6e4326" stroke-width="2.5"/>' +
+          '<path d="M' + (top[0] - 6) + ',' + (top[1] + 5) + ' v-8 l6,-5 6,5 v8z" fill="#fffaf0" stroke="#34261a" stroke-width="1.5"/>';
+      }
+      var ly = top[1] + (p.kind === 'rj' ? 36 : 28);
+      inner += '<rect x="' + (top[0] - w / 2) + '" y="' + (ly - 15) + '" width="' + w + '" height="21" rx="5" fill="#fffaf0" stroke="#6e4326" stroke-width="1.200"/>' +
+        '<text x="' + top[0] + '" y="' + (ly) + '" text-anchor="middle">' + p.label + '</text>';
+      pg.innerHTML = inner;
+      pg.addEventListener('click', function () { selectPin(p.id); });
+      pg.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectPin(p.id); } });
+      svg.appendChild(pg);
+    });
+  }
+
+  /* ---------- state rendering ---------- */
+  function effective() { return Math.min(6, state.p + (state.peek ? 1 : 0)); }
+  function selectPin(id) { state.pin = state.pin === id ? null : id; render(); }
+
+  function caseRow(ep) {
+    var eff = effective(), locked = ep.n > eff, peeked = ep.n > state.p && !locked;
+    var li = document.createElement('li');
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'case' + (locked ? ' locked' : '') + (peeked ? ' peek' : '');
+    var cameo = locked ? 'lock' : ep.cameo;
+    var status = locked
+      ? '<span class="status">&#128274;&#xFE0E; Locked · not yet watched</span>'
+      : peeked ? '<span class="status">&#128065;&#xFE0E; Peek preview · temporary</span>'
+      : '<span class="status ok">&#10003; Solved · within your progress</span>';
+    b.innerHTML = '<svg class="cameo" viewBox="0 0 56 70" aria-hidden="true"><use href="#cameo-' + cameo + '"/></svg>' +
+      '<span><span class="ep sc">Season 1 · Episode ' + ep.n + '</span><span class="title">' + ep.title + '</span>' + status + '</span>' +
+      (locked ? '' : '<span class="go">Open case file &rarr;</span>');
+    if (locked) { b.setAttribute('aria-disabled', 'true'); b.title = 'Details unlock when you reach this episode'; }
+    else {
+      if (state.sel === ep.n) b.setAttribute('aria-current', 'true');
+      b.addEventListener('click', function () { state.sel = ep.n; render(); });
+    }
+    li.appendChild(b); return li;
+  }
+
+  function render() {
+    var eff = effective();
+    if (state.sel > eff) state.sel = eff;
+    document.body.classList.toggle('peeking', state.peek);
+    document.getElementById('gate-title').innerHTML = 'Watched through <span>S1 · E' + state.p + '</span>';
+    document.getElementById('scope-text').innerHTML = state.peek
+      ? 'Showing up to <strong>S1 · E' + eff + '</strong> for now. Your saved progress stays <strong>S1 · E' + state.p + '</strong>.'
+      : 'Everything on this screen is limited to <strong>S1 · E' + state.p + '</strong>. Peeking is temporary and never saved.';
+    var peekBtn = document.getElementById('peek');
+    peekBtn.setAttribute('aria-pressed', String(state.peek));
+    peekBtn.disabled = state.p >= 6;
+    document.getElementById('peek-label').textContent = state.peek ? 'End peek' : 'Peek next episode';
+    var list = document.getElementById('cases'); list.innerHTML = '';
+    EPISODES.forEach(function (ep) { list.appendChild(caseRow(ep)); });
+    // pins
+    var pl = document.getElementById('pinlist'); pl.innerHTML = '';
+    PINS.forEach(function (p) {
+      var vis = p.when <= eff, el = document.getElementById('pin-' + p.id);
+      el.style.display = vis ? '' : 'none';
+      el.classList.toggle('sel', state.pin === p.id);
+      if (!vis) return;
+      var bt = document.createElement('button'); bt.type = 'button';
+      bt.className = state.pin === p.id ? 'sel' : '';
+      bt.setAttribute('aria-pressed', String(state.pin === p.id));
+      bt.innerHTML = '<span>' + p.short + '</span><span class="when">' + (p.kind === 'hq' ? 'landmark' : 'from E' + p.when + ' (demo)') + '</span>';
+      bt.addEventListener('click', function () { selectPin(p.id); });
+      pl.appendChild(bt);
+    });
+  }
+
+  document.getElementById('progress').addEventListener('change', function (e) {
+    state.p = parseInt(e.target.value, 10); state.peek = false; render();
+  });
+  document.getElementById('peek').addEventListener('click', function () { state.peek = !state.peek; render(); });
+  buildCity(); render();
+})();
+</script>
+</body>
+</html>

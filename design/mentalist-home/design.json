@@ -1,0 +1,10 @@
+{
+  "title": "The Mentalist — home / investigation board",
+  "brief": "Main screen of a personal, spoiler-safe desktop database of The Mentalist: progress gate, case list with silhouettes on solved cases, 3D map with Red John smiley pins, and entry points to characters, the Red John arc and the non-canon Geek/Fans section. 100% Mentalist style: palette, typography, everything.",
+  "feature": "odd/tasks/foundation-spike.md",
+  "artboards": [
+    { "file": "01-cbi-case-file.html", "title": "CBI case file", "tradeoff": "Most thematic and tactile (manila folders, stamps, typed labels); denser and more decorative, paper textures may tire over long sessions", "width": 1440, "height": 900 },
+    { "file": "02-red-room.html", "title": "Red room", "tradeoff": "Map-first and dramatic, red reserved for Red John; dark and intense, less comfortable for long reading and other states cannot use red", "width": 1440, "height": 900 },
+    { "file": "03-sacramento-daylight.html", "title": "Sacramento daylight", "tradeoff": "Calm, editorial and the most readable (warm daylight, serif, whitespace); least thriller punch, the menace has to come from the smiley alone", "width": 1440, "height": 900 }
+  ]
+}
