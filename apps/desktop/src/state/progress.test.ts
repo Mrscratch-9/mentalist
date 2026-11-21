@@ -4,6 +4,8 @@ import {
   PROGRESS_KEY,
   createProgressStore,
   memoryStorage,
+  parseProgressInput,
+  type StorageAdapter,
 } from "./progress";
 
 describe("progress store", () => {
@@ -72,5 +74,49 @@ describe("progress store", () => {
     const store = createProgressStore(memoryStorage());
     expect(store.startPeek({ season: 0, episode: 1 }).ok).toBe(false);
     expect(store.effective()).toEqual(OWNER_PROGRESS);
+  });
+});
+
+describe("progress store with failing storage", () => {
+  const throwing: StorageAdapter = {
+    getItem: () => {
+      throw new Error("storage disabled");
+    },
+    setItem: () => {
+      throw new Error("quota exceeded");
+    },
+  };
+
+  it("set returns an error result instead of throwing", () => {
+    const store = createProgressStore(throwing);
+    const result = store.set({ season: 2, episode: 3 });
+    expect(result).toEqual({ ok: false, error: "Could not save progress." });
+  });
+
+  it("get falls back to the configured value", () => {
+    const store = createProgressStore(throwing);
+    expect(store.get()).toEqual(OWNER_PROGRESS);
+  });
+});
+
+describe("parseProgressInput", () => {
+  it.each([
+    ["5", "end", { season: 5, episode: "end" }],
+    ["5", " End ", { season: 5, episode: "end" }],
+    [" 2 ", "7", { season: 2, episode: 7 }],
+  ])("parses season %j episode %j", (season, episode, expected) => {
+    expect(parseProgressInput(season, episode)).toEqual(expected);
+  });
+
+  it.each([
+    ["", "3"],
+    ["2", ""],
+    ["abc", "3"],
+    ["2", "x"],
+    ["0", "3"],
+    ["2", "1.5"],
+    ["-1", "end"],
+  ])("rejects season %j episode %j", (season, episode) => {
+    expect(parseProgressInput(season, episode)).toBeNull();
   });
 });

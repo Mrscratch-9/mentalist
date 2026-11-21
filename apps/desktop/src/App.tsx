@@ -3,6 +3,7 @@ import {
   createProgressStore,
   describeProgress,
   localStorageAdapter,
+  parseProgressInput,
   type Progress,
 } from "./state/progress";
 
@@ -14,10 +15,11 @@ export function App() {
   const [error, setError] = useState<string | null>(null);
 
   function save() {
-    const next: Progress = {
-      season: Number(season),
-      episode: episode.trim().toLowerCase() === "end" ? "end" : Number(episode),
-    };
+    const next = parseProgressInput(season, episode);
+    if (next === null) {
+      setError("Season and episode must be positive whole numbers (or end of season).");
+      return;
+    }
     const result = store.set(next);
     if (result.ok) {
       setProgress(store.get());

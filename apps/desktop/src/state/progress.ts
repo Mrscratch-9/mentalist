@@ -59,15 +59,15 @@ export function createProgressStore(
   let peek: Progress | null = null;
 
   const get = (): Progress => {
-    const raw = storage.getItem(PROGRESS_KEY);
-    if (raw === null) return { ...initial };
     try {
+      const raw = storage.getItem(PROGRESS_KEY);
+      if (raw === null) return { ...initial };
       const parsed: unknown = JSON.parse(raw);
       if (isValidProgress(parsed)) {
         return { season: parsed.season, episode: parsed.episode };
       }
     } catch {
-      // fall through to the configured value
+      // unreadable storage or corrupt value: fall through to the configured value
     }
     return { ...initial };
   };
@@ -81,10 +81,14 @@ export function createProgressStore(
     get,
     set(p) {
       if (!isValidProgress(p)) return invalid;
-      storage.setItem(
-        PROGRESS_KEY,
-        JSON.stringify({ season: p.season, episode: p.episode }),
-      );
+      try {
+        storage.setItem(
+          PROGRESS_KEY,
+          JSON.stringify({ season: p.season, episode: p.episode }),
+        );
+      } catch {
+        return { ok: false, error: "Could not save progress." };
+      }
       return { ok: true };
     },
     startPeek(p) {
@@ -97,6 +101,21 @@ export function createProgressStore(
     },
     effective: () => (peek ? { ...peek } : get()),
   };
+}
+
+/**
+ * Parse the home form's text fields. Episode accepts a positive whole number or
+ * "end" (case-insensitive). Returns null for anything else.
+ */
+export function parseProgressInput(
+  season: string,
+  episode: string,
+): Progress | null {
+  const toInt = (s: string): number | null =>
+    /^\d+$/.test(s.trim()) ? Number(s.trim()) : null;
+  const e = episode.trim().toLowerCase() === "end" ? "end" : toInt(episode);
+  const p = { season: toInt(season), episode: e };
+  return isValidProgress(p) ? p : null;
 }
 
 export function describeProgress(p: Progress): string {
