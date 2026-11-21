@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "chosen": "02-red-room.html",
+  "handoffs": {
+    "02-red-room.html": {
+      "status": "implemented",
+      "queued": false,
+      "sentAt": "2026-11-17T22:41:02.006Z",
+      "startedAt": "2026-11-17T22:41:49.605Z",
+      "implementedAt": "2026-11-17T22:50:15.525Z",
+      "feature": "odd/tasks/foundation-spike.md",
+      "note": "Implemented in spike/src/redroom (real MapLibre 3D map + deck.gl pins). Run `pnpm dev` in spike/ and open http://127.0.0.1:1420/ to compare."
+    }
+  }
+}

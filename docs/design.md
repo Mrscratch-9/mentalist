@@ -136,6 +136,18 @@ Global strategy — **canary test**: a fixture dataset where every field carries
 
 No server: the earlier Hono API was dropped when the target became desktop. The threat model is accidental UI leakage, not an adversary, so having the database in app memory is acceptable; the `core` boundary and canary tests enforce gating.
 
+### Typography
+
+The show's title card uses Helvetica Neue (Medium and Light, uppercase, slightly wide letter spacing). It needs a paid commercial license, so the app ships free (SIL OFL) neo-grotesque alternatives, bundled offline (no CDN):
+
+| Role | Font | Use |
+|---|---|---|
+| Titles and logo | Inter, weights 300 and 500 | Uppercase, letter spacing ~0.08em, the Helvetica Neue look |
+| UI and reading | Inter, weights 400 and 600 | Menus, case cards, long synopses |
+| Case files (optional) | Courier Prime | CBI reports, Patrick Jane's notes, evidence |
+
+One family for titles and UI keeps the bundle small. Alternatives considered: Work Sans, Roboto (titles); Plus Jakarta Sans (UI); IBM Plex Mono (case files).
+
 ### Rejected alternatives
 
 - **Electron**: all-TS and simple, but heavier (bundled Chromium) and no mobile path.
@@ -144,6 +156,6 @@ No server: the earlier Hono API was dropped when the target became desktop. The 
 
 ## 8. Next steps
 
-1. Technical spike (`spike/`, throwaway): done, see `docs/spike-report.md`. All stack checks pass; RAM target (< 300 MB) fails with the 3D map open — owner decision pending.
-2. UI design session before product code.
+1. Technical spike (`spike/`, throwaway): done, see `docs/spike-report.md`. All stack checks pass; RAM target raised to < 700 MB with the 3D map open (owner decision).
+2. UI design session before product code: done, direction `design/mentalist-home/02-red-room.html` chosen and prototyped in the spike.
 3. Phase 4: ask the owner's watch progress, then start loading series data.
