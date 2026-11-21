@@ -158,4 +158,5 @@ One family for titles and UI keeps the bundle small. Alternatives considered: Wo
 
 1. Technical spike (`spike/`, throwaway): done, see `docs/spike-report.md`. All stack checks pass; RAM target raised to < 700 MB with the 3D map open (owner decision).
 2. UI design session before product code: done, direction `design/mentalist-home/02-red-room.html` chosen and prototyped in the spike.
-3. Phase 4: ask the owner's watch progress, then start loading series data.
+3. Phase 4, slice A: done. Monorepo with `packages/core` (spoiler-gated knowledge engine, canary tests) and `apps/desktop` (Tauri shell, offline fonts, progress store). Owner progress: end of season 5.
+4. Next: port the Red room home into `apps/desktop` on top of `core`, then the data pipeline (YAML → validator → compiled SQLite) and the first episodes up to the owner's progress.

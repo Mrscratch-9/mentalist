@@ -13,12 +13,14 @@ Feature: create the product monorepo with `packages/core` (the spoiler-gated kno
 
 ## Tasks
 
-- T1 [S1] Monorepo root: pnpm workspaces (`apps/*`, `packages/*`), shared `tsconfig.base.json`, Vitest, root scripts (`test`, `typecheck`). Route: inline. Commit: pending.
-- T2 [S3, S4, S6] `packages/core`: domain types, SQL driver interface, schema DDL, knowledge engine (visible entities/claims/episodes, effective status, supersession, peek, uniform not-found), canary fixture + property-based canary test, architecture test. Tests run on `node:sqlite` (FTS5 verified). Route: worker (parallel with T3). Commit: pending.
-- T3 [S1, S2, S5] `apps/desktop`: Tauri 2 + React + Vite shell, offline fonts, user-state progress store with the owner's progress (end of season 5) as the configured value, a placeholder home showing progress and "no series data loaded yet". Route: worker (parallel with T2). Commit: pending.
-- T4 [S1-S6] Integrate: root `pnpm test` + typecheck green, Tauri `cargo check`, update `docs/design.md` next steps. Route: inline. Commit: pending.
+- T1 [S1] Monorepo root: pnpm workspaces (`apps/*`, `packages/*`), shared `tsconfig.base.json`, Vitest, root scripts (`test`, `typecheck`). Route: inline. Commit: 127a627. Done.
+- T2 [S3, S4, S6] `packages/core`: domain types, SQL driver interface, schema DDL, knowledge engine (visible entities/claims/episodes, effective status, supersession, peek, uniform not-found), canary fixture + property-based canary test, architecture test. Tests run on `node:sqlite` (FTS5 verified). Route: worker (parallel with T3). Commit: a0c8a25. Done: 34 core tests, canary over p=0..14 (fast-check, 200 runs).
+- T3 [S1, S2, S5] `apps/desktop`: Tauri 2 + React + Vite shell, offline fonts, user-state progress store with the owner's progress (end of season 5) as the configured value, a placeholder home showing progress and "no series data loaded yet". Route: worker (parallel with T2). Commit: d389655. Done: 15 store tests; vite build, cargo check OK.
+- T4 [S1-S6] Integrate: root `pnpm test` + typecheck green, Tauri `cargo check`, update `docs/design.md` next steps. Route: inline. Commit: the "docs: close product foundation slice" commit. Done.
+- T5 [S1] Follow-ups from native review (advisory, non-blocking): restrictive Tauri CSP instead of `csp: null`; progress store `get`/`set` must return `{ ok: false }` when storage throws; extract and test the text-to-progress parser from `App.tsx`; declare `vitest` in the package devDependencies. Route: inline. Commit: pending.
 
 ## Log
 
 - L1: "acabo de la terminar la temporada 5 y empieza con a" (answer to: "¿Hasta qué temporada y episodio viste la serie?" and "¿Cómo empezamos? A. Primero creo la estructura del proyecto ... B. Lo mismo y además cargo los primeros episodios hasta donde viste.").
 - L2: Decisions: branch `feat/product-foundation` from `main` 4e42218. Progress is stored as season + episode in user state; mapping to global `ep_index` happens in `core` once episodes exist. `node:sqlite` (Node 26) has FTS5, so core tests need no native module; the app uses SQLite WASM per the spike.
+- L3: Verification: root `pnpm test` 49/49 pass, `pnpm typecheck` OK; desktop home rendered headless at 1440x900 with no JS errors and no external requests; `cargo check` OK. Native review of the desktop commit (lineage review-bf08cde3f42b1167, lenses risk + reliability) approved and acknowledged; 4 advisory findings recorded as T5. Core commit was not separately reviewed (assess due reason was the desktop process entry).
