@@ -1,4 +1,6 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { openCanon, type Canon } from "./data/canon";
+import { listBySeason, toCoreProgress, type SeasonGroup } from "./state/coreProgress";
 import {
   createProgressStore,
   describeProgress,
@@ -13,6 +15,26 @@ export function App() {
   const [season, setSeason] = useState(String(progress.season));
   const [episode, setEpisode] = useState(String(progress.episode));
   const [error, setError] = useState<string | null>(null);
+  const [canon, setCanon] = useState<Canon | null>(null);
+  const [loadError, setLoadError] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    openCanon().then(
+      (c) => { if (!cancelled) setCanon(c); },
+      () => { if (!cancelled) setLoadError(true); },
+    );
+    return () => { cancelled = true; };
+  }, []);
+
+  const groups = useMemo<SeasonGroup[] | null>(() => {
+    if (!canon) return null;
+    try {
+      return listBySeason(canon.engine, toCoreProgress(canon.db, progress));
+    } catch {
+      return null;
+    }
+  }, [canon, progress]);
 
   function save() {
     const next = parseProgressInput(season, episode);
@@ -57,7 +79,33 @@ export function App() {
         {error && <p className="error" role="alert">{error}</p>}
       </section>
 
-      <p className="empty">No series data loaded yet.</p>
+      {loadError ? (
+        <p className="error" role="alert">The series data could not be loaded.</p>
+      ) : !canon ? (
+        <p className="empty">Loading series data…</p>
+      ) : groups === null ? (
+        <p className="error" role="alert">That season and episode are not in the series data.</p>
+      ) : (
+        <section className="episodes" aria-label="Episodes">
+          {groups.map((g) => (
+            <div key={g.season} className="season">
+              <h2>Season {g.season}</h2>
+              <ol>
+                {g.episodes.map((e) => (
+                  <li key={e.number} className={e.watched ? "ep" : "ep unwatched"}>
+                    <span className="ep-num">{e.season}x{String(e.number).padStart(2, "0")}</span>
+                    <span className="ep-body">
+                      <span className="ep-title">{e.title}</span>
+                      {!e.watched && <span className="ep-flag">Not watched yet</span>}
+                      <span className="ep-synopsis">{e.synopsis}</span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          ))}
+        </section>
+      )}
     </main>
   );
 }

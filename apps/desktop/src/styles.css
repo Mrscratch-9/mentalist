@@ -78,3 +78,18 @@ button {
   font-family: var(--font-case);
   font-weight: 400;
 }
+
+.episodes { width: min(46rem, 100%); font-family: var(--font-case); }
+.season h2 {
+  font-family: var(--font-title); font-weight: 500; font-size: 0.95rem;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold);
+  border-bottom: 1px solid var(--line); padding-bottom: 0.4rem;
+}
+.season ol { list-style: none; margin: 0 0 1.5rem; padding: 0; }
+.ep { display: flex; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid var(--line); }
+.ep-num { color: var(--muted); flex: none; width: 3.5rem; }
+.ep-body { display: flex; flex-direction: column; gap: 0.2rem; }
+.ep-title { font-weight: 700; }
+.ep-synopsis { color: var(--muted); font-size: 0.9rem; }
+.ep.unwatched { opacity: 0.7; }
+.ep-flag { color: var(--red); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; }
