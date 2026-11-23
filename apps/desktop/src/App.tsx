@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { openCanon, type Canon } from "./data/canon";
-import { listBySeason, toCoreProgress, type SeasonGroup } from "./state/coreProgress";
+import { resolveEpisodeList, type EpisodeListResult } from "./state/coreProgress";
 import {
   createProgressStore,
   describeProgress,
@@ -20,21 +20,27 @@ export function App() {
 
   useEffect(() => {
     let cancelled = false;
+    let opened: Canon | null = null;
     openCanon().then(
-      (c) => { if (!cancelled) setCanon(c); },
-      () => { if (!cancelled) setLoadError(true); },
+      (c) => {
+        if (cancelled) c.close();
+        else { opened = c; setCanon(c); }
+      },
+      (e) => {
+        console.error("Series data load failed:", e instanceof Error ? e.message : "unknown error");
+        if (!cancelled) setLoadError(true);
+      },
     );
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+      opened?.close();
+    };
   }, []);
 
-  const groups = useMemo<SeasonGroup[] | null>(() => {
-    if (!canon) return null;
-    try {
-      return listBySeason(canon.engine, toCoreProgress(canon.db, progress));
-    } catch {
-      return null;
-    }
-  }, [canon, progress]);
+  const result = useMemo<EpisodeListResult | null>(
+    () => (canon ? resolveEpisodeList(canon, progress) : null),
+    [canon, progress],
+  );
 
   function save() {
     const next = parseProgressInput(season, episode);
@@ -83,11 +89,13 @@ export function App() {
         <p className="error" role="alert">The series data could not be loaded.</p>
       ) : !canon ? (
         <p className="empty">Loading series data…</p>
-      ) : groups === null ? (
+      ) : result === null ? null : result.kind === "not-found" ? (
         <p className="error" role="alert">That season and episode are not in the series data.</p>
+      ) : result.kind === "error" ? (
+        <p className="error" role="alert">Could not read the series data.</p>
       ) : (
         <section className="episodes" aria-label="Episodes">
-          {groups.map((g) => (
+          {result.groups.map((g) => (
             <div key={g.season} className="season">
               <h2>Season {g.season}</h2>
               <ol>

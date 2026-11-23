@@ -1,4 +1,5 @@
 import {
+  NotFoundError,
   endOfSeason,
   resolveProgress,
   type EpisodeView,
@@ -47,4 +48,23 @@ export function listBySeason(engine: KnowledgeEngine, p: CoreProgress): SeasonGr
     g.episodes.push(episodeRow(e));
   }
   return groups;
+}
+
+export type EpisodeListResult =
+  | { kind: "ok"; groups: SeasonGroup[] }
+  | { kind: "not-found" }
+  | { kind: "error" };
+
+/** Only NotFoundError means "not in the data"; anything else is a failure. Never logs data. */
+export function resolveEpisodeList(
+  canon: { db: SqlDriver; engine: KnowledgeEngine },
+  p: Progress,
+): EpisodeListResult {
+  try {
+    return { kind: "ok", groups: listBySeason(canon.engine, toCoreProgress(canon.db, p)) };
+  } catch (e) {
+    if (e instanceof NotFoundError) return { kind: "not-found" };
+    console.error("Series data query failed:", e instanceof Error ? e.name : "unknown error");
+    return { kind: "error" };
+  }
 }

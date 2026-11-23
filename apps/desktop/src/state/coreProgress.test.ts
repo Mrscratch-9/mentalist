@@ -5,7 +5,7 @@ import {
   KnowledgeEngine, NotFoundError, loadDataset, peek,
   type Dataset, type Episode, type SqlDriver, type SqlValue,
 } from "@mentalist/core";
-import { listBySeason, toCoreProgress } from "./coreProgress";
+import { listBySeason, resolveEpisodeList, toCoreProgress } from "./coreProgress";
 
 function nodeDriver(): SqlDriver {
   const raw = new DatabaseSync(":memory:");
@@ -91,5 +91,24 @@ describe("listBySeason", () => {
     const { db, engine } = setup();
     const groups = listBySeason(engine, toCoreProgress(db, { season: 2, episode: "end" }));
     expect(JSON.stringify(groups)).not.toContain("SECRET");
+  });
+});
+
+describe("resolveEpisodeList", () => {
+  it("returns groups for existing progress", () => {
+    const { db, engine } = setup();
+    const r = resolveEpisodeList({ db, engine }, { season: 1, episode: 2 });
+    expect(r.kind).toBe("ok");
+  });
+
+  it("returns not-found only for NotFoundError", () => {
+    const { db, engine } = setup();
+    expect(resolveEpisodeList({ db, engine }, { season: 9, episode: 1 }).kind).toBe("not-found");
+  });
+
+  it("returns error for other failures", () => {
+    const { engine } = setup();
+    const broken: SqlDriver = { all: () => { throw new Error("boom"); }, get: () => { throw new Error("boom"); }, exec: () => {} };
+    expect(resolveEpisodeList({ db: broken, engine }, { season: 1, episode: 1 }).kind).toBe("error");
   });
 });
