@@ -14,7 +14,7 @@ Feature: `packages/pipeline` turns authored YAML canon files into a validated `D
 
 - T1 [S1-S5] `packages/pipeline`: Zod authoring schema, consistency validator, compiler to `Dataset` with opaque IDs, SQLite writer (via `loadDataset` of `@mentalist/core` on `node:sqlite`), CLI `pnpm data:build <in-dir> <out.sqlite>`, tests. Route: worker (context backstop). Commit: fa8d248 (manifest 0e47d6f). Done: 44 tests; native review approved (lineage review-d3e8c75eb19b1e8d) with 3 advisory findings → T3.
 - T2 [S1] Docs: `docs/design.md` §5 authoring format and §8 next steps. Route: inline. Commit: the "docs: record data pipeline" commit. Done.
-- T3 [S2, S5] Review follow-ups: duplicate arc orders / arc blocks rejected by the validator, I/O failures exit 2 without a stack trace, missing CLI tests (YAML parse error, multi-file merge order, `.yml`, failed run with `--force`, temp file removed on write failure). Route: worker (context backstop). Commit: pending.
+- T3 [S2, S5] Review follow-ups: duplicate arc orders / arc blocks rejected by the validator, I/O failures exit 2 without a stack trace, missing CLI tests (YAML parse error, multi-file merge order, `.yml`, failed run with `--force`, temp file removed on write failure). Route: worker (context backstop). Commit: c2a256b. Done: rules arc.duplicate, arc.order_duplicate; I/O failures exit 2; 51 pipeline tests.
 - T4 [S1] Owner progress update (L3). Route: inline. Commit: 2819c30. Done.
 
 ## Log
