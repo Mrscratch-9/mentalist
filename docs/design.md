@@ -95,6 +95,8 @@ theory(id, title, body, source_url, author_handle?, spoils_up_to, tags)
 
 YAML files in git → validator (Zod + consistency rules) → compiled read-only SQLite shipped inside the app.
 
+Implemented in `packages/pipeline` (`pnpm data:build <in-dir> <out.sqlite> [--force] [--verbose]`). Authors write readable keys and episode codes (`S1E3`); the compiler derives `ep_index` from episode order and emits opaque IDs (truncated SHA-256 of a namespaced key). Validator errors name only file, record path and rule, never record text, unless `--verbose` (the owner must not see future data). Authoring format and rule codes: `packages/pipeline/README.md`.
+
 Build-time checks: `revealed_in ≥ introduced_in` of subject and object; `superseded_in > revealed_in`; source required; no cycles in `superseded_by`; arc item ordering rule.
 
 ## 6. Leak vectors and tests
@@ -158,5 +160,6 @@ One family for titles and UI keeps the bundle small. Alternatives considered: Wo
 
 1. Technical spike (`spike/`, throwaway): done, see `docs/spike-report.md`. All stack checks pass; RAM target raised to < 700 MB with the 3D map open (owner decision).
 2. UI design session before product code: done, direction `design/mentalist-home/02-red-room.html` chosen and prototyped in the spike.
-3. Phase 4, slice A: done. Monorepo with `packages/core` (spoiler-gated knowledge engine, canary tests) and `apps/desktop` (Tauri shell, offline fonts, progress store). Owner progress: end of season 5.
-4. Next: port the Red room home into `apps/desktop` on top of `core`, then the data pipeline (YAML → validator → compiled SQLite) and the first episodes up to the owner's progress.
+3. Phase 4, slice A: done. Monorepo with `packages/core` (spoiler-gated knowledge engine, canary tests) and `apps/desktop` (Tauri shell, offline fonts, progress store). Owner progress at the time: end of season 5.
+4. Phase 4, slice B: done. Data pipeline `packages/pipeline` (YAML → validator → compiled SQLite). Owner progress: season 6, episode 9.
+5. Next: author the first real canon (episode list with sources) up to the owner's progress, load the compiled database in `apps/desktop` through SQLite WASM, then port the Red room home on top of `core`.
