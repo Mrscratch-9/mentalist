@@ -1,0 +1,198 @@
+# The Mentalist, season 3. Source: English Wikipedia, "List of The Mentalist episodes" (broadcast order).
+# Spoilers: do not open outside the app.
+
+episodes:
+  - code: S3E1
+    title: "Red Sky at Night"
+    synopsis: "The team investigates the kidnapping of a lobbyist and the murder of his chauffeur."
+    details: ""
+  - code: S3E2
+    title: "Cackle-Bladder Blood"
+    synopsis: "A businessman who was being conned is found murdered."
+    details: ""
+  - code: S3E3
+    title: "The Blood on His Hands"
+    synopsis: "A young woman tied to a controversial organization is found dead."
+    details: ""
+  - code: S3E4
+    title: "Red Carpet Treatment"
+    synopsis: "A recently freed convict, cleared by DNA evidence, is found murdered."
+    details: ""
+  - code: S3E5
+    title: "The Red Ponies"
+    synopsis: "A well-known jockey is found murdered, and the trail leads to a horse racing track."
+    details: ""
+  - code: S3E6
+    title: "Pink Chanel Suit"
+    synopsis: "A federal judge's daughter goes missing, and her boyfriend is found dead on the family's guarded compound."
+    details: ""
+  - code: S3E7
+    title: "Red Hot"
+    synopsis: "A building explodes while the team investigates a death threat sent to a businessman."
+    details: ""
+  - code: S3E8
+    title: "Ball of Fire"
+    synopsis: "The team works a new case."
+    details: ""
+  - code: S3E9
+    title: "Red Moon"
+    synopsis: "A triple murder, including two police officers, draws the team in; a local astrologer offers to help."
+    details: ""
+  - code: S3E10
+    title: "Jolly Red Elf"
+    synopsis: "A man dressed as Santa is found dead."
+    details: ""
+  - code: S3E11
+    title: "Bloodsport"
+    synopsis: "A journalist is killed beneath the stands at a professional martial arts fight."
+    details: ""
+  - code: S3E12
+    title: "Bloodhounds"
+    synopsis: "A double murder looks like the work of a known serial killer, and a criminal profiler joins the team."
+    details: ""
+  - code: S3E13
+    title: "Red Alert"
+    synopsis: "A documentary filmmaker is found dead in her home."
+    details: ""
+  - code: S3E14
+    title: "Blood for Blood"
+    synopsis: "The key witness against a drug baron is murdered while under protection."
+    details: ""
+  - code: S3E15
+    title: "Red Gold"
+    synopsis: "A modern-day gold prospector is found murdered."
+    details: ""
+  - code: S3E16
+    title: "Red Queen"
+    synopsis: "A university professor of ancient art is found stabbed to death."
+    details: ""
+  - code: S3E17
+    title: "Bloodstream"
+    synopsis: "A hospital administrator is found murdered at a golf driving range, with a radiation badge reading above the safe limit."
+    details: ""
+  - code: S3E18
+    title: "The Red Mile"
+    synopsis: "A murder victim's body is stolen on its way to the morgue."
+    details: ""
+  - code: S3E19
+    title: "Every Rose Has Its Thorn"
+    synopsis: "The CEO of a high-end matchmaking company is found murdered in San Francisco."
+    details: ""
+  - code: S3E20
+    title: "Redacted"
+    synopsis: "The team works a new case."
+    details: ""
+  - code: S3E21
+    title: "Like a Redheaded Stepchild"
+    synopsis: "A corrections officer is found stabbed to death near a jewelry store in a small town."
+    details: ""
+  - code: S3E22
+    title: "Rhapsody in Red"
+    synopsis: "A symphony violinist is found shot dead at a bus stop, with a single flower petal near the scene."
+    details: ""
+  - code: S3E23
+    title: "Strawberries and Cream (Part I)"
+    synopsis: "A man wearing a suicide vest dies in an explosion at a gas station minimart."
+    details: ""
+  - code: S3E24
+    title: "Strawberries and Cream (Part II)"
+    synopsis: "The team works a new case."
+    details: ""
+
+sources:
+  - key: src-s3e1
+    kind: episode
+    episode: S3E1
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e2
+    kind: episode
+    episode: S3E2
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e3
+    kind: episode
+    episode: S3E3
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e4
+    kind: episode
+    episode: S3E4
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e5
+    kind: episode
+    episode: S3E5
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e6
+    kind: episode
+    episode: S3E6
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e7
+    kind: episode
+    episode: S3E7
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e8
+    kind: episode
+    episode: S3E8
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e9
+    kind: episode
+    episode: S3E9
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e10
+    kind: episode
+    episode: S3E10
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e11
+    kind: episode
+    episode: S3E11
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e12
+    kind: episode
+    episode: S3E12
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e13
+    kind: episode
+    episode: S3E13
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e14
+    kind: episode
+    episode: S3E14
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e15
+    kind: episode
+    episode: S3E15
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e16
+    kind: episode
+    episode: S3E16
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e17
+    kind: episode
+    episode: S3E17
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e18
+    kind: episode
+    episode: S3E18
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e19
+    kind: episode
+    episode: S3E19
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e20
+    kind: episode
+    episode: S3E20
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e21
+    kind: episode
+    episode: S3E21
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e22
+    kind: episode
+    episode: S3E22
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e23
+    kind: episode
+    episode: S3E23
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
+  - key: src-s3e24
+    kind: episode
+    episode: S3E24
+    url: "https://en.wikipedia.org/wiki/List_of_The_Mentalist_episodes#Season_3_(2010–11)"
