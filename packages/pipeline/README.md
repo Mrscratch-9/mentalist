@@ -10,7 +10,7 @@ pnpm data:build <in-dir> <out.sqlite> [--force] [--verbose]
 ```
 
 - Reads every `*.yaml` / `*.yml` in `<in-dir>` (sorted by file name) and merges them. Episode order = order of appearance.
-- Exit 0: one-line summary of counts. Exit 1: validation errors on stderr (canon problems only), nothing written. Exit 2: usage or environment error (bad args, unreadable/empty input dir, output exists without `--force`, I/O failure such as a missing or unwritable output directory; one line `build failed: <code>`, no stack trace).
+- Exit 0: one-line summary of counts. Exit 1: validation errors on stderr (canon problems only), nothing written. Exit 2: usage or environment error (bad args, unreadable/empty input dir, an input file that cannot be read (`input file not readable: <file>`), output exists without `--force`, I/O failure such as a missing or unwritable output directory; one line `build failed: <code>`, no stack trace). The Usage line is printed only for real argument errors.
 - Errors are spoiler-safe: `file: path: rule` (e.g. `canon.yaml: claims[12].revealed: ref.unresolved`). `--verbose` appends the offending key/value.
 - Output is written to a temp file and renamed; an existing output is never touched without `--force`.
 

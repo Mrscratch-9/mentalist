@@ -63,6 +63,42 @@ describe("cli", () => {
     expect(readFileSync(out, "utf8")).toBe("precious");
   });
 
+  it("output-exists error is one line without the Usage line", () => {
+    const { inDir, out } = setup();
+    writeFileSync(out, "precious");
+    const r = run(inDir, out);
+    expect(r.status).toBe(2);
+    expect(r.stderr).toBe(`${out} already exists (use --force to overwrite)\n`);
+  });
+
+  it("an unreadable input file exits 2 with a one-line spoiler-safe message", () => {
+    const { root, inDir } = setup();
+    mkdirSync(join(inDir, "x.yaml"));
+    const out = join(root, "o3.sqlite");
+    const r = run(inDir, out);
+    expect(r.status).toBe(2);
+    expect(r.stderr).toBe("input file not readable: x.yaml\n");
+    expect(existsSync(out)).toBe(false);
+  });
+
+  it("rejects an empty source (exit 1) without leaking record text and writes nothing", () => {
+    const { inDir, out } = setup((r) => { r["claims"]![0].source = ""; r["claims"]![0].value = "zqxmark_text"; });
+    const r = run(inDir, out);
+    expect(r.status).toBe(1);
+    expect(r.stderr).toContain("canon.yaml: claims[0].source: schema");
+    expect(r.stderr).not.toContain("zqxmark");
+    expect(existsSync(out)).toBe(false);
+  });
+
+  it("produces deterministic ids across two builds", () => {
+    const { root, inDir } = setup();
+    const a = buildDatabase(inDir, join(root, "a.sqlite"), { force: false });
+    const b = buildDatabase(inDir, join(root, "b.sqlite"), { force: false });
+    expect(a.errors).toEqual([]);
+    expect(a.dataset).toEqual(b.dataset);
+    expect(a.dataset!.claims[0]!.id).toMatch(/[0-9a-f]{12}$/);
+  });
+
   it("overwrites with --force", () => {
     const { inDir, out } = setup();
     writeFileSync(out, "old");

@@ -34,6 +34,8 @@ describe("validate", () => {
     ["revealed before subject", (r) => { r["claims"]![1].revealed = "S1E1"; r["entities"]![0].introduced = "S1E2"; }, "claim.revealed_before_subject", "claims[1].revealed"],
     ["revealed before object", (r) => { r["claims"]![1].revealed = "S1E1"; }, "claim.revealed_before_object", "claims[1].revealed"],
     ["superseded not after revealed", (r) => { r["claims"]![0].superseded = { in: "S1E1", by: "c_knows" }; }, "claim.superseded_not_after_reveal", "claims[0].superseded.in"],
+    ["self supersede", (r) => { r["claims"]![0].superseded = { in: "S2E1", by: "c_name" }; }, "claim.supersede_cycle", "claims[0].superseded.by"],
+    ["superseded equal to revealed", (r) => { r["claims"]![1].superseded = { in: "S1E2", by: "c_name" }; }, "claim.superseded_not_after_reveal", "claims[1].superseded.in"],
     ["source missing", (r) => { delete r["claims"]![0].source; }, "claim.source_missing", "claims[0].source"],
     ["supersede cycle", (r) => {
       r["claims"]![0].superseded = { in: "S1E2", by: "c_knows" };

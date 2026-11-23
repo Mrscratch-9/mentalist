@@ -27,7 +27,8 @@ function main(argv: string[]): number {
       console.error(`build failed: ${typeof code === "string" ? code : "unexpected error"}`);
       return 2;
     }
-    console.error(`${(e as Error).message}\n${USAGE}`);
+    const msg = (e as Error).message;
+    console.error(e instanceof UsageError && !e.showUsage ? msg : `${msg}\n${USAGE}`);
     return 2;
   }
 }

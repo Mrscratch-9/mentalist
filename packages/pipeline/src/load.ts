@@ -2,7 +2,7 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "yaml";
 import { Doc } from "./schema.ts";
-import { UsageError, type PipelineError } from "./errors.ts";
+import { EnvError, UsageError, type PipelineError } from "./errors.ts";
 
 export interface LoadedDoc { file: string; doc: Doc }
 
@@ -22,9 +22,15 @@ export function loadDir(dir: string): { docs: LoadedDoc[]; errors: PipelineError
   const docs: LoadedDoc[] = [];
   const errors: PipelineError[] = [];
   for (const file of files) {
+    let text: string;
+    try {
+      text = readFileSync(join(dir, file), "utf8");
+    } catch {
+      throw new EnvError(`input file not readable: ${file}`);
+    }
     let raw: unknown;
     try {
-      raw = parse(readFileSync(join(dir, file), "utf8")) ?? {};
+      raw = parse(text) ?? {};
     } catch (e) {
       errors.push({ file, path: "$", rule: "yaml.parse", detail: (e as Error).message });
       continue;
