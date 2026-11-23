@@ -34,6 +34,7 @@ pmtiles extract https://build.protomaps.com/<YYYYMMDD>.pmtiles apps/desktop/publ
   --bbox=-121.60,38.48,-121.38,38.66 --maxzoom=15
 ```
 
+The file is checked for the `PMTiles` magic bytes, so a dev server answering a missing file with `index.html` (200) counts as missing, and a MapLibre error on the basemap source shows the same notice.
 Without the file the app still works: the map shows a notice and the legend panel lists the pins.
 `maplibre-gl` is pinned to 5.24.1 on purpose: deck.gl 9.4 breaks on MapLibre 6.
 

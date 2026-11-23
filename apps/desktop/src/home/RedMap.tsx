@@ -9,6 +9,7 @@ import { MapboxOverlay } from "@deck.gl/mapbox";
 import { IconLayer, TextLayer } from "@deck.gl/layers";
 import type { Layer } from "@deck.gl/core";
 import { Glow, Landmark, Ring, Smiley, toDataUri } from "./art";
+import { isPmtilesHeader } from "./pmtilesBytes";
 import type { PinModel } from "./viewModel";
 
 const TILES = "/tiles/sacramento.pmtiles";
@@ -82,6 +83,8 @@ function registerTiles(): Promise<string> {
     const res = await fetch(TILES);
     if (!res.ok) throw new Error("basemap unavailable");
     const blob = await res.blob();
+    // Dev servers and SPA resolvers answer a missing file with index.html and 200: check the magic bytes.
+    if (!isPmtilesHeader(new Uint8Array(await blob.slice(0, 8).arrayBuffer()))) throw new Error("basemap unavailable");
     protocol.add(new PMTiles(new FileSource(new File([blob], "sacramento.pmtiles"))));
     return "pmtiles://sacramento.pmtiles";
   })().catch((e) => {
@@ -153,6 +156,10 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, onUnavail
       overlay.current = o;
       map.addControl(o);
       map.on("load", () => !cancelled && setReady(true));
+      // A broken or unreadable basemap surfaces only as source errors: show the same notice.
+      map.on("error", (e) => {
+        if (!cancelled && (e as { sourceId?: string }).sourceId === "protomaps") onFail.current();
+      });
     }).catch(() => {
       if (!cancelled) onFail.current();
     });

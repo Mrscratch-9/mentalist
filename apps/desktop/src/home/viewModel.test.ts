@@ -1,6 +1,6 @@
 /// <reference types="node" />
 import { DatabaseSync } from "node:sqlite";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import {
   KnowledgeEngine, loadDataset, progress,
   type Claim, type Dataset, type Entity, type EntityKind, type SqlDriver, type SqlValue,
@@ -181,5 +181,108 @@ describe("resolveHome", () => {
 
   it("an unknown season/episode is not-found; nothing leaks", () => {
     expect(resolveHome(canon(), { season: 9, episode: 1 }, false)).toEqual({ kind: "not-found" });
+  });
+});
+
+// ---- Discarded / fallback / error cases (state !== current etc.) ----
+const sup = (c: Claim, supersededIn: number, supersededBy: string | null = null): Claim =>
+  ({ ...c, supersededIn, supersededBy }) as Claim;
+
+describe("buildHomeModel: superseded and discarded claims", () => {
+  const data = (): Dataset => ({
+    episodes,
+    entities: [
+      ent("p_a", "person", 1), ent("p_b", "person", 1),
+      ent("case_a", "case", 1), ent("case_late", "case", 5),
+      ent("loc_a", "location", 1), ent("loc_b", "location", 1),
+    ],
+    claims: [
+      // name replaced at 3
+      sup(clm("n_pa_old", "p_a", "name", 1, { value: "Old Name" }), 3, "n_pa_new"),
+      clm("n_pa_new", "p_a", "name", 3, { value: "New Name" }),
+      // role discarded at 2 with no replacement
+      sup(clm("r_pa", "p_a", "role", 1, { value: "Old Role" }), 2),
+      // names discarded at 2 with no replacement -> fallbacks
+      sup(clm("n_pb", "p_b", "name", 1, { value: "Gone Name" }), 2),
+      sup(clm("n_ca", "case_a", "name", 1, { value: "Gone Case" }), 2),
+      sup(clm("n_la", "loc_a", "name", 1, { value: "Gone Place" }), 2),
+      clm("c_la", "loc_a", "coordinates", 1, { value: "38.5,-121.5" }),
+      sup(clm("d_la", "loc_a", "description", 1, { value: "Gone description" }), 2),
+      // smiley and part_of_case discarded at 3
+      sup(clm("s_la", "loc_a", "red_john_smiley", 1, { value: "yes" }), 3),
+      sup(clm("k_la", "loc_a", "part_of_case", 1, { object: "case_a" }), 3),
+      // pin pointing at a case that is not visible yet
+      clm("n_lb", "loc_b", "name", 1, { value: "Second" }),
+      clm("c_lb", "loc_b", "coordinates", 1, { value: "38.6,-121.4" }),
+      clm("k_lb", "loc_b", "part_of_case", 1, { object: "case_late" }),
+      // roles: perpetrator discarded at 4; one of two investigators discarded at 4
+      sup(clm("ro_perp", "p_a", "role_in_case", 1, { object: "case_a", value: "perpetrator" }), 4),
+      clm("ro_i1", "p_a", "role_in_case", 1, { object: "case_a", value: "investigator" }),
+      sup(clm("ro_i2", "p_b", "role_in_case", 1, { object: "case_a", value: "investigator" }), 4),
+    ],
+    arcItems: [], theories: [],
+  });
+  const at = (n: number, d: Dataset = data()) => buildHomeModel(setup(d).engine, progress(n));
+
+  it("before the supersession the old claims drive values", () => {
+    const m = at(1);
+    expect(m.characters.map((c) => [c.name, c.role])).toEqual([["Old Name", "Old Role"], ["Gone Name", null]]);
+    expect(m.cases[0]).toMatchObject({ title: "Gone Case", solved: true, silhouette: "cbi" });
+    expect(m.pins[0]).toMatchObject({ id: "loc_a", label: "Gone Place", kind: "smiley", caseId: "case_a", description: "Gone description" });
+  });
+
+  it("a replaced name gives way to its replacement; a discarded one never drives the value", () => {
+    const m = at(3);
+    expect(m.characters[0]).toMatchObject({ name: "New Name", role: null, initials: "NN" });
+    expect(dump(m)).not.toContain("Old Name");
+    expect(dump(m)).not.toContain("Old Role");
+  });
+
+  it("discarded names fall back to the placeholders", () => {
+    const m = at(2);
+    expect(m.characters[1]).toMatchObject({ id: "p_b", name: "Unnamed", initials: "U" });
+    expect(m.cases[0]?.title).toBe("Untitled case");
+    expect(m.pins[0]?.label).toBe("Unnamed place");
+    expect(m.pins[0]?.description).toBe("");
+    expect(dump(m)).not.toMatch(/Gone/);
+  });
+
+  it("a discarded smiley and part_of_case no longer mark or link the pin", () => {
+    const m = at(3);
+    expect(m.pins.find((x) => x.id === "loc_a")).toMatchObject({ kind: "landmark", caseId: null });
+    expect(m.legend.map((l) => l.kind)).toEqual(["landmark", "hover"]);
+  });
+
+  it("a part_of_case pointing at a case that is not visible leaves the pin unlinked", () => {
+    const m = at(2);
+    expect(m.pins.find((x) => x.id === "loc_b")?.caseId).toBeNull();
+    expect(dump(m)).not.toContain("case_late");
+  });
+
+  it("discarded roles do not solve the case nor count toward the cbi silhouette", () => {
+    expect(at(3).cases[0]).toMatchObject({ solved: true, silhouette: "cbi" });
+    expect(at(4).cases[0]).toMatchObject({ solved: false, silhouette: "jane" });
+  });
+
+  it("one current investigator is jane, two are cbi", () => {
+    const d = data();
+    d.claims = d.claims.filter((c) => c.id !== "ro_i2");
+    expect(at(1, d).cases[0]?.silhouette).toBe("jane");
+  });
+});
+
+describe("resolveHome: error branch", () => {
+  it("an unexpected engine failure gives kind=error without leaking details", () => {
+    const { db, engine } = setup();
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    try {
+      const boom = Object.create(engine, {
+        listEpisodes: { value: () => { throw new Error("CANARY_EP_9 secret"); } },
+      }) as KnowledgeEngine;
+      expect(resolveHome({ db, engine: boom }, { season: 1, episode: 2 }, false)).toEqual({ kind: "error" });
+      expect(dump(spy.mock.calls)).not.toContain("CANARY_EP_9");
+    } finally {
+      spy.mockRestore();
+    }
   });
 });
