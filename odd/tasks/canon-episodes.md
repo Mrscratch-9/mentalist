@@ -13,9 +13,9 @@ Feature: author the real episode list of the series as canon YAML with sources, 
 
 ## Tasks
 
-- T1 [S2] Pipeline minor fixes + 4 regression tests. Route: worker (parallel with T2). Commit: pending.
-- T2 [S3, S4, S5] `data/canon/episodes-*.yaml`: every episode of the series in broadcast order (code, title, a short spoiler-light synopsis written in our own words, details), one `episode` source per episode pointing at a public reference. Route: worker (parallel with T1). Commit: pending.
-- T3 [S3, S5] `apps/desktop`: build the canon database before dev/build, load it with SQLite WASM through a `SqlDriver`, resolve the owner's progress with `resolveProgress`, show the episode list through `KnowledgeEngine.listEpisodes` (unwatched episodes expose only season, number, title, synopsis). Route: worker. Commit: pending.
+- T1 [S2] Pipeline minor fixes + 4 regression tests. Route: worker (parallel with T2). Commit: 08697f9. Done.
+- T2 [S3, S4, S5] `data/canon/episodes-*.yaml`: every episode of the series in broadcast order (code, title, a short spoiler-light synopsis written in our own words, details), one `episode` source per episode pointing at a public reference. Route: worker (parallel with T1). Commit: 34c03d3. Done: 151 episodes (23/23/24/24/22/22/13), source = English Wikipedia episode list; synopses from S6E10 on spot-checked by the parent (premise only).
+- T3 [S3, S5] `apps/desktop`: build the canon database before dev/build, load it with SQLite WASM through a `SqlDriver`, resolve the owner's progress with `resolveProgress`, show the episode list through `KnowledgeEngine.listEpisodes` (unwatched episodes expose only season, number, title, synopsis). Route: worker. Commit: 3dfa643 (build step) + 4d54c4e + 23f9511 (review follow-ups). Done: native review approved (lineage review-f6b2876eedfe4ef4); headless Chromium with the Tauri CSP: 151 episodes, 26 unwatched at S6E9, no errors or external requests.
 - T4 [S6] Port the Red room home onto `apps/desktop` + `core` (map, legend, case rail with real gated data or empty states). Route: worker. Commit: pending.
 
 ## Log
