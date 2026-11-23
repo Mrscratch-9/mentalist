@@ -15,11 +15,17 @@
     "tauri": "tauri"
   },
   "dependencies": {
+    "@deck.gl/core": "^9.4.1",
+    "@deck.gl/layers": "^9.4.1",
+    "@deck.gl/mapbox": "^9.4.1",
     "@fontsource/courier-prime": "^5.2.0",
     "@fontsource/inter": "^5.2.0",
     "@mentalist/core": "workspace:*",
+    "@protomaps/basemaps": "^5.7.2",
     "@sqlite.org/sqlite-wasm": "3.54.1-build1",
     "@tauri-apps/api": "^2",
+    "maplibre-gl": "5.24.1",
+    "pmtiles": "^4.5.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
