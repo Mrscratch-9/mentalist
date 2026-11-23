@@ -4,6 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "canon": "node ../../packages/pipeline/src/cli.ts ../../data/canon public/canon.sqlite --force",
+    "predev": "pnpm canon",
+    "prebuild": "pnpm canon",
     "dev": "vite",
     "build": "tsc -p tsconfig.json && vite build",
     "preview": "vite preview",
@@ -15,11 +18,13 @@
     "@fontsource/courier-prime": "^5.2.0",
     "@fontsource/inter": "^5.2.0",
     "@mentalist/core": "workspace:*",
+    "@sqlite.org/sqlite-wasm": "3.54.1-build1",
     "@tauri-apps/api": "^2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@mentalist/pipeline": "workspace:*",
     "@tauri-apps/cli": "^2",
     "@types/node": "^24.19.2",
     "@types/react": "^19.1.8",
