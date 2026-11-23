@@ -9,10 +9,10 @@ import {
 } from "./progress";
 
 describe("progress store", () => {
-  it("defaults to the owner's configured value: end of season 5", () => {
+  it("defaults to the owner's configured value: season 6, episode 9", () => {
     const store = createProgressStore(memoryStorage());
-    expect(OWNER_PROGRESS).toEqual({ season: 5, episode: "end" });
-    expect(store.get()).toEqual({ season: 5, episode: "end" });
+    expect(OWNER_PROGRESS).toEqual({ season: 6, episode: 9 });
+    expect(store.get()).toEqual({ season: 6, episode: 9 });
   });
 
   it("persists a valid update and reloads it from storage", () => {

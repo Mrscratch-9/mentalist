@@ -19,3 +19,4 @@ Feature: `packages/pipeline` turns authored YAML canon files into a validated `D
 
 - L1: "hola, continua con la tareas que siguen pendientes" (2026-11-23, after the review of a0c8a25 and fix 2554946 on main).
 - L2: Decisions: pipeline before the Red room port (needs data). Authoring format uses episode codes (`S1E3`) instead of `ep_index`; the compiler derives `ep_index` from the episode list order. Opaque IDs = truncated SHA-256 of a namespaced author key. Errors are spoiler-safe by default (S5).
+- L3: "respecto a la temporada hubo un avanze y recien comence el 6x10" — owner progress is now watched through S6E9 inclusive (6x10 started, not finished). `OWNER_PROGRESS` updated to `{ season: 6, episode: 9 }`; a value already saved in the app's localStorage still wins, changeable from the home form.
