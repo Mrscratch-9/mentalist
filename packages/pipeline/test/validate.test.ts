@@ -42,6 +42,8 @@ describe("validate", () => {
     ["arc item before claim", (r) => { r["arcs"]![0].items[0].revealed = "S1E1"; }, "arc.item_before_ref", "arcs[0].items[0].revealed"],
     ["arc item before entity", (r) => { r["arcs"]![0].items[0] = { order: 1, entity: "bob", text: "x", revealed: "S1E1" }; }, "arc.item_before_ref", "arcs[0].items[0].revealed"],
     ["arc entity not an arc", (r) => { r["arcs"]![0].arc = "alice"; }, "arc.not_arc_entity", "arcs[0].arc"],
+    ["duplicate arc item order", (r) => { r["arcs"]![0].items.push({ order: 1, entity: "bob", text: "x", revealed: "S1E2" }); }, "arc.order_duplicate", "arcs[0].items[1].order"],
+    ["arc declared twice", (r) => { r["arcs"]!.push({ arc: "arc1", items: [{ order: 2, claim: "c_knows", text: "x", revealed: "S1E2" }] }); }, "arc.duplicate", "arcs[1].arc"],
     ["object and value both set", (r) => { r["claims"]![1].value = "v"; }, "claim.object_value", "claims[1]"],
     ["neither object nor value", (r) => { delete r["claims"]![0].value; }, "claim.object_value", "claims[0]"],
     ["invalid role", (r) => { r["claims"]![2].value = "hero"; }, "claim.role_invalid", "claims[2].value"],

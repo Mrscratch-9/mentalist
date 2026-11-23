@@ -10,7 +10,7 @@ pnpm data:build <in-dir> <out.sqlite> [--force] [--verbose]
 ```
 
 - Reads every `*.yaml` / `*.yml` in `<in-dir>` (sorted by file name) and merges them. Episode order = order of appearance.
-- Exit 0: one-line summary of counts. Exit 1: validation errors on stderr, nothing written. Exit 2: usage error (bad args, unreadable/empty input dir, output exists without `--force`).
+- Exit 0: one-line summary of counts. Exit 1: validation errors on stderr (canon problems only), nothing written. Exit 2: usage or environment error (bad args, unreadable/empty input dir, output exists without `--force`, I/O failure such as a missing or unwritable output directory; one line `build failed: <code>`, no stack trace).
 - Errors are spoiler-safe: `file: path: rule` (e.g. `canon.yaml: claims[12].revealed: ref.unresolved`). `--verbose` appends the offending key/value.
 - Output is written to a temp file and renamed; an existing output is never touched without `--force`.
 
@@ -30,4 +30,4 @@ Source metadata (`kind`, `url`, `scene`) is validated but only the opaque `sourc
 
 ## Rules (error codes)
 
-`schema`, `yaml.parse`, `key.duplicate`, `ref.unresolved`, `episode.code_malformed`, `episode.code_duplicate`, `source.episode_required`, `claim.revealed_before_subject`, `claim.revealed_before_object`, `claim.superseded_not_after_reveal`, `claim.source_missing`, `claim.supersede_cycle`, `claim.object_value`, `claim.role_invalid`, `claim.role_object_not_case`, `claim.coordinates_invalid`, `arc.not_arc_entity`, `arc.item_before_ref`.
+`schema`, `yaml.parse`, `key.duplicate`, `ref.unresolved`, `episode.code_malformed`, `episode.code_duplicate`, `source.episode_required`, `claim.revealed_before_subject`, `claim.revealed_before_object`, `claim.superseded_not_after_reveal`, `claim.source_missing`, `claim.supersede_cycle`, `claim.object_value`, `claim.role_invalid`, `claim.role_object_not_case`, `claim.coordinates_invalid`, `arc.not_arc_entity`, `arc.item_before_ref`, `arc.duplicate` (same arc in more than one `arcs` block), `arc.order_duplicate` (repeated `order` within an arc).

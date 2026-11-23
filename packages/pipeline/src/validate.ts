@@ -106,12 +106,18 @@ export function validate(docs: LoadedDoc[]): PipelineError[] {
     }
   }
 
+  const seenArcs = new Set<string>();
   for (const a of collect(docs, "arcs")) {
+    if (seenArcs.has(a.r.arc)) bad(a, "arc", "arc.duplicate", a.r.arc);
+    seenArcs.add(a.r.arc);
+    const orders = new Set<number>();
     const arc = entities.get(a.r.arc);
     if (!arc) bad(a, "arc", "ref.unresolved", a.r.arc);
     else if (arc.r.kind !== "arc") bad(a, "arc", "arc.not_arc_entity", a.r.arc);
     a.r.items.forEach((it, j) => {
       const l = { file: a.file, path: `${a.path}.items[${j}]` };
+      if (orders.has(it.order)) bad(l, "order", "arc.order_duplicate", String(it.order));
+      orders.add(it.order);
       const r = ep(l, "revealed", it.revealed);
       const field = it.claim !== undefined ? "claim" : "entity";
       const ref = (it.claim ?? it.entity)!;

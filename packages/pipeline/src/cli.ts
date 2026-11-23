@@ -21,7 +21,12 @@ function main(argv: string[]): number {
     return 0;
   } catch (e) {
     const usage = e instanceof UsageError || (e as { code?: string }).code?.startsWith("ERR_PARSE_ARGS");
-    if (!usage) throw e;
+    if (!usage) {
+      // I/O or environment failure: one line, no stack, no record text (exit 2; exit 1 is for validation only)
+      const code = (e as { code?: unknown }).code;
+      console.error(`build failed: ${typeof code === "string" ? code : "unexpected error"}`);
+      return 2;
+    }
     console.error(`${(e as Error).message}\n${USAGE}`);
     return 2;
   }
