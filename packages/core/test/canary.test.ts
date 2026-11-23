@@ -66,7 +66,8 @@ function canaryDataset(): Dataset {
   for (const e of entIds) {
     const supIn = Math.min(N, e.n + 3);
     if (supIn <= e.n) continue;
-    const truthId = `c_${tok(supIn)}_${cc}`; // the id addClaim is about to assign for the truth
+    // The belief below takes `cc`, so the truth claim right after it gets `cc + 1`.
+    const truthId = `c_${tok(supIn)}_${cc + 1}`;
     addClaim(e, "trait", e.n, {
       value: `belief ${tok(e.n)} shared`, status: "in_show_suspicion", supIn, supBy: truthId,
     });
@@ -142,6 +143,20 @@ describe("S4 canary (docs/design.md §6)", () => {
     const all = everything(N).map((r) => maxToken(r.json));
     expect(Math.max(...all)).toBe(N);
     expect(everything(0).filter((r) => maxToken(r.json) > 0)).toEqual([]);
+  });
+
+  it("every retraction in the fixture points at a real truth claim", () => {
+    const ids = new Set(data.claims.map((c) => c.id));
+    const retractions = data.claims.filter((c) => c.supersededBy !== null);
+    expect(retractions.length).toBeGreaterThan(0);
+    expect(retractions.filter((c) => !ids.has(c.supersededBy!))).toEqual([]);
+  });
+
+  it("exercises the visible-replacement path at full progress", () => {
+    const replaced = engine
+      .listClaims(progress(N), { predicate: "trait" })
+      .filter((c) => c.supersession?.replacedBy);
+    expect(replaced.length).toBeGreaterThan(0);
   });
 
   it("no public query returns a token with n > p, for any p", () => {
