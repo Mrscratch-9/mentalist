@@ -15,6 +15,8 @@
 
 * { box-sizing: border-box; }
 
+html, body, #root { height: 100%; }
+
 body {
   margin: 0;
   background: var(--bg);
@@ -25,60 +27,12 @@ body {
 
 strong { font-weight: 600; }
 
-.home {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.25rem;
-  padding: 2rem;
-}
-
-.title-card {
-  margin: 0;
-  font-family: var(--font-title);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: clamp(2rem, 6vw, 4.5rem);
-}
-.title-light { font-weight: 300; }
-.title-medium { font-weight: 500; }
-
-.subtitle {
-  margin: 0;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--gold);
-}
-
-.progress {
-  background: var(--panel-solid);
-  border: 1px solid var(--line);
-  padding: 1rem 1.5rem;
-  min-width: 22rem;
-}
-
-.controls { display: flex; gap: 0.75rem; align-items: end; flex-wrap: wrap; }
-label { display: flex; flex-direction: column; font-size: 0.8rem; color: var(--muted); gap: 0.25rem; }
-input {
-  background: var(--bg); color: var(--text); border: 1px solid var(--line);
-  padding: 0.4rem 0.6rem; font: inherit; width: 9rem;
-}
-button {
-  background: transparent; color: var(--gold); border: 1px solid var(--gold);
-  padding: 0.45rem 0.9rem; font: inherit; font-weight: 600; cursor: pointer;
-}
-:is(input, button):focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-.error { color: var(--red); }
-.empty { color: var(--muted); }
-
 .case-file {
   font-family: var(--font-case);
   font-weight: 400;
 }
 
+/* Episode list (rendered inside the Red room's Episodes panel). */
 .episodes { width: min(46rem, 100%); font-family: var(--font-case); }
 .season h2 {
   font-family: var(--font-title); font-weight: 500; font-size: 0.95rem;
