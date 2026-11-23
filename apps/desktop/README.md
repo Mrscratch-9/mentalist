@@ -42,6 +42,8 @@ Without the file the app still works: the map shows a notice and the legend pane
 
 Strict by default; the only additions over the plain app policy:
 
+- `script-src 'self' 'wasm-unsafe-eval'`: SQLite WASM compiles its module at runtime.
+  Verified in headless Chromium: without it the canon database cannot be loaded (`script-src wasm-eval`).
 - `worker-src 'self' blob:`: MapLibre starts its tile-decoding worker from a blob URL.
   Verified in headless Chromium: without it the worker is blocked (`worker-src blob`).
 

@@ -162,4 +162,5 @@ One family for titles and UI keeps the bundle small. Alternatives considered: Wo
 2. UI design session before product code: done, direction `design/mentalist-home/02-red-room.html` chosen and prototyped in the spike.
 3. Phase 4, slice A: done. Monorepo with `packages/core` (spoiler-gated knowledge engine, canary tests) and `apps/desktop` (Tauri shell, offline fonts, progress store). Owner progress at the time: end of season 5.
 4. Phase 4, slice B: done. Data pipeline `packages/pipeline` (YAML → validator → compiled SQLite). Owner progress: season 6, episode 9.
-5. Next: author the first real canon (episode list with sources) up to the owner's progress, load the compiled database in `apps/desktop` through SQLite WASM, then port the Red room home on top of `core`.
+5. Phase 4, slice C: done. Real episode list (151 episodes, sourced) in `data/canon/`, loaded in `apps/desktop` through SQLite WASM; Red room home ported on top of `core` with empty states.
+6. Next: author entities and claims (cases, characters, places with coordinates) up to the owner's progress, so the board, map pins and characters fill in; offline glyphs for street labels.
