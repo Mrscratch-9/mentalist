@@ -58,7 +58,9 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
   const gate = ok?.gate;
   const peeking = gate?.peeking ?? false;
 
-  const pin = pins.find((p) => p.id === selPin) ?? pins[0] ?? null;
+  // With nothing picked yet, the selected pin is the team's current base (where the camera opens).
+  const baseId = result?.kind === "ok" ? result.base?.id ?? null : null;
+  const pin = pins.find((p) => p.id === selPin) ?? pins.find((p) => p.id === baseId) ?? pins[0] ?? null;
   const caseSel = cases.find((c) => c.id === selCase)?.id ?? null;
 
   function save() {

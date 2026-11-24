@@ -12,8 +12,8 @@ Feature: the series moves to Austin, Texas from S6E9; add the team's bases as so
 
 ## Tasks
 
-- T1 [S2, S3] `data/canon/core.yaml`: CBI headquarters (Sacramento) and FBI office (Austin) as recurring locations with `name`, `coordinates`, `team_base` claims and the supersession at the move episode, sourced. Route: worker (parallel with T2). Commit: pending.
-- T2 [S4, S5] `apps/desktop`: Austin extract + multi-source map, pan bounds for both regions, camera on the current base (view-model function with tests), README (extract command, `team_base` convention). Route: worker (parallel with T1). Commit: pending.
+- T1 [S2, S3] `data/canon/core.yaml`: CBI headquarters (Sacramento) and FBI office (Austin) as recurring locations with `name`, `coordinates`, `team_base` claims and the supersession at the move episode, sourced. Route: worker (parallel with T2). Commit: af5349b. Done: move at S6E9 (src-wiki-s6e9, Fandom "My Blue Heaven"); coordinates from the Wikipedia API.
+- T2 [S4, S5] `apps/desktop`: Austin extract + multi-source map, pan bounds for both regions, camera on the current base (view-model function with tests), README (extract command, `team_base` convention). Route: worker (parallel with T1). Commit: da7ef15 + the "selected pin defaults to the base" commit. Done: austin.pmtiles z13 8.5 MB; 6 currentBase tests; headless at S6E10 opens on Austin, selected pin "FBI office, Austin", 0 errors / 0 external requests; either extract missing leaves the other working.
 
 ## Log
 

@@ -165,4 +165,5 @@ One family for titles and UI keeps the bundle small. Alternatives considered: Wo
 5. Phase 4, slice C: done. Real episode list (151 episodes, sourced) in `data/canon/`, loaded in `apps/desktop` through SQLite WASM; Red room home ported on top of `core` with empty states.
 6. Phase 4, slice D: done. Cases, recurring characters, places and Red John marks authored for S1E1..S6E10 (owner progress), sourced per episode; nothing authored for unwatched episodes.
 7. Phase 4, slice E: done. California basemap (z13, read by HTTP range through a `tiles://` protocol, RAM peak 523 MB), culprits from The Mentalist Wiki as episode-bound secondary sources (103 of 126 cases solved), Red John painted-smiley app icon and logo.
-8. Next: Austin, Texas coverage (the series moves there in S6E9); offline glyphs for street labels; run inside the Tauri window.
+8. Phase 4, slice F: done. Team bases as sourced places (CBI Sacramento, superseded by the FBI office in Austin in S6E9); Austin basemap alongside California; the map opens on the team's current base for the viewer's progress.
+9. Next: offline glyphs for street labels; run inside the Tauri window; keep authoring canon as the owner watches.
