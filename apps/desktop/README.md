@@ -26,10 +26,12 @@ The 3D map is MapLibre + deck.gl over a local PMTiles extract of California (z0-
 **never loaded whole**: pmtiles reads it with HTTP `Range` requests (`FetchSource`).
 
 - Browser / `pnpm dev`: Vite serves `/tiles/california.pmtiles` (static server, honors `Range`).
-- Tauri: the file is a bundled resource (`bundle.resources` -> `tiles/california.pmtiles`) served by the
+- Tauri: the file is a bundled resource (`bundle.resources` -> `tiles/`) served by the
   `tiles://` custom protocol in `src-tauri/src/tiles.rs` (`http://tiles.localhost/...` on Windows). It answers
-  `206` with `Content-Range`, reads only the requested bytes (seek + read, 16 MiB cap per response), answers `416`
+  `206` with `Content-Range`, reads only the requested bytes (seek + read, 4 MiB cap per response: enough for the PMTiles header, directories and any z0-z13 tile; a larger request gets a shorter `206`), answers `416`
   for missing/bad ranges, and serves only plain file names inside the bundled `tiles` directory (no traversal).
+  Requests run on a fixed pool of 8 worker threads (peak response memory 8 x 4 MiB = 32 MiB), not a thread per request.
+  In release builds only the bundled `tiles` resource is read; debug builds fall back to `public/tiles` in the checkout.
   The Tauri asset protocol was not used because it ignores `Range`. `cargo test` covers range parsing and the path check.
 - `vite build` removes `dist/tiles` so the extract is not also embedded in the executable.
 
@@ -40,7 +42,8 @@ Nothing is requested from the network: the style has no `glyphs`/`sprite` and no
 layers, so no glyph PBFs or sprites are needed or vendored. Pin labels are drawn by deck.gl on a canvas,
 and pin icons are passed to deck.gl as a pre-decoded canvas atlas (not data: URLs).
 
-`public/tiles/california.pmtiles` is gitignored and **required for `tauri build`** (it is a bundle resource). Regenerate it with the
+`public/tiles/california.pmtiles` is gitignored. It is bundled through the glob `public/tiles/california.*`; when it is missing, `build.rs` writes a placeholder
+`public/tiles/california.missing` (removed again once the extract exists) so `cargo check`, `tauri dev` and `tauri build` still work and the app shows the basemap notice. Regenerate the extract with the
 [go-pmtiles](https://github.com/protomaps/go-pmtiles) CLI (pick a recent build date from https://maps.protomaps.com/builds/):
 
 ```bash

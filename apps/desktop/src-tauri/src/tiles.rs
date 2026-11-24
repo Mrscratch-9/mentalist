@@ -18,8 +18,49 @@ use std::path::{Component, Path, PathBuf};
 
 use tauri::http::{header, Method, Request, Response, StatusCode};
 
-/// Largest number of bytes returned by one response.
-pub const MAX_CHUNK: u64 = 16 * 1024 * 1024;
+/// Largest number of bytes returned by one response. PMTiles needs the 16 KiB header + root directory,
+/// leaf directories (up to a few hundred KiB) and single tiles (well under 1 MiB at z0-z13), so 4 MiB leaves
+/// ample headroom while bounding the buffer of each in-flight request.
+pub const MAX_CHUNK: u64 = 4 * 1024 * 1024;
+
+/// Number of requests served at once. Peak response memory is `WORKERS * MAX_CHUNK` (32 MiB).
+pub const WORKERS: usize = 8;
+
+type Job = Box<dyn FnOnce() + Send + 'static>;
+
+/// Fixed pool of worker threads: bounds both thread count and in-flight response buffers.
+/// Excess requests wait in the queue (a queued job holds only its request, no buffer).
+pub struct Pool {
+    tx: std::sync::mpsc::Sender<Job>,
+}
+
+impl Pool {
+    pub fn new(workers: usize) -> Self {
+        let (tx, rx) = std::sync::mpsc::channel::<Job>();
+        let rx = std::sync::Arc::new(std::sync::Mutex::new(rx));
+        for _ in 0..workers.max(1) {
+            let rx = rx.clone();
+            std::thread::spawn(move || loop {
+                // The lock is released before the job runs, so workers run jobs in parallel.
+                let job = match rx.lock() {
+                    Ok(guard) => guard.recv(),
+                    Err(_) => return,
+                };
+                match job {
+                    Ok(job) => {
+                        let _ = std::panic::catch_unwind(std::panic::AssertUnwindSafe(job));
+                    }
+                    Err(_) => return,
+                }
+            });
+        }
+        Pool { tx }
+    }
+
+    pub fn execute(&self, job: impl FnOnce() + Send + 'static) {
+        let _ = self.tx.send(Box::new(job));
+    }
+}
 
 /// Why a `Range` header was refused.
 #[derive(Debug, PartialEq, Eq)]
@@ -152,6 +193,37 @@ mod tests {
         assert_eq!(parse_range(Some("bytes=-5000"), 1000), Ok((0, 999)));
         assert_eq!(parse_range(Some("bytes=990-5000"), 1000), Ok((990, 999)));
         assert_eq!(parse_range(Some("bytes=999-999"), 1000), Ok((999, 999)));
+    }
+
+    #[test]
+    fn chunk_cap_is_4_mib() {
+        assert_eq!(MAX_CHUNK, 4 * 1024 * 1024);
+        // A request over the cap is clamped, not refused.
+        assert_eq!(parse_range(Some("bytes=0-67108863"), 100 * MAX_CHUNK), Ok((0, MAX_CHUNK - 1)));
+    }
+
+    #[test]
+    fn pool_bounds_concurrency_and_runs_every_job() {
+        use std::sync::atomic::{AtomicUsize, Ordering::SeqCst};
+        use std::sync::{mpsc, Arc};
+        let (running, peak) = (Arc::new(AtomicUsize::new(0)), Arc::new(AtomicUsize::new(0)));
+        let (tx, rx) = mpsc::channel();
+        let pool = Pool::new(2);
+        for _ in 0..8 {
+            let (running, peak, tx) = (running.clone(), peak.clone(), tx.clone());
+            pool.execute(move || {
+                let now = running.fetch_add(1, SeqCst) + 1;
+                peak.fetch_max(now, SeqCst);
+                std::thread::sleep(std::time::Duration::from_millis(30));
+                running.fetch_sub(1, SeqCst);
+                tx.send(()).unwrap();
+            });
+        }
+        for _ in 0..8 {
+            rx.recv_timeout(std::time::Duration::from_secs(5)).expect("job ran");
+        }
+        assert!(peak.load(SeqCst) <= 2, "peak {}", peak.load(SeqCst));
+        assert_eq!(peak.load(SeqCst), 2);
     }
 
     #[test]
