@@ -48,4 +48,33 @@ describe("real canon (counts only)", () => {
     }
     expect(violations).toBe(0);
   });
+
+  // Entity/claim files: core.yaml plus cases-s*.yaml (counts only, never text).
+  type Cl = { subject: string; predicate: string; revealed: string; source: string; note?: string };
+  type En = { key: string; kind: string };
+  const files = readdirSync(dir).filter((f) => f.endsWith(".yaml") && !f.startsWith("episodes-")).sort();
+  const canon = files.map((f) => {
+    const d = parse(readFileSync(dir + f, "utf8"));
+    return { f, entities: (d.entities ?? []) as En[], claims: (d.claims ?? []) as Cl[] };
+  });
+  const allClaims = canon.flatMap((c) => c.claims);
+  const kindOf = new Map(canon.flatMap((c) => c.entities).map((e) => [e.key, e.kind]));
+
+  it("every claim cites the source of its own reveal episode", () => {
+    const violations = allClaims.filter((c) => c.source !== `src-${String(c.revealed).toLowerCase()}`).length;
+    expect(violations).toBe(0);
+  });
+
+  it("recurring characters are defined only in core.yaml", () => {
+    const core = new Set(canon.find((c) => c.f === "core.yaml")!.entities.map((e) => e.key));
+    const violations = allClaims.filter((c) => c.predicate === "recurring" && !core.has(c.subject)).length;
+    expect(violations).toBe(0);
+  });
+
+  it("every location coordinates claim notes city-level or landmark", () => {
+    const violations = allClaims.filter(
+      (c) => c.predicate === "coordinates" && kindOf.get(c.subject) === "location" && !["city-level", "landmark"].includes(c.note ?? ""),
+    ).length;
+    expect(violations).toBe(0);
+  });
 });

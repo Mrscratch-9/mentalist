@@ -47,6 +47,8 @@ function synthetic(): Dataset {
     claims: [
       clm("n_pa", "p_a", "name", 1, { value: "Person CANARY_EP_1" }),
       clm("r_pa", "p_a", "role", 1, { value: "Consultant CANARY_EP_1" }),
+      clm("rec_pa", "p_a", "recurring", 1, { value: "true" }),
+      clm("rec_pb", "p_b", "recurring", 3, { value: "true" }),
       clm("n_pb", "p_b", "name", 3, { value: "Mara Quill CANARY_EP_3" }),
       clm("n_ca", "case_a", "name", 2, { value: "Case A CANARY_EP_2" }),
       clm("n_cb", "case_b", "name", 4, { value: "Case B CANARY_EP_4" }),
@@ -206,6 +208,8 @@ describe("buildHomeModel: superseded and discarded claims", () => {
       sup(clm("n_pb", "p_b", "name", 1, { value: "Gone Name" }), 2),
       sup(clm("n_ca", "case_a", "name", 1, { value: "Gone Case" }), 2),
       sup(clm("n_la", "loc_a", "name", 1, { value: "Gone Place" }), 2),
+      clm("rec_pa", "p_a", "recurring", 1, { value: "true" }),
+      clm("rec_pb", "p_b", "recurring", 1, { value: "true" }),
       clm("c_la", "loc_a", "coordinates", 1, { value: "38.5,-121.5" }),
       sup(clm("d_la", "loc_a", "description", 1, { value: "Gone description" }), 2),
       // smiley and part_of_case discarded at 3
@@ -268,6 +272,37 @@ describe("buildHomeModel: superseded and discarded claims", () => {
     const d = data();
     d.claims = d.claims.filter((c) => c.id !== "ro_i2");
     expect(at(1, d).cases[0]?.silhouette).toBe("jane");
+  });
+});
+
+describe("buildHomeModel: characters are recurring persons only", () => {
+  const chars = (d: Dataset, n: number) => buildHomeModel(setup(d).engine, progress(n)).characters.map((c) => c.id);
+  const base = (claims: Claim[]): Dataset => ({
+    episodes,
+    entities: [ent("p_a", "person", 1), ent("p_one", "person", 1)],
+    claims: [clm("n_a", "p_a", "name", 1, { value: "A" }), clm("n_o", "p_one", "name", 1, { value: "One" }), ...claims],
+    arcItems: [], theories: [],
+  });
+
+  it("a person without a recurring claim is excluded", () => {
+    expect(chars(base([clm("rec", "p_a", "recurring", 1, { value: "true" })]), 3)).toEqual(["p_a"]);
+    expect(chars(base([]), 3)).toEqual([]);
+  });
+
+  it("a recurring value other than true does not count", () => {
+    expect(chars(base([clm("rec", "p_a", "recurring", 1, { value: "false" })]), 3)).toEqual([]);
+  });
+
+  it("a recurring claim revealed later shows the person only from that episode", () => {
+    const d = base([clm("rec", "p_a", "recurring", 3, { value: "true" })]);
+    expect(chars(d, 2)).toEqual([]);
+    expect(chars(d, 3)).toEqual(["p_a"]);
+  });
+
+  it("a superseded or discarded recurring claim does not count", () => {
+    const d = base([sup(clm("rec", "p_a", "recurring", 1, { value: "true" }), 3)]);
+    expect(chars(d, 2)).toEqual(["p_a"]);
+    expect(chars(d, 3)).toEqual([]);
   });
 });
 

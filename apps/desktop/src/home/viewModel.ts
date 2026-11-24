@@ -10,6 +10,7 @@
  *   red_john_smiley                marks a pin as a Red John smiley
  *   part_of_case                   pin -> case link (object = case entity)
  *   role_in_case                   case file roles (core predicate)
+ *   recurring                      "true" on a person puts them in the characters strip
  */
 import {
   NotFoundError, peek,
@@ -131,7 +132,7 @@ export function buildHomeModel(engine: KnowledgeEngine, p: CoreProgress): HomeMo
     });
 
   const characters: CharacterModel[] = entities
-    .filter((e) => e.kind === "person")
+    .filter((e) => e.kind === "person" && val(e.id, "recurring") === "true")
     .sort(byIntro)
     .map((e) => {
       const name = val(e.id, "name") ?? "Unnamed";

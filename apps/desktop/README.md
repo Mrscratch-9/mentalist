@@ -14,10 +14,10 @@ episode list is under the **Episodes** tab.
 
 `src/home/viewModel.ts` turns `KnowledgeEngine` views at one `Progress` into the rail, legend, pin and
 character models. Map pins come from `getMap(p)`, cases from `getCaseFile(p, …)`, characters from visible
-`person` entities; counts are lengths of visible rows. With no entities or claims the surfaces render
+`person` entities with a current `recurring` claim; counts are lengths of visible rows. With no entities or claims the surfaces render
 designed empty states. Claim conventions the home reads: `name`, `description`, `role` (value claims),
 `coordinates`, `red_john_smiley` (marks a Red John pin), `part_of_case` (pin → case), `role_in_case`
-(a visible `perpetrator` marks a case solved). Smileys and solved-case silhouettes appear only when backed by visible claims.
+(a visible `perpetrator` marks a case solved), `recurring` (value `"true"` on a person lists them in the characters strip; one-off victims and suspects stay case people). Smileys and solved-case silhouettes appear only when backed by visible claims.
 
 ## Offline basemap
 
