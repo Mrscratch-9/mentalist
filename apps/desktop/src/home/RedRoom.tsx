@@ -124,7 +124,7 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
       </nav>
 
       <main>
-        <h2 className="rr-sr">Investigation board: cases, Sacramento map and characters</h2>
+        <h2 className="rr-sr">Investigation board: cases, California map and characters</h2>
         <RedMap
           pins={pins} selectedPin={pin?.id ?? null} linkedCase={caseSel}
           reducedMotion={reduced} onUnavailable={() => setMapDown(true)} onSelectPin={setSelPin}
@@ -178,12 +178,12 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
         </aside>
 
         <aside className="rr-legend rr-glass" aria-label="Map legend and selection">
-          <div className="rr-panel-head"><h2>Sacramento · 3D map</h2><span>Tilt 58°</span></div>
+          <div className="rr-panel-head"><h2>California · 3D map</h2><span>Tilt 58°</span></div>
           <div className="rr-body">
             {legend.length === 0 ? (
               <div className="rr-empty rr-inline">
                 <strong>No places on the map yet</strong>
-                <p>Pins appear when a watched episode places something in Sacramento.</p>
+                <p>Pins appear when a watched episode places something in California.</p>
               </div>
             ) : (
               <>

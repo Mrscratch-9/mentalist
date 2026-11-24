@@ -14,12 +14,13 @@
       { "title": "The Mentalist Archive", "width": 1440, "height": 900 }
     ],
     "security": {
-      "csp": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost; worker-src 'self' blob:; object-src 'none'; base-uri 'none'",
+      "csp": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost http://tiles.localhost tiles://localhost; worker-src 'self' blob:; object-src 'none'; base-uri 'none'",
       "devCsp": null
     }
   },
   "bundle": {
     "active": true,
+    "resources": { "../public/tiles/california.pmtiles": "tiles/california.pmtiles" },
     "targets": "all",
     "icon": [
       "icons/32x32.png",

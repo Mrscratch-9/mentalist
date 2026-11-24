@@ -1,9 +1,10 @@
-// Full-bleed 3D night map. MapLibre pinned to 5.x (deck.gl 9.4 breaks on 6); tiles load in memory (no HTTP Range in Tauri).
+// Full-bleed 3D night map. MapLibre pinned to 5.x (deck.gl 9.4 breaks on 6); tiles are read by HTTP Range (never loaded whole).
 // Offline: the style has no glyphs/sprite and no symbol layers, so nothing is requested from the network.
 import { useEffect, useMemo, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { FileSource, PMTiles, Protocol } from "pmtiles";
+import { convertFileSrc } from "@tauri-apps/api/core";
+import { FetchSource, PMTiles, Protocol } from "pmtiles";
 import { BLACK, layers as baseLayers } from "@protomaps/basemaps";
 import { MapboxOverlay } from "@deck.gl/mapbox";
 import { IconLayer, TextLayer } from "@deck.gl/layers";
@@ -12,8 +13,13 @@ import { Glow, Landmark, Ring, Smiley, toDataUri } from "./art";
 import { isPmtilesHeader } from "./pmtilesBytes";
 import type { PinModel } from "./viewModel";
 
-const TILES = "/tiles/sacramento.pmtiles";
+const TILE_FILE = "california.pmtiles";
 const CENTER: [number, number] = [-121.5, 38.5775];
+// California extract bounds (west, south, east, north): the user cannot pan outside it, where there are no tiles.
+const CALIFORNIA_BOUNDS: [number, number, number, number] = [-124.5, 32.5, -114.1, 42.1];
+// Zoom ~5.3 frames all of California in a 1440x900 window; the tile data stops at z13 and overzooms above it.
+const MIN_ZOOM = 5;
+const MAX_ZOOM = 17;
 // Camera center sits in the free area between the case rail, legend panel and characters strip.
 const PADDING = { left: 380, right: 330, top: 120, bottom: 130 }; // downtown, Sacramento River to the west
 const TEXT = "#ece4d8";
@@ -75,18 +81,25 @@ function loadAtlas(): Promise<Atlas> {
   return atlasPromise;
 }
 
+/** Tauri serves the bundled file through the ranged `tiles://` protocol (src-tauri/src/tiles.rs); a browser uses the Vite static server, which also honors Range. */
+function tilesUrl(): string {
+  const inTauri = typeof window !== "undefined" && "__TAURI_INTERNALS__" in window;
+  return inTauri ? convertFileSrc(TILE_FILE, "tiles") : new URL(`/tiles/${TILE_FILE}`, window.location.href).href;
+}
+
 let tiles: Promise<string> | null = null;
 function registerTiles(): Promise<string> {
   tiles ??= (async () => {
     const protocol = new Protocol();
     maplibregl.addProtocol("pmtiles", protocol.tile);
-    const res = await fetch(TILES);
+    const url = tilesUrl();
+    // First ranged read (the 16-byte start of the header). Dev servers and SPA resolvers answer a missing file
+    // with index.html and 200: check the magic bytes.
+    const res = await fetch(url, { headers: { Range: "bytes=0-15" } });
     if (!res.ok) throw new Error("basemap unavailable");
-    const blob = await res.blob();
-    // Dev servers and SPA resolvers answer a missing file with index.html and 200: check the magic bytes.
-    if (!isPmtilesHeader(new Uint8Array(await blob.slice(0, 8).arrayBuffer()))) throw new Error("basemap unavailable");
-    protocol.add(new PMTiles(new FileSource(new File([blob], "sacramento.pmtiles"))));
-    return "pmtiles://sacramento.pmtiles";
+    if (!isPmtilesHeader(new Uint8Array(await res.arrayBuffer()).subarray(0, 8))) throw new Error("basemap unavailable");
+    protocol.add(new PMTiles(new FetchSource(url)));
+    return `pmtiles://${url}`;
   })().catch((e) => {
     tiles = null; // allow a retry on the next mount
     throw e;
@@ -126,6 +139,9 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, onUnavail
         pitch: 58,
         bearing: -18,
         maxPitch: 70,
+        minZoom: MIN_ZOOM,
+        maxZoom: MAX_ZOOM,
+        maxBounds: CALIFORNIA_BOUNDS,
         attributionControl: { compact: true },
         style: {
           version: 8,
@@ -237,5 +253,5 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, onUnavail
     };
   }, []);
 
-  return <div ref={box} className="rr-map" role="group" aria-label="3D map of downtown Sacramento. Pins are listed in the legend panel." />;
+  return <div ref={box} className="rr-map" role="group" aria-label="3D map of California, opening on downtown Sacramento. Pins are listed in the legend panel." />;
 }
