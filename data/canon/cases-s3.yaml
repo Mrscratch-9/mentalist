@@ -249,9 +249,6 @@ entities:
   - key: p-s3e10-bloom
     kind: person
     introduced: S3E10
-  - key: p-s3e11-lima
-    kind: person
-    introduced: S3E11
   - key: p-s3e12-nilda
     kind: person
     introduced: S3E12
@@ -1593,20 +1590,6 @@ claims:
     status: confirmed
     revealed: S3E10
     source: src-wiki-s3e10
-  - key: p-s3e11-lima-name
-    subject: p-s3e11-lima
-    predicate: name
-    value: Suge Lima
-    revealed: S3E11
-    source: src-wiki-s3e11
-  - key: s3e11-lima-perp
-    subject: p-s3e11-lima
-    predicate: role_in_case
-    object: c-s3e11
-    value: perpetrator
-    status: confirmed
-    revealed: S3E11
-    source: src-wiki-s3e11
   - key: p-s3e12-nilda-name
     subject: p-s3e12-nilda
     predicate: name
@@ -1691,14 +1674,6 @@ claims:
     status: confirmed
     revealed: S3E22
     source: src-wiki-s3e22
-  - key: s3e24-olaughlin-perp
-    subject: p-olaughlin
-    predicate: role_in_case
-    object: c-s3e24
-    value: perpetrator
-    status: confirmed
-    revealed: S3E24
-    source: src-wiki-s3e24
 sources:
   - key: src-wiki-s3e1
     kind: wiki
@@ -1732,10 +1707,6 @@ sources:
     kind: wiki
     episode: S3E10
     url: https://thementalist.fandom.com/wiki/Jolly_Red_Elf
-  - key: src-wiki-s3e11
-    kind: wiki
-    episode: S3E11
-    url: https://thementalist.fandom.com/wiki/Bloodsport
   - key: src-wiki-s3e12
     kind: wiki
     episode: S3E12
@@ -1756,7 +1727,3 @@ sources:
     kind: wiki
     episode: S3E22
     url: https://thementalist.fandom.com/wiki/Rhapsody_in_Red
-  - key: src-wiki-s3e24
-    kind: wiki
-    episode: S3E24
-    url: https://thementalist.fandom.com/wiki/Strawberries_and_Cream

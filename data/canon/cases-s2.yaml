@@ -249,9 +249,6 @@ entities:
   - key: p-s2e17-bandino
     kind: person
     introduced: S2E17
-  - key: p-s2e18-willis
-    kind: person
-    introduced: S2E18
   - key: p-s2e20-alex
     kind: person
     introduced: S2E20
@@ -1393,20 +1390,6 @@ claims:
     status: confirmed
     revealed: S2E17
     source: src-wiki-s2e17
-  - key: k-s2e18-willis-name
-    subject: p-s2e18-willis
-    predicate: name
-    value: Markham Willis
-    revealed: S2E18
-    source: src-wiki-s2e18
-  - key: k-s2e18-willis-role
-    subject: p-s2e18-willis
-    predicate: role_in_case
-    object: c-s2e18
-    value: perpetrator
-    status: confirmed
-    revealed: S2E18
-    source: src-wiki-s2e18
   - key: k-s2e20-alex-name
     subject: p-s2e20-alex
     predicate: name
@@ -1464,10 +1447,6 @@ sources:
     kind: wiki
     episode: S2E17
     url: https://thementalist.fandom.com/wiki/The_Red_Box
-  - key: src-wiki-s2e18
-    kind: wiki
-    episode: S2E18
-    url: https://thementalist.fandom.com/wiki/Aingavite_Baa
   - key: src-wiki-s2e20
     kind: wiki
     episode: S2E20

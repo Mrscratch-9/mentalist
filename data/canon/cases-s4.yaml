@@ -421,9 +421,6 @@ entities:
   - key: p-s4e3-jonathan
     kind: person
     introduced: S4E3
-  - key: p-s4e9-penn
-    kind: person
-    introduced: S4E9
   - key: p-s4e10-wilcox
     kind: person
     introduced: S4E10
@@ -2033,20 +2030,6 @@ claims:
     revealed: S4E3
     status: confirmed
     source: src-wiki-s4e3
-  - key: p-s4e9-penn-name
-    subject: p-s4e9-penn
-    predicate: name
-    value: Steve Penn
-    revealed: S4E9
-    source: src-wiki-s4e9
-  - key: p-s4e9-penn-perp
-    subject: p-s4e9-penn
-    predicate: role_in_case
-    object: c-s4e9
-    value: perpetrator
-    revealed: S4E9
-    status: confirmed
-    source: src-wiki-s4e9
   - key: p-s4e10-wilcox-name
     subject: p-s4e10-wilcox
     predicate: name
@@ -2088,10 +2071,6 @@ sources:
     kind: wiki
     episode: S4E3
     url: https://thementalist.fandom.com/wiki/Pretty_Red_Balloon
-  - key: src-wiki-s4e9
-    kind: wiki
-    episode: S4E9
-    url: https://thementalist.fandom.com/wiki/The_Redshirt
   - key: src-wiki-s4e10
     kind: wiki
     episode: S4E10
