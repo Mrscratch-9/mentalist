@@ -75,7 +75,7 @@ export interface CaseFileView {
   case: EntityView;
   roles: Array<{
     claimId: ClaimId; person: EntityId; role: CaseRole | string; revealedIn: number;
-    state: "current" | "discarded"; supersession: ClaimView["supersession"];
+    status: ClaimStatus; state: "current" | "discarded"; supersession: ClaimView["supersession"];
   }>;
   claims: ClaimView[];
 }
@@ -316,7 +316,7 @@ export class KnowledgeEngine {
       .filter((c) => c.object === caseId && c.value !== null)
       .map((c) => ({
         claimId: c.id, person: c.subject, role: c.value as string, revealedIn: c.revealedIn,
-        state: c.state, supersession: c.supersession,
+        status: c.status, state: c.state, supersession: c.supersession,
       }));
     const { claims, ...entity } = e;
     return { case: entity, roles, claims };

@@ -321,3 +321,14 @@ describe("resolveHome: error branch", () => {
     }
   });
 });
+
+describe("solved cases", () => {
+  it("a perpetrator held only as an in-show suspicion does not mark the case solved", () => {
+    const data = synthetic();
+    data.claims = data.claims.map((c) =>
+      (c.id as string) === "ro_pb" ? ({ ...c, status: "in_show_suspicion" } as Claim) : c,
+    );
+    const { engine } = setup(data);
+    expect(buildHomeModel(engine, progress(3)).cases[0]?.solved).toBe(false);
+  });
+});

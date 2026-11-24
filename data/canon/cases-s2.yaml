@@ -239,7 +239,8 @@ claims:
   - key: k-s2e1-desc
     subject: c-s2e1
     predicate: description
-    value: "Jane's self-declared last case: a woman is found suffocated after being accused of stealing a fortune, yet she lived in poverty."
+    value: "Jane's self-declared last case: a woman is found suffocated after being
+      accused of stealing a fortune, yet she lived in poverty."
     revealed: S2E1
     source: src-s2e1
   - key: k-s2e2-name
@@ -251,7 +252,9 @@ claims:
   - key: k-s2e2-desc
     subject: c-s2e2
     predicate: description
-    value: "The murder of a state senator's young aide, rumored to have been involved with the senator's husband, with Jane racing to solve it in a day."
+    value: "The murder of a state senator's young aide, rumored to have been
+      involved with the senator's husband, with Jane racing to solve it in a
+      day."
     revealed: S2E2
     source: src-s2e2
   - key: k-s2e2-victim-name
@@ -276,7 +279,8 @@ claims:
   - key: k-s2e3-desc
     subject: c-s2e3
     predicate: description
-    value: "A convicted child molester is found murdered with Lisbon's fingerprints on the weapon and a gap in her memory, making her the prime suspect."
+    value: "A convicted child molester is found murdered with Lisbon's fingerprints
+      on the weapon and a gap in her memory, making her the prime suspect."
     revealed: S2E3
     source: src-s2e3
   - key: k-s2e3-victim-name
@@ -335,7 +339,8 @@ claims:
   - key: k-s2e4-desc
     subject: c-s2e4
     predicate: description
-    value: "The roadside murder of a lawyer whose only client was a notorious motorcycle gang, with suspects among his gang and family."
+    value: "The roadside murder of a lawyer whose only client was a notorious
+      motorcycle gang, with suspects among his gang and family."
     revealed: S2E4
     source: src-s2e4
   - key: k-s2e4-victim-name
@@ -402,7 +407,8 @@ claims:
   - key: k-s2e5-desc
     subject: c-s2e5
     predicate: description
-    value: "A new owner of an old mansion is found murdered there, and witnesses blame the ghost of its former owner."
+    value: "A new owner of an old mansion is found murdered there, and witnesses
+      blame the ghost of its former owner."
     revealed: S2E5
     source: src-s2e5
   - key: k-s2e5-nephew-name
@@ -439,7 +445,8 @@ claims:
   - key: k-s2e6-desc
     subject: c-s2e6
     predicate: description
-    value: "A young man is killed over his knowledge that a planned oil-drilling site sheltered a protected species, while Jane works the case from jail."
+    value: "A young man is killed over his knowledge that a planned oil-drilling
+      site sheltered a protected species, while Jane works the case from jail."
     revealed: S2E6
     source: src-s2e6
   - key: k-s2e7-name
@@ -451,7 +458,8 @@ claims:
   - key: k-s2e7-desc
     subject: c-s2e7
     predicate: description
-    value: "Bosco's team and Lisbon's unit join forces on the kidnapping of a wealthy woman's sister, and Jane finds an insider helped the kidnappers."
+    value: "Bosco's team and Lisbon's unit join forces on the kidnapping of a
+      wealthy woman's sister, and Jane finds an insider helped the kidnappers."
     revealed: S2E7
     source: src-s2e7
   - key: k-s2e7-nanny-name
@@ -476,7 +484,9 @@ claims:
   - key: k-s2e8-desc
     subject: c-s2e8
     predicate: description
-    value: "A deadly shooting at CBI headquarters kills members of Bosco's team, and this is a Red John case, since he is behind the attacks and murdered one of the agents."
+    value: "A deadly shooting at CBI headquarters kills members of Bosco's team, and
+      this is a Red John case, since he is behind the attacks and murdered one
+      of the agents."
     revealed: S2E8
     source: src-s2e8
   - key: k-s2e8-bosco-role
@@ -505,12 +515,6 @@ claims:
     object: c-s2e8
     revealed: S2E8
     source: src-s2e8
-  - key: k-s2e8-workplace-smiley
-    subject: l-s2e8-workplace
-    predicate: red_john_smiley
-    value: "true"
-    revealed: S2E8
-    source: src-s2e8
   - key: k-s2e9-name
     subject: c-s2e9
     predicate: name
@@ -520,7 +524,8 @@ claims:
   - key: k-s2e9-desc
     subject: c-s2e9
     predicate: description
-    value: "A wealthy jeweler is shot during a robbery at his store, and the trail leads to a safe cracker and a nephew of the owner's wife."
+    value: "A wealthy jeweler is shot during a robbery at his store, and the trail
+      leads to a safe cracker and a nephew of the owner's wife."
     revealed: S2E9
     source: src-s2e9
   - key: k-s2e9-victim-name
@@ -571,7 +576,8 @@ claims:
   - key: k-s2e10-desc
     subject: c-s2e10
     predicate: description
-    value: "A former professional baseball player is found dead in his Zen garden, and his scouting academy holds the motive."
+    value: "A former professional baseball player is found dead in his Zen garden,
+      and his scouting academy holds the motive."
     revealed: S2E10
     source: src-s2e10
   - key: k-s2e10-victim-name
@@ -621,7 +627,8 @@ claims:
   - key: k-s2e11-desc
     subject: c-s2e11
     predicate: description
-    value: "A couple is murdered on the way to his high-school reunion, and an old prank links the killing to the class."
+    value: "A couple is murdered on the way to his high-school reunion, and an old
+      prank links the killing to the class."
     revealed: S2E11
     source: src-s2e11
   - key: k-s2e11-victim1-name
@@ -686,7 +693,8 @@ claims:
   - key: k-s2e12-desc
     subject: c-s2e12
     predicate: description
-    value: "A mayor's aide is found buried at a development groundbreaking, and the case draws in eco-terrorists and a reporter."
+    value: "A mayor's aide is found buried at a development groundbreaking, and the
+      case draws in eco-terrorists and a reporter."
     revealed: S2E12
     source: src-s2e12
   - key: k-s2e12-victim-name
@@ -736,7 +744,8 @@ claims:
   - key: k-s2e13-desc
     subject: c-s2e13
     predicate: description
-    value: "A young saleswoman is found dead in the trunk of a luxury car at an elite car dealership."
+    value: "A young saleswoman is found dead in the trunk of a luxury car at an
+      elite car dealership."
     revealed: S2E13
     source: src-s2e13
   - key: k-s2e13-victim-name
@@ -821,7 +830,8 @@ claims:
   - key: k-s2e14-desc
     subject: c-s2e14
     predicate: description
-    value: "Cho helps investigate the murder of a former friend from his old street gang, with Jane tagging along."
+    value: "Cho helps investigate the murder of a former friend from his old street
+      gang, with Jane tagging along."
     revealed: S2E14
     source: src-s2e14
   - key: k-s2e14-victim-name
@@ -890,7 +900,8 @@ claims:
   - key: k-s2e16-desc
     subject: c-s2e16
     predicate: description
-    value: "A government researcher exposed to a deadly virus calls on the CBI to find who sabotaged her before she dies."
+    value: "A government researcher exposed to a deadly virus calls on the CBI to
+      find who sabotaged her before she dies."
     revealed: S2E16
     source: src-s2e16
   - key: k-s2e16-victim-name
@@ -968,7 +979,8 @@ claims:
   - key: k-s2e17-desc
     subject: c-s2e17
     predicate: description
-    value: "The murder of a tutor turns into a hunt for a priceless ring stolen from a famous museum."
+    value: "The murder of a tutor turns into a hunt for a priceless ring stolen from
+      a famous museum."
     revealed: S2E17
     source: src-s2e17
   - key: k-s2e17-museum-name
@@ -999,7 +1011,8 @@ claims:
   - key: k-s2e18-desc
     subject: c-s2e18
     predicate: description
-    value: "A bloodied woman with amnesia stumbles in front of the team's car, and three bodies are found in a nearby barn."
+    value: "A bloodied woman with amnesia stumbles in front of the team's car, and
+      three bodies are found in a nearby barn."
     revealed: S2E18
     source: src-s2e18
   - key: k-s2e18-jane-doe-name
@@ -1037,7 +1050,8 @@ claims:
   - key: k-s2e19-desc
     subject: c-s2e19
     predicate: description
-    value: "An assistant district attorney is murdered at home, and the CBI hunts a hitman for hire whose identity cannot be proven."
+    value: "An assistant district attorney is murdered at home, and the CBI hunts a
+      hitman for hire whose identity cannot be proven."
     revealed: S2E19
     source: src-s2e19
   - key: k-s2e19-victim-name
@@ -1102,7 +1116,8 @@ claims:
   - key: k-s2e20-desc
     subject: c-s2e20
     predicate: description
-    value: "A media mogul is murdered, and the trail leads to a cult-like group with a grudge against his company."
+    value: "A media mogul is murdered, and the trail leads to a cult-like group with
+      a grudge against his company."
     revealed: S2E20
     source: src-s2e20
   - key: k-s2e20-victim-name
@@ -1147,7 +1162,8 @@ claims:
   - key: k-s2e21-desc
     subject: c-s2e21
     predicate: description
-    value: "A man is shot by a gunman dressed as a clown who cuts off his finger, and a secret device is at stake."
+    value: "A man is shot by a gunman dressed as a clown who cuts off his finger,
+      and a secret device is at stake."
     revealed: S2E21
     source: src-s2e21
   - key: k-s2e21-victim-name
@@ -1199,7 +1215,8 @@ claims:
   - key: k-s2e22-desc
     subject: c-s2e22
     predicate: description
-    value: "The murder of the head of an anti-trafficking charity reunites Jane with a self-styled psychic."
+    value: "The murder of the head of an anti-trafficking charity reunites Jane with
+      a self-styled psychic."
     revealed: S2E22
     source: src-s2e22
   - key: k-s2e22-victim-name
@@ -1224,7 +1241,8 @@ claims:
   - key: k-s2e23-desc
     subject: c-s2e23
     predicate: description
-    value: "A copycat of Red John posts online a film of a student being killed, and a psychic's contact with the real Red John has dire consequences."
+    value: "A copycat of Red John posts online a film of a student being killed, and
+      a psychic's contact with the real Red John has dire consequences."
     revealed: S2E23
     source: src-s2e23
   - key: k-s2e23-victim-name

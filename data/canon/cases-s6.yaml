@@ -82,7 +82,9 @@ claims:
   - key: cl-s6e1-desc
     subject: c-s6e1
     predicate: description
-    value: "The team investigates the death of a man who had been missing for two years, while Jane and Lisbon work to narrow down the list of Red John suspects."
+    value: "The team investigates the death of a man who had been missing for two
+      years, while Jane and Lisbon work to narrow down the list of Red John
+      suspects."
     revealed: S6E1
     source: src-s6e1
 
@@ -96,7 +98,8 @@ claims:
   - key: cl-s6e2-desc
     subject: c-s6e2
     predicate: description
-    value: "A Red John case: Red John murders Jane's former psychiatrist, Sophie Miller, and leaves his smiley face, and Jane finds clues to his identity."
+    value: "A Red John case: Red John murders Jane's former psychiatrist, Sophie
+      Miller, and leaves his smiley face, and Jane finds clues to his identity."
     revealed: S6E2
     source: src-s6e2
 
@@ -146,7 +149,8 @@ claims:
   - key: cl-s6e3-desc
     subject: c-s6e3
     predicate: description
-    value: "Jane brings the CBI into a case in Napa so that the team can focus on Sheriff McAllister."
+    value: "Jane brings the CBI into a case in Napa so that the team can focus on
+      Sheriff McAllister."
     revealed: S6E3
     source: src-s6e3
 
@@ -190,7 +194,10 @@ claims:
   - key: cl-s6e4-desc
     subject: c-s6e4
     predicate: description
-    value: "The team investigates after a list of fake Red John suspects is stolen and the innocent men named on it are put in danger, and a conspiracy of law enforcement personnel using the phrase \"Tyger, Tyger\" comes to light."
+    value: "The team investigates after a list of fake Red John suspects is stolen
+      and the innocent men named on it are put in danger, and a conspiracy of
+      law enforcement personnel using the phrase \"Tyger, Tyger\" comes to
+      light."
     revealed: S6E4
     source: src-s6e4
 
@@ -220,7 +227,8 @@ claims:
   - key: cl-s6e5-desc
     subject: c-s6e5
     predicate: description
-    value: "The team investigates the murder of a member of Visualize, where the killer seems to have been in two places at the same time."
+    value: "The team investigates the murder of a member of Visualize, where the
+      killer seems to have been in two places at the same time."
     revealed: S6E5
     source: src-s6e5
 
@@ -234,7 +242,8 @@ claims:
   - key: cl-s6e6-desc
     subject: c-s6e6
     predicate: description
-    value: "Jane gathers the remaining Red John suspects at his family home to learn who the killer is, and an explosion follows."
+    value: "Jane gathers the remaining Red John suspects at his family home to learn
+      who the killer is, and an explosion follows."
     revealed: S6E6
     source: src-s6e6
 
@@ -302,7 +311,8 @@ claims:
   - key: cl-s6e7-desc
     subject: c-s6e7
     predicate: description
-    value: "After the explosion, Bertram and Smith go on the run, Jane names Bertram as Red John, and the FBI shuts down the CBI."
+    value: "After the explosion, Bertram and Smith go on the run, Jane names Bertram
+      as Red John, and the FBI shuts down the CBI."
     revealed: S6E7
     source: src-s6e7
 
@@ -324,7 +334,8 @@ claims:
   - key: cl-s6e8-desc
     subject: c-s6e8
     predicate: description
-    value: "A Red John case: Jane meets Bertram in a cemetery chapel and Red John is revealed to be Sheriff McAllister."
+    value: "A Red John case: Jane meets Bertram in a cemetery chapel and Red John is
+      revealed to be Sheriff McAllister."
     revealed: S6E8
     source: src-s6e8
 
@@ -346,13 +357,6 @@ claims:
     subject: l-s6e8-chapel
     predicate: part_of_case
     object: c-s6e8
-    revealed: S6E8
-    source: src-s6e8
-
-  - key: cl-s6e8-chapel-smiley
-    subject: l-s6e8-chapel
-    predicate: red_john_smiley
-    value: "true"
     revealed: S6E8
     source: src-s6e8
 
@@ -390,7 +394,8 @@ claims:
   - key: cl-s6e9-desc
     subject: c-s6e9
     predicate: description
-    value: "Two years later, Jane is offered a consulting job with the FBI and negotiates his terms with Agent Abbott."
+    value: "Two years later, Jane is offered a consulting job with the FBI and
+      negotiates his terms with Agent Abbott."
     revealed: S6E9
     source: src-s6e9
 
@@ -412,7 +417,8 @@ claims:
   - key: cl-s6e10-desc
     subject: c-s6e10
     predicate: description
-    value: "Jane and Lisbon assist the FBI in a case about a missing computer programmer in Brooklyn."
+    value: "Jane and Lisbon assist the FBI in a case about a missing computer
+      programmer in Brooklyn."
     revealed: S6E10
     source: src-s6e10
 

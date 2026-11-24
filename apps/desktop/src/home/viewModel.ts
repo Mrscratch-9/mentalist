@@ -126,7 +126,8 @@ export function buildHomeModel(engine: KnowledgeEngine, p: CoreProgress): HomeMo
         id: e.id,
         code: ep ? episodeCode(ep.season, ep.number) : "",
         title: val(e.id, "name") ?? "Untitled case",
-        solved: current.some((r) => r.role === "perpetrator"),
+        // A case is solved only when the show confirms who did it, not on a suspicion.
+        solved: current.some((r) => r.role === "perpetrator" && r.status === "confirmed"),
         silhouette: current.filter((r) => r.role === "investigator").length >= 2 ? "cbi" : "jane",
       };
     });

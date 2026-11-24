@@ -77,4 +77,30 @@ describe("real canon (counts only)", () => {
     ).length;
     expect(violations).toBe(0);
   });
+
+  it("red_john_smiley subjects are locations linked to a case", () => {
+    const linked = new Set(allClaims.filter((c) => c.predicate === "part_of_case").map((c) => c.subject));
+    const violations = allClaims.filter(
+      (c) => c.predicate === "red_john_smiley" && (kindOf.get(c.subject) !== "location" || !linked.has(c.subject)),
+    ).length;
+    expect(violations).toBe(0);
+  });
+
+  it("coordinates parse as lat,lon within range", () => {
+    const violations = allClaims.filter((c) => {
+      if (c.predicate !== "coordinates") return false;
+      const [lat, lon] = String((c as Cl & { value?: string }).value).split(",").map(Number);
+      return !(Number.isFinite(lat) && Number.isFinite(lon) && Math.abs(lat!) <= 90 && Math.abs(lon!) <= 180);
+    }).length;
+    expect(violations).toBe(0);
+  });
+
+  it("has one named and described case per authored episode", () => {
+    const cases = canon.flatMap((c) => c.entities).filter((e) => e.kind === "case") as Array<En & { introduced: string }>;
+    const has = (p: string) => new Set(allClaims.filter((c) => c.predicate === p).map((c) => c.subject));
+    const named = has("name");
+    const described = has("description");
+    expect(new Set(cases.map((e) => e.introduced)).size).toBe(cases.length);
+    expect(cases.filter((e) => !named.has(e.key) || !described.has(e.key)).length).toBe(0);
+  });
 });

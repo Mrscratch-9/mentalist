@@ -290,7 +290,8 @@ claims:
   - key: c-s5e1-description
     subject: c-s5e1
     predicate: description
-    value: "A woman and a repairman are found dead in a double homicide and the team learns the motive was a winning lottery ticket."
+    value: "A woman and a repairman are found dead in a double homicide and the team
+      learns the motive was a winning lottery ticket."
     revealed: S5E1
     source: src-s5e1
 
@@ -349,7 +350,8 @@ claims:
   - key: c-s5e2-description
     subject: c-s5e2
     predicate: description
-    value: "A diamond cutter is murdered and a large blue diamond goes missing while Jane, dosed with belladonna, reconstructs the clues."
+    value: "A diamond cutter is murdered and a large blue diamond goes missing while
+      Jane, dosed with belladonna, reconstructs the clues."
     revealed: S5E2
     source: src-s5e2
 
@@ -408,7 +410,8 @@ claims:
   - key: c-s5e3-description
     subject: c-s5e3
     predicate: description
-    value: "A bank employee is shot during a robbery and Jane suspects he was the inside man."
+    value: "A bank employee is shot during a robbery and Jane suspects he was the
+      inside man."
     revealed: S5E3
     source: src-s5e3
 
@@ -467,7 +470,8 @@ claims:
   - key: c-s5e4-description
     subject: c-s5e4
     predicate: description
-    value: "A man with no record is murdered, Rigsby's father is found wounded at the scene, and a gang war is suspected."
+    value: "A man with no record is murdered, Rigsby's father is found wounded at
+      the scene, and a gang war is suspected."
     revealed: S5E4
     source: src-s5e4
 
@@ -541,7 +545,8 @@ claims:
   - key: c-s5e5-description
     subject: c-s5e5
     predicate: description
-    value: "In a flashback to the day Jane first joins the CBI, he rides along on the shooting of an appellate court judge's son and exposes a corrupt cop."
+    value: "In a flashback to the day Jane first joins the CBI, he rides along on
+      the shooting of an appellate court judge's son and exposes a corrupt cop."
     revealed: S5E5
     source: src-s5e5
 
@@ -555,7 +560,8 @@ claims:
   - key: c-s5e6-description
     subject: c-s5e6
     predicate: description
-    value: "The team investigates a community security guard's murder and uncovers a kidnapping that may be a case of mistaken identity."
+    value: "The team investigates a community security guard's murder and uncovers a
+      kidnapping that may be a case of mistaken identity."
     revealed: S5E6
     source: src-s5e6
 
@@ -569,7 +575,8 @@ claims:
   - key: c-s5e7-description
     subject: c-s5e7
     predicate: description
-    value: "A TV journalist who specialized in human interest stories is murdered, and the trail leads toward a powerful business tycoon."
+    value: "A TV journalist who specialized in human interest stories is murdered,
+      and the trail leads toward a powerful business tycoon."
     revealed: S5E7
     source: src-s5e7
 
@@ -583,7 +590,8 @@ claims:
   - key: c-s5e8-description
     subject: c-s5e8
     predicate: description
-    value: "Jane arranges Lorelei Martins' escape from prison, hoping she will lead him to Red John."
+    value: "Jane arranges Lorelei Martins' escape from prison, hoping she will lead
+      him to Red John."
     revealed: S5E8
     source: src-s5e8
 
@@ -597,7 +605,8 @@ claims:
   - key: c-s5e9-description
     subject: c-s5e9
     predicate: description
-    value: "The team investigates the murder of a real estate agent who was a gang member until two years earlier."
+    value: "The team investigates the murder of a real estate agent who was a gang
+      member until two years earlier."
     revealed: S5E9
     source: src-s5e9
 
@@ -626,7 +635,8 @@ claims:
   - key: c-s5e10-description
     subject: c-s5e10
     predicate: description
-    value: "A young botanist's death leads the team into the world of medical marijuana and stolen seeds."
+    value: "A young botanist's death leads the team into the world of medical
+      marijuana and stolen seeds."
     revealed: S5E10
     source: src-s5e10
 
@@ -670,7 +680,8 @@ claims:
   - key: c-s5e11-description
     subject: c-s5e11
     predicate: description
-    value: "Jane and the team investigate the death of a model while Lisbon gathers more evidence on Tommy Volker."
+    value: "Jane and the team investigate the death of a model while Lisbon gathers
+      more evidence on Tommy Volker."
     revealed: S5E11
     source: src-s5e11
 
@@ -684,7 +695,8 @@ claims:
   - key: c-s5e12-description
     subject: c-s5e12
     predicate: description
-    value: "The team finds the remains of a geologist who was due to testify against Tommy Volker and searches for a boy who may have witnessed the murder."
+    value: "The team finds the remains of a geologist who was due to testify against
+      Tommy Volker and searches for a boy who may have witnessed the murder."
     revealed: S5E12
     source: src-s5e12
 
@@ -766,7 +778,9 @@ claims:
   - key: c-s5e13-description
     subject: c-s5e13
     predicate: description
-    value: "A Red John case: a 25-year-old triple homicide at a farm linked to the Visualize group, where Red John is believed to have painted his first smiley."
+    value: "A Red John case: a 25-year-old triple homicide at a farm linked to the
+      Visualize group, where Red John is believed to have painted his first
+      smiley."
     revealed: S5E13
     source: src-s5e13
 
@@ -870,7 +884,8 @@ claims:
   - key: c-s5e14-description
     subject: c-s5e14
     predicate: description
-    value: "A graduate student is killed at a natural history museum in a cutthroat academic rivalry."
+    value: "A graduate student is killed at a natural history museum in a cutthroat
+      academic rivalry."
     revealed: S5E14
     source: src-s5e14
 
@@ -899,7 +914,8 @@ claims:
   - key: c-s5e15-description
     subject: c-s5e15
     predicate: description
-    value: "Remains found in an elderly heiress's mansion turn out to belong to a missing veteran."
+    value: "Remains found in an elderly heiress's mansion turn out to belong to a
+      missing veteran."
     revealed: S5E15
     source: src-s5e15
 
@@ -913,7 +929,8 @@ claims:
   - key: c-s5e16-description
     subject: c-s5e16
     predicate: description
-    value: "A Red John case: Lorelei Martins goes rogue to find who killed her sister, and Jane is pulled into the hunt."
+    value: "A Red John case: Lorelei Martins goes rogue to find who killed her
+      sister, and Jane is pulled into the hunt."
     revealed: S5E16
     source: src-s5e16
 
@@ -962,13 +979,6 @@ claims:
     revealed: S5E16
     source: src-s5e16
 
-  - key: l-s5e16-scene-smiley
-    subject: l-s5e16-scene
-    predicate: red_john_smiley
-    value: "true"
-    revealed: S5E16
-    source: src-s5e16
-
   - key: c-s5e17-name
     subject: c-s5e17
     predicate: name
@@ -979,7 +989,8 @@ claims:
   - key: c-s5e17-description
     subject: c-s5e17
     predicate: description
-    value: "An army post medic is found dead and the only witness is a patient with short-term memory impairment."
+    value: "An army post medic is found dead and the only witness is a patient with
+      short-term memory impairment."
     revealed: S5E17
     source: src-s5e17
 
@@ -1068,7 +1079,8 @@ claims:
   - key: c-s5e18-description
     subject: c-s5e18
     predicate: description
-    value: "An actress is killed the night before her musical opens and several cast members are suspects."
+    value: "An actress is killed the night before her musical opens and several cast
+      members are suspects."
     revealed: S5E18
     source: src-s5e18
 
@@ -1142,7 +1154,8 @@ claims:
   - key: c-s5e19-description
     subject: c-s5e19
     predicate: description
-    value: "The owner of an entire town is found dead and family tensions over selling the town surface."
+    value: "The owner of an entire town is found dead and family tensions over
+      selling the town surface."
     revealed: S5E19
     source: src-s5e19
 
@@ -1230,7 +1243,8 @@ claims:
   - key: c-s5e20-description
     subject: c-s5e20
     predicate: description
-    value: "A woman is killed and the team discovers her marriage had problems and that her husband was having an affair."
+    value: "A woman is killed and the team discovers her marriage had problems and
+      that her husband was having an affair."
     revealed: S5E20
     source: src-s5e20
 
@@ -1244,7 +1258,8 @@ claims:
   - key: c-s5e21-description
     subject: c-s5e21
     predicate: description
-    value: "Armed robbers steal a prized box from LaRoche's safe and he asks Jane to find it."
+    value: "Armed robbers steal a prized box from LaRoche's safe and he asks Jane to
+      find it."
     revealed: S5E21
     source: src-s5e21
 
@@ -1274,7 +1289,8 @@ claims:
   - key: c-s5e22-description
     subject: c-s5e22
     predicate: description
-    value: "A Red John case: a young woman is killed at a motel and the trail leads to a missing child and Jane's past."
+    value: "A Red John case: a young woman is killed at a motel and the trail leads
+      to a missing child and Jane's past."
     revealed: S5E22
     source: src-s5e22
 
@@ -1349,12 +1365,5 @@ claims:
     subject: l-s5e22-motel
     predicate: part_of_case
     object: c-s5e22
-    revealed: S5E22
-    source: src-s5e22
-
-  - key: l-s5e22-motel-smiley
-    subject: l-s5e22-motel
-    predicate: red_john_smiley
-    value: "true"
     revealed: S5E22
     source: src-s5e22
