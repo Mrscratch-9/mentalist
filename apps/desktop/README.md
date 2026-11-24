@@ -6,6 +6,7 @@ episode list is under the **Episodes** tab.
 
 - `pnpm dev` / `pnpm tauri dev`: run the app (`pnpm canon` compiles `public/canon.sqlite` first)
 - `pnpm test`: Vitest (progress store, canon loading, home view models)
+- App icon: source `assets/icon.svg` (original red smiley, also `public/favicon.svg`); rasterize to a 1024 PNG and run `pnpm tauri icon <png>` to regenerate `src-tauri/icons/*`.
 - Fonts (Inter 300/400/500/600, Courier Prime) are bundled via @fontsource, no network.
 - Progress lives in `src/state/progress.ts` (owner configured: season 6, episode 10). Peek (`core.peek()`,
   p+1) is React state only and is never written to storage.
