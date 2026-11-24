@@ -5,3 +5,4 @@ target/
 .DS_Store
 # large map extracts are generated locally, not committed
 *.pmtiles
+.codegraph/

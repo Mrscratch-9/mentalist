@@ -7,7 +7,7 @@ episode list is under the **Episodes** tab.
 - `pnpm dev` / `pnpm tauri dev`: run the app (`pnpm canon` compiles `public/canon.sqlite` first)
 - `pnpm test`: Vitest (progress store, canon loading, home view models)
 - Fonts (Inter 300/400/500/600, Courier Prime) are bundled via @fontsource, no network.
-- Progress lives in `src/state/progress.ts` (owner configured: season 6, episode 9). Peek (`core.peek()`,
+- Progress lives in `src/state/progress.ts` (owner configured: season 6, episode 10). Peek (`core.peek()`,
   p+1) is React state only and is never written to storage.
 
 ## Data flow (no UI code touches tables)

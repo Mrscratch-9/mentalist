@@ -13,8 +13,8 @@ export interface StorageAdapter {
 
 export const PROGRESS_KEY = "mentalist.progress.v1";
 
-/** The owner's configured progress: watched through season 6, episode 9 (started 6x10). */
-export const OWNER_PROGRESS: Progress = { season: 6, episode: 9 };
+/** The owner's configured progress: watched through season 6, episode 10. */
+export const OWNER_PROGRESS: Progress = { season: 6, episode: 10 };
 
 const isPositiveInt = (n: unknown): n is number =>
   typeof n === "number" && Number.isInteger(n) && n > 0;
