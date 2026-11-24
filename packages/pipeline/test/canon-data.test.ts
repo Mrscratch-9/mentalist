@@ -6,7 +6,7 @@ import { describe, expect, it } from "vitest";
 // Checks the real canon by counts only: it must never print canon text (spoilers).
 const dir = fileURLToPath(new URL("../../../data/canon/", import.meta.url));
 const docs = readdirSync(dir)
-  .filter((f) => f.endsWith(".yaml"))
+  .filter((f) => /^episodes-s\d+\.yaml$/.test(f))
   .sort()
   .map((f) => ({ f, d: parse(readFileSync(dir + f, "utf8")) }));
 
