@@ -1,0 +1,988 @@
+# The Mentalist core canon: recurring characters, organizations and the Red John arc (S1E1..S6E10).
+# Sources: English Wikipedia, "List of The Mentalist characters" and season pages.
+# Spoilers: do not open outside the app.
+
+entities:
+  - key: p-jane
+    kind: person
+    introduced: S1E1
+  - key: p-lisbon
+    kind: person
+    introduced: S1E1
+  - key: p-cho
+    kind: person
+    introduced: S1E1
+  - key: p-rigsby
+    kind: person
+    introduced: S1E1
+  - key: p-van-pelt
+    kind: person
+    introduced: S1E1
+  - key: p-partridge
+    kind: person
+    introduced: S1E1
+  - key: p-minelli
+    kind: person
+    introduced: S1E11
+  - key: p-frye
+    kind: person
+    introduced: S1E7
+  - key: p-harker
+    kind: person
+    introduced: S1E23
+  - key: p-bosco
+    kind: person
+    introduced: S2E1
+  - key: p-rebecca-anderson
+    kind: person
+    introduced: S2E2
+  - key: p-shettrick
+    kind: person
+    introduced: S2E12
+  - key: p-mashburn
+    kind: person
+    introduced: S2E13
+  - key: p-hightower
+    kind: person
+    introduced: S2E17
+  - key: p-stiles
+    kind: person
+    introduced: S2E20
+  - key: p-bertram
+    kind: person
+    introduced: S3E1
+  - key: p-olaughlin
+    kind: person
+    introduced: S3E3
+  - key: p-laroche
+    kind: person
+    introduced: S3E10
+  - key: p-erica-flynn
+    kind: person
+    introduced: S3E19
+  - key: p-harrigan
+    kind: person
+    introduced: S3E19
+  - key: p-ardiles
+    kind: person
+    introduced: S3E22
+  - key: p-wainwright
+    kind: person
+    introduced: S4E4
+  - key: p-haffner
+    kind: person
+    introduced: S4E2
+  - key: p-darcy
+    kind: person
+    introduced: S4E7
+  - key: p-edgecombe
+    kind: person
+    introduced: S4E8
+  - key: p-lorelei-martins
+    kind: person
+    introduced: S4E24
+  - key: p-cooper
+    kind: person
+    introduced: S5E13
+  - key: p-smith
+    kind: person
+    introduced: S5E1
+  - key: p-mancini
+    kind: person
+    introduced: S5E1
+  - key: p-schultz
+    kind: person
+    introduced: S5E5
+  - key: p-kirkland
+    kind: person
+    introduced: S5E8
+  - key: p-volker
+    kind: person
+    introduced: S5E11
+  - key: p-abbott
+    kind: person
+    introduced: S6E7
+  - key: p-wylie
+    kind: person
+    introduced: S6E10
+  - key: o-cbi
+    kind: organization
+    introduced: S1E1
+  - key: o-fbi
+    kind: organization
+    introduced: S3E3
+  - key: o-visualize
+    kind: organization
+    introduced: S2E20
+  - key: o-blake
+    kind: organization
+    introduced: S6E10
+  - key: a-red-john
+    kind: arc
+    introduced: S1E1
+
+claims:
+  - key: c-jane-name
+    subject: p-jane
+    predicate: name
+    value: "Patrick Jane"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-jane-role
+    subject: p-jane
+    predicate: role
+    value: "CBI consultant"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-jane-description
+    subject: p-jane
+    predicate: description
+    value: "A celebrated television mentalist who now helps the CBI solve murders through sharp observation, driven by the murder of his wife and daughter by Red John."
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-jane-recurring
+    subject: p-jane
+    predicate: recurring
+    value: "true"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-lisbon-name
+    subject: p-lisbon
+    predicate: name
+    value: "Teresa Lisbon"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-lisbon-role
+    subject: p-lisbon
+    predicate: role
+    value: "CBI senior agent"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-lisbon-description
+    subject: p-lisbon
+    predicate: description
+    value: "The agent who leads the CBI team that Jane works with, and who is often exasperated by his methods."
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-lisbon-recurring
+    subject: p-lisbon
+    predicate: recurring
+    value: "true"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-cho-name
+    subject: p-cho
+    predicate: name
+    value: "Kimball Cho"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-cho-role
+    subject: p-cho
+    predicate: role
+    value: "CBI special agent"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-cho-description
+    subject: p-cho
+    predicate: description
+    value: "A deadpan member of Lisbon's team, who is rarely impressed by Jane's tricks."
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-cho-recurring
+    subject: p-cho
+    predicate: recurring
+    value: "true"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-rigsby-name
+    subject: p-rigsby
+    predicate: name
+    value: "Wayne Rigsby"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-rigsby-role
+    subject: p-rigsby
+    predicate: role
+    value: "CBI special agent"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-rigsby-description
+    subject: p-rigsby
+    predicate: description
+    value: "A member of Lisbon's team, close to Cho and the one most often handling fire-related investigations."
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-rigsby-recurring
+    subject: p-rigsby
+    predicate: recurring
+    value: "true"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-van-pelt-name
+    subject: p-van-pelt
+    predicate: name
+    value: "Grace Van Pelt"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-van-pelt-role
+    subject: p-van-pelt
+    predicate: role
+    value: "CBI special agent"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-van-pelt-description
+    subject: p-van-pelt
+    predicate: description
+    value: "The newest member of Lisbon's team, organized and open to the mystical."
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-van-pelt-recurring
+    subject: p-van-pelt
+    predicate: recurring
+    value: "true"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-partridge-name
+    subject: p-partridge
+    predicate: name
+    value: "Brett Partridge"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-partridge-role
+    subject: p-partridge
+    predicate: role
+    value: "Bureau of Forensic Science lead agent"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-partridge-description
+    subject: p-partridge
+    predicate: description
+    value: "A forensic scientist who turns up at crime scenes alongside the CBI."
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-partridge-recurring
+    subject: p-partridge
+    predicate: recurring
+    value: "true"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-minelli-name
+    subject: p-minelli
+    predicate: name
+    value: "Virgil Minelli"
+    revealed: S1E11
+    source: src-s1e11
+  - key: c-minelli-role
+    subject: p-minelli
+    predicate: role
+    value: "CBI director"
+    revealed: S1E11
+    source: src-s1e11
+  - key: c-minelli-description
+    subject: p-minelli
+    predicate: description
+    value: "The head of the CBI, who oversees Lisbon's team and is wary of Jane's methods."
+    revealed: S1E11
+    source: src-s1e11
+  - key: c-minelli-recurring
+    subject: p-minelli
+    predicate: recurring
+    value: "true"
+    revealed: S1E11
+    source: src-s1e11
+  - key: c-frye-name
+    subject: p-frye
+    predicate: name
+    value: "Kristina Frye"
+    revealed: S1E7
+    source: src-s1e7
+  - key: c-frye-role
+    subject: p-frye
+    predicate: role
+    value: "Psychic"
+    revealed: S1E7
+    source: src-s1e7
+  - key: c-frye-description
+    subject: p-frye
+    predicate: description
+    value: "A psychic whose prediction of a death brings her into contact with Jane, a skeptic of such claims."
+    revealed: S1E7
+    source: src-s1e7
+  - key: c-frye-recurring
+    subject: p-frye
+    predicate: recurring
+    value: "true"
+    revealed: S1E7
+    source: src-s1e7
+  - key: c-harker-name
+    subject: p-harker
+    predicate: name
+    value: "Rosalind Harker"
+    revealed: S1E23
+    source: src-s1e23
+  - key: c-harker-description
+    subject: p-harker
+    predicate: description
+    value: "A blind woman whom the team tracks down because of her past relationship with Red John."
+    revealed: S1E23
+    source: src-s1e23
+  - key: c-harker-recurring
+    subject: p-harker
+    predicate: recurring
+    value: "true"
+    revealed: S1E23
+    source: src-s1e23
+  - key: c-bosco-name
+    subject: p-bosco
+    predicate: name
+    value: "Sam Bosco"
+    revealed: S2E1
+    source: src-s2e1
+  - key: c-bosco-role
+    subject: p-bosco
+    predicate: role
+    value: "CBI senior agent"
+    revealed: S2E1
+    source: src-s2e1
+  - key: c-bosco-description
+    subject: p-bosco
+    predicate: description
+    value: "A veteran agent and former partner of Lisbon, given charge of the Red John case."
+    revealed: S2E1
+    source: src-s2e1
+  - key: c-bosco-recurring
+    subject: p-bosco
+    predicate: recurring
+    value: "true"
+    revealed: S2E1
+    source: src-s2e1
+  - key: c-rebecca-anderson-name
+    subject: p-rebecca-anderson
+    predicate: name
+    value: "Rebecca Anderson"
+    revealed: S2E2
+    source: src-s2e2
+  - key: c-rebecca-anderson-role
+    subject: p-rebecca-anderson
+    predicate: role
+    value: "CBI assistant"
+    revealed: S2E2
+    source: src-s2e2
+  - key: c-rebecca-anderson-description
+    subject: p-rebecca-anderson
+    predicate: description
+    value: "An assistant on Sam Bosco's team."
+    revealed: S2E2
+    source: src-s2e2
+  - key: c-rebecca-anderson-recurring
+    subject: p-rebecca-anderson
+    predicate: recurring
+    value: "true"
+    revealed: S2E2
+    source: src-s2e2
+  - key: c-shettrick-name
+    subject: p-shettrick
+    predicate: name
+    value: "Brenda Shettrick"
+    revealed: S2E12
+    source: src-s2e12
+  - key: c-shettrick-role
+    subject: p-shettrick
+    predicate: role
+    value: "Head of CBI Media Relations"
+    revealed: S2E12
+    source: src-s2e12
+  - key: c-shettrick-description
+    subject: p-shettrick
+    predicate: description
+    value: "The CBI official who handles the bureau's dealings with the press."
+    revealed: S2E12
+    source: src-s2e12
+  - key: c-shettrick-recurring
+    subject: p-shettrick
+    predicate: recurring
+    value: "true"
+    revealed: S2E12
+    source: src-s2e12
+  - key: c-mashburn-name
+    subject: p-mashburn
+    predicate: name
+    value: "Walter Mashburn"
+    revealed: S2E13
+    source: src-s2e13
+  - key: c-mashburn-role
+    subject: p-mashburn
+    predicate: role
+    value: "Billionaire businessman"
+    revealed: S2E13
+    source: src-s2e13
+  - key: c-mashburn-description
+    subject: p-mashburn
+    predicate: description
+    value: "A wealthy and mischievous businessman who the CBI meets in a murder investigation."
+    revealed: S2E13
+    source: src-s2e13
+  - key: c-mashburn-recurring
+    subject: p-mashburn
+    predicate: recurring
+    value: "true"
+    revealed: S2E13
+    source: src-s2e13
+  - key: c-hightower-name
+    subject: p-hightower
+    predicate: name
+    value: "Madeleine Hightower"
+    revealed: S2E17
+    source: src-s2e17
+  - key: c-hightower-role
+    subject: p-hightower
+    predicate: role
+    value: "CBI supervising agent"
+    revealed: S2E17
+    source: src-s2e17
+  - key: c-hightower-description
+    subject: p-hightower
+    predicate: description
+    value: "A new boss who takes command of the CBI and sets out to rein in Jane."
+    revealed: S2E17
+    source: src-s2e17
+  - key: c-hightower-recurring
+    subject: p-hightower
+    predicate: recurring
+    value: "true"
+    revealed: S2E17
+    source: src-s2e17
+  - key: c-stiles-name
+    subject: p-stiles
+    predicate: name
+    value: "Bret Stiles"
+    revealed: S2E20
+    source: src-s2e20
+  - key: c-stiles-role
+    subject: p-stiles
+    predicate: role
+    value: "Leader of Visualize"
+    revealed: S2E20
+    source: src-s2e20
+  - key: c-stiles-description
+    subject: p-stiles
+    predicate: description
+    value: "The charismatic leader of the Visualize Self-Realization Center, a cult-like religious group."
+    revealed: S2E20
+    source: src-s2e20
+  - key: c-stiles-recurring
+    subject: p-stiles
+    predicate: recurring
+    value: "true"
+    revealed: S2E20
+    source: src-s2e20
+  - key: c-bertram-name
+    subject: p-bertram
+    predicate: name
+    value: "Gale Bertram"
+    revealed: S3E1
+    source: src-s3e1
+  - key: c-bertram-role
+    subject: p-bertram
+    predicate: role
+    value: "CBI director"
+    revealed: S3E1
+    source: src-s3e1
+  - key: c-bertram-description
+    subject: p-bertram
+    predicate: description
+    value: "A senior CBI official who takes an interest in the effectiveness of Lisbon's team."
+    revealed: S3E1
+    source: src-s3e1
+  - key: c-bertram-recurring
+    subject: p-bertram
+    predicate: recurring
+    value: "true"
+    revealed: S3E1
+    source: src-s3e1
+  - key: c-olaughlin-name
+    subject: p-olaughlin
+    predicate: name
+    value: "Craig O'Laughlin"
+    revealed: S3E3
+    source: src-s3e3
+  - key: c-olaughlin-role
+    subject: p-olaughlin
+    predicate: role
+    value: "FBI special agent"
+    revealed: S3E3
+    source: src-s3e3
+  - key: c-olaughlin-description
+    subject: p-olaughlin
+    predicate: description
+    value: "An FBI agent who works with the CBI team on a joint investigation."
+    revealed: S3E3
+    source: src-s3e3
+  - key: c-olaughlin-recurring
+    subject: p-olaughlin
+    predicate: recurring
+    value: "true"
+    revealed: S3E3
+    source: src-s3e3
+  - key: c-laroche-name
+    subject: p-laroche
+    predicate: name
+    value: "J.J. LaRoche"
+    revealed: S3E10
+    source: src-s3e10
+  - key: c-laroche-role
+    subject: p-laroche
+    predicate: role
+    value: "CBI Professional Standards Unit investigator"
+    revealed: S3E10
+    source: src-s3e10
+  - key: c-laroche-description
+    subject: p-laroche
+    predicate: description
+    value: "An unusual and socially awkward internal investigator who questions Jane about a death."
+    revealed: S3E10
+    source: src-s3e10
+  - key: c-laroche-recurring
+    subject: p-laroche
+    predicate: recurring
+    value: "true"
+    revealed: S3E10
+    source: src-s3e10
+  - key: c-erica-flynn-name
+    subject: p-erica-flynn
+    predicate: name
+    value: "Erica Flynn"
+    revealed: S3E19
+    source: src-s3e19
+  - key: c-erica-flynn-role
+    subject: p-erica-flynn
+    predicate: role
+    value: "Matchmaking company employee"
+    revealed: S3E19
+    source: src-s3e19
+  - key: c-erica-flynn-description
+    subject: p-erica-flynn
+    predicate: description
+    value: "A woman tied to a matchmaking company whose husband's murder the CBI investigates."
+    revealed: S3E19
+    source: src-s3e19
+  - key: c-erica-flynn-recurring
+    subject: p-erica-flynn
+    predicate: recurring
+    value: "true"
+    revealed: S3E19
+    source: src-s3e19
+  - key: c-harrigan-name
+    subject: p-harrigan
+    predicate: name
+    value: "Sarah Harrigan"
+    revealed: S3E19
+    source: src-s3e19
+  - key: c-harrigan-role
+    subject: p-harrigan
+    predicate: role
+    value: "Public defender"
+    revealed: S3E19
+    source: src-s3e19
+  - key: c-harrigan-description
+    subject: p-harrigan
+    predicate: description
+    value: "A public defender whom the team meets during a murder case."
+    revealed: S3E19
+    source: src-s3e19
+  - key: c-harrigan-recurring
+    subject: p-harrigan
+    predicate: recurring
+    value: "true"
+    revealed: S3E19
+    source: src-s3e19
+  - key: c-ardiles-name
+    subject: p-ardiles
+    predicate: name
+    value: "Osvaldo Ardiles"
+    revealed: S3E22
+    source: src-s3e22
+  - key: c-ardiles-role
+    subject: p-ardiles
+    predicate: role
+    value: "Deputy district attorney"
+    revealed: S3E22
+    source: src-s3e22
+  - key: c-ardiles-description
+    subject: p-ardiles
+    predicate: description
+    value: "An ambitious prosecutor who clashes with the CBI team."
+    revealed: S3E22
+    source: src-s3e22
+  - key: c-ardiles-recurring
+    subject: p-ardiles
+    predicate: recurring
+    value: "true"
+    revealed: S3E22
+    source: src-s3e22
+  - key: c-wainwright-name
+    subject: p-wainwright
+    predicate: name
+    value: "Luther Wainwright"
+    revealed: S4E4
+    source: src-s4e4
+  - key: c-wainwright-role
+    subject: p-wainwright
+    predicate: role
+    value: "CBI supervising agent"
+    revealed: S4E4
+    source: src-s4e4
+  - key: c-wainwright-description
+    subject: p-wainwright
+    predicate: description
+    value: "A young supervisor who takes command of Lisbon's team."
+    revealed: S4E4
+    source: src-s4e4
+  - key: c-wainwright-recurring
+    subject: p-wainwright
+    predicate: recurring
+    value: "true"
+    revealed: S4E4
+    source: src-s4e4
+  - key: c-haffner-name
+    subject: p-haffner
+    predicate: name
+    value: "Ray Haffner"
+    revealed: S4E2
+    source: src-s4e2
+  - key: c-haffner-role
+    subject: p-haffner
+    predicate: role
+    value: "CBI agent"
+    revealed: S4E2
+    source: src-s4e2
+  - key: c-haffner-description
+    subject: p-haffner
+    predicate: description
+    value: "An agent who acts as Jane's temporary boss while Lisbon is suspended."
+    revealed: S4E2
+    source: src-s4e2
+  - key: c-haffner-recurring
+    subject: p-haffner
+    predicate: recurring
+    value: "true"
+    revealed: S4E2
+    source: src-s4e2
+  - key: c-darcy-name
+    subject: p-darcy
+    predicate: name
+    value: "Susan Darcy"
+    revealed: S4E7
+    source: src-s4e7
+  - key: c-darcy-role
+    subject: p-darcy
+    predicate: role
+    value: "FBI agent"
+    revealed: S4E7
+    source: src-s4e7
+  - key: c-darcy-description
+    subject: p-darcy
+    predicate: description
+    value: "An FBI agent who takes over a high-profile case from the CBI."
+    revealed: S4E7
+    source: src-s4e7
+  - key: c-darcy-recurring
+    subject: p-darcy
+    predicate: recurring
+    value: "true"
+    revealed: S4E7
+    source: src-s4e7
+  - key: c-edgecombe-name
+    subject: p-edgecombe
+    predicate: name
+    value: "Summer Edgecombe"
+    revealed: S4E8
+    source: src-s4e8
+  - key: c-edgecombe-description
+    subject: p-edgecombe
+    predicate: description
+    value: "A smart-mouthed young woman whom Cho picks up in a murder investigation."
+    revealed: S4E8
+    source: src-s4e8
+  - key: c-edgecombe-recurring
+    subject: p-edgecombe
+    predicate: recurring
+    value: "true"
+    revealed: S4E8
+    source: src-s4e8
+  - key: c-lorelei-martins-name
+    subject: p-lorelei-martins
+    predicate: name
+    value: "Lorelei Martins"
+    revealed: S4E24
+    source: src-s4e24
+  - key: c-lorelei-martins-role
+    subject: p-lorelei-martins
+    predicate: role
+    value: "Cocktail waitress"
+    revealed: S4E24
+    source: src-s4e24
+  - key: c-lorelei-martins-description
+    subject: p-lorelei-martins
+    predicate: description
+    value: "A woman Jane meets in Las Vegas after he leaves the CBI."
+    revealed: S4E24
+    source: src-s4e24
+  - key: c-lorelei-martins-recurring
+    subject: p-lorelei-martins
+    predicate: recurring
+    value: "true"
+    revealed: S4E24
+    source: src-s4e24
+  - key: c-cooper-name
+    subject: p-cooper
+    predicate: name
+    value: "Jason Cooper"
+    revealed: S5E13
+    source: src-s5e13
+  - key: c-cooper-role
+    subject: p-cooper
+    predicate: role
+    value: "Visualize executive"
+    revealed: S5E13
+    source: src-s5e13
+  - key: c-cooper-description
+    subject: p-cooper
+    predicate: description
+    value: "A high-ranking member of the Visualize organization."
+    revealed: S5E13
+    source: src-s5e13
+  - key: c-cooper-recurring
+    subject: p-cooper
+    predicate: recurring
+    value: "true"
+    revealed: S5E13
+    source: src-s5e13
+  - key: c-smith-name
+    subject: p-smith
+    predicate: name
+    value: "Reede Smith"
+    revealed: S5E1
+    source: src-s5e1
+  - key: c-smith-role
+    subject: p-smith
+    predicate: role
+    value: "FBI special agent"
+    revealed: S5E1
+    source: src-s5e1
+  - key: c-smith-description
+    subject: p-smith
+    predicate: description
+    value: "An FBI agent who interrupts the CBI team at a crime scene."
+    revealed: S5E1
+    source: src-s5e1
+  - key: c-smith-recurring
+    subject: p-smith
+    predicate: recurring
+    value: "true"
+    revealed: S5E1
+    source: src-s5e1
+  - key: c-mancini-name
+    subject: p-mancini
+    predicate: name
+    value: "Gabe Mancini"
+    revealed: S5E1
+    source: src-s5e1
+  - key: c-mancini-role
+    subject: p-mancini
+    predicate: role
+    value: "FBI special agent"
+    revealed: S5E1
+    source: src-s5e1
+  - key: c-mancini-description
+    subject: p-mancini
+    predicate: description
+    value: "An FBI agent who appears alongside Reede Smith at a crime scene."
+    revealed: S5E1
+    source: src-s5e1
+  - key: c-mancini-recurring
+    subject: p-mancini
+    predicate: recurring
+    value: "true"
+    revealed: S5E1
+    source: src-s5e1
+  - key: c-schultz-name
+    subject: p-schultz
+    predicate: name
+    value: "Alexa Schultz"
+    revealed: S5E5
+    source: src-s5e5
+  - key: c-schultz-role
+    subject: p-schultz
+    predicate: role
+    value: "FBI agent"
+    revealed: S5E5
+    source: src-s5e5
+  - key: c-schultz-description
+    subject: p-schultz
+    predicate: description
+    value: "An FBI agent who contacts Minelli about the ongoing Red John files."
+    revealed: S5E5
+    source: src-s5e5
+  - key: c-schultz-recurring
+    subject: p-schultz
+    predicate: recurring
+    value: "true"
+    revealed: S5E5
+    source: src-s5e5
+  - key: c-kirkland-name
+    subject: p-kirkland
+    predicate: name
+    value: "Bob Kirkland"
+    revealed: S5E8
+    source: src-s5e8
+  - key: c-kirkland-role
+    subject: p-kirkland
+    predicate: role
+    value: "Homeland Security agent"
+    revealed: S5E8
+    source: src-s5e8
+  - key: c-kirkland-description
+    subject: p-kirkland
+    predicate: description
+    value: "A Homeland Security agent who assists the CBI in a hunt for Lorelei Martins."
+    revealed: S5E8
+    source: src-s5e8
+  - key: c-kirkland-recurring
+    subject: p-kirkland
+    predicate: recurring
+    value: "true"
+    revealed: S5E8
+    source: src-s5e8
+  - key: c-volker-name
+    subject: p-volker
+    predicate: name
+    value: "Tommy Volker"
+    revealed: S5E11
+    source: src-s5e11
+  - key: c-volker-role
+    subject: p-volker
+    predicate: role
+    value: "Businessman"
+    revealed: S5E11
+    source: src-s5e11
+  - key: c-volker-description
+    subject: p-volker
+    predicate: description
+    value: "A wealthy businessman about whom Lisbon is trying to gather evidence."
+    revealed: S5E11
+    source: src-s5e11
+  - key: c-volker-recurring
+    subject: p-volker
+    predicate: recurring
+    value: "true"
+    revealed: S5E11
+    source: src-s5e11
+  - key: c-abbott-name
+    subject: p-abbott
+    predicate: name
+    value: "Dennis Abbott"
+    revealed: S6E7
+    source: src-s6e7
+  - key: c-abbott-role
+    subject: p-abbott
+    predicate: role
+    value: "FBI supervisory special agent"
+    revealed: S6E7
+    source: src-s6e7
+  - key: c-abbott-description
+    subject: p-abbott
+    predicate: description
+    value: "An FBI agent who leads the shutdown of the CBI."
+    revealed: S6E7
+    source: src-s6e7
+  - key: c-abbott-recurring
+    subject: p-abbott
+    predicate: recurring
+    value: "true"
+    revealed: S6E7
+    source: src-s6e7
+  - key: c-wylie-name
+    subject: p-wylie
+    predicate: name
+    value: "Jason Wylie"
+    revealed: S6E10
+    source: src-s6e10
+  - key: c-wylie-role
+    subject: p-wylie
+    predicate: role
+    value: "FBI IT analyst"
+    revealed: S6E10
+    source: src-s6e10
+  - key: c-wylie-description
+    subject: p-wylie
+    predicate: description
+    value: "A young analyst who helps the FBI team locate a missing programmer."
+    revealed: S6E10
+    source: src-s6e10
+  - key: c-wylie-recurring
+    subject: p-wylie
+    predicate: recurring
+    value: "true"
+    revealed: S6E10
+    source: src-s6e10
+  - key: c-cbi-name
+    subject: o-cbi
+    predicate: name
+    value: "California Bureau of Investigation (CBI)"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-cbi-description
+    subject: o-cbi
+    predicate: description
+    value: "The state investigative agency in Sacramento that employs Lisbon's team and consults Jane."
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-fbi-name
+    subject: o-fbi
+    predicate: name
+    value: "Federal Bureau of Investigation (FBI)"
+    revealed: S3E3
+    source: src-s3e3
+  - key: c-fbi-description
+    subject: o-fbi
+    predicate: description
+    value: "The federal law-enforcement agency whose agents sometimes work alongside the CBI."
+    revealed: S3E3
+    source: src-s3e3
+  - key: c-visualize-name
+    subject: o-visualize
+    predicate: name
+    value: "Visualize Self-Realization Center"
+    revealed: S2E20
+    source: src-s2e20
+  - key: c-visualize-description
+    subject: o-visualize
+    predicate: description
+    value: "A cult-like religious group led by Bret Stiles."
+    revealed: S2E20
+    source: src-s2e20
+  - key: c-blake-name
+    subject: o-blake
+    predicate: name
+    value: "Blake Association"
+    revealed: S6E10
+    source: src-s6e10
+  - key: c-blake-description
+    subject: o-blake
+    predicate: description
+    value: "A secret organization whose members Jane has been tracking."
+    revealed: S6E10
+    source: src-s6e10
+  - key: c-red-john-name
+    subject: a-red-john
+    predicate: name
+    value: "Red John"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-red-john-description
+    subject: a-red-john
+    predicate: description
+    value: "The serial killer who murdered Patrick Jane's wife and daughter, and whom Jane is determined to find."
+    revealed: S1E1
+    source: src-s1e1
