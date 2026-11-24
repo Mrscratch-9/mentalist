@@ -120,6 +120,12 @@ entities:
   - key: a-red-john
     kind: arc
     introduced: S1E1
+  - key: l-cbi-hq
+    kind: location
+    introduced: S1E1
+  - key: l-fbi-austin
+    kind: location
+    introduced: S6E9
 
 claims:
   - key: c-jane-name
@@ -986,3 +992,60 @@ claims:
     value: "The serial killer who murdered Patrick Jane's wife and daughter, and whom Jane is determined to find."
     revealed: S1E1
     source: src-s1e1
+  - key: c-cbi-hq-name
+    subject: l-cbi-hq
+    predicate: name
+    value: "CBI headquarters, Sacramento"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-cbi-hq-recurring
+    subject: l-cbi-hq
+    predicate: recurring
+    value: "true"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-cbi-hq-coordinates
+    subject: l-cbi-hq
+    predicate: coordinates
+    value: "38.58111111,-121.49388889"
+    revealed: S1E1
+    source: src-s1e1
+    note: "city-level"
+  - key: c-cbi-hq-team-base
+    subject: l-cbi-hq
+    predicate: team_base
+    value: "true"
+    revealed: S1E1
+    source: src-s1e1
+    superseded: { in: S6E9, by: c-fbi-austin-team-base }
+  - key: c-fbi-austin-name
+    subject: l-fbi-austin
+    predicate: name
+    value: "FBI office, Austin"
+    revealed: S6E9
+    source: src-wiki-s6e9
+  - key: c-fbi-austin-recurring
+    subject: l-fbi-austin
+    predicate: recurring
+    value: "true"
+    revealed: S6E9
+    source: src-wiki-s6e9
+  - key: c-fbi-austin-coordinates
+    subject: l-fbi-austin
+    predicate: coordinates
+    value: "30.26722222,-97.74305556"
+    revealed: S6E9
+    source: src-wiki-s6e9
+    note: "city-level"
+  - key: c-fbi-austin-team-base
+    subject: l-fbi-austin
+    predicate: team_base
+    value: "true"
+    revealed: S6E9
+    source: src-wiki-s6e9
+
+sources:
+  - key: src-wiki-s6e9
+    kind: wiki
+    episode: S6E9
+    url: https://thementalist.fandom.com/wiki/My_Blue_Heaven
