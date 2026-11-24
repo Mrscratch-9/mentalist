@@ -1,0 +1,899 @@
+# The Mentalist season 1 cases: one case per episode, one-off people, places (S1E1..S1E23).
+# Source: English Wikipedia, "The Mentalist season 1" episode summaries.
+# Spoilers: do not open outside the app.
+
+entities:
+  - key: c-s1e1
+    kind: case
+    introduced: S1E1
+  - key: p-s1e1-wagner
+    kind: person
+    introduced: S1E1
+  - key: c-s1e2
+    kind: case
+    introduced: S1E2
+  - key: p-s1e2-mcallister
+    kind: person
+    introduced: S1E2
+  - key: l-s1e2-vineyard
+    kind: location
+    introduced: S1E2
+  - key: c-s1e3
+    kind: case
+    introduced: S1E3
+  - key: c-s1e4
+    kind: case
+    introduced: S1E4
+  - key: c-s1e5
+    kind: case
+    introduced: S1E5
+  - key: p-s1e5-kara
+    kind: person
+    introduced: S1E5
+  - key: p-s1e5-nicole
+    kind: person
+    introduced: S1E5
+  - key: c-s1e6
+    kind: case
+    introduced: S1E6
+  - key: p-s1e6-meier
+    kind: person
+    introduced: S1E6
+  - key: l-s1e6-casino
+    kind: location
+    introduced: S1E6
+  - key: c-s1e7
+    kind: case
+    introduced: S1E7
+  - key: p-s1e7-tennant
+    kind: person
+    introduced: S1E7
+  - key: c-s1e8
+    kind: case
+    introduced: S1E8
+  - key: p-s1e8-matigan
+    kind: person
+    introduced: S1E8
+  - key: c-s1e9
+    kind: case
+    introduced: S1E9
+  - key: p-s1e9-garcia
+    kind: person
+    introduced: S1E9
+  - key: p-s1e9-martin
+    kind: person
+    introduced: S1E9
+  - key: p-s1e9-machado
+    kind: person
+    introduced: S1E9
+  - key: c-s1e10
+    kind: case
+    introduced: S1E10
+  - key: p-s1e10-nelson
+    kind: person
+    introduced: S1E10
+  - key: p-s1e10-miller
+    kind: person
+    introduced: S1E10
+  - key: l-s1e10-university
+    kind: location
+    introduced: S1E10
+  - key: c-s1e11
+    kind: case
+    introduced: S1E11
+  - key: p-s1e11-renfrew
+    kind: person
+    introduced: S1E11
+  - key: c-s1e12
+    kind: case
+    introduced: S1E12
+  - key: p-s1e12-elkins
+    kind: person
+    introduced: S1E12
+  - key: p-s1e12-dove
+    kind: person
+    introduced: S1E12
+  - key: p-s1e12-brad
+    kind: person
+    introduced: S1E12
+  - key: c-s1e13
+    kind: case
+    introduced: S1E13
+  - key: p-s1e13-lashley
+    kind: person
+    introduced: S1E13
+  - key: c-s1e14
+    kind: case
+    introduced: S1E14
+  - key: p-s1e14-wolcott
+    kind: person
+    introduced: S1E14
+  - key: c-s1e15
+    kind: case
+    introduced: S1E15
+  - key: p-s1e15-marquesa
+    kind: person
+    introduced: S1E15
+  - key: c-s1e16
+    kind: case
+    introduced: S1E16
+  - key: p-s1e16-medina
+    kind: person
+    introduced: S1E16
+  - key: c-s1e17
+    kind: case
+    introduced: S1E17
+  - key: l-s1e17-retreat
+    kind: location
+    introduced: S1E17
+  - key: c-s1e18
+    kind: case
+    introduced: S1E18
+  - key: c-s1e19
+    kind: case
+    introduced: S1E19
+  - key: l-s1e19-hollywood
+    kind: location
+    introduced: S1E19
+  - key: c-s1e20
+    kind: case
+    introduced: S1E20
+  - key: p-s1e20-didrikson
+    kind: person
+    introduced: S1E20
+  - key: c-s1e21
+    kind: case
+    introduced: S1E21
+  - key: p-s1e21-gulbrand
+    kind: person
+    introduced: S1E21
+  - key: p-s1e21-brooke
+    kind: person
+    introduced: S1E21
+  - key: l-s1e21-cove
+    kind: location
+    introduced: S1E21
+  - key: c-s1e22
+    kind: case
+    introduced: S1E22
+  - key: p-s1e22-prentiss
+    kind: person
+    introduced: S1E22
+  - key: l-s1e22-brightarch
+    kind: location
+    introduced: S1E22
+  - key: c-s1e23
+    kind: case
+    introduced: S1E23
+  - key: p-s1e23-plaskett
+    kind: person
+    introduced: S1E23
+  - key: l-s1e23-stateland
+    kind: location
+    introduced: S1E23
+
+claims:
+  - key: cl-s1e1-name
+    subject: c-s1e1
+    predicate: name
+    value: "The pilot murders"
+    revealed: S1E1
+    source: src-s1e1
+  - key: cl-s1e1-desc
+    subject: c-s1e1
+    predicate: description
+    value: "Jane exposes the guilt behind a teenage girl's murder, then the team faces a double homicide with a Red John-style smiley that Jane judges the work of a copycat."
+    revealed: S1E1
+    source: src-s1e1
+  - key: cl-s1e1-wagner-name
+    subject: p-s1e1-wagner
+    predicate: name
+    value: "Linus Wagner"
+    revealed: S1E1
+    source: src-s1e1
+  - key: cl-s1e1-wagner-role
+    subject: p-s1e1-wagner
+    predicate: role_in_case
+    object: c-s1e1
+    value: "perpetrator"
+    revealed: S1E1
+    source: src-s1e1
+  - key: cl-s1e2-name
+    subject: c-s1e2
+    predicate: name
+    value: "The vineyard murder"
+    revealed: S1E2
+    source: src-s1e2
+  - key: cl-s1e2-desc
+    subject: c-s1e2
+    predicate: description
+    value: "The body of an 18-year-old girl is found in a Napa County vineyard and the team hunts a predator who uses silver duct tape on red-haired women."
+    revealed: S1E2
+    source: src-s1e2
+  - key: cl-s1e2-mcallister-name
+    subject: p-s1e2-mcallister
+    predicate: name
+    value: "Sheriff McAllister"
+    revealed: S1E2
+    source: src-s1e2
+  - key: cl-s1e2-mcallister-role
+    subject: p-s1e2-mcallister
+    predicate: role_in_case
+    object: c-s1e2
+    value: "investigator"
+    revealed: S1E2
+    source: src-s1e2
+  - key: cl-s1e2-vineyard-name
+    subject: l-s1e2-vineyard
+    predicate: name
+    value: "Napa County vineyards"
+    revealed: S1E2
+    source: src-s1e2
+  - key: cl-s1e2-vineyard-case
+    subject: l-s1e2-vineyard
+    predicate: part_of_case
+    object: c-s1e2
+    revealed: S1E2
+    source: src-s1e2
+  - key: cl-s1e3-name
+    subject: c-s1e3
+    predicate: name
+    value: "The surfer murder"
+    revealed: S1E3
+    source: src-s1e3
+  - key: cl-s1e3-desc
+    subject: c-s1e3
+    predicate: description
+    value: "A high school girl's body washes up on a state beach and a security guard is found hidden in cement the same night."
+    revealed: S1E3
+    source: src-s1e3
+  - key: cl-s1e4-name
+    subject: c-s1e4
+    predicate: name
+    value: "The investment banker's safe room"
+    revealed: S1E4
+    source: src-s1e4
+  - key: cl-s1e4-desc
+    subject: c-s1e4
+    predicate: description
+    value: "A wealthy investment banker is found tortured inside his hidden safe room, and his daughter is later kidnapped for his hidden fortune."
+    revealed: S1E4
+    source: src-s1e4
+  - key: cl-s1e5-name
+    subject: c-s1e5
+    predicate: name
+    value: "The lumber town murder"
+    revealed: S1E5
+    source: src-s1e5
+  - key: cl-s1e5-desc
+    subject: c-s1e5
+    predicate: description
+    value: "A bloodstained car leads to the stabbing of one of two missing girls, while the other turns up with the weapon and no memory of what happened."
+    revealed: S1E5
+    source: src-s1e5
+  - key: cl-s1e5-kara-name
+    subject: p-s1e5-kara
+    predicate: name
+    value: "Kara Palmer"
+    revealed: S1E5
+    source: src-s1e5
+  - key: cl-s1e5-kara-role
+    subject: p-s1e5-kara
+    predicate: role_in_case
+    object: c-s1e5
+    value: "victim"
+    revealed: S1E5
+    source: src-s1e5
+  - key: cl-s1e5-nicole-name
+    subject: p-s1e5-nicole
+    predicate: name
+    value: "Nicole Gilbert"
+    revealed: S1E5
+    source: src-s1e5
+  - key: cl-s1e5-nicole-role
+    subject: p-s1e5-nicole
+    predicate: role_in_case
+    object: c-s1e5
+    value: "witness"
+    revealed: S1E5
+    source: src-s1e5
+  - key: cl-s1e6-name
+    subject: c-s1e6
+    predicate: name
+    value: "The casino severed hand"
+    revealed: S1E6
+    source: src-s1e6
+  - key: cl-s1e6-desc
+    subject: c-s1e6
+    predicate: description
+    value: "The manager of operations of a resort casino is murdered and his right hand is found on the California-Nevada border."
+    revealed: S1E6
+    source: src-s1e6
+  - key: cl-s1e6-meier-name
+    subject: p-s1e6-meier
+    predicate: name
+    value: "James Meier"
+    revealed: S1E6
+    source: src-s1e6
+  - key: cl-s1e6-meier-role
+    subject: p-s1e6-meier
+    predicate: role_in_case
+    object: c-s1e6
+    value: "victim"
+    revealed: S1E6
+    source: src-s1e6
+  - key: cl-s1e6-casino-name
+    subject: l-s1e6-casino
+    predicate: name
+    value: "Resort casino on the California-Nevada border"
+    revealed: S1E6
+    source: src-s1e6
+  - key: cl-s1e6-casino-case
+    subject: l-s1e6-casino
+    predicate: part_of_case
+    object: c-s1e6
+    revealed: S1E6
+    source: src-s1e6
+  - key: cl-s1e7-name
+    subject: c-s1e7
+    predicate: name
+    value: "The psychic's prediction"
+    revealed: S1E7
+    source: src-s1e7
+  - key: cl-s1e7-desc
+    subject: c-s1e7
+    predicate: description
+    value: "A wealthy heiress is killed in a hit and run moments after her psychic predicted her death."
+    revealed: S1E7
+    source: src-s1e7
+  - key: cl-s1e7-tennant-name
+    subject: p-s1e7-tennant
+    predicate: name
+    value: "Rosemary Tennant"
+    revealed: S1E7
+    source: src-s1e7
+  - key: cl-s1e7-tennant-role
+    subject: p-s1e7-tennant
+    predicate: role_in_case
+    object: c-s1e7
+    value: "victim"
+    revealed: S1E7
+    source: src-s1e7
+  - key: cl-s1e7-frye-role
+    subject: p-frye
+    predicate: role_in_case
+    object: c-s1e7
+    value: "suspect"
+    revealed: S1E7
+    source: src-s1e7
+  - key: cl-s1e8-name
+    subject: c-s1e8
+    predicate: name
+    value: "The motel shooting"
+    revealed: S1E8
+    source: src-s1e8
+  - key: cl-s1e8-desc
+    subject: c-s1e8
+    predicate: description
+    value: "A State's witness in a narcotics case and his girlfriend are shot dead in a motel room."
+    revealed: S1E8
+    source: src-s1e8
+  - key: cl-s1e8-matigan-name
+    subject: p-s1e8-matigan
+    predicate: name
+    value: "Patrice Matigan"
+    revealed: S1E8
+    source: src-s1e8
+  - key: cl-s1e8-matigan-role
+    subject: p-s1e8-matigan
+    predicate: role_in_case
+    object: c-s1e8
+    value: "victim"
+    revealed: S1E8
+    source: src-s1e8
+  - key: cl-s1e9-name
+    subject: c-s1e9
+    predicate: name
+    value: "The arson veterans"
+    revealed: S1E9
+    source: src-s1e9
+  - key: cl-s1e9-desc
+    subject: c-s1e9
+    predicate: description
+    value: "A National Guard veteran is killed in an arson fire, and his unit turns out to have been picked off by fire one by one."
+    revealed: S1E9
+    source: src-s1e9
+  - key: cl-s1e9-garcia-name
+    subject: p-s1e9-garcia
+    predicate: name
+    value: "Rich Garcia"
+    revealed: S1E9
+    source: src-s1e9
+  - key: cl-s1e9-garcia-role
+    subject: p-s1e9-garcia
+    predicate: role_in_case
+    object: c-s1e9
+    value: "victim"
+    revealed: S1E9
+    source: src-s1e9
+  - key: cl-s1e9-martin-name
+    subject: p-s1e9-martin
+    predicate: name
+    value: "Dave Martin"
+    revealed: S1E9
+    source: src-s1e9
+  - key: cl-s1e9-martin-role
+    subject: p-s1e9-martin
+    predicate: role_in_case
+    object: c-s1e9
+    value: "victim"
+    revealed: S1E9
+    source: src-s1e9
+  - key: cl-s1e9-machado-name
+    subject: p-s1e9-machado
+    predicate: name
+    value: "Ben Machado"
+    revealed: S1E9
+    source: src-s1e9
+  - key: cl-s1e9-machado-role
+    subject: p-s1e9-machado
+    predicate: role_in_case
+    object: c-s1e9
+    value: "suspect"
+    revealed: S1E9
+    source: src-s1e9
+  - key: cl-s1e10-name
+    subject: c-s1e10
+    predicate: name
+    value: "The university poisoning"
+    revealed: S1E10
+    source: src-s1e10
+  - key: cl-s1e10-desc
+    subject: c-s1e10
+    predicate: description
+    value: "A leading researcher at Leyland University is poisoned and the lead suspect is his ex-wife, Jane's former psychiatrist."
+    revealed: S1E10
+    source: src-s1e10
+  - key: cl-s1e10-nelson-name
+    subject: p-s1e10-nelson
+    predicate: name
+    value: "Alex Nelson"
+    revealed: S1E10
+    source: src-s1e10
+  - key: cl-s1e10-nelson-role
+    subject: p-s1e10-nelson
+    predicate: role_in_case
+    object: c-s1e10
+    value: "victim"
+    revealed: S1E10
+    source: src-s1e10
+  - key: cl-s1e10-miller-name
+    subject: p-s1e10-miller
+    predicate: name
+    value: "Sophie Miller"
+    revealed: S1E10
+    source: src-s1e10
+  - key: cl-s1e10-miller-role
+    subject: p-s1e10-miller
+    predicate: role_in_case
+    object: c-s1e10
+    value: "suspect"
+    revealed: S1E10
+    source: src-s1e10
+  - key: cl-s1e10-university-name
+    subject: l-s1e10-university
+    predicate: name
+    value: "Leyland University"
+    revealed: S1E10
+    source: src-s1e10
+  - key: cl-s1e10-university-case
+    subject: l-s1e10-university
+    predicate: part_of_case
+    object: c-s1e10
+    revealed: S1E10
+    source: src-s1e10
+  - key: cl-s1e11-name
+    subject: c-s1e11
+    predicate: name
+    value: "The inmate with a Red John lead"
+    revealed: S1E11
+    source: src-s1e11
+  - key: cl-s1e11-desc
+    subject: c-s1e11
+    predicate: description
+    value: "A Red John case: an inmate offers Jane information on Red John in exchange for proving his innocence of a murder."
+    revealed: S1E11
+    source: src-s1e11
+  - key: cl-s1e11-renfrew-name
+    subject: p-s1e11-renfrew
+    predicate: name
+    value: "Jared Renfrew"
+    revealed: S1E11
+    source: src-s1e11
+  - key: cl-s1e11-renfrew-role
+    subject: p-s1e11-renfrew
+    predicate: role_in_case
+    object: c-s1e11
+    value: "informant"
+    revealed: S1E11
+    source: src-s1e11
+  - key: cl-s1e12-name
+    subject: c-s1e12
+    predicate: name
+    value: "The witch's spell"
+    revealed: S1E12
+    source: src-s1e12
+  - key: cl-s1e12-desc
+    subject: c-s1e12
+    predicate: description
+    value: "A high school football star is found dead beside a pentacle and burning candles, and a self-proclaimed witch confesses to casting a death spell."
+    revealed: S1E12
+    source: src-s1e12
+  - key: cl-s1e12-elkins-name
+    subject: p-s1e12-elkins
+    predicate: name
+    value: "Cody Elkins"
+    revealed: S1E12
+    source: src-s1e12
+  - key: cl-s1e12-elkins-role
+    subject: p-s1e12-elkins
+    predicate: role_in_case
+    object: c-s1e12
+    value: "victim"
+    revealed: S1E12
+    source: src-s1e12
+  - key: cl-s1e12-dove-name
+    subject: p-s1e12-dove
+    predicate: name
+    value: "Tamzin Dove"
+    revealed: S1E12
+    source: src-s1e12
+  - key: cl-s1e12-dove-role
+    subject: p-s1e12-dove
+    predicate: role_in_case
+    object: c-s1e12
+    value: "suspect"
+    revealed: S1E12
+    source: src-s1e12
+  - key: cl-s1e12-brad-name
+    subject: p-s1e12-brad
+    predicate: name
+    value: "Brad Elkins"
+    revealed: S1E12
+    source: src-s1e12
+  - key: cl-s1e12-brad-role
+    subject: p-s1e12-brad
+    predicate: role_in_case
+    object: c-s1e12
+    value: "suspect"
+    revealed: S1E12
+    source: src-s1e12
+  - key: cl-s1e13-name
+    subject: c-s1e13
+    predicate: name
+    value: "The stolen painting"
+    revealed: S1E13
+    source: src-s1e13
+  - key: cl-s1e13-desc
+    subject: c-s1e13
+    predicate: description
+    value: "A fifty million dollar painting is stolen from an oil tycoon's office and his son-in-law is found dead nearby."
+    revealed: S1E13
+    source: src-s1e13
+  - key: cl-s1e13-lashley-name
+    subject: p-s1e13-lashley
+    predicate: name
+    value: "Harry Lashley"
+    revealed: S1E13
+    source: src-s1e13
+  - key: cl-s1e13-lashley-role
+    subject: p-s1e13-lashley
+    predicate: role_in_case
+    object: c-s1e13
+    value: "victim"
+    revealed: S1E13
+    source: src-s1e13
+  - key: cl-s1e14-name
+    subject: c-s1e14
+    predicate: name
+    value: "The pick-up artist's lover"
+    revealed: S1E14
+    source: src-s1e14
+  - key: cl-s1e14-desc
+    subject: c-s1e14
+    predicate: description
+    value: "A millionaire's wife is shot after a rendezvous with a local pick-up artist who has plenty of scorned exes."
+    revealed: S1E14
+    source: src-s1e14
+  - key: cl-s1e14-wolcott-name
+    subject: p-s1e14-wolcott
+    predicate: name
+    value: "Claire Wolcott"
+    revealed: S1E14
+    source: src-s1e14
+  - key: cl-s1e14-wolcott-role
+    subject: p-s1e14-wolcott
+    predicate: role_in_case
+    object: c-s1e14
+    value: "victim"
+    revealed: S1E14
+    source: src-s1e14
+  - key: cl-s1e15-name
+    subject: c-s1e15
+    predicate: name
+    value: "The country club poisoning"
+    revealed: S1E15
+    source: src-s1e15
+  - key: cl-s1e15-desc
+    subject: c-s1e15
+    predicate: description
+    value: "The queen bee of a country club is poisoned with rat poison at a cocktail party in her own home."
+    revealed: S1E15
+    source: src-s1e15
+  - key: cl-s1e15-marquesa-name
+    subject: p-s1e15-marquesa
+    predicate: name
+    value: "Scarlett Marquesa"
+    revealed: S1E15
+    source: src-s1e15
+  - key: cl-s1e15-marquesa-role
+    subject: p-s1e15-marquesa
+    predicate: role_in_case
+    object: c-s1e15
+    value: "victim"
+    revealed: S1E15
+    source: src-s1e15
+  - key: cl-s1e16-name
+    subject: c-s1e16
+    predicate: name
+    value: "The bomb threat"
+    revealed: S1E16
+    source: src-s1e16
+  - key: cl-s1e16-desc
+    subject: c-s1e16
+    predicate: description
+    value: "A bomb threat sent to Jane turns out to be a real murder of a stockbroker, and the explosion leaves Jane temporarily blind."
+    revealed: S1E16
+    source: src-s1e16
+  - key: cl-s1e16-medina-name
+    subject: p-s1e16-medina
+    predicate: name
+    value: "James Medina"
+    revealed: S1E16
+    source: src-s1e16
+  - key: cl-s1e16-medina-role
+    subject: p-s1e16-medina
+    predicate: role_in_case
+    object: c-s1e16
+    value: "victim"
+    revealed: S1E16
+    source: src-s1e16
+  - key: cl-s1e17-name
+    subject: c-s1e17
+    predicate: name
+    value: "The corporate retreat murders"
+    revealed: S1E17
+    source: src-s1e17
+  - key: cl-s1e17-desc
+    subject: c-s1e17
+    predicate: description
+    value: "An anonymous campaign against a corporation threatens a murder at a set time and place, leading to killings at a corporate retreat."
+    revealed: S1E17
+    source: src-s1e17
+  - key: cl-s1e17-retreat-name
+    subject: l-s1e17-retreat
+    predicate: name
+    value: "Corporate retreat in the Sierra Nevada foothills"
+    revealed: S1E17
+    source: src-s1e17
+  - key: cl-s1e17-retreat-case
+    subject: l-s1e17-retreat
+    predicate: part_of_case
+    object: c-s1e17
+    revealed: S1E17
+    source: src-s1e17
+  - key: cl-s1e18-name
+    subject: c-s1e18
+    predicate: name
+    value: "The hypnotist's killings"
+    revealed: S1E18
+    source: src-s1e18
+  - key: cl-s1e18-desc
+    subject: c-s1e18
+    predicate: description
+    value: "A man delivers a corpse to the police believing it is a sack of potatoes, pointing to a mastermind who hypnotizes people into killing."
+    revealed: S1E18
+    source: src-s1e18
+  - key: cl-s1e19-name
+    subject: c-s1e19
+    predicate: name
+    value: "The Hollywood producer murder"
+    revealed: S1E19
+    source: src-s1e19
+  - key: cl-s1e19-desc
+    subject: c-s1e19
+    predicate: description
+    value: "The team goes to Hollywood to investigate the murder of a movie producer."
+    revealed: S1E19
+    source: src-s1e19
+  - key: cl-s1e19-hollywood-name
+    subject: l-s1e19-hollywood
+    predicate: name
+    value: "Hollywood"
+    revealed: S1E19
+    source: src-s1e19
+  - key: cl-s1e19-hollywood-case
+    subject: l-s1e19-hollywood
+    predicate: part_of_case
+    object: c-s1e19
+    revealed: S1E19
+    source: src-s1e19
+  - key: cl-s1e19-hollywood-coords
+    subject: l-s1e19-hollywood
+    predicate: coordinates
+    value: "34.10166667,-118.32666667"
+    revealed: S1E19
+    source: src-s1e19
+    note: "city-level"
+  - key: cl-s1e20-name
+    subject: c-s1e20
+    predicate: name
+    value: "The informant by the river"
+    revealed: S1E20
+    source: src-s1e20
+  - key: cl-s1e20-desc
+    subject: c-s1e20
+    predicate: description
+    value: "A mafia member turned informant, living in witness protection, is found shot dead by a river."
+    revealed: S1E20
+    source: src-s1e20
+  - key: cl-s1e20-didrikson-name
+    subject: p-s1e20-didrikson
+    predicate: name
+    value: "Ed Didrikson"
+    revealed: S1E20
+    source: src-s1e20
+  - key: cl-s1e20-didrikson-role
+    subject: p-s1e20-didrikson
+    predicate: role_in_case
+    object: c-s1e20
+    value: "victim"
+    revealed: S1E20
+    source: src-s1e20
+  - key: cl-s1e21-name
+    subject: c-s1e21
+    predicate: name
+    value: "The yacht anchor murder"
+    revealed: S1E21
+    source: src-s1e21
+  - key: cl-s1e21-desc
+    subject: c-s1e21
+    predicate: description
+    value: "The CEO of a software company vanishes from an exclusive harbor and is found dead, bound to the anchor of his yacht."
+    revealed: S1E21
+    source: src-s1e21
+  - key: cl-s1e21-gulbrand-name
+    subject: p-s1e21-gulbrand
+    predicate: name
+    value: "Jim Gulbrand"
+    revealed: S1E21
+    source: src-s1e21
+  - key: cl-s1e21-gulbrand-role
+    subject: p-s1e21-gulbrand
+    predicate: role_in_case
+    object: c-s1e21
+    value: "victim"
+    revealed: S1E21
+    source: src-s1e21
+  - key: cl-s1e21-brooke-name
+    subject: p-s1e21-brooke
+    predicate: name
+    value: "Brooke Harper"
+    revealed: S1E21
+    source: src-s1e21
+  - key: cl-s1e21-brooke-role
+    subject: p-s1e21-brooke
+    predicate: role_in_case
+    object: c-s1e21
+    value: "suspect"
+    revealed: S1E21
+    source: src-s1e21
+  - key: cl-s1e21-cove-name
+    subject: l-s1e21-cove
+    predicate: name
+    value: "Pelican Cove"
+    revealed: S1E21
+    source: src-s1e21
+  - key: cl-s1e21-cove-case
+    subject: l-s1e21-cove
+    predicate: part_of_case
+    object: c-s1e21
+    revealed: S1E21
+    source: src-s1e21
+  - key: cl-s1e22-name
+    subject: c-s1e22
+    predicate: name
+    value: "The wilderness program death"
+    revealed: S1E22
+    source: src-s1e22
+  - key: cl-s1e22-desc
+    subject: c-s1e22
+    predicate: description
+    value: "A student dies at a wilderness program for troubled youth, tied to a secret group of students and the legend of an ax man."
+    revealed: S1E22
+    source: src-s1e22
+  - key: cl-s1e22-prentiss-name
+    subject: p-s1e22-prentiss
+    predicate: name
+    value: "Justin Prentiss"
+    revealed: S1E22
+    source: src-s1e22
+  - key: cl-s1e22-prentiss-role
+    subject: p-s1e22-prentiss
+    predicate: role_in_case
+    object: c-s1e22
+    value: "victim"
+    revealed: S1E22
+    source: src-s1e22
+  - key: cl-s1e22-brightarch-name
+    subject: l-s1e22-brightarch
+    predicate: name
+    value: "Bright Arch wilderness program"
+    revealed: S1E22
+    source: src-s1e22
+  - key: cl-s1e22-brightarch-case
+    subject: l-s1e22-brightarch
+    predicate: part_of_case
+    object: c-s1e22
+    revealed: S1E22
+    source: src-s1e22
+  - key: cl-s1e23-name
+    subject: c-s1e23
+    predicate: name
+    value: "The skywriting smiley"
+    revealed: S1E23
+    source: src-s1e23
+  - key: cl-s1e23-desc
+    subject: c-s1e23
+    predicate: description
+    value: "A Red John case: a woman is found dead on state land, Red John's smiley appears in skywriting, and Jane is drawn into a trap."
+    revealed: S1E23
+    source: src-s1e23
+  - key: cl-s1e23-plaskett-name
+    subject: p-s1e23-plaskett
+    predicate: name
+    value: "Emma Plaskett"
+    revealed: S1E23
+    source: src-s1e23
+  - key: cl-s1e23-plaskett-role
+    subject: p-s1e23-plaskett
+    predicate: role_in_case
+    object: c-s1e23
+    value: "victim"
+    revealed: S1E23
+    source: src-s1e23
+  - key: cl-s1e23-harker-role
+    subject: p-harker
+    predicate: role_in_case
+    object: c-s1e23
+    value: "informant"
+    revealed: S1E23
+    source: src-s1e23
+  - key: cl-s1e23-stateland-name
+    subject: l-s1e23-stateland
+    predicate: name
+    value: "State land where the body was found"
+    revealed: S1E23
+    source: src-s1e23
+  - key: cl-s1e23-stateland-case
+    subject: l-s1e23-stateland
+    predicate: part_of_case
+    object: c-s1e23
+    revealed: S1E23
+    source: src-s1e23
+  - key: cl-s1e23-stateland-smiley
+    subject: l-s1e23-stateland
+    predicate: red_john_smiley
+    value: "true"
+    revealed: S1E23
+    source: src-s1e23

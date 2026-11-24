@@ -1,0 +1,1360 @@
+# The Mentalist season 5 cases: one case per episode, one-off people, places (S5E1..S5E22).
+# Source: English Wikipedia, "The Mentalist season 5" episode summaries.
+# Spoilers: do not open outside the app.
+
+entities:
+  - key: c-s5e1
+    kind: case
+    introduced: S5E1
+
+  - key: p-s5e1-callie
+    kind: person
+    introduced: S5E1
+
+  - key: p-s5e1-rex
+    kind: person
+    introduced: S5E1
+
+  - key: p-s5e1-nicola
+    kind: person
+    introduced: S5E1
+
+  - key: c-s5e2
+    kind: case
+    introduced: S5E2
+
+  - key: p-s5e2-victor
+    kind: person
+    introduced: S5E2
+
+  - key: p-s5e2-julian
+    kind: person
+    introduced: S5E2
+
+  - key: p-s5e2-betty
+    kind: person
+    introduced: S5E2
+
+  - key: c-s5e3
+    kind: case
+    introduced: S5E3
+
+  - key: p-s5e3-ernie
+    kind: person
+    introduced: S5E3
+
+  - key: p-s5e3-nancy
+    kind: person
+    introduced: S5E3
+
+  - key: p-s5e3-hutten
+    kind: person
+    introduced: S5E3
+
+  - key: c-s5e4
+    kind: case
+    introduced: S5E4
+
+  - key: p-s5e4-huff
+    kind: person
+    introduced: S5E4
+
+  - key: p-s5e4-steve
+    kind: person
+    introduced: S5E4
+
+  - key: p-s5e4-samantha
+    kind: person
+    introduced: S5E4
+
+  - key: p-s5e4-moss
+    kind: person
+    introduced: S5E4
+
+  - key: c-s5e5
+    kind: case
+    introduced: S5E5
+
+  - key: c-s5e6
+    kind: case
+    introduced: S5E6
+
+  - key: c-s5e7
+    kind: case
+    introduced: S5E7
+
+  - key: c-s5e8
+    kind: case
+    introduced: S5E8
+
+  - key: c-s5e9
+    kind: case
+    introduced: S5E9
+
+  - key: p-s5e9-lem
+    kind: person
+    introduced: S5E9
+
+  - key: c-s5e10
+    kind: case
+    introduced: S5E10
+
+  - key: p-s5e10-reese
+    kind: person
+    introduced: S5E10
+
+  - key: p-s5e10-francesca
+    kind: person
+    introduced: S5E10
+
+  - key: c-s5e11
+    kind: case
+    introduced: S5E11
+
+  - key: c-s5e12
+    kind: case
+    introduced: S5E12
+
+  - key: p-s5e12-jones
+    kind: person
+    introduced: S5E12
+
+  - key: p-s5e12-milk
+    kind: person
+    introduced: S5E12
+
+  - key: p-s5e12-clyde
+    kind: person
+    introduced: S5E12
+
+  - key: p-s5e12-marvin
+    kind: person
+    introduced: S5E12
+
+  - key: c-s5e13
+    kind: case
+    introduced: S5E13
+
+  - key: p-s5e13-bradovich
+    kind: person
+    introduced: S5E13
+
+  - key: p-s5e13-talbot
+    kind: person
+    introduced: S5E13
+
+  - key: p-s5e13-cherney
+    kind: person
+    introduced: S5E13
+
+  - key: p-s5e13-dibuono
+    kind: person
+    introduced: S5E13
+
+  - key: l-s5e13-farm
+    kind: location
+    introduced: S5E13
+
+  - key: c-s5e14
+    kind: case
+    introduced: S5E14
+
+  - key: p-s5e14-linda
+    kind: person
+    introduced: S5E14
+
+  - key: c-s5e15
+    kind: case
+    introduced: S5E15
+
+  - key: c-s5e16
+    kind: case
+    introduced: S5E16
+
+  - key: p-s5e16-lennon
+    kind: person
+    introduced: S5E16
+
+  - key: l-s5e16-scene
+    kind: location
+    introduced: S5E16
+
+  - key: c-s5e17
+    kind: case
+    introduced: S5E17
+
+  - key: p-s5e17-lucy
+    kind: person
+    introduced: S5E17
+
+  - key: p-s5e17-bowman
+    kind: person
+    introduced: S5E17
+
+  - key: p-s5e17-pete
+    kind: person
+    introduced: S5E17
+
+  - key: p-s5e17-lewis
+    kind: person
+    introduced: S5E17
+
+  - key: p-s5e17-martines
+    kind: person
+    introduced: S5E17
+
+  - key: c-s5e18
+    kind: case
+    introduced: S5E18
+
+  - key: p-s5e18-sharon
+    kind: person
+    introduced: S5E18
+
+  - key: p-s5e18-dodge
+    kind: person
+    introduced: S5E18
+
+  - key: p-s5e18-miranda
+    kind: person
+    introduced: S5E18
+
+  - key: p-s5e18-diandra
+    kind: person
+    introduced: S5E18
+
+  - key: c-s5e19
+    kind: case
+    introduced: S5E19
+
+  - key: p-s5e19-hollis
+    kind: person
+    introduced: S5E19
+
+  - key: p-s5e19-ian
+    kind: person
+    introduced: S5E19
+
+  - key: p-s5e19-joanna
+    kind: person
+    introduced: S5E19
+
+  - key: p-s5e19-navarro
+    kind: person
+    introduced: S5E19
+
+  - key: l-s5e19-percy
+    kind: location
+    introduced: S5E19
+
+  - key: c-s5e20
+    kind: case
+    introduced: S5E20
+
+  - key: c-s5e21
+    kind: case
+    introduced: S5E21
+
+  - key: c-s5e22
+    kind: case
+    introduced: S5E22
+
+  - key: p-s5e22-eileen
+    kind: person
+    introduced: S5E22
+
+  - key: p-s5e22-roddy
+    kind: person
+    introduced: S5E22
+
+  - key: p-s5e22-miriam
+    kind: person
+    introduced: S5E22
+
+  - key: p-s5e22-barlow
+    kind: person
+    introduced: S5E22
+
+  - key: l-s5e22-motel
+    kind: location
+    introduced: S5E22
+
+claims:
+  - key: c-s5e1-name
+    subject: c-s5e1
+    predicate: name
+    value: "Lottery ticket murder"
+    revealed: S5E1
+    source: src-s5e1
+
+  - key: c-s5e1-description
+    subject: c-s5e1
+    predicate: description
+    value: "A woman and a repairman are found dead in a double homicide and the team learns the motive was a winning lottery ticket."
+    revealed: S5E1
+    source: src-s5e1
+
+  - key: p-s5e1-callie-name
+    subject: p-s5e1-callie
+    predicate: name
+    value: "Callie"
+    revealed: S5E1
+    source: src-s5e1
+
+  - key: p-s5e1-callie-role
+    subject: p-s5e1-callie
+    predicate: role_in_case
+    object: c-s5e1
+    value: "victim"
+    revealed: S5E1
+    source: src-s5e1
+
+  - key: p-s5e1-rex-name
+    subject: p-s5e1-rex
+    predicate: name
+    value: "Rex"
+    revealed: S5E1
+    source: src-s5e1
+
+  - key: p-s5e1-rex-role
+    subject: p-s5e1-rex
+    predicate: role_in_case
+    object: c-s5e1
+    value: "victim"
+    revealed: S5E1
+    source: src-s5e1
+
+  - key: p-s5e1-nicola-name
+    subject: p-s5e1-nicola
+    predicate: name
+    value: "Nicola"
+    revealed: S5E1
+    source: src-s5e1
+
+  - key: p-s5e1-nicola-role
+    subject: p-s5e1-nicola
+    predicate: role_in_case
+    object: c-s5e1
+    value: "witness"
+    revealed: S5E1
+    source: src-s5e1
+
+  - key: c-s5e2-name
+    subject: c-s5e2
+    predicate: name
+    value: "The diamond cutter and the belladonna"
+    revealed: S5E2
+    source: src-s5e2
+
+  - key: c-s5e2-description
+    subject: c-s5e2
+    predicate: description
+    value: "A diamond cutter is murdered and a large blue diamond goes missing while Jane, dosed with belladonna, reconstructs the clues."
+    revealed: S5E2
+    source: src-s5e2
+
+  - key: p-s5e2-victor-name
+    subject: p-s5e2-victor
+    predicate: name
+    value: "Victor"
+    revealed: S5E2
+    source: src-s5e2
+
+  - key: p-s5e2-victor-role
+    subject: p-s5e2-victor
+    predicate: role_in_case
+    object: c-s5e2
+    value: "victim"
+    revealed: S5E2
+    source: src-s5e2
+
+  - key: p-s5e2-julian-name
+    subject: p-s5e2-julian
+    predicate: name
+    value: "Julian"
+    revealed: S5E2
+    source: src-s5e2
+
+  - key: p-s5e2-julian-role
+    subject: p-s5e2-julian
+    predicate: role_in_case
+    object: c-s5e2
+    value: "suspect"
+    revealed: S5E2
+    source: src-s5e2
+
+  - key: p-s5e2-betty-name
+    subject: p-s5e2-betty
+    predicate: name
+    value: "Betty"
+    revealed: S5E2
+    source: src-s5e2
+
+  - key: p-s5e2-betty-role
+    subject: p-s5e2-betty
+    predicate: role_in_case
+    object: c-s5e2
+    value: "perpetrator"
+    revealed: S5E2
+    source: src-s5e2
+
+  - key: c-s5e3-name
+    subject: c-s5e3
+    predicate: name
+    value: "Bank robbery with an inside man"
+    revealed: S5E3
+    source: src-s5e3
+
+  - key: c-s5e3-description
+    subject: c-s5e3
+    predicate: description
+    value: "A bank employee is shot during a robbery and Jane suspects he was the inside man."
+    revealed: S5E3
+    source: src-s5e3
+
+  - key: p-s5e3-ernie-name
+    subject: p-s5e3-ernie
+    predicate: name
+    value: "Ernie"
+    revealed: S5E3
+    source: src-s5e3
+
+  - key: p-s5e3-ernie-role
+    subject: p-s5e3-ernie
+    predicate: role_in_case
+    object: c-s5e3
+    value: "victim"
+    revealed: S5E3
+    source: src-s5e3
+
+  - key: p-s5e3-nancy-name
+    subject: p-s5e3-nancy
+    predicate: name
+    value: "Nancy"
+    revealed: S5E3
+    source: src-s5e3
+
+  - key: p-s5e3-nancy-role
+    subject: p-s5e3-nancy
+    predicate: role_in_case
+    object: c-s5e3
+    value: "perpetrator"
+    revealed: S5E3
+    source: src-s5e3
+
+  - key: p-s5e3-hutten-name
+    subject: p-s5e3-hutten
+    predicate: name
+    value: "John Hutten"
+    revealed: S5E3
+    source: src-s5e3
+
+  - key: p-s5e3-hutten-role
+    subject: p-s5e3-hutten
+    predicate: role_in_case
+    object: c-s5e3
+    value: "suspect"
+    revealed: S5E3
+    source: src-s5e3
+
+  - key: c-s5e4-name
+    subject: c-s5e4
+    predicate: name
+    value: "Rigsby's father and the gang war"
+    revealed: S5E4
+    source: src-s5e4
+
+  - key: c-s5e4-description
+    subject: c-s5e4
+    predicate: description
+    value: "A man with no record is murdered, Rigsby's father is found wounded at the scene, and a gang war is suspected."
+    revealed: S5E4
+    source: src-s5e4
+
+  - key: p-s5e4-huff-name
+    subject: p-s5e4-huff
+    predicate: name
+    value: "Andy Huff"
+    revealed: S5E4
+    source: src-s5e4
+
+  - key: p-s5e4-huff-role
+    subject: p-s5e4-huff
+    predicate: role_in_case
+    object: c-s5e4
+    value: "victim"
+    revealed: S5E4
+    source: src-s5e4
+
+  - key: p-s5e4-steve-name
+    subject: p-s5e4-steve
+    predicate: name
+    value: "Steve Rigsby"
+    revealed: S5E4
+    source: src-s5e4
+
+  - key: p-s5e4-steve-role
+    subject: p-s5e4-steve
+    predicate: role_in_case
+    object: c-s5e4
+    value: "witness"
+    revealed: S5E4
+    source: src-s5e4
+
+  - key: p-s5e4-samantha-name
+    subject: p-s5e4-samantha
+    predicate: name
+    value: "Samantha"
+    revealed: S5E4
+    source: src-s5e4
+
+  - key: p-s5e4-samantha-role
+    subject: p-s5e4-samantha
+    predicate: role_in_case
+    object: c-s5e4
+    value: "witness"
+    revealed: S5E4
+    source: src-s5e4
+
+  - key: p-s5e4-moss-name
+    subject: p-s5e4-moss
+    predicate: name
+    value: "Fletcher Moss"
+    revealed: S5E4
+    source: src-s5e4
+
+  - key: p-s5e4-moss-role
+    subject: p-s5e4-moss
+    predicate: role_in_case
+    object: c-s5e4
+    value: "perpetrator"
+    revealed: S5E4
+    source: src-s5e4
+
+  - key: c-s5e5-name
+    subject: c-s5e5
+    predicate: name
+    value: "Jane's first day at the CBI"
+    revealed: S5E5
+    source: src-s5e5
+
+  - key: c-s5e5-description
+    subject: c-s5e5
+    predicate: description
+    value: "In a flashback to the day Jane first joins the CBI, he rides along on the shooting of an appellate court judge's son and exposes a corrupt cop."
+    revealed: S5E5
+    source: src-s5e5
+
+  - key: c-s5e6-name
+    subject: c-s5e6
+    predicate: name
+    value: "Mistaken-identity kidnapping"
+    revealed: S5E6
+    source: src-s5e6
+
+  - key: c-s5e6-description
+    subject: c-s5e6
+    predicate: description
+    value: "The team investigates a community security guard's murder and uncovers a kidnapping that may be a case of mistaken identity."
+    revealed: S5E6
+    source: src-s5e6
+
+  - key: c-s5e7-name
+    subject: c-s5e7
+    predicate: name
+    value: "The TV journalist and the tycoon"
+    revealed: S5E7
+    source: src-s5e7
+
+  - key: c-s5e7-description
+    subject: c-s5e7
+    predicate: description
+    value: "A TV journalist who specialized in human interest stories is murdered, and the trail leads toward a powerful business tycoon."
+    revealed: S5E7
+    source: src-s5e7
+
+  - key: c-s5e8-name
+    subject: c-s5e8
+    predicate: name
+    value: "Lorelei's prison break"
+    revealed: S5E8
+    source: src-s5e8
+
+  - key: c-s5e8-description
+    subject: c-s5e8
+    predicate: description
+    value: "Jane arranges Lorelei Martins' escape from prison, hoping she will lead him to Red John."
+    revealed: S5E8
+    source: src-s5e8
+
+  - key: c-s5e9-name
+    subject: c-s5e9
+    predicate: name
+    value: "The real estate agent and the old gang"
+    revealed: S5E9
+    source: src-s5e9
+
+  - key: c-s5e9-description
+    subject: c-s5e9
+    predicate: description
+    value: "The team investigates the murder of a real estate agent who was a gang member until two years earlier."
+    revealed: S5E9
+    source: src-s5e9
+
+  - key: p-s5e9-lem-name
+    subject: p-s5e9-lem
+    predicate: name
+    value: "Lem"
+    revealed: S5E9
+    source: src-s5e9
+
+  - key: p-s5e9-lem-role
+    subject: p-s5e9-lem
+    predicate: role_in_case
+    object: c-s5e9
+    value: "victim"
+    revealed: S5E9
+    source: src-s5e9
+
+  - key: c-s5e10-name
+    subject: c-s5e10
+    predicate: name
+    value: "Medical marijuana seeds"
+    revealed: S5E10
+    source: src-s5e10
+
+  - key: c-s5e10-description
+    subject: c-s5e10
+    predicate: description
+    value: "A young botanist's death leads the team into the world of medical marijuana and stolen seeds."
+    revealed: S5E10
+    source: src-s5e10
+
+  - key: p-s5e10-reese-name
+    subject: p-s5e10-reese
+    predicate: name
+    value: "Jeremy Reese"
+    revealed: S5E10
+    source: src-s5e10
+
+  - key: p-s5e10-reese-role
+    subject: p-s5e10-reese
+    predicate: role_in_case
+    object: c-s5e10
+    value: "victim"
+    revealed: S5E10
+    source: src-s5e10
+
+  - key: p-s5e10-francesca-name
+    subject: p-s5e10-francesca
+    predicate: name
+    value: "Francesca"
+    revealed: S5E10
+    source: src-s5e10
+
+  - key: p-s5e10-francesca-role
+    subject: p-s5e10-francesca
+    predicate: role_in_case
+    object: c-s5e10
+    value: "suspect"
+    revealed: S5E10
+    source: src-s5e10
+
+  - key: c-s5e11-name
+    subject: c-s5e11
+    predicate: name
+    value: "The model's death"
+    revealed: S5E11
+    source: src-s5e11
+
+  - key: c-s5e11-description
+    subject: c-s5e11
+    predicate: description
+    value: "Jane and the team investigate the death of a model while Lisbon gathers more evidence on Tommy Volker."
+    revealed: S5E11
+    source: src-s5e11
+
+  - key: c-s5e12-name
+    subject: c-s5e12
+    predicate: name
+    value: "The geologist's remains"
+    revealed: S5E12
+    source: src-s5e12
+
+  - key: c-s5e12-description
+    subject: c-s5e12
+    predicate: description
+    value: "The team finds the remains of a geologist who was due to testify against Tommy Volker and searches for a boy who may have witnessed the murder."
+    revealed: S5E12
+    source: src-s5e12
+
+  - key: p-s5e12-jones-name
+    subject: p-s5e12-jones
+    predicate: name
+    value: "Horatio Jones"
+    revealed: S5E12
+    source: src-s5e12
+
+  - key: p-s5e12-jones-role
+    subject: p-s5e12-jones
+    predicate: role_in_case
+    object: c-s5e12
+    value: "victim"
+    revealed: S5E12
+    source: src-s5e12
+
+  - key: p-s5e12-milk-name
+    subject: p-s5e12-milk
+    predicate: name
+    value: "Charles Milk"
+    revealed: S5E12
+    source: src-s5e12
+
+  - key: p-s5e12-milk-role
+    subject: p-s5e12-milk
+    predicate: role_in_case
+    object: c-s5e12
+    value: "perpetrator"
+    revealed: S5E12
+    source: src-s5e12
+
+  - key: p-s5e12-clyde-name
+    subject: p-s5e12-clyde
+    predicate: name
+    value: "Don Clyde"
+    revealed: S5E12
+    source: src-s5e12
+
+  - key: p-s5e12-clyde-role
+    subject: p-s5e12-clyde
+    predicate: role_in_case
+    object: c-s5e12
+    value: "suspect"
+    revealed: S5E12
+    source: src-s5e12
+
+  - key: p-s5e12-marvin-name
+    subject: p-s5e12-marvin
+    predicate: name
+    value: "Marvin Pettigrew"
+    revealed: S5E12
+    source: src-s5e12
+
+  - key: p-s5e12-marvin-role
+    subject: p-s5e12-marvin
+    predicate: role_in_case
+    object: c-s5e12
+    value: "witness"
+    revealed: S5E12
+    source: src-s5e12
+
+  - key: c-s5e12-core0-role
+    subject: p-shettrick
+    predicate: role_in_case
+    object: c-s5e12
+    value: "informant"
+    revealed: S5E12
+    source: src-s5e12
+
+  - key: c-s5e13-name
+    subject: c-s5e13
+    predicate: name
+    value: "The Elliston Farm triple homicide"
+    revealed: S5E13
+    source: src-s5e13
+
+  - key: c-s5e13-description
+    subject: c-s5e13
+    predicate: description
+    value: "A Red John case: a 25-year-old triple homicide at a farm linked to the Visualize group, where Red John is believed to have painted his first smiley."
+    revealed: S5E13
+    source: src-s5e13
+
+  - key: p-s5e13-bradovich-name
+    subject: p-s5e13-bradovich
+    predicate: name
+    value: "Lester Bradovich"
+    revealed: S5E13
+    source: src-s5e13
+
+  - key: p-s5e13-bradovich-role
+    subject: p-s5e13-bradovich
+    predicate: role_in_case
+    object: c-s5e13
+    value: "victim"
+    revealed: S5E13
+    source: src-s5e13
+
+  - key: p-s5e13-talbot-name
+    subject: p-s5e13-talbot
+    predicate: name
+    value: "Talbot"
+    revealed: S5E13
+    source: src-s5e13
+
+  - key: p-s5e13-talbot-role
+    subject: p-s5e13-talbot
+    predicate: role_in_case
+    object: c-s5e13
+    value: "victim"
+    revealed: S5E13
+    source: src-s5e13
+
+  - key: p-s5e13-cherney-name
+    subject: p-s5e13-cherney
+    predicate: name
+    value: "Cherney"
+    revealed: S5E13
+    source: src-s5e13
+
+  - key: p-s5e13-cherney-role
+    subject: p-s5e13-cherney
+    predicate: role_in_case
+    object: c-s5e13
+    value: "victim"
+    revealed: S5E13
+    source: src-s5e13
+
+  - key: p-s5e13-dibuono-name
+    subject: p-s5e13-dibuono
+    predicate: name
+    value: "Father DiBuono"
+    revealed: S5E13
+    source: src-s5e13
+
+  - key: p-s5e13-dibuono-role
+    subject: p-s5e13-dibuono
+    predicate: role_in_case
+    object: c-s5e13
+    value: "witness"
+    revealed: S5E13
+    source: src-s5e13
+
+  - key: c-s5e13-core0-role
+    subject: p-cooper
+    predicate: role_in_case
+    object: c-s5e13
+    value: "witness"
+    revealed: S5E13
+    source: src-s5e13
+
+  - key: l-s5e13-farm-name
+    subject: l-s5e13-farm
+    predicate: name
+    value: "Elliston Farm"
+    revealed: S5E13
+    source: src-s5e13
+
+  - key: l-s5e13-farm-case
+    subject: l-s5e13-farm
+    predicate: part_of_case
+    object: c-s5e13
+    revealed: S5E13
+    source: src-s5e13
+
+  - key: l-s5e13-farm-smiley
+    subject: l-s5e13-farm
+    predicate: red_john_smiley
+    value: "true"
+    revealed: S5E13
+    status: in_show_suspicion
+    source: src-s5e13
+
+  - key: c-s5e14-name
+    subject: c-s5e14
+    predicate: name
+    value: "The moth and the graduate student"
+    revealed: S5E14
+    source: src-s5e14
+
+  - key: c-s5e14-description
+    subject: c-s5e14
+    predicate: description
+    value: "A graduate student is killed at a natural history museum in a cutthroat academic rivalry."
+    revealed: S5E14
+    source: src-s5e14
+
+  - key: p-s5e14-linda-name
+    subject: p-s5e14-linda
+    predicate: name
+    value: "Linda"
+    revealed: S5E14
+    source: src-s5e14
+
+  - key: p-s5e14-linda-role
+    subject: p-s5e14-linda
+    predicate: role_in_case
+    object: c-s5e14
+    value: "victim"
+    revealed: S5E14
+    source: src-s5e14
+
+  - key: c-s5e15-name
+    subject: c-s5e15
+    predicate: name
+    value: "The heiress's mansion"
+    revealed: S5E15
+    source: src-s5e15
+
+  - key: c-s5e15-description
+    subject: c-s5e15
+    predicate: description
+    value: "Remains found in an elderly heiress's mansion turn out to belong to a missing veteran."
+    revealed: S5E15
+    source: src-s5e15
+
+  - key: c-s5e16-name
+    subject: c-s5e16
+    predicate: name
+    value: "Lorelei hunts Red John"
+    revealed: S5E16
+    source: src-s5e16
+
+  - key: c-s5e16-description
+    subject: c-s5e16
+    predicate: description
+    value: "A Red John case: Lorelei Martins goes rogue to find who killed her sister, and Jane is pulled into the hunt."
+    revealed: S5E16
+    source: src-s5e16
+
+  - key: p-s5e16-lennon-name
+    subject: p-s5e16-lennon
+    predicate: name
+    value: "Jason Lennon"
+    revealed: S5E16
+    source: src-s5e16
+
+  - key: p-s5e16-lennon-role
+    subject: p-s5e16-lennon
+    predicate: role_in_case
+    object: c-s5e16
+    value: "victim"
+    revealed: S5E16
+    source: src-s5e16
+
+  - key: c-s5e16-core0-role
+    subject: p-lorelei-martins
+    predicate: role_in_case
+    object: c-s5e16
+    value: "perpetrator"
+    revealed: S5E16
+    source: src-s5e16
+
+  - key: c-s5e16-core1-role
+    subject: p-lorelei-martins
+    predicate: role_in_case
+    object: c-s5e16
+    value: "victim"
+    revealed: S5E16
+    source: src-s5e16
+
+  - key: l-s5e16-scene-name
+    subject: l-s5e16-scene
+    predicate: name
+    value: "Lorelei's murder scene"
+    revealed: S5E16
+    source: src-s5e16
+
+  - key: l-s5e16-scene-case
+    subject: l-s5e16-scene
+    predicate: part_of_case
+    object: c-s5e16
+    revealed: S5E16
+    source: src-s5e16
+
+  - key: l-s5e16-scene-smiley
+    subject: l-s5e16-scene
+    predicate: red_john_smiley
+    value: "true"
+    revealed: S5E16
+    source: src-s5e16
+
+  - key: c-s5e17-name
+    subject: c-s5e17
+    predicate: name
+    value: "The army medic's murder"
+    revealed: S5E17
+    source: src-s5e17
+
+  - key: c-s5e17-description
+    subject: c-s5e17
+    predicate: description
+    value: "An army post medic is found dead and the only witness is a patient with short-term memory impairment."
+    revealed: S5E17
+    source: src-s5e17
+
+  - key: p-s5e17-lucy-name
+    subject: p-s5e17-lucy
+    predicate: name
+    value: "Lucy"
+    revealed: S5E17
+    source: src-s5e17
+
+  - key: p-s5e17-lucy-role
+    subject: p-s5e17-lucy
+    predicate: role_in_case
+    object: c-s5e17
+    value: "victim"
+    revealed: S5E17
+    source: src-s5e17
+
+  - key: p-s5e17-bowman-name
+    subject: p-s5e17-bowman
+    predicate: name
+    value: "Dr. Bowman"
+    revealed: S5E17
+    source: src-s5e17
+
+  - key: p-s5e17-bowman-role
+    subject: p-s5e17-bowman
+    predicate: role_in_case
+    object: c-s5e17
+    value: "perpetrator"
+    revealed: S5E17
+    source: src-s5e17
+
+  - key: p-s5e17-pete-name
+    subject: p-s5e17-pete
+    predicate: name
+    value: "Pete"
+    revealed: S5E17
+    source: src-s5e17
+
+  - key: p-s5e17-pete-role
+    subject: p-s5e17-pete
+    predicate: role_in_case
+    object: c-s5e17
+    value: "witness"
+    revealed: S5E17
+    source: src-s5e17
+
+  - key: p-s5e17-lewis-name
+    subject: p-s5e17-lewis
+    predicate: name
+    value: "Lieutenant Lewis"
+    revealed: S5E17
+    source: src-s5e17
+
+  - key: p-s5e17-lewis-role
+    subject: p-s5e17-lewis
+    predicate: role_in_case
+    object: c-s5e17
+    value: "suspect"
+    revealed: S5E17
+    source: src-s5e17
+
+  - key: p-s5e17-martines-name
+    subject: p-s5e17-martines
+    predicate: name
+    value: "Martines"
+    revealed: S5E17
+    source: src-s5e17
+
+  - key: p-s5e17-martines-role
+    subject: p-s5e17-martines
+    predicate: role_in_case
+    object: c-s5e17
+    value: "witness"
+    revealed: S5E17
+    source: src-s5e17
+
+  - key: c-s5e18-name
+    subject: c-s5e18
+    predicate: name
+    value: "Murder at the musical"
+    revealed: S5E18
+    source: src-s5e18
+
+  - key: c-s5e18-description
+    subject: c-s5e18
+    predicate: description
+    value: "An actress is killed the night before her musical opens and several cast members are suspects."
+    revealed: S5E18
+    source: src-s5e18
+
+  - key: p-s5e18-sharon-name
+    subject: p-s5e18-sharon
+    predicate: name
+    value: "Sharon"
+    revealed: S5E18
+    source: src-s5e18
+
+  - key: p-s5e18-sharon-role
+    subject: p-s5e18-sharon
+    predicate: role_in_case
+    object: c-s5e18
+    value: "victim"
+    revealed: S5E18
+    source: src-s5e18
+
+  - key: p-s5e18-dodge-name
+    subject: p-s5e18-dodge
+    predicate: name
+    value: "Dodge"
+    revealed: S5E18
+    source: src-s5e18
+
+  - key: p-s5e18-dodge-role
+    subject: p-s5e18-dodge
+    predicate: role_in_case
+    object: c-s5e18
+    value: "perpetrator"
+    revealed: S5E18
+    source: src-s5e18
+
+  - key: p-s5e18-miranda-name
+    subject: p-s5e18-miranda
+    predicate: name
+    value: "Miranda"
+    revealed: S5E18
+    source: src-s5e18
+
+  - key: p-s5e18-miranda-role
+    subject: p-s5e18-miranda
+    predicate: role_in_case
+    object: c-s5e18
+    value: "suspect"
+    revealed: S5E18
+    source: src-s5e18
+
+  - key: p-s5e18-diandra-name
+    subject: p-s5e18-diandra
+    predicate: name
+    value: "Diandra"
+    revealed: S5E18
+    source: src-s5e18
+
+  - key: p-s5e18-diandra-role
+    subject: p-s5e18-diandra
+    predicate: role_in_case
+    object: c-s5e18
+    value: "witness"
+    revealed: S5E18
+    source: src-s5e18
+
+  - key: c-s5e19-name
+    subject: c-s5e19
+    predicate: name
+    value: "The man who owned a town"
+    revealed: S5E19
+    source: src-s5e19
+
+  - key: c-s5e19-description
+    subject: c-s5e19
+    predicate: description
+    value: "The owner of an entire town is found dead and family tensions over selling the town surface."
+    revealed: S5E19
+    source: src-s5e19
+
+  - key: p-s5e19-hollis-name
+    subject: p-s5e19-hollis
+    predicate: name
+    value: "Hollis Percy"
+    revealed: S5E19
+    source: src-s5e19
+
+  - key: p-s5e19-hollis-role
+    subject: p-s5e19-hollis
+    predicate: role_in_case
+    object: c-s5e19
+    value: "victim"
+    revealed: S5E19
+    source: src-s5e19
+
+  - key: p-s5e19-ian-name
+    subject: p-s5e19-ian
+    predicate: name
+    value: "Ian Percy"
+    revealed: S5E19
+    source: src-s5e19
+
+  - key: p-s5e19-ian-role
+    subject: p-s5e19-ian
+    predicate: role_in_case
+    object: c-s5e19
+    value: "perpetrator"
+    revealed: S5E19
+    source: src-s5e19
+
+  - key: p-s5e19-joanna-name
+    subject: p-s5e19-joanna
+    predicate: name
+    value: "Joanna Percy"
+    revealed: S5E19
+    source: src-s5e19
+
+  - key: p-s5e19-joanna-role
+    subject: p-s5e19-joanna
+    predicate: role_in_case
+    object: c-s5e19
+    value: "witness"
+    revealed: S5E19
+    source: src-s5e19
+
+  - key: p-s5e19-navarro-name
+    subject: p-s5e19-navarro
+    predicate: name
+    value: "Francisco Navarro"
+    revealed: S5E19
+    source: src-s5e19
+
+  - key: p-s5e19-navarro-role
+    subject: p-s5e19-navarro
+    predicate: role_in_case
+    object: c-s5e19
+    value: "suspect"
+    revealed: S5E19
+    source: src-s5e19
+
+  - key: l-s5e19-percy-name
+    subject: l-s5e19-percy
+    predicate: name
+    value: "Percy (town)"
+    revealed: S5E19
+    source: src-s5e19
+
+  - key: l-s5e19-percy-case
+    subject: l-s5e19-percy
+    predicate: part_of_case
+    object: c-s5e19
+    revealed: S5E19
+    source: src-s5e19
+
+  - key: c-s5e20-name
+    subject: c-s5e20
+    predicate: name
+    value: "The radio counselor and the marriage"
+    revealed: S5E20
+    source: src-s5e20
+
+  - key: c-s5e20-description
+    subject: c-s5e20
+    predicate: description
+    value: "A woman is killed and the team discovers her marriage had problems and that her husband was having an affair."
+    revealed: S5E20
+    source: src-s5e20
+
+  - key: c-s5e21-name
+    subject: c-s5e21
+    predicate: name
+    value: "LaRoche's stolen box"
+    revealed: S5E21
+    source: src-s5e21
+
+  - key: c-s5e21-description
+    subject: c-s5e21
+    predicate: description
+    value: "Armed robbers steal a prized box from LaRoche's safe and he asks Jane to find it."
+    revealed: S5E21
+    source: src-s5e21
+
+  - key: c-s5e21-core0-role
+    subject: p-laroche
+    predicate: role_in_case
+    object: c-s5e21
+    value: "victim"
+    revealed: S5E21
+    source: src-s5e21
+
+  - key: c-s5e21-core1-role
+    subject: p-shettrick
+    predicate: role_in_case
+    object: c-s5e21
+    value: "perpetrator"
+    revealed: S5E21
+    source: src-s5e21
+
+  - key: c-s5e22-name
+    subject: c-s5e22
+    predicate: name
+    value: "Red John and the motel"
+    revealed: S5E22
+    source: src-s5e22
+
+  - key: c-s5e22-description
+    subject: c-s5e22
+    predicate: description
+    value: "A Red John case: a young woman is killed at a motel and the trail leads to a missing child and Jane's past."
+    revealed: S5E22
+    source: src-s5e22
+
+  - key: p-s5e22-eileen-name
+    subject: p-s5e22-eileen
+    predicate: name
+    value: "Eileen Turner"
+    revealed: S5E22
+    source: src-s5e22
+
+  - key: p-s5e22-eileen-role
+    subject: p-s5e22-eileen
+    predicate: role_in_case
+    object: c-s5e22
+    value: "victim"
+    revealed: S5E22
+    source: src-s5e22
+
+  - key: p-s5e22-roddy-name
+    subject: p-s5e22-roddy
+    predicate: name
+    value: "Roddy Turner"
+    revealed: S5E22
+    source: src-s5e22
+
+  - key: p-s5e22-roddy-role
+    subject: p-s5e22-roddy
+    predicate: role_in_case
+    object: c-s5e22
+    value: "suspect"
+    revealed: S5E22
+    source: src-s5e22
+
+  - key: p-s5e22-miriam-name
+    subject: p-s5e22-miriam
+    predicate: name
+    value: "Miriam"
+    revealed: S5E22
+    source: src-s5e22
+
+  - key: p-s5e22-miriam-role
+    subject: p-s5e22-miriam
+    predicate: role_in_case
+    object: c-s5e22
+    value: "accomplice"
+    revealed: S5E22
+    source: src-s5e22
+
+  - key: p-s5e22-barlow-name
+    subject: p-s5e22-barlow
+    predicate: name
+    value: "Sean Barlow"
+    revealed: S5E22
+    source: src-s5e22
+
+  - key: p-s5e22-barlow-role
+    subject: p-s5e22-barlow
+    predicate: role_in_case
+    object: c-s5e22
+    value: "suspect"
+    revealed: S5E22
+    source: src-s5e22
+
+  - key: l-s5e22-motel-name
+    subject: l-s5e22-motel
+    predicate: name
+    value: "Motel where Eileen was killed"
+    revealed: S5E22
+    source: src-s5e22
+
+  - key: l-s5e22-motel-case
+    subject: l-s5e22-motel
+    predicate: part_of_case
+    object: c-s5e22
+    revealed: S5E22
+    source: src-s5e22
+
+  - key: l-s5e22-motel-smiley
+    subject: l-s5e22-motel
+    predicate: red_john_smiley
+    value: "true"
+    revealed: S5E22
+    source: src-s5e22

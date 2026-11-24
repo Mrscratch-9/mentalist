@@ -1,0 +1,1439 @@
+# The Mentalist season 3 cases: one case per episode, one-off people, places (S3E1..S3E24).
+# Source: English Wikipedia, "The Mentalist season 3" episode summaries.
+# Spoilers: do not open outside the app.
+
+entities:
+  - key: c-s3e1
+    kind: case
+    introduced: S3E1
+  - key: p-s3e1-dublin
+    kind: person
+    introduced: S3E1
+  - key: p-s3e1-russo
+    kind: person
+    introduced: S3E1
+  - key: c-s3e2
+    kind: case
+    introduced: S3E2
+  - key: p-s3e2-ruskin
+    kind: person
+    introduced: S3E2
+  - key: c-s3e3
+    kind: case
+    introduced: S3E3
+  - key: c-s3e4
+    kind: case
+    introduced: S3E4
+  - key: p-s3e4-dahl
+    kind: person
+    introduced: S3E4
+  - key: p-s3e4-jwinter
+    kind: person
+    introduced: S3E4
+  - key: p-s3e4-mwinter
+    kind: person
+    introduced: S3E4
+  - key: c-s3e5
+    kind: case
+    introduced: S3E5
+  - key: p-s3e5-sutton
+    kind: person
+    introduced: S3E5
+  - key: c-s3e6
+    kind: case
+    introduced: S3E6
+  - key: p-s3e6-abby
+    kind: person
+    introduced: S3E6
+  - key: c-s3e7
+    kind: case
+    introduced: S3E7
+  - key: c-s3e8
+    kind: case
+    introduced: S3E8
+  - key: p-s3e8-rachel
+    kind: person
+    introduced: S3E8
+  - key: p-s3e8-kittel
+    kind: person
+    introduced: S3E8
+  - key: l-s3e8-clarksburg
+    kind: location
+    introduced: S3E8
+  - key: c-s3e9
+    kind: case
+    introduced: S3E9
+  - key: p-s3e9-mars
+    kind: person
+    introduced: S3E9
+  - key: p-s3e9-johnson
+    kind: person
+    introduced: S3E9
+  - key: c-s3e10
+    kind: case
+    introduced: S3E10
+  - key: c-s3e11
+    kind: case
+    introduced: S3E11
+  - key: c-s3e12
+    kind: case
+    introduced: S3E12
+  - key: p-s3e12-montague
+    kind: person
+    introduced: S3E12
+  - key: c-s3e13
+    kind: case
+    introduced: S3E13
+  - key: p-s3e13-amber
+    kind: person
+    introduced: S3E13
+  - key: p-s3e13-crosswhite
+    kind: person
+    introduced: S3E13
+  - key: p-s3e13-nail
+    kind: person
+    introduced: S3E13
+  - key: l-s3e13-cityhall
+    kind: location
+    introduced: S3E13
+  - key: c-s3e14
+    kind: case
+    introduced: S3E14
+  - key: p-s3e14-degeorge
+    kind: person
+    introduced: S3E14
+  - key: p-s3e14-essex
+    kind: person
+    introduced: S3E14
+  - key: p-s3e14-boden
+    kind: person
+    introduced: S3E14
+  - key: p-s3e14-gorman
+    kind: person
+    introduced: S3E14
+  - key: p-s3e14-trina
+    kind: person
+    introduced: S3E14
+  - key: c-s3e15
+    kind: case
+    introduced: S3E15
+  - key: c-s3e16
+    kind: case
+    introduced: S3E16
+  - key: p-s3e16-montero
+    kind: person
+    introduced: S3E16
+  - key: c-s3e17
+    kind: case
+    introduced: S3E17
+  - key: p-s3e17-newton
+    kind: person
+    introduced: S3E17
+  - key: p-s3e17-gidry
+    kind: person
+    introduced: S3E17
+  - key: p-s3e17-trent
+    kind: person
+    introduced: S3E17
+  - key: p-s3e17-jordan
+    kind: person
+    introduced: S3E17
+  - key: c-s3e18
+    kind: case
+    introduced: S3E18
+  - key: p-s3e18-hartley
+    kind: person
+    introduced: S3E18
+  - key: p-s3e18-steiner
+    kind: person
+    introduced: S3E18
+  - key: c-s3e19
+    kind: case
+    introduced: S3E19
+  - key: p-s3e19-flynn
+    kind: person
+    introduced: S3E19
+  - key: p-s3e19-peter
+    kind: person
+    introduced: S3E19
+  - key: p-s3e19-cartwright
+    kind: person
+    introduced: S3E19
+  - key: l-s3e19-sf
+    kind: location
+    introduced: S3E19
+  - key: c-s3e20
+    kind: case
+    introduced: S3E20
+  - key: p-s3e20-fisher
+    kind: person
+    introduced: S3E20
+  - key: p-s3e20-heather
+    kind: person
+    introduced: S3E20
+  - key: p-s3e20-ruger
+    kind: person
+    introduced: S3E20
+  - key: p-s3e20-griswold
+    kind: person
+    introduced: S3E20
+  - key: p-s3e20-hassan
+    kind: person
+    introduced: S3E20
+  - key: c-s3e21
+    kind: case
+    introduced: S3E21
+  - key: p-s3e21-parsell
+    kind: person
+    introduced: S3E21
+  - key: p-s3e21-monaco
+    kind: person
+    introduced: S3E21
+  - key: p-s3e21-lansdale
+    kind: person
+    introduced: S3E21
+  - key: l-s3e21-hangtree
+    kind: location
+    introduced: S3E21
+  - key: c-s3e22
+    kind: case
+    introduced: S3E22
+  - key: p-s3e22-artega
+    kind: person
+    introduced: S3E22
+  - key: c-s3e23
+    kind: case
+    introduced: S3E23
+  - key: p-s3e23-dinkler
+    kind: person
+    introduced: S3E23
+  - key: p-s3e23-gupta
+    kind: person
+    introduced: S3E23
+  - key: p-s3e23-james
+    kind: person
+    introduced: S3E23
+  - key: l-s3e23-jdgas
+    kind: location
+    introduced: S3E23
+  - key: c-s3e24
+    kind: case
+    introduced: S3E24
+  - key: l-s3e24-hotel
+    kind: location
+    introduced: S3E24
+  - key: l-s3e24-mall
+    kind: location
+    introduced: S3E24
+
+claims:
+  - key: c-s3e1-name
+    subject: c-s3e1
+    predicate: name
+    value: "Lobbyist abduction and a chauffeur's murder"
+    revealed: S3E1
+    source: src-s3e1
+
+  - key: c-s3e1-description
+    subject: c-s3e1
+    predicate: description
+    value: "The team investigates the kidnapping of a lobbyist and the murder of his chauffeur while Jane doubts his future with the CBI."
+    revealed: S3E1
+    source: src-s3e1
+
+  - key: p-s3e1-dublin-name
+    subject: p-s3e1-dublin
+    predicate: name
+    value: "Harvey Dublin"
+    revealed: S3E1
+    source: src-s3e1
+
+  - key: p-s3e1-dublin-role
+    subject: p-s3e1-dublin
+    predicate: role_in_case
+    object: c-s3e1
+    value: "victim"
+    revealed: S3E1
+    source: src-s3e1
+
+  - key: p-s3e1-russo-name
+    subject: p-s3e1-russo
+    predicate: name
+    value: "Pete Russo"
+    revealed: S3E1
+    source: src-s3e1
+
+  - key: p-s3e1-russo-role
+    subject: p-s3e1-russo
+    predicate: role_in_case
+    object: c-s3e1
+    value: "victim"
+    revealed: S3E1
+    source: src-s3e1
+
+  - key: c-s3e2-name
+    subject: c-s3e2
+    predicate: name
+    value: "The brother-in-law's con"
+    revealed: S3E2
+    source: src-s3e2
+
+  - key: c-s3e2-description
+    subject: c-s3e2
+    predicate: description
+    value: "Jane's brother-in-law returns and becomes the apparent killer of a businessman he was conning."
+    revealed: S3E2
+    source: src-s3e2
+
+  - key: p-s3e2-ruskin-name
+    subject: p-s3e2-ruskin
+    predicate: name
+    value: "Danny Ruskin"
+    revealed: S3E2
+    source: src-s3e2
+
+  - key: p-s3e2-ruskin-role
+    subject: p-s3e2-ruskin
+    predicate: role_in_case
+    object: c-s3e2
+    value: "suspect"
+    revealed: S3E2
+    source: src-s3e2
+
+  - key: c-s3e3-name
+    subject: c-s3e3
+    predicate: name
+    value: "Death at Visualize"
+    revealed: S3E3
+    source: src-s3e3
+
+  - key: c-s3e3-description
+    subject: c-s3e3
+    predicate: description
+    value: "A young woman linked to Visualize is found dead, drawing the CBI and the FBI into the group's affairs."
+    revealed: S3E3
+    source: src-s3e3
+
+  - key: c-s3e3-olaughlin-role
+    subject: p-olaughlin
+    predicate: role_in_case
+    object: c-s3e3
+    value: "investigator"
+    revealed: S3E3
+    source: src-s3e3
+
+  - key: c-s3e3-stiles-role
+    subject: p-stiles
+    predicate: role_in_case
+    object: c-s3e3
+    value: "informant"
+    revealed: S3E3
+    source: src-s3e3
+
+  - key: c-s3e4-name
+    subject: c-s3e4
+    predicate: name
+    value: "Parolee shot after DNA release"
+    revealed: S3E4
+    source: src-s3e4
+
+  - key: c-s3e4-description
+    subject: c-s3e4
+    predicate: description
+    value: "A convict freed on DNA evidence is murdered, and two men each own up to a blow against him."
+    revealed: S3E4
+    source: src-s3e4
+
+  - key: p-s3e4-dahl-name
+    subject: p-s3e4-dahl
+    predicate: name
+    value: "Henry Dahl"
+    revealed: S3E4
+    source: src-s3e4
+
+  - key: p-s3e4-dahl-role
+    subject: p-s3e4-dahl
+    predicate: role_in_case
+    object: c-s3e4
+    value: "victim"
+    revealed: S3E4
+    source: src-s3e4
+
+  - key: p-s3e4-jwinter-name
+    subject: p-s3e4-jwinter
+    predicate: name
+    value: "Jennifer Winter"
+    revealed: S3E4
+    source: src-s3e4
+
+  - key: p-s3e4-jwinter-role
+    subject: p-s3e4-jwinter
+    predicate: role_in_case
+    object: c-s3e4
+    value: "victim"
+    revealed: S3E4
+    source: src-s3e4
+
+  - key: p-s3e4-mwinter-name
+    subject: p-s3e4-mwinter
+    predicate: name
+    value: "Max Winter"
+    revealed: S3E4
+    source: src-s3e4
+
+  - key: p-s3e4-mwinter-role
+    subject: p-s3e4-mwinter
+    predicate: role_in_case
+    object: c-s3e4
+    value: "suspect"
+    revealed: S3E4
+    source: src-s3e4
+
+  - key: c-s3e5-name
+    subject: c-s3e5
+    predicate: name
+    value: "Jockey murder at the racetrack"
+    revealed: S3E5
+    source: src-s3e5
+
+  - key: c-s3e5-description
+    subject: c-s3e5
+    predicate: description
+    value: "A well-known jockey is murdered and the trail leads to a racetrack."
+    revealed: S3E5
+    source: src-s3e5
+
+  - key: p-s3e5-sutton-name
+    subject: p-s3e5-sutton
+    predicate: name
+    value: "Bill Sutton"
+    revealed: S3E5
+    source: src-s3e5
+
+  - key: p-s3e5-sutton-role
+    subject: p-s3e5-sutton
+    predicate: role_in_case
+    object: c-s3e5
+    value: "victim"
+    revealed: S3E5
+    source: src-s3e5
+
+  - key: c-s3e6-name
+    subject: c-s3e6
+    predicate: name
+    value: "Missing judge's daughter"
+    revealed: S3E6
+    source: src-s3e6
+
+  - key: c-s3e6-description
+    subject: c-s3e6
+    predicate: description
+    value: "A federal judge's daughter vanishes and her boyfriend is found dead inside the guarded family compound."
+    revealed: S3E6
+    source: src-s3e6
+
+  - key: p-s3e6-abby-name
+    subject: p-s3e6-abby
+    predicate: name
+    value: "Abby"
+    revealed: S3E6
+    source: src-s3e6
+
+  - key: p-s3e6-abby-role
+    subject: p-s3e6-abby
+    predicate: role_in_case
+    object: c-s3e6
+    value: "victim"
+    revealed: S3E6
+    source: src-s3e6
+
+  - key: c-s3e7-name
+    subject: c-s3e7
+    predicate: name
+    value: "Threat and explosion"
+    revealed: S3E7
+    source: src-s3e7
+
+  - key: c-s3e7-description
+    subject: c-s3e7
+    predicate: description
+    value: "A building explodes during the investigation of a death threat against a businessman, and a billionaire becomes a suspect."
+    revealed: S3E7
+    source: src-s3e7
+
+  - key: c-s3e7-mashburn-role
+    subject: p-mashburn
+    predicate: role_in_case
+    object: c-s3e7
+    value: "suspect"
+    revealed: S3E7
+    source: src-s3e7
+
+  - key: c-s3e8-name
+    subject: c-s3e8
+    predicate: name
+    value: "Jane's abduction"
+    revealed: S3E8
+    source: src-s3e8
+
+  - key: c-s3e8-description
+    subject: c-s3e8
+    predicate: description
+    value: "Jane is abducted at a fruit stall by a woman bent on revenge and held in a cabin basement."
+    revealed: S3E8
+    source: src-s3e8
+
+  - key: p-s3e8-rachel-name
+    subject: p-s3e8-rachel
+    predicate: name
+    value: "Rachel Bowman"
+    revealed: S3E8
+    source: src-s3e8
+
+  - key: p-s3e8-rachel-role
+    subject: p-s3e8-rachel
+    predicate: role_in_case
+    object: c-s3e8
+    value: "perpetrator"
+    revealed: S3E8
+    source: src-s3e8
+
+  - key: p-s3e8-kittel-name
+    subject: p-s3e8-kittel
+    predicate: name
+    value: "Fred Kittel"
+    revealed: S3E8
+    source: src-s3e8
+
+  - key: p-s3e8-kittel-role
+    subject: p-s3e8-kittel
+    predicate: role_in_case
+    object: c-s3e8
+    value: "accomplice"
+    revealed: S3E8
+    source: src-s3e8
+
+  - key: c-s3e8-jane-role
+    subject: p-jane
+    predicate: role_in_case
+    object: c-s3e8
+    value: "victim"
+    revealed: S3E8
+    source: src-s3e8
+
+  - key: l-s3e8-clarksburg-name
+    subject: l-s3e8-clarksburg
+    predicate: name
+    value: "Clarksburg"
+    revealed: S3E8
+    source: src-s3e8
+
+  - key: l-s3e8-clarksburg-case
+    subject: l-s3e8-clarksburg
+    predicate: part_of_case
+    object: c-s3e8
+    revealed: S3E8
+    source: src-s3e8
+
+  - key: l-s3e8-clarksburg-coordinates
+    subject: l-s3e8-clarksburg
+    predicate: coordinates
+    value: "38.42055556,-121.52722222"
+    revealed: S3E8
+    source: src-s3e8
+    note: "city-level"
+
+  - key: c-s3e9-name
+    subject: c-s3e9
+    predicate: name
+    value: "Full-moon police killings"
+    revealed: S3E9
+    source: src-s3e9
+
+  - key: c-s3e9-description
+    subject: c-s3e9
+    predicate: description
+    value: "A string of killings of police officers and an EMT's fiancée leads the team to an astrologer and then to the EMT himself."
+    revealed: S3E9
+    source: src-s3e9
+
+  - key: p-s3e9-mars-name
+    subject: p-s3e9-mars
+    predicate: name
+    value: "Ellis Mars"
+    revealed: S3E9
+    source: src-s3e9
+
+  - key: p-s3e9-mars-role
+    subject: p-s3e9-mars
+    predicate: role_in_case
+    object: c-s3e9
+    value: "suspect"
+    revealed: S3E9
+    source: src-s3e9
+
+  - key: p-s3e9-johnson-name
+    subject: p-s3e9-johnson
+    predicate: name
+    value: "Todd Johnson"
+    revealed: S3E9
+    source: src-s3e9
+
+  - key: p-s3e9-johnson-role
+    subject: p-s3e9-johnson
+    predicate: role_in_case
+    object: c-s3e9
+    value: "perpetrator"
+    revealed: S3E9
+    source: src-s3e9
+
+  - key: c-s3e10-name
+    subject: c-s3e10
+    predicate: name
+    value: "The murdered Santa"
+    revealed: S3E10
+    source: src-s3e10
+
+  - key: c-s3e10-description
+    subject: c-s3e10
+    predicate: description
+    value: "A Santa is killed, leading the CBI to an AA group and a society of authentic Santas."
+    revealed: S3E10
+    source: src-s3e10
+
+  - key: c-s3e10-minelli-role
+    subject: p-minelli
+    predicate: role_in_case
+    object: c-s3e10
+    value: "informant"
+    revealed: S3E10
+    source: src-s3e10
+
+  - key: c-s3e10-laroche-role
+    subject: p-laroche
+    predicate: role_in_case
+    object: c-s3e10
+    value: "investigator"
+    revealed: S3E10
+    source: src-s3e10
+
+  - key: c-s3e11-name
+    subject: c-s3e11
+    predicate: name
+    value: "Murder at the cage fight"
+    revealed: S3E11
+    source: src-s3e11
+
+  - key: c-s3e11-description
+    subject: c-s3e11
+    predicate: description
+    value: "A journalist is killed below the stands during a professional martial arts fight."
+    revealed: S3E11
+    source: src-s3e11
+
+  - key: c-s3e12-name
+    subject: c-s3e12
+    predicate: name
+    value: "The Caveman profile"
+    revealed: S3E12
+    source: src-s3e12
+
+  - key: c-s3e12-description
+    subject: c-s3e12
+    predicate: description
+    value: "A criminal profiler helps with a double murder that looks like the work of a serial killer."
+    revealed: S3E12
+    source: src-s3e12
+
+  - key: p-s3e12-montague-name
+    subject: p-s3e12-montague
+    predicate: name
+    value: "Dr. Montague"
+    revealed: S3E12
+    source: src-s3e12
+
+  - key: p-s3e12-montague-role
+    subject: p-s3e12-montague
+    predicate: role_in_case
+    object: c-s3e12
+    value: "investigator"
+    revealed: S3E12
+    source: src-s3e12
+
+  - key: c-s3e13-name
+    subject: c-s3e13
+    predicate: name
+    value: "City Hall hostage crisis"
+    revealed: S3E13
+    source: src-s3e13
+
+  - key: c-s3e13-description
+    subject: c-s3e13
+    predicate: description
+    value: "A documentary filmmaker is found dead, and a suspect takes hostages at City Hall."
+    revealed: S3E13
+    source: src-s3e13
+
+  - key: p-s3e13-amber-name
+    subject: p-s3e13-amber
+    predicate: name
+    value: "Amber"
+    revealed: S3E13
+    source: src-s3e13
+
+  - key: p-s3e13-amber-role
+    subject: p-s3e13-amber
+    predicate: role_in_case
+    object: c-s3e13
+    value: "victim"
+    revealed: S3E13
+    source: src-s3e13
+
+  - key: p-s3e13-crosswhite-name
+    subject: p-s3e13-crosswhite
+    predicate: name
+    value: "Ron Crosswhite"
+    revealed: S3E13
+    source: src-s3e13
+
+  - key: p-s3e13-crosswhite-role
+    subject: p-s3e13-crosswhite
+    predicate: role_in_case
+    object: c-s3e13
+    value: "suspect"
+    revealed: S3E13
+    source: src-s3e13
+
+  - key: p-s3e13-nail-name
+    subject: p-s3e13-nail
+    predicate: name
+    value: "Arnold Nail"
+    revealed: S3E13
+    source: src-s3e13
+
+  - key: p-s3e13-nail-role
+    subject: p-s3e13-nail
+    predicate: role_in_case
+    object: c-s3e13
+    value: "perpetrator"
+    revealed: S3E13
+    source: src-s3e13
+
+  - key: l-s3e13-cityhall-name
+    subject: l-s3e13-cityhall
+    predicate: name
+    value: "City Hall"
+    revealed: S3E13
+    source: src-s3e13
+
+  - key: l-s3e13-cityhall-case
+    subject: l-s3e13-cityhall
+    predicate: part_of_case
+    object: c-s3e13
+    revealed: S3E13
+    source: src-s3e13
+
+  - key: c-s3e14-name
+    subject: c-s3e14
+    predicate: name
+    value: "The witness who was killed"
+    revealed: S3E14
+    source: src-s3e14
+
+  - key: c-s3e14-description
+    subject: c-s3e14
+    predicate: description
+    value: "A key witness against a drug baron is murdered while Van Pelt is knocked out guarding him."
+    revealed: S3E14
+    source: src-s3e14
+
+  - key: p-s3e14-degeorge-name
+    subject: p-s3e14-degeorge
+    predicate: name
+    value: "Justin DeGeorge"
+    revealed: S3E14
+    source: src-s3e14
+
+  - key: p-s3e14-degeorge-role
+    subject: p-s3e14-degeorge
+    predicate: role_in_case
+    object: c-s3e14
+    value: "victim"
+    revealed: S3E14
+    source: src-s3e14
+
+  - key: p-s3e14-essex-name
+    subject: p-s3e14-essex
+    predicate: name
+    value: "Adrian Essex"
+    revealed: S3E14
+    source: src-s3e14
+
+  - key: p-s3e14-essex-role
+    subject: p-s3e14-essex
+    predicate: role_in_case
+    object: c-s3e14
+    value: "suspect"
+    revealed: S3E14
+    source: src-s3e14
+
+  - key: p-s3e14-boden-name
+    subject: p-s3e14-boden
+    predicate: name
+    value: "Eugene Boden"
+    revealed: S3E14
+    source: src-s3e14
+
+  - key: p-s3e14-boden-role
+    subject: p-s3e14-boden
+    predicate: role_in_case
+    object: c-s3e14
+    value: "accomplice"
+    revealed: S3E14
+    source: src-s3e14
+
+  - key: p-s3e14-gorman-name
+    subject: p-s3e14-gorman
+    predicate: name
+    value: "Gorman"
+    revealed: S3E14
+    source: src-s3e14
+
+  - key: p-s3e14-gorman-role
+    subject: p-s3e14-gorman
+    predicate: role_in_case
+    object: c-s3e14
+    value: "perpetrator"
+    revealed: S3E14
+    source: src-s3e14
+
+  - key: p-s3e14-trina-name
+    subject: p-s3e14-trina
+    predicate: name
+    value: "Trina"
+    revealed: S3E14
+    source: src-s3e14
+
+  - key: p-s3e14-trina-role
+    subject: p-s3e14-trina
+    predicate: role_in_case
+    object: c-s3e14
+    value: "witness"
+    revealed: S3E14
+    source: src-s3e14
+
+  - key: c-s3e15-name
+    subject: c-s3e15
+    predicate: name
+    value: "The prospector's murder"
+    revealed: S3E15
+    source: src-s3e15
+
+  - key: c-s3e15-description
+    subject: c-s3e15
+    predicate: description
+    value: "A modern-day prospector is murdered and Lisbon is injured, so Hightower works in the field with Jane."
+    revealed: S3E15
+    source: src-s3e15
+
+  - key: c-s3e15-hightower-role
+    subject: p-hightower
+    predicate: role_in_case
+    object: c-s3e15
+    value: "investigator"
+    revealed: S3E15
+    source: src-s3e15
+
+  - key: c-s3e16-name
+    subject: c-s3e16
+    predicate: name
+    value: "Professor stabbed"
+    revealed: S3E16
+    source: src-s3e16
+
+  - key: c-s3e16-description
+    subject: c-s3e16
+    predicate: description
+    value: "A university professor of ancient art is stabbed, and evidence at the scene could implicate Hightower."
+    revealed: S3E16
+    source: src-s3e16
+
+  - key: p-s3e16-montero-name
+    subject: p-s3e16-montero
+    predicate: name
+    value: "Manuel Montero"
+    revealed: S3E16
+    source: src-s3e16
+
+  - key: p-s3e16-montero-role
+    subject: p-s3e16-montero
+    predicate: role_in_case
+    object: c-s3e16
+    value: "victim"
+    revealed: S3E16
+    source: src-s3e16
+
+  - key: c-s3e16-hightower-role
+    subject: p-hightower
+    predicate: role_in_case
+    object: c-s3e16
+    value: "suspect"
+    revealed: S3E16
+    source: src-s3e16
+
+  - key: c-s3e17-name
+    subject: c-s3e17
+    predicate: name
+    value: "Radiation badge murder"
+    revealed: S3E17
+    source: src-s3e17
+
+  - key: c-s3e17-description
+    subject: c-s3e17
+    predicate: description
+    value: "A hospital administrator is found murdered at a driving range with a radiation badge that reads above the safe limit."
+    revealed: S3E17
+    source: src-s3e17
+
+  - key: p-s3e17-newton-name
+    subject: p-s3e17-newton
+    predicate: name
+    value: "Micah Newton"
+    revealed: S3E17
+    source: src-s3e17
+
+  - key: p-s3e17-newton-role
+    subject: p-s3e17-newton
+    predicate: role_in_case
+    object: c-s3e17
+    value: "victim"
+    revealed: S3E17
+    source: src-s3e17
+
+  - key: p-s3e17-gidry-name
+    subject: p-s3e17-gidry
+    predicate: name
+    value: "Dr. Gidry"
+    revealed: S3E17
+    source: src-s3e17
+
+  - key: p-s3e17-gidry-role
+    subject: p-s3e17-gidry
+    predicate: role_in_case
+    object: c-s3e17
+    value: "perpetrator"
+    revealed: S3E17
+    source: src-s3e17
+
+  - key: p-s3e17-trent-name
+    subject: p-s3e17-trent
+    predicate: name
+    value: "Francine Trent"
+    revealed: S3E17
+    source: src-s3e17
+
+  - key: p-s3e17-trent-role
+    subject: p-s3e17-trent
+    predicate: role_in_case
+    object: c-s3e17
+    value: "suspect"
+    revealed: S3E17
+    source: src-s3e17
+
+  - key: p-s3e17-jordan-name
+    subject: p-s3e17-jordan
+    predicate: name
+    value: "Byron Jordan"
+    revealed: S3E17
+    source: src-s3e17
+
+  - key: p-s3e17-jordan-role
+    subject: p-s3e17-jordan
+    predicate: role_in_case
+    object: c-s3e17
+    value: "suspect"
+    revealed: S3E17
+    source: src-s3e17
+
+  - key: c-s3e18-name
+    subject: c-s3e18
+    predicate: name
+    value: "Stolen body"
+    revealed: S3E18
+    source: src-s3e18
+
+  - key: c-s3e18-description
+    subject: c-s3e18
+    predicate: description
+    value: "A body is stolen on the way to the morgue and Jane brings a terminally ill coroner onto the case."
+    revealed: S3E18
+    source: src-s3e18
+
+  - key: p-s3e18-hartley-name
+    subject: p-s3e18-hartley
+    predicate: name
+    value: "Timothy Hartley"
+    revealed: S3E18
+    source: src-s3e18
+
+  - key: p-s3e18-hartley-role
+    subject: p-s3e18-hartley
+    predicate: role_in_case
+    object: c-s3e18
+    value: "victim"
+    revealed: S3E18
+    source: src-s3e18
+
+  - key: p-s3e18-steiner-name
+    subject: p-s3e18-steiner
+    predicate: name
+    value: "Dr. Steiner"
+    revealed: S3E18
+    source: src-s3e18
+
+  - key: p-s3e18-steiner-role
+    subject: p-s3e18-steiner
+    predicate: role_in_case
+    object: c-s3e18
+    value: "investigator"
+    revealed: S3E18
+    source: src-s3e18
+
+  - key: c-s3e18-olaughlin-role
+    subject: p-olaughlin
+    predicate: role_in_case
+    object: c-s3e18
+    value: "investigator"
+    revealed: S3E18
+    source: src-s3e18
+
+  - key: c-s3e19-name
+    subject: c-s3e19
+    predicate: name
+    value: "Matchmaking CEO murder"
+    revealed: S3E19
+    source: src-s3e19
+
+  - key: c-s3e19-description
+    subject: c-s3e19
+    predicate: description
+    value: "The CEO of a matchmaking company is found murdered in San Francisco and Jane is convinced his widow did it."
+    revealed: S3E19
+    source: src-s3e19
+
+  - key: p-s3e19-flynn-name
+    subject: p-s3e19-flynn
+    predicate: name
+    value: "John Flynn"
+    revealed: S3E19
+    source: src-s3e19
+
+  - key: p-s3e19-flynn-role
+    subject: p-s3e19-flynn
+    predicate: role_in_case
+    object: c-s3e19
+    value: "victim"
+    revealed: S3E19
+    source: src-s3e19
+
+  - key: p-s3e19-peter-name
+    subject: p-s3e19-peter
+    predicate: name
+    value: "Peter"
+    revealed: S3E19
+    source: src-s3e19
+
+  - key: p-s3e19-peter-role
+    subject: p-s3e19-peter
+    predicate: role_in_case
+    object: c-s3e19
+    value: "accomplice"
+    revealed: S3E19
+    source: src-s3e19
+
+  - key: p-s3e19-cartwright-name
+    subject: p-s3e19-cartwright
+    predicate: name
+    value: "Kim Cartwright"
+    revealed: S3E19
+    source: src-s3e19
+
+  - key: p-s3e19-cartwright-role
+    subject: p-s3e19-cartwright
+    predicate: role_in_case
+    object: c-s3e19
+    value: "witness"
+    revealed: S3E19
+    source: src-s3e19
+
+  - key: c-s3e19-erica-flynn-role
+    subject: p-erica-flynn
+    predicate: role_in_case
+    object: c-s3e19
+    value: "suspect"
+    revealed: S3E19
+    source: src-s3e19
+
+  - key: l-s3e19-sf-name
+    subject: l-s3e19-sf
+    predicate: name
+    value: "San Francisco"
+    revealed: S3E19
+    source: src-s3e19
+
+  - key: l-s3e19-sf-case
+    subject: l-s3e19-sf
+    predicate: part_of_case
+    object: c-s3e19
+    revealed: S3E19
+    source: src-s3e19
+
+  - key: l-s3e19-sf-coordinates
+    subject: l-s3e19-sf
+    predicate: coordinates
+    value: "37.7775,-122.41638889"
+    revealed: S3E19
+    source: src-s3e19
+    note: "city-level"
+
+  - key: c-s3e20-name
+    subject: c-s3e20
+    predicate: name
+    value: "Murder at the repair shop"
+    revealed: S3E20
+    source: src-s3e20
+
+  - key: c-s3e20-description
+    subject: c-s3e20
+    predicate: description
+    value: "An electronics repair shop owner is found murdered and several people want money he hid."
+    revealed: S3E20
+    source: src-s3e20
+
+  - key: p-s3e20-fisher-name
+    subject: p-s3e20-fisher
+    predicate: name
+    value: "Ted Fisher"
+    revealed: S3E20
+    source: src-s3e20
+
+  - key: p-s3e20-fisher-role
+    subject: p-s3e20-fisher
+    predicate: role_in_case
+    object: c-s3e20
+    value: "victim"
+    revealed: S3E20
+    source: src-s3e20
+
+  - key: p-s3e20-heather-name
+    subject: p-s3e20-heather
+    predicate: name
+    value: "Heather Blue"
+    revealed: S3E20
+    source: src-s3e20
+
+  - key: p-s3e20-heather-role
+    subject: p-s3e20-heather
+    predicate: role_in_case
+    object: c-s3e20
+    value: "perpetrator"
+    revealed: S3E20
+    source: src-s3e20
+
+  - key: p-s3e20-ruger-name
+    subject: p-s3e20-ruger
+    predicate: name
+    value: "Cole Ruger"
+    revealed: S3E20
+    source: src-s3e20
+
+  - key: p-s3e20-ruger-role
+    subject: p-s3e20-ruger
+    predicate: role_in_case
+    object: c-s3e20
+    value: "suspect"
+    revealed: S3E20
+    source: src-s3e20
+
+  - key: p-s3e20-griswold-name
+    subject: p-s3e20-griswold
+    predicate: name
+    value: "Vivian Griswold"
+    revealed: S3E20
+    source: src-s3e20
+
+  - key: p-s3e20-griswold-role
+    subject: p-s3e20-griswold
+    predicate: role_in_case
+    object: c-s3e20
+    value: "suspect"
+    revealed: S3E20
+    source: src-s3e20
+
+  - key: p-s3e20-hassan-name
+    subject: p-s3e20-hassan
+    predicate: name
+    value: "Omar Hassan"
+    revealed: S3E20
+    source: src-s3e20
+
+  - key: p-s3e20-hassan-role
+    subject: p-s3e20-hassan
+    predicate: role_in_case
+    object: c-s3e20
+    value: "suspect"
+    revealed: S3E20
+    source: src-s3e20
+
+  - key: c-s3e21-name
+    subject: c-s3e21
+    predicate: name
+    value: "Corrections officer stabbed"
+    revealed: S3E21
+    source: src-s3e21
+
+  - key: c-s3e21-description
+    subject: c-s3e21
+    predicate: description
+    value: "A corrections officer is stabbed to death near a jewelry store in a small California town, with a prison shank as the weapon."
+    revealed: S3E21
+    source: src-s3e21
+
+  - key: p-s3e21-parsell-name
+    subject: p-s3e21-parsell
+    predicate: name
+    value: "Walton Parsell"
+    revealed: S3E21
+    source: src-s3e21
+
+  - key: p-s3e21-parsell-role
+    subject: p-s3e21-parsell
+    predicate: role_in_case
+    object: c-s3e21
+    value: "victim"
+    revealed: S3E21
+    source: src-s3e21
+
+  - key: p-s3e21-monaco-name
+    subject: p-s3e21-monaco
+    predicate: name
+    value: "Nick Monaco"
+    revealed: S3E21
+    source: src-s3e21
+
+  - key: p-s3e21-monaco-role
+    subject: p-s3e21-monaco
+    predicate: role_in_case
+    object: c-s3e21
+    value: "perpetrator"
+    revealed: S3E21
+    source: src-s3e21
+
+  - key: p-s3e21-lansdale-name
+    subject: p-s3e21-lansdale
+    predicate: name
+    value: "Marcus Lansdale"
+    revealed: S3E21
+    source: src-s3e21
+
+  - key: p-s3e21-lansdale-role
+    subject: p-s3e21-lansdale
+    predicate: role_in_case
+    object: c-s3e21
+    value: "suspect"
+    revealed: S3E21
+    source: src-s3e21
+
+  - key: l-s3e21-hangtree-name
+    subject: l-s3e21-hangtree
+    predicate: name
+    value: "Hangtree"
+    revealed: S3E21
+    source: src-s3e21
+
+  - key: l-s3e21-hangtree-case
+    subject: l-s3e21-hangtree
+    predicate: part_of_case
+    object: c-s3e21
+    revealed: S3E21
+    source: src-s3e21
+
+  - key: c-s3e22-name
+    subject: c-s3e22
+    predicate: name
+    value: "Violinist shot at a bus stop"
+    revealed: S3E22
+    source: src-s3e22
+
+  - key: c-s3e22-description
+    subject: c-s3e22
+    predicate: description
+    value: "A first-chair violinist of a symphony orchestra is shot dead at a bus stop with a hydrangea petal left at the scene."
+    revealed: S3E22
+    source: src-s3e22
+
+  - key: p-s3e22-artega-name
+    subject: p-s3e22-artega
+    predicate: name
+    value: "Eleanor Artega"
+    revealed: S3E22
+    source: src-s3e22
+
+  - key: p-s3e22-artega-role
+    subject: p-s3e22-artega
+    predicate: role_in_case
+    object: c-s3e22
+    value: "victim"
+    revealed: S3E22
+    source: src-s3e22
+
+  - key: c-s3e23-name
+    subject: c-s3e23
+    predicate: name
+    value: "Bomb vest"
+    revealed: S3E23
+    source: src-s3e23
+
+  - key: c-s3e23-description
+    subject: c-s3e23
+    predicate: description
+    value: "A man in a suicide vest dies at a gas station, and the case draws Jane and Lisbon into a plot tied to Hightower."
+    revealed: S3E23
+    source: src-s3e23
+
+  - key: p-s3e23-dinkler-name
+    subject: p-s3e23-dinkler
+    predicate: name
+    value: "Alan Dinkler"
+    revealed: S3E23
+    source: src-s3e23
+
+  - key: p-s3e23-dinkler-role
+    subject: p-s3e23-dinkler
+    predicate: role_in_case
+    object: c-s3e23
+    value: "victim"
+    revealed: S3E23
+    source: src-s3e23
+
+  - key: p-s3e23-gupta-name
+    subject: p-s3e23-gupta
+    predicate: name
+    value: "Gupta"
+    revealed: S3E23
+    source: src-s3e23
+
+  - key: p-s3e23-gupta-role
+    subject: p-s3e23-gupta
+    predicate: role_in_case
+    object: c-s3e23
+    value: "perpetrator"
+    revealed: S3E23
+    source: src-s3e23
+
+  - key: p-s3e23-james-name
+    subject: p-s3e23-james
+    predicate: name
+    value: "Max James"
+    revealed: S3E23
+    source: src-s3e23
+
+  - key: p-s3e23-james-role
+    subject: p-s3e23-james
+    predicate: role_in_case
+    object: c-s3e23
+    value: "victim"
+    revealed: S3E23
+    source: src-s3e23
+
+  - key: l-s3e23-jdgas-name
+    subject: l-s3e23-jdgas
+    predicate: name
+    value: "JD Gas & Food Mart"
+    revealed: S3E23
+    source: src-s3e23
+
+  - key: l-s3e23-jdgas-case
+    subject: l-s3e23-jdgas
+    predicate: part_of_case
+    object: c-s3e23
+    revealed: S3E23
+    source: src-s3e23
+
+  - key: c-s3e24-name
+    subject: c-s3e24
+    predicate: name
+    value: "The hunt for the mole"
+    revealed: S3E24
+    source: src-s3e24
+
+  - key: c-s3e24-description
+    subject: c-s3e24
+    predicate: description
+    value: "Jane hunts Red John's mole in the CBI among a list of suspects while Hightower is hunted."
+    revealed: S3E24
+    source: src-s3e24
+
+  - key: c-s3e24-olaughlin-role
+    subject: p-olaughlin
+    predicate: role_in_case
+    object: c-s3e24
+    value: "accomplice"
+    revealed: S3E24
+    source: src-s3e24
+
+  - key: c-s3e24-bertram-role
+    subject: p-bertram
+    predicate: role_in_case
+    object: c-s3e24
+    value: "suspect"
+    revealed: S3E24
+    source: src-s3e24
+    status: in_show_suspicion
+
+  - key: c-s3e24-ardiles-role
+    subject: p-ardiles
+    predicate: role_in_case
+    object: c-s3e24
+    value: "suspect"
+    revealed: S3E24
+    source: src-s3e24
+    status: in_show_suspicion
+
+  - key: c-s3e24-shettrick-role
+    subject: p-shettrick
+    predicate: role_in_case
+    object: c-s3e24
+    value: "suspect"
+    revealed: S3E24
+    source: src-s3e24
+    status: in_show_suspicion
+
+  - key: l-s3e24-hotel-name
+    subject: l-s3e24-hotel
+    predicate: name
+    value: "Pacific Palms Hotel"
+    revealed: S3E24
+    source: src-s3e24
+
+  - key: l-s3e24-hotel-case
+    subject: l-s3e24-hotel
+    predicate: part_of_case
+    object: c-s3e24
+    revealed: S3E24
+    source: src-s3e24
+
+  - key: l-s3e24-mall-name
+    subject: l-s3e24-mall
+    predicate: name
+    value: "Pinewood Shopping Mall"
+    revealed: S3E24
+    source: src-s3e24
+
+  - key: l-s3e24-mall-case
+    subject: l-s3e24-mall
+    predicate: part_of_case
+    object: c-s3e24
+    revealed: S3E24
+    source: src-s3e24
+

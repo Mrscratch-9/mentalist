@@ -1,0 +1,2009 @@
+# The Mentalist season 4 cases: one case per episode, one-off people, places (S4E1..S4E24).
+# Source: English Wikipedia, "The Mentalist season 4" episode summaries.
+# Spoilers: do not open outside the app.
+
+entities:
+  - key: c-s4e1
+    kind: case
+    introduced: S4E1
+
+  - key: p-s4e1-carter-t
+    kind: person
+    introduced: S4E1
+
+  - key: p-s4e1-carter-s
+    kind: person
+    introduced: S4E1
+
+  - key: p-s4e1-lupin
+    kind: person
+    introduced: S4E1
+
+  - key: l-s4e1-carter-home
+    kind: location
+    introduced: S4E1
+
+  - key: c-s4e2
+    kind: case
+    introduced: S4E2
+
+  - key: p-s4e2-kuzmenko
+    kind: person
+    introduced: S4E2
+
+  - key: l-s4e2-gym
+    kind: location
+    introduced: S4E2
+
+  - key: c-s4e3
+    kind: case
+    introduced: S4E3
+
+  - key: p-s4e3-flint
+    kind: person
+    introduced: S4E3
+
+  - key: c-s4e4
+    kind: case
+    introduced: S4E4
+
+  - key: p-s4e4-tibbs
+    kind: person
+    introduced: S4E4
+
+  - key: c-s4e5
+    kind: case
+    introduced: S4E5
+
+  - key: p-s4e5-suarez
+    kind: person
+    introduced: S4E5
+
+  - key: p-s4e5-naylor
+    kind: person
+    introduced: S4E5
+
+  - key: p-s4e5-lafleur
+    kind: person
+    introduced: S4E5
+
+  - key: l-s4e5-island
+    kind: location
+    introduced: S4E5
+
+  - key: c-s4e6
+    kind: case
+    introduced: S4E6
+
+  - key: p-s4e6-green
+    kind: person
+    introduced: S4E6
+
+  - key: p-s4e6-kresser-s
+    kind: person
+    introduced: S4E6
+
+  - key: p-s4e6-carmichael
+    kind: person
+    introduced: S4E6
+
+  - key: p-s4e6-zubov
+    kind: person
+    introduced: S4E6
+
+  - key: p-s4e6-kresser-j
+    kind: person
+    introduced: S4E6
+
+  - key: l-s4e6-inn
+    kind: location
+    introduced: S4E6
+
+  - key: c-s4e7
+    kind: case
+    introduced: S4E7
+
+  - key: p-s4e7-carp
+    kind: person
+    introduced: S4E7
+
+  - key: p-s4e7-maier
+    kind: person
+    introduced: S4E7
+
+  - key: p-s4e7-panzer
+    kind: person
+    introduced: S4E7
+
+  - key: p-s4e7-haibach
+    kind: person
+    introduced: S4E7
+
+  - key: l-s4e7-panzer-scene
+    kind: location
+    introduced: S4E7
+
+  - key: c-s4e8
+    kind: case
+    introduced: S4E8
+
+  - key: p-s4e8-herrera
+    kind: person
+    introduced: S4E8
+
+  - key: p-s4e8-trotter
+    kind: person
+    introduced: S4E8
+
+  - key: p-s4e8-vega
+    kind: person
+    introduced: S4E8
+
+  - key: p-s4e8-summer
+    kind: person
+    introduced: S4E8
+
+  - key: c-s4e9
+    kind: case
+    introduced: S4E9
+
+  - key: p-s4e9-jake
+    kind: person
+    introduced: S4E9
+
+  - key: c-s4e10
+    kind: case
+    introduced: S4E10
+
+  - key: c-s4e11
+    kind: case
+    introduced: S4E11
+
+  - key: p-s4e11-creek
+    kind: person
+    introduced: S4E11
+
+  - key: p-s4e11-colette
+    kind: person
+    introduced: S4E11
+
+  - key: p-s4e11-dersh
+    kind: person
+    introduced: S4E11
+
+  - key: c-s4e12
+    kind: case
+    introduced: S4E12
+
+  - key: p-s4e12-porchetto
+    kind: person
+    introduced: S4E12
+
+  - key: p-s4e12-nett
+    kind: person
+    introduced: S4E12
+
+  - key: p-s4e12-janpen
+    kind: person
+    introduced: S4E12
+
+  - key: l-s4e12-porchetto-home
+    kind: location
+    introduced: S4E12
+
+  - key: c-s4e13
+    kind: case
+    introduced: S4E13
+
+  - key: p-s4e13-theissens
+    kind: person
+    introduced: S4E13
+
+  - key: p-s4e13-sasha
+    kind: person
+    introduced: S4E13
+
+  - key: p-s4e13-liu
+    kind: person
+    introduced: S4E13
+
+  - key: p-s4e13-redgrave
+    kind: person
+    introduced: S4E13
+
+  - key: l-s4e13-loft
+    kind: location
+    introduced: S4E13
+
+  - key: c-s4e14
+    kind: case
+    introduced: S4E14
+
+  - key: p-s4e14-ruiz
+    kind: person
+    introduced: S4E14
+
+  - key: p-s4e14-mulberry-e
+    kind: person
+    introduced: S4E14
+
+  - key: p-s4e14-amy
+    kind: person
+    introduced: S4E14
+
+  - key: p-s4e14-murphy
+    kind: person
+    introduced: S4E14
+
+  - key: l-s4e14-vineyard
+    kind: location
+    introduced: S4E14
+
+  - key: c-s4e15
+    kind: case
+    introduced: S4E15
+
+  - key: p-s4e15-gibecki
+    kind: person
+    introduced: S4E15
+
+  - key: p-s4e15-relin
+    kind: person
+    introduced: S4E15
+
+  - key: p-s4e15-richard
+    kind: person
+    introduced: S4E15
+
+  - key: c-s4e16
+    kind: case
+    introduced: S4E16
+
+  - key: p-s4e16-meadows
+    kind: person
+    introduced: S4E16
+
+  - key: p-s4e16-hill
+    kind: person
+    introduced: S4E16
+
+  - key: l-s4e16-college
+    kind: location
+    introduced: S4E16
+
+  - key: c-s4e17
+    kind: case
+    introduced: S4E17
+
+  - key: p-s4e17-cruz
+    kind: person
+    introduced: S4E17
+
+  - key: p-s4e17-philo
+    kind: person
+    introduced: S4E17
+
+  - key: p-s4e17-bauer-k
+    kind: person
+    introduced: S4E17
+
+  - key: p-s4e17-bauer-g
+    kind: person
+    introduced: S4E17
+
+  - key: p-s4e17-bauer-s
+    kind: person
+    introduced: S4E17
+
+  - key: p-s4e17-barca
+    kind: person
+    introduced: S4E17
+
+  - key: c-s4e18
+    kind: case
+    introduced: S4E18
+
+  - key: p-s4e18-braddock
+    kind: person
+    introduced: S4E18
+
+  - key: p-s4e18-aden
+    kind: person
+    introduced: S4E18
+
+  - key: p-s4e18-firth
+    kind: person
+    introduced: S4E18
+
+  - key: p-s4e18-josef
+    kind: person
+    introduced: S4E18
+
+  - key: l-s4e18-institute
+    kind: location
+    introduced: S4E18
+
+  - key: c-s4e19
+    kind: case
+    introduced: S4E19
+
+  - key: p-s4e19-destefano
+    kind: person
+    introduced: S4E19
+
+  - key: p-s4e19-trish
+    kind: person
+    introduced: S4E19
+
+  - key: p-s4e19-danvers
+    kind: person
+    introduced: S4E19
+
+  - key: p-s4e19-holmes
+    kind: person
+    introduced: S4E19
+
+  - key: l-s4e19-casino
+    kind: location
+    introduced: S4E19
+
+  - key: c-s4e20
+    kind: case
+    introduced: S4E20
+
+  - key: p-s4e20-mctierney
+    kind: person
+    introduced: S4E20
+
+  - key: p-s4e20-austin
+    kind: person
+    introduced: S4E20
+
+  - key: p-s4e20-billy
+    kind: person
+    introduced: S4E20
+
+  - key: p-s4e20-loveland
+    kind: person
+    introduced: S4E20
+
+  - key: l-s4e20-field
+    kind: location
+    introduced: S4E20
+
+  - key: c-s4e21
+    kind: case
+    introduced: S4E21
+
+  - key: p-s4e21-snow
+    kind: person
+    introduced: S4E21
+
+  - key: p-s4e21-hughes
+    kind: person
+    introduced: S4E21
+
+  - key: p-s4e21-lamb
+    kind: person
+    introduced: S4E21
+
+  - key: c-s4e22
+    kind: case
+    introduced: S4E22
+
+  - key: p-s4e22-spanner
+    kind: person
+    introduced: S4E22
+
+  - key: c-s4e23
+    kind: case
+    introduced: S4E23
+
+  - key: p-s4e23-castro
+    kind: person
+    introduced: S4E23
+
+  - key: p-s4e23-marx
+    kind: person
+    introduced: S4E23
+
+  - key: p-s4e23-victor
+    kind: person
+    introduced: S4E23
+
+  - key: c-s4e24
+    kind: case
+    introduced: S4E24
+
+  - key: l-s4e24-vegas
+    kind: location
+    introduced: S4E24
+
+claims:
+  - key: c-s4e1-name
+    subject: c-s4e1
+    predicate: name
+    value: "Jane's trial and a hidden captive"
+    revealed: S4E1
+    source: src-s4e1
+
+  - key: c-s4e1-description
+    subject: c-s4e1
+    predicate: description
+    value: "Jane is held for killing a man he believed was Red John while the team searches for proof and uncovers a captive girl."
+    revealed: S4E1
+    source: src-s4e1
+
+  - key: p-s4e1-carter-t-name
+    subject: p-s4e1-carter-t
+    predicate: name
+    value: "Timothy Carter"
+    revealed: S4E1
+    source: src-s4e1
+
+  - key: p-s4e1-carter-t-role
+    subject: p-s4e1-carter-t
+    predicate: role_in_case
+    object: c-s4e1
+    value: perpetrator
+    revealed: S4E1
+    source: src-s4e1
+
+  - key: p-s4e1-carter-s-name
+    subject: p-s4e1-carter-s
+    predicate: name
+    value: "Sally Carter"
+    revealed: S4E1
+    source: src-s4e1
+
+  - key: p-s4e1-carter-s-role
+    subject: p-s4e1-carter-s
+    predicate: role_in_case
+    object: c-s4e1
+    value: perpetrator
+    revealed: S4E1
+    source: src-s4e1
+
+  - key: p-s4e1-lupin-name
+    subject: p-s4e1-lupin
+    predicate: name
+    value: "Debbie Lupin"
+    revealed: S4E1
+    source: src-s4e1
+
+  - key: p-s4e1-lupin-role
+    subject: p-s4e1-lupin
+    predicate: role_in_case
+    object: c-s4e1
+    value: victim
+    revealed: S4E1
+    source: src-s4e1
+
+  - key: l-s4e1-carter-home-name
+    subject: l-s4e1-carter-home
+    predicate: name
+    value: "The Carters' home"
+    revealed: S4E1
+    source: src-s4e1
+
+  - key: l-s4e1-carter-home-case
+    subject: l-s4e1-carter-home
+    predicate: part_of_case
+    object: c-s4e1
+    revealed: S4E1
+    source: src-s4e1
+
+  - key: c-s4e2-name
+    subject: c-s4e2
+    predicate: name
+    value: "Gym instructor killed with a heavy object"
+    revealed: S4E2
+    source: src-s4e2
+
+  - key: c-s4e2-description
+    subject: c-s4e2
+    predicate: description
+    value: "The team investigates the killing of a gym instructor while Jane is placed under a rival team."
+    revealed: S4E2
+    source: src-s4e2
+
+  - key: p-s4e2-kuzmenko-name
+    subject: p-s4e2-kuzmenko
+    predicate: name
+    value: "Markus Kuzmenko"
+    revealed: S4E2
+    source: src-s4e2
+
+  - key: p-s4e2-kuzmenko-role
+    subject: p-s4e2-kuzmenko
+    predicate: role_in_case
+    object: c-s4e2
+    value: victim
+    revealed: S4E2
+    source: src-s4e2
+
+  - key: c-s4e2-role-p-harker
+    subject: p-harker
+    predicate: role_in_case
+    object: c-s4e2
+    value: witness
+    revealed: S4E2
+    source: src-s4e2
+
+  - key: l-s4e2-gym-name
+    subject: l-s4e2-gym
+    predicate: name
+    value: "Kuzmenko's gym"
+    revealed: S4E2
+    source: src-s4e2
+
+  - key: l-s4e2-gym-case
+    subject: l-s4e2-gym
+    predicate: part_of_case
+    object: c-s4e2
+    revealed: S4E2
+    source: src-s4e2
+
+  - key: c-s4e3-name
+    subject: c-s4e3
+    predicate: name
+    value: "Kidnapped boy and a fake psychic"
+    revealed: S4E3
+    source: src-s4e3
+
+  - key: c-s4e3-description
+    subject: c-s4e3
+    predicate: description
+    value: "The team hunts the kidnapper of a nine-year-old boy whose mother believes Jane shares a psychic bond with him."
+    revealed: S4E3
+    source: src-s4e3
+
+  - key: p-s4e3-flint-name
+    subject: p-s4e3-flint
+    predicate: name
+    value: "Conner Flint"
+    revealed: S4E3
+    source: src-s4e3
+
+  - key: p-s4e3-flint-role
+    subject: p-s4e3-flint
+    predicate: role_in_case
+    object: c-s4e3
+    value: victim
+    revealed: S4E3
+    source: src-s4e3
+
+  - key: c-s4e4-name
+    subject: c-s4e4
+    predicate: name
+    value: "Dead photographer and an armed stranger"
+    revealed: S4E4
+    source: src-s4e4
+
+  - key: c-s4e4-description
+    subject: c-s4e4
+    predicate: description
+    value: "The team protects a mayor's rally and investigates a photographer's body found in an alley while Jane fears a gunman in the crowd."
+    revealed: S4E4
+    source: src-s4e4
+
+  - key: p-s4e4-tibbs-name
+    subject: p-s4e4-tibbs
+    predicate: name
+    value: "Henry Tibbs"
+    revealed: S4E4
+    source: src-s4e4
+
+  - key: p-s4e4-tibbs-role
+    subject: p-s4e4-tibbs
+    predicate: role_in_case
+    object: c-s4e4
+    value: suspect
+    revealed: S4E4
+    source: src-s4e4
+
+  - key: c-s4e5-name
+    subject: c-s4e5
+    predicate: name
+    value: "Island murder of a foster teen"
+    revealed: S4E5
+    source: src-s4e5
+
+  - key: c-s4e5-description
+    subject: c-s4e5
+    predicate: description
+    value: "The team travels to an island off the California coast to solve the murder of a nineteen-year-old woman found on a beach."
+    revealed: S4E5
+    source: src-s4e5
+
+  - key: p-s4e5-suarez-name
+    subject: p-s4e5-suarez
+    predicate: name
+    value: "Talia Suarez"
+    revealed: S4E5
+    source: src-s4e5
+
+  - key: p-s4e5-suarez-role
+    subject: p-s4e5-suarez
+    predicate: role_in_case
+    object: c-s4e5
+    value: victim
+    revealed: S4E5
+    source: src-s4e5
+
+  - key: p-s4e5-naylor-name
+    subject: p-s4e5-naylor
+    predicate: name
+    value: "Whit Naylor"
+    revealed: S4E5
+    source: src-s4e5
+
+  - key: p-s4e5-naylor-role
+    subject: p-s4e5-naylor
+    predicate: role_in_case
+    object: c-s4e5
+    value: perpetrator
+    revealed: S4E5
+    source: src-s4e5
+
+  - key: p-s4e5-lafleur-name
+    subject: p-s4e5-lafleur
+    predicate: name
+    value: "Jack LaFleur"
+    revealed: S4E5
+    source: src-s4e5
+
+  - key: p-s4e5-lafleur-role
+    subject: p-s4e5-lafleur
+    predicate: role_in_case
+    object: c-s4e5
+    value: suspect
+    revealed: S4E5
+    source: src-s4e5
+
+  - key: l-s4e5-island-name
+    subject: l-s4e5-island
+    predicate: name
+    value: "San Felix Island"
+    revealed: S4E5
+    source: src-s4e5
+
+  - key: l-s4e5-island-case
+    subject: l-s4e5-island
+    predicate: part_of_case
+    object: c-s4e5
+    revealed: S4E5
+    source: src-s4e5
+
+  - key: c-s4e6-name
+    subject: c-s4e6
+    predicate: name
+    value: "Police chief shot in the woods"
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: c-s4e6-description
+    subject: c-s4e6
+    predicate: description
+    value: "The team investigates the shooting of a police chief while Lisbon's brother chases a bail skip."
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: p-s4e6-green-name
+    subject: p-s4e6-green
+    predicate: name
+    value: "Marnie Green"
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: p-s4e6-green-role
+    subject: p-s4e6-green
+    predicate: role_in_case
+    object: c-s4e6
+    value: victim
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: p-s4e6-kresser-s-name
+    subject: p-s4e6-kresser-s
+    predicate: name
+    value: "Steven Kresser"
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: p-s4e6-kresser-s-role
+    subject: p-s4e6-kresser-s
+    predicate: role_in_case
+    object: c-s4e6
+    value: victim
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: p-s4e6-carmichael-name
+    subject: p-s4e6-carmichael
+    predicate: name
+    value: "Chad Carmichael"
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: p-s4e6-carmichael-role
+    subject: p-s4e6-carmichael
+    predicate: role_in_case
+    object: c-s4e6
+    value: perpetrator
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: p-s4e6-zubov-name
+    subject: p-s4e6-zubov
+    predicate: name
+    value: "Dmitri Zubov"
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: p-s4e6-zubov-role
+    subject: p-s4e6-zubov
+    predicate: role_in_case
+    object: c-s4e6
+    value: suspect
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: p-s4e6-kresser-j-name
+    subject: p-s4e6-kresser-j
+    predicate: name
+    value: "Jory Kresser"
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: p-s4e6-kresser-j-role
+    subject: p-s4e6-kresser-j
+    predicate: role_in_case
+    object: c-s4e6
+    value: witness
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: l-s4e6-inn-name
+    subject: l-s4e6-inn
+    predicate: name
+    value: "Eagleton Inn"
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: l-s4e6-inn-case
+    subject: l-s4e6-inn
+    predicate: part_of_case
+    object: c-s4e6
+    revealed: S4E6
+    source: src-s4e6
+
+  - key: c-s4e7-name
+    subject: c-s4e7
+    predicate: name
+    value: "Serial killer of teenage girls"
+    revealed: S4E7
+    source: src-s4e7
+
+  - key: c-s4e7-description
+    subject: c-s4e7
+    predicate: description
+    value: "The team hunts the San Joaquin Killer, a serial killer of teenage girls, and the case ends in a Red John case when a murder bears Red John's hallmarks."
+    revealed: S4E7
+    source: src-s4e7
+
+  - key: p-s4e7-carp-name
+    subject: p-s4e7-carp
+    predicate: name
+    value: "Michelle Carp"
+    revealed: S4E7
+    source: src-s4e7
+
+  - key: p-s4e7-carp-role
+    subject: p-s4e7-carp
+    predicate: role_in_case
+    object: c-s4e7
+    value: victim
+    revealed: S4E7
+    source: src-s4e7
+
+  - key: p-s4e7-maier-name
+    subject: p-s4e7-maier
+    predicate: name
+    value: "Molly Maier"
+    revealed: S4E7
+    source: src-s4e7
+
+  - key: p-s4e7-maier-role
+    subject: p-s4e7-maier
+    predicate: role_in_case
+    object: c-s4e7
+    value: victim
+    revealed: S4E7
+    source: src-s4e7
+
+  - key: p-s4e7-panzer-name
+    subject: p-s4e7-panzer
+    predicate: name
+    value: "James Panzer"
+    revealed: S4E7
+    source: src-s4e7
+
+  - key: p-s4e7-panzer-role
+    subject: p-s4e7-panzer
+    predicate: role_in_case
+    object: c-s4e7
+    value: victim
+    revealed: S4E7
+    source: src-s4e7
+
+  - key: p-s4e7-panzer-role2
+    subject: p-s4e7-panzer
+    predicate: role_in_case
+    object: c-s4e7
+    value: perpetrator
+    revealed: S4E7
+    status: in_show_suspicion
+    source: src-s4e7
+
+  - key: p-s4e7-haibach-name
+    subject: p-s4e7-haibach
+    predicate: name
+    value: "Richard Haibach"
+    revealed: S4E7
+    source: src-s4e7
+
+  - key: p-s4e7-haibach-role
+    subject: p-s4e7-haibach
+    predicate: role_in_case
+    object: c-s4e7
+    value: suspect
+    revealed: S4E7
+    source: src-s4e7
+
+  - key: l-s4e7-panzer-scene-name
+    subject: l-s4e7-panzer-scene
+    predicate: name
+    value: "Panzer's murder scene"
+    revealed: S4E7
+    source: src-s4e7
+
+  - key: l-s4e7-panzer-scene-case
+    subject: l-s4e7-panzer-scene
+    predicate: part_of_case
+    object: c-s4e7
+    revealed: S4E7
+    source: src-s4e7
+
+  - key: l-s4e7-panzer-scene-smiley
+    subject: l-s4e7-panzer-scene
+    predicate: red_john_smiley
+    value: "true"
+    revealed: S4E7
+    source: src-s4e7
+
+  - key: c-s4e8-name
+    subject: c-s4e8
+    predicate: name
+    value: "Undercover officer shot twice"
+    revealed: S4E8
+    source: src-s4e8
+
+  - key: c-s4e8-description
+    subject: c-s4e8
+    predicate: description
+    value: "The team investigates the killing of an undercover narcotics officer who was investigating a drug dealer."
+    revealed: S4E8
+    source: src-s4e8
+
+  - key: p-s4e8-herrera-name
+    subject: p-s4e8-herrera
+    predicate: name
+    value: "Yolanda Herrera"
+    revealed: S4E8
+    source: src-s4e8
+
+  - key: p-s4e8-herrera-role
+    subject: p-s4e8-herrera
+    predicate: role_in_case
+    object: c-s4e8
+    value: victim
+    revealed: S4E8
+    source: src-s4e8
+
+  - key: p-s4e8-trotter-name
+    subject: p-s4e8-trotter
+    predicate: name
+    value: "Bianca Trotter"
+    revealed: S4E8
+    source: src-s4e8
+
+  - key: p-s4e8-trotter-role
+    subject: p-s4e8-trotter
+    predicate: role_in_case
+    object: c-s4e8
+    value: perpetrator
+    revealed: S4E8
+    source: src-s4e8
+
+  - key: p-s4e8-vega-name
+    subject: p-s4e8-vega
+    predicate: name
+    value: "Omar Vega"
+    revealed: S4E8
+    source: src-s4e8
+
+  - key: p-s4e8-vega-role
+    subject: p-s4e8-vega
+    predicate: role_in_case
+    object: c-s4e8
+    value: suspect
+    revealed: S4E8
+    source: src-s4e8
+
+  - key: p-s4e8-summer-name
+    subject: p-s4e8-summer
+    predicate: name
+    value: "Summer"
+    revealed: S4E8
+    source: src-s4e8
+
+  - key: p-s4e8-summer-role
+    subject: p-s4e8-summer
+    predicate: role_in_case
+    object: c-s4e8
+    value: witness
+    revealed: S4E8
+    source: src-s4e8
+
+  - key: c-s4e9-name
+    subject: c-s4e9
+    predicate: name
+    value: "Quarterback's car bombing"
+    revealed: S4E9
+    source: src-s4e9
+
+  - key: c-s4e9-description
+    subject: c-s4e9
+    predicate: description
+    value: "A car bomb meant for a football quarterback kills his assistant, so Jane has the quarterback play dead to catch the killer."
+    revealed: S4E9
+    source: src-s4e9
+
+  - key: p-s4e9-jake-name
+    subject: p-s4e9-jake
+    predicate: name
+    value: "Jake"
+    revealed: S4E9
+    source: src-s4e9
+
+  - key: p-s4e9-jake-role
+    subject: p-s4e9-jake
+    predicate: role_in_case
+    object: c-s4e9
+    value: victim
+    revealed: S4E9
+    source: src-s4e9
+
+  - key: c-s4e10-name
+    subject: c-s4e10
+    predicate: name
+    value: "Fireman's murder and Jane's lost memory"
+    revealed: S4E10
+    source: src-s4e10
+
+  - key: c-s4e10-description
+    subject: c-s4e10
+    predicate: description
+    value: "Jane nearly drowns while investigating a fireman's murder and loses his memory."
+    revealed: S4E10
+    source: src-s4e10
+
+  - key: c-s4e11-name
+    subject: c-s4e11
+    predicate: name
+    value: "Lawyer blown up on his boat"
+    revealed: S4E11
+    source: src-s4e11
+
+  - key: c-s4e11-description
+    subject: c-s4e11
+    predicate: description
+    value: "The team investigates a lawyer killed in a boat explosion while Jane deals with an FBI agent and Red John's attention."
+    revealed: S4E11
+    source: src-s4e11
+
+  - key: p-s4e11-creek-name
+    subject: p-s4e11-creek
+    predicate: name
+    value: "Alton Creek"
+    revealed: S4E11
+    source: src-s4e11
+
+  - key: p-s4e11-creek-role
+    subject: p-s4e11-creek
+    predicate: role_in_case
+    object: c-s4e11
+    value: victim
+    revealed: S4E11
+    source: src-s4e11
+
+  - key: p-s4e11-colette-name
+    subject: p-s4e11-colette
+    predicate: name
+    value: "Colette"
+    revealed: S4E11
+    source: src-s4e11
+
+  - key: p-s4e11-colette-role
+    subject: p-s4e11-colette
+    predicate: role_in_case
+    object: c-s4e11
+    value: perpetrator
+    revealed: S4E11
+    source: src-s4e11
+
+  - key: p-s4e11-dersh-name
+    subject: p-s4e11-dersh
+    predicate: name
+    value: "Larry Dersh"
+    revealed: S4E11
+    source: src-s4e11
+
+  - key: p-s4e11-dersh-role
+    subject: p-s4e11-dersh
+    predicate: role_in_case
+    object: c-s4e11
+    value: suspect
+    revealed: S4E11
+    source: src-s4e11
+
+  - key: c-s4e12-name
+    subject: c-s4e12
+    predicate: name
+    value: "Mob heir shot in a hot tub"
+    revealed: S4E12
+    source: src-s4e12
+
+  - key: c-s4e12-description
+    subject: c-s4e12
+    predicate: description
+    value: "The team investigates the hit on a mobster's eldest son while Van Pelt is stranded in the woods."
+    revealed: S4E12
+    source: src-s4e12
+
+  - key: p-s4e12-porchetto-name
+    subject: p-s4e12-porchetto
+    predicate: name
+    value: "Gabriel Porchetto Jr."
+    revealed: S4E12
+    source: src-s4e12
+
+  - key: p-s4e12-porchetto-role
+    subject: p-s4e12-porchetto
+    predicate: role_in_case
+    object: c-s4e12
+    value: victim
+    revealed: S4E12
+    source: src-s4e12
+
+  - key: p-s4e12-nett-name
+    subject: p-s4e12-nett
+    predicate: name
+    value: "Curtis Nett"
+    revealed: S4E12
+    source: src-s4e12
+
+  - key: p-s4e12-nett-role
+    subject: p-s4e12-nett
+    predicate: role_in_case
+    object: c-s4e12
+    value: perpetrator
+    revealed: S4E12
+    source: src-s4e12
+
+  - key: p-s4e12-janpen-name
+    subject: p-s4e12-janpen
+    predicate: name
+    value: "Janpen"
+    revealed: S4E12
+    source: src-s4e12
+
+  - key: p-s4e12-janpen-role
+    subject: p-s4e12-janpen
+    predicate: role_in_case
+    object: c-s4e12
+    value: perpetrator
+    revealed: S4E12
+    source: src-s4e12
+
+  - key: l-s4e12-porchetto-home-name
+    subject: l-s4e12-porchetto-home
+    predicate: name
+    value: "Porchetto's home"
+    revealed: S4E12
+    source: src-s4e12
+
+  - key: l-s4e12-porchetto-home-case
+    subject: l-s4e12-porchetto-home
+    predicate: part_of_case
+    object: c-s4e12
+    revealed: S4E12
+    source: src-s4e12
+
+  - key: c-s4e13-name
+    subject: c-s4e13
+    predicate: name
+    value: "Designer stabbed with a gold feather"
+    revealed: S4E13
+    source: src-s4e13
+
+  - key: c-s4e13-description
+    subject: c-s4e13
+    predicate: description
+    value: "The team investigates the stabbing of a fashion designer found with a gold-painted feather in his mouth."
+    revealed: S4E13
+    source: src-s4e13
+
+  - key: p-s4e13-theissens-name
+    subject: p-s4e13-theissens
+    predicate: name
+    value: "Wyck Theissens"
+    revealed: S4E13
+    source: src-s4e13
+
+  - key: p-s4e13-theissens-role
+    subject: p-s4e13-theissens
+    predicate: role_in_case
+    object: c-s4e13
+    value: victim
+    revealed: S4E13
+    source: src-s4e13
+
+  - key: p-s4e13-sasha-name
+    subject: p-s4e13-sasha
+    predicate: name
+    value: "Sasha"
+    revealed: S4E13
+    source: src-s4e13
+
+  - key: p-s4e13-sasha-role
+    subject: p-s4e13-sasha
+    predicate: role_in_case
+    object: c-s4e13
+    value: perpetrator
+    revealed: S4E13
+    source: src-s4e13
+
+  - key: p-s4e13-liu-name
+    subject: p-s4e13-liu
+    predicate: name
+    value: "Mr. Liu"
+    revealed: S4E13
+    source: src-s4e13
+
+  - key: p-s4e13-liu-role
+    subject: p-s4e13-liu
+    predicate: role_in_case
+    object: c-s4e13
+    value: suspect
+    revealed: S4E13
+    source: src-s4e13
+
+  - key: p-s4e13-redgrave-name
+    subject: p-s4e13-redgrave
+    predicate: name
+    value: "Tony Redgrave"
+    revealed: S4E13
+    source: src-s4e13
+
+  - key: p-s4e13-redgrave-role
+    subject: p-s4e13-redgrave
+    predicate: role_in_case
+    object: c-s4e13
+    value: suspect
+    revealed: S4E13
+    source: src-s4e13
+
+  - key: l-s4e13-loft-name
+    subject: l-s4e13-loft
+    predicate: name
+    value: "Theissens' loft"
+    revealed: S4E13
+    source: src-s4e13
+
+  - key: l-s4e13-loft-case
+    subject: l-s4e13-loft
+    predicate: part_of_case
+    object: c-s4e13
+    revealed: S4E13
+    source: src-s4e13
+
+  - key: c-s4e14-name
+    subject: c-s4e14
+    predicate: name
+    value: "Vineyard owner on trial for murder"
+    revealed: S4E14
+    source: src-s4e14
+
+  - key: c-s4e14-description
+    subject: c-s4e14
+    predicate: description
+    value: "Jane believes a vineyard owner on trial for murder is innocent and the team investigates despite the evidence against her."
+    revealed: S4E14
+    source: src-s4e14
+
+  - key: p-s4e14-ruiz-name
+    subject: p-s4e14-ruiz
+    predicate: name
+    value: "Carlos Ruiz"
+    revealed: S4E14
+    source: src-s4e14
+
+  - key: p-s4e14-ruiz-role
+    subject: p-s4e14-ruiz
+    predicate: role_in_case
+    object: c-s4e14
+    value: victim
+    revealed: S4E14
+    source: src-s4e14
+
+  - key: p-s4e14-mulberry-e-name
+    subject: p-s4e14-mulberry-e
+    predicate: name
+    value: "Eve Mulberry"
+    revealed: S4E14
+    source: src-s4e14
+
+  - key: p-s4e14-mulberry-e-role
+    subject: p-s4e14-mulberry-e
+    predicate: role_in_case
+    object: c-s4e14
+    value: suspect
+    revealed: S4E14
+    source: src-s4e14
+
+  - key: p-s4e14-amy-name
+    subject: p-s4e14-amy
+    predicate: name
+    value: "Amy"
+    revealed: S4E14
+    source: src-s4e14
+
+  - key: p-s4e14-amy-role
+    subject: p-s4e14-amy
+    predicate: role_in_case
+    object: c-s4e14
+    value: perpetrator
+    revealed: S4E14
+    source: src-s4e14
+
+  - key: p-s4e14-murphy-name
+    subject: p-s4e14-murphy
+    predicate: name
+    value: "Terry Murphy"
+    revealed: S4E14
+    source: src-s4e14
+
+  - key: p-s4e14-murphy-role
+    subject: p-s4e14-murphy
+    predicate: role_in_case
+    object: c-s4e14
+    value: witness
+    revealed: S4E14
+    source: src-s4e14
+
+  - key: l-s4e14-vineyard-name
+    subject: l-s4e14-vineyard
+    predicate: name
+    value: "Luna Valley Vineyards"
+    revealed: S4E14
+    source: src-s4e14
+
+  - key: l-s4e14-vineyard-case
+    subject: l-s4e14-vineyard
+    predicate: part_of_case
+    object: c-s4e14
+    revealed: S4E14
+    source: src-s4e14
+
+  - key: c-s4e15-name
+    subject: c-s4e15
+    predicate: name
+    value: "Counselor killed on her way to a secret date"
+    revealed: S4E15
+    source: src-s4e15
+
+  - key: c-s4e15-description
+    subject: c-s4e15
+    predicate: description
+    value: "The team investigates the murder of a youth counselor with help from an imprisoned matchmaker."
+    revealed: S4E15
+    source: src-s4e15
+
+  - key: p-s4e15-gibecki-name
+    subject: p-s4e15-gibecki
+    predicate: name
+    value: "Natalie Gibecki"
+    revealed: S4E15
+    source: src-s4e15
+
+  - key: p-s4e15-gibecki-role
+    subject: p-s4e15-gibecki
+    predicate: role_in_case
+    object: c-s4e15
+    value: victim
+    revealed: S4E15
+    source: src-s4e15
+
+  - key: p-s4e15-relin-name
+    subject: p-s4e15-relin
+    predicate: name
+    value: "Greg Relin"
+    revealed: S4E15
+    source: src-s4e15
+
+  - key: p-s4e15-relin-role
+    subject: p-s4e15-relin
+    predicate: role_in_case
+    object: c-s4e15
+    value: perpetrator
+    revealed: S4E15
+    source: src-s4e15
+
+  - key: p-s4e15-richard-name
+    subject: p-s4e15-richard
+    predicate: name
+    value: "Richard"
+    revealed: S4E15
+    source: src-s4e15
+
+  - key: p-s4e15-richard-role
+    subject: p-s4e15-richard
+    predicate: role_in_case
+    object: c-s4e15
+    value: suspect
+    revealed: S4E15
+    source: src-s4e15
+
+  - key: c-s4e15-role-p-erica-flynn
+    subject: p-erica-flynn
+    predicate: role_in_case
+    object: c-s4e15
+    value: informant
+    revealed: S4E15
+    source: src-s4e15
+
+  - key: c-s4e16-name
+    subject: c-s4e16
+    predicate: name
+    value: "Anticult activist found dead"
+    revealed: S4E16
+    source: src-s4e16
+
+  - key: c-s4e16-description
+    subject: c-s4e16
+    predicate: description
+    value: "The team investigates the death of an anticult activist, with the founder of a self-help group as the main suspect."
+    revealed: S4E16
+    source: src-s4e16
+
+  - key: p-s4e16-meadows-name
+    subject: p-s4e16-meadows
+    predicate: name
+    value: "Gabriel Meadows"
+    revealed: S4E16
+    source: src-s4e16
+
+  - key: p-s4e16-meadows-role
+    subject: p-s4e16-meadows
+    predicate: role_in_case
+    object: c-s4e16
+    value: victim
+    revealed: S4E16
+    source: src-s4e16
+
+  - key: p-s4e16-hill-name
+    subject: p-s4e16-hill
+    predicate: name
+    value: "Nora Hill"
+    revealed: S4E16
+    source: src-s4e16
+
+  - key: p-s4e16-hill-role
+    subject: p-s4e16-hill
+    predicate: role_in_case
+    object: c-s4e16
+    value: perpetrator
+    revealed: S4E16
+    source: src-s4e16
+
+  - key: c-s4e16-role-p-stiles
+    subject: p-stiles
+    predicate: role_in_case
+    object: c-s4e16
+    value: suspect
+    revealed: S4E16
+    source: src-s4e16
+
+  - key: l-s4e16-college-name
+    subject: l-s4e16-college
+    predicate: name
+    value: "Visualize College"
+    revealed: S4E16
+    source: src-s4e16
+
+  - key: l-s4e16-college-case
+    subject: l-s4e16-college
+    predicate: part_of_case
+    object: c-s4e16
+    revealed: S4E16
+    source: src-s4e16
+
+  - key: c-s4e17-name
+    subject: c-s4e17
+    predicate: name
+    value: "Chatroom murder and a wife's disappearance"
+    revealed: S4E17
+    source: src-s4e17
+
+  - key: c-s4e17-description
+    subject: c-s4e17
+    predicate: description
+    value: "The CBI investigates the murder of a woman linked to an online Shakespeare chatroom while Jane and an FBI agent probe a wealthy family's missing daughter-in-law."
+    revealed: S4E17
+    source: src-s4e17
+
+  - key: p-s4e17-cruz-name
+    subject: p-s4e17-cruz
+    predicate: name
+    value: "Matilda Cruz"
+    revealed: S4E17
+    source: src-s4e17
+
+  - key: p-s4e17-cruz-role
+    subject: p-s4e17-cruz
+    predicate: role_in_case
+    object: c-s4e17
+    value: victim
+    revealed: S4E17
+    source: src-s4e17
+
+  - key: p-s4e17-philo-name
+    subject: p-s4e17-philo
+    predicate: name
+    value: "Gary Philo"
+    revealed: S4E17
+    source: src-s4e17
+
+  - key: p-s4e17-philo-role
+    subject: p-s4e17-philo
+    predicate: role_in_case
+    object: c-s4e17
+    value: perpetrator
+    revealed: S4E17
+    status: in_show_suspicion
+    source: src-s4e17
+
+  - key: p-s4e17-bauer-k-name
+    subject: p-s4e17-bauer-k
+    predicate: name
+    value: "Katie Bauer"
+    revealed: S4E17
+    source: src-s4e17
+
+  - key: p-s4e17-bauer-k-role
+    subject: p-s4e17-bauer-k
+    predicate: role_in_case
+    object: c-s4e17
+    value: victim
+    revealed: S4E17
+    source: src-s4e17
+
+  - key: p-s4e17-bauer-g-name
+    subject: p-s4e17-bauer-g
+    predicate: name
+    value: "Greg Bauer"
+    revealed: S4E17
+    source: src-s4e17
+
+  - key: p-s4e17-bauer-g-role
+    subject: p-s4e17-bauer-g
+    predicate: role_in_case
+    object: c-s4e17
+    value: perpetrator
+    revealed: S4E17
+    source: src-s4e17
+
+  - key: p-s4e17-bauer-s-name
+    subject: p-s4e17-bauer-s
+    predicate: name
+    value: "Shirley Bauer"
+    revealed: S4E17
+    source: src-s4e17
+
+  - key: p-s4e17-bauer-s-role
+    subject: p-s4e17-bauer-s
+    predicate: role_in_case
+    object: c-s4e17
+    value: perpetrator
+    revealed: S4E17
+    source: src-s4e17
+
+  - key: p-s4e17-barca-name
+    subject: p-s4e17-barca
+    predicate: name
+    value: "James Barca"
+    revealed: S4E17
+    source: src-s4e17
+
+  - key: p-s4e17-barca-role
+    subject: p-s4e17-barca
+    predicate: role_in_case
+    object: c-s4e17
+    value: suspect
+    revealed: S4E17
+    source: src-s4e17
+
+  - key: c-s4e18-name
+    subject: c-s4e18
+    predicate: name
+    value: "Cancer patient's body dug up by tigers"
+    revealed: S4E18
+    source: src-s4e18
+
+  - key: c-s4e18-description
+    subject: c-s4e18
+    predicate: description
+    value: "The CBI investigates the death of a cancer patient whose buried body was uncovered by escaped tigers."
+    revealed: S4E18
+    source: src-s4e18
+
+  - key: p-s4e18-braddock-name
+    subject: p-s4e18-braddock
+    predicate: name
+    value: "Archer Braddock"
+    revealed: S4E18
+    source: src-s4e18
+
+  - key: p-s4e18-braddock-role
+    subject: p-s4e18-braddock
+    predicate: role_in_case
+    object: c-s4e18
+    value: victim
+    revealed: S4E18
+    source: src-s4e18
+
+  - key: p-s4e18-aden-name
+    subject: p-s4e18-aden
+    predicate: name
+    value: "Aden Braddock"
+    revealed: S4E18
+    source: src-s4e18
+
+  - key: p-s4e18-aden-role
+    subject: p-s4e18-aden
+    predicate: role_in_case
+    object: c-s4e18
+    value: suspect
+    revealed: S4E18
+    source: src-s4e18
+
+  - key: p-s4e18-firth-name
+    subject: p-s4e18-firth
+    predicate: name
+    value: "Betsy Firth"
+    revealed: S4E18
+    source: src-s4e18
+
+  - key: p-s4e18-firth-role
+    subject: p-s4e18-firth
+    predicate: role_in_case
+    object: c-s4e18
+    value: suspect
+    revealed: S4E18
+    source: src-s4e18
+
+  - key: p-s4e18-josef-name
+    subject: p-s4e18-josef
+    predicate: name
+    value: "Brother Josef"
+    revealed: S4E18
+    source: src-s4e18
+
+  - key: p-s4e18-josef-role
+    subject: p-s4e18-josef
+    predicate: role_in_case
+    object: c-s4e18
+    value: suspect
+    revealed: S4E18
+    source: src-s4e18
+
+  - key: l-s4e18-institute-name
+    subject: l-s4e18-institute
+    predicate: name
+    value: "Scheck Institute"
+    revealed: S4E18
+    source: src-s4e18
+
+  - key: l-s4e18-institute-case
+    subject: l-s4e18-institute
+    predicate: part_of_case
+    object: c-s4e18
+    revealed: S4E18
+    source: src-s4e18
+
+  - key: c-s4e19-name
+    subject: c-s4e19
+    predicate: name
+    value: "Casino employee shot near his car"
+    revealed: S4E19
+    source: src-s4e19
+
+  - key: c-s4e19-description
+    subject: c-s4e19
+    predicate: description
+    value: "The team investigates the shooting of a casino employee found beside his car on a highway."
+    revealed: S4E19
+    source: src-s4e19
+
+  - key: p-s4e19-destefano-name
+    subject: p-s4e19-destefano
+    predicate: name
+    value: "Ryan De Stefano"
+    revealed: S4E19
+    source: src-s4e19
+
+  - key: p-s4e19-destefano-role
+    subject: p-s4e19-destefano
+    predicate: role_in_case
+    object: c-s4e19
+    value: victim
+    revealed: S4E19
+    source: src-s4e19
+
+  - key: p-s4e19-trish-name
+    subject: p-s4e19-trish
+    predicate: name
+    value: "Trish"
+    revealed: S4E19
+    source: src-s4e19
+
+  - key: p-s4e19-trish-role
+    subject: p-s4e19-trish
+    predicate: role_in_case
+    object: c-s4e19
+    value: perpetrator
+    revealed: S4E19
+    source: src-s4e19
+
+  - key: p-s4e19-danvers-name
+    subject: p-s4e19-danvers
+    predicate: name
+    value: "Holly Danvers"
+    revealed: S4E19
+    source: src-s4e19
+
+  - key: p-s4e19-danvers-role
+    subject: p-s4e19-danvers
+    predicate: role_in_case
+    object: c-s4e19
+    value: victim
+    revealed: S4E19
+    source: src-s4e19
+
+  - key: p-s4e19-holmes-name
+    subject: p-s4e19-holmes
+    predicate: name
+    value: "Dante Holmes"
+    revealed: S4E19
+    source: src-s4e19
+
+  - key: p-s4e19-holmes-role
+    subject: p-s4e19-holmes
+    predicate: role_in_case
+    object: c-s4e19
+    value: suspect
+    revealed: S4E19
+    source: src-s4e19
+
+  - key: l-s4e19-casino-name
+    subject: l-s4e19-casino
+    predicate: name
+    value: "Golden Fox Casino"
+    revealed: S4E19
+    source: src-s4e19
+
+  - key: l-s4e19-casino-case
+    subject: l-s4e19-casino
+    predicate: part_of_case
+    object: c-s4e19
+    revealed: S4E19
+    source: src-s4e19
+
+  - key: c-s4e20-name
+    subject: c-s4e20
+    predicate: name
+    value: "Teacher found dead on the baseball field"
+    revealed: S4E20
+    source: src-s4e20
+
+  - key: c-s4e20-description
+    subject: c-s4e20
+    predicate: description
+    value: "The team investigates the killing of an English teacher whose body is found on his school's baseball field."
+    revealed: S4E20
+    source: src-s4e20
+
+  - key: p-s4e20-mctierney-name
+    subject: p-s4e20-mctierney
+    predicate: name
+    value: "Jack McTierney"
+    revealed: S4E20
+    source: src-s4e20
+
+  - key: p-s4e20-mctierney-role
+    subject: p-s4e20-mctierney
+    predicate: role_in_case
+    object: c-s4e20
+    value: victim
+    revealed: S4E20
+    source: src-s4e20
+
+  - key: p-s4e20-austin-name
+    subject: p-s4e20-austin
+    predicate: name
+    value: "Ms. Austin"
+    revealed: S4E20
+    source: src-s4e20
+
+  - key: p-s4e20-austin-role
+    subject: p-s4e20-austin
+    predicate: role_in_case
+    object: c-s4e20
+    value: perpetrator
+    revealed: S4E20
+    source: src-s4e20
+
+  - key: p-s4e20-billy-name
+    subject: p-s4e20-billy
+    predicate: name
+    value: "Billy"
+    revealed: S4E20
+    source: src-s4e20
+
+  - key: p-s4e20-billy-role
+    subject: p-s4e20-billy
+    predicate: role_in_case
+    object: c-s4e20
+    value: suspect
+    revealed: S4E20
+    source: src-s4e20
+
+  - key: p-s4e20-loveland-name
+    subject: p-s4e20-loveland
+    predicate: name
+    value: "Mr. Loveland"
+    revealed: S4E20
+    source: src-s4e20
+
+  - key: p-s4e20-loveland-role
+    subject: p-s4e20-loveland
+    predicate: role_in_case
+    object: c-s4e20
+    value: suspect
+    revealed: S4E20
+    source: src-s4e20
+
+  - key: l-s4e20-field-name
+    subject: l-s4e20-field
+    predicate: name
+    value: "School baseball field"
+    revealed: S4E20
+    source: src-s4e20
+
+  - key: l-s4e20-field-case
+    subject: l-s4e20-field
+    predicate: part_of_case
+    object: c-s4e20
+    revealed: S4E20
+    source: src-s4e20
+
+  - key: c-s4e21-name
+    subject: c-s4e21
+    predicate: name
+    value: "Burning car and a drag cabaret troupe"
+    revealed: S4E21
+    source: src-s4e21
+
+  - key: c-s4e21-description
+    subject: c-s4e21
+    predicate: description
+    value: "The team investigates a nineteen-year-old found handcuffed in a burning car, with a shoe heel leading to a drag cabaret troupe."
+    revealed: S4E21
+    source: src-s4e21
+
+  - key: p-s4e21-snow-name
+    subject: p-s4e21-snow
+    predicate: name
+    value: "Glenda Snow"
+    revealed: S4E21
+    source: src-s4e21
+
+  - key: p-s4e21-snow-role
+    subject: p-s4e21-snow
+    predicate: role_in_case
+    object: c-s4e21
+    value: witness
+    revealed: S4E21
+    source: src-s4e21
+
+  - key: p-s4e21-hughes-name
+    subject: p-s4e21-hughes
+    predicate: name
+    value: "Rick Hughes"
+    revealed: S4E21
+    source: src-s4e21
+
+  - key: p-s4e21-hughes-role
+    subject: p-s4e21-hughes
+    predicate: role_in_case
+    object: c-s4e21
+    value: suspect
+    revealed: S4E21
+    source: src-s4e21
+
+  - key: p-s4e21-lamb-name
+    subject: p-s4e21-lamb
+    predicate: name
+    value: "Gabriel Lamb"
+    revealed: S4E21
+    source: src-s4e21
+
+  - key: p-s4e21-lamb-role
+    subject: p-s4e21-lamb
+    predicate: role_in_case
+    object: c-s4e21
+    value: suspect
+    revealed: S4E21
+    source: src-s4e21
+
+  - key: c-s4e22-name
+    subject: c-s4e22
+    predicate: name
+    value: "Surfer's murder"
+    revealed: S4E22
+    source: src-s4e22
+
+  - key: c-s4e22-description
+    subject: c-s4e22
+    predicate: description
+    value: "The team investigates the murder of a surfer whose last employer turns out to be Lisbon's former fiancé."
+    revealed: S4E22
+    source: src-s4e22
+
+  - key: p-s4e22-spanner-name
+    subject: p-s4e22-spanner
+    predicate: name
+    value: "Jay Spanner"
+    revealed: S4E22
+    source: src-s4e22
+
+  - key: p-s4e22-spanner-role
+    subject: p-s4e22-spanner
+    predicate: role_in_case
+    object: c-s4e22
+    value: victim
+    revealed: S4E22
+    source: src-s4e22
+
+  - key: c-s4e23-name
+    subject: c-s4e23
+    predicate: name
+    value: "Man left to die in a locked box"
+    revealed: S4E23
+    source: src-s4e23
+
+  - key: c-s4e23-description
+    subject: c-s4e23
+    predicate: description
+    value: "After Red John's anniversary message, Jane's team investigates a man bound and left to die in a locked box eleven months earlier."
+    revealed: S4E23
+    source: src-s4e23
+
+  - key: p-s4e23-castro-name
+    subject: p-s4e23-castro
+    predicate: name
+    value: "Antonio Castro"
+    revealed: S4E23
+    source: src-s4e23
+
+  - key: p-s4e23-castro-role
+    subject: p-s4e23-castro
+    predicate: role_in_case
+    object: c-s4e23
+    value: victim
+    revealed: S4E23
+    source: src-s4e23
+
+  - key: p-s4e23-marx-name
+    subject: p-s4e23-marx
+    predicate: name
+    value: "Benjamin Marx"
+    revealed: S4E23
+    source: src-s4e23
+
+  - key: p-s4e23-marx-role
+    subject: p-s4e23-marx
+    predicate: role_in_case
+    object: c-s4e23
+    value: perpetrator
+    revealed: S4E23
+    source: src-s4e23
+
+  - key: p-s4e23-victor-name
+    subject: p-s4e23-victor
+    predicate: name
+    value: "Dennis Victor"
+    revealed: S4E23
+    source: src-s4e23
+
+  - key: p-s4e23-victor-role
+    subject: p-s4e23-victor
+    predicate: role_in_case
+    object: c-s4e23
+    value: suspect
+    revealed: S4E23
+    source: src-s4e23
+
+  - key: c-s4e24-name
+    subject: c-s4e24
+    predicate: name
+    value: "Jane in Las Vegas"
+    revealed: S4E24
+    source: src-s4e24
+
+  - key: c-s4e24-description
+    subject: c-s4e24
+    predicate: description
+    value: "Six months after being fired, Jane is in Las Vegas where Lorelei Martins draws him towards Red John."
+    revealed: S4E24
+    source: src-s4e24
+
+  - key: c-s4e24-role-p-lorelei-martins
+    subject: p-lorelei-martins
+    predicate: role_in_case
+    object: c-s4e24
+    value: accomplice
+    revealed: S4E24
+    source: src-s4e24
+
+  - key: c-s4e24-role-p-wainwright
+    subject: p-wainwright
+    predicate: role_in_case
+    object: c-s4e24
+    value: victim
+    revealed: S4E24
+    source: src-s4e24
+
+  - key: l-s4e24-vegas-name
+    subject: l-s4e24-vegas
+    predicate: name
+    value: "Las Vegas"
+    revealed: S4E24
+    source: src-s4e24
+
+  - key: l-s4e24-vegas-case
+    subject: l-s4e24-vegas
+    predicate: part_of_case
+    object: c-s4e24
+    revealed: S4E24
+    source: src-s4e24
+
+  - key: l-s4e24-vegas-coordinates
+    subject: l-s4e24-vegas
+    predicate: coordinates
+    value: "36.16916667,-115.14055556"
+    revealed: S4E24
+    source: src-s4e24
+    note: "city-level"

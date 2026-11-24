@@ -1,0 +1,1249 @@
+# Season 2 cases: one case per episode, people, places (S2E1..S2E23).
+# Sources: English Wikipedia season page and per-episode summaries.
+# Spoilers: do not open outside the app.
+
+entities:
+  - key: c-s2e1
+    kind: case
+    introduced: S2E1
+  - key: c-s2e2
+    kind: case
+    introduced: S2E2
+  - key: p-s2e2-victim
+    kind: person
+    introduced: S2E2
+  - key: c-s2e3
+    kind: case
+    introduced: S2E3
+  - key: p-s2e3-victim
+    kind: person
+    introduced: S2E3
+  - key: p-s2e3-carmen
+    kind: person
+    introduced: S2E3
+  - key: p-s2e3-howard
+    kind: person
+    introduced: S2E3
+  - key: c-s2e4
+    kind: case
+    introduced: S2E4
+  - key: p-s2e4-victim
+    kind: person
+    introduced: S2E4
+  - key: p-s2e4-mcbride
+    kind: person
+    introduced: S2E4
+  - key: p-s2e4-constance
+    kind: person
+    introduced: S2E4
+  - key: p-s2e4-guthrie
+    kind: person
+    introduced: S2E4
+  - key: c-s2e5
+    kind: case
+    introduced: S2E5
+  - key: p-s2e5-nephew
+    kind: person
+    introduced: S2E5
+  - key: l-s2e5-mansion
+    kind: location
+    introduced: S2E5
+  - key: c-s2e6
+    kind: case
+    introduced: S2E6
+  - key: c-s2e7
+    kind: case
+    introduced: S2E7
+  - key: p-s2e7-nanny
+    kind: person
+    introduced: S2E7
+  - key: c-s2e8
+    kind: case
+    introduced: S2E8
+  - key: l-s2e8-workplace
+    kind: location
+    introduced: S2E8
+  - key: c-s2e9
+    kind: case
+    introduced: S2E9
+  - key: p-s2e9-victim
+    kind: person
+    introduced: S2E9
+  - key: p-s2e9-murphy
+    kind: person
+    introduced: S2E9
+  - key: p-s2e9-tom
+    kind: person
+    introduced: S2E9
+  - key: c-s2e10
+    kind: case
+    introduced: S2E10
+  - key: p-s2e10-victim
+    kind: person
+    introduced: S2E10
+  - key: p-s2e10-father
+    kind: person
+    introduced: S2E10
+  - key: l-s2e10-garden
+    kind: location
+    introduced: S2E10
+  - key: c-s2e11
+    kind: case
+    introduced: S2E11
+  - key: p-s2e11-victim1
+    kind: person
+    introduced: S2E11
+  - key: p-s2e11-victim2
+    kind: person
+    introduced: S2E11
+  - key: p-s2e11-willa
+    kind: person
+    introduced: S2E11
+  - key: p-s2e11-logan
+    kind: person
+    introduced: S2E11
+  - key: c-s2e12
+    kind: case
+    introduced: S2E12
+  - key: p-s2e12-victim
+    kind: person
+    introduced: S2E12
+  - key: p-s2e12-brewster
+    kind: person
+    introduced: S2E12
+  - key: l-s2e12-site
+    kind: location
+    introduced: S2E12
+  - key: c-s2e13
+    kind: case
+    introduced: S2E13
+  - key: p-s2e13-victim
+    kind: person
+    introduced: S2E13
+  - key: p-s2e13-elias
+    kind: person
+    introduced: S2E13
+  - key: p-s2e13-sparhawk
+    kind: person
+    introduced: S2E13
+  - key: p-s2e13-kinsey
+    kind: person
+    introduced: S2E13
+  - key: l-s2e13-dealership
+    kind: location
+    introduced: S2E13
+  - key: c-s2e14
+    kind: case
+    introduced: S2E14
+  - key: p-s2e14-victim
+    kind: person
+    introduced: S2E14
+  - key: c-s2e15
+    kind: case
+    introduced: S2E15
+  - key: p-s2e15-victim
+    kind: person
+    introduced: S2E15
+  - key: l-s2e15-competition
+    kind: location
+    introduced: S2E15
+  - key: c-s2e16
+    kind: case
+    introduced: S2E16
+  - key: p-s2e16-victim
+    kind: person
+    introduced: S2E16
+  - key: p-s2e16-welks
+    kind: person
+    introduced: S2E16
+  - key: p-s2e16-harken
+    kind: person
+    introduced: S2E16
+  - key: p-s2e16-nash
+    kind: person
+    introduced: S2E16
+  - key: l-s2e16-lab
+    kind: location
+    introduced: S2E16
+  - key: c-s2e17
+    kind: case
+    introduced: S2E17
+  - key: l-s2e17-museum
+    kind: location
+    introduced: S2E17
+  - key: c-s2e18
+    kind: case
+    introduced: S2E18
+  - key: p-s2e18-jane-doe
+    kind: person
+    introduced: S2E18
+  - key: p-s2e18-victim
+    kind: person
+    introduced: S2E18
+  - key: c-s2e19
+    kind: case
+    introduced: S2E19
+  - key: p-s2e19-victim
+    kind: person
+    introduced: S2E19
+  - key: p-s2e19-sylvan
+    kind: person
+    introduced: S2E19
+  - key: p-s2e19-odenthal
+    kind: person
+    introduced: S2E19
+  - key: p-s2e19-draber
+    kind: person
+    introduced: S2E19
+  - key: c-s2e20
+    kind: case
+    introduced: S2E20
+  - key: p-s2e20-victim
+    kind: person
+    introduced: S2E20
+  - key: l-s2e20-center
+    kind: location
+    introduced: S2E20
+  - key: c-s2e21
+    kind: case
+    introduced: S2E21
+  - key: p-s2e21-victim
+    kind: person
+    introduced: S2E21
+  - key: p-s2e21-daphne
+    kind: person
+    introduced: S2E21
+  - key: p-s2e21-mosca
+    kind: person
+    introduced: S2E21
+  - key: c-s2e22
+    kind: case
+    introduced: S2E22
+  - key: p-s2e22-victim
+    kind: person
+    introduced: S2E22
+  - key: c-s2e23
+    kind: case
+    introduced: S2E23
+  - key: p-s2e23-victim
+    kind: person
+    introduced: S2E23
+
+claims:
+  - key: k-s2e1-name
+    subject: c-s2e1
+    predicate: name
+    value: "The impoverished woman"
+    revealed: S2E1
+    source: src-s2e1
+  - key: k-s2e1-desc
+    subject: c-s2e1
+    predicate: description
+    value: "Jane's self-declared last case: a woman is found suffocated after being accused of stealing a fortune, yet she lived in poverty."
+    revealed: S2E1
+    source: src-s2e1
+  - key: k-s2e2-name
+    subject: c-s2e2
+    predicate: name
+    value: "The senator's aide"
+    revealed: S2E2
+    source: src-s2e2
+  - key: k-s2e2-desc
+    subject: c-s2e2
+    predicate: description
+    value: "The murder of a state senator's young aide, rumored to have been involved with the senator's husband, with Jane racing to solve it in a day."
+    revealed: S2E2
+    source: src-s2e2
+  - key: k-s2e2-victim-name
+    subject: p-s2e2-victim
+    predicate: name
+    value: "Kristin Marley"
+    revealed: S2E2
+    source: src-s2e2
+  - key: k-s2e2-victim-role
+    subject: p-s2e2-victim
+    predicate: role_in_case
+    object: c-s2e2
+    value: "victim"
+    revealed: S2E2
+    source: src-s2e2
+  - key: k-s2e3-name
+    subject: c-s2e3
+    predicate: name
+    value: "The framed agent"
+    revealed: S2E3
+    source: src-s2e3
+  - key: k-s2e3-desc
+    subject: c-s2e3
+    predicate: description
+    value: "A convicted child molester is found murdered with Lisbon's fingerprints on the weapon and a gap in her memory, making her the prime suspect."
+    revealed: S2E3
+    source: src-s2e3
+  - key: k-s2e3-victim-name
+    subject: p-s2e3-victim
+    predicate: name
+    value: "William Mcteer"
+    revealed: S2E3
+    source: src-s2e3
+  - key: k-s2e3-victim-role
+    subject: p-s2e3-victim
+    predicate: role_in_case
+    object: c-s2e3
+    value: "victim"
+    revealed: S2E3
+    source: src-s2e3
+  - key: k-s2e3-carmen-name
+    subject: p-s2e3-carmen
+    predicate: name
+    value: "Dr. Carmen"
+    revealed: S2E3
+    source: src-s2e3
+  - key: k-s2e3-carmen-role
+    subject: p-s2e3-carmen
+    predicate: role_in_case
+    object: c-s2e3
+    value: "perpetrator"
+    revealed: S2E3
+    source: src-s2e3
+  - key: k-s2e3-howard-name
+    subject: p-s2e3-howard
+    predicate: name
+    value: "Milton Howard"
+    revealed: S2E3
+    source: src-s2e3
+  - key: k-s2e3-howard-role
+    subject: p-s2e3-howard
+    predicate: role_in_case
+    object: c-s2e3
+    value: "accomplice"
+    revealed: S2E3
+    source: src-s2e3
+  - key: k-s2e3-lisbon-role
+    subject: p-lisbon
+    predicate: role_in_case
+    object: c-s2e3
+    value: "suspect"
+    revealed: S2E3
+    source: src-s2e3
+    status: in_show_suspicion
+  - key: k-s2e4-name
+    subject: c-s2e4
+    predicate: name
+    value: "The biker's lawyer"
+    revealed: S2E4
+    source: src-s2e4
+  - key: k-s2e4-desc
+    subject: c-s2e4
+    predicate: description
+    value: "The roadside murder of a lawyer whose only client was a notorious motorcycle gang, with suspects among his gang and family."
+    revealed: S2E4
+    source: src-s2e4
+  - key: k-s2e4-victim-name
+    subject: p-s2e4-victim
+    predicate: name
+    value: "Gordon Hodge"
+    revealed: S2E4
+    source: src-s2e4
+  - key: k-s2e4-victim-role
+    subject: p-s2e4-victim
+    predicate: role_in_case
+    object: c-s2e4
+    value: "victim"
+    revealed: S2E4
+    source: src-s2e4
+  - key: k-s2e4-mcbride-name
+    subject: p-s2e4-mcbride
+    predicate: name
+    value: "Von McBride"
+    revealed: S2E4
+    source: src-s2e4
+  - key: k-s2e4-mcbride-role
+    subject: p-s2e4-mcbride
+    predicate: role_in_case
+    object: c-s2e4
+    value: "suspect"
+    revealed: S2E4
+    source: src-s2e4
+    status: in_show_suspicion
+  - key: k-s2e4-constance-name
+    subject: p-s2e4-constance
+    predicate: name
+    value: "Constance"
+    revealed: S2E4
+    source: src-s2e4
+  - key: k-s2e4-constance-role
+    subject: p-s2e4-constance
+    predicate: role_in_case
+    object: c-s2e4
+    value: "suspect"
+    revealed: S2E4
+    source: src-s2e4
+    status: in_show_suspicion
+  - key: k-s2e4-guthrie-name
+    subject: p-s2e4-guthrie
+    predicate: name
+    value: "Felicia Guthrie"
+    revealed: S2E4
+    source: src-s2e4
+  - key: k-s2e4-guthrie-role
+    subject: p-s2e4-guthrie
+    predicate: role_in_case
+    object: c-s2e4
+    value: "suspect"
+    revealed: S2E4
+    source: src-s2e4
+    status: in_show_suspicion
+  - key: k-s2e5-name
+    subject: c-s2e5
+    predicate: name
+    value: "The haunted mansion"
+    revealed: S2E5
+    source: src-s2e5
+  - key: k-s2e5-desc
+    subject: c-s2e5
+    predicate: description
+    value: "A new owner of an old mansion is found murdered there, and witnesses blame the ghost of its former owner."
+    revealed: S2E5
+    source: src-s2e5
+  - key: k-s2e5-nephew-name
+    subject: p-s2e5-nephew
+    predicate: name
+    value: "The former owner's nephew"
+    revealed: S2E5
+    source: src-s2e5
+  - key: k-s2e5-nephew-role
+    subject: p-s2e5-nephew
+    predicate: role_in_case
+    object: c-s2e5
+    value: "perpetrator"
+    revealed: S2E5
+    source: src-s2e5
+  - key: k-s2e5-mansion-name
+    subject: l-s2e5-mansion
+    predicate: name
+    value: "Beckworth Mansion"
+    revealed: S2E5
+    source: src-s2e5
+  - key: k-s2e5-mansion-case
+    subject: l-s2e5-mansion
+    predicate: part_of_case
+    object: c-s2e5
+    revealed: S2E5
+    source: src-s2e5
+  - key: k-s2e6-name
+    subject: c-s2e6
+    predicate: name
+    value: "The oil site murder"
+    revealed: S2E6
+    source: src-s2e6
+  - key: k-s2e6-desc
+    subject: c-s2e6
+    predicate: description
+    value: "A young man is killed over his knowledge that a planned oil-drilling site sheltered a protected species, while Jane works the case from jail."
+    revealed: S2E6
+    source: src-s2e6
+  - key: k-s2e7-name
+    subject: c-s2e7
+    predicate: name
+    value: "The kidnapped sister"
+    revealed: S2E7
+    source: src-s2e7
+  - key: k-s2e7-desc
+    subject: c-s2e7
+    predicate: description
+    value: "Bosco's team and Lisbon's unit join forces on the kidnapping of a wealthy woman's sister, and Jane finds an insider helped the kidnappers."
+    revealed: S2E7
+    source: src-s2e7
+  - key: k-s2e7-nanny-name
+    subject: p-s2e7-nanny
+    predicate: name
+    value: "The nanny"
+    revealed: S2E7
+    source: src-s2e7
+  - key: k-s2e7-nanny-role
+    subject: p-s2e7-nanny
+    predicate: role_in_case
+    object: c-s2e7
+    value: "accomplice"
+    revealed: S2E7
+    source: src-s2e7
+  - key: k-s2e8-name
+    subject: c-s2e8
+    predicate: name
+    value: "The shooting at headquarters"
+    revealed: S2E8
+    source: src-s2e8
+  - key: k-s2e8-desc
+    subject: c-s2e8
+    predicate: description
+    value: "A deadly shooting at CBI headquarters kills members of Bosco's team, and this is a Red John case, since he is behind the attacks and murdered one of the agents."
+    revealed: S2E8
+    source: src-s2e8
+  - key: k-s2e8-bosco-role
+    subject: p-bosco
+    predicate: role_in_case
+    object: c-s2e8
+    value: "victim"
+    revealed: S2E8
+    source: src-s2e8
+  - key: k-s2e8-rebecca-anderson-role
+    subject: p-rebecca-anderson
+    predicate: role_in_case
+    object: c-s2e8
+    value: "perpetrator"
+    revealed: S2E8
+    source: src-s2e8
+  - key: k-s2e8-workplace-name
+    subject: l-s2e8-workplace
+    predicate: name
+    value: "Workplace of the third agent"
+    revealed: S2E8
+    source: src-s2e8
+  - key: k-s2e8-workplace-case
+    subject: l-s2e8-workplace
+    predicate: part_of_case
+    object: c-s2e8
+    revealed: S2E8
+    source: src-s2e8
+  - key: k-s2e8-workplace-smiley
+    subject: l-s2e8-workplace
+    predicate: red_john_smiley
+    value: "true"
+    revealed: S2E8
+    source: src-s2e8
+  - key: k-s2e9-name
+    subject: c-s2e9
+    predicate: name
+    value: "The jeweler's shooting"
+    revealed: S2E9
+    source: src-s2e9
+  - key: k-s2e9-desc
+    subject: c-s2e9
+    predicate: description
+    value: "A wealthy jeweler is shot during a robbery at his store, and the trail leads to a safe cracker and a nephew of the owner's wife."
+    revealed: S2E9
+    source: src-s2e9
+  - key: k-s2e9-victim-name
+    subject: p-s2e9-victim
+    predicate: name
+    value: "Carl Ward"
+    revealed: S2E9
+    source: src-s2e9
+  - key: k-s2e9-victim-role
+    subject: p-s2e9-victim
+    predicate: role_in_case
+    object: c-s2e9
+    value: "victim"
+    revealed: S2E9
+    source: src-s2e9
+  - key: k-s2e9-murphy-name
+    subject: p-s2e9-murphy
+    predicate: name
+    value: "Doyle Murphy"
+    revealed: S2E9
+    source: src-s2e9
+  - key: k-s2e9-murphy-role
+    subject: p-s2e9-murphy
+    predicate: role_in_case
+    object: c-s2e9
+    value: "suspect"
+    revealed: S2E9
+    source: src-s2e9
+  - key: k-s2e9-tom-name
+    subject: p-s2e9-tom
+    predicate: name
+    value: "Tom Doverton"
+    revealed: S2E9
+    source: src-s2e9
+  - key: k-s2e9-tom-role
+    subject: p-s2e9-tom
+    predicate: role_in_case
+    object: c-s2e9
+    value: "perpetrator"
+    revealed: S2E9
+    source: src-s2e9
+  - key: k-s2e10-name
+    subject: c-s2e10
+    predicate: name
+    value: "The baseball academy founder"
+    revealed: S2E10
+    source: src-s2e10
+  - key: k-s2e10-desc
+    subject: c-s2e10
+    predicate: description
+    value: "A former professional baseball player is found dead in his Zen garden, and his scouting academy holds the motive."
+    revealed: S2E10
+    source: src-s2e10
+  - key: k-s2e10-victim-name
+    subject: p-s2e10-victim
+    predicate: name
+    value: "Barney Sloop"
+    revealed: S2E10
+    source: src-s2e10
+  - key: k-s2e10-victim-role
+    subject: p-s2e10-victim
+    predicate: role_in_case
+    object: c-s2e10
+    value: "victim"
+    revealed: S2E10
+    source: src-s2e10
+  - key: k-s2e10-father-name
+    subject: p-s2e10-father
+    predicate: name
+    value: "A player's father"
+    revealed: S2E10
+    source: src-s2e10
+  - key: k-s2e10-father-role
+    subject: p-s2e10-father
+    predicate: role_in_case
+    object: c-s2e10
+    value: "perpetrator"
+    revealed: S2E10
+    source: src-s2e10
+  - key: k-s2e10-garden-name
+    subject: l-s2e10-garden
+    predicate: name
+    value: "Sloop's Zen garden"
+    revealed: S2E10
+    source: src-s2e10
+  - key: k-s2e10-garden-case
+    subject: l-s2e10-garden
+    predicate: part_of_case
+    object: c-s2e10
+    revealed: S2E10
+    source: src-s2e10
+  - key: k-s2e11-name
+    subject: c-s2e11
+    predicate: name
+    value: "The class reunion murders"
+    revealed: S2E11
+    source: src-s2e11
+  - key: k-s2e11-desc
+    subject: c-s2e11
+    predicate: description
+    value: "A couple is murdered on the way to his high-school reunion, and an old prank links the killing to the class."
+    revealed: S2E11
+    source: src-s2e11
+  - key: k-s2e11-victim1-name
+    subject: p-s2e11-victim1
+    predicate: name
+    value: "Selby Vickers"
+    revealed: S2E11
+    source: src-s2e11
+  - key: k-s2e11-victim1-role
+    subject: p-s2e11-victim1
+    predicate: role_in_case
+    object: c-s2e11
+    value: "victim"
+    revealed: S2E11
+    source: src-s2e11
+  - key: k-s2e11-victim2-name
+    subject: p-s2e11-victim2
+    predicate: name
+    value: "Jana Vickers"
+    revealed: S2E11
+    source: src-s2e11
+  - key: k-s2e11-victim2-role
+    subject: p-s2e11-victim2
+    predicate: role_in_case
+    object: c-s2e11
+    value: "victim"
+    revealed: S2E11
+    source: src-s2e11
+  - key: k-s2e11-willa-name
+    subject: p-s2e11-willa
+    predicate: name
+    value: "Willa"
+    revealed: S2E11
+    source: src-s2e11
+  - key: k-s2e11-willa-role
+    subject: p-s2e11-willa
+    predicate: role_in_case
+    object: c-s2e11
+    value: "perpetrator"
+    revealed: S2E11
+    source: src-s2e11
+  - key: k-s2e11-logan-name
+    subject: p-s2e11-logan
+    predicate: name
+    value: "Derek Logan"
+    revealed: S2E11
+    source: src-s2e11
+  - key: k-s2e11-logan-role
+    subject: p-s2e11-logan
+    predicate: role_in_case
+    object: c-s2e11
+    value: "suspect"
+    revealed: S2E11
+    source: src-s2e11
+    status: in_show_suspicion
+  - key: k-s2e12-name
+    subject: c-s2e12
+    predicate: name
+    value: "The buried aide"
+    revealed: S2E12
+    source: src-s2e12
+  - key: k-s2e12-desc
+    subject: c-s2e12
+    predicate: description
+    value: "A mayor's aide is found buried at a development groundbreaking, and the case draws in eco-terrorists and a reporter."
+    revealed: S2E12
+    source: src-s2e12
+  - key: k-s2e12-victim-name
+    subject: p-s2e12-victim
+    predicate: name
+    value: "Martha St Clair"
+    revealed: S2E12
+    source: src-s2e12
+  - key: k-s2e12-victim-role
+    subject: p-s2e12-victim
+    predicate: role_in_case
+    object: c-s2e12
+    value: "victim"
+    revealed: S2E12
+    source: src-s2e12
+  - key: k-s2e12-brewster-name
+    subject: p-s2e12-brewster
+    predicate: name
+    value: "Mike Brewster"
+    revealed: S2E12
+    source: src-s2e12
+  - key: k-s2e12-brewster-role
+    subject: p-s2e12-brewster
+    predicate: role_in_case
+    object: c-s2e12
+    value: "perpetrator"
+    revealed: S2E12
+    source: src-s2e12
+  - key: k-s2e12-site-name
+    subject: l-s2e12-site
+    predicate: name
+    value: "Granton building development site"
+    revealed: S2E12
+    source: src-s2e12
+  - key: k-s2e12-site-case
+    subject: l-s2e12-site
+    predicate: part_of_case
+    object: c-s2e12
+    revealed: S2E12
+    source: src-s2e12
+  - key: k-s2e13-name
+    subject: c-s2e13
+    predicate: name
+    value: "The car dealership murder"
+    revealed: S2E13
+    source: src-s2e13
+  - key: k-s2e13-desc
+    subject: c-s2e13
+    predicate: description
+    value: "A young saleswoman is found dead in the trunk of a luxury car at an elite car dealership."
+    revealed: S2E13
+    source: src-s2e13
+  - key: k-s2e13-victim-name
+    subject: p-s2e13-victim
+    predicate: name
+    value: "Liselle Douglas"
+    revealed: S2E13
+    source: src-s2e13
+  - key: k-s2e13-victim-role
+    subject: p-s2e13-victim
+    predicate: role_in_case
+    object: c-s2e13
+    value: "victim"
+    revealed: S2E13
+    source: src-s2e13
+  - key: k-s2e13-elias-name
+    subject: p-s2e13-elias
+    predicate: name
+    value: "Brad Elias"
+    revealed: S2E13
+    source: src-s2e13
+  - key: k-s2e13-elias-role
+    subject: p-s2e13-elias
+    predicate: role_in_case
+    object: c-s2e13
+    value: "perpetrator"
+    revealed: S2E13
+    source: src-s2e13
+  - key: k-s2e13-sparhawk-name
+    subject: p-s2e13-sparhawk
+    predicate: name
+    value: "Sparhawk"
+    revealed: S2E13
+    source: src-s2e13
+  - key: k-s2e13-sparhawk-role
+    subject: p-s2e13-sparhawk
+    predicate: role_in_case
+    object: c-s2e13
+    value: "suspect"
+    revealed: S2E13
+    source: src-s2e13
+  - key: k-s2e13-kinsey-name
+    subject: p-s2e13-kinsey
+    predicate: name
+    value: "James Kinsey"
+    revealed: S2E13
+    source: src-s2e13
+  - key: k-s2e13-kinsey-role
+    subject: p-s2e13-kinsey
+    predicate: role_in_case
+    object: c-s2e13
+    value: "suspect"
+    revealed: S2E13
+    source: src-s2e13
+    status: in_show_suspicion
+  - key: k-s2e13-mashburn-role
+    subject: p-mashburn
+    predicate: role_in_case
+    object: c-s2e13
+    value: "suspect"
+    revealed: S2E13
+    source: src-s2e13
+    status: in_show_suspicion
+  - key: k-s2e13-dealership-name
+    subject: l-s2e13-dealership
+    predicate: name
+    value: "Zenith Motor Gallery"
+    revealed: S2E13
+    source: src-s2e13
+  - key: k-s2e13-dealership-case
+    subject: l-s2e13-dealership
+    predicate: part_of_case
+    object: c-s2e13
+    revealed: S2E13
+    source: src-s2e13
+  - key: k-s2e14-name
+    subject: c-s2e14
+    predicate: name
+    value: "The gang friend"
+    revealed: S2E14
+    source: src-s2e14
+  - key: k-s2e14-desc
+    subject: c-s2e14
+    predicate: description
+    value: "Cho helps investigate the murder of a former friend from his old street gang, with Jane tagging along."
+    revealed: S2E14
+    source: src-s2e14
+  - key: k-s2e14-victim-name
+    subject: p-s2e14-victim
+    predicate: name
+    value: "David Seung"
+    revealed: S2E14
+    source: src-s2e14
+  - key: k-s2e14-victim-role
+    subject: p-s2e14-victim
+    predicate: role_in_case
+    object: c-s2e14
+    value: "victim"
+    revealed: S2E14
+    source: src-s2e14
+  - key: k-s2e14-cho-role
+    subject: p-cho
+    predicate: role_in_case
+    object: c-s2e14
+    value: "investigator"
+    revealed: S2E14
+    source: src-s2e14
+  - key: k-s2e15-name
+    subject: c-s2e15
+    predicate: name
+    value: "The poisoned chef"
+    revealed: S2E15
+    source: src-s2e15
+  - key: k-s2e15-desc
+    subject: c-s2e15
+    predicate: description
+    value: "A prominent chef is poisoned in the middle of a cooking competition."
+    revealed: S2E15
+    source: src-s2e15
+  - key: k-s2e15-victim-name
+    subject: p-s2e15-victim
+    predicate: name
+    value: "Jeffrey Barge"
+    revealed: S2E15
+    source: src-s2e15
+  - key: k-s2e15-victim-role
+    subject: p-s2e15-victim
+    predicate: role_in_case
+    object: c-s2e15
+    value: "victim"
+    revealed: S2E15
+    source: src-s2e15
+  - key: k-s2e15-competition-name
+    subject: l-s2e15-competition
+    predicate: name
+    value: "Napa Valley cooking competition"
+    revealed: S2E15
+    source: src-s2e15
+  - key: k-s2e15-competition-case
+    subject: l-s2e15-competition
+    predicate: part_of_case
+    object: c-s2e15
+    revealed: S2E15
+    source: src-s2e15
+  - key: k-s2e16-name
+    subject: c-s2e16
+    predicate: name
+    value: "The virus lab"
+    revealed: S2E16
+    source: src-s2e16
+  - key: k-s2e16-desc
+    subject: c-s2e16
+    predicate: description
+    value: "A government researcher exposed to a deadly virus calls on the CBI to find who sabotaged her before she dies."
+    revealed: S2E16
+    source: src-s2e16
+  - key: k-s2e16-victim-name
+    subject: p-s2e16-victim
+    predicate: name
+    value: "Alicia Seberg"
+    revealed: S2E16
+    source: src-s2e16
+  - key: k-s2e16-victim-role
+    subject: p-s2e16-victim
+    predicate: role_in_case
+    object: c-s2e16
+    value: "victim"
+    revealed: S2E16
+    source: src-s2e16
+  - key: k-s2e16-welks-name
+    subject: p-s2e16-welks
+    predicate: name
+    value: "Griffith Welks"
+    revealed: S2E16
+    source: src-s2e16
+  - key: k-s2e16-welks-role
+    subject: p-s2e16-welks
+    predicate: role_in_case
+    object: c-s2e16
+    value: "perpetrator"
+    revealed: S2E16
+    source: src-s2e16
+  - key: k-s2e16-harken-name
+    subject: p-s2e16-harken
+    predicate: name
+    value: "Dean Harken"
+    revealed: S2E16
+    source: src-s2e16
+  - key: k-s2e16-harken-role
+    subject: p-s2e16-harken
+    predicate: role_in_case
+    object: c-s2e16
+    value: "suspect"
+    revealed: S2E16
+    source: src-s2e16
+    status: in_show_suspicion
+  - key: k-s2e16-nash-name
+    subject: p-s2e16-nash
+    predicate: name
+    value: "Lilith Nash"
+    revealed: S2E16
+    source: src-s2e16
+  - key: k-s2e16-nash-role
+    subject: p-s2e16-nash
+    predicate: role_in_case
+    object: c-s2e16
+    value: "suspect"
+    revealed: S2E16
+    source: src-s2e16
+    status: in_show_suspicion
+  - key: k-s2e16-lab-name
+    subject: l-s2e16-lab
+    predicate: name
+    value: "Virus research facility"
+    revealed: S2E16
+    source: src-s2e16
+  - key: k-s2e16-lab-case
+    subject: l-s2e16-lab
+    predicate: part_of_case
+    object: c-s2e16
+    revealed: S2E16
+    source: src-s2e16
+  - key: k-s2e17-name
+    subject: c-s2e17
+    predicate: name
+    value: "The red box"
+    revealed: S2E17
+    source: src-s2e17
+  - key: k-s2e17-desc
+    subject: c-s2e17
+    predicate: description
+    value: "The murder of a tutor turns into a hunt for a priceless ring stolen from a famous museum."
+    revealed: S2E17
+    source: src-s2e17
+  - key: k-s2e17-museum-name
+    subject: l-s2e17-museum
+    predicate: name
+    value: "British Museum"
+    revealed: S2E17
+    source: src-s2e17
+  - key: k-s2e17-museum-case
+    subject: l-s2e17-museum
+    predicate: part_of_case
+    object: c-s2e17
+    revealed: S2E17
+    source: src-s2e17
+  - key: k-s2e17-museum-coords
+    subject: l-s2e17-museum
+    predicate: coordinates
+    value: "51.5194,-0.1270"
+    revealed: S2E17
+    source: src-s2e17
+    note: "landmark"
+  - key: k-s2e18-name
+    subject: c-s2e18
+    predicate: name
+    value: "The amnesiac survivor"
+    revealed: S2E18
+    source: src-s2e18
+  - key: k-s2e18-desc
+    subject: c-s2e18
+    predicate: description
+    value: "A bloodied woman with amnesia stumbles in front of the team's car, and three bodies are found in a nearby barn."
+    revealed: S2E18
+    source: src-s2e18
+  - key: k-s2e18-jane-doe-name
+    subject: p-s2e18-jane-doe
+    predicate: name
+    value: "Jane Doe"
+    revealed: S2E18
+    source: src-s2e18
+  - key: k-s2e18-jane-doe-role
+    subject: p-s2e18-jane-doe
+    predicate: role_in_case
+    object: c-s2e18
+    value: "witness"
+    revealed: S2E18
+    source: src-s2e18
+  - key: k-s2e18-victim-name
+    subject: p-s2e18-victim
+    predicate: name
+    value: "Leonard Railton"
+    revealed: S2E18
+    source: src-s2e18
+  - key: k-s2e18-victim-role
+    subject: p-s2e18-victim
+    predicate: role_in_case
+    object: c-s2e18
+    value: "victim"
+    revealed: S2E18
+    source: src-s2e18
+  - key: k-s2e19-name
+    subject: c-s2e19
+    predicate: name
+    value: "The prosecutor's killer"
+    revealed: S2E19
+    source: src-s2e19
+  - key: k-s2e19-desc
+    subject: c-s2e19
+    predicate: description
+    value: "An assistant district attorney is murdered at home, and the CBI hunts a hitman for hire whose identity cannot be proven."
+    revealed: S2E19
+    source: src-s2e19
+  - key: k-s2e19-victim-name
+    subject: p-s2e19-victim
+    predicate: name
+    value: "Kelly Flower"
+    revealed: S2E19
+    source: src-s2e19
+  - key: k-s2e19-victim-role
+    subject: p-s2e19-victim
+    predicate: role_in_case
+    object: c-s2e19
+    value: "victim"
+    revealed: S2E19
+    source: src-s2e19
+  - key: k-s2e19-sylvan-name
+    subject: p-s2e19-sylvan
+    predicate: name
+    value: "Cale Sylvan"
+    revealed: S2E19
+    source: src-s2e19
+  - key: k-s2e19-sylvan-role
+    subject: p-s2e19-sylvan
+    predicate: role_in_case
+    object: c-s2e19
+    value: "perpetrator"
+    revealed: S2E19
+    source: src-s2e19
+  - key: k-s2e19-odenthal-name
+    subject: p-s2e19-odenthal
+    predicate: name
+    value: "Odenthal"
+    revealed: S2E19
+    source: src-s2e19
+  - key: k-s2e19-odenthal-role
+    subject: p-s2e19-odenthal
+    predicate: role_in_case
+    object: c-s2e19
+    value: "accomplice"
+    revealed: S2E19
+    source: src-s2e19
+  - key: k-s2e19-draber-name
+    subject: p-s2e19-draber
+    predicate: name
+    value: "Hank Draber"
+    revealed: S2E19
+    source: src-s2e19
+  - key: k-s2e19-draber-role
+    subject: p-s2e19-draber
+    predicate: role_in_case
+    object: c-s2e19
+    value: "suspect"
+    revealed: S2E19
+    source: src-s2e19
+    status: in_show_suspicion
+  - key: k-s2e20-name
+    subject: c-s2e20
+    predicate: name
+    value: "The media mogul"
+    revealed: S2E20
+    source: src-s2e20
+  - key: k-s2e20-desc
+    subject: c-s2e20
+    predicate: description
+    value: "A media mogul is murdered, and the trail leads to a cult-like group with a grudge against his company."
+    revealed: S2E20
+    source: src-s2e20
+  - key: k-s2e20-victim-name
+    subject: p-s2e20-victim
+    predicate: name
+    value: "Xander Harrington"
+    revealed: S2E20
+    source: src-s2e20
+  - key: k-s2e20-victim-role
+    subject: p-s2e20-victim
+    predicate: role_in_case
+    object: c-s2e20
+    value: "victim"
+    revealed: S2E20
+    source: src-s2e20
+  - key: k-s2e20-stiles-role
+    subject: p-stiles
+    predicate: role_in_case
+    object: c-s2e20
+    value: "suspect"
+    revealed: S2E20
+    source: src-s2e20
+    status: in_show_suspicion
+  - key: k-s2e20-center-name
+    subject: l-s2e20-center
+    predicate: name
+    value: "Visualize Self-Realization Center"
+    revealed: S2E20
+    source: src-s2e20
+  - key: k-s2e20-center-case
+    subject: l-s2e20-center
+    predicate: part_of_case
+    object: c-s2e20
+    revealed: S2E20
+    source: src-s2e20
+  - key: k-s2e21-name
+    subject: c-s2e21
+    predicate: name
+    value: "The clown killer"
+    revealed: S2E21
+    source: src-s2e21
+  - key: k-s2e21-desc
+    subject: c-s2e21
+    predicate: description
+    value: "A man is shot by a gunman dressed as a clown who cuts off his finger, and a secret device is at stake."
+    revealed: S2E21
+    source: src-s2e21
+  - key: k-s2e21-victim-name
+    subject: p-s2e21-victim
+    predicate: name
+    value: "Noah Valicat"
+    revealed: S2E21
+    source: src-s2e21
+  - key: k-s2e21-victim-role
+    subject: p-s2e21-victim
+    predicate: role_in_case
+    object: c-s2e21
+    value: "victim"
+    revealed: S2E21
+    source: src-s2e21
+  - key: k-s2e21-daphne-name
+    subject: p-s2e21-daphne
+    predicate: name
+    value: "Daphne Valicat"
+    revealed: S2E21
+    source: src-s2e21
+  - key: k-s2e21-daphne-role
+    subject: p-s2e21-daphne
+    predicate: role_in_case
+    object: c-s2e21
+    value: "perpetrator"
+    revealed: S2E21
+    source: src-s2e21
+  - key: k-s2e21-mosca-name
+    subject: p-s2e21-mosca
+    predicate: name
+    value: "Alec Mosca"
+    revealed: S2E21
+    source: src-s2e21
+  - key: k-s2e21-mosca-role
+    subject: p-s2e21-mosca
+    predicate: role_in_case
+    object: c-s2e21
+    value: "suspect"
+    revealed: S2E21
+    source: src-s2e21
+    status: in_show_suspicion
+  - key: k-s2e22-name
+    subject: c-s2e22
+    predicate: name
+    value: "The charity organizer"
+    revealed: S2E22
+    source: src-s2e22
+  - key: k-s2e22-desc
+    subject: c-s2e22
+    predicate: description
+    value: "The murder of the head of an anti-trafficking charity reunites Jane with a self-styled psychic."
+    revealed: S2E22
+    source: src-s2e22
+  - key: k-s2e22-victim-name
+    subject: p-s2e22-victim
+    predicate: name
+    value: "Hector Brava"
+    revealed: S2E22
+    source: src-s2e22
+  - key: k-s2e22-victim-role
+    subject: p-s2e22-victim
+    predicate: role_in_case
+    object: c-s2e22
+    value: "victim"
+    revealed: S2E22
+    source: src-s2e22
+  - key: k-s2e23-name
+    subject: c-s2e23
+    predicate: name
+    value: "The copycat snuff film"
+    revealed: S2E23
+    source: src-s2e23
+  - key: k-s2e23-desc
+    subject: c-s2e23
+    predicate: description
+    value: "A copycat of Red John posts online a film of a student being killed, and a psychic's contact with the real Red John has dire consequences."
+    revealed: S2E23
+    source: src-s2e23
+  - key: k-s2e23-victim-name
+    subject: p-s2e23-victim
+    predicate: name
+    value: "An unnamed student"
+    revealed: S2E23
+    source: src-s2e23
+  - key: k-s2e23-victim-role
+    subject: p-s2e23-victim
+    predicate: role_in_case
+    object: c-s2e23
+    value: "victim"
+    revealed: S2E23
+    source: src-s2e23
+  - key: k-s2e23-frye-role
+    subject: p-frye
+    predicate: role_in_case
+    object: c-s2e23
+    value: "victim"
+    revealed: S2E23
+    source: src-s2e23

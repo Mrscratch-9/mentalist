@@ -1,0 +1,439 @@
+# The Mentalist season 6 cases: one case per episode, people and places (S6E1..S6E10 only).
+# Source: English Wikipedia, "The Mentalist season 6" episode summaries.
+# Spoilers: do not open outside the app.
+
+entities:
+  - key: c-s6e1
+    kind: case
+    introduced: S6E1
+
+  - key: c-s6e2
+    kind: case
+    introduced: S6E2
+
+  - key: p-s6e2-sophie
+    kind: person
+    introduced: S6E2
+
+  - key: l-s6e2-scene
+    kind: location
+    introduced: S6E2
+
+  - key: c-s6e3
+    kind: case
+    introduced: S6E3
+
+  - key: l-s6e3-napa
+    kind: location
+    introduced: S6E3
+
+  - key: c-s6e4
+    kind: case
+    introduced: S6E4
+
+  - key: c-s6e5
+    kind: case
+    introduced: S6E5
+
+  - key: c-s6e6
+    kind: case
+    introduced: S6E6
+
+  - key: l-s6e6-home
+    kind: location
+    introduced: S6E6
+
+  - key: c-s6e7
+    kind: case
+    introduced: S6E7
+
+  - key: c-s6e8
+    kind: case
+    introduced: S6E8
+
+  - key: p-s6e8-cordero
+    kind: person
+    introduced: S6E8
+
+  - key: l-s6e8-chapel
+    kind: location
+    introduced: S6E8
+
+  - key: c-s6e9
+    kind: case
+    introduced: S6E9
+
+  - key: c-s6e10
+    kind: case
+    introduced: S6E10
+
+  - key: l-s6e10-brooklyn
+    kind: location
+    introduced: S6E10
+
+claims:
+  - key: cl-s6e1-name
+    subject: c-s6e1
+    predicate: name
+    value: "The man missing for two years"
+    revealed: S6E1
+    source: src-s6e1
+
+  - key: cl-s6e1-desc
+    subject: c-s6e1
+    predicate: description
+    value: "The team investigates the death of a man who had been missing for two years, while Jane and Lisbon work to narrow down the list of Red John suspects."
+    revealed: S6E1
+    source: src-s6e1
+
+  - key: cl-s6e2-name
+    subject: c-s6e2
+    predicate: name
+    value: "The murder of Jane's former psychiatrist"
+    revealed: S6E2
+    source: src-s6e2
+
+  - key: cl-s6e2-desc
+    subject: c-s6e2
+    predicate: description
+    value: "A Red John case: Red John murders Jane's former psychiatrist, Sophie Miller, and leaves his smiley face, and Jane finds clues to his identity."
+    revealed: S6E2
+    source: src-s6e2
+
+  - key: cl-s6e2-sophie-name
+    subject: p-s6e2-sophie
+    predicate: name
+    value: "Sophie Miller"
+    revealed: S6E2
+    source: src-s6e2
+
+  - key: cl-s6e2-role-sophie
+    subject: p-s6e2-sophie
+    predicate: role_in_case
+    object: c-s6e2
+    value: "victim"
+    revealed: S6E2
+    source: src-s6e2
+
+  - key: cl-s6e2-scene-name
+    subject: l-s6e2-scene
+    predicate: name
+    value: "Sophie Miller crime scene"
+    revealed: S6E2
+    source: src-s6e2
+
+  - key: cl-s6e2-scene-case
+    subject: l-s6e2-scene
+    predicate: part_of_case
+    object: c-s6e2
+    revealed: S6E2
+    source: src-s6e2
+
+  - key: cl-s6e2-scene-smiley
+    subject: l-s6e2-scene
+    predicate: red_john_smiley
+    value: "true"
+    revealed: S6E2
+    source: src-s6e2
+
+  - key: cl-s6e3-name
+    subject: c-s6e3
+    predicate: name
+    value: "The Napa case"
+    revealed: S6E3
+    source: src-s6e3
+
+  - key: cl-s6e3-desc
+    subject: c-s6e3
+    predicate: description
+    value: "Jane brings the CBI into a case in Napa so that the team can focus on Sheriff McAllister."
+    revealed: S6E3
+    source: src-s6e3
+
+  - key: cl-s6e3-napa-name
+    subject: l-s6e3-napa
+    predicate: name
+    value: "Napa"
+    revealed: S6E3
+    source: src-s6e3
+
+  - key: cl-s6e3-napa-case
+    subject: l-s6e3-napa
+    predicate: part_of_case
+    object: c-s6e3
+    revealed: S6E3
+    source: src-s6e3
+
+  - key: cl-s6e3-napa-coords
+    subject: l-s6e3-napa
+    predicate: coordinates
+    value: "38.30472222,-122.29888889"
+    revealed: S6E3
+    source: src-s6e3
+    note: "city-level"
+
+  - key: cl-s6e3-role-mcallister
+    subject: p-s1e2-mcallister
+    predicate: role_in_case
+    object: c-s6e3
+    value: "suspect"
+    revealed: S6E3
+    source: src-s6e3
+
+  - key: cl-s6e4-name
+    subject: c-s6e4
+    predicate: name
+    value: "The list of fake suspects"
+    revealed: S6E4
+    source: src-s6e4
+
+  - key: cl-s6e4-desc
+    subject: c-s6e4
+    predicate: description
+    value: "The team investigates after a list of fake Red John suspects is stolen and the innocent men named on it are put in danger, and a conspiracy of law enforcement personnel using the phrase \"Tyger, Tyger\" comes to light."
+    revealed: S6E4
+    source: src-s6e4
+
+  - key: cl-s6e4-role-kirkland
+    subject: p-kirkland
+    predicate: role_in_case
+    object: c-s6e4
+    value: "victim"
+    revealed: S6E4
+    source: src-s6e4
+
+  - key: cl-s6e4-role-smith
+    subject: p-smith
+    predicate: role_in_case
+    object: c-s6e4
+    value: "perpetrator"
+    revealed: S6E4
+    source: src-s6e4
+
+  - key: cl-s6e5-name
+    subject: c-s6e5
+    predicate: name
+    value: "The Visualize murder"
+    revealed: S6E5
+    source: src-s6e5
+
+  - key: cl-s6e5-desc
+    subject: c-s6e5
+    predicate: description
+    value: "The team investigates the murder of a member of Visualize, where the killer seems to have been in two places at the same time."
+    revealed: S6E5
+    source: src-s6e5
+
+  - key: cl-s6e6-name
+    subject: c-s6e6
+    predicate: name
+    value: "The suspects gathering"
+    revealed: S6E6
+    source: src-s6e6
+
+  - key: cl-s6e6-desc
+    subject: c-s6e6
+    predicate: description
+    value: "Jane gathers the remaining Red John suspects at his family home to learn who the killer is, and an explosion follows."
+    revealed: S6E6
+    source: src-s6e6
+
+  - key: cl-s6e6-home-name
+    subject: l-s6e6-home
+    predicate: name
+    value: "Jane family home"
+    revealed: S6E6
+    source: src-s6e6
+
+  - key: cl-s6e6-home-case
+    subject: l-s6e6-home
+    predicate: part_of_case
+    object: c-s6e6
+    revealed: S6E6
+    source: src-s6e6
+
+  - key: cl-s6e6-role-mcallister
+    subject: p-s1e2-mcallister
+    predicate: role_in_case
+    object: c-s6e6
+    value: "suspect"
+    revealed: S6E6
+    source: src-s6e6
+
+  - key: cl-s6e6-role-smith
+    subject: p-smith
+    predicate: role_in_case
+    object: c-s6e6
+    value: "suspect"
+    revealed: S6E6
+    source: src-s6e6
+
+  - key: cl-s6e6-role-bertram
+    subject: p-bertram
+    predicate: role_in_case
+    object: c-s6e6
+    value: "suspect"
+    revealed: S6E6
+    source: src-s6e6
+
+  - key: cl-s6e6-role-haffner
+    subject: p-haffner
+    predicate: role_in_case
+    object: c-s6e6
+    value: "suspect"
+    revealed: S6E6
+    source: src-s6e6
+
+  - key: cl-s6e6-role-stiles
+    subject: p-stiles
+    predicate: role_in_case
+    object: c-s6e6
+    value: "suspect"
+    revealed: S6E6
+    source: src-s6e6
+
+  - key: cl-s6e7-name
+    subject: c-s6e7
+    predicate: name
+    value: "The aftermath of the explosion"
+    revealed: S6E7
+    source: src-s6e7
+
+  - key: cl-s6e7-desc
+    subject: c-s6e7
+    predicate: description
+    value: "After the explosion, Bertram and Smith go on the run, Jane names Bertram as Red John, and the FBI shuts down the CBI."
+    revealed: S6E7
+    source: src-s6e7
+
+  - key: cl-s6e7-role-bertram
+    subject: p-bertram
+    predicate: role_in_case
+    object: c-s6e7
+    value: "perpetrator"
+    revealed: S6E7
+    source: src-s6e7
+
+  - key: cl-s6e8-name
+    subject: c-s6e8
+    predicate: name
+    value: "The Red John showdown"
+    revealed: S6E8
+    source: src-s6e8
+
+  - key: cl-s6e8-desc
+    subject: c-s6e8
+    predicate: description
+    value: "A Red John case: Jane meets Bertram in a cemetery chapel and Red John is revealed to be Sheriff McAllister."
+    revealed: S6E8
+    source: src-s6e8
+
+  - key: cl-s6e8-cordero-name
+    subject: p-s6e8-cordero
+    predicate: name
+    value: "Oscar Cordero"
+    revealed: S6E8
+    source: src-s6e8
+
+  - key: cl-s6e8-chapel-name
+    subject: l-s6e8-chapel
+    predicate: name
+    value: "Cemetery chapel"
+    revealed: S6E8
+    source: src-s6e8
+
+  - key: cl-s6e8-chapel-case
+    subject: l-s6e8-chapel
+    predicate: part_of_case
+    object: c-s6e8
+    revealed: S6E8
+    source: src-s6e8
+
+  - key: cl-s6e8-chapel-smiley
+    subject: l-s6e8-chapel
+    predicate: red_john_smiley
+    value: "true"
+    revealed: S6E8
+    source: src-s6e8
+
+  - key: cl-s6e8-role-bertram
+    subject: p-bertram
+    predicate: role_in_case
+    object: c-s6e8
+    value: "victim"
+    revealed: S6E8
+    source: src-s6e8
+
+  - key: cl-s6e8-role-mcallister
+    subject: p-s1e2-mcallister
+    predicate: role_in_case
+    object: c-s6e8
+    value: "perpetrator"
+    revealed: S6E8
+    source: src-s6e8
+
+  - key: cl-s6e8-role-cordero
+    subject: p-s6e8-cordero
+    predicate: role_in_case
+    object: c-s6e8
+    value: "accomplice"
+    revealed: S6E8
+    source: src-s6e8
+
+  - key: cl-s6e9-name
+    subject: c-s6e9
+    predicate: name
+    value: "The FBI consulting offer"
+    revealed: S6E9
+    source: src-s6e9
+
+  - key: cl-s6e9-desc
+    subject: c-s6e9
+    predicate: description
+    value: "Two years later, Jane is offered a consulting job with the FBI and negotiates his terms with Agent Abbott."
+    revealed: S6E9
+    source: src-s6e9
+
+  - key: cl-s6e9-role-abbott
+    subject: p-abbott
+    predicate: role_in_case
+    object: c-s6e9
+    value: "investigator"
+    revealed: S6E9
+    source: src-s6e9
+
+  - key: cl-s6e10-name
+    subject: c-s6e10
+    predicate: name
+    value: "The missing programmer in Brooklyn"
+    revealed: S6E10
+    source: src-s6e10
+
+  - key: cl-s6e10-desc
+    subject: c-s6e10
+    predicate: description
+    value: "Jane and Lisbon assist the FBI in a case about a missing computer programmer in Brooklyn."
+    revealed: S6E10
+    source: src-s6e10
+
+  - key: cl-s6e10-brooklyn-name
+    subject: l-s6e10-brooklyn
+    predicate: name
+    value: "Brooklyn"
+    revealed: S6E10
+    source: src-s6e10
+
+  - key: cl-s6e10-brooklyn-case
+    subject: l-s6e10-brooklyn
+    predicate: part_of_case
+    object: c-s6e10
+    revealed: S6E10
+    source: src-s6e10
+
+  - key: cl-s6e10-brooklyn-coords
+    subject: l-s6e10-brooklyn
+    predicate: coordinates
+    value: "40.65,-73.95"
+    revealed: S6E10
+    source: src-s6e10
+    note: "city-level"
