@@ -9,22 +9,29 @@ import { BLACK, layers as baseLayers } from "@protomaps/basemaps";
 import { MapboxOverlay } from "@deck.gl/mapbox";
 import { IconLayer, TextLayer } from "@deck.gl/layers";
 import type { Layer } from "@deck.gl/core";
+import type { LayerSpecification } from "maplibre-gl";
 import { Glow, Landmark, Ring, Smiley, toDataUri } from "./art";
 import { isPmtilesHeader } from "./pmtilesBytes";
 import type { PinModel } from "./viewModel";
 
-const TILE_FILE = "california.pmtiles";
-const CENTER: [number, number] = [-121.5, 38.5775];
-// California extract bounds (west, south, east, north): there are no tiles outside it.
-const CALIFORNIA_BOUNDS: [number, number, number, number] = [-124.5, 32.5, -114.1, 42.1];
-// Pan limit: the extract plus a margin. MapLibre never zooms out past the point where the viewport
-// fills `maxBounds`, so with the bare extract the whole state could not be framed at 1440x900 (min zoom
-// stopped at ~6.6). The margin shows the dark background around the state instead.
-const PAN_BOUNDS: [number, number, number, number] = [
-  CALIFORNIA_BOUNDS[0] - 12, CALIFORNIA_BOUNDS[1] - 6, CALIFORNIA_BOUNDS[2] + 12, CALIFORNIA_BOUNDS[3] + 6,
+type Bounds = [number, number, number, number]; // west, south, east, north
+// One PMTiles extract per region, each its own vector source and each with its own availability.
+const SOURCES: { id: string; file: string; bounds: Bounds }[] = [
+  { id: "california", file: "california.pmtiles", bounds: [-124.5, 32.5, -114.1, 42.1] },
+  { id: "austin", file: "austin.pmtiles", bounds: [-98.1, 30.05, -97.45, 30.55] },
 ];
-// Zoom ~5.3 frames all of California in a 1440x900 window; the tile data stops at z13 and overzooms above it.
-const MIN_ZOOM = 5;
+// Fallback camera (downtown Sacramento) when no visible location carries a current team_base claim.
+const SACRAMENTO: [number, number] = [-121.5, 38.5775];
+const UNION: Bounds = [
+  Math.min(...SOURCES.map((s) => s.bounds[0])), Math.min(...SOURCES.map((s) => s.bounds[1])),
+  Math.max(...SOURCES.map((s) => s.bounds[2])), Math.max(...SOURCES.map((s) => s.bounds[3])),
+];
+// Pan limit: the union of both extracts plus a margin. MapLibre never zooms out past the point where the
+// viewport fills `maxBounds`, so with the bare union both regions could not be framed together at 1440x900.
+// The margin shows the dark background around them instead.
+const PAN_BOUNDS: Bounds = [UNION[0] - 12, UNION[1] - 6, UNION[2] + 12, UNION[3] + 6];
+// Zoom ~5 frames California and Austin together in a 1440x900 window; the tile data stops at z13 and overzooms above it.
+const MIN_ZOOM = 4.5;
 const MAX_ZOOM = 17;
 // Camera center sits in the free area between the case rail, legend panel and characters strip.
 const PADDING = { left: 380, right: 330, top: 120, bottom: 130 }; // downtown, Sacramento River to the west
@@ -88,29 +95,58 @@ function loadAtlas(): Promise<Atlas> {
 }
 
 /** Tauri serves the bundled file through the ranged `tiles://` protocol (src-tauri/src/tiles.rs); a browser uses the Vite static server, which also honors Range. */
-function tilesUrl(): string {
+function tilesUrl(file: string): string {
   const inTauri = typeof window !== "undefined" && "__TAURI_INTERNALS__" in window;
-  return inTauri ? convertFileSrc(TILE_FILE, "tiles") : new URL(`/tiles/${TILE_FILE}`, window.location.href).href;
+  return inTauri ? convertFileSrc(file, "tiles") : new URL(`/tiles/${file}`, window.location.href).href;
 }
 
-let tiles: Promise<string> | null = null;
-function registerTiles(): Promise<string> {
-  tiles ??= (async () => {
-    const protocol = new Protocol();
-    maplibregl.addProtocol("pmtiles", protocol.tile);
-    const url = tilesUrl();
-    // First ranged read (the 16-byte start of the header). Dev servers and SPA resolvers answer a missing file
-    // with index.html and 200: check the magic bytes.
-    const res = await fetch(url, { headers: { Range: "bytes=0-15" } });
-    if (!res.ok) throw new Error("basemap unavailable");
-    if (!isPmtilesHeader(new Uint8Array(await res.arrayBuffer()).subarray(0, 8))) throw new Error("basemap unavailable");
-    protocol.add(new PMTiles(new FetchSource(url)));
-    return `pmtiles://${url}`;
-  })().catch((e) => {
-    tiles = null; // allow a retry on the next mount
-    throw e;
-  });
-  return tiles;
+let protocol: Protocol | null = null;
+const tiles = new Map<string, Promise<string>>();
+/** Checks one extract (magic bytes of a ranged read) and registers it; rejects when it is missing or not a PMTiles file. */
+function registerTiles(file: string): Promise<string> {
+  let p = tiles.get(file);
+  if (!p) {
+    p = (async () => {
+      if (!protocol) {
+        protocol = new Protocol();
+        maplibregl.addProtocol("pmtiles", protocol.tile);
+      }
+      const url = tilesUrl(file);
+      // First ranged read (the 16-byte start of the header). Dev servers and SPA resolvers answer a missing file
+      // with index.html and 200: check the magic bytes.
+      const res = await fetch(url, { headers: { Range: "bytes=0-15" } });
+      if (!res.ok) throw new Error("basemap unavailable");
+      if (!isPmtilesHeader(new Uint8Array(await res.arrayBuffer()).subarray(0, 8))) throw new Error("basemap unavailable");
+      protocol.add(new PMTiles(new FetchSource(url)));
+      return `pmtiles://${url}`;
+    })().catch((e) => {
+      tiles.delete(file); // allow a retry on the next mount
+      throw e;
+    });
+    tiles.set(file, p);
+  }
+  return p;
+}
+
+/** The same night style per source: protomaps layers with ids prefixed by the source, one shared background, plus 3D buildings. */
+function sourceLayers(id: string): LayerSpecification[] {
+  return [
+    ...noSymbols(baseLayers(id, flavor, { lang: "en" }))
+      .filter((l) => l.type !== "background" || id === SOURCES[0]?.id)
+      .map((l) => ({ ...l, id: `${id}:${l.id}` }) as LayerSpecification),
+    {
+      id: `${id}:buildings-3d`,
+      type: "fill-extrusion",
+      source: id,
+      "source-layer": "buildings",
+      paint: {
+        "fill-extrusion-color": ["interpolate", ["linear"], ["coalesce", ["get", "height"], 8], 0, "#2c2825", 40, "#3b3531", 120, "#4d453e"],
+        "fill-extrusion-height": ["coalesce", ["get", "height"], 8],
+        "fill-extrusion-base": ["coalesce", ["get", "min_height"], 0],
+        "fill-extrusion-opacity": 0.92,
+      },
+    },
+  ];
 }
 
 interface Props {
@@ -118,11 +154,13 @@ interface Props {
   selectedPin: string | null;
   linkedCase: string | null;
   reducedMotion: boolean;
+  /** [lon, lat] of the team's current base at the viewer's progress; null falls back to Sacramento. */
+  base: [number, number] | null;
   onUnavailable: () => void;
   onSelectPin: (id: string) => void;
 }
 
-export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, onUnavailable, onSelectPin }: Props) {
+export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, base, onUnavailable, onSelectPin }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const overlay = useRef<MapboxOverlay | null>(null);
   const [ready, setReady] = useState(false);
@@ -132,15 +170,30 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, onUnavail
   onSelect.current = onSelectPin;
   const onFail = useRef(onUnavailable);
   onFail.current = onUnavailable;
+  const mapRef = useRef<maplibregl.Map | null>(null);
+  const reduced = useRef(reducedMotion);
+  reduced.current = reducedMotion;
+  const center = base ?? SACRAMENTO;
+  const centerRef = useRef(center);
+  centerRef.current = center;
 
   useEffect(() => {
     let cancelled = false;
     let map: maplibregl.Map | null = null;
-    registerTiles().then((url) => {
+    Promise.allSettled(SOURCES.map((src) => registerTiles(src.file))).then((results) => {
       if (cancelled || !box.current) return;
+      // One missing extract must not break the other: only the sources that answered join the style.
+      const ok = SOURCES.flatMap((src, i) => {
+        const r = results[i];
+        return r?.status === "fulfilled" ? [{ id: src.id, url: r.value }] : [];
+      });
+      if (ok.length === 0) {
+        onFail.current();
+        return;
+      }
       map = new maplibregl.Map({
         container: box.current,
-        center: CENTER,
+        center: centerRef.current,
         zoom: 14.3,
         pitch: 58,
         bearing: -18,
@@ -151,26 +204,13 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, onUnavail
         attributionControl: { compact: true },
         style: {
           version: 8,
-          sources: { protomaps: { type: "vector", url, attribution: "© OpenStreetMap, Protomaps" } },
-          layers: [
-            ...noSymbols(baseLayers("protomaps", flavor, { lang: "en" })),
-            {
-              id: "buildings-3d",
-              type: "fill-extrusion",
-              source: "protomaps",
-              "source-layer": "buildings",
-              paint: {
-                "fill-extrusion-color": ["interpolate", ["linear"], ["coalesce", ["get", "height"], 8], 0, "#2c2825", 40, "#3b3531", 120, "#4d453e"],
-                "fill-extrusion-height": ["coalesce", ["get", "height"], 8],
-                "fill-extrusion-base": ["coalesce", ["get", "min_height"], 0],
-                "fill-extrusion-opacity": 0.92,
-              },
-            },
-          ],
+          sources: Object.fromEntries(ok.map((o) => [o.id, { type: "vector" as const, url: o.url, attribution: "© OpenStreetMap, Protomaps" }])),
+          layers: ok.flatMap((o) => sourceLayers(o.id)),
         },
       });
+      mapRef.current = map;
       map.setPadding(PADDING);
-      map.jumpTo({ center: CENTER });
+      map.jumpTo({ center: centerRef.current });
       const o = new MapboxOverlay({
         interleaved: true,
         getCursor: ({ isHovering, isDragging }) => (isDragging ? "grabbing" : isHovering ? "pointer" : "grab"),
@@ -178,16 +218,19 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, onUnavail
       overlay.current = o;
       map.addControl(o);
       map.on("load", () => !cancelled && setReady(true));
-      // A broken or unreadable basemap surfaces only as source errors: show the same notice.
+      // A broken or unreadable extract surfaces only as source errors: the notice shows when every source failed.
+      const failed = new Set<string>();
       map.on("error", (e) => {
-        if (!cancelled && (e as { sourceId?: string }).sourceId === "protomaps") onFail.current();
+        const id = (e as { sourceId?: string }).sourceId;
+        if (cancelled || !id || !ok.some((o) => o.id === id)) return;
+        failed.add(id);
+        if (failed.size === ok.length) onFail.current();
       });
-    }).catch(() => {
-      if (!cancelled) onFail.current();
     });
     return () => {
       cancelled = true;
       overlay.current = null;
+      mapRef.current = null;
       setReady(false);
       map?.remove();
     };
@@ -251,6 +294,14 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, onUnavail
     return () => cancelAnimationFrame(raf);
   }, [ready, atlas, build, reducedMotion]);
 
+  // Progress or peek moved the base (Sacramento -> Austin): re-centre there. Nothing happens on the first run (no map yet).
+  useEffect(() => {
+    const m = mapRef.current;
+    if (!m) return;
+    if (reduced.current) m.jumpTo({ center });
+    else m.flyTo({ center, duration: 1600, essential: false });
+  }, [center[0], center[1]]); // eslint-disable-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     let cancelled = false;
     loadAtlas().then((a) => !cancelled && setAtlas(a), () => !cancelled && onFail.current());
@@ -259,5 +310,5 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, onUnavail
     };
   }, []);
 
-  return <div ref={box} className="rr-map" role="group" aria-label="3D map of California, opening on downtown Sacramento. Pins are listed in the legend panel." />;
+  return <div ref={box} className="rr-map" role="group" aria-label="3D map of California and Austin, opening on the team's current base. Pins are listed in the legend panel." />;
 }

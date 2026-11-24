@@ -11,6 +11,7 @@
  *   part_of_case                   pin -> case link (object = case entity)
  *   role_in_case                   case file roles (core predicate)
  *   recurring                      "true" on a person puts them in the characters strip
+ *   team_base                      "true" on a location marks the team's current base (map camera, see currentBase)
  */
 import {
   NotFoundError, peek,
@@ -153,6 +154,29 @@ export function buildHomeModel(engine: KnowledgeEngine, p: CoreProgress): HomeMo
   };
 }
 
+export interface BaseModel {
+  id: string;
+  /** [lon, lat] */
+  position: [number, number];
+}
+
+/**
+ * The team's current base at progress `p`: the visible location with a current `team_base` claim
+ * (value "true") and valid coordinates. A superseded base claim does not count. With several, the most
+ * recently revealed wins. Null when there is none (the map falls back to Sacramento).
+ */
+export function currentBase(engine: KnowledgeEngine, p: CoreProgress): BaseModel | null {
+  const kinds = new Map(engine.listEntities(p).map((e) => [e.id as string, e.kind]));
+  const pins = new Map(engine.getMap(p).pins.map((x) => [x.entityId as string, x]));
+  const bases = engine
+    .listClaims(p, { predicate: "team_base" })
+    .filter((c) => c.state === "current" && c.value === "true" && kinds.get(c.subject) === "location" && pins.has(c.subject))
+    .sort((a, b) => b.revealedIn - a.revealedIn || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+  const top = bases[0];
+  const pin = top && pins.get(top.subject);
+  return top && pin ? { id: top.subject, position: [pin.lon, pin.lat] } : null;
+}
+
 export interface GateModel {
   /** Label of the owner's persisted progress, e.g. "6x09". */
   label: string;
@@ -163,7 +187,7 @@ export interface GateModel {
 }
 
 export type HomeResult =
-  | { kind: "ok"; model: HomeModel; gate: GateModel; groups: SeasonGroup[] }
+  | { kind: "ok"; model: HomeModel; gate: GateModel; groups: SeasonGroup[]; base: BaseModel | null }
   | { kind: "not-found" }
   | { kind: "error" };
 
@@ -191,6 +215,7 @@ export function resolveHome(
       kind: "ok",
       model: buildHomeModel(canon.engine, eff),
       groups: listBySeason(canon.engine, eff),
+      base: currentBase(canon.engine, eff),
       gate: {
         label: labelAt(canon.engine, base),
         peeking,

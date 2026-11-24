@@ -2,11 +2,11 @@
 import { DatabaseSync } from "node:sqlite";
 import { describe, expect, it, vi } from "vitest";
 import {
-  KnowledgeEngine, loadDataset, progress,
+  KnowledgeEngine, loadDataset, peek, progress,
   type Claim, type Dataset, type Entity, type EntityKind, type SqlDriver, type SqlValue,
 } from "@mentalist/core";
 import { createProgressStore, memoryStorage, PROGRESS_KEY } from "../state/progress";
-import { buildHomeModel, resolveHome } from "./viewModel";
+import { buildHomeModel, currentBase, resolveHome } from "./viewModel";
 
 function nodeDriver(): SqlDriver {
   const raw = new DatabaseSync(":memory:");
@@ -330,5 +330,57 @@ describe("solved cases", () => {
     );
     const { engine } = setup(data);
     expect(buildHomeModel(engine, progress(3)).cases[0]?.solved).toBe(false);
+  });
+});
+
+describe("currentBase: camera follows the current team_base claim", () => {
+  const base = (extra: Claim[] = [], supersede = true): Dataset => ({
+    episodes,
+    entities: [ent("loc_old", "location", 1), ent("loc_new", "location", 4), ent("loc_x", "location", 1)],
+    claims: [
+      clm("n_old", "loc_old", "name", 1, { value: "Old HQ CANARY_EP_1" }),
+      clm("c_old", "loc_old", "coordinates", 1, { value: "38.5,-121.5" }),
+      supersede
+        ? sup(clm("tb_old", "loc_old", "team_base", 1, { value: "true" }), 4, "tb_new")
+        : clm("tb_old", "loc_old", "team_base", 1, { value: "true" }),
+      clm("n_new", "loc_new", "name", 4, { value: "New HQ CANARY_EP_4" }),
+      clm("c_new", "loc_new", "coordinates", 4, { value: "30.27,-97.74" }),
+      clm("tb_new", "loc_new", "team_base", 4, { value: "true" }),
+      clm("c_x", "loc_x", "coordinates", 1, { value: "40,-100" }), // a place that is not a base
+      ...extra,
+    ],
+    arcItems: [], theories: [],
+  });
+  const at = (data: Dataset, n: number) => {
+    const { engine } = setup(data);
+    return currentBase(engine, progress(n));
+  };
+
+  it("before the move: the old base", () => {
+    expect(at(base(), 3)).toEqual({ id: "loc_old", position: [-121.5, 38.5] });
+  });
+  it("after the move: the new base, not the superseded one", () => {
+    expect(at(base(), 4)).toEqual({ id: "loc_new", position: [-97.74, 30.27] });
+    expect(at(base(), 5)?.id).toBe("loc_new");
+  });
+  it("peek across the move follows the same rule, without persisting", () => {
+    const { engine } = setup(base());
+    expect(currentBase(engine, peek(progress(3)))?.id).toBe("loc_new");
+    expect(currentBase(engine, progress(3))?.id).toBe("loc_old");
+  });
+  it("no team_base claim visible: null", () => {
+    expect(at(base(), 0)).toBeNull();
+    expect(at(empty(), 3)).toBeNull();
+  });
+  it("a base without valid coordinates is not a base", () => {
+    const d = base();
+    d.claims = d.claims.map((c) => (c.id === "c_old" ? ({ ...c, value: "north,west" } as Claim) : c));
+    expect(at(d, 3)).toBeNull();
+  });
+  it("without a current team_base claim after the move: null", () => {
+    expect(at(base([], true), 4)?.id).toBe("loc_new");
+    const d = base();
+    d.claims = d.claims.filter((c) => c.id !== "tb_new");
+    expect(at(d, 4)).toBeNull();
   });
 });

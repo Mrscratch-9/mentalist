@@ -20,7 +20,7 @@
   },
   "bundle": {
     "active": true,
-    "resources": { "../public/tiles/california.*": "tiles/" },
+    "resources": { "../public/tiles/california.*": "tiles/", "../public/tiles/austin.*": "tiles/" },
     "targets": "all",
     "icon": [
       "icons/32x32.png",
