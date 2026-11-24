@@ -121,3 +121,20 @@ describe("real canon (counts only)", () => {
     expect(cases.filter((e) => !named.has(e.key) || !described.has(e.key)).length).toBe(0);
   });
 });
+
+describe("real canon references (counts only)", () => {
+  const all = (k: string) =>
+    readdirSync(dir)
+      .filter((f) => f.endsWith(".yaml"))
+      .flatMap((f) => (parse(readFileSync(dir + f, "utf8"))?.[k] ?? []) as Array<Record<string, string>>);
+
+  it("every claim reference resolves; no orphan person or wiki source", () => {
+    const ents = new Set(all("entities").map((e) => e["key"]));
+    const srcs = new Set(all("sources").map((s) => s["key"]));
+    const claims = all("claims");
+    expect(claims.filter((c) => !ents.has(c["subject"]!) || (c["object"] && !ents.has(c["object"])) || !srcs.has(c["source"]!)).length).toBe(0);
+    const used = new Set(claims.flatMap((c) => [c["subject"], c["object"], c["source"]]));
+    expect(all("entities").filter((e) => e["kind"] === "person" && !used.has(e["key"])).length).toBe(0);
+    expect(all("sources").filter((s) => s["kind"] === "wiki" && !used.has(s["key"])).length).toBe(0);
+  });
+});

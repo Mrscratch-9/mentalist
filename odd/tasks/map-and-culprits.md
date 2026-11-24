@@ -13,9 +13,9 @@ Feature: show the real places on the map by widening the basemap from Sacramento
 
 ## Tasks
 
-- T1 [S4] Guard test: a claim's source is `src-<ep>` or `src-wiki-<ep>` of its own reveal episode; wiki sources have kind `wiki`, an https `thementalist.fandom.com` url and their episode. Route: inline. Commit: pending.
-- T2 [S2, S4-S6] Culprits (and places the wiki names) for cases without a confirmed perpetrator, one worker per season file `data/canon/cases-sN.yaml`. Route: 6 workers in parallel. Commit: pending.
-- T3 [S1, S3] California basemap: ranged tile reads in Tauri (custom protocol or equivalent) and in the browser dev server, a California PMTiles extract (gitignored, regeneration documented), camera and bounds that frame California with Sacramento as the default view; RAM measured with the 3D map open. Route: worker (parallel with T2). Commit: pending.
+- T1 [S4] Guard test: a claim's source is `src-<ep>` or `src-wiki-<ep>` of its own reveal episode; wiki sources have kind `wiki`, an https `thementalist.fandom.com` url and their episode. Route: inline. Commit: 0e0b2ff. Done.
+- T2 [S2, S4-S6] Culprits (and places the wiki names) for cases without a confirmed perpetrator, one worker per season file `data/canon/cases-sN.yaml`. Route: 6 workers in parallel. Commit: e0429bb (+ audit 8049bf2). Done.
+- T3 [S1, S3] California basemap: ranged tile reads in Tauri (custom protocol or equivalent) and in the browser dev server, a California PMTiles extract (gitignored, regeneration documented), camera and bounds that frame California with Sacramento as the default view; RAM measured with the 3D map open. Route: worker (parallel with T2). Commit: 22e75a2 (+ 2985943, 58fbc06). Done: z13 extract 267 MB, 175+ ranged reads all 206, release exe RAM peak 523 MB private (< 700 MB); native review approved (lineage review-bf1631e63ee6216e).
 
 - T4 [L3] App icon: original Red John smiley art (no copied logo), all Tauri icon sizes generated from one source SVG kept in the repo. Route: worker (parallel with T5). Commit: a781188. Done; reopened by L5 → T6.
 - T5 [S3] Review follow-ups of 22e75a2: dev-only tiles fallback (`cfg(debug_assertions)`), bounded concurrency for the tiles protocol, build works without the gitignored extract. Route: worker (parallel with T4). Commit: 2985943. Done.
@@ -30,3 +30,4 @@ Feature: show the real places on the map by widening the basemap from Sacramento
 - L3: Owner request: "a la aplicacion ponle uno icono puede ser la cara sonrinete de redjhon o algo significativo" → T4.
 - L4: Independent verification at 2985943: tests, CSP, ranged tiles (175 × 206, 0 external), protocol path checks, build without extract met. Defects: min zoom stops at 6.6 (California not framed); wiki culprits sample seed 20261124: `s3e7-bajoran-perp` likely contradicted, `cl-s1e21-hanson-role` unsupported, `s3e11-lima-perp` uncertain (2-3 of 12) → full audit T7; `s3e24-olaughlin-perp` conflicts with the episode-sourced accomplice role (primary source wins).
 - L5: Owner request: "el logo cambialo por la cara que hace redjhon como un homenaje o simbolizmo".
+- L6: Final verification at 58fbc06: all met. `s3e7-bajoran-perp` and `cl-s1e21-hanson-role` supported on a full read (L4 heuristic verdicts reversed); fresh sample seed 20261125: 8/8 supported; whole California framed at min zoom 5 with 5 pins in view; 0 errors / 0 CSP violations / 0 external requests. Reference-integrity test added.
