@@ -70,6 +70,9 @@ entities:
   - key: l-s6e10-brooklyn
     kind: location
     introduced: S6E10
+  - key: p-s6e5-frost
+    kind: person
+    introduced: S6E5
 
 claims:
   - key: cl-s6e1-name
@@ -443,3 +446,22 @@ claims:
     revealed: S6E10
     source: src-s6e10
     note: "city-level"
+  - key: cl-s6e5-frost-name
+    subject: p-s6e5-frost
+    predicate: name
+    value: Devin Frost
+    revealed: S6E5
+    source: src-wiki-s6e5
+  - key: cl-s6e5-role-frost
+    subject: p-s6e5-frost
+    predicate: role_in_case
+    object: c-s6e5
+    value: perpetrator
+    revealed: S6E5
+    source: src-wiki-s6e5
+    status: confirmed
+sources:
+  - key: src-wiki-s6e5
+    kind: wiki
+    episode: S6E5
+    url: https://thementalist.fandom.com/wiki/The_Red_Tattoo

@@ -228,6 +228,36 @@ entities:
   - key: p-s2e23-victim
     kind: person
     introduced: S2E23
+  - key: p-s2e1-rhonda
+    kind: person
+    introduced: S2E1
+  - key: p-s2e2-batson
+    kind: person
+    introduced: S2E2
+  - key: p-s2e4-lucas
+    kind: person
+    introduced: S2E4
+  - key: p-s2e6-sandrine
+    kind: person
+    introduced: S2E6
+  - key: p-s2e14-frank
+    kind: person
+    introduced: S2E14
+  - key: p-s2e15-elisa
+    kind: person
+    introduced: S2E15
+  - key: p-s2e17-bandino
+    kind: person
+    introduced: S2E17
+  - key: p-s2e18-willis
+    kind: person
+    introduced: S2E18
+  - key: p-s2e20-alex
+    kind: person
+    introduced: S2E20
+  - key: p-s2e22-bigelow
+    kind: person
+    introduced: S2E22
 
 claims:
   - key: k-s2e1-name
@@ -1265,3 +1295,184 @@ claims:
     value: "victim"
     revealed: S2E23
     source: src-s2e23
+  - key: k-s2e1-rhonda-name
+    subject: p-s2e1-rhonda
+    predicate: name
+    value: Rhonda Jaffe
+    revealed: S2E1
+    source: src-wiki-s2e1
+  - key: k-s2e1-rhonda-role
+    subject: p-s2e1-rhonda
+    predicate: role_in_case
+    object: c-s2e1
+    value: perpetrator
+    status: confirmed
+    revealed: S2E1
+    source: src-wiki-s2e1
+  - key: k-s2e2-batson-name
+    subject: p-s2e2-batson
+    predicate: name
+    value: Melinda Batson
+    revealed: S2E2
+    source: src-wiki-s2e2
+  - key: k-s2e2-batson-role
+    subject: p-s2e2-batson
+    predicate: role_in_case
+    object: c-s2e2
+    value: perpetrator
+    status: confirmed
+    revealed: S2E2
+    source: src-wiki-s2e2
+  - key: k-s2e4-lucas-name
+    subject: p-s2e4-lucas
+    predicate: name
+    value: Lucas Hodge
+    revealed: S2E4
+    source: src-wiki-s2e4
+  - key: k-s2e4-lucas-role
+    subject: p-s2e4-lucas
+    predicate: role_in_case
+    object: c-s2e4
+    value: perpetrator
+    status: confirmed
+    revealed: S2E4
+    source: src-wiki-s2e4
+  - key: k-s2e6-sandrine-name
+    subject: p-s2e6-sandrine
+    predicate: name
+    value: Sandrine Gerber
+    revealed: S2E6
+    source: src-wiki-s2e6
+  - key: k-s2e6-sandrine-role
+    subject: p-s2e6-sandrine
+    predicate: role_in_case
+    object: c-s2e6
+    value: perpetrator
+    status: confirmed
+    revealed: S2E6
+    source: src-wiki-s2e6
+  - key: k-s2e14-frank-name
+    subject: p-s2e14-frank
+    predicate: name
+    value: Frank
+    revealed: S2E14
+    source: src-wiki-s2e14
+  - key: k-s2e14-frank-role
+    subject: p-s2e14-frank
+    predicate: role_in_case
+    object: c-s2e14
+    value: perpetrator
+    status: confirmed
+    revealed: S2E14
+    source: src-wiki-s2e14
+  - key: k-s2e15-elisa-name
+    subject: p-s2e15-elisa
+    predicate: name
+    value: Elisa Green
+    revealed: S2E15
+    source: src-wiki-s2e15
+  - key: k-s2e15-elisa-role
+    subject: p-s2e15-elisa
+    predicate: role_in_case
+    object: c-s2e15
+    value: perpetrator
+    status: confirmed
+    revealed: S2E15
+    source: src-wiki-s2e15
+  - key: k-s2e17-bandino-name
+    subject: p-s2e17-bandino
+    predicate: name
+    value: Victor Bandino
+    revealed: S2E17
+    source: src-wiki-s2e17
+  - key: k-s2e17-bandino-role
+    subject: p-s2e17-bandino
+    predicate: role_in_case
+    object: c-s2e17
+    value: perpetrator
+    status: confirmed
+    revealed: S2E17
+    source: src-wiki-s2e17
+  - key: k-s2e18-willis-name
+    subject: p-s2e18-willis
+    predicate: name
+    value: Markham Willis
+    revealed: S2E18
+    source: src-wiki-s2e18
+  - key: k-s2e18-willis-role
+    subject: p-s2e18-willis
+    predicate: role_in_case
+    object: c-s2e18
+    value: perpetrator
+    status: confirmed
+    revealed: S2E18
+    source: src-wiki-s2e18
+  - key: k-s2e20-alex-name
+    subject: p-s2e20-alex
+    predicate: name
+    value: Alex Harrington
+    revealed: S2E20
+    source: src-wiki-s2e20
+  - key: k-s2e20-alex-role
+    subject: p-s2e20-alex
+    predicate: role_in_case
+    object: c-s2e20
+    value: perpetrator
+    status: confirmed
+    revealed: S2E20
+    source: src-wiki-s2e20
+  - key: k-s2e22-bigelow-name
+    subject: p-s2e22-bigelow
+    predicate: name
+    value: Russel Bigelow
+    revealed: S2E22
+    source: src-wiki-s2e22
+  - key: k-s2e22-bigelow-role
+    subject: p-s2e22-bigelow
+    predicate: role_in_case
+    object: c-s2e22
+    value: perpetrator
+    status: confirmed
+    revealed: S2E22
+    source: src-wiki-s2e22
+sources:
+  - key: src-wiki-s2e1
+    kind: wiki
+    episode: S2E1
+    url: https://thementalist.fandom.com/wiki/Redemption
+  - key: src-wiki-s2e2
+    kind: wiki
+    episode: S2E2
+    url: https://thementalist.fandom.com/wiki/The_Scarlet_Letter
+  - key: src-wiki-s2e4
+    kind: wiki
+    episode: S2E4
+    url: https://thementalist.fandom.com/wiki/Red_Menace
+  - key: src-wiki-s2e6
+    kind: wiki
+    episode: S2E6
+    url: https://thementalist.fandom.com/wiki/Black_Gold_and_Red_Blood
+  - key: src-wiki-s2e14
+    kind: wiki
+    episode: S2E14
+    url: https://thementalist.fandom.com/wiki/Blood_In,_Blood_Out
+  - key: src-wiki-s2e15
+    kind: wiki
+    episode: S2E15
+    url: https://thementalist.fandom.com/wiki/Red_Herring
+  - key: src-wiki-s2e17
+    kind: wiki
+    episode: S2E17
+    url: https://thementalist.fandom.com/wiki/The_Red_Box
+  - key: src-wiki-s2e18
+    kind: wiki
+    episode: S2E18
+    url: https://thementalist.fandom.com/wiki/Aingavite_Baa
+  - key: src-wiki-s2e20
+    kind: wiki
+    episode: S2E20
+    url: https://thementalist.fandom.com/wiki/Red_All_Over
+  - key: src-wiki-s2e22
+    kind: wiki
+    episode: S2E22
+    url: https://thementalist.fandom.com/wiki/Red_Letter

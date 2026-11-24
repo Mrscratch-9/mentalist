@@ -418,6 +418,18 @@ entities:
   - key: l-s4e24-vegas
     kind: location
     introduced: S4E24
+  - key: p-s4e3-jonathan
+    kind: person
+    introduced: S4E3
+  - key: p-s4e9-penn
+    kind: person
+    introduced: S4E9
+  - key: p-s4e10-wilcox
+    kind: person
+    introduced: S4E10
+  - key: p-s4e22-gladstone
+    kind: person
+    introduced: S4E22
 
 claims:
   - key: c-s4e1-name
@@ -2007,3 +2019,88 @@ claims:
     revealed: S4E24
     source: src-s4e24
     note: "city-level"
+  - key: p-s4e3-jonathan-name
+    subject: p-s4e3-jonathan
+    predicate: name
+    value: Jonathan Flint
+    revealed: S4E3
+    source: src-wiki-s4e3
+  - key: p-s4e3-jonathan-perp
+    subject: p-s4e3-jonathan
+    predicate: role_in_case
+    object: c-s4e3
+    value: perpetrator
+    revealed: S4E3
+    status: confirmed
+    source: src-wiki-s4e3
+  - key: p-s4e9-penn-name
+    subject: p-s4e9-penn
+    predicate: name
+    value: Steve Penn
+    revealed: S4E9
+    source: src-wiki-s4e9
+  - key: p-s4e9-penn-perp
+    subject: p-s4e9-penn
+    predicate: role_in_case
+    object: c-s4e9
+    value: perpetrator
+    revealed: S4E9
+    status: confirmed
+    source: src-wiki-s4e9
+  - key: p-s4e10-wilcox-name
+    subject: p-s4e10-wilcox
+    predicate: name
+    value: Tom Wilcox
+    revealed: S4E10
+    source: src-wiki-s4e10
+  - key: p-s4e10-wilcox-perp
+    subject: p-s4e10-wilcox
+    predicate: role_in_case
+    object: c-s4e10
+    value: perpetrator
+    revealed: S4E10
+    status: confirmed
+    source: src-wiki-s4e10
+  - key: p-s4e18-firth-perp
+    subject: p-s4e18-firth
+    predicate: role_in_case
+    object: c-s4e18
+    value: perpetrator
+    revealed: S4E18
+    status: confirmed
+    source: src-wiki-s4e18
+  - key: p-s4e22-gladstone-name
+    subject: p-s4e22-gladstone
+    predicate: name
+    value: Lance Gladstone
+    revealed: S4E22
+    source: src-wiki-s4e22
+  - key: p-s4e22-gladstone-perp
+    subject: p-s4e22-gladstone
+    predicate: role_in_case
+    object: c-s4e22
+    value: perpetrator
+    revealed: S4E22
+    status: confirmed
+    source: src-wiki-s4e22
+sources:
+  - key: src-wiki-s4e3
+    kind: wiki
+    episode: S4E3
+    url: https://thementalist.fandom.com/wiki/Pretty_Red_Balloon
+  - key: src-wiki-s4e9
+    kind: wiki
+    episode: S4E9
+    url: https://thementalist.fandom.com/wiki/The_Redshirt
+  - key: src-wiki-s4e10
+    kind: wiki
+    episode: S4E10
+    url: https://thementalist.fandom.com/wiki/Fugue_In_Red
+  - key: src-wiki-s4e18
+    kind: wiki
+    episode: S4E18
+    url: https://thementalist.fandom.com/wiki/Ruddy_Cheeks
+  - key: src-wiki-s4e22
+    kind: wiki
+    episode: S4E22
+    url: https://thementalist.fandom.com/wiki/So_Long,_and_Thanks_for_All_the_Red_Snapper

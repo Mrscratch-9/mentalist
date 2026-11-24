@@ -225,6 +225,51 @@ entities:
   - key: l-s3e24-mall
     kind: location
     introduced: S3E24
+  - key: p-s3e1-farrow
+    kind: person
+    introduced: S3E1
+  - key: p-s3e2-wale
+    kind: person
+    introduced: S3E2
+  - key: p-s3e3-coles
+    kind: person
+    introduced: S3E3
+  - key: p-s3e4-meyers
+    kind: person
+    introduced: S3E4
+  - key: p-s3e5-howell
+    kind: person
+    introduced: S3E5
+  - key: p-s3e6-saban
+    kind: person
+    introduced: S3E6
+  - key: p-s3e7-bajoran
+    kind: person
+    introduced: S3E7
+  - key: p-s3e10-bloom
+    kind: person
+    introduced: S3E10
+  - key: p-s3e11-lima
+    kind: person
+    introduced: S3E11
+  - key: p-s3e12-nilda
+    kind: person
+    introduced: S3E12
+  - key: p-s3e12-esther
+    kind: person
+    introduced: S3E12
+  - key: p-s3e15-puttock
+    kind: person
+    introduced: S3E15
+  - key: p-s3e18-cook
+    kind: person
+    introduced: S3E18
+  - key: p-s3e19-erica
+    kind: person
+    introduced: S3E19
+  - key: p-s3e22-carruthers
+    kind: person
+    introduced: S3E22
 
 claims:
   - key: c-s3e1-name
@@ -1436,4 +1481,282 @@ claims:
     object: c-s3e24
     revealed: S3E24
     source: src-s3e24
-
+  - key: p-s3e1-farrow-name
+    subject: p-s3e1-farrow
+    predicate: name
+    value: Keith Farrow
+    revealed: S3E1
+    source: src-wiki-s3e1
+  - key: s3e1-farrow-perp
+    subject: p-s3e1-farrow
+    predicate: role_in_case
+    object: c-s3e1
+    value: perpetrator
+    status: confirmed
+    revealed: S3E1
+    source: src-wiki-s3e1
+  - key: p-s3e2-wale-name
+    subject: p-s3e2-wale
+    predicate: name
+    value: Concetta Wale
+    revealed: S3E2
+    source: src-wiki-s3e2
+  - key: s3e2-wale-perp
+    subject: p-s3e2-wale
+    predicate: role_in_case
+    object: c-s3e2
+    value: perpetrator
+    status: confirmed
+    revealed: S3E2
+    source: src-wiki-s3e2
+  - key: p-s3e3-coles-name
+    subject: p-s3e3-coles
+    predicate: name
+    value: Julius Coles
+    revealed: S3E3
+    source: src-wiki-s3e3
+  - key: s3e3-coles-perp
+    subject: p-s3e3-coles
+    predicate: role_in_case
+    object: c-s3e3
+    value: perpetrator
+    status: confirmed
+    revealed: S3E3
+    source: src-wiki-s3e3
+  - key: p-s3e4-meyers-name
+    subject: p-s3e4-meyers
+    predicate: name
+    value: Sean Meyers
+    revealed: S3E4
+    source: src-wiki-s3e4
+  - key: s3e4-meyers-perp
+    subject: p-s3e4-meyers
+    predicate: role_in_case
+    object: c-s3e4
+    value: perpetrator
+    status: confirmed
+    revealed: S3E4
+    source: src-wiki-s3e4
+  - key: p-s3e5-howell-name
+    subject: p-s3e5-howell
+    predicate: name
+    value: Cobb Howell
+    revealed: S3E5
+    source: src-wiki-s3e5
+  - key: s3e5-howell-perp
+    subject: p-s3e5-howell
+    predicate: role_in_case
+    object: c-s3e5
+    value: perpetrator
+    status: confirmed
+    revealed: S3E5
+    source: src-wiki-s3e5
+  - key: p-s3e6-saban-name
+    subject: p-s3e6-saban
+    predicate: name
+    value: Ed Saban
+    revealed: S3E6
+    source: src-wiki-s3e6
+  - key: s3e6-saban-perp
+    subject: p-s3e6-saban
+    predicate: role_in_case
+    object: c-s3e6
+    value: perpetrator
+    status: confirmed
+    revealed: S3E6
+    source: src-wiki-s3e6
+  - key: p-s3e7-bajoran-name
+    subject: p-s3e7-bajoran
+    predicate: name
+    value: Yuri Bajoran
+    revealed: S3E7
+    source: src-wiki-s3e7
+  - key: s3e7-bajoran-perp
+    subject: p-s3e7-bajoran
+    predicate: role_in_case
+    object: c-s3e7
+    value: perpetrator
+    status: confirmed
+    revealed: S3E7
+    source: src-wiki-s3e7
+  - key: p-s3e10-bloom-name
+    subject: p-s3e10-bloom
+    predicate: name
+    value: Lailah Bloom
+    revealed: S3E10
+    source: src-wiki-s3e10
+  - key: s3e10-bloom-perp
+    subject: p-s3e10-bloom
+    predicate: role_in_case
+    object: c-s3e10
+    value: perpetrator
+    status: confirmed
+    revealed: S3E10
+    source: src-wiki-s3e10
+  - key: p-s3e11-lima-name
+    subject: p-s3e11-lima
+    predicate: name
+    value: Suge Lima
+    revealed: S3E11
+    source: src-wiki-s3e11
+  - key: s3e11-lima-perp
+    subject: p-s3e11-lima
+    predicate: role_in_case
+    object: c-s3e11
+    value: perpetrator
+    status: confirmed
+    revealed: S3E11
+    source: src-wiki-s3e11
+  - key: p-s3e12-nilda-name
+    subject: p-s3e12-nilda
+    predicate: name
+    value: Nilda
+    revealed: S3E12
+    source: src-wiki-s3e12
+  - key: s3e12-nilda-perp
+    subject: p-s3e12-nilda
+    predicate: role_in_case
+    object: c-s3e12
+    value: perpetrator
+    status: confirmed
+    revealed: S3E12
+    source: src-wiki-s3e12
+  - key: p-s3e12-esther-name
+    subject: p-s3e12-esther
+    predicate: name
+    value: Esther
+    revealed: S3E12
+    source: src-wiki-s3e12
+  - key: s3e12-esther-perp
+    subject: p-s3e12-esther
+    predicate: role_in_case
+    object: c-s3e12
+    value: perpetrator
+    status: confirmed
+    revealed: S3E12
+    source: src-wiki-s3e12
+  - key: p-s3e15-puttock-name
+    subject: p-s3e15-puttock
+    predicate: name
+    value: Dean Puttock
+    revealed: S3E15
+    source: src-wiki-s3e15
+  - key: s3e15-puttock-perp
+    subject: p-s3e15-puttock
+    predicate: role_in_case
+    object: c-s3e15
+    value: perpetrator
+    status: confirmed
+    revealed: S3E15
+    source: src-wiki-s3e15
+  - key: p-s3e18-cook-name
+    subject: p-s3e18-cook
+    predicate: name
+    value: Elspeth Cook
+    revealed: S3E18
+    source: src-wiki-s3e18
+  - key: s3e18-cook-perp
+    subject: p-s3e18-cook
+    predicate: role_in_case
+    object: c-s3e18
+    value: perpetrator
+    status: confirmed
+    revealed: S3E18
+    source: src-wiki-s3e18
+  - key: p-s3e19-erica-name
+    subject: p-s3e19-erica
+    predicate: name
+    value: Erica Flynn
+    revealed: S3E19
+    source: src-wiki-s3e19
+  - key: s3e19-erica-perp
+    subject: p-s3e19-erica
+    predicate: role_in_case
+    object: c-s3e19
+    value: perpetrator
+    status: confirmed
+    revealed: S3E19
+    source: src-wiki-s3e19
+  - key: p-s3e22-carruthers-name
+    subject: p-s3e22-carruthers
+    predicate: name
+    value: Kieran Carruthers
+    revealed: S3E22
+    source: src-wiki-s3e22
+  - key: s3e22-carruthers-perp
+    subject: p-s3e22-carruthers
+    predicate: role_in_case
+    object: c-s3e22
+    value: perpetrator
+    status: confirmed
+    revealed: S3E22
+    source: src-wiki-s3e22
+  - key: s3e24-olaughlin-perp
+    subject: p-olaughlin
+    predicate: role_in_case
+    object: c-s3e24
+    value: perpetrator
+    status: confirmed
+    revealed: S3E24
+    source: src-wiki-s3e24
+sources:
+  - key: src-wiki-s3e1
+    kind: wiki
+    episode: S3E1
+    url: https://thementalist.fandom.com/wiki/Red_Sky_At_Night
+  - key: src-wiki-s3e2
+    kind: wiki
+    episode: S3E2
+    url: https://thementalist.fandom.com/wiki/Cackle-bladder_Blood
+  - key: src-wiki-s3e3
+    kind: wiki
+    episode: S3E3
+    url: https://thementalist.fandom.com/wiki/The_Blood_On_His_Hands
+  - key: src-wiki-s3e4
+    kind: wiki
+    episode: S3E4
+    url: https://thementalist.fandom.com/wiki/Red_Carpet_Treatment
+  - key: src-wiki-s3e5
+    kind: wiki
+    episode: S3E5
+    url: https://thementalist.fandom.com/wiki/The_Red_Ponies
+  - key: src-wiki-s3e6
+    kind: wiki
+    episode: S3E6
+    url: https://thementalist.fandom.com/wiki/Pink_Chanel_Suit
+  - key: src-wiki-s3e7
+    kind: wiki
+    episode: S3E7
+    url: https://thementalist.fandom.com/wiki/Red_Hot
+  - key: src-wiki-s3e10
+    kind: wiki
+    episode: S3E10
+    url: https://thementalist.fandom.com/wiki/Jolly_Red_Elf
+  - key: src-wiki-s3e11
+    kind: wiki
+    episode: S3E11
+    url: https://thementalist.fandom.com/wiki/Bloodsport
+  - key: src-wiki-s3e12
+    kind: wiki
+    episode: S3E12
+    url: https://thementalist.fandom.com/wiki/Bloodhounds
+  - key: src-wiki-s3e15
+    kind: wiki
+    episode: S3E15
+    url: https://thementalist.fandom.com/wiki/Red_Gold
+  - key: src-wiki-s3e18
+    kind: wiki
+    episode: S3E18
+    url: https://thementalist.fandom.com/wiki/The_Red_Mile
+  - key: src-wiki-s3e19
+    kind: wiki
+    episode: S3E19
+    url: https://thementalist.fandom.com/wiki/Every_Rose_Has_Its_Thorn
+  - key: src-wiki-s3e22
+    kind: wiki
+    episode: S3E22
+    url: https://thementalist.fandom.com/wiki/Rhapsody_in_Red
+  - key: src-wiki-s3e24
+    kind: wiki
+    episode: S3E24
+    url: https://thementalist.fandom.com/wiki/Strawberries_and_Cream

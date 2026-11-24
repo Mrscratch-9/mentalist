@@ -171,6 +171,87 @@ entities:
   - key: l-s1e23-stateland
     kind: location
     introduced: S1E23
+  - key: p-s1e2-boatwright-malcolm
+    kind: person
+    introduced: S1E2
+  - key: p-s1e2-boatwright-sandra
+    kind: person
+    introduced: S1E2
+  - key: p-s1e3-hope
+    kind: person
+    introduced: S1E3
+  - key: p-s1e3-kurtik
+    kind: person
+    introduced: S1E3
+  - key: p-s1e3-andy
+    kind: person
+    introduced: S1E3
+  - key: p-s1e3-win
+    kind: person
+    introduced: S1E3
+  - key: p-s1e4-sands
+    kind: person
+    introduced: S1E4
+  - key: p-s1e4-bennett
+    kind: person
+    introduced: S1E4
+  - key: p-s1e5-kyle
+    kind: person
+    introduced: S1E5
+  - key: p-s1e6-cardeira
+    kind: person
+    introduced: S1E6
+  - key: p-s1e7-clara
+    kind: person
+    introduced: S1E7
+  - key: p-s1e8-blakely
+    kind: person
+    introduced: S1E8
+  - key: p-s1e9-olds
+    kind: person
+    introduced: S1E9
+  - key: p-s1e10-stern
+    kind: person
+    introduced: S1E10
+  - key: p-s1e11-mrs-renfrew
+    kind: person
+    introduced: S1E11
+  - key: p-s1e12-michael
+    kind: person
+    introduced: S1E12
+  - key: p-s1e13-hawkes
+    kind: person
+    introduced: S1E13
+  - key: p-s1e14-haightly
+    kind: person
+    introduced: S1E14
+  - key: p-s1e15-prentiss
+    kind: person
+    introduced: S1E15
+  - key: p-s1e16-hollenbeck
+    kind: person
+    introduced: S1E16
+  - key: p-s1e17-faulk
+    kind: person
+    introduced: S1E17
+  - key: p-s1e18-hendrix
+    kind: person
+    introduced: S1E18
+  - key: p-s1e19-fulton
+    kind: person
+    introduced: S1E19
+  - key: p-s1e19-scott
+    kind: person
+    introduced: S1E19
+  - key: p-s1e20-russo
+    kind: person
+    introduced: S1E20
+  - key: p-s1e21-hanson
+    kind: person
+    introduced: S1E21
+  - key: p-s1e22-elliot
+    kind: person
+    introduced: S1E22
 
 claims:
   - key: cl-s1e1-name
@@ -897,3 +978,466 @@ claims:
     value: "true"
     revealed: S1E23
     source: src-s1e23
+  - key: cl-s1e2-boatwright-malcolm-name
+    subject: p-s1e2-boatwright-malcolm
+    predicate: name
+    value: Malcolm Boatwright
+    revealed: S1E2
+    source: src-wiki-s1e2
+  - key: cl-s1e2-boatwright-malcolm-role
+    subject: p-s1e2-boatwright-malcolm
+    predicate: role_in_case
+    object: c-s1e2
+    value: perpetrator
+    revealed: S1E2
+    source: src-wiki-s1e2
+    status: confirmed
+  - key: cl-s1e2-boatwright-sandra-name
+    subject: p-s1e2-boatwright-sandra
+    predicate: name
+    value: Sandra Boatwright
+    revealed: S1E2
+    source: src-wiki-s1e2
+  - key: cl-s1e2-boatwright-sandra-role
+    subject: p-s1e2-boatwright-sandra
+    predicate: role_in_case
+    object: c-s1e2
+    value: accomplice
+    revealed: S1E2
+    source: src-wiki-s1e2
+    status: confirmed
+  - key: cl-s1e3-hope-name
+    subject: p-s1e3-hope
+    predicate: name
+    value: Hope
+    revealed: S1E3
+    source: src-wiki-s1e3
+  - key: cl-s1e3-hope-role
+    subject: p-s1e3-hope
+    predicate: role_in_case
+    object: c-s1e3
+    value: perpetrator
+    revealed: S1E3
+    source: src-wiki-s1e3
+    status: confirmed
+  - key: cl-s1e3-kurtik-name
+    subject: p-s1e3-kurtik
+    predicate: name
+    value: Danny Kurtik
+    revealed: S1E3
+    source: src-wiki-s1e3
+  - key: cl-s1e3-kurtik-role
+    subject: p-s1e3-kurtik
+    predicate: role_in_case
+    object: c-s1e3
+    value: perpetrator
+    revealed: S1E3
+    source: src-wiki-s1e3
+    status: confirmed
+  - key: cl-s1e3-andy-name
+    subject: p-s1e3-andy
+    predicate: name
+    value: Andy
+    revealed: S1E3
+    source: src-wiki-s1e3
+  - key: cl-s1e3-andy-role
+    subject: p-s1e3-andy
+    predicate: role_in_case
+    object: c-s1e3
+    value: accomplice
+    revealed: S1E3
+    source: src-wiki-s1e3
+    status: confirmed
+  - key: cl-s1e3-win-name
+    subject: p-s1e3-win
+    predicate: name
+    value: Win
+    revealed: S1E3
+    source: src-wiki-s1e3
+  - key: cl-s1e3-win-role
+    subject: p-s1e3-win
+    predicate: role_in_case
+    object: c-s1e3
+    value: accomplice
+    revealed: S1E3
+    source: src-wiki-s1e3
+    status: confirmed
+  - key: cl-s1e4-sands-name
+    subject: p-s1e4-sands
+    predicate: name
+    value: Jennifer Sands
+    revealed: S1E4
+    source: src-wiki-s1e4
+  - key: cl-s1e4-sands-role
+    subject: p-s1e4-sands
+    predicate: role_in_case
+    object: c-s1e4
+    value: perpetrator
+    revealed: S1E4
+    source: src-wiki-s1e4
+    status: confirmed
+  - key: cl-s1e4-bennett-name
+    subject: p-s1e4-bennett
+    predicate: name
+    value: Michael Bennett
+    revealed: S1E4
+    source: src-wiki-s1e4
+  - key: cl-s1e4-bennett-role
+    subject: p-s1e4-bennett
+    predicate: role_in_case
+    object: c-s1e4
+    value: accomplice
+    revealed: S1E4
+    source: src-wiki-s1e4
+    status: confirmed
+  - key: cl-s1e5-kyle-name
+    subject: p-s1e5-kyle
+    predicate: name
+    value: Kyle
+    revealed: S1E5
+    source: src-wiki-s1e5
+  - key: cl-s1e5-kyle-role
+    subject: p-s1e5-kyle
+    predicate: role_in_case
+    object: c-s1e5
+    value: perpetrator
+    revealed: S1E5
+    source: src-wiki-s1e5
+    status: confirmed
+  - key: cl-s1e6-cardeira-name
+    subject: p-s1e6-cardeira
+    predicate: name
+    value: Daniel Cardeira
+    revealed: S1E6
+    source: src-wiki-s1e6
+  - key: cl-s1e6-cardeira-role
+    subject: p-s1e6-cardeira
+    predicate: role_in_case
+    object: c-s1e6
+    value: perpetrator
+    revealed: S1E6
+    source: src-wiki-s1e6
+    status: confirmed
+  - key: cl-s1e7-clara-name
+    subject: p-s1e7-clara
+    predicate: name
+    value: Clara Tennant
+    revealed: S1E7
+    source: src-wiki-s1e7
+  - key: cl-s1e7-clara-role
+    subject: p-s1e7-clara
+    predicate: role_in_case
+    object: c-s1e7
+    value: perpetrator
+    revealed: S1E7
+    source: src-wiki-s1e7
+    status: confirmed
+  - key: cl-s1e8-blakely-name
+    subject: p-s1e8-blakely
+    predicate: name
+    value: Sam Blakely
+    revealed: S1E8
+    source: src-wiki-s1e8
+  - key: cl-s1e8-blakely-role
+    subject: p-s1e8-blakely
+    predicate: role_in_case
+    object: c-s1e8
+    value: perpetrator
+    revealed: S1E8
+    source: src-wiki-s1e8
+    status: confirmed
+  - key: cl-s1e9-olds-name
+    subject: p-s1e9-olds
+    predicate: name
+    value: Tommy Olds
+    revealed: S1E9
+    source: src-wiki-s1e9
+  - key: cl-s1e9-olds-role
+    subject: p-s1e9-olds
+    predicate: role_in_case
+    object: c-s1e9
+    value: perpetrator
+    revealed: S1E9
+    source: src-wiki-s1e9
+    status: confirmed
+  - key: cl-s1e10-stern-name
+    subject: p-s1e10-stern
+    predicate: name
+    value: Chancellor Stern
+    revealed: S1E10
+    source: src-wiki-s1e10
+  - key: cl-s1e10-stern-role
+    subject: p-s1e10-stern
+    predicate: role_in_case
+    object: c-s1e10
+    value: perpetrator
+    revealed: S1E10
+    source: src-wiki-s1e10
+    status: confirmed
+  - key: cl-s1e11-mrs-renfrew-name
+    subject: p-s1e11-mrs-renfrew
+    predicate: name
+    value: Mrs. Renfrew
+    revealed: S1E11
+    source: src-wiki-s1e11
+  - key: cl-s1e11-mrs-renfrew-role
+    subject: p-s1e11-mrs-renfrew
+    predicate: role_in_case
+    object: c-s1e11
+    value: perpetrator
+    revealed: S1E11
+    source: src-wiki-s1e11
+    status: confirmed
+  - key: cl-s1e12-michael-name
+    subject: p-s1e12-michael
+    predicate: name
+    value: Michael Elkins
+    revealed: S1E12
+    source: src-wiki-s1e12
+  - key: cl-s1e12-michael-role
+    subject: p-s1e12-michael
+    predicate: role_in_case
+    object: c-s1e12
+    value: perpetrator
+    revealed: S1E12
+    source: src-wiki-s1e12
+    status: confirmed
+  - key: cl-s1e13-hawkes-name
+    subject: p-s1e13-hawkes
+    predicate: name
+    value: Kathryn Hawkes
+    revealed: S1E13
+    source: src-wiki-s1e13
+  - key: cl-s1e13-hawkes-role
+    subject: p-s1e13-hawkes
+    predicate: role_in_case
+    object: c-s1e13
+    value: perpetrator
+    revealed: S1E13
+    source: src-wiki-s1e13
+    status: confirmed
+  - key: cl-s1e14-haightly-name
+    subject: p-s1e14-haightly
+    predicate: name
+    value: Kevin Haightly
+    revealed: S1E14
+    source: src-wiki-s1e14
+  - key: cl-s1e14-haightly-role
+    subject: p-s1e14-haightly
+    predicate: role_in_case
+    object: c-s1e14
+    value: perpetrator
+    revealed: S1E14
+    source: src-wiki-s1e14
+    status: confirmed
+  - key: cl-s1e15-prentiss-name
+    subject: p-s1e15-prentiss
+    predicate: name
+    value: Heather Prentiss
+    revealed: S1E15
+    source: src-wiki-s1e15
+  - key: cl-s1e15-prentiss-role
+    subject: p-s1e15-prentiss
+    predicate: role_in_case
+    object: c-s1e15
+    value: perpetrator
+    revealed: S1E15
+    source: src-wiki-s1e15
+    status: confirmed
+  - key: cl-s1e16-hollenbeck-name
+    subject: p-s1e16-hollenbeck
+    predicate: name
+    value: Dan Hollenbeck
+    revealed: S1E16
+    source: src-wiki-s1e16
+  - key: cl-s1e16-hollenbeck-role
+    subject: p-s1e16-hollenbeck
+    predicate: role_in_case
+    object: c-s1e16
+    value: perpetrator
+    revealed: S1E16
+    source: src-wiki-s1e16
+    status: confirmed
+  - key: cl-s1e17-faulk-name
+    subject: p-s1e17-faulk
+    predicate: name
+    value: Randall Faulk
+    revealed: S1E17
+    source: src-wiki-s1e17
+  - key: cl-s1e17-faulk-role
+    subject: p-s1e17-faulk
+    predicate: role_in_case
+    object: c-s1e17
+    value: perpetrator
+    revealed: S1E17
+    source: src-wiki-s1e17
+    status: confirmed
+  - key: cl-s1e18-hendrix-name
+    subject: p-s1e18-hendrix
+    predicate: name
+    value: Lindsay Hendrix
+    revealed: S1E18
+    source: src-wiki-s1e18
+  - key: cl-s1e18-hendrix-role
+    subject: p-s1e18-hendrix
+    predicate: role_in_case
+    object: c-s1e18
+    value: perpetrator
+    revealed: S1E18
+    source: src-wiki-s1e18
+    status: confirmed
+  - key: cl-s1e19-fulton-name
+    subject: p-s1e19-fulton
+    predicate: name
+    value: Brandon Fulton
+    revealed: S1E19
+    source: src-wiki-s1e19
+  - key: cl-s1e19-fulton-role
+    subject: p-s1e19-fulton
+    predicate: role_in_case
+    object: c-s1e19
+    value: perpetrator
+    revealed: S1E19
+    source: src-wiki-s1e19
+    status: confirmed
+  - key: cl-s1e19-scott-name
+    subject: p-s1e19-scott
+    predicate: name
+    value: Felicia Scott
+    revealed: S1E19
+    source: src-wiki-s1e19
+  - key: cl-s1e19-scott-role
+    subject: p-s1e19-scott
+    predicate: role_in_case
+    object: c-s1e19
+    value: accomplice
+    revealed: S1E19
+    source: src-wiki-s1e19
+    status: confirmed
+  - key: cl-s1e20-russo-name
+    subject: p-s1e20-russo
+    predicate: name
+    value: Gina Russo
+    revealed: S1E20
+    source: src-wiki-s1e20
+  - key: cl-s1e20-russo-role
+    subject: p-s1e20-russo
+    predicate: role_in_case
+    object: c-s1e20
+    value: perpetrator
+    revealed: S1E20
+    source: src-wiki-s1e20
+    status: confirmed
+  - key: cl-s1e21-hanson-name
+    subject: p-s1e21-hanson
+    predicate: name
+    value: Stuart Hanson
+    revealed: S1E21
+    source: src-wiki-s1e21
+  - key: cl-s1e21-hanson-role
+    subject: p-s1e21-hanson
+    predicate: role_in_case
+    object: c-s1e21
+    value: perpetrator
+    revealed: S1E21
+    source: src-wiki-s1e21
+    status: confirmed
+  - key: cl-s1e22-elliot-name
+    subject: p-s1e22-elliot
+    predicate: name
+    value: Elliot
+    revealed: S1E22
+    source: src-wiki-s1e22
+  - key: cl-s1e22-elliot-role
+    subject: p-s1e22-elliot
+    predicate: role_in_case
+    object: c-s1e22
+    value: perpetrator
+    revealed: S1E22
+    source: src-wiki-s1e22
+    status: confirmed
+sources:
+  - key: src-wiki-s1e2
+    kind: wiki
+    episode: S1E2
+    url: https://thementalist.fandom.com/wiki/Red_Hair_and_Silver_Tape
+  - key: src-wiki-s1e3
+    kind: wiki
+    episode: S1E3
+    url: https://thementalist.fandom.com/wiki/Red_Tide
+  - key: src-wiki-s1e4
+    kind: wiki
+    episode: S1E4
+    url: https://thementalist.fandom.com/wiki/Ladies_in_Red
+  - key: src-wiki-s1e5
+    kind: wiki
+    episode: S1E5
+    url: https://thementalist.fandom.com/wiki/Redwood
+  - key: src-wiki-s1e6
+    kind: wiki
+    episode: S1E6
+    url: https://thementalist.fandom.com/wiki/Red_Handed
+  - key: src-wiki-s1e7
+    kind: wiki
+    episode: S1E7
+    url: https://thementalist.fandom.com/wiki/Seeing_Red
+  - key: src-wiki-s1e8
+    kind: wiki
+    episode: S1E8
+    url: https://thementalist.fandom.com/wiki/The_Thin_Red_Line
+  - key: src-wiki-s1e9
+    kind: wiki
+    episode: S1E9
+    url: https://thementalist.fandom.com/wiki/Flame_Red
+  - key: src-wiki-s1e10
+    kind: wiki
+    episode: S1E10
+    url: https://thementalist.fandom.com/wiki/Red_Brick_and_Ivy
+  - key: src-wiki-s1e11
+    kind: wiki
+    episode: S1E11
+    url: https://thementalist.fandom.com/wiki/Red_John's_Friends
+  - key: src-wiki-s1e12
+    kind: wiki
+    episode: S1E12
+    url: https://thementalist.fandom.com/wiki/Red_Rum
+  - key: src-wiki-s1e13
+    kind: wiki
+    episode: S1E13
+    url: https://thementalist.fandom.com/wiki/Paint_It_Red
+  - key: src-wiki-s1e14
+    kind: wiki
+    episode: S1E14
+    url: https://thementalist.fandom.com/wiki/Crimson_Casanova
+  - key: src-wiki-s1e15
+    kind: wiki
+    episode: S1E15
+    url: https://thementalist.fandom.com/wiki/Scarlett_Fever
+  - key: src-wiki-s1e16
+    kind: wiki
+    episode: S1E16
+    url: https://thementalist.fandom.com/wiki/Bloodshot
+  - key: src-wiki-s1e17
+    kind: wiki
+    episode: S1E17
+    url: https://thementalist.fandom.com/wiki/Carnelian,_Inc.
+  - key: src-wiki-s1e18
+    kind: wiki
+    episode: S1E18
+    url: https://thementalist.fandom.com/wiki/Russet_Potatoes
+  - key: src-wiki-s1e19
+    kind: wiki
+    episode: S1E19
+    url: https://thementalist.fandom.com/wiki/A_Dozen_Red_Roses
+  - key: src-wiki-s1e20
+    kind: wiki
+    episode: S1E20
+    url: https://thementalist.fandom.com/wiki/Red_Sauce
+  - key: src-wiki-s1e21
+    kind: wiki
+    episode: S1E21
+    url: https://thementalist.fandom.com/wiki/Miss_Red
+  - key: src-wiki-s1e22
+    kind: wiki
+    episode: S1E22
+    url: https://thementalist.fandom.com/wiki/Blood_Brothers

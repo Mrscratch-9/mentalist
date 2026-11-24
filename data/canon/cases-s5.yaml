@@ -278,6 +278,42 @@ entities:
   - key: l-s5e22-motel
     kind: location
     introduced: S5E22
+  - key: p-s5e1-yannick
+    kind: person
+    introduced: S5E1
+  - key: p-s5e5-kim
+    kind: person
+    introduced: S5E5
+  - key: p-s5e6-sloan
+    kind: person
+    introduced: S5E6
+  - key: p-s5e9-dilmer
+    kind: person
+    introduced: S5E9
+  - key: p-s5e9-bosch
+    kind: person
+    introduced: S5E9
+  - key: p-s5e9-phipps
+    kind: person
+    introduced: S5E9
+  - key: p-s5e10-gold
+    kind: person
+    introduced: S5E10
+  - key: p-s5e11-lyle
+    kind: person
+    introduced: S5E11
+  - key: p-s5e13-holly
+    kind: person
+    introduced: S5E13
+  - key: p-s5e14-paul
+    kind: person
+    introduced: S5E14
+  - key: p-s5e15-elise
+    kind: person
+    introduced: S5E15
+  - key: p-s5e20-elizabeth
+    kind: person
+    introduced: S5E20
 
 claims:
   - key: c-s5e1-name
@@ -1367,3 +1403,212 @@ claims:
     object: c-s5e22
     revealed: S5E22
     source: src-s5e22
+  - key: s5e1-yannick-name
+    subject: p-s5e1-yannick
+    predicate: name
+    value: Tom Yannick
+    revealed: S5E1
+    source: src-wiki-s5e1
+  - key: s5e1-yannick-role
+    subject: p-s5e1-yannick
+    predicate: role_in_case
+    object: c-s5e1
+    value: perpetrator
+    status: confirmed
+    revealed: S5E1
+    source: src-wiki-s5e1
+  - key: s5e5-kim-name
+    subject: p-s5e5-kim
+    predicate: name
+    value: Nathaniel Kim
+    revealed: S5E5
+    source: src-wiki-s5e5
+  - key: s5e5-kim-role
+    subject: p-s5e5-kim
+    predicate: role_in_case
+    object: c-s5e5
+    value: perpetrator
+    status: confirmed
+    revealed: S5E5
+    source: src-wiki-s5e5
+  - key: s5e6-sloan-name
+    subject: p-s5e6-sloan
+    predicate: name
+    value: Sloan Dietz
+    revealed: S5E6
+    source: src-wiki-s5e6
+  - key: s5e6-sloan-role
+    subject: p-s5e6-sloan
+    predicate: role_in_case
+    object: c-s5e6
+    value: perpetrator
+    status: confirmed
+    revealed: S5E6
+    source: src-wiki-s5e6
+  - key: s5e9-dilmer-name
+    subject: p-s5e9-dilmer
+    predicate: name
+    value: Nathan Dilmer
+    revealed: S5E9
+    source: src-wiki-s5e9
+  - key: s5e9-dilmer-role
+    subject: p-s5e9-dilmer
+    predicate: role_in_case
+    object: c-s5e9
+    value: perpetrator
+    status: confirmed
+    revealed: S5E9
+    source: src-wiki-s5e9
+  - key: s5e9-bosch-name
+    subject: p-s5e9-bosch
+    predicate: name
+    value: Quentin Bosch
+    revealed: S5E9
+    source: src-wiki-s5e9
+  - key: s5e9-bosch-role
+    subject: p-s5e9-bosch
+    predicate: role_in_case
+    object: c-s5e9
+    value: perpetrator
+    status: confirmed
+    revealed: S5E9
+    source: src-wiki-s5e9
+  - key: s5e9-phipps-name
+    subject: p-s5e9-phipps
+    predicate: name
+    value: Victor Phipps
+    revealed: S5E9
+    source: src-wiki-s5e9
+  - key: s5e9-phipps-role
+    subject: p-s5e9-phipps
+    predicate: role_in_case
+    object: c-s5e9
+    value: perpetrator
+    status: confirmed
+    revealed: S5E9
+    source: src-wiki-s5e9
+  - key: s5e10-gold-name
+    subject: p-s5e10-gold
+    predicate: name
+    value: Matthew Gold
+    revealed: S5E10
+    source: src-wiki-s5e10
+  - key: s5e10-gold-role
+    subject: p-s5e10-gold
+    predicate: role_in_case
+    object: c-s5e10
+    value: perpetrator
+    status: confirmed
+    revealed: S5E10
+    source: src-wiki-s5e10
+  - key: s5e11-lyle-name
+    subject: p-s5e11-lyle
+    predicate: name
+    value: Joanna Lyle
+    revealed: S5E11
+    source: src-wiki-s5e11
+  - key: s5e11-lyle-role
+    subject: p-s5e11-lyle
+    predicate: role_in_case
+    object: c-s5e11
+    value: perpetrator
+    status: confirmed
+    revealed: S5E11
+    source: src-wiki-s5e11
+  - key: s5e13-holly-name
+    subject: p-s5e13-holly
+    predicate: name
+    value: Holly Preston
+    revealed: S5E13
+    source: src-wiki-s5e13
+  - key: s5e13-holly-role
+    subject: p-s5e13-holly
+    predicate: role_in_case
+    object: c-s5e13
+    value: perpetrator
+    status: confirmed
+    revealed: S5E13
+    source: src-wiki-s5e13
+  - key: s5e14-paul-name
+    subject: p-s5e14-paul
+    predicate: name
+    value: Paul Friedman
+    revealed: S5E14
+    source: src-wiki-s5e14
+  - key: s5e14-paul-role
+    subject: p-s5e14-paul
+    predicate: role_in_case
+    object: c-s5e14
+    value: perpetrator
+    status: confirmed
+    revealed: S5E14
+    source: src-wiki-s5e14
+  - key: s5e15-elise-name
+    subject: p-s5e15-elise
+    predicate: name
+    value: Elise Vogelson
+    revealed: S5E15
+    source: src-wiki-s5e15
+  - key: s5e15-elise-role
+    subject: p-s5e15-elise
+    predicate: role_in_case
+    object: c-s5e15
+    value: perpetrator
+    status: confirmed
+    revealed: S5E15
+    source: src-wiki-s5e15
+  - key: s5e20-elizabeth-name
+    subject: p-s5e20-elizabeth
+    predicate: name
+    value: Elizabeth
+    revealed: S5E20
+    source: src-wiki-s5e20
+  - key: s5e20-elizabeth-role
+    subject: p-s5e20-elizabeth
+    predicate: role_in_case
+    object: c-s5e20
+    value: perpetrator
+    status: confirmed
+    revealed: S5E20
+    source: src-wiki-s5e20
+sources:
+  - key: src-wiki-s5e1
+    kind: wiki
+    episode: S5E1
+    url: https://thementalist.fandom.com/wiki/The_Crimson_Ticket
+  - key: src-wiki-s5e5
+    kind: wiki
+    episode: S5E5
+    url: https://thementalist.fandom.com/wiki/Red_Dawn
+  - key: src-wiki-s5e6
+    kind: wiki
+    episode: S5E6
+    url: https://thementalist.fandom.com/wiki/Cherry_Picked
+  - key: src-wiki-s5e9
+    kind: wiki
+    episode: S5E9
+    url: https://thementalist.fandom.com/wiki/Black_Cherry
+  - key: src-wiki-s5e10
+    kind: wiki
+    episode: S5E10
+    url: https://thementalist.fandom.com/wiki/Panama_Red
+  - key: src-wiki-s5e11
+    kind: wiki
+    episode: S5E11
+    url: https://thementalist.fandom.com/wiki/Days_of_Wine_and_Roses
+  - key: src-wiki-s5e13
+    kind: wiki
+    episode: S5E13
+    url: https://thementalist.fandom.com/wiki/The_Red_Barn
+  - key: src-wiki-s5e14
+    kind: wiki
+    episode: S5E14
+    url: https://thementalist.fandom.com/wiki/Red_in_Tooth_and_Claw
+  - key: src-wiki-s5e15
+    kind: wiki
+    episode: S5E15
+    url: https://thementalist.fandom.com/wiki/Red_Lacquer_Nail_Polish
+  - key: src-wiki-s5e20
+    kind: wiki
+    episode: S5E20
+    url: https://thementalist.fandom.com/wiki/Red_Velvet_Cupcakes
