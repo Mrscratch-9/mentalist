@@ -35,8 +35,8 @@ The 3D map is MapLibre + deck.gl over a local PMTiles extract of California (z0-
   The Tauri asset protocol was not used because it ignores `Range`. `cargo test` covers range parsing and the path check.
 - `vite build` removes `dist/tiles` so the extract is not also embedded in the executable.
 
-Camera: opens on downtown Sacramento (3D tilt); zoom out (min 5) to frame California; `maxBounds` is the extract's
-bbox so the user cannot pan into empty tiles. Past z13 the tiles overzoom.
+Camera: opens on downtown Sacramento (3D tilt); zoom out (min 5) to frame California; `maxBounds` is the extract plus a margin (so the whole state fits in the window); the user can pan a little past the
+extract (dark background, no tiles). Past z13 the tiles overzoom.
 
 Nothing is requested from the network: the style has no `glyphs`/`sprite` and no symbol (label/icon)
 layers, so no glyph PBFs or sprites are needed or vendored. Pin labels are drawn by deck.gl on a canvas,

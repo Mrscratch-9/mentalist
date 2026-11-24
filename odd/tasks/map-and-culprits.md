@@ -19,9 +19,9 @@ Feature: show the real places on the map by widening the basemap from Sacramento
 
 - T4 [L3] App icon: original Red John smiley art (no copied logo), all Tauri icon sizes generated from one source SVG kept in the repo. Route: worker (parallel with T5). Commit: a781188. Done; reopened by L5 → T6.
 - T5 [S3] Review follow-ups of 22e75a2: dev-only tiles fallback (`cfg(debug_assertions)`), bounded concurrency for the tiles protocol, build works without the gitignored extract. Route: worker (parallel with T4). Commit: 2985943. Done.
-- T6 [L5] Logo = the face Red John paints (homage): app icon, favicon and in-app header logo redrawn as a crude finger-painted blood smiley with drips, original art. Route: worker. Commit: pending.
-- T7 [S2, S4, S6] Audit all wiki-sourced culprit claims against their pages; remove any not stated by the page as that episode's culprit (L4). Route: worker. Commit: pending.
-- T8 [S1] Map zooms out far enough to frame all of California at 1440x900; tiles protocol tests the verifier proposed. Route: inline. Commit: pending.
+- T6 [L5] Logo = the face Red John paints (homage): app icon, favicon and in-app header logo redrawn as a crude finger-painted blood smiley with drips, original art. Route: worker. Commit: f246d54. Done.
+- T7 [S2, S4, S6] Audit all wiki-sourced culprit claims against their pages; remove any not stated by the page as that episode's culprit (L4). Route: worker. Commit: 8049bf2. Done: 71 audited, 5 removed (incl. s3e11 Lima, s3e24 O'Laughlin wiki claim); s3e7 and s1e21 kept after a full read of their pages; 23 of 126 cases still without a confirmed culprit.
+- T8 [S1] Map zooms out far enough to frame all of California at 1440x900; tiles protocol tests the verifier proposed. Route: inline. Commit: the "fix(desktop): frame all of California" commit. Done: headless check at 1440x900 shows the whole state and 5 pins; 10 cargo tests.
 
 ## Log
 

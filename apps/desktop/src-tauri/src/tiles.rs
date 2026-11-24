@@ -323,4 +323,32 @@ mod tests {
         assert_eq!(post.status(), StatusCode::METHOD_NOT_ALLOWED);
         std::fs::remove_dir_all(root).unwrap();
     }
+
+    #[test]
+    fn rejects_encoded_and_drive_forms() {
+        let root = scratch("enc");
+        let dir = root.join("tiles");
+        std::fs::write(dir.join("a.pmtiles"), b"x").unwrap();
+        for bad in ["/%2e%2e", "/%2E%2E%2Fa.pmtiles", "/C:a.pmtiles", "/C:", "/a.pmtiles::$DATA", r"/\\server\share"] {
+            assert!(resolve(&dir, bad).is_none(), "{bad}");
+        }
+        std::fs::remove_dir_all(root).unwrap();
+    }
+
+    #[test]
+    fn worker_count_is_8() {
+        assert_eq!(WORKERS, 8);
+    }
+
+    #[test]
+    fn respond_caps_body_at_max_chunk() {
+        let root = scratch("cap");
+        let dir = root.join("tiles");
+        std::fs::write(dir.join("big.pmtiles"), vec![0u8; (MAX_CHUNK + 10) as usize]).unwrap();
+        let r = respond(&dir, &req("GET", Some("bytes=0-"), "/big.pmtiles"));
+        assert_eq!(r.status(), StatusCode::PARTIAL_CONTENT);
+        assert_eq!(r.body().len() as u64, MAX_CHUNK);
+        assert_eq!(r.headers()["content-range"], format!("bytes 0-{}/{}", MAX_CHUNK - 1, MAX_CHUNK + 10));
+        std::fs::remove_dir_all(root).unwrap();
+    }
 }

@@ -15,8 +15,14 @@ import type { PinModel } from "./viewModel";
 
 const TILE_FILE = "california.pmtiles";
 const CENTER: [number, number] = [-121.5, 38.5775];
-// California extract bounds (west, south, east, north): the user cannot pan outside it, where there are no tiles.
+// California extract bounds (west, south, east, north): there are no tiles outside it.
 const CALIFORNIA_BOUNDS: [number, number, number, number] = [-124.5, 32.5, -114.1, 42.1];
+// Pan limit: the extract plus a margin. MapLibre never zooms out past the point where the viewport
+// fills `maxBounds`, so with the bare extract the whole state could not be framed at 1440x900 (min zoom
+// stopped at ~6.6). The margin shows the dark background around the state instead.
+const PAN_BOUNDS: [number, number, number, number] = [
+  CALIFORNIA_BOUNDS[0] - 12, CALIFORNIA_BOUNDS[1] - 6, CALIFORNIA_BOUNDS[2] + 12, CALIFORNIA_BOUNDS[3] + 6,
+];
 // Zoom ~5.3 frames all of California in a 1440x900 window; the tile data stops at z13 and overzooms above it.
 const MIN_ZOOM = 5;
 const MAX_ZOOM = 17;
@@ -141,7 +147,7 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, onUnavail
         maxPitch: 70,
         minZoom: MIN_ZOOM,
         maxZoom: MAX_ZOOM,
-        maxBounds: CALIFORNIA_BOUNDS,
+        maxBounds: PAN_BOUNDS,
         attributionControl: { compact: true },
         style: {
           version: 8,
