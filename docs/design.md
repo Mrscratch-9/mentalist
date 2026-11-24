@@ -163,4 +163,5 @@ One family for titles and UI keeps the bundle small. Alternatives considered: Wo
 3. Phase 4, slice A: done. Monorepo with `packages/core` (spoiler-gated knowledge engine, canary tests) and `apps/desktop` (Tauri shell, offline fonts, progress store). Owner progress at the time: end of season 5.
 4. Phase 4, slice B: done. Data pipeline `packages/pipeline` (YAML → validator → compiled SQLite). Owner progress: season 6, episode 9.
 5. Phase 4, slice C: done. Real episode list (151 episodes, sourced) in `data/canon/`, loaded in `apps/desktop` through SQLite WASM; Red room home ported on top of `core` with empty states.
-6. Next: author entities and claims (cases, characters, places with coordinates) up to the owner's progress, so the board, map pins and characters fill in; offline glyphs for street labels.
+6. Phase 4, slice D: done. Cases, recurring characters, places and Red John marks authored for S1E1..S6E10 (owner progress), sourced per episode; nothing authored for unwatched episodes.
+7. Next: decide map coverage (real places are outside Sacramento) and a secondary source for culprits; offline glyphs for street labels; run inside the Tauri window.
