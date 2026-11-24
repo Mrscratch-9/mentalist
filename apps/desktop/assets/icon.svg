@@ -1,20 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
   <defs>
-    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
-      <stop offset="0" stop-color="#2a1112"/>
-      <stop offset="1" stop-color="#0b0a0a"/>
+    <radialGradient id="wall" cx="50%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#2b2322"/>
+      <stop offset="1" stop-color="#0d0b0b"/>
     </radialGradient>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.5  0 0 0 0 0.45  0 0 0 0 0.42  0 0 0 0.16 0"/>
+    </filter>
+    <clipPath id="sq"><rect x="32" y="32" width="960" height="960" rx="210"/></clipPath>
   </defs>
-  <rect x="32" y="32" width="960" height="960" rx="210" fill="url(#bg)"/>
-  <g fill="none" stroke="#e0283a" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M512 130 C720 124 880 280 880 460 C880 650 730 780 512 780 C300 780 144 640 144 450 C144 270 300 134 530 146" stroke-width="76"/>
-    <path d="M316 560 C390 650 640 650 708 560" stroke-width="70"/>
-    <path d="M250 770 L250 880" stroke-width="48"/>
-    <path d="M520 780 L520 925" stroke-width="56"/>
-    <path d="M790 700 L790 800" stroke-width="42"/>
-  </g>
-  <g fill="#e0283a">
-    <circle cx="352" cy="400" r="58"/><circle cx="672" cy="400" r="58"/>
-    <circle cx="250" cy="885" r="40"/><circle cx="520" cy="930" r="46"/><circle cx="790" cy="805" r="34"/>
+  <rect x="32" y="32" width="960" height="960" rx="210" fill="url(#wall)"/>
+  <rect x="32" y="32" width="960" height="960" filter="url(#grain)" clip-path="url(#sq)"/>
+  <g transform="translate(160 96) scale(11)">
+<g transform="translate(1 1.4)" fill="none" stroke="#6e0a14" stroke-linecap="round" stroke-linejoin="round">
+<path d="M30 6 C45 3 60 15 58 32 C57 46 45 56.5 30.5 54.5 C16 54 4.5 43 6.5 28.5 C8 15 18 5 34 7.5 C38 8 41 9 44 11" stroke-width="6.6"/>
+<path d="M19 39 C25 48.5 39 48 45.5 38" stroke-width="6.2"/>
+<path d="M12.5 53 L12 67" stroke-width="4.4"/><path d="M32 55 L32.5 72" stroke-width="4.8"/><path d="M51 49 L51.5 60" stroke-width="4"/><path d="M42 46 L42 53" stroke-width="4"/>
+</g>
+<g transform="translate(1 1.4)" fill="#6e0a14"><ellipse cx="21.5" cy="25" rx="4.7" ry="5.6"/><ellipse cx="42.5" cy="24" rx="4.6" ry="5.4"/><circle cx="12" cy="67.5" r="3.6"/><circle cx="32.5" cy="72" r="4"/><circle cx="51.5" cy="60.5" r="3.4"/></g>
+<g fill="none" stroke="#d11f33" stroke-linecap="round" stroke-linejoin="round">
+<path d="M30 6 C45 3 60 15 58 32 C57 46 45 56.5 30.5 54.5 C16 54 4.5 43 6.5 28.5 C8 15 18 5 34 7.5 C38 8 41 9 44 11" stroke-width="5.6"/>
+<path d="M19 39 C25 48.5 39 48 45.5 38" stroke-width="5.2"/>
+<path d="M12.5 53 L12 67" stroke-width="3"/><path d="M32 55 L32.5 72" stroke-width="3.4"/><path d="M51 49 L51.5 60" stroke-width="2.6"/><path d="M42 46 L42 53" stroke-width="1.8"/>
+</g>
+<g fill="#d11f33"><ellipse cx="21.5" cy="25" rx="3.6" ry="4.6" transform="rotate(-8 21.5 25)"/><ellipse cx="42.5" cy="24" rx="3.4" ry="4.2" transform="rotate(6 42.5 24)"/><circle cx="12" cy="67.5" r="1.9"/><circle cx="32.5" cy="72" r="2.2"/><circle cx="51.5" cy="60.5" r="1.8"/></g>
+<path d="M9 22 C10 15 15 10 22 8" fill="none" stroke="#f0525f" stroke-width="1.1" stroke-linecap="round" opacity=".6"/>
   </g>
 </svg>

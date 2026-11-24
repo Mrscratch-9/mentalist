@@ -6,20 +6,24 @@ import type { ReactElement, SVGProps } from "react";
 type Props = SVGProps<SVGSVGElement>;
 const NS = "http://www.w3.org/2000/svg";
 
+// The face Red John paints: a crude finger-painted blood smiley with drips and dark dried edges.
+// Plain shapes only (no ids/filters) so it also serializes cleanly into deck.gl icon atlases.
 export function Smiley(props: Props) {
   return (
     <svg xmlns={NS} viewBox="0 0 64 74" {...props}>
-      <g fill="none" stroke="#e0283a" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M32 6 C46 5 58 16 58 30 C58 44 47 55 32 55 C17 55 6 44 6 30 C6 16 18 6.5 33 7.5" strokeWidth="5" />
-        <path d="M20 40 C26 47 38 47 44 40" strokeWidth="4.5" />
-        <path d="M14 54 L14 66" strokeWidth="3" />
-        <path d="M33 55 L33 71" strokeWidth="3.5" />
-        <path d="M50 50 L50 60" strokeWidth="2.5" />
+      <g transform="translate(1 1.4)" fill="none" stroke="#6e0a14" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M30 6 C45 3 60 15 58 32 C57 46 45 56.5 30.5 54.5 C16 54 4.5 43 6.5 28.5 C8 15 18 5 34 7.5 C38 8 41 9 44 11" strokeWidth="6.6"/>
+      <path d="M19 39 C25 48.5 39 48 45.5 38" strokeWidth="6.2"/>
+      <path d="M12.5 53 L12 67" strokeWidth="4.4"/><path d="M32 55 L32.5 72" strokeWidth="4.8"/><path d="M51 49 L51.5 60" strokeWidth="4"/><path d="M42 46 L42 53" strokeWidth="4"/>
       </g>
-      <g fill="#e0283a">
-        <circle cx="22" cy="25" r="3.8" /><circle cx="42" cy="25" r="3.8" />
-        <circle cx="14" cy="67" r="2.4" /><circle cx="33" cy="71.5" r="2.8" /><circle cx="50" cy="61" r="2" />
+      <g transform="translate(1 1.4)" fill="#6e0a14"><ellipse cx="21.5" cy="25" rx="4.7" ry="5.6"/><ellipse cx="42.5" cy="24" rx="4.6" ry="5.4"/><circle cx="12" cy="67.5" r="3.6"/><circle cx="32.5" cy="72" r="4"/><circle cx="51.5" cy="60.5" r="3.4"/></g>
+      <g fill="none" stroke="#d11f33" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M30 6 C45 3 60 15 58 32 C57 46 45 56.5 30.5 54.5 C16 54 4.5 43 6.5 28.5 C8 15 18 5 34 7.5 C38 8 41 9 44 11" strokeWidth="5.6"/>
+      <path d="M19 39 C25 48.5 39 48 45.5 38" strokeWidth="5.2"/>
+      <path d="M12.5 53 L12 67" strokeWidth="3"/><path d="M32 55 L32.5 72" strokeWidth="3.4"/><path d="M51 49 L51.5 60" strokeWidth="2.6"/><path d="M42 46 L42 53" strokeWidth="1.8"/>
       </g>
+      <g fill="#d11f33"><ellipse cx="21.5" cy="25" rx="3.6" ry="4.6" transform="rotate(-8 21.5 25)"/><ellipse cx="42.5" cy="24" rx="3.4" ry="4.2" transform="rotate(6 42.5 24)"/><circle cx="12" cy="67.5" r="1.9"/><circle cx="32.5" cy="72" r="2.2"/><circle cx="51.5" cy="60.5" r="1.8"/></g>
+      <path d="M9 22 C10 15 15 10 22 8" fill="none" stroke="#f0525f" strokeWidth="1.1" strokeLinecap="round" opacity=".6"/>
     </svg>
   );
 }
