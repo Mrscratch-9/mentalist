@@ -60,8 +60,25 @@ describe("real canon (counts only)", () => {
   const allClaims = canon.flatMap((c) => c.claims);
   const kindOf = new Map(canon.flatMap((c) => c.entities).map((e) => [e.key, e.kind]));
 
-  it("every claim cites the source of its own reveal episode", () => {
-    const violations = allClaims.filter((c) => c.source !== `src-${String(c.revealed).toLowerCase()}`).length;
+  it("every claim cites the episode or wiki source of its own reveal episode", () => {
+    const violations = allClaims.filter((c) => {
+      const ep = String(c.revealed).toLowerCase();
+      return c.source !== `src-${ep}` && c.source !== `src-wiki-${ep}`;
+    }).length;
+    expect(violations).toBe(0);
+  });
+
+  it("wiki sources are Fandom pages tied to their episode", () => {
+    type WikiSrc = { key: string; kind: string; episode?: string; url?: string };
+    const wiki = files
+      .flatMap((f) => (parse(readFileSync(dir + f, "utf8")).sources ?? []) as WikiSrc[])
+      .filter((s) => s.key.startsWith("src-wiki-"));
+    const violations = wiki.filter(
+      (s) =>
+        s.kind !== "wiki" ||
+        s.key !== `src-wiki-${String(s.episode).toLowerCase()}` ||
+        !/^https:\/\/thementalist\.fandom\.com\//.test(String(s.url)),
+    ).length;
     expect(violations).toBe(0);
   });
 
