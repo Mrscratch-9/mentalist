@@ -126,6 +126,33 @@ entities:
   - key: l-fbi-austin
     kind: location
     introduced: S6E9
+  - key: p-fischer
+    kind: person
+    introduced: S6E9
+  - key: p-s6e16-a
+    kind: person
+    introduced: S6E16
+  - key: p-s7e1-a
+    kind: person
+    introduced: S7E1
+  - key: p-s7e1-b
+    kind: person
+    introduced: S7E1
+  - key: p-s7e2-a
+    kind: person
+    introduced: S7E2
+  - key: p-s7e4-a
+    kind: person
+    introduced: S7E4
+  - key: p-s7e6-a
+    kind: person
+    introduced: S7E6
+  - key: o-s6e11-a
+    kind: organization
+    introduced: S6E11
+  - key: o-s7e2-a
+    kind: organization
+    introduced: S7E2
 
 claims:
   - key: c-jane-name
@@ -188,6 +215,7 @@ claims:
     value: "CBI special agent"
     revealed: S1E1
     source: src-s1e1
+    superseded: { in: S7E9, by: c-cho-role-2 }
   - key: c-cho-description
     subject: p-cho
     predicate: description
@@ -212,6 +240,7 @@ claims:
     value: "CBI special agent"
     revealed: S1E1
     source: src-s1e1
+    superseded: { in: S6E12, by: c-rigsby-role-2 }
   - key: c-rigsby-description
     subject: p-rigsby
     predicate: description
@@ -236,6 +265,7 @@ claims:
     value: "CBI special agent"
     revealed: S1E1
     source: src-s1e1
+    superseded: { in: S6E12, by: c-van-pelt-role-2 }
   - key: c-van-pelt-description
     subject: p-van-pelt
     predicate: description
@@ -896,6 +926,7 @@ claims:
     value: "FBI supervisory special agent"
     revealed: S6E7
     source: src-s6e7
+    superseded: { in: S7E9, by: c-abbott-role-2 }
   - key: c-abbott-description
     subject: p-abbott
     predicate: description
@@ -1043,9 +1074,254 @@ claims:
     value: "true"
     revealed: S6E9
     source: src-wiki-s6e9
+  - key: c-fischer-name
+    subject: p-fischer
+    predicate: name
+    value: "Kim Fischer"
+    revealed: S6E9
+    source: src-wiki-s6e9
+  - key: c-fischer-role
+    subject: p-fischer
+    predicate: role
+    value: "FBI senior special agent"
+    revealed: S6E9
+    source: src-wiki-s6e9
+    superseded: { in: S7E1, by: c-fischer-role-2 }
+  - key: c-fischer-description
+    subject: p-fischer
+    predicate: description
+    value: "An FBI agent on Abbott's team who goes undercover to bring Jane back."
+    revealed: S6E9
+    source: src-wiki-s6e9
+  - key: c-fischer-recurring
+    subject: p-fischer
+    predicate: recurring
+    value: "true"
+    revealed: S6E9
+    source: src-wiki-s6e9
+  - key: c-s6e16-a-name
+    subject: p-s6e16-a
+    predicate: name
+    value: "Marcus Pike"
+    revealed: S6E16
+    source: src-s6e16
+  - key: c-s6e16-a-role
+    subject: p-s6e16-a
+    predicate: role
+    value: "FBI art division agent"
+    revealed: S6E16
+    source: src-s6e16
+  - key: c-s6e16-a-description
+    subject: p-s6e16-a
+    predicate: description
+    value: "An agent leading the FBI's art division, consulted by the team on a gallery murder."
+    revealed: S6E16
+    source: src-s6e16
+  - key: c-s6e16-a-recurring
+    subject: p-s6e16-a
+    predicate: recurring
+    value: "true"
+    revealed: S6E16
+    source: src-s6e16
+  - key: c-s7e1-a-name
+    subject: p-s7e1-a
+    predicate: name
+    value: "Ken Spackman"
+    revealed: S7E1
+    source: src-s7e1
+  - key: c-s7e1-a-role
+    subject: p-s7e1-a
+    predicate: role
+    value: "FBI special agent"
+    revealed: S7E1
+    source: src-s7e1
+  - key: c-s7e1-a-description
+    subject: p-s7e1-a
+    predicate: description
+    value: "An agent who helps the team investigate the murder of an undercover agent."
+    revealed: S7E1
+    source: src-s7e1
+  - key: c-s7e1-a-recurring
+    subject: p-s7e1-a
+    predicate: recurring
+    value: "true"
+    revealed: S7E1
+    source: src-s7e1
+  - key: c-s7e1-b-name
+    subject: p-s7e1-b
+    predicate: name
+    value: "Michelle Vega"
+    revealed: S7E1
+    source: src-s7e1
+  - key: c-s7e1-b-role
+    subject: p-s7e1-b
+    predicate: role
+    value: "FBI special agent"
+    revealed: S7E1
+    source: src-s7e1
+  - key: c-s7e1-b-description
+    subject: p-s7e1-b
+    predicate: description
+    value: "A rookie agent who joins the team after another agent's transfer."
+    revealed: S7E1
+    source: src-s7e1
+  - key: c-s7e1-b-recurring
+    subject: p-s7e1-b
+    predicate: recurring
+    value: "true"
+    revealed: S7E1
+    source: src-s7e1
+  - key: c-s7e2-a-name
+    subject: p-s7e2-a
+    predicate: name
+    value: "Danitra Cass"
+    revealed: S7E2
+    source: src-wiki-s7e2
+  - key: c-s7e2-a-role
+    subject: p-s7e2-a
+    predicate: role
+    value: "CIA agent"
+    revealed: S7E2
+    source: src-wiki-s7e2
+  - key: c-s7e2-a-description
+    subject: p-s7e2-a
+    predicate: description
+    value: "A CIA agent working with the FBI team on a car-theft network."
+    revealed: S7E2
+    source: src-wiki-s7e2
+  - key: c-s7e2-a-recurring
+    subject: p-s7e2-a
+    predicate: recurring
+    value: "true"
+    revealed: S7E2
+    source: src-wiki-s7e2
+  - key: c-s7e4-a-name
+    subject: p-s7e4-a
+    predicate: name
+    value: "Lena Abbott"
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: c-s7e4-a-role
+    subject: p-s7e4-a
+    predicate: role
+    value: "Dennis Abbott's wife"
+    revealed: S7E4
+    source: src-wiki-s7e4
+    superseded: { in: S7E9, by: c-s7e4-a-role-2 }
+  - key: c-s7e4-a-description
+    subject: p-s7e4-a
+    predicate: description
+    value: "Abbott's wife, who is applying for a senior post in Washington."
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: c-s7e4-a-recurring
+    subject: p-s7e4-a
+    predicate: recurring
+    value: "true"
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: c-s7e6-a-name
+    subject: p-s7e6-a
+    predicate: name
+    value: "Bill Peterson"
+    revealed: S7E6
+    source: src-s7e6
+  - key: c-s7e6-a-role
+    subject: p-s7e6-a
+    predicate: role
+    value: "DEA task force leader"
+    revealed: S7E6
+    source: src-s7e6
+    superseded: { in: S7E9, by: c-s7e6-a-role-2 }
+  - key: c-s7e6-a-description
+    subject: p-s7e6-a
+    predicate: description
+    value: "Abbott's former boss from Rio Bravo, leading a DEA team on a raid that goes wrong."
+    revealed: S7E6
+    source: src-s7e6
+  - key: c-s7e6-a-recurring
+    subject: p-s7e6-a
+    predicate: recurring
+    value: "true"
+    revealed: S7E6
+    source: src-s7e6
+  - key: c-o-s6e11-a-name
+    subject: o-s6e11-a
+    predicate: name
+    value: "Drug Enforcement Administration (DEA)"
+    revealed: S6E11
+    source: src-s6e11
+  - key: c-o-s6e11-a-description
+    subject: o-s6e11-a
+    predicate: description
+    value: "The federal agency that fights drug trafficking and whose agents the FBI team works alongside."
+    revealed: S6E11
+    source: src-s6e11
+  - key: c-o-s7e2-a-name
+    subject: o-s7e2-a
+    predicate: name
+    value: "Central Intelligence Agency (CIA)"
+    revealed: S7E2
+    source: src-s7e2
+  - key: c-o-s7e2-a-description
+    subject: o-s7e2-a
+    predicate: description
+    value: "The intelligence agency that partners with the FBI team to track a larger network."
+    revealed: S7E2
+    source: src-s7e2
+  - key: c-fischer-role-2
+    subject: p-fischer
+    predicate: role
+    value: "FBI senior special agent, transferred to Seattle"
+    revealed: S7E1
+    source: src-s7e1
+  - key: c-rigsby-role-2
+    subject: p-rigsby
+    predicate: role
+    value: "Co-owner of a digital security business"
+    revealed: S6E12
+    source: src-s6e12
+  - key: c-van-pelt-role-2
+    subject: p-van-pelt
+    predicate: role
+    value: "Co-owner of a digital security business"
+    revealed: S6E12
+    source: src-s6e12
+  - key: c-s7e4-a-role-2
+    subject: p-s7e4-a
+    predicate: role
+    value: "Under Secretary of Commerce (confirmed)"
+    revealed: S7E9
+    source: src-s7e9
+  - key: c-s7e6-a-role-2
+    subject: p-s7e6-a
+    predicate: role
+    value: "Former DEA agent, arrested"
+    revealed: S7E9
+    source: src-s7e9
+  - key: c-abbott-role-2
+    subject: p-abbott
+    predicate: role
+    value: "FBI supervisory special agent, moving to Washington"
+    revealed: S7E9
+    source: src-s7e9
+  - key: c-cho-role-2
+    subject: p-cho
+    predicate: role
+    value: "FBI special agent, taking over the team"
+    revealed: S7E9
+    source: src-s7e9
 
 sources:
   - key: src-wiki-s6e9
     kind: wiki
     episode: S6E9
     url: https://thementalist.fandom.com/wiki/My_Blue_Heaven
+  - key: src-wiki-s7e2
+    kind: wiki
+    episode: S7E2
+    url: https://thementalist.fandom.com/wiki/The_Greybar_Hotel
+  - key: src-wiki-s7e4
+    kind: wiki
+    episode: S7E4
+    url: https://thementalist.fandom.com/wiki/Black_Market
