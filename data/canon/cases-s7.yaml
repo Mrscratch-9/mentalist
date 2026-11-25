@@ -1,0 +1,932 @@
+# The Mentalist season 7 cases: one case per episode, one-off people, places (S7E1..S7E13).
+# Source: English Wikipedia, "The Mentalist season 7" episode summaries; The Mentalist Wiki (Fandom) episode pages as episode-bound secondary sources.
+# Spoilers: do not open outside the app.
+
+sources:
+  - key: src-wiki-s7e1
+    kind: wiki
+    episode: S7E1
+    url: https://thementalist.fandom.com/wiki/Nothing_But_Blue_Skies
+  - key: src-wiki-s7e5
+    kind: wiki
+    episode: S7E5
+    url: https://thementalist.fandom.com/wiki/The_Silver_Briefcase
+  - key: src-wiki-s7e6
+    kind: wiki
+    episode: S7E6
+    url: https://thementalist.fandom.com/wiki/Green_Light
+  - key: src-wiki-s7e7
+    kind: wiki
+    episode: S7E7
+    url: https://thementalist.fandom.com/wiki/Little_Yellow_House
+  - key: src-wiki-s7e8
+    kind: wiki
+    episode: S7E8
+    url: https://thementalist.fandom.com/wiki/The_Whites_of_His_Eyes
+  - key: src-wiki-s7e10
+    kind: wiki
+    episode: S7E10
+    url: https://thementalist.fandom.com/wiki/Nothing_Gold_Can_Stay
+  - key: src-wiki-s7e11
+    kind: wiki
+    episode: S7E11
+    url: https://thementalist.fandom.com/wiki/Byzantium
+
+entities:
+  - key: c-s7e1
+    kind: case
+    introduced: S7E1
+
+  - key: p-s7e1-c
+    kind: person
+    introduced: S7E1
+
+  - key: p-s7e1-d
+    kind: person
+    introduced: S7E1
+
+  - key: p-s7e1-e
+    kind: person
+    introduced: S7E1
+
+  - key: l-s7e1-a
+    kind: location
+    introduced: S7E1
+
+  - key: c-s7e2
+    kind: case
+    introduced: S7E2
+
+  - key: p-s7e2-b
+    kind: person
+    introduced: S7E2
+
+  - key: p-s7e2-c
+    kind: person
+    introduced: S7E2
+
+  - key: p-s7e2-d
+    kind: person
+    introduced: S7E2
+
+  - key: l-s7e2-a
+    kind: location
+    introduced: S7E2
+
+  - key: c-s7e3
+    kind: case
+    introduced: S7E3
+
+  - key: p-s7e3-a
+    kind: person
+    introduced: S7E3
+
+  - key: l-s7e3-a
+    kind: location
+    introduced: S7E3
+
+  - key: l-s7e3-b
+    kind: location
+    introduced: S7E3
+
+  - key: c-s7e4
+    kind: case
+    introduced: S7E4
+
+  - key: p-s7e4-b
+    kind: person
+    introduced: S7E4
+
+  - key: p-s7e4-c
+    kind: person
+    introduced: S7E4
+
+  - key: p-s7e4-d
+    kind: person
+    introduced: S7E4
+
+  - key: c-s7e5
+    kind: case
+    introduced: S7E5
+
+  - key: p-s7e5-a
+    kind: person
+    introduced: S7E5
+
+  - key: p-s7e5-b
+    kind: person
+    introduced: S7E5
+
+  - key: p-s7e5-c
+    kind: person
+    introduced: S7E5
+
+  - key: p-s7e5-d
+    kind: person
+    introduced: S7E5
+
+  - key: c-s7e6
+    kind: case
+    introduced: S7E6
+
+  - key: p-s7e6-b
+    kind: person
+    introduced: S7E6
+
+  - key: p-s7e6-c
+    kind: person
+    introduced: S7E6
+
+  - key: c-s7e7
+    kind: case
+    introduced: S7E7
+
+  - key: p-s7e7-a
+    kind: person
+    introduced: S7E7
+
+  - key: p-s7e7-b
+    kind: person
+    introduced: S7E7
+
+  - key: l-s7e7-a
+    kind: location
+    introduced: S7E7
+
+  - key: c-s7e8
+    kind: case
+    introduced: S7E8
+
+  - key: p-s7e8-a
+    kind: person
+    introduced: S7E8
+
+  - key: p-s7e8-b
+    kind: person
+    introduced: S7E8
+
+  - key: p-s7e8-c
+    kind: person
+    introduced: S7E8
+
+  - key: p-s7e8-d
+    kind: person
+    introduced: S7E8
+
+  - key: c-s7e9
+    kind: case
+    introduced: S7E9
+
+  - key: c-s7e10
+    kind: case
+    introduced: S7E10
+
+  - key: p-s7e10-a
+    kind: person
+    introduced: S7E10
+
+  - key: p-s7e10-b
+    kind: person
+    introduced: S7E10
+
+  - key: p-s7e10-c
+    kind: person
+    introduced: S7E10
+
+  - key: c-s7e11
+    kind: case
+    introduced: S7E11
+
+  - key: p-s7e11-a
+    kind: person
+    introduced: S7E11
+
+  - key: p-s7e11-b
+    kind: person
+    introduced: S7E11
+
+  - key: p-s7e11-c
+    kind: person
+    introduced: S7E11
+
+  - key: p-s7e11-d
+    kind: person
+    introduced: S7E11
+
+  - key: c-s7e12
+    kind: case
+    introduced: S7E12
+
+  - key: p-s7e12-a
+    kind: person
+    introduced: S7E12
+
+  - key: c-s7e13
+    kind: case
+    introduced: S7E13
+
+claims:
+  - key: c-s7e1-name
+    subject: c-s7e1
+    predicate: name
+    value: "Murder at the bowling alley"
+    revealed: S7E1
+    source: src-s7e1
+  - key: c-s7e1-description
+    subject: c-s7e1
+    predicate: description
+    value: "An undercover federal agent is shot dead behind a bowling alley believed to be the base of a weapon smuggling ring."
+    revealed: S7E1
+    source: src-s7e1
+  - key: p-s7e1-c-name
+    subject: p-s7e1-c
+    predicate: name
+    value: "Jeremy Geist"
+    revealed: S7E1
+    source: src-wiki-s7e1
+  - key: p-s7e1-c-role-s7e1
+    subject: p-s7e1-c
+    predicate: role_in_case
+    object: c-s7e1
+    value: "victim"
+    status: confirmed
+    revealed: S7E1
+    source: src-wiki-s7e1
+  - key: p-s7e1-d-name
+    subject: p-s7e1-d
+    predicate: name
+    value: "Mason Hunston"
+    revealed: S7E1
+    source: src-wiki-s7e1
+  - key: p-s7e1-d-role-s7e1
+    subject: p-s7e1-d
+    predicate: role_in_case
+    object: c-s7e1
+    value: "perpetrator"
+    status: confirmed
+    revealed: S7E1
+    source: src-wiki-s7e1
+  - key: p-s7e1-e-name
+    subject: p-s7e1-e
+    predicate: name
+    value: "Tish"
+    revealed: S7E1
+    source: src-wiki-s7e1
+  - key: p-s7e1-e-role-s7e1
+    subject: p-s7e1-e
+    predicate: role_in_case
+    object: c-s7e1
+    value: "accomplice"
+    status: confirmed
+    revealed: S7E1
+    source: src-s7e1
+  - key: l-s7e1-a-name
+    subject: l-s7e1-a
+    predicate: name
+    value: "Rocket Bowling Alley"
+    revealed: S7E1
+    source: src-wiki-s7e1
+  - key: l-s7e1-a-case
+    subject: l-s7e1-a
+    predicate: part_of_case
+    object: c-s7e1
+    revealed: S7E1
+    source: src-wiki-s7e1
+  - key: c-s7e2-name
+    subject: c-s7e2
+    predicate: name
+    value: "Car thieves and a prison infiltration"
+    revealed: S7E2
+    source: src-s7e2
+  - key: c-s7e2-description
+    subject: c-s7e2
+    predicate: description
+    value: "A pair of car thieves rob a gala, and the team sends an agent undercover in prison to find the hideout."
+    revealed: S7E2
+    source: src-s7e2
+  - key: p-s7e2-b-name
+    subject: p-s7e2-b
+    predicate: name
+    value: "Marie Flanigan"
+    revealed: S7E2
+    source: src-s7e2
+  - key: p-s7e2-b-role-s7e2
+    subject: p-s7e2-b
+    predicate: role_in_case
+    object: c-s7e2
+    value: "perpetrator"
+    status: confirmed
+    revealed: S7E2
+    source: src-s7e2
+  - key: p-s7e2-c-name
+    subject: p-s7e2-c
+    predicate: name
+    value: "Cole Foster"
+    revealed: S7E2
+    source: src-s7e2
+  - key: p-s7e2-c-role-s7e2
+    subject: p-s7e2-c
+    predicate: role_in_case
+    object: c-s7e2
+    value: "perpetrator"
+    status: confirmed
+    revealed: S7E2
+    source: src-s7e2
+  - key: p-s7e2-d-name
+    subject: p-s7e2-d
+    predicate: name
+    value: "Ronald Hendricks"
+    revealed: S7E2
+    source: src-wiki-s7e2
+  - key: p-s7e2-d-role-s7e2
+    subject: p-s7e2-d
+    predicate: role_in_case
+    object: c-s7e2
+    value: "accomplice"
+    status: confirmed
+    revealed: S7E2
+    source: src-wiki-s7e2
+  - key: l-s7e2-a-name
+    subject: l-s7e2-a
+    predicate: name
+    value: "Houston, Texas"
+    revealed: S7E2
+    source: src-wiki-s7e2
+  - key: l-s7e2-a-case
+    subject: l-s7e2-a
+    predicate: part_of_case
+    object: c-s7e2
+    revealed: S7E2
+    source: src-wiki-s7e2
+  - key: l-s7e2-a-coordinates
+    subject: l-s7e2-a
+    predicate: coordinates
+    value: "29.75666667,-95.36527778"
+    revealed: S7E2
+    source: src-wiki-s7e2
+    note: "city-level"
+  - key: c-s7e3-name
+    subject: c-s7e3
+    predicate: name
+    value: "The courier in Beirut"
+    revealed: S7E3
+    source: src-s7e3
+  - key: c-s7e3-description
+    subject: c-s7e3
+    predicate: description
+    value: "Jane and Lisbon go to Beirut to catch a criminal who smuggles fake passport chips for terrorist groups."
+    revealed: S7E3
+    source: src-s7e3
+  - key: p-s7e3-a-name
+    subject: p-s7e3-a
+    predicate: name
+    value: "Jan Nemic"
+    revealed: S7E3
+    source: src-s7e3
+  - key: p-s7e3-a-role-s7e3
+    subject: p-s7e3-a
+    predicate: role_in_case
+    object: c-s7e3
+    value: "perpetrator"
+    status: confirmed
+    revealed: S7E3
+    source: src-s7e3
+  - key: s7e3-erica-role
+    subject: p-erica-flynn
+    predicate: role_in_case
+    object: c-s7e3
+    value: "informant"
+    status: confirmed
+    revealed: S7E3
+    source: src-s7e3
+  - key: l-s7e3-a-name
+    subject: l-s7e3-a
+    predicate: name
+    value: "Beirut"
+    revealed: S7E3
+    source: src-s7e3
+  - key: l-s7e3-a-case
+    subject: l-s7e3-a
+    predicate: part_of_case
+    object: c-s7e3
+    revealed: S7E3
+    source: src-s7e3
+  - key: l-s7e3-a-coordinates
+    subject: l-s7e3-a
+    predicate: coordinates
+    value: "33.89805556,35.50583333"
+    revealed: S7E3
+    source: src-s7e3
+    note: "city-level"
+  - key: l-s7e3-b-name
+    subject: l-s7e3-b
+    predicate: name
+    value: "Atlanta"
+    revealed: S7E3
+    source: src-s7e3
+  - key: l-s7e3-b-case
+    subject: l-s7e3-b
+    predicate: part_of_case
+    object: c-s7e3
+    revealed: S7E3
+    source: src-s7e3
+  - key: l-s7e3-b-coordinates
+    subject: l-s7e3-b
+    predicate: coordinates
+    value: "33.74888889,-84.39"
+    revealed: S7E3
+    source: src-s7e3
+    note: "city-level"
+  - key: c-s7e4-name
+    subject: c-s7e4
+    predicate: name
+    value: "Murder at the gem show"
+    revealed: S7E4
+    source: src-s7e4
+  - key: c-s7e4-description
+    subject: c-s7e4
+    predicate: description
+    value: "A man is beaten to death at a gem show tied to a counterfeit diamond operation, while Jane is too ill to leave the office."
+    revealed: S7E4
+    source: src-s7e4
+  - key: p-s7e4-b-name
+    subject: p-s7e4-b
+    predicate: name
+    value: "Kirk Upton"
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: p-s7e4-b-role-s7e4
+    subject: p-s7e4-b
+    predicate: role_in_case
+    object: c-s7e4
+    value: "victim"
+    status: confirmed
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: p-s7e4-c-name
+    subject: p-s7e4-c
+    predicate: name
+    value: "Bibby Fortensky"
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: p-s7e4-c-role-s7e4
+    subject: p-s7e4-c
+    predicate: role_in_case
+    object: c-s7e4
+    value: "perpetrator"
+    status: confirmed
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: p-s7e4-d-name
+    subject: p-s7e4-d
+    predicate: name
+    value: "Elon Bell"
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: p-s7e4-d-role-s7e4
+    subject: p-s7e4-d
+    predicate: role_in_case
+    object: c-s7e4
+    value: "accomplice"
+    status: in_show_suspicion
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: c-s7e5-name
+    subject: c-s7e5
+    predicate: name
+    value: "The colonel's wife"
+    revealed: S7E5
+    source: src-s7e5
+  - key: c-s7e5-description
+    subject: c-s7e5
+    predicate: description
+    value: "The FBI reopens the murder of a colonel's wife after Jane grows suspicious of the colonel."
+    revealed: S7E5
+    source: src-s7e5
+  - key: p-s7e5-a-name
+    subject: p-s7e5-a
+    predicate: name
+    value: "Nicole Raymond"
+    revealed: S7E5
+    source: src-wiki-s7e5
+  - key: p-s7e5-a-role-s7e5
+    subject: p-s7e5-a
+    predicate: role_in_case
+    object: c-s7e5
+    value: "victim"
+    status: confirmed
+    revealed: S7E5
+    source: src-wiki-s7e5
+  - key: p-s7e5-b-name
+    subject: p-s7e5-b
+    predicate: name
+    value: "Aaron Raymond"
+    revealed: S7E5
+    source: src-s7e5
+  - key: p-s7e5-b-role-s7e5
+    subject: p-s7e5-b
+    predicate: role_in_case
+    object: c-s7e5
+    value: "perpetrator"
+    status: in_show_suspicion
+    revealed: S7E5
+    source: src-s7e5
+  - key: p-s7e5-c-name
+    subject: p-s7e5-c
+    predicate: name
+    value: "Denise Cortez"
+    revealed: S7E5
+    source: src-s7e5
+  - key: p-s7e5-c-role-s7e5
+    subject: p-s7e5-c
+    predicate: role_in_case
+    object: c-s7e5
+    value: "perpetrator"
+    status: in_show_suspicion
+    revealed: S7E5
+    source: src-s7e5
+  - key: p-s7e5-d-name
+    subject: p-s7e5-d
+    predicate: name
+    value: "Zach Jefferson"
+    revealed: S7E5
+    source: src-wiki-s7e5
+  - key: p-s7e5-d-role-s7e5
+    subject: p-s7e5-d
+    predicate: role_in_case
+    object: c-s7e5
+    value: "suspect"
+    status: confirmed
+    revealed: S7E5
+    source: src-wiki-s7e5
+  - key: c-s7e6-name
+    subject: c-s7e6
+    predicate: name
+    value: "The botched DEA raid"
+    revealed: S7E6
+    source: src-s7e6
+  - key: c-s7e6-description
+    subject: c-s7e6
+    predicate: description
+    value: "The team consults on a DEA raid that finds no drugs, and Jane looks for a mole inside the task force."
+    revealed: S7E6
+    source: src-s7e6
+  - key: p-s7e6-b-name
+    subject: p-s7e6-b
+    predicate: name
+    value: "Darrell Gonzalez"
+    revealed: S7E6
+    source: src-wiki-s7e6
+  - key: p-s7e6-b-role-s7e6
+    subject: p-s7e6-b
+    predicate: role_in_case
+    object: c-s7e6
+    value: "victim"
+    status: confirmed
+    revealed: S7E6
+    source: src-wiki-s7e6
+  - key: p-s7e6-c-name
+    subject: p-s7e6-c
+    predicate: name
+    value: "Pedro Orosco"
+    revealed: S7E6
+    source: src-wiki-s7e6
+  - key: p-s7e6-c-role-s7e6
+    subject: p-s7e6-c
+    predicate: role_in_case
+    object: c-s7e6
+    value: "perpetrator"
+    status: confirmed
+    revealed: S7E6
+    source: src-wiki-s7e6
+  - key: c-s7e7-name
+    subject: c-s7e7
+    predicate: name
+    value: "The lawyer and the poker game"
+    revealed: S7E7
+    source: src-s7e7
+  - key: c-s7e7-description
+    subject: c-s7e7
+    predicate: description
+    value: "The FBI investigates the killing of a lawyer linked to a poker game that Lisbon's brother attended."
+    revealed: S7E7
+    source: src-s7e7
+  - key: p-s7e7-a-name
+    subject: p-s7e7-a
+    predicate: name
+    value: "Nathan Barnes"
+    revealed: S7E7
+    source: src-wiki-s7e7
+  - key: p-s7e7-a-role-s7e7
+    subject: p-s7e7-a
+    predicate: role_in_case
+    object: c-s7e7
+    value: "victim"
+    status: confirmed
+    revealed: S7E7
+    source: src-wiki-s7e7
+  - key: p-s7e7-b-name
+    subject: p-s7e7-b
+    predicate: name
+    value: "Charlie McInnis"
+    revealed: S7E7
+    source: src-s7e7
+  - key: p-s7e7-b-role-s7e7
+    subject: p-s7e7-b
+    predicate: role_in_case
+    object: c-s7e7
+    value: "perpetrator"
+    status: confirmed
+    revealed: S7E7
+    source: src-s7e7
+  - key: l-s7e7-a-name
+    subject: l-s7e7-a
+    predicate: name
+    value: "Chicago"
+    revealed: S7E7
+    source: src-s7e7
+  - key: l-s7e7-a-case
+    subject: l-s7e7-a
+    predicate: part_of_case
+    object: c-s7e7
+    revealed: S7E7
+    source: src-s7e7
+  - key: l-s7e7-a-coordinates
+    subject: l-s7e7-a
+    predicate: coordinates
+    value: "41.88194444,-87.62777778"
+    revealed: S7E7
+    source: src-s7e7
+    note: "city-level"
+  - key: c-s7e8-name
+    subject: c-s7e8
+    predicate: name
+    value: "The protected witness"
+    revealed: S7E8
+    source: src-s7e8
+  - key: c-s7e8-description
+    subject: c-s7e8
+    predicate: description
+    value: "The team guards the surviving witness to a brutal killing against a hitman hired by the accused's family."
+    revealed: S7E8
+    source: src-s7e8
+  - key: p-s7e8-a-name
+    subject: p-s7e8-a
+    predicate: name
+    value: "Edwin Hu"
+    revealed: S7E8
+    source: src-wiki-s7e8
+  - key: p-s7e8-a-role-s7e8
+    subject: p-s7e8-a
+    predicate: role_in_case
+    object: c-s7e8
+    value: "victim"
+    status: confirmed
+    revealed: S7E8
+    source: src-wiki-s7e8
+  - key: p-s7e8-b-name
+    subject: p-s7e8-b
+    predicate: name
+    value: "Lily Stoppard"
+    revealed: S7E8
+    source: src-s7e8
+  - key: p-s7e8-b-role-s7e8
+    subject: p-s7e8-b
+    predicate: role_in_case
+    object: c-s7e8
+    value: "witness"
+    status: confirmed
+    revealed: S7E8
+    source: src-s7e8
+  - key: p-s7e8-c-name
+    subject: p-s7e8-c
+    predicate: name
+    value: "Lydon"
+    revealed: S7E8
+    source: src-wiki-s7e8
+  - key: p-s7e8-c-role-s7e8
+    subject: p-s7e8-c
+    predicate: role_in_case
+    object: c-s7e8
+    value: "perpetrator"
+    status: confirmed
+    revealed: S7E8
+    source: src-wiki-s7e8
+  - key: p-s7e8-d-name
+    subject: p-s7e8-d
+    predicate: name
+    value: "Belinda Bittaker"
+    revealed: S7E8
+    source: src-s7e8
+  - key: p-s7e8-d-role-s7e8
+    subject: p-s7e8-d
+    predicate: role_in_case
+    object: c-s7e8
+    value: "accomplice"
+    status: confirmed
+    revealed: S7E8
+    source: src-s7e8
+  - key: c-s7e9-name
+    subject: c-s7e9
+    predicate: name
+    value: "The bullet against Abbott"
+    revealed: S7E9
+    source: src-s7e9
+  - key: c-s7e9-description
+    subject: c-s7e9
+    predicate: description
+    value: "A former boss digs up evidence of an old killing to ruin Abbott, and Jane sets a trap to protect him."
+    revealed: S7E9
+    source: src-s7e9
+  - key: p-s7e6-a-role-s7e9
+    subject: p-s7e6-a
+    predicate: role_in_case
+    object: c-s7e9
+    value: "perpetrator"
+    status: confirmed
+    revealed: S7E9
+    source: src-s7e9
+  - key: c-s7e10-name
+    subject: c-s7e10
+    predicate: name
+    value: "The armored car robbers"
+    revealed: S7E10
+    source: src-s7e10
+  - key: c-s7e10-description
+    subject: c-s7e10
+    predicate: description
+    value: "A gang of armored car robbers kills an agent and holds hostages in a house while the team closes in."
+    revealed: S7E10
+    source: src-s7e10
+  - key: p-s7e1-b-role-s7e10
+    subject: p-s7e1-b
+    predicate: role_in_case
+    object: c-s7e10
+    value: "victim"
+    status: confirmed
+    revealed: S7E10
+    source: src-s7e10
+  - key: p-s7e10-a-name
+    subject: p-s7e10-a
+    predicate: name
+    value: "Steve Sellers"
+    revealed: S7E10
+    source: src-s7e10
+  - key: p-s7e10-a-role-s7e10
+    subject: p-s7e10-a
+    predicate: role_in_case
+    object: c-s7e10
+    value: "perpetrator"
+    status: confirmed
+    revealed: S7E10
+    source: src-s7e10
+  - key: p-s7e10-b-name
+    subject: p-s7e10-b
+    predicate: name
+    value: "Aaron Brunell"
+    revealed: S7E10
+    source: src-wiki-s7e10
+  - key: p-s7e10-b-role-s7e10
+    subject: p-s7e10-b
+    predicate: role_in_case
+    object: c-s7e10
+    value: "accomplice"
+    status: confirmed
+    revealed: S7E10
+    source: src-wiki-s7e10
+  - key: p-s7e10-c-name
+    subject: p-s7e10-c
+    predicate: name
+    value: "Tommy Brunell"
+    revealed: S7E10
+    source: src-wiki-s7e10
+  - key: p-s7e10-c-role-s7e10
+    subject: p-s7e10-c
+    predicate: role_in_case
+    object: c-s7e10
+    value: "accomplice"
+    status: confirmed
+    revealed: S7E10
+    source: src-wiki-s7e10
+  - key: c-s7e11-name
+    subject: c-s7e11
+    predicate: name
+    value: "The psychic and the shallow graves"
+    revealed: S7E11
+    source: src-s7e11
+  - key: c-s7e11-description
+    subject: c-s7e11
+    predicate: description
+    value: "A young man claiming psychic powers leads the FBI to buried victims, and the team suspects he is the killer."
+    revealed: S7E11
+    source: src-s7e11
+  - key: p-s7e11-a-name
+    subject: p-s7e11-a
+    predicate: name
+    value: "Donnie"
+    revealed: S7E11
+    source: src-wiki-s7e11
+  - key: p-s7e11-a-role-s7e11
+    subject: p-s7e11-a
+    predicate: role_in_case
+    object: c-s7e11
+    value: "victim"
+    status: confirmed
+    revealed: S7E11
+    source: src-wiki-s7e11
+  - key: p-s7e11-b-name
+    subject: p-s7e11-b
+    predicate: name
+    value: "Megan"
+    revealed: S7E11
+    source: src-wiki-s7e11
+  - key: p-s7e11-b-role-s7e11
+    subject: p-s7e11-b
+    predicate: role_in_case
+    object: c-s7e11
+    value: "victim"
+    status: confirmed
+    revealed: S7E11
+    source: src-wiki-s7e11
+  - key: p-s7e11-c-name
+    subject: p-s7e11-c
+    predicate: name
+    value: "Ree Osbourne"
+    revealed: S7E11
+    source: src-wiki-s7e11
+  - key: p-s7e11-c-role-s7e11
+    subject: p-s7e11-c
+    predicate: role_in_case
+    object: c-s7e11
+    value: "victim"
+    status: confirmed
+    revealed: S7E11
+    source: src-wiki-s7e11
+  - key: p-s7e11-d-name
+    subject: p-s7e11-d
+    predicate: name
+    value: "Gabriel Osbourne"
+    revealed: S7E11
+    source: src-wiki-s7e11
+  - key: p-s7e11-d-role-s7e11
+    subject: p-s7e11-d
+    predicate: role_in_case
+    object: c-s7e11
+    value: "perpetrator"
+    status: in_show_suspicion
+    revealed: S7E11
+    source: src-s7e11
+  - key: c-s7e12-name
+    subject: c-s7e12
+    predicate: name
+    value: "Jane as bait"
+    revealed: S7E12
+    source: src-s7e12
+  - key: c-s7e12-description
+    subject: c-s7e12
+    predicate: description
+    value: "Jane plays a famous psychic to lure out the serial killer the team is hunting."
+    revealed: S7E12
+    source: src-s7e12
+  - key: p-s7e12-a-name
+    subject: p-s7e12-a
+    predicate: name
+    value: "Joe Keller Jr."
+    revealed: S7E12
+    source: src-s7e12
+  - key: p-s7e12-a-role-s7e12
+    subject: p-s7e12-a
+    predicate: role_in_case
+    object: c-s7e12
+    value: "perpetrator"
+    status: confirmed
+    revealed: S7E12
+    source: src-s7e12
+  - key: p-s7e12-a-role-s7e11
+    subject: p-s7e12-a
+    predicate: role_in_case
+    object: c-s7e11
+    value: "perpetrator"
+    status: confirmed
+    revealed: S7E12
+    source: src-s7e12
+  - key: c-s7e13-name
+    subject: c-s7e13
+    predicate: name
+    value: "The killer's revenge"
+    revealed: S7E13
+    source: src-s7e13
+  - key: c-s7e13-description
+    subject: c-s7e13
+    predicate: description
+    value: "A killer seeks revenge as the wedding approaches, and the FBI waits for him at the venue."
+    revealed: S7E13
+    source: src-s7e13
+  - key: p-s7e12-a-role-s7e13
+    subject: p-s7e12-a
+    predicate: role_in_case
+    object: c-s7e13
+    value: "perpetrator"
+    status: confirmed
+    revealed: S7E13
+    source: src-s7e13

@@ -71,6 +71,250 @@ entities:
     kind: location
     introduced: S6E10
 
+  - key: c-s6e11
+    kind: case
+    introduced: S6E11
+
+  - key: p-s6e11-a
+    kind: person
+    introduced: S6E11
+
+  - key: p-s6e11-b
+    kind: person
+    introduced: S6E11
+
+  - key: l-s6e11-a
+    kind: location
+    introduced: S6E11
+
+  - key: c-s6e12
+    kind: case
+    introduced: S6E12
+
+  - key: p-s6e12-a
+    kind: person
+    introduced: S6E12
+
+  - key: p-s6e12-b
+    kind: person
+    introduced: S6E12
+
+  - key: l-s6e12-a
+    kind: location
+    introduced: S6E12
+
+  - key: c-s6e13
+    kind: case
+    introduced: S6E13
+
+  - key: p-s6e13-a
+    kind: person
+    introduced: S6E13
+
+  - key: p-s6e13-b
+    kind: person
+    introduced: S6E13
+
+  - key: l-s6e13-a
+    kind: location
+    introduced: S6E13
+
+  - key: c-s6e14
+    kind: case
+    introduced: S6E14
+
+  - key: p-s6e14-a
+    kind: person
+    introduced: S6E14
+
+  - key: p-s6e14-b
+    kind: person
+    introduced: S6E14
+
+  - key: l-s6e14-a
+    kind: location
+    introduced: S6E14
+
+  - key: c-s6e15
+    kind: case
+    introduced: S6E15
+
+  - key: p-s6e15-a
+    kind: person
+    introduced: S6E15
+
+  - key: l-s6e15-a
+    kind: location
+    introduced: S6E15
+
+  - key: c-s6e16
+    kind: case
+    introduced: S6E16
+
+  - key: p-s6e16-b
+    kind: person
+    introduced: S6E16
+
+  - key: p-s6e16-c
+    kind: person
+    introduced: S6E16
+
+  - key: c-s6e17
+    kind: case
+    introduced: S6E17
+
+  - key: p-s6e17-a
+    kind: person
+    introduced: S6E17
+
+  - key: p-s6e17-b
+    kind: person
+    introduced: S6E17
+
+  - key: p-s6e17-c
+    kind: person
+    introduced: S6E17
+
+  - key: p-s6e17-d
+    kind: person
+    introduced: S6E17
+
+  - key: p-s6e17-e
+    kind: person
+    introduced: S6E17
+
+  - key: p-s6e17-f
+    kind: person
+    introduced: S6E17
+
+  - key: c-s6e18
+    kind: case
+    introduced: S6E18
+
+  - key: p-s6e18-a
+    kind: person
+    introduced: S6E18
+
+  - key: p-s6e18-b
+    kind: person
+    introduced: S6E18
+
+  - key: p-s6e18-c
+    kind: person
+    introduced: S6E18
+
+  - key: l-s6e18-a
+    kind: location
+    introduced: S6E18
+
+  - key: c-s6e19
+    kind: case
+    introduced: S6E19
+
+  - key: p-s6e19-a
+    kind: person
+    introduced: S6E19
+
+  - key: p-s6e19-b
+    kind: person
+    introduced: S6E19
+
+  - key: p-s6e19-c
+    kind: person
+    introduced: S6E19
+
+  - key: p-s6e19-d
+    kind: person
+    introduced: S6E19
+
+  - key: p-s6e19-e
+    kind: person
+    introduced: S6E19
+
+  - key: p-s6e19-f
+    kind: person
+    introduced: S6E19
+
+  - key: p-s6e19-g
+    kind: person
+    introduced: S6E19
+
+  - key: p-s6e19-h
+    kind: person
+    introduced: S6E19
+
+  - key: p-s6e19-i
+    kind: person
+    introduced: S6E19
+
+  - key: p-s6e19-j
+    kind: person
+    introduced: S6E19
+
+  - key: l-s6e19-a
+    kind: location
+    introduced: S6E19
+
+  - key: c-s6e20
+    kind: case
+    introduced: S6E20
+
+  - key: p-s6e20-a
+    kind: person
+    introduced: S6E20
+
+  - key: p-s6e20-b
+    kind: person
+    introduced: S6E20
+
+  - key: p-s6e20-c
+    kind: person
+    introduced: S6E20
+
+  - key: p-s6e20-d
+    kind: person
+    introduced: S6E20
+
+  - key: l-s6e20-a
+    kind: location
+    introduced: S6E20
+
+  - key: c-s6e21
+    kind: case
+    introduced: S6E21
+
+  - key: p-s6e21-a
+    kind: person
+    introduced: S6E21
+
+  - key: c-s6e22
+    kind: case
+    introduced: S6E22
+
+  - key: p-s6e22-a
+    kind: person
+    introduced: S6E22
+
+  - key: p-s6e22-b
+    kind: person
+    introduced: S6E22
+
+  - key: p-s6e22-c
+    kind: person
+    introduced: S6E22
+
+  - key: p-s6e22-d
+    kind: person
+    introduced: S6E22
+
+  - key: l-s6e22-a
+    kind: location
+    introduced: S6E22
+
+  - key: l-s6e22-b
+    kind: location
+    introduced: S6E22
+
 claims:
   - key: cl-s6e1-name
     subject: c-s6e1
@@ -443,3 +687,1028 @@ claims:
     revealed: S6E10
     source: src-s6e10
     note: "city-level"
+
+  - key: cl-s6e11-name
+    subject: c-s6e11
+    predicate: name
+    value: "The murder of five DEA agents"
+    revealed: S6E11
+    source: src-s6e11
+
+  - key: cl-s6e11-desc
+    subject: c-s6e11
+    predicate: description
+    value: "The FBI team investigates the killing of several DEA agents in Corpus Christi while Jane goes on a date with a woman linked to the case."
+    revealed: S6E11
+    source: src-s6e11
+
+  - key: cl-p-s6e11-a-name
+    subject: p-s6e11-a
+    predicate: name
+    value: "Krystal Markham"
+    revealed: S6E11
+    source: src-wiki-s6e11
+
+  - key: cl-p-s6e11-b-name
+    subject: p-s6e11-b
+    predicate: name
+    value: "Paco Perez"
+    revealed: S6E11
+    source: src-wiki-s6e11
+
+  - key: cl-l-s6e11-a-name
+    subject: l-s6e11-a
+    predicate: name
+    value: "Corpus Christi"
+    revealed: S6E11
+    source: src-wiki-s6e11
+
+  - key: cl-l-s6e11-a-case
+    subject: l-s6e11-a
+    predicate: part_of_case
+    object: c-s6e11
+    revealed: S6E11
+    source: src-wiki-s6e11
+
+  - key: cl-l-s6e11-a-coords
+    subject: l-s6e11-a
+    predicate: coordinates
+    value: "27.74277778,-97.40194444"
+    revealed: S6E11
+    source: src-wiki-s6e11
+    note: "city-level"
+
+  - key: cl-p-s6e11-a-role-11
+    subject: p-s6e11-a
+    predicate: role_in_case
+    object: c-s6e11
+    value: "perpetrator"
+    revealed: S6E11
+    source: src-s6e11
+
+  - key: cl-p-s6e11-b-role-11
+    subject: p-s6e11-b
+    predicate: role_in_case
+    object: c-s6e11
+    value: "victim"
+    revealed: S6E11
+    source: src-wiki-s6e11
+
+  - key: cl-s6e12-name
+    subject: c-s6e12
+    predicate: name
+    value: "The cartographer's murder"
+    revealed: S6E12
+    source: src-s6e12
+
+  - key: cl-s6e12-desc
+    subject: c-s6e12
+    predicate: description
+    value: "A high-tech cartographer who may have uncovered a spy ring is murdered in Houston, while an old colleague of Lisbon's fears he is being bugged."
+    revealed: S6E12
+    source: src-s6e12
+
+  - key: cl-p-s6e12-a-name
+    subject: p-s6e12-a
+    predicate: name
+    value: "Charles Whitaker"
+    revealed: S6E12
+    source: src-wiki-s6e12
+
+  - key: cl-p-s6e12-b-name
+    subject: p-s6e12-b
+    predicate: name
+    value: "Avery Schultz"
+    revealed: S6E12
+    source: src-wiki-s6e12
+
+  - key: cl-l-s6e12-a-name
+    subject: l-s6e12-a
+    predicate: name
+    value: "Houston"
+    revealed: S6E12
+    source: src-wiki-s6e12
+
+  - key: cl-l-s6e12-a-case
+    subject: l-s6e12-a
+    predicate: part_of_case
+    object: c-s6e12
+    revealed: S6E12
+    source: src-wiki-s6e12
+
+  - key: cl-l-s6e12-a-coords
+    subject: l-s6e12-a
+    predicate: coordinates
+    value: "29.75666667,-95.36527778"
+    revealed: S6E12
+    source: src-wiki-s6e12
+    note: "city-level"
+
+  - key: cl-p-s6e12-a-role-12
+    subject: p-s6e12-a
+    predicate: role_in_case
+    object: c-s6e12
+    value: "victim"
+    revealed: S6E12
+    source: src-s6e12
+
+  - key: cl-p-s6e12-b-role-12
+    subject: p-s6e12-b
+    predicate: role_in_case
+    object: c-s6e12
+    value: "perpetrator"
+    revealed: S6E12
+    source: src-s6e12
+
+  - key: cl-s6e12-role-ardiles
+    subject: p-ardiles
+    predicate: role_in_case
+    object: c-s6e12
+    value: "victim"
+    revealed: S6E12
+    source: src-s6e12
+
+  - key: cl-s6e13-name
+    subject: c-s6e13
+    predicate: name
+    value: "The U.S. attorney found dead in Mexico"
+    revealed: S6E13
+    source: src-s6e13
+
+  - key: cl-s6e13-desc
+    subject: c-s6e13
+    predicate: description
+    value: "The FBI team tracks the killer of a U.S. attorney whose body turns up in Mexico, and Jane joins a separatist commune to find the culprit."
+    revealed: S6E13
+    source: src-s6e13
+
+  - key: cl-p-s6e13-a-name
+    subject: p-s6e13-a
+    predicate: name
+    value: "Edith Firlock"
+    revealed: S6E13
+    source: src-wiki-s6e13
+
+  - key: cl-p-s6e13-b-name
+    subject: p-s6e13-b
+    predicate: name
+    value: "Rachel (known in the commune as Marcia)"
+    revealed: S6E13
+    source: src-wiki-s6e13
+
+  - key: cl-l-s6e13-a-name
+    subject: l-s6e13-a
+    predicate: name
+    value: "The separatist commune"
+    revealed: S6E13
+    source: src-wiki-s6e13
+
+  - key: cl-l-s6e13-a-case
+    subject: l-s6e13-a
+    predicate: part_of_case
+    object: c-s6e13
+    revealed: S6E13
+    source: src-wiki-s6e13
+
+  - key: cl-p-s6e13-a-role-13
+    subject: p-s6e13-a
+    predicate: role_in_case
+    object: c-s6e13
+    value: "victim"
+    revealed: S6E13
+    source: src-wiki-s6e13
+
+  - key: cl-p-s6e13-b-role-13
+    subject: p-s6e13-b
+    predicate: role_in_case
+    object: c-s6e13
+    value: "perpetrator"
+    revealed: S6E13
+    source: src-wiki-s6e13
+
+  - key: cl-s6e13-role-laroche
+    subject: p-laroche
+    predicate: role_in_case
+    object: c-s6e13
+    value: "victim"
+    revealed: S6E13
+    source: src-s6e13
+
+  - key: cl-s6e14-name
+    subject: c-s6e14
+    predicate: name
+    value: "The anti-fracking campaigner's death"
+    revealed: S6E14
+    source: src-s6e14
+
+  - key: cl-s6e14-desc
+    subject: c-s6e14
+    predicate: description
+    value: "The FBI team investigates the death of an anti-fracking campaigner while the threat against twelve former CBI agents escalates."
+    revealed: S6E14
+    source: src-s6e14
+
+  - key: cl-p-s6e14-a-name
+    subject: p-s6e14-a
+    predicate: name
+    value: "Dan Becker"
+    revealed: S6E14
+    source: src-wiki-s6e14
+
+  - key: cl-p-s6e14-b-name
+    subject: p-s6e14-b
+    predicate: name
+    value: "Bryce Kendrick"
+    revealed: S6E14
+    source: src-wiki-s6e14
+
+  - key: cl-l-s6e14-a-name
+    subject: l-s6e14-a
+    predicate: name
+    value: "The fracking site"
+    revealed: S6E14
+    source: src-wiki-s6e14
+
+  - key: cl-l-s6e14-a-case
+    subject: l-s6e14-a
+    predicate: part_of_case
+    object: c-s6e14
+    revealed: S6E14
+    source: src-wiki-s6e14
+
+  - key: cl-p-s6e14-a-role-14
+    subject: p-s6e14-a
+    predicate: role_in_case
+    object: c-s6e14
+    value: "victim"
+    revealed: S6E14
+    source: src-wiki-s6e14
+
+  - key: cl-p-s6e14-b-role-14
+    subject: p-s6e14-b
+    predicate: role_in_case
+    object: c-s6e14
+    value: "perpetrator"
+    revealed: S6E14
+    source: src-s6e14
+
+  - key: cl-s6e14-role-s4e7-haibach
+    subject: p-s4e7-haibach
+    predicate: role_in_case
+    object: c-s6e14
+    value: "suspect"
+    revealed: S6E14
+    source: src-s6e14
+
+  - key: cl-s6e15-name
+    subject: c-s6e15
+    predicate: name
+    value: "The abduction of Grace"
+    revealed: S6E15
+    source: src-s6e15
+
+  - key: cl-s6e15-desc
+    subject: c-s6e15
+    predicate: description
+    value: "After Grace is abducted, the FBI team tries to find her while their main suspect has an alibi and a protective lawyer."
+    revealed: S6E15
+    source: src-s6e15
+
+  - key: cl-p-s6e15-a-name
+    subject: p-s6e15-a
+    predicate: name
+    value: "Hazel Haibach"
+    revealed: S6E15
+    source: src-wiki-s6e15
+
+  - key: cl-l-s6e15-a-name
+    subject: l-s6e15-a
+    predicate: name
+    value: "The remote mountain cabin"
+    revealed: S6E15
+    source: src-s6e15
+
+  - key: cl-l-s6e15-a-case
+    subject: l-s6e15-a
+    predicate: part_of_case
+    object: c-s6e15
+    revealed: S6E15
+    source: src-s6e15
+
+  - key: cl-p-s6e15-a-role-15
+    subject: p-s6e15-a
+    predicate: role_in_case
+    object: c-s6e15
+    value: "accomplice"
+    revealed: S6E15
+    source: src-s6e15
+
+  - key: cl-s6e15-role-s4e7-haibach
+    subject: p-s4e7-haibach
+    predicate: role_in_case
+    object: c-s6e15
+    value: "perpetrator"
+    revealed: S6E15
+    source: src-s6e15
+
+  - key: cl-s6e15-role-van-pelt
+    subject: p-van-pelt
+    predicate: role_in_case
+    object: c-s6e15
+    value: "victim"
+    revealed: S6E15
+    source: src-s6e15
+
+  - key: cl-s6e16-name
+    subject: c-s6e16
+    predicate: name
+    value: "The art gallery robbery murder"
+    revealed: S6E16
+    source: src-s6e16
+
+  - key: cl-s6e16-desc
+    subject: c-s6e16
+    predicate: description
+    value: "The FBI consults its art division on the murder of an art gallery owner during a robbery, and Jane stages an elaborate sting to catch the robbers' leader."
+    revealed: S6E16
+    source: src-s6e16
+
+  - key: cl-p-s6e16-b-name
+    subject: p-s6e16-b
+    predicate: name
+    value: "John Hennigan"
+    revealed: S6E16
+    source: src-wiki-s6e16
+
+  - key: cl-p-s6e16-c-name
+    subject: p-s6e16-c
+    predicate: name
+    value: "Edwin McKaye"
+    revealed: S6E16
+    source: src-s6e16
+
+  - key: cl-p-s6e16-b-role-16
+    subject: p-s6e16-b
+    predicate: role_in_case
+    object: c-s6e16
+    value: "victim"
+    revealed: S6E16
+    source: src-s6e16
+
+  - key: cl-p-s6e16-c-role-16
+    subject: p-s6e16-c
+    predicate: role_in_case
+    object: c-s6e16
+    value: "perpetrator"
+    revealed: S6E16
+    source: src-s6e16
+
+  - key: cl-s6e16-role-s6e16-a
+    subject: p-s6e16-a
+    predicate: role_in_case
+    object: c-s6e16
+    value: "investigator"
+    revealed: S6E16
+    source: src-s6e16
+
+  - key: cl-s6e17-name
+    subject: c-s6e17
+    predicate: name
+    value: "The death row case"
+    revealed: S6E17
+    source: src-s6e17
+
+  - key: cl-s6e17-desc
+    subject: c-s6e17
+    predicate: description
+    value: "The team must find the real killer of an old crime while the man convicted of it is about to be executed."
+    revealed: S6E17
+    source: src-s6e17
+
+  - key: cl-p-s6e17-a-name
+    subject: p-s6e17-a
+    predicate: name
+    value: "David Ronaldo"
+    revealed: S6E17
+    source: src-wiki-s6e17
+
+  - key: cl-p-s6e17-b-name
+    subject: p-s6e17-b
+    predicate: name
+    value: "Pete Koch"
+    revealed: S6E17
+    source: src-wiki-s6e17
+
+  - key: cl-p-s6e17-c-name
+    subject: p-s6e17-c
+    predicate: name
+    value: "Luis Cruz"
+    revealed: S6E17
+    source: src-wiki-s6e17
+
+  - key: cl-p-s6e17-d-name
+    subject: p-s6e17-d
+    predicate: name
+    value: "Sarah Feinberg"
+    revealed: S6E17
+    source: src-wiki-s6e17
+
+  - key: cl-p-s6e17-e-name
+    subject: p-s6e17-e
+    predicate: name
+    value: "Mae Feinberg"
+    revealed: S6E17
+    source: src-wiki-s6e17
+
+  - key: cl-p-s6e17-f-name
+    subject: p-s6e17-f
+    predicate: name
+    value: "Edward Feinberg"
+    revealed: S6E17
+    source: src-wiki-s6e17
+
+  - key: cl-p-s6e17-a-role-17
+    subject: p-s6e17-a
+    predicate: role_in_case
+    object: c-s6e17
+    value: "victim"
+    revealed: S6E17
+    source: src-wiki-s6e17
+
+  - key: cl-p-s6e17-b-role-17
+    subject: p-s6e17-b
+    predicate: role_in_case
+    object: c-s6e17
+    value: "victim"
+    revealed: S6E17
+    source: src-wiki-s6e17
+
+  - key: cl-p-s6e17-d-role-17
+    subject: p-s6e17-d
+    predicate: role_in_case
+    object: c-s6e17
+    value: "victim"
+    revealed: S6E17
+    source: src-wiki-s6e17
+
+  - key: cl-p-s6e17-e-role-17
+    subject: p-s6e17-e
+    predicate: role_in_case
+    object: c-s6e17
+    value: "perpetrator"
+    revealed: S6E17
+    source: src-wiki-s6e17
+
+  - key: cl-p-s6e17-f-role-17
+    subject: p-s6e17-f
+    predicate: role_in_case
+    object: c-s6e17
+    value: "perpetrator"
+    revealed: S6E17
+    status: in_show_suspicion
+    source: src-wiki-s6e17
+
+  - key: cl-s6e18-name
+    subject: c-s6e18
+    predicate: name
+    value: "The murder near the men's club"
+    revealed: S6E18
+    source: src-s6e18
+
+  - key: cl-s6e18-desc
+    subject: c-s6e18
+    predicate: description
+    value: "A woman is found murdered near a remote men's social club, and Jane must find a way into the insular group to find the killer."
+    revealed: S6E18
+    source: src-s6e18
+
+  - key: cl-p-s6e18-a-name
+    subject: p-s6e18-a
+    predicate: name
+    value: "Madison Price"
+    revealed: S6E18
+    source: src-wiki-s6e18
+
+  - key: cl-p-s6e18-b-name
+    subject: p-s6e18-b
+    predicate: name
+    value: "Peter Kilgallen"
+    revealed: S6E18
+    source: src-wiki-s6e18
+
+  - key: cl-p-s6e18-c-name
+    subject: p-s6e18-c
+    predicate: name
+    value: "Gregory Dyer"
+    revealed: S6E18
+    source: src-wiki-s6e18
+
+  - key: cl-l-s6e18-a-name
+    subject: l-s6e18-a
+    predicate: name
+    value: "The Foragers Club"
+    revealed: S6E18
+    source: src-wiki-s6e18
+
+  - key: cl-l-s6e18-a-case
+    subject: l-s6e18-a
+    predicate: part_of_case
+    object: c-s6e18
+    revealed: S6E18
+    source: src-wiki-s6e18
+
+  - key: cl-p-s6e18-a-role-18
+    subject: p-s6e18-a
+    predicate: role_in_case
+    object: c-s6e18
+    value: "victim"
+    revealed: S6E18
+    source: src-wiki-s6e18
+
+  - key: cl-p-s6e18-b-role-18
+    subject: p-s6e18-b
+    predicate: role_in_case
+    object: c-s6e18
+    value: "victim"
+    revealed: S6E18
+    source: src-wiki-s6e18
+
+  - key: cl-p-s6e18-c-role-18
+    subject: p-s6e18-c
+    predicate: role_in_case
+    object: c-s6e18
+    value: "perpetrator"
+    revealed: S6E18
+    source: src-wiki-s6e18
+
+  - key: cl-s6e19-name
+    subject: c-s6e19
+    predicate: name
+    value: "The woman trafficking gang"
+    revealed: S6E19
+    source: src-s6e19
+
+  - key: cl-s6e19-desc
+    subject: c-s6e19
+    predicate: description
+    value: "After a woman dies in front of Jane, the FBI uncovers a gang trafficking women."
+    revealed: S6E19
+    source: src-s6e19
+
+  - key: cl-p-s6e19-a-name
+    subject: p-s6e19-a
+    predicate: name
+    value: "Leanne Cole"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-b-name
+    subject: p-s6e19-b
+    predicate: name
+    value: "Daniela Welker"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-c-name
+    subject: p-s6e19-c
+    predicate: name
+    value: "Ramon"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-d-name
+    subject: p-s6e19-d
+    predicate: name
+    value: "Claudia Fornham"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-e-name
+    subject: p-s6e19-e
+    predicate: name
+    value: "Ari Qasimi"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-f-name
+    subject: p-s6e19-f
+    predicate: name
+    value: "Ray Qasimi"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-g-name
+    subject: p-s6e19-g
+    predicate: name
+    value: "Jesse O'Connor"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-h-name
+    subject: p-s6e19-h
+    predicate: name
+    value: "Michael Ridley"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-i-name
+    subject: p-s6e19-i
+    predicate: name
+    value: "Anthony Tremel"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-j-name
+    subject: p-s6e19-j
+    predicate: name
+    value: "Amy Welker"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-l-s6e19-a-name
+    subject: l-s6e19-a
+    predicate: name
+    value: "The abandoned shack safe house"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-l-s6e19-a-case
+    subject: l-s6e19-a
+    predicate: part_of_case
+    object: c-s6e19
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-a-role-19
+    subject: p-s6e19-a
+    predicate: role_in_case
+    object: c-s6e19
+    value: "victim"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-b-role-19
+    subject: p-s6e19-b
+    predicate: role_in_case
+    object: c-s6e19
+    value: "victim"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-c-role-19
+    subject: p-s6e19-c
+    predicate: role_in_case
+    object: c-s6e19
+    value: "perpetrator"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-d-role-19
+    subject: p-s6e19-d
+    predicate: role_in_case
+    object: c-s6e19
+    value: "accomplice"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-e-role-19
+    subject: p-s6e19-e
+    predicate: role_in_case
+    object: c-s6e19
+    value: "accomplice"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-f-role-19
+    subject: p-s6e19-f
+    predicate: role_in_case
+    object: c-s6e19
+    value: "accomplice"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-p-s6e19-g-role-19
+    subject: p-s6e19-g
+    predicate: role_in_case
+    object: c-s6e19
+    value: "victim"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-s6e20-name
+    subject: c-s6e20
+    predicate: name
+    value: "The grand jury sting"
+    revealed: S6E20
+    source: src-s6e20
+
+  - key: cl-s6e20-desc
+    subject: c-s6e20
+    predicate: description
+    value: "Jane is apparently arrested for the murder of Red John as part of a sting to learn which member of a grand jury was paid off, while the traffickers are found to be harvesting organs."
+    revealed: S6E20
+    source: src-s6e20
+
+  - key: cl-p-s6e20-a-name
+    subject: p-s6e20-a
+    predicate: name
+    value: "Lydia Faulk"
+    revealed: S6E20
+    source: src-wiki-s6e20
+
+  - key: cl-p-s6e20-b-name
+    subject: p-s6e20-b
+    predicate: name
+    value: "John Acardo"
+    revealed: S6E20
+    source: src-wiki-s6e20
+
+  - key: cl-p-s6e20-c-name
+    subject: p-s6e20-c
+    predicate: name
+    value: "Elijah Macey"
+    revealed: S6E20
+    source: src-wiki-s6e20
+
+  - key: cl-p-s6e20-d-name
+    subject: p-s6e20-d
+    predicate: name
+    value: "Aurelio"
+    revealed: S6E20
+    source: src-wiki-s6e20
+
+  - key: cl-l-s6e20-a-name
+    subject: l-s6e20-a
+    predicate: name
+    value: "Il Tavolo Bianco restaurant"
+    revealed: S6E20
+    source: src-wiki-s6e20
+
+  - key: cl-l-s6e20-a-case
+    subject: l-s6e20-a
+    predicate: part_of_case
+    object: c-s6e20
+    revealed: S6E20
+    source: src-wiki-s6e20
+
+  - key: cl-p-s6e20-a-role-20
+    subject: p-s6e20-a
+    predicate: role_in_case
+    object: c-s6e20
+    value: "perpetrator"
+    revealed: S6E20
+    source: src-wiki-s6e20
+
+  - key: cl-p-s6e20-b-role-20
+    subject: p-s6e20-b
+    predicate: role_in_case
+    object: c-s6e20
+    value: "accomplice"
+    revealed: S6E20
+    source: src-wiki-s6e20
+
+  - key: cl-p-s6e20-c-role-20
+    subject: p-s6e20-c
+    predicate: role_in_case
+    object: c-s6e20
+    value: "victim"
+    revealed: S6E20
+    source: src-wiki-s6e20
+
+  - key: cl-p-s6e20-d-role-20
+    subject: p-s6e20-d
+    predicate: role_in_case
+    object: c-s6e20
+    value: "witness"
+    revealed: S6E20
+    source: src-wiki-s6e20
+
+  - key: cl-s6e21-name
+    subject: c-s6e21
+    predicate: name
+    value: "The head of the kidnapping ring"
+    revealed: S6E21
+    source: src-s6e21
+
+  - key: cl-s6e21-desc
+    subject: c-s6e21
+    predicate: description
+    value: "Jane and Lisbon seek the head of a kidnapping ring as its victims run out of time, while Lisbon decides whether to move to Washington."
+    revealed: S6E21
+    source: src-s6e21
+
+  - key: cl-p-s6e21-a-name
+    subject: p-s6e21-a
+    predicate: name
+    value: "Alexander Lark"
+    revealed: S6E21
+    source: src-wiki-s6e21
+
+  - key: cl-p-s6e19-e-role-21
+    subject: p-s6e19-e
+    predicate: role_in_case
+    object: c-s6e21
+    value: "victim"
+    revealed: S6E21
+    source: src-wiki-s6e21
+
+  - key: cl-p-s6e19-f-role-21
+    subject: p-s6e19-f
+    predicate: role_in_case
+    object: c-s6e21
+    value: "victim"
+    revealed: S6E21
+    source: src-wiki-s6e21
+
+  - key: cl-p-s6e19-h-role-21
+    subject: p-s6e19-h
+    predicate: role_in_case
+    object: c-s6e21
+    value: "perpetrator"
+    revealed: S6E21
+    status: in_show_suspicion
+    source: src-wiki-s6e21
+
+  - key: cl-p-s6e19-i-role-21
+    subject: p-s6e19-i
+    predicate: role_in_case
+    object: c-s6e21
+    value: "accomplice"
+    revealed: S6E21
+    source: src-wiki-s6e21
+
+  - key: cl-p-s6e19-j-role-21
+    subject: p-s6e19-j
+    predicate: role_in_case
+    object: c-s6e21
+    value: "victim"
+    revealed: S6E21
+    source: src-wiki-s6e21
+
+  - key: cl-p-s6e21-a-role-21
+    subject: p-s6e21-a
+    predicate: role_in_case
+    object: c-s6e21
+    value: "accomplice"
+    revealed: S6E21
+    source: src-wiki-s6e21
+
+  - key: cl-s6e22-name
+    subject: c-s6e22
+    predicate: name
+    value: "The reopened cold case"
+    revealed: S6E22
+    source: src-s6e22
+
+  - key: cl-s6e22-desc
+    subject: c-s6e22
+    predicate: description
+    value: "To stop Lisbon from leaving, Jane arranges for a cold case to be reopened, and the real killers are caught."
+    revealed: S6E22
+    source: src-s6e22
+
+  - key: cl-p-s6e22-a-name
+    subject: p-s6e22-a
+    predicate: name
+    value: "Wesley Baxter"
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+  - key: cl-p-s6e22-b-name
+    subject: p-s6e22-b
+    predicate: name
+    value: "Greta"
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+  - key: cl-p-s6e22-c-name
+    subject: p-s6e22-c
+    predicate: name
+    value: "Greta's business partner"
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+  - key: cl-p-s6e22-d-name
+    subject: p-s6e22-d
+    predicate: name
+    value: "Greta's yoga instructor"
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+  - key: cl-l-s6e22-a-name
+    subject: l-s6e22-a
+    predicate: name
+    value: "Miami"
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+  - key: cl-l-s6e22-a-case
+    subject: l-s6e22-a
+    predicate: part_of_case
+    object: c-s6e22
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+  - key: cl-l-s6e22-a-coords
+    subject: l-s6e22-a
+    predicate: coordinates
+    value: "25.77416667,-80.19361111"
+    revealed: S6E22
+    source: src-wiki-s6e22
+    note: "city-level"
+
+  - key: cl-l-s6e22-b-name
+    subject: l-s6e22-b
+    predicate: name
+    value: "The Blue Bird Lodge"
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+  - key: cl-l-s6e22-b-case
+    subject: l-s6e22-b
+    predicate: part_of_case
+    object: c-s6e22
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+  - key: cl-p-s6e22-a-role-22
+    subject: p-s6e22-a
+    predicate: role_in_case
+    object: c-s6e22
+    value: "suspect"
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+  - key: cl-p-s6e22-b-role-22
+    subject: p-s6e22-b
+    predicate: role_in_case
+    object: c-s6e22
+    value: "victim"
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+  - key: cl-p-s6e22-c-role-22
+    subject: p-s6e22-c
+    predicate: role_in_case
+    object: c-s6e22
+    value: "perpetrator"
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+  - key: cl-p-s6e22-d-role-22
+    subject: p-s6e22-d
+    predicate: role_in_case
+    object: c-s6e22
+    value: "perpetrator"
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+sources:
+  - key: src-wiki-s6e11
+    kind: wiki
+    episode: S6E11
+    url: https://thementalist.fandom.com/wiki/White_Lines
+  - key: src-wiki-s6e12
+    kind: wiki
+    episode: S6E12
+    url: https://thementalist.fandom.com/wiki/Golden_Hammer
+  - key: src-wiki-s6e13
+    kind: wiki
+    episode: S6E13
+    url: https://thementalist.fandom.com/wiki/Black_Helicopters
+  - key: src-wiki-s6e14
+    kind: wiki
+    episode: S6E14
+    url: https://thementalist.fandom.com/wiki/Grey_Water
+  - key: src-wiki-s6e15
+    kind: wiki
+    episode: S6E15
+    url: https://thementalist.fandom.com/wiki/White_as_the_Driven_Snow
+  - key: src-wiki-s6e16
+    kind: wiki
+    episode: S6E16
+    url: https://thementalist.fandom.com/wiki/Violets
+  - key: src-wiki-s6e17
+    kind: wiki
+    episode: S6E17
+    url: https://thementalist.fandom.com/wiki/Silver_Wings_of_Time
+  - key: src-wiki-s6e18
+    kind: wiki
+    episode: S6E18
+    url: https://thementalist.fandom.com/wiki/Forest_Green
+  - key: src-wiki-s6e19
+    kind: wiki
+    episode: S6E19
+    url: https://thementalist.fandom.com/wiki/Brown_Eyed_Girls
+  - key: src-wiki-s6e20
+    kind: wiki
+    episode: S6E20
+    url: https://thementalist.fandom.com/wiki/Il_Tavolo_Bianco
+  - key: src-wiki-s6e21
+    kind: wiki
+    episode: S6E21
+    url: https://thementalist.fandom.com/wiki/Black_Hearts
+  - key: src-wiki-s6e22
+    kind: wiki
+    episode: S6E22
+    url: https://thementalist.fandom.com/wiki/Blue_Bird
