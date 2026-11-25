@@ -81,3 +81,8 @@ pnpm --filter @mentalist/desktop tauri build
 ```
 
 `prebuild` compiles the canon first. Outputs land in `src-tauri/target/release/`: `mentalist.exe` (binary name set by `mainBinaryName`) and `bundle/nsis/The Mentalist Archive_0.1.0_x64-setup.exe` (per-user installer, supports `/S /D=<dir>`) plus `bundle/msi/*.msi`. The installer bundles both extracts as the `tiles` resource (about 267 MB); it is the main deliverable. `mentalist.exe` alone does not run correctly: it needs the `tiles/` folder next to it (the resource dir of an unbundled exe is its own folder). A copy of the deliverables is kept in the gitignored top-level `release/`. `scripts/smoke-installed.ps1` installs silently into a temp dir, launches the app and samples RAM.
+
+## Geek / Fans and About / Credits
+
+- **Geek / Fans** tab: non-canon theories and trivia from `engine.listTheories(p)` (gated by `spoils_up_to`, peek applies, never persisted). Each note shows its source page/revision URL, "Fandom contributors" and the CC BY-SA 3.0 line. View model: `buildFansModel` in `src/home/viewModel.ts`.
+- **About / Credits** tab (`src/home/Credits.tsx`): Fandom (CC BY-SA 3.0), TMDB notice and logo, OpenStreetMap/Protomaps, fonts. The TMDB logo (`public/credits/tmdb-logo.svg`, "blue short" from https://www.themoviedb.org/about/logos-attribution) is bundled locally; no runtime network.

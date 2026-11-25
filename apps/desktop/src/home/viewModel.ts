@@ -154,6 +154,48 @@ export function buildHomeModel(engine: KnowledgeEngine, p: CoreProgress): HomeMo
   };
 }
 
+export const FANS_AUTHOR = "Fandom contributors";
+export const FANS_LICENCE = "CC BY-SA 3.0 — adapted from The Mentalist Wiki";
+
+export interface FanNote {
+  id: string;
+  title: string;
+  body: string;
+  /** Page and revision URL, shown as text. */
+  sourceUrl: string;
+  author: string;
+  licence: string;
+  /** Episode code of the last episode the note discusses, e.g. "1x04". */
+  code: string;
+  tags: string[];
+  /** Fan notes are never canon. */
+  canon: false;
+}
+
+export interface FansModel {
+  notes: FanNote[];
+  /** Length of the visible rows. */
+  count: number;
+}
+
+/** Non-canon fan notes visible at `p` (the engine gates by spoils_up_to), ordered by spoils_up_to then title. */
+export function buildFansModel(engine: KnowledgeEngine, p: CoreProgress): FansModel {
+  const eps = engine.listEpisodes(p);
+  const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
+  const notes: FanNote[] = engine
+    .listTheories(p)
+    .sort((a, b) => a.spoilsUpTo - b.spoilsUpTo || cmp(a.title, b.title) || cmp(a.id, b.id))
+    .map((t) => {
+      const ep = eps[t.spoilsUpTo - 1];
+      return {
+        id: t.id, title: t.title, body: t.body, sourceUrl: t.sourceUrl,
+        author: FANS_AUTHOR, licence: FANS_LICENCE,
+        code: ep ? episodeCode(ep.season, ep.number) : "", tags: t.tags, canon: false as const,
+      };
+    });
+  return { notes, count: notes.length };
+}
+
 export interface BaseModel {
   id: string;
   /** [lon, lat] */
@@ -187,7 +229,7 @@ export interface GateModel {
 }
 
 export type HomeResult =
-  | { kind: "ok"; model: HomeModel; gate: GateModel; groups: SeasonGroup[]; base: BaseModel | null }
+  | { kind: "ok"; model: HomeModel; gate: GateModel; groups: SeasonGroup[]; base: BaseModel | null; fans: FansModel }
   | { kind: "not-found" }
   | { kind: "error" };
 
@@ -216,6 +258,7 @@ export function resolveHome(
       model: buildHomeModel(canon.engine, eff),
       groups: listBySeason(canon.engine, eff),
       base: currentBase(canon.engine, eff),
+      fans: buildFansModel(canon.engine, eff),
       gate: {
         label: labelAt(canon.engine, base),
         peeking,

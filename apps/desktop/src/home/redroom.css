@@ -128,3 +128,19 @@ button.rr-case:hover { background: rgba(236,228,216,.08); border-color: rgba(236
 .rr-episodes-body { overflow-y: auto; padding: 8px 24px 24px; }
 .rr-episodes .episodes { width: min(46rem, 100%); margin: 0 auto; }
 .rr-episodes .season h2 { font-size: .95rem; letter-spacing: .08em; }
+
+/* fans and credits panels */
+.rr-fans, .rr-credits { width: min(46rem, 100%); margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.rr-fans ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.rr-fan { border: 1px dashed rgba(236,228,216,.28); border-radius: 3px; padding: 12px 14px; background: repeating-linear-gradient(135deg, transparent 0 6px, rgba(236,228,216,.03) 6px 7px); }
+.rr-fan-head { display: flex; align-items: center; gap: 10px; }
+.rr-fan h3 { font-size: 15px; font-weight: 600; margin: 6px 0; }
+.rr-fan-body { font-size: 13px; white-space: pre-wrap; }
+.rr-fan-meta { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
+.rr-url { user-select: all; color: var(--gold); word-break: break-all; }
+.rr-panel-head h2 .rr-noncanon { margin-left: 8px; letter-spacing: .1em; font-size: 10px; }
+.rr-credits section { border-left: 2px solid var(--gold); padding-left: 12px; display: flex; flex-direction: column; gap: 6px; }
+.rr-credits h3 { font-size: 14px; font-weight: 600; }
+.rr-credits p { font-size: 13px; color: var(--muted); }
+.rr-credits strong { color: var(--text); }
+.rr-tmdb-logo { width: 120px; height: auto; opacity: .85; align-self: flex-start; }

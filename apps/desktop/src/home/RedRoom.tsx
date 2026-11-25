@@ -2,11 +2,12 @@ import { useEffect, useMemo, useState } from "react";
 import type { Canon } from "../data/canon";
 import { parseProgressInput, type Progress } from "../state/progress";
 import { Check, Open, SilCbi, SilJane, Smiley } from "./art";
+import { Credits } from "./Credits";
 import { RedMap } from "./RedMap";
 import { resolveHome } from "./viewModel";
 import "./redroom.css";
 
-type View = "board" | "episodes";
+type View = "board" | "episodes" | "fans" | "credits";
 
 function useReducedMotion() {
   const [reduced, setReduced] = useState(() => matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -122,6 +123,12 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
         <ul>
           <li><button aria-current={view === "board" ? "page" : undefined} onClick={() => setView("board")}>Board</button></li>
           <li><button aria-current={view === "episodes" ? "page" : undefined} onClick={() => setView("episodes")}>Episodes</button></li>
+          <li>
+            <button aria-current={view === "fans" ? "page" : undefined} onClick={() => setView("fans")}>
+              Geek / Fans <span className="rr-noncanon">NON-CANON</span>
+            </button>
+          </li>
+          <li><button aria-current={view === "credits" ? "page" : undefined} onClick={() => setView("credits")}>About / Credits</button></li>
         </ul>
       </nav>
 
@@ -280,6 +287,55 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
                 </div>
               )}
             </div>
+          </section>
+        )}
+
+        {view === "fans" && (
+          <section className="rr-episodes rr-glass" aria-label="Geek and fans">
+            <div className="rr-panel-head">
+              <h2>Geek / Fans <span className="rr-noncanon">NON-CANON</span></h2>
+              <button className="rr-btn" onClick={() => setView("board")}>Back to the board</button>
+            </div>
+            <div className="rr-episodes-body">
+              {!ok ? (
+                <p className="rr-empty">{canon ? "No data to show." : "Loading series data…"}</p>
+              ) : ok.fans.count === 0 ? (
+                <div className="rr-empty">
+                  <strong>No fan notes up to your progress yet</strong>
+                  <p>Fan theories and trivia appear once the episodes they discuss are watched.</p>
+                </div>
+              ) : (
+                <div className="rr-fans">
+                  <p className="rr-note">{ok.fans.count} fan {ok.fans.count === 1 ? "note" : "notes"} up to your progress. Fan content is not canon and may be wrong.</p>
+                  <ul>
+                    {ok.fans.notes.map((n) => (
+                      <li key={n.id} className="rr-fan">
+                        <div className="rr-fan-head">
+                          <span className="rr-noncanon">NON-CANON</span>
+                          <span className="rr-ep">{n.code}</span>
+                        </div>
+                        <h3>{n.title}</h3>
+                        <p className="rr-fan-body">{n.body}</p>
+                        <p className="rr-fan-meta">
+                          Source: <span className="rr-url">{n.sourceUrl}</span><br />
+                          Author: {n.author} · {n.licence}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
+        {view === "credits" && (
+          <section className="rr-episodes rr-glass" aria-label="About and credits">
+            <div className="rr-panel-head">
+              <h2>About / Credits</h2>
+              <button className="rr-btn" onClick={() => setView("board")}>Back to the board</button>
+            </div>
+            <div className="rr-episodes-body"><Credits /></div>
           </section>
         )}
       </main>
