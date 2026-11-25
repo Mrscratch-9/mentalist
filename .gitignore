@@ -7,3 +7,6 @@ target/
 *.pmtiles
 .codegraph/
 release/
+
+# Local data-source settings with private keys (never committed)
+data-sources.txt

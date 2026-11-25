@@ -1,0 +1,14 @@
+# Data sources for the canon importer (pnpm data:import).
+# 1. Copy this file to data-sources.txt (same folder). data-sources.txt is in .gitignore and is never committed.
+# 2. Fill in the values after "=". Lines starting with # are comments.
+
+# The Mentalist Wiki (Fandom), MediaWiki API. Public, no key needed.
+FANDOM_API=https://thementalist.fandom.com/api.php
+
+# The Movie Database (TMDB). Create a free key at https://www.themoviedb.org/settings/api
+# Paste the "API Read Access Token" (v4, long) or the "API Key" (v3, short). Keep it private.
+TMDB_API_KEY=
+# TMDB id of the series. Leave empty to search it by name.
+TMDB_SHOW_ID=
+# Language for titles and synopses (e.g. en-US, es-AR).
+TMDB_LANGUAGE=en-US
