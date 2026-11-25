@@ -1,5 +1,5 @@
 // Full-bleed 3D night map. MapLibre pinned to 5.x (deck.gl 9.4 breaks on 6); tiles are read by HTTP Range (never loaded whole).
-// Offline: the style has no glyphs/sprite and no symbol layers, so nothing is requested from the network.
+// Offline: street/place labels use glyph PBFs and a sprite vendored in public/basemap (same origin), nothing leaves the app.
 import { useEffect, useMemo, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
@@ -39,11 +39,23 @@ const TEXT = "#ece4d8";
 const GOLD = "#d9b25a";
 
 // Red is reserved for Red John: the basemap is the neutral "black" flavor with a blue-black river.
-// Symbol layers (labels, POIs, shields) are dropped: they need glyph PBFs and sprites, which are not
-// bundled, and the pins and their labels (deck.gl, canvas text) are what the map is for.
-const noSymbols = (ls: ReturnType<typeof baseLayers>) => ls.filter((l) => l.type !== "symbol");
+// Label layers (streets, places, water, shields) are kept. Their fonts are the protomaps Noto Sans stacks, vendored
+// under public/basemap/fonts without spaces in the directory names, so the stacks are renamed here.
+const FONT_DIRS: Record<string, string> = {
+  "Noto Sans Regular": "NotoSans-Regular",
+  "Noto Sans Medium": "NotoSans-Medium",
+  "Noto Sans Italic": "NotoSans-Italic",
+};
+const renameFonts = <T,>(v: T): T =>
+  JSON.parse(JSON.stringify(v), (_k, x) => (typeof x === "string" && FONT_DIRS[x] ? FONT_DIRS[x] : x)) as T;
+// Same-origin URLs (Vite in the browser, the app's own asset origin in Tauri); maplibre needs absolute ones for the sprite.
+const assetUrl = (p: string) => `${window.location.origin}${p}`; // not new URL(): it would escape the {fontstack} braces
 
-const flavor = { ...BLACK, water: "#0e1a23", earth: "#121110", buildings: "#1a1715", ocean_label: "#8fa6b2" };
+const flavor = { ...BLACK, water: "#0e1a23", earth: "#121110", buildings: "#1a1715", ocean_label: "#8fa6b2",
+  // The "black" flavor's greys are too dim on the night map: lighter labels, dark halos stay.
+  roads_label_minor: "#a39b90", roads_label_major: "#bdb4a7", address_label: "#8a8279",
+  subplace_label: "#9b9387", city_label: "#d6cdc0", state_label: "#8a8279", country_label: "#a39b90",
+};
 
 // Icons go to deck.gl as one pre-decoded canvas atlas (iconAtlas + iconMapping), never as URLs: deck would
 // fetch() a data: URL, which would need data: in connect-src. <img src="data:..."> only needs img-src data:.
@@ -130,24 +142,29 @@ function registerTiles(file: string): Promise<string> {
 
 /** The same night style per source: protomaps layers with ids prefixed by the source, one shared background, plus 3D buildings. */
 function sourceLayers(id: string): LayerSpecification[] {
+  const all = baseLayers(id, flavor, { lang: "en" })
+    .filter((l) => l.type !== "background" || id === SOURCES[0]?.id)
+    .map((l) => renameFonts({ ...l, id: `${id}:${l.id}` }) as LayerSpecification);
+  // Labels are drawn above the 3D buildings so street and place names are never hidden by extrusions.
+  const labels = all.filter((l) => l.type === "symbol");
   return [
-    ...noSymbols(baseLayers(id, flavor, { lang: "en" }))
-      .filter((l) => l.type !== "background" || id === SOURCES[0]?.id)
-      .map((l) => ({ ...l, id: `${id}:${l.id}` }) as LayerSpecification),
-    {
-      id: `${id}:buildings-3d`,
-      type: "fill-extrusion",
-      source: id,
-      "source-layer": "buildings",
-      paint: {
-        "fill-extrusion-color": ["interpolate", ["linear"], ["coalesce", ["get", "height"], 8], 0, "#2c2825", 40, "#3b3531", 120, "#4d453e"],
-        "fill-extrusion-height": ["coalesce", ["get", "height"], 8],
-        "fill-extrusion-base": ["coalesce", ["get", "min_height"], 0],
-        "fill-extrusion-opacity": 0.92,
-      },
-    },
+    ...all.filter((l) => l.type !== "symbol"),
+    buildings3d(id),
+    ...labels,
   ];
 }
+const buildings3d = (id: string): LayerSpecification => ({
+    id: `${id}:buildings-3d`,
+    type: "fill-extrusion",
+    source: id,
+    "source-layer": "buildings",
+    paint: {
+      "fill-extrusion-color": ["interpolate", ["linear"], ["coalesce", ["get", "height"], 8], 0, "#2c2825", 40, "#3b3531", 120, "#4d453e"],
+      "fill-extrusion-height": ["coalesce", ["get", "height"], 8],
+      "fill-extrusion-base": ["coalesce", ["get", "min_height"], 0],
+      "fill-extrusion-opacity": 0.92,
+    },
+  });
 
 interface Props {
   pins: PinModel[];
@@ -204,6 +221,8 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, base, onU
         attributionControl: { compact: true },
         style: {
           version: 8,
+          glyphs: assetUrl("/basemap/fonts/{fontstack}/{range}.pbf"),
+          sprite: assetUrl("/basemap/sprites/black"),
           sources: Object.fromEntries(ok.map((o) => [o.id, { type: "vector" as const, url: o.url, attribution: "© OpenStreetMap, Protomaps" }])),
           layers: ok.flatMap((o) => sourceLayers(o.id)),
         },
