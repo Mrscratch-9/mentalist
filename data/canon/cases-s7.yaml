@@ -31,6 +31,10 @@ sources:
     kind: wiki
     episode: S7E11
     url: https://thementalist.fandom.com/wiki/Byzantium
+  - key: src-wiki-s7e13
+    kind: wiki
+    episode: S7E13
+    url: https://thementalist.fandom.com/wiki/White_Orchids
 
 entities:
   - key: c-s7e1
@@ -929,4 +933,4 @@ claims:
     value: "perpetrator"
     status: confirmed
     revealed: S7E13
-    source: src-s7e13
+    source: src-wiki-s7e13

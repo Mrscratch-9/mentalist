@@ -950,7 +950,7 @@ claims:
     object: c-s6e14
     value: "perpetrator"
     revealed: S6E14
-    source: src-s6e14
+    source: src-wiki-s6e14
 
   - key: cl-s6e14-role-s4e7-haibach
     subject: p-s4e7-haibach
