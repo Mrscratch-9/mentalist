@@ -9,14 +9,24 @@ Feature: replace the hand-authored canon with data imported at build time from T
 - S3: Owner decision (existing data): "Reemplazarlos por los importados" — "Fandom pasa a ser la fuente principal y los YAML actuales se regeneran desde el importador."
 - S4: Owner decision (TMDB key): "la variable la tengo quiero que cree un txt yo relleno los campos y con txt hacers todo ese proceso de conectarse". The settings file is `data-sources.txt` (gitignored; template `data-sources.example.txt`). The agent never reads, prints, copies or commits it; runs that send the key to TMDB are started by the owner or with the owner's explicit authorization.
 - S5: Owner decision (fans): "Teorías y trivia de fans" — "Llenar la sección Geek / Fans (no canónica) con teorías y curiosidades de la wiki, filtradas por episodio para no spoilear."
+- S7: Owner decision (cases): "Importar lo estructurado y curar casos (Recomendado)" — "El importador reemplaza episodios, personajes, invitados y curiosidades. Culpables, víctimas, lugares y marcas de Red John quedan como capa curada, revisada contra la wiki como hasta ahora."
+- S8: Owner decision (synopsis): "La de TMDB (Recomendado)" — "Oficial y corta. Suele contar solo la premisa del caso. Se muestra con la atribución que pide TMDB."
+- S9: Attribution: Fandom text is CC BY-SA (page, revision link, licence, "Fandom contributors", adapted); TMDB requires its logo, the notice "This product uses the TMDB API but is not endorsed or certified by TMDB." and a link, in an About/Credits section.
 - S6: Unchanged guarantees: every fact keeps a source tied to its reveal episode (`docs/design.md` §1, §3); the spoiler engine gates everything; the owner (progress S6E10) never sees canon text after S6E10 outside the app — reports and logs are counts and keys only.
 
 ## Tasks
 
 - T0 [S1-S5] Explore the Fandom API (episode, character and case page templates/infobox fields, categories, trivia sections, rate limits/licence) and TMDB (series/season/episode endpoints, credits, auth with v3 key or v4 token). Route: explorer. Commit: n/a.
-- T1.. Planned after T0 (importer package, mapping to the claim model, fans section, regeneration of data/canon, gating checks).
+- T1 [S1, S2, S6] `packages/importer` Fandom client: api.php with descriptive User-Agent, sequential requests, `maxlag=5` + retry, continuation, on-disk cache keyed by revid (gitignored); parsers for `Infobox episode`/`Infobox character` (brace-depth), wikilinks/redirects, sections, categories; S3E23+24 split. Route: worker (parallel with T2, T5). Commit: pending.
+- T2 [S4, S8] `packages/importer` settings + TMDB client: read `data-sources.txt` (never log or echo values), TMDB v3/v4 auth via Bearer header, series 5920 seasons 1-7 episodes (name, overview, air_date), rate-limit friendly, cache. Route: worker (parallel with T1, T5). Commit: pending.
+- T3 [S2, S3, S5, S6, S7, S8] Generators + CLI `pnpm data:import`: episodes (Fandom infobox + TMDB synopsis), characters (persons introduced at `first`; name, actor, job; `recurring` from Main/Recurring categories; no `status`/`last`/`family`), guests per episode (`appears_in`), trivia → theories with `spoils_up_to` = max episode linked in the bullet; writes generated YAML. Route: worker (after T1, T2). Commit: pending.
+- T4 [S3, S7] Reconcile the curated case layer with imported keys (person refs, recurring characters), remove the replaced hand-authored files, keep all guards green. Route: worker (after T3). Commit: pending.
+- T5 [S5, S9] App: Geek / Fans section (non-canon, gated by `spoils_up_to`) and About/Credits (Fandom CC BY-SA, TMDB logo + notice). Route: worker (parallel with T1, T2). Commit: pending.
+- T6 [S2, S4, S6] Run the Fandom import (agent) and the TMDB step (owner, or agent with the owner's explicit authorization), independent verification, rebuild `mentalist.exe`. Route: inline + verifier. Commit: pending.
 
 ## Log
 
 - L1: Owner request 2026-11-25 (main b104964), quoted in S1; answers quoted in S2-S5.
 - L2: Created `data-sources.example.txt` (no secrets) and gitignored `data-sources.txt`.
+- L3: T0 findings: Fandom has no structured killer/victim/location data (only prose); episode infobox fields Title, season, episode, Aired, Writer, Director, Guests, Recurring; character infobox name, actor, first, last, status, job, family; categories Main/Recurring/Minor characters, Killers, Victims, Red John *; Trivia sections leak later events; no theories category; page URLs 403 behind Cloudflare, api.php works; licence CC-BY-SA. TMDB series id 5920; attribution logo + notice; storage terms to check.
+- L4: Owner answers: cases curated (S7), TMDB synopsis (S8).

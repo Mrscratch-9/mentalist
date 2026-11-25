@@ -94,6 +94,22 @@ importers:
         specifier: ^4.1.12
         version: 4.1.12(@types/node@24.19.2)(vite@8.3.8(@types/node@24.19.2)(yaml@2.9.1))
 
+  packages/importer:
+    dependencies:
+      '@mentalist/pipeline':
+        specifier: workspace:*
+        version: link:../pipeline
+      yaml:
+        specifier: ^2.9.1
+        version: 2.9.1
+    devDependencies:
+      '@types/node':
+        specifier: ^24.0.0
+        version: 24.19.2
+      vitest:
+        specifier: ^4.1.5
+        version: 4.1.12(@types/node@24.19.2)(vite@8.3.8(@types/node@24.19.2)(yaml@2.9.1))
+
   packages/pipeline:
     dependencies:
       '@mentalist/core':
