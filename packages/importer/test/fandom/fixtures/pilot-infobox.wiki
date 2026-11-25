@@ -1,0 +1,28 @@
+{{Tabs|
+{{Tabs/Active|Pilot|Episode}}
+{{Tabs/Inactive|Pilot/Quotes|Quotes}}
+}}
+{{Infobox episode
+|Title=Pilot Episode
+|Image=Pilot the mentalist.jpg
+|season=1
+|episode=1
+|Aired=September 23, 2008
+|Writer= [[Bruno Heller]]
+|Director=David Nutter 
+|Recurring = [[Brett Partridge]] - [[Jack Plotnick]]<br>[[Linus Wagner|Dr. Linus Wagner]] - [[Zeljko Ivanek]]
+|Guests = [[Morgan Tolliver]] - [[Steven Culp]]<br>[[Tag Randolph]] - [[Tim Guinee]]<br/>Medical Examiner - [[Tara Karsian]]<br>Kelly - [[Lana Asanin]]
+|Next=[[Red Hair and Silver Tape]]
+}}'''"Pilot"''' is the first episode of ''[[The Mentalist]]''.
+
+==Recap==
+[[File:Missingpilot.jpg|thumb|left|200px|Poster]]
+Synthetic recap text with a [[Patrick Jane]] link.
+
+==Trivia==
+* Bullet one mentions [[Season 1|1]] only.
+** Nested bullet.
+* Bullet two.
+
+==Gallery==
+Nothing.
