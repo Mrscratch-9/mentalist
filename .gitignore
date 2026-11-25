@@ -6,3 +6,4 @@ target/
 # large map extracts are generated locally, not committed
 *.pmtiles
 .codegraph/
+release/

@@ -71,3 +71,13 @@ Strict by default; the only additions over the plain app policy:
   Verified in headless Chromium: without it the worker is blocked (`worker-src blob`).
 
 `img-src data:` was already there (inline SVG). 
+
+## Build the Windows app
+
+Prerequisites: both map extracts present in `public/tiles/` (`california.pmtiles`, `austin.pmtiles`; they are gitignored), Rust, and the Windows toolchain. The Tauri CLI downloads the NSIS/WiX tools into its own cache on first use.
+
+```
+pnpm --filter @mentalist/desktop tauri build
+```
+
+`prebuild` compiles the canon first. Outputs land in `src-tauri/target/release/`: `mentalist.exe` (binary name set by `mainBinaryName`) and `bundle/nsis/The Mentalist Archive_0.1.0_x64-setup.exe` (per-user installer, supports `/S /D=<dir>`) plus `bundle/msi/*.msi`. The installer bundles both extracts as the `tiles` resource (about 267 MB); it is the main deliverable. `mentalist.exe` alone does not run correctly: it needs the `tiles/` folder next to it (the resource dir of an unbundled exe is its own folder). A copy of the deliverables is kept in the gitignored top-level `release/`. `scripts/smoke-installed.ps1` installs silently into a temp dir, launches the app and samples RAM.
