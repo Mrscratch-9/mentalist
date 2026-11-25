@@ -182,10 +182,11 @@ export interface FansModel {
 export function buildFansModel(engine: KnowledgeEngine, p: CoreProgress): FansModel {
   const eps = engine.listEpisodes(p);
   const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
-  const notes: FanNote[] = engine
-    .listTheories(p)
+  // Copy before sorting: never reorder an array the engine may share.
+  const notes: FanNote[] = [...engine.listTheories(p)]
     .sort((a, b) => a.spoilsUpTo - b.spoilsUpTo || cmp(a.title, b.title) || cmp(a.id, b.id))
     .map((t) => {
+      // listEpisodes returns every episode in broadcast order (watched or not), so index = ep_index - 1.
       const ep = eps[t.spoilsUpTo - 1];
       return {
         id: t.id, title: t.title, body: t.body, sourceUrl: t.sourceUrl,
