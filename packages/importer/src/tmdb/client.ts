@@ -32,6 +32,21 @@ interface RawEpisode {
   air_date?: string | null;
 }
 
+function isEpisodeList(v: unknown): v is TmdbEpisode[] {
+  return (
+    Array.isArray(v) &&
+    v.length > 0 &&
+    v.every((e) => {
+      const o = e as Partial<TmdbEpisode> | null;
+      return (
+        typeof o === "object" && o !== null && Number.isInteger(o.season) && Number.isInteger(o.episode) &&
+        typeof o.name === "string" && typeof o.overview === "string" &&
+        (o.airDate === null || typeof o.airDate === "string")
+      );
+    })
+  );
+}
+
 export class TmdbClient {
   private readonly fetchFn: typeof fetch;
   private readonly cacheDir: string;
@@ -64,15 +79,18 @@ export class TmdbClient {
       `${this.showId}-s${season}-${language.replace(/[^A-Za-z0-9-]/g, "_")}.json`,
     );
     try {
-      return JSON.parse(readFileSync(cacheFile, "utf8")) as TmdbEpisode[];
+      const cached: unknown = JSON.parse(readFileSync(cacheFile, "utf8"));
+      if (isEpisodeList(cached)) return cached;
     } catch {
-      // cache miss
+      // cache miss or unreadable cache
     }
     if (!this.credential) throw new Error(INVALID_KEY);
     const body = await this.request(
       `${BASE}/tv/${this.showId}/season/${season}?language=${encodeURIComponent(language)}`,
     );
-    const eps = ((body as { episodes?: RawEpisode[] }).episodes ?? []).map(
+    const raw = (body as { episodes?: unknown }).episodes;
+    if (!Array.isArray(raw) || raw.length === 0) throw new Error(`TMDB season ${season} returned no episodes`);
+    const eps = (raw as RawEpisode[]).map(
       (e): TmdbEpisode => ({
         season: e.season_number ?? season,
         episode: e.episode_number ?? 0,
@@ -121,7 +139,8 @@ export class TmdbClient {
       }
       if (res.status === 429) {
         if (attempt >= this.maxRetries) throw new Error("TMDB rate limit (429): retries exhausted");
-        const ra = Number(res.headers.get("Retry-After"));
+        const header = res.headers.get("Retry-After");
+        const ra = header !== null && header.trim() !== "" ? Number(header) : NaN;
         await this.sleep(Number.isFinite(ra) && ra >= 0 ? ra * 1000 : 1000 * 2 ** attempt);
         continue;
       }

@@ -1,4 +1,4 @@
-import { mkdtempSync, rmSync } from "node:fs";
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterAll, describe, expect, it } from "vitest";
@@ -122,5 +122,55 @@ describe("TmdbClient", () => {
     const c = new TmdbClient({ apiKey: V4, showId: 5920, fetch: f, cacheDir: cacheDir() });
     await expect(c.getSeason(0, "en-US")).rejects.toThrow(/season/i);
     await expect(c.getSeason(8, "en-US")).rejects.toThrow(/season/i);
+  });
+});
+
+describe("TmdbClient review fixes", () => {
+  it("does not cache an empty or missing episodes list", async () => {
+    for (const body of [{}, { episodes: [] }]) {
+      const cd = cacheDir();
+      const a = fake(() => json(body));
+      await expect(
+        new TmdbClient({ apiKey: V4, showId: 5920, fetch: a.f, cacheDir: cd }).getSeason(1, "en-US"),
+      ).rejects.toThrow(/no episodes/i);
+      const b = fake(() => json(seasonBody));
+      const eps = await new TmdbClient({ apiKey: V4, showId: 5920, fetch: b.f, cacheDir: cd }).getSeason(1, "en-US");
+      expect(eps).toHaveLength(2);
+      expect(b.calls).toHaveLength(1);
+    }
+  });
+
+  it("ignores cached JSON that is not an array of episodes", async () => {
+    for (const bad of ["{}", "[]", "null", '"x"', '[{"foo":1}]', "not json"]) {
+      const cd = cacheDir();
+      mkdirSync(cd, { recursive: true });
+      writeFileSync(join(cd, "5920-s1-en-US.json"), bad);
+      const { f, calls } = fake(() => json(seasonBody));
+      const eps = await new TmdbClient({ apiKey: V4, showId: 5920, fetch: f, cacheDir: cd }).getSeason(1, "en-US");
+      expect(eps).toHaveLength(2);
+      expect(calls).toHaveLength(1);
+    }
+  });
+
+  it("a 429 without Retry-After (or with a non-numeric one) uses exponential backoff", async () => {
+    for (const headers of [{}, { "Retry-After": "Wed, 21 Oct 2015 07:28:00 GMT" }] as Array<Record<string, string>>) {
+      const sleeps: number[] = [];
+      const { f } = fake((_c, i) => (i < 3 ? json({}, 429, headers) : json(seasonBody)));
+      const c = new TmdbClient({
+        apiKey: V4, showId: 5920, fetch: f, cacheDir: cacheDir(), sleep: async (ms) => void sleeps.push(ms),
+      });
+      await c.getSeason(1, "en-US");
+      expect(sleeps).toEqual([1000, 2000, 4000]);
+    }
+  });
+
+  it("a numeric Retry-After is honored in seconds", async () => {
+    const sleeps: number[] = [];
+    const { f } = fake((_c, i) => (i < 1 ? json({}, 429, { "Retry-After": "3" }) : json(seasonBody)));
+    const c = new TmdbClient({
+      apiKey: V4, showId: 5920, fetch: f, cacheDir: cacheDir(), sleep: async (ms) => void sleeps.push(ms),
+    });
+    await c.getSeason(1, "en-US");
+    expect(sleeps).toEqual([3000]);
   });
 });

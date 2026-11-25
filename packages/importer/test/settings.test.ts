@@ -72,3 +72,25 @@ describe("redact", () => {
     expect(redact(loadSettings(file(""))).tmdbApiKey).toBeUndefined();
   });
 });
+
+describe("TMDB_SHOW_ID validation", () => {
+  it.each(["0", "00", "-5", "1.5", "abc", "9007199254740993", "99999999999999999999"])(
+    "rejects %s without echoing it",
+    (v) => {
+      let msg = "";
+      try {
+        loadSettings(file(`TMDB_SHOW_ID=${v}`));
+      } catch (e) {
+        msg = (e as Error).message;
+      }
+      expect(msg).toMatch(/TMDB_SHOW_ID/);
+      expect(msg).not.toContain(v);
+    },
+  );
+  it("skips TMDB validation when asked (--skip-tmdb)", () => {
+    expect(loadSettings(file("TMDB_SHOW_ID=0"), { tmdb: false }).tmdbShowId).toBe(5920);
+  });
+  it("accepts a positive safe integer", () => {
+    expect(loadSettings(file("TMDB_SHOW_ID=1399")).tmdbShowId).toBe(1399);
+  });
+});

@@ -22,7 +22,12 @@ function unquote(v: string): string {
   return v;
 }
 
-export function parseSettings(text: string): Settings {
+export interface ParseOptions {
+  /** Validate the TMDB fields (default true). The CLI passes false with --skip-tmdb. */
+  tmdb?: boolean;
+}
+
+export function parseSettings(text: string, opts: ParseOptions = {}): Settings {
   const raw = new Map<string, string>();
   for (const line of text.split(/\r?\n/)) {
     const t = line.trim();
@@ -37,9 +42,12 @@ export function parseSettings(text: string): Settings {
   };
   const idRaw = get("TMDB_SHOW_ID");
   let tmdbShowId = DEFAULT_SHOW_ID;
-  if (idRaw !== undefined) {
-    if (!/^\d+$/.test(idRaw)) throw new Error("TMDB_SHOW_ID must be a positive integer");
-    tmdbShowId = Number(idRaw);
+  if (idRaw !== undefined && opts.tmdb !== false) {
+    const n = /^\d+$/.test(idRaw) ? Number(idRaw) : NaN;
+    if (!Number.isSafeInteger(n) || n <= 0) {
+      throw new Error("TMDB_SHOW_ID must be a positive integer"); // never echo the value
+    }
+    tmdbShowId = n;
   }
   return {
     fandomApi: get("FANDOM_API") ?? DEFAULT_FANDOM_API,
@@ -50,13 +58,13 @@ export function parseSettings(text: string): Settings {
 }
 
 /** Reads data-sources.txt. Values are never logged or put in error messages. */
-export function loadSettings(path: string = DEFAULT_SETTINGS_PATH): Settings {
+export function loadSettings(path: string = DEFAULT_SETTINGS_PATH, opts: ParseOptions = {}): Settings {
   if (!existsSync(path)) {
     throw new Error(
       "Settings file not found. Copy data-sources.example.txt to data-sources.txt and fill in the values.",
     );
   }
-  return parseSettings(readFileSync(path, "utf8"));
+  return parseSettings(readFileSync(path, "utf8"), opts);
 }
 
 /** Copy of the settings that is safe to print in debug output. */

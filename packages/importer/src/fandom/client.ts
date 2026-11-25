@@ -41,8 +41,10 @@ interface ApiResponse {
 }
 
 class RetryableError extends Error {
-  constructor(message: string, readonly retryAfterMs?: number) {
+  readonly retryAfterMs: number | undefined;
+  constructor(message: string, retryAfterMs?: number) {
     super(message);
+    this.retryAfterMs = retryAfterMs;
   }
 }
 
@@ -190,8 +192,10 @@ export class FandomClient {
 
   /** All pages of a category via generator=categorymembers (batches of 20 by default). */
   async getCategoryPages(category: string, opts: { batchSize?: number; namespace?: number } = {}): Promise<FandomPage[]> {
+    const memberKey = { kind: "category-pages", category: category.replace(/^Category:/i, ""), namespace: String(opts.namespace ?? "") };
     if (this.cache?.offline) {
-      return this.getPages(await this.listCategoryMembers(category, opts), opts);
+      const hit = (await this.cache.getResponse(memberKey)) as { titles?: string[] } | null;
+      return this.getPages(hit?.titles ?? (await this.listCategoryMembers(category, opts)), opts);
     }
     const found = new Map<string, FandomPage>();
     await this.paged(
@@ -206,6 +210,7 @@ export class FandomClient {
     );
     const pages = [...found.values()];
     await this.store(pages);
+    if (this.cache) await this.cache.putResponse(memberKey, { titles: pages.map((p) => p.title) });
     return pages;
   }
 

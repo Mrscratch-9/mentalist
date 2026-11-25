@@ -150,6 +150,18 @@ describe("FandomClient", () => {
     expect(await c.listCategoryMembers("C")).toEqual(["A"]);
     expect(f2.calls).toHaveLength(0);
   });
+
+  it("getCategoryPages works offline after an online run (member list is cached)", async () => {
+    const dir = tmp();
+    const on = fake([json({ query: { pages: [pageBody("A", 1), pageBody("B", 2)] } })]);
+    const online = new FandomClient(opts(on.fn, { cache: new FandomCache({ dir }) }));
+    const first = await online.getCategoryPages("Cat", { namespace: 0 });
+    const off = fake([]);
+    const offline = new FandomClient(opts(off.fn, { cache: new FandomCache({ dir, offline: true }) }));
+    const again = await offline.getCategoryPages("Cat", { namespace: 0 });
+    expect(again.map((p) => p.title).sort()).toEqual(first.map((p) => p.title).sort());
+    expect(off.calls).toHaveLength(0);
+  });
 });
 
 describe.skipIf(process.env.FANDOM_LIVE !== "1")("live (opt-in)", () => {
@@ -158,4 +170,5 @@ describe.skipIf(process.env.FANDOM_LIVE !== "1")("live (opt-in)", () => {
     const [p] = await c.getPages(["Pilot"]);
     expect(p?.wikitext).toContain("Infobox episode");
   });
+
 });
