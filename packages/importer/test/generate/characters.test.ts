@@ -60,3 +60,24 @@ describe("generateCharacters", () => {
     expect(c.stats.keyCollisions).toBe(1);
   });
 });
+
+describe("generateCharacters last appearance (gating only)", () => {
+  const g = generateCharacters(
+    [
+      ch("Has Last", { lastEpisode: "Second One" }),
+      ch("No Last", { lastEpisode: null }),
+      ch("Bad Last", { lastEpisode: "Nowhere" }),
+    ],
+    resolver,
+    { wikiBase: BASE },
+  );
+  it("resolves last to an episode code, or the finale when missing/unresolvable", () => {
+    expect(g.lastByTitle.get("has last")).toBe("S1E2");
+    expect(g.lastByTitle.get("no last")).toBe("S7E13");
+    expect(g.lastByTitle.get("bad last")).toBe("S7E13");
+  });
+  it("never emits it as a claim or on the person", () => {
+    expect(g.claims.every((c) => !/last/.test(c.predicate) && !/S1E2/.test(c.value))).toBe(true);
+    expect(g.entities.every((e) => Object.keys(e).sort().join() === "introduced,key,kind")).toBe(true);
+  });
+});

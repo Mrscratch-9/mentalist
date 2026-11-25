@@ -9,7 +9,13 @@ export interface FanPage {
   kind: "episode" | "character";
   /** Code of the page's own episode (episode page) or of the character's `first`; null when unknown. */
   own: string | null;
+  /** Character pages: code of the character's last appearance (gating only); null/absent = unknown, gates at the finale. */
+  last?: string | null;
 }
+
+/** Plain-text signals that an episode-page bullet talks about later events. */
+export const FUTURE_WORDS =
+  /\b(?:later|eventually|would|final|last episode|dies|killed|revealed|turns out|season 7|series finale)\b/i;
 
 export interface OutTheory {
   key: string;
@@ -115,6 +121,11 @@ export function generateFans(pages: FanPage[], resolver: LinkResolver, opts: { w
       if (fp.own === null) stats.noOwnEpisodeItems++;
       else codes.push(fp.own);
       if (unresolved) stats.unresolvedLinkItems++;
+
+      if (fp.kind === "character") {
+        if (fp.last) codes.push(fp.last);
+        else unresolved = true;
+      } else if (FUTURE_WORDS.test(body)) unresolved = true;
 
       const spoils = unresolved || fp.own === null ? FINALE : (maxCode(codes) ?? FINALE);
       const key = `t-${createHash("sha256").update(`${fp.page.title}\n${body}`).digest("hex").slice(0, 12)}`;

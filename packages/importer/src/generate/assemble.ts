@@ -82,6 +82,7 @@ export function assemble(input: AssembleInput): Assembled {
     page,
     kind,
     own: kind === "episode" ? (resolver.episode(page.title)?.last ?? null) : (resolver.person(page.title)?.introduced ?? null),
+    last: kind === "character" ? (chars.lastByTitle.get(normTitle(page.title)) ?? null) : null,
   }));
   const fans = generateFans(fanPages, resolver, opts);
 

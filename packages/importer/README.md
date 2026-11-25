@@ -16,7 +16,9 @@ node packages/importer/src/cli.ts [--skip-tmdb] [--offline] [--cache-dir <dir>]
 
 ## Rules
 
-- Persons are created only for character pages with an infobox whose `first` resolves to an episode; `status`, `last` and `family` are never imported.
+- Persons are created only for character pages with an infobox whose `first` resolves to an episode; `status` and `family` are never imported, and `last` is read only to gate fan trivia (never emitted as a claim or text).
 - Every claim is revealed at the person's first episode (or, for `appears_in`, at that episode) and sourced to that episode's wiki source; the character page URL + revision is in the claim `note`.
-- Trivia bullet `spoils_up_to` = latest of the page's own episode, every linked episode/character introduction, `S#E#`/`Season N` text mentions; any unresolvable link gates the bullet at the series finale (`S7E13`).
+- Trivia bullet `spoils_up_to` = latest of the page's own episode, every linked episode/character introduction and `S#E#`/`NxM`/`Season N` text mentions; any unresolvable link gates the bullet at the series finale (`S7E13`). Plain text can describe later events, so two more rules apply:
+  - Character pages: also the character's infobox `last` episode; a missing or unresolvable `last` gates at the finale.
+  - Episode pages (heuristic): a bullet whose text contains a future-knowledge word (`later`, `eventually`, `would`, `final`, `last episode`, `dies`, `killed`, `revealed`, `turns out`, `season 7`, `series finale`; whole words, case-insensitive) gates at the finale. It errs on the side of hiding; a recurring character mentioned by name does not by itself raise the gate.
 - Fandom text is CC BY-SA; TMDB data needs the attribution described in `odd/tasks/source-importer.md` (S9).

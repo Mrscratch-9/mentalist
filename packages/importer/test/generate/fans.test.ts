@@ -3,16 +3,16 @@ import { generateFans } from "../../src/generate/fans.ts";
 import { createLinkResolver } from "../../src/generate/links.ts";
 import { BASE, ep, page } from "./helpers.ts";
 
-const eps = [ep(1, 1, "Pilot"), ep(1, 2, "Two"), ep(2, 5, "Later")];
+const eps = [ep(1, 1, "Pilot"), ep(1, 2, "Two"), ep(2, 5, "Fifth")];
 const persons = new Map([["early person", { key: "p-early-person", introduced: "S1E2" }]]);
 const resolver = createLinkResolver({ episodes: eps, persons });
-const wiki = (body: string) => `Intro\n==Trivia==\n${body}\n==Gallery==\n* not trivia [[Later]]`;
+const wiki = (body: string) => `Intro\n==Trivia==\n${body}\n==Gallery==\n* not trivia [[Fifth]]`;
 
 describe("generateFans", () => {
   const g = generateFans(
     [
-      { page: page("Pilot", wiki("* Plain fact about the pilot.\n** nested note\n* See [[Later]] for more.\n* Mentions [[Early Person]] only.\n* Mentions [[Unknown Place]].\n*   ")), kind: "episode", own: "S1E1" },
-      { page: page("Early Person", wiki("* A fun fact with ''markup'' and [[Two|the second]] ref<ref>cite</ref>."), 3), kind: "character", own: "S1E2" },
+      { page: page("Pilot", wiki("* Plain fact about the pilot.\n** nested note\n* See [[Fifth]] for more.\n* Mentions [[Early Person]] only.\n* Mentions [[Unknown Place]].\n*   ")), kind: "episode", own: "S1E1" },
+      { page: page("Early Person", wiki("* A fun fact with ''markup'' and [[Two|the second]] ref<ref>cite</ref>."), 3), kind: "character", own: "S1E2", last: "S1E2" },
       { page: page("Lost Person", wiki("* Orphan fact."), 4), kind: "character", own: null },
     ],
     resolver,
@@ -47,7 +47,7 @@ describe("generateFans", () => {
   });
   it("truncates long titles to about eight words and gates text mentions of codes/seasons", () => {
     const r = generateFans(
-      [{ page: page("Pilot", wiki("* One two three four five six seven eight nine ten.\n* Later in S2E5 something.\n* In season 2 stuff.")), kind: "episode", own: "S1E1" }],
+      [{ page: page("Pilot", wiki("* One two three four five six seven eight nine ten.\n* Back in S2E5 something.\n* In season 2 stuff.")), kind: "episode", own: "S1E1" }],
       resolver,
       { wikiBase: BASE },
     );
@@ -56,10 +56,43 @@ describe("generateFans", () => {
     expect(r.theories.find((t) => t.body.includes("season 2"))!.spoils_up_to).toBe("S2E5");
   });
   it("joins continuation lines to their bullet so hidden links still gate it", () => {
-    const r = generateFans([{ page: page("Pilot", wiki("* first line\ncontinues with [[Later]]")), kind: "episode", own: "S1E1" }], resolver, { wikiBase: BASE });
+    const r = generateFans([{ page: page("Pilot", wiki("* first line\ncontinues with [[Fifth]]")), kind: "episode", own: "S1E1" }], resolver, { wikiBase: BASE });
     expect(r.theories[0]!.spoils_up_to).toBe("S2E5");
   });
   it("counts stats", () => {
     expect(g.stats).toMatchObject({ items: 6, unresolvedLinkItems: 1, noOwnEpisodeItems: 1 });
+  });
+});
+
+describe("generateFans spoiler gating of plain text", () => {
+  const run = (kind: "episode" | "character", own: string, body: string, last?: string | null) =>
+    generateFans(
+      [{ page: page("Pilot", wiki(body)), kind, own, ...(last !== undefined ? { last } : {}) }],
+      resolver,
+      { wikiBase: BASE },
+    ).theories.map((t) => t.spoils_up_to);
+
+  it("character bullets gate at the character's last episode", () => {
+    expect(run("character", "S1E1", "* Plain fact.", "S2E5")).toEqual(["S2E5"]);
+  });
+  it("character bullets take the max of last, links and explicit mentions", () => {
+    expect(run("character", "S1E1", "* Fact [[Two]].", "S1E1")).toEqual(["S1E2"]);
+    expect(run("character", "S1E1", "* Fact [[Two]].", "S2E5")).toEqual(["S2E5"]);
+    expect(run("character", "S1E1", "* Fact from S2E5.", "S1E2")).toEqual(["S2E5"]);
+  });
+  it("character bullets without a known last gate at the finale", () => {
+    expect(run("character", "S1E1", "* Plain fact.", null)).toEqual(["S7E13"]);
+    expect(run("character", "S1E1", "* Plain fact.")).toEqual(["S7E13"]);
+  });
+  it.each([
+    "He later became rich.", "Eventually he left.", "She would return.", "The final scene.",
+    "Seen in the last episode.", "He dies here.", "Someone is killed.", "It is revealed to be a lie.",
+    "It turns out fine.", "Compare season 7 events.", "Like the series finale.",
+  ])("episode bullets with future-knowledge words gate at the finale: %s", (b) => {
+    expect(run("episode", "S1E1", `* ${b}`)).toEqual(["S7E13"]);
+  });
+  it("episode bullets without those words stay at the page episode; last is ignored", () => {
+    expect(run("episode", "S1E1", "* Plain fact about a lasting thing, wouldn't matter.", "S2E5")).toEqual(["S1E1"]);
+    expect(run("episode", "S1E1", "* Mentions [[Early Person]].")).toEqual(["S1E2"]);
   });
 });

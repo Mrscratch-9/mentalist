@@ -42,7 +42,7 @@ describe("assemble", () => {
       episodes: 4, missingSynopsis: 4, persons: 2, recurring: 1, skippedUnresolved: 1,
       guestClaims: 2, fans: 3,
     });
-    expect(a.report.fansBySeason).toEqual({ 1: 2, 7: 1 });
+    expect(a.report.fansBySeason).toEqual({ 1: 1, 7: 2 });
   });
   it("is deterministic", () => {
     expect(renderYaml(assemble(input).docs["characters.yaml"]!)).toBe(renderYaml(a.docs["characters.yaml"]!));

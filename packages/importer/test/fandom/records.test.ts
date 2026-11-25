@@ -46,10 +46,11 @@ describe("parseCharacterPage", () => {
     const c = parseCharacterPage(page("Synth Person", src, ["Main characters"]));
     expect(c).toEqual({
       pageTitle: "Synth Person", name: "Synth Person", actor: "Some Actor", first: "Pilot",
-      job: "Agent", categories: ["Main characters"], revid: 42,
+      lastEpisode: "Secret", job: "Agent", categories: ["Main characters"], revid: 42,
     });
     expect(Object.keys(c!)).not.toContain("status");
     expect(Object.keys(c!)).not.toContain("last");
+    expect(parseCharacterPage(page("N", "{{Infobox character|name=Z|first=[[Pilot]]}}"))!.lastEpisode).toBeNull();
     expect(Object.keys(c!)).not.toContain("family");
   });
   it("returns null without infobox and nulls for missing fields", () => {

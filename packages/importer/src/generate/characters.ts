@@ -1,5 +1,5 @@
 import type { CharacterRecord } from "../fandom/characters.ts";
-import { normTitle, slug, wikiSrcKey, wikiUrl, type OutClaim, type OutEntity } from "./common.ts";
+import { FINALE, normTitle, slug, wikiSrcKey, wikiUrl, type OutClaim, type OutEntity } from "./common.ts";
 import type { LinkResolver, PersonRef } from "./links.ts";
 
 export interface CharactersOptions {
@@ -11,6 +11,8 @@ export interface CharactersResult {
   claims: OutClaim[];
   /** Persons by normalized page title, for the guest and fan generators. */
   personsByTitle: Map<string, PersonRef>;
+  /** Last-appearance code by normalized page title (series finale when missing/unresolvable). For gating only; never emitted. */
+  lastByTitle: Map<string, string>;
   stats: {
     persons: number;
     recurring: number;
@@ -43,6 +45,7 @@ export function generateCharacters(
   const entities: OutEntity[] = [];
   const claims: OutClaim[] = [];
   const personsByTitle = new Map<string, PersonRef>();
+  const lastByTitle = new Map<string, string>();
   const stats = { persons: 0, recurring: 0, skippedNoFirst: 0, skippedUnresolved: 0, keyCollisions: 0 };
   const keys = new Set<string>();
 
@@ -65,6 +68,7 @@ export function generateCharacters(
     keys.add(key);
     entities.push({ key, kind: "person", introduced: intro });
     personsByTitle.set(normTitle(r.pageTitle), { key, introduced: intro });
+    lastByTitle.set(normTitle(r.pageTitle), (r.lastEpisode ? resolver.episode(r.lastEpisode)?.last : undefined) ?? FINALE);
     stats.persons++;
 
     const note = wikiUrl(opts.wikiBase, r.pageTitle, r.revid);
@@ -82,5 +86,5 @@ export function generateCharacters(
   }
   entities.sort((a, b) => cmp(a.key, b.key));
   claims.sort((a, b) => cmp(a.key, b.key));
-  return { entities, claims, personsByTitle, stats };
+  return { entities, claims, personsByTitle, lastByTitle, stats };
 }
