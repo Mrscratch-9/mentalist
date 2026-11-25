@@ -9,12 +9,24 @@ export interface LoadedDoc { file: string; doc: Doc }
 const fmtPath = (p: PropertyKey[]): string =>
   p.map((s, i) => (typeof s === "number" ? `[${s}]` : i ? `.${String(s)}` : String(s))).join("") || "$";
 
-/** Read and schema-check every *.yaml / *.yml file of a directory (sorted by name). */
+/** Every *.yaml / *.yml file under dir, recursively, as forward-slash relative paths sorted by code unit (deterministic on every OS). */
+function listYaml(dir: string, rel = ""): string[] {
+  const out: string[] = [];
+  for (const ent of readdirSync(join(dir, rel), { withFileTypes: true })) {
+    const r = rel ? `${rel}/${ent.name}` : ent.name;
+    // A yaml-named entry is always read as a file (an unreadable one is reported, never skipped).
+    if (/\.ya?ml$/i.test(ent.name)) out.push(r);
+    else if (ent.isDirectory()) out.push(...listYaml(dir, r));
+  }
+  return out;
+}
+
+/** Read and schema-check every *.yaml / *.yml file under a directory, recursively (sorted by relative path). */
 export function loadDir(dir: string): { docs: LoadedDoc[]; errors: PipelineError[] } {
   let files: string[];
   try {
     if (!statSync(dir).isDirectory()) throw new Error();
-    files = readdirSync(dir).filter((f) => /\.ya?ml$/i.test(f)).sort();
+    files = listYaml(dir).sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
   } catch {
     throw new UsageError(`input directory not readable: ${dir}`);
   }

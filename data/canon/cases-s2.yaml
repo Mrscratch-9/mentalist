@@ -9,35 +9,14 @@ entities:
   - key: c-s2e2
     kind: case
     introduced: S2E2
-  - key: p-s2e2-victim
-    kind: person
-    introduced: S2E2
   - key: c-s2e3
     kind: case
-    introduced: S2E3
-  - key: p-s2e3-victim
-    kind: person
     introduced: S2E3
   - key: p-s2e3-carmen
     kind: person
     introduced: S2E3
-  - key: p-s2e3-howard
-    kind: person
-    introduced: S2E3
   - key: c-s2e4
     kind: case
-    introduced: S2E4
-  - key: p-s2e4-victim
-    kind: person
-    introduced: S2E4
-  - key: p-s2e4-mcbride
-    kind: person
-    introduced: S2E4
-  - key: p-s2e4-constance
-    kind: person
-    introduced: S2E4
-  - key: p-s2e4-guthrie
-    kind: person
     introduced: S2E4
   - key: c-s2e5
     kind: case
@@ -66,20 +45,8 @@ entities:
   - key: c-s2e9
     kind: case
     introduced: S2E9
-  - key: p-s2e9-victim
-    kind: person
-    introduced: S2E9
-  - key: p-s2e9-murphy
-    kind: person
-    introduced: S2E9
-  - key: p-s2e9-tom
-    kind: person
-    introduced: S2E9
   - key: c-s2e10
     kind: case
-    introduced: S2E10
-  - key: p-s2e10-victim
-    kind: person
     introduced: S2E10
   - key: p-s2e10-father
     kind: person
@@ -90,15 +57,6 @@ entities:
   - key: c-s2e11
     kind: case
     introduced: S2E11
-  - key: p-s2e11-victim1
-    kind: person
-    introduced: S2E11
-  - key: p-s2e11-victim2
-    kind: person
-    introduced: S2E11
-  - key: p-s2e11-willa
-    kind: person
-    introduced: S2E11
   - key: p-s2e11-logan
     kind: person
     introduced: S2E11
@@ -108,26 +66,11 @@ entities:
   - key: p-s2e12-victim
     kind: person
     introduced: S2E12
-  - key: p-s2e12-brewster
-    kind: person
-    introduced: S2E12
   - key: l-s2e12-site
     kind: location
     introduced: S2E12
   - key: c-s2e13
     kind: case
-    introduced: S2E13
-  - key: p-s2e13-victim
-    kind: person
-    introduced: S2E13
-  - key: p-s2e13-elias
-    kind: person
-    introduced: S2E13
-  - key: p-s2e13-sparhawk
-    kind: person
-    introduced: S2E13
-  - key: p-s2e13-kinsey
-    kind: person
     introduced: S2E13
   - key: l-s2e13-dealership
     kind: location
@@ -135,29 +78,14 @@ entities:
   - key: c-s2e14
     kind: case
     introduced: S2E14
-  - key: p-s2e14-victim
-    kind: person
-    introduced: S2E14
   - key: c-s2e15
     kind: case
-    introduced: S2E15
-  - key: p-s2e15-victim
-    kind: person
     introduced: S2E15
   - key: l-s2e15-competition
     kind: location
     introduced: S2E15
   - key: c-s2e16
     kind: case
-    introduced: S2E16
-  - key: p-s2e16-victim
-    kind: person
-    introduced: S2E16
-  - key: p-s2e16-welks
-    kind: person
-    introduced: S2E16
-  - key: p-s2e16-harken
-    kind: person
     introduced: S2E16
   - key: p-s2e16-nash
     kind: person
@@ -174,32 +102,14 @@ entities:
   - key: c-s2e18
     kind: case
     introduced: S2E18
-  - key: p-s2e18-jane-doe
-    kind: person
-    introduced: S2E18
   - key: p-s2e18-victim
     kind: person
     introduced: S2E18
   - key: c-s2e19
     kind: case
     introduced: S2E19
-  - key: p-s2e19-victim
-    kind: person
-    introduced: S2E19
-  - key: p-s2e19-sylvan
-    kind: person
-    introduced: S2E19
-  - key: p-s2e19-odenthal
-    kind: person
-    introduced: S2E19
-  - key: p-s2e19-draber
-    kind: person
-    introduced: S2E19
   - key: c-s2e20
     kind: case
-    introduced: S2E20
-  - key: p-s2e20-victim
-    kind: person
     introduced: S2E20
   - key: l-s2e20-center
     kind: location
@@ -213,14 +123,8 @@ entities:
   - key: p-s2e21-daphne
     kind: person
     introduced: S2E21
-  - key: p-s2e21-mosca
-    kind: person
-    introduced: S2E21
   - key: c-s2e22
     kind: case
-    introduced: S2E22
-  - key: p-s2e22-victim
-    kind: person
     introduced: S2E22
   - key: c-s2e23
     kind: case
@@ -228,33 +132,6 @@ entities:
   - key: p-s2e23-victim
     kind: person
     introduced: S2E23
-  - key: p-s2e1-rhonda
-    kind: person
-    introduced: S2E1
-  - key: p-s2e2-batson
-    kind: person
-    introduced: S2E2
-  - key: p-s2e4-lucas
-    kind: person
-    introduced: S2E4
-  - key: p-s2e6-sandrine
-    kind: person
-    introduced: S2E6
-  - key: p-s2e14-frank
-    kind: person
-    introduced: S2E14
-  - key: p-s2e15-elisa
-    kind: person
-    introduced: S2E15
-  - key: p-s2e17-bandino
-    kind: person
-    introduced: S2E17
-  - key: p-s2e20-alex
-    kind: person
-    introduced: S2E20
-  - key: p-s2e22-bigelow
-    kind: person
-    introduced: S2E22
 
 claims:
   - key: k-s2e1-name
@@ -284,14 +161,8 @@ claims:
       day."
     revealed: S2E2
     source: src-s2e2
-  - key: k-s2e2-victim-name
-    subject: p-s2e2-victim
-    predicate: name
-    value: "Kristin Marley"
-    revealed: S2E2
-    source: src-s2e2
   - key: k-s2e2-victim-role
-    subject: p-s2e2-victim
+    subject: p-kristin-marley
     predicate: role_in_case
     object: c-s2e2
     value: "victim"
@@ -310,14 +181,8 @@ claims:
       on the weapon and a gap in her memory, making her the prime suspect."
     revealed: S2E3
     source: src-s2e3
-  - key: k-s2e3-victim-name
-    subject: p-s2e3-victim
-    predicate: name
-    value: "William Mcteer"
-    revealed: S2E3
-    source: src-s2e3
   - key: k-s2e3-victim-role
-    subject: p-s2e3-victim
+    subject: p-william-mctier
     predicate: role_in_case
     object: c-s2e3
     value: "victim"
@@ -336,21 +201,15 @@ claims:
     value: "perpetrator"
     revealed: S2E3
     source: src-s2e3
-  - key: k-s2e3-howard-name
-    subject: p-s2e3-howard
-    predicate: name
-    value: "Milton Howard"
-    revealed: S2E3
-    source: src-s2e3
   - key: k-s2e3-howard-role
-    subject: p-s2e3-howard
+    subject: p-milton-howard
     predicate: role_in_case
     object: c-s2e3
     value: "accomplice"
     revealed: S2E3
     source: src-s2e3
   - key: k-s2e3-lisbon-role
-    subject: p-lisbon
+    subject: p-teresa-lisbon
     predicate: role_in_case
     object: c-s2e3
     value: "suspect"
@@ -370,55 +229,31 @@ claims:
       motorcycle gang, with suspects among his gang and family."
     revealed: S2E4
     source: src-s2e4
-  - key: k-s2e4-victim-name
-    subject: p-s2e4-victim
-    predicate: name
-    value: "Gordon Hodge"
-    revealed: S2E4
-    source: src-s2e4
   - key: k-s2e4-victim-role
-    subject: p-s2e4-victim
+    subject: p-gordon-hodge
     predicate: role_in_case
     object: c-s2e4
     value: "victim"
     revealed: S2E4
     source: src-s2e4
-  - key: k-s2e4-mcbride-name
-    subject: p-s2e4-mcbride
-    predicate: name
-    value: "Von McBride"
-    revealed: S2E4
-    source: src-s2e4
   - key: k-s2e4-mcbride-role
-    subject: p-s2e4-mcbride
+    subject: p-von-mcbride
     predicate: role_in_case
     object: c-s2e4
     value: "suspect"
     revealed: S2E4
     source: src-s2e4
     status: in_show_suspicion
-  - key: k-s2e4-constance-name
-    subject: p-s2e4-constance
-    predicate: name
-    value: "Constance"
-    revealed: S2E4
-    source: src-s2e4
   - key: k-s2e4-constance-role
-    subject: p-s2e4-constance
+    subject: p-constance-hoyt
     predicate: role_in_case
     object: c-s2e4
     value: "suspect"
     revealed: S2E4
     source: src-s2e4
     status: in_show_suspicion
-  - key: k-s2e4-guthrie-name
-    subject: p-s2e4-guthrie
-    predicate: name
-    value: "Felicia Guthrie"
-    revealed: S2E4
-    source: src-s2e4
   - key: k-s2e4-guthrie-role
-    subject: p-s2e4-guthrie
+    subject: p-felicia-guthrie
     predicate: role_in_case
     object: c-s2e4
     value: "suspect"
@@ -517,7 +352,7 @@ claims:
     revealed: S2E8
     source: src-s2e8
   - key: k-s2e8-bosco-role
-    subject: p-bosco
+    subject: p-sam-bosco
     predicate: role_in_case
     object: c-s2e8
     value: "victim"
@@ -555,40 +390,22 @@ claims:
       leads to a safe cracker and a nephew of the owner's wife."
     revealed: S2E9
     source: src-s2e9
-  - key: k-s2e9-victim-name
-    subject: p-s2e9-victim
-    predicate: name
-    value: "Carl Ward"
-    revealed: S2E9
-    source: src-s2e9
   - key: k-s2e9-victim-role
-    subject: p-s2e9-victim
+    subject: p-carl-ward
     predicate: role_in_case
     object: c-s2e9
     value: "victim"
     revealed: S2E9
     source: src-s2e9
-  - key: k-s2e9-murphy-name
-    subject: p-s2e9-murphy
-    predicate: name
-    value: "Doyle Murphy"
-    revealed: S2E9
-    source: src-s2e9
   - key: k-s2e9-murphy-role
-    subject: p-s2e9-murphy
+    subject: p-doyle-murphy
     predicate: role_in_case
     object: c-s2e9
     value: "suspect"
     revealed: S2E9
     source: src-s2e9
-  - key: k-s2e9-tom-name
-    subject: p-s2e9-tom
-    predicate: name
-    value: "Tom Doverton"
-    revealed: S2E9
-    source: src-s2e9
   - key: k-s2e9-tom-role
-    subject: p-s2e9-tom
+    subject: p-tom-doverton
     predicate: role_in_case
     object: c-s2e9
     value: "perpetrator"
@@ -607,14 +424,8 @@ claims:
       and his scouting academy holds the motive."
     revealed: S2E10
     source: src-s2e10
-  - key: k-s2e10-victim-name
-    subject: p-s2e10-victim
-    predicate: name
-    value: "Barney Sloop"
-    revealed: S2E10
-    source: src-s2e10
   - key: k-s2e10-victim-role
-    subject: p-s2e10-victim
+    subject: p-barney-sloop
     predicate: role_in_case
     object: c-s2e10
     value: "victim"
@@ -658,40 +469,22 @@ claims:
       prank links the killing to the class."
     revealed: S2E11
     source: src-s2e11
-  - key: k-s2e11-victim1-name
-    subject: p-s2e11-victim1
-    predicate: name
-    value: "Selby Vickers"
-    revealed: S2E11
-    source: src-s2e11
   - key: k-s2e11-victim1-role
-    subject: p-s2e11-victim1
+    subject: p-selby-vickers
     predicate: role_in_case
     object: c-s2e11
     value: "victim"
-    revealed: S2E11
-    source: src-s2e11
-  - key: k-s2e11-victim2-name
-    subject: p-s2e11-victim2
-    predicate: name
-    value: "Jana Vickers"
     revealed: S2E11
     source: src-s2e11
   - key: k-s2e11-victim2-role
-    subject: p-s2e11-victim2
+    subject: p-jana-vickers
     predicate: role_in_case
     object: c-s2e11
     value: "victim"
     revealed: S2E11
     source: src-s2e11
-  - key: k-s2e11-willa-name
-    subject: p-s2e11-willa
-    predicate: name
-    value: "Willa"
-    revealed: S2E11
-    source: src-s2e11
   - key: k-s2e11-willa-role
-    subject: p-s2e11-willa
+    subject: p-willa-brock
     predicate: role_in_case
     object: c-s2e11
     value: "perpetrator"
@@ -737,14 +530,8 @@ claims:
     value: "victim"
     revealed: S2E12
     source: src-s2e12
-  - key: k-s2e12-brewster-name
-    subject: p-s2e12-brewster
-    predicate: name
-    value: "Mike Brewster"
-    revealed: S2E12
-    source: src-s2e12
   - key: k-s2e12-brewster-role
-    subject: p-s2e12-brewster
+    subject: p-mike-brewster
     predicate: role_in_case
     object: c-s2e12
     value: "perpetrator"
@@ -775,53 +562,29 @@ claims:
       elite car dealership."
     revealed: S2E13
     source: src-s2e13
-  - key: k-s2e13-victim-name
-    subject: p-s2e13-victim
-    predicate: name
-    value: "Liselle Douglas"
-    revealed: S2E13
-    source: src-s2e13
   - key: k-s2e13-victim-role
-    subject: p-s2e13-victim
+    subject: p-liselle-douglas
     predicate: role_in_case
     object: c-s2e13
     value: "victim"
     revealed: S2E13
     source: src-s2e13
-  - key: k-s2e13-elias-name
-    subject: p-s2e13-elias
-    predicate: name
-    value: "Brad Elias"
-    revealed: S2E13
-    source: src-s2e13
   - key: k-s2e13-elias-role
-    subject: p-s2e13-elias
+    subject: p-brad-elias
     predicate: role_in_case
     object: c-s2e13
     value: "perpetrator"
     revealed: S2E13
     source: src-s2e13
-  - key: k-s2e13-sparhawk-name
-    subject: p-s2e13-sparhawk
-    predicate: name
-    value: "Sparhawk"
-    revealed: S2E13
-    source: src-s2e13
   - key: k-s2e13-sparhawk-role
-    subject: p-s2e13-sparhawk
+    subject: p-jeff-sparhawk
     predicate: role_in_case
     object: c-s2e13
     value: "suspect"
     revealed: S2E13
     source: src-s2e13
-  - key: k-s2e13-kinsey-name
-    subject: p-s2e13-kinsey
-    predicate: name
-    value: "James Kinsey"
-    revealed: S2E13
-    source: src-s2e13
   - key: k-s2e13-kinsey-role
-    subject: p-s2e13-kinsey
+    subject: p-james-kinsey
     predicate: role_in_case
     object: c-s2e13
     value: "suspect"
@@ -829,7 +592,7 @@ claims:
     source: src-s2e13
     status: in_show_suspicion
   - key: k-s2e13-mashburn-role
-    subject: p-mashburn
+    subject: p-walter-mashburn
     predicate: role_in_case
     object: c-s2e13
     value: "suspect"
@@ -861,21 +624,15 @@ claims:
       gang, with Jane tagging along."
     revealed: S2E14
     source: src-s2e14
-  - key: k-s2e14-victim-name
-    subject: p-s2e14-victim
-    predicate: name
-    value: "David Seung"
-    revealed: S2E14
-    source: src-s2e14
   - key: k-s2e14-victim-role
-    subject: p-s2e14-victim
+    subject: p-david-seung
     predicate: role_in_case
     object: c-s2e14
     value: "victim"
     revealed: S2E14
     source: src-s2e14
   - key: k-s2e14-cho-role
-    subject: p-cho
+    subject: p-kimball-cho
     predicate: role_in_case
     object: c-s2e14
     value: "investigator"
@@ -893,14 +650,8 @@ claims:
     value: "A prominent chef is poisoned in the middle of a cooking competition."
     revealed: S2E15
     source: src-s2e15
-  - key: k-s2e15-victim-name
-    subject: p-s2e15-victim
-    predicate: name
-    value: "Jeffrey Barge"
-    revealed: S2E15
-    source: src-s2e15
   - key: k-s2e15-victim-role
-    subject: p-s2e15-victim
+    subject: p-jeffrey-barge
     predicate: role_in_case
     object: c-s2e15
     value: "victim"
@@ -931,40 +682,22 @@ claims:
       find who sabotaged her before she dies."
     revealed: S2E16
     source: src-s2e16
-  - key: k-s2e16-victim-name
-    subject: p-s2e16-victim
-    predicate: name
-    value: "Alicia Seberg"
-    revealed: S2E16
-    source: src-s2e16
   - key: k-s2e16-victim-role
-    subject: p-s2e16-victim
+    subject: p-alicia-seberg
     predicate: role_in_case
     object: c-s2e16
     value: "victim"
     revealed: S2E16
     source: src-s2e16
-  - key: k-s2e16-welks-name
-    subject: p-s2e16-welks
-    predicate: name
-    value: "Griffith Welks"
-    revealed: S2E16
-    source: src-s2e16
   - key: k-s2e16-welks-role
-    subject: p-s2e16-welks
+    subject: p-griffin-welks
     predicate: role_in_case
     object: c-s2e16
     value: "perpetrator"
     revealed: S2E16
     source: src-s2e16
-  - key: k-s2e16-harken-name
-    subject: p-s2e16-harken
-    predicate: name
-    value: "Dean Harken"
-    revealed: S2E16
-    source: src-s2e16
   - key: k-s2e16-harken-role
-    subject: p-s2e16-harken
+    subject: p-dean-harken
     predicate: role_in_case
     object: c-s2e16
     value: "suspect"
@@ -1042,14 +775,8 @@ claims:
       three bodies are found in a nearby barn."
     revealed: S2E18
     source: src-s2e18
-  - key: k-s2e18-jane-doe-name
-    subject: p-s2e18-jane-doe
-    predicate: name
-    value: "Jane Doe"
-    revealed: S2E18
-    source: src-s2e18
   - key: k-s2e18-jane-doe-role
-    subject: p-s2e18-jane-doe
+    subject: p-camille-dillon
     predicate: role_in_case
     object: c-s2e18
     value: "witness"
@@ -1081,53 +808,29 @@ claims:
       hitman for hire whose identity cannot be proven."
     revealed: S2E19
     source: src-s2e19
-  - key: k-s2e19-victim-name
-    subject: p-s2e19-victim
-    predicate: name
-    value: "Kelly Flower"
-    revealed: S2E19
-    source: src-s2e19
   - key: k-s2e19-victim-role
-    subject: p-s2e19-victim
+    subject: p-kelly-flower
     predicate: role_in_case
     object: c-s2e19
     value: "victim"
     revealed: S2E19
     source: src-s2e19
-  - key: k-s2e19-sylvan-name
-    subject: p-s2e19-sylvan
-    predicate: name
-    value: "Cale Sylvan"
-    revealed: S2E19
-    source: src-s2e19
   - key: k-s2e19-sylvan-role
-    subject: p-s2e19-sylvan
+    subject: p-cale-sylvan
     predicate: role_in_case
     object: c-s2e19
     value: "perpetrator"
     revealed: S2E19
     source: src-s2e19
-  - key: k-s2e19-odenthal-name
-    subject: p-s2e19-odenthal
-    predicate: name
-    value: "Odenthal"
-    revealed: S2E19
-    source: src-s2e19
   - key: k-s2e19-odenthal-role
-    subject: p-s2e19-odenthal
+    subject: p-marc-odenthal
     predicate: role_in_case
     object: c-s2e19
     value: "accomplice"
     revealed: S2E19
     source: src-s2e19
-  - key: k-s2e19-draber-name
-    subject: p-s2e19-draber
-    predicate: name
-    value: "Hank Draber"
-    revealed: S2E19
-    source: src-s2e19
   - key: k-s2e19-draber-role
-    subject: p-s2e19-draber
+    subject: p-hank-draber
     predicate: role_in_case
     object: c-s2e19
     value: "suspect"
@@ -1147,21 +850,15 @@ claims:
       a grudge against his company."
     revealed: S2E20
     source: src-s2e20
-  - key: k-s2e20-victim-name
-    subject: p-s2e20-victim
-    predicate: name
-    value: "Xander Harrington"
-    revealed: S2E20
-    source: src-s2e20
   - key: k-s2e20-victim-role
-    subject: p-s2e20-victim
+    subject: p-xander-harrington
     predicate: role_in_case
     object: c-s2e20
     value: "victim"
     revealed: S2E20
     source: src-s2e20
   - key: k-s2e20-stiles-role
-    subject: p-stiles
+    subject: p-bret-stiles
     predicate: role_in_case
     object: c-s2e20
     value: "suspect"
@@ -1219,14 +916,8 @@ claims:
     value: "perpetrator"
     revealed: S2E21
     source: src-s2e21
-  - key: k-s2e21-mosca-name
-    subject: p-s2e21-mosca
-    predicate: name
-    value: "Alec Mosca"
-    revealed: S2E21
-    source: src-s2e21
   - key: k-s2e21-mosca-role
-    subject: p-s2e21-mosca
+    subject: p-alec-mosca
     predicate: role_in_case
     object: c-s2e21
     value: "suspect"
@@ -1246,14 +937,8 @@ claims:
       a self-styled psychic."
     revealed: S2E22
     source: src-s2e22
-  - key: k-s2e22-victim-name
-    subject: p-s2e22-victim
-    predicate: name
-    value: "Hector Brava"
-    revealed: S2E22
-    source: src-s2e22
   - key: k-s2e22-victim-role
-    subject: p-s2e22-victim
+    subject: p-hector-brava
     predicate: role_in_case
     object: c-s2e22
     value: "victim"
@@ -1286,172 +971,81 @@ claims:
     revealed: S2E23
     source: src-s2e23
   - key: k-s2e23-frye-role
-    subject: p-frye
+    subject: p-kristina-frye
     predicate: role_in_case
     object: c-s2e23
     value: "victim"
     revealed: S2E23
     source: src-s2e23
-  - key: k-s2e1-rhonda-name
-    subject: p-s2e1-rhonda
-    predicate: name
-    value: Rhonda Jaffe
-    revealed: S2E1
-    source: src-wiki-s2e1
   - key: k-s2e1-rhonda-role
-    subject: p-s2e1-rhonda
+    subject: p-rhonda-jaffe
     predicate: role_in_case
     object: c-s2e1
     value: perpetrator
     status: confirmed
     revealed: S2E1
     source: src-wiki-s2e1
-  - key: k-s2e2-batson-name
-    subject: p-s2e2-batson
-    predicate: name
-    value: Melinda Batson
-    revealed: S2E2
-    source: src-wiki-s2e2
   - key: k-s2e2-batson-role
-    subject: p-s2e2-batson
+    subject: p-melinda-batson
     predicate: role_in_case
     object: c-s2e2
     value: perpetrator
     status: confirmed
     revealed: S2E2
     source: src-wiki-s2e2
-  - key: k-s2e4-lucas-name
-    subject: p-s2e4-lucas
-    predicate: name
-    value: Lucas Hodge
-    revealed: S2E4
-    source: src-wiki-s2e4
   - key: k-s2e4-lucas-role
-    subject: p-s2e4-lucas
+    subject: p-lucas-hodge
     predicate: role_in_case
     object: c-s2e4
     value: perpetrator
     status: confirmed
     revealed: S2E4
     source: src-wiki-s2e4
-  - key: k-s2e6-sandrine-name
-    subject: p-s2e6-sandrine
-    predicate: name
-    value: Sandrine Gerber
-    revealed: S2E6
-    source: src-wiki-s2e6
   - key: k-s2e6-sandrine-role
-    subject: p-s2e6-sandrine
+    subject: p-sandrine-gerber
     predicate: role_in_case
     object: c-s2e6
     value: perpetrator
     status: confirmed
     revealed: S2E6
     source: src-wiki-s2e6
-  - key: k-s2e14-frank-name
-    subject: p-s2e14-frank
-    predicate: name
-    value: Frank
-    revealed: S2E14
-    source: src-wiki-s2e14
   - key: k-s2e14-frank-role
-    subject: p-s2e14-frank
+    subject: p-frank-rodriguez
     predicate: role_in_case
     object: c-s2e14
     value: perpetrator
     status: confirmed
     revealed: S2E14
     source: src-wiki-s2e14
-  - key: k-s2e15-elisa-name
-    subject: p-s2e15-elisa
-    predicate: name
-    value: Elisa Green
-    revealed: S2E15
-    source: src-wiki-s2e15
   - key: k-s2e15-elisa-role
-    subject: p-s2e15-elisa
+    subject: p-eliza-green
     predicate: role_in_case
     object: c-s2e15
     value: perpetrator
     status: confirmed
     revealed: S2E15
     source: src-wiki-s2e15
-  - key: k-s2e17-bandino-name
-    subject: p-s2e17-bandino
-    predicate: name
-    value: Victor Bandino
-    revealed: S2E17
-    source: src-wiki-s2e17
   - key: k-s2e17-bandino-role
-    subject: p-s2e17-bandino
+    subject: p-victor-bandino
     predicate: role_in_case
     object: c-s2e17
     value: perpetrator
     status: confirmed
     revealed: S2E17
     source: src-wiki-s2e17
-  - key: k-s2e20-alex-name
-    subject: p-s2e20-alex
-    predicate: name
-    value: Alex Harrington
-    revealed: S2E20
-    source: src-wiki-s2e20
   - key: k-s2e20-alex-role
-    subject: p-s2e20-alex
+    subject: p-alexander-harrington
     predicate: role_in_case
     object: c-s2e20
     value: perpetrator
     status: confirmed
     revealed: S2E20
     source: src-wiki-s2e20
-  - key: k-s2e22-bigelow-name
-    subject: p-s2e22-bigelow
-    predicate: name
-    value: Russel Bigelow
-    revealed: S2E22
-    source: src-wiki-s2e22
   - key: k-s2e22-bigelow-role
-    subject: p-s2e22-bigelow
+    subject: p-russell-bigelow
     predicate: role_in_case
     object: c-s2e22
     value: perpetrator
     status: confirmed
     revealed: S2E22
     source: src-wiki-s2e22
-sources:
-  - key: src-wiki-s2e1
-    kind: wiki
-    episode: S2E1
-    url: https://thementalist.fandom.com/wiki/Redemption
-  - key: src-wiki-s2e2
-    kind: wiki
-    episode: S2E2
-    url: https://thementalist.fandom.com/wiki/The_Scarlet_Letter
-  - key: src-wiki-s2e4
-    kind: wiki
-    episode: S2E4
-    url: https://thementalist.fandom.com/wiki/Red_Menace
-  - key: src-wiki-s2e6
-    kind: wiki
-    episode: S2E6
-    url: https://thementalist.fandom.com/wiki/Black_Gold_and_Red_Blood
-  - key: src-wiki-s2e14
-    kind: wiki
-    episode: S2E14
-    url: https://thementalist.fandom.com/wiki/Blood_In,_Blood_Out
-  - key: src-wiki-s2e15
-    kind: wiki
-    episode: S2E15
-    url: https://thementalist.fandom.com/wiki/Red_Herring
-  - key: src-wiki-s2e17
-    kind: wiki
-    episode: S2E17
-    url: https://thementalist.fandom.com/wiki/The_Red_Box
-  - key: src-wiki-s2e20
-    kind: wiki
-    episode: S2E20
-    url: https://thementalist.fandom.com/wiki/Red_All_Over
-  - key: src-wiki-s2e22
-    kind: wiki
-    episode: S2E22
-    url: https://thementalist.fandom.com/wiki/Red_Letter

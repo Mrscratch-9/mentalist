@@ -6,12 +6,6 @@ entities:
   - key: c-s3e1
     kind: case
     introduced: S3E1
-  - key: p-s3e1-dublin
-    kind: person
-    introduced: S3E1
-  - key: p-s3e1-russo
-    kind: person
-    introduced: S3E1
   - key: c-s3e2
     kind: case
     introduced: S3E2
@@ -24,13 +18,7 @@ entities:
   - key: c-s3e4
     kind: case
     introduced: S3E4
-  - key: p-s3e4-dahl
-    kind: person
-    introduced: S3E4
   - key: p-s3e4-jwinter
-    kind: person
-    introduced: S3E4
-  - key: p-s3e4-mwinter
     kind: person
     introduced: S3E4
   - key: c-s3e5
@@ -42,17 +30,11 @@ entities:
   - key: c-s3e6
     kind: case
     introduced: S3E6
-  - key: p-s3e6-abby
-    kind: person
-    introduced: S3E6
   - key: c-s3e7
     kind: case
     introduced: S3E7
   - key: c-s3e8
     kind: case
-    introduced: S3E8
-  - key: p-s3e8-rachel
-    kind: person
     introduced: S3E8
   - key: p-s3e8-kittel
     kind: person
@@ -63,12 +45,6 @@ entities:
   - key: c-s3e9
     kind: case
     introduced: S3E9
-  - key: p-s3e9-mars
-    kind: person
-    introduced: S3E9
-  - key: p-s3e9-johnson
-    kind: person
-    introduced: S3E9
   - key: c-s3e10
     kind: case
     introduced: S3E10
@@ -78,19 +54,10 @@ entities:
   - key: c-s3e12
     kind: case
     introduced: S3E12
-  - key: p-s3e12-montague
-    kind: person
-    introduced: S3E12
   - key: c-s3e13
     kind: case
     introduced: S3E13
   - key: p-s3e13-amber
-    kind: person
-    introduced: S3E13
-  - key: p-s3e13-crosswhite
-    kind: person
-    introduced: S3E13
-  - key: p-s3e13-nail
     kind: person
     introduced: S3E13
   - key: l-s3e13-cityhall
@@ -99,19 +66,7 @@ entities:
   - key: c-s3e14
     kind: case
     introduced: S3E14
-  - key: p-s3e14-degeorge
-    kind: person
-    introduced: S3E14
-  - key: p-s3e14-essex
-    kind: person
-    introduced: S3E14
   - key: p-s3e14-boden
-    kind: person
-    introduced: S3E14
-  - key: p-s3e14-gorman
-    kind: person
-    introduced: S3E14
-  - key: p-s3e14-trina
     kind: person
     introduced: S3E14
   - key: c-s3e15
@@ -127,9 +82,6 @@ entities:
     kind: case
     introduced: S3E17
   - key: p-s3e17-newton
-    kind: person
-    introduced: S3E17
-  - key: p-s3e17-gidry
     kind: person
     introduced: S3E17
   - key: p-s3e17-trent
@@ -153,9 +105,6 @@ entities:
   - key: p-s3e19-flynn
     kind: person
     introduced: S3E19
-  - key: p-s3e19-peter
-    kind: person
-    introduced: S3E19
   - key: p-s3e19-cartwright
     kind: person
     introduced: S3E19
@@ -168,25 +117,10 @@ entities:
   - key: p-s3e20-fisher
     kind: person
     introduced: S3E20
-  - key: p-s3e20-heather
-    kind: person
-    introduced: S3E20
-  - key: p-s3e20-ruger
-    kind: person
-    introduced: S3E20
-  - key: p-s3e20-griswold
-    kind: person
-    introduced: S3E20
-  - key: p-s3e20-hassan
-    kind: person
-    introduced: S3E20
   - key: c-s3e21
     kind: case
     introduced: S3E21
   - key: p-s3e21-parsell
-    kind: person
-    introduced: S3E21
-  - key: p-s3e21-monaco
     kind: person
     introduced: S3E21
   - key: p-s3e21-lansdale
@@ -207,9 +141,6 @@ entities:
   - key: p-s3e23-dinkler
     kind: person
     introduced: S3E23
-  - key: p-s3e23-gupta
-    kind: person
-    introduced: S3E23
   - key: p-s3e23-james
     kind: person
     introduced: S3E23
@@ -225,48 +156,6 @@ entities:
   - key: l-s3e24-mall
     kind: location
     introduced: S3E24
-  - key: p-s3e1-farrow
-    kind: person
-    introduced: S3E1
-  - key: p-s3e2-wale
-    kind: person
-    introduced: S3E2
-  - key: p-s3e3-coles
-    kind: person
-    introduced: S3E3
-  - key: p-s3e4-meyers
-    kind: person
-    introduced: S3E4
-  - key: p-s3e5-howell
-    kind: person
-    introduced: S3E5
-  - key: p-s3e6-saban
-    kind: person
-    introduced: S3E6
-  - key: p-s3e7-bajoran
-    kind: person
-    introduced: S3E7
-  - key: p-s3e10-bloom
-    kind: person
-    introduced: S3E10
-  - key: p-s3e12-nilda
-    kind: person
-    introduced: S3E12
-  - key: p-s3e12-esther
-    kind: person
-    introduced: S3E12
-  - key: p-s3e15-puttock
-    kind: person
-    introduced: S3E15
-  - key: p-s3e18-cook
-    kind: person
-    introduced: S3E18
-  - key: p-s3e19-erica
-    kind: person
-    introduced: S3E19
-  - key: p-s3e22-carruthers
-    kind: person
-    introduced: S3E22
 
 claims:
   - key: c-s3e1-name
@@ -279,34 +168,21 @@ claims:
   - key: c-s3e1-description
     subject: c-s3e1
     predicate: description
-    value: "The team investigates the kidnapping of a lobbyist and the murder of his chauffeur while Jane doubts his future with the CBI."
-    revealed: S3E1
-    source: src-s3e1
-
-  - key: p-s3e1-dublin-name
-    subject: p-s3e1-dublin
-    predicate: name
-    value: "Harvey Dublin"
+    value: "The team investigates the kidnapping of a lobbyist and the murder of his
+      chauffeur while Jane doubts his future with the CBI."
     revealed: S3E1
     source: src-s3e1
 
   - key: p-s3e1-dublin-role
-    subject: p-s3e1-dublin
+    subject: p-harvey-dublin
     predicate: role_in_case
     object: c-s3e1
     value: "victim"
     revealed: S3E1
     source: src-s3e1
 
-  - key: p-s3e1-russo-name
-    subject: p-s3e1-russo
-    predicate: name
-    value: "Pete Russo"
-    revealed: S3E1
-    source: src-s3e1
-
   - key: p-s3e1-russo-role
-    subject: p-s3e1-russo
+    subject: p-pete-russo
     predicate: role_in_case
     object: c-s3e1
     value: "victim"
@@ -323,7 +199,8 @@ claims:
   - key: c-s3e2-description
     subject: c-s3e2
     predicate: description
-    value: "Jane's brother-in-law returns and becomes the apparent killer of a businessman he was conning."
+    value: "Jane's brother-in-law returns and becomes the apparent killer of a
+      businessman he was conning."
     revealed: S3E2
     source: src-s3e2
 
@@ -352,12 +229,13 @@ claims:
   - key: c-s3e3-description
     subject: c-s3e3
     predicate: description
-    value: "A young woman linked to Visualize is found dead, drawing the CBI and the FBI into the group's affairs."
+    value: "A young woman linked to Visualize is found dead, drawing the CBI and the
+      FBI into the group's affairs."
     revealed: S3E3
     source: src-s3e3
 
   - key: c-s3e3-olaughlin-role
-    subject: p-olaughlin
+    subject: p-craig-o-laughlin
     predicate: role_in_case
     object: c-s3e3
     value: "investigator"
@@ -365,7 +243,7 @@ claims:
     source: src-s3e3
 
   - key: c-s3e3-stiles-role
-    subject: p-stiles
+    subject: p-bret-stiles
     predicate: role_in_case
     object: c-s3e3
     value: "informant"
@@ -382,19 +260,13 @@ claims:
   - key: c-s3e4-description
     subject: c-s3e4
     predicate: description
-    value: "A convict freed on DNA evidence is murdered, and two men each own up to a blow against him."
-    revealed: S3E4
-    source: src-s3e4
-
-  - key: p-s3e4-dahl-name
-    subject: p-s3e4-dahl
-    predicate: name
-    value: "Henry Dahl"
+    value: "A convict freed on DNA evidence is murdered, and two men each own up to
+      a blow against him."
     revealed: S3E4
     source: src-s3e4
 
   - key: p-s3e4-dahl-role
-    subject: p-s3e4-dahl
+    subject: p-henry-dahl
     predicate: role_in_case
     object: c-s3e4
     value: "victim"
@@ -416,15 +288,8 @@ claims:
     revealed: S3E4
     source: src-s3e4
 
-  - key: p-s3e4-mwinter-name
-    subject: p-s3e4-mwinter
-    predicate: name
-    value: "Max Winter"
-    revealed: S3E4
-    source: src-s3e4
-
   - key: p-s3e4-mwinter-role
-    subject: p-s3e4-mwinter
+    subject: p-max-winter
     predicate: role_in_case
     object: c-s3e4
     value: "suspect"
@@ -470,19 +335,13 @@ claims:
   - key: c-s3e6-description
     subject: c-s3e6
     predicate: description
-    value: "A federal judge's daughter vanishes and her boyfriend is found dead inside the guarded family compound."
-    revealed: S3E6
-    source: src-s3e6
-
-  - key: p-s3e6-abby-name
-    subject: p-s3e6-abby
-    predicate: name
-    value: "Abby"
+    value: "A federal judge's daughter vanishes and her boyfriend is found dead
+      inside the guarded family compound."
     revealed: S3E6
     source: src-s3e6
 
   - key: p-s3e6-abby-role
-    subject: p-s3e6-abby
+    subject: p-abby-fitzwilliam
     predicate: role_in_case
     object: c-s3e6
     value: "victim"
@@ -499,12 +358,13 @@ claims:
   - key: c-s3e7-description
     subject: c-s3e7
     predicate: description
-    value: "A building explodes during the investigation of a death threat against a businessman, and a billionaire becomes a suspect."
+    value: "A building explodes during the investigation of a death threat against a
+      businessman, and a billionaire becomes a suspect."
     revealed: S3E7
     source: src-s3e7
 
   - key: c-s3e7-mashburn-role
-    subject: p-mashburn
+    subject: p-walter-mashburn
     predicate: role_in_case
     object: c-s3e7
     value: "suspect"
@@ -521,19 +381,13 @@ claims:
   - key: c-s3e8-description
     subject: c-s3e8
     predicate: description
-    value: "Jane is abducted at a fruit stall by a woman bent on revenge and held in a cabin basement."
-    revealed: S3E8
-    source: src-s3e8
-
-  - key: p-s3e8-rachel-name
-    subject: p-s3e8-rachel
-    predicate: name
-    value: "Rachel Bowman"
+    value: "Jane is abducted at a fruit stall by a woman bent on revenge and held in
+      a cabin basement."
     revealed: S3E8
     source: src-s3e8
 
   - key: p-s3e8-rachel-role
-    subject: p-s3e8-rachel
+    subject: p-rachel-bowman
     predicate: role_in_case
     object: c-s3e8
     value: "perpetrator"
@@ -556,7 +410,7 @@ claims:
     source: src-s3e8
 
   - key: c-s3e8-jane-role
-    subject: p-jane
+    subject: p-patrick-jane
     predicate: role_in_case
     object: c-s3e8
     value: "victim"
@@ -595,34 +449,21 @@ claims:
   - key: c-s3e9-description
     subject: c-s3e9
     predicate: description
-    value: "A string of killings of police officers and an EMT's fiancée leads the team to an astrologer and then to the EMT himself."
-    revealed: S3E9
-    source: src-s3e9
-
-  - key: p-s3e9-mars-name
-    subject: p-s3e9-mars
-    predicate: name
-    value: "Ellis Mars"
+    value: "A string of killings of police officers and an EMT's fiancée leads the
+      team to an astrologer and then to the EMT himself."
     revealed: S3E9
     source: src-s3e9
 
   - key: p-s3e9-mars-role
-    subject: p-s3e9-mars
+    subject: p-ellis-mars
     predicate: role_in_case
     object: c-s3e9
     value: "suspect"
     revealed: S3E9
     source: src-s3e9
 
-  - key: p-s3e9-johnson-name
-    subject: p-s3e9-johnson
-    predicate: name
-    value: "Todd Johnson"
-    revealed: S3E9
-    source: src-s3e9
-
   - key: p-s3e9-johnson-role
-    subject: p-s3e9-johnson
+    subject: p-todd-johnson
     predicate: role_in_case
     object: c-s3e9
     value: "perpetrator"
@@ -639,12 +480,13 @@ claims:
   - key: c-s3e10-description
     subject: c-s3e10
     predicate: description
-    value: "A Santa is killed, leading the CBI to an AA group and a society of authentic Santas."
+    value: "A Santa is killed, leading the CBI to an AA group and a society of
+      authentic Santas."
     revealed: S3E10
     source: src-s3e10
 
   - key: c-s3e10-minelli-role
-    subject: p-minelli
+    subject: p-virgil-minelli
     predicate: role_in_case
     object: c-s3e10
     value: "informant"
@@ -652,7 +494,7 @@ claims:
     source: src-s3e10
 
   - key: c-s3e10-laroche-role
-    subject: p-laroche
+    subject: p-j-j-laroche
     predicate: role_in_case
     object: c-s3e10
     value: "investigator"
@@ -669,7 +511,8 @@ claims:
   - key: c-s3e11-description
     subject: c-s3e11
     predicate: description
-    value: "A journalist is killed below the stands during a professional martial arts fight."
+    value: "A journalist is killed below the stands during a professional martial
+      arts fight."
     revealed: S3E11
     source: src-s3e11
 
@@ -683,19 +526,13 @@ claims:
   - key: c-s3e12-description
     subject: c-s3e12
     predicate: description
-    value: "A criminal profiler helps with a double murder that looks like the work of a serial killer."
-    revealed: S3E12
-    source: src-s3e12
-
-  - key: p-s3e12-montague-name
-    subject: p-s3e12-montague
-    predicate: name
-    value: "Dr. Montague"
+    value: "A criminal profiler helps with a double murder that looks like the work
+      of a serial killer."
     revealed: S3E12
     source: src-s3e12
 
   - key: p-s3e12-montague-role
-    subject: p-s3e12-montague
+    subject: p-dr-montague
     predicate: role_in_case
     object: c-s3e12
     value: "investigator"
@@ -712,7 +549,8 @@ claims:
   - key: c-s3e13-description
     subject: c-s3e13
     predicate: description
-    value: "A documentary filmmaker is found dead, and a suspect takes hostages at City Hall."
+    value: "A documentary filmmaker is found dead, and a suspect takes hostages at
+      City Hall."
     revealed: S3E13
     source: src-s3e13
 
@@ -731,30 +569,16 @@ claims:
     revealed: S3E13
     source: src-s3e13
 
-  - key: p-s3e13-crosswhite-name
-    subject: p-s3e13-crosswhite
-    predicate: name
-    value: "Ron Crosswhite"
-    revealed: S3E13
-    source: src-s3e13
-
   - key: p-s3e13-crosswhite-role
-    subject: p-s3e13-crosswhite
+    subject: p-ron-crosswhite
     predicate: role_in_case
     object: c-s3e13
     value: "suspect"
     revealed: S3E13
     source: src-s3e13
 
-  - key: p-s3e13-nail-name
-    subject: p-s3e13-nail
-    predicate: name
-    value: "Arnold Nail"
-    revealed: S3E13
-    source: src-s3e13
-
   - key: p-s3e13-nail-role
-    subject: p-s3e13-nail
+    subject: p-arnold-nail
     predicate: role_in_case
     object: c-s3e13
     value: "perpetrator"
@@ -785,34 +609,21 @@ claims:
   - key: c-s3e14-description
     subject: c-s3e14
     predicate: description
-    value: "A key witness against a drug baron is murdered while Van Pelt is knocked out guarding him."
-    revealed: S3E14
-    source: src-s3e14
-
-  - key: p-s3e14-degeorge-name
-    subject: p-s3e14-degeorge
-    predicate: name
-    value: "Justin DeGeorge"
+    value: "A key witness against a drug baron is murdered while Van Pelt is knocked
+      out guarding him."
     revealed: S3E14
     source: src-s3e14
 
   - key: p-s3e14-degeorge-role
-    subject: p-s3e14-degeorge
+    subject: p-justin-degeorge
     predicate: role_in_case
     object: c-s3e14
     value: "victim"
     revealed: S3E14
     source: src-s3e14
 
-  - key: p-s3e14-essex-name
-    subject: p-s3e14-essex
-    predicate: name
-    value: "Adrian Essex"
-    revealed: S3E14
-    source: src-s3e14
-
   - key: p-s3e14-essex-role
-    subject: p-s3e14-essex
+    subject: p-adrian-essex
     predicate: role_in_case
     object: c-s3e14
     value: "suspect"
@@ -834,30 +645,16 @@ claims:
     revealed: S3E14
     source: src-s3e14
 
-  - key: p-s3e14-gorman-name
-    subject: p-s3e14-gorman
-    predicate: name
-    value: "Gorman"
-    revealed: S3E14
-    source: src-s3e14
-
   - key: p-s3e14-gorman-role
-    subject: p-s3e14-gorman
+    subject: p-gorman
     predicate: role_in_case
     object: c-s3e14
     value: "perpetrator"
     revealed: S3E14
     source: src-s3e14
 
-  - key: p-s3e14-trina-name
-    subject: p-s3e14-trina
-    predicate: name
-    value: "Trina"
-    revealed: S3E14
-    source: src-s3e14
-
   - key: p-s3e14-trina-role
-    subject: p-s3e14-trina
+    subject: p-trina-degeorge
     predicate: role_in_case
     object: c-s3e14
     value: "witness"
@@ -874,12 +671,13 @@ claims:
   - key: c-s3e15-description
     subject: c-s3e15
     predicate: description
-    value: "A modern-day prospector is murdered and Lisbon is injured, so Hightower works in the field with Jane."
+    value: "A modern-day prospector is murdered and Lisbon is injured, so Hightower
+      works in the field with Jane."
     revealed: S3E15
     source: src-s3e15
 
   - key: c-s3e15-hightower-role
-    subject: p-hightower
+    subject: p-madeleine-hightower
     predicate: role_in_case
     object: c-s3e15
     value: "investigator"
@@ -896,7 +694,8 @@ claims:
   - key: c-s3e16-description
     subject: c-s3e16
     predicate: description
-    value: "A university professor of ancient art is stabbed, and evidence at the scene could implicate Hightower."
+    value: "A university professor of ancient art is stabbed, and evidence at the
+      scene could implicate Hightower."
     revealed: S3E16
     source: src-s3e16
 
@@ -916,7 +715,7 @@ claims:
     source: src-s3e16
 
   - key: c-s3e16-hightower-role
-    subject: p-hightower
+    subject: p-madeleine-hightower
     predicate: role_in_case
     object: c-s3e16
     value: "suspect"
@@ -933,7 +732,8 @@ claims:
   - key: c-s3e17-description
     subject: c-s3e17
     predicate: description
-    value: "A hospital administrator is found murdered at a driving range with a radiation badge that reads above the safe limit."
+    value: "A hospital administrator is found murdered at a driving range with a
+      radiation badge that reads above the safe limit."
     revealed: S3E17
     source: src-s3e17
 
@@ -952,15 +752,8 @@ claims:
     revealed: S3E17
     source: src-s3e17
 
-  - key: p-s3e17-gidry-name
-    subject: p-s3e17-gidry
-    predicate: name
-    value: "Dr. Gidry"
-    revealed: S3E17
-    source: src-s3e17
-
   - key: p-s3e17-gidry-role
-    subject: p-s3e17-gidry
+    subject: p-dr-gidry
     predicate: role_in_case
     object: c-s3e17
     value: "perpetrator"
@@ -1007,7 +800,8 @@ claims:
   - key: c-s3e18-description
     subject: c-s3e18
     predicate: description
-    value: "A body is stolen on the way to the morgue and Jane brings a terminally ill coroner onto the case."
+    value: "A body is stolen on the way to the morgue and Jane brings a terminally
+      ill coroner onto the case."
     revealed: S3E18
     source: src-s3e18
 
@@ -1042,7 +836,7 @@ claims:
     source: src-s3e18
 
   - key: c-s3e18-olaughlin-role
-    subject: p-olaughlin
+    subject: p-craig-o-laughlin
     predicate: role_in_case
     object: c-s3e18
     value: "investigator"
@@ -1059,7 +853,8 @@ claims:
   - key: c-s3e19-description
     subject: c-s3e19
     predicate: description
-    value: "The CEO of a matchmaking company is found murdered in San Francisco and Jane is convinced his widow did it."
+    value: "The CEO of a matchmaking company is found murdered in San Francisco and
+      Jane is convinced his widow did it."
     revealed: S3E19
     source: src-s3e19
 
@@ -1078,15 +873,8 @@ claims:
     revealed: S3E19
     source: src-s3e19
 
-  - key: p-s3e19-peter-name
-    subject: p-s3e19-peter
-    predicate: name
-    value: "Peter"
-    revealed: S3E19
-    source: src-s3e19
-
   - key: p-s3e19-peter-role
-    subject: p-s3e19-peter
+    subject: p-peter-clarridge
     predicate: role_in_case
     object: c-s3e19
     value: "accomplice"
@@ -1148,7 +936,8 @@ claims:
   - key: c-s3e20-description
     subject: c-s3e20
     predicate: description
-    value: "An electronics repair shop owner is found murdered and several people want money he hid."
+    value: "An electronics repair shop owner is found murdered and several people
+      want money he hid."
     revealed: S3E20
     source: src-s3e20
 
@@ -1167,60 +956,32 @@ claims:
     revealed: S3E20
     source: src-s3e20
 
-  - key: p-s3e20-heather-name
-    subject: p-s3e20-heather
-    predicate: name
-    value: "Heather Blue"
-    revealed: S3E20
-    source: src-s3e20
-
   - key: p-s3e20-heather-role
-    subject: p-s3e20-heather
+    subject: p-heather-blue
     predicate: role_in_case
     object: c-s3e20
     value: "perpetrator"
     revealed: S3E20
     source: src-s3e20
 
-  - key: p-s3e20-ruger-name
-    subject: p-s3e20-ruger
-    predicate: name
-    value: "Cole Ruger"
-    revealed: S3E20
-    source: src-s3e20
-
   - key: p-s3e20-ruger-role
-    subject: p-s3e20-ruger
+    subject: p-cole-ruger
     predicate: role_in_case
     object: c-s3e20
     value: "suspect"
-    revealed: S3E20
-    source: src-s3e20
-
-  - key: p-s3e20-griswold-name
-    subject: p-s3e20-griswold
-    predicate: name
-    value: "Vivian Griswold"
     revealed: S3E20
     source: src-s3e20
 
   - key: p-s3e20-griswold-role
-    subject: p-s3e20-griswold
+    subject: p-vivian-griswold
     predicate: role_in_case
     object: c-s3e20
     value: "suspect"
     revealed: S3E20
     source: src-s3e20
 
-  - key: p-s3e20-hassan-name
-    subject: p-s3e20-hassan
-    predicate: name
-    value: "Omar Hassan"
-    revealed: S3E20
-    source: src-s3e20
-
   - key: p-s3e20-hassan-role
-    subject: p-s3e20-hassan
+    subject: p-omar-hassan
     predicate: role_in_case
     object: c-s3e20
     value: "suspect"
@@ -1237,7 +998,8 @@ claims:
   - key: c-s3e21-description
     subject: c-s3e21
     predicate: description
-    value: "A corrections officer is stabbed to death near a jewelry store in a small California town, with a prison shank as the weapon."
+    value: "A corrections officer is stabbed to death near a jewelry store in a
+      small California town, with a prison shank as the weapon."
     revealed: S3E21
     source: src-s3e21
 
@@ -1256,15 +1018,8 @@ claims:
     revealed: S3E21
     source: src-s3e21
 
-  - key: p-s3e21-monaco-name
-    subject: p-s3e21-monaco
-    predicate: name
-    value: "Nick Monaco"
-    revealed: S3E21
-    source: src-s3e21
-
   - key: p-s3e21-monaco-role
-    subject: p-s3e21-monaco
+    subject: p-nick-monaco
     predicate: role_in_case
     object: c-s3e21
     value: "perpetrator"
@@ -1310,7 +1065,8 @@ claims:
   - key: c-s3e22-description
     subject: c-s3e22
     predicate: description
-    value: "A first-chair violinist of a symphony orchestra is shot dead at a bus stop with a hydrangea petal left at the scene."
+    value: "A first-chair violinist of a symphony orchestra is shot dead at a bus
+      stop with a hydrangea petal left at the scene."
     revealed: S3E22
     source: src-s3e22
 
@@ -1339,7 +1095,8 @@ claims:
   - key: c-s3e23-description
     subject: c-s3e23
     predicate: description
-    value: "A man in a suicide vest dies at a gas station, and the case draws Jane and Lisbon into a plot tied to Hightower."
+    value: "A man in a suicide vest dies at a gas station, and the case draws Jane
+      and Lisbon into a plot tied to Hightower."
     revealed: S3E23
     source: src-s3e23
 
@@ -1358,15 +1115,8 @@ claims:
     revealed: S3E23
     source: src-s3e23
 
-  - key: p-s3e23-gupta-name
-    subject: p-s3e23-gupta
-    predicate: name
-    value: "Gupta"
-    revealed: S3E23
-    source: src-s3e23
-
   - key: p-s3e23-gupta-role
-    subject: p-s3e23-gupta
+    subject: p-anthony-gupta
     predicate: role_in_case
     object: c-s3e23
     value: "perpetrator"
@@ -1412,12 +1162,13 @@ claims:
   - key: c-s3e24-description
     subject: c-s3e24
     predicate: description
-    value: "Jane hunts Red John's mole in the CBI among a list of suspects while Hightower is hunted."
+    value: "Jane hunts Red John's mole in the CBI among a list of suspects while
+      Hightower is hunted."
     revealed: S3E24
     source: src-s3e24
 
   - key: c-s3e24-olaughlin-role
-    subject: p-olaughlin
+    subject: p-craig-o-laughlin
     predicate: role_in_case
     object: c-s3e24
     value: "accomplice"
@@ -1425,7 +1176,7 @@ claims:
     source: src-s3e24
 
   - key: c-s3e24-bertram-role
-    subject: p-bertram
+    subject: p-gale-bertram
     predicate: role_in_case
     object: c-s3e24
     value: "suspect"
@@ -1434,7 +1185,7 @@ claims:
     status: in_show_suspicion
 
   - key: c-s3e24-ardiles-role
-    subject: p-ardiles
+    subject: p-osvaldo-ardiles
     predicate: role_in_case
     object: c-s3e24
     value: "suspect"
@@ -1443,7 +1194,7 @@ claims:
     status: in_show_suspicion
 
   - key: c-s3e24-shettrick-role
-    subject: p-shettrick
+    subject: p-brenda-shettrick
     predicate: role_in_case
     object: c-s3e24
     value: "suspect"
@@ -1478,252 +1229,115 @@ claims:
     object: c-s3e24
     revealed: S3E24
     source: src-s3e24
-  - key: p-s3e1-farrow-name
-    subject: p-s3e1-farrow
-    predicate: name
-    value: Keith Farrow
-    revealed: S3E1
-    source: src-wiki-s3e1
   - key: s3e1-farrow-perp
-    subject: p-s3e1-farrow
+    subject: p-keith-farrow
     predicate: role_in_case
     object: c-s3e1
     value: perpetrator
     status: confirmed
     revealed: S3E1
     source: src-wiki-s3e1
-  - key: p-s3e2-wale-name
-    subject: p-s3e2-wale
-    predicate: name
-    value: Concetta Wale
-    revealed: S3E2
-    source: src-wiki-s3e2
   - key: s3e2-wale-perp
-    subject: p-s3e2-wale
+    subject: p-concetta-wale
     predicate: role_in_case
     object: c-s3e2
     value: perpetrator
     status: confirmed
     revealed: S3E2
     source: src-wiki-s3e2
-  - key: p-s3e3-coles-name
-    subject: p-s3e3-coles
-    predicate: name
-    value: Julius Coles
-    revealed: S3E3
-    source: src-wiki-s3e3
   - key: s3e3-coles-perp
-    subject: p-s3e3-coles
+    subject: p-julius-coles
     predicate: role_in_case
     object: c-s3e3
     value: perpetrator
     status: confirmed
     revealed: S3E3
     source: src-wiki-s3e3
-  - key: p-s3e4-meyers-name
-    subject: p-s3e4-meyers
-    predicate: name
-    value: Sean Meyers
-    revealed: S3E4
-    source: src-wiki-s3e4
   - key: s3e4-meyers-perp
-    subject: p-s3e4-meyers
+    subject: p-sean-meyers
     predicate: role_in_case
     object: c-s3e4
     value: perpetrator
     status: confirmed
     revealed: S3E4
     source: src-wiki-s3e4
-  - key: p-s3e5-howell-name
-    subject: p-s3e5-howell
-    predicate: name
-    value: Cobb Howell
-    revealed: S3E5
-    source: src-wiki-s3e5
   - key: s3e5-howell-perp
-    subject: p-s3e5-howell
+    subject: p-cobb-howell
     predicate: role_in_case
     object: c-s3e5
     value: perpetrator
     status: confirmed
     revealed: S3E5
     source: src-wiki-s3e5
-  - key: p-s3e6-saban-name
-    subject: p-s3e6-saban
-    predicate: name
-    value: Ed Saban
-    revealed: S3E6
-    source: src-wiki-s3e6
   - key: s3e6-saban-perp
-    subject: p-s3e6-saban
+    subject: p-ed-saban
     predicate: role_in_case
     object: c-s3e6
     value: perpetrator
     status: confirmed
     revealed: S3E6
     source: src-wiki-s3e6
-  - key: p-s3e7-bajoran-name
-    subject: p-s3e7-bajoran
-    predicate: name
-    value: Yuri Bajoran
-    revealed: S3E7
-    source: src-wiki-s3e7
   - key: s3e7-bajoran-perp
-    subject: p-s3e7-bajoran
+    subject: p-yuri-bajoran
     predicate: role_in_case
     object: c-s3e7
     value: perpetrator
     status: confirmed
     revealed: S3E7
     source: src-wiki-s3e7
-  - key: p-s3e10-bloom-name
-    subject: p-s3e10-bloom
-    predicate: name
-    value: Lailah Bloom
-    revealed: S3E10
-    source: src-wiki-s3e10
   - key: s3e10-bloom-perp
-    subject: p-s3e10-bloom
+    subject: p-lailah-bloom
     predicate: role_in_case
     object: c-s3e10
     value: perpetrator
     status: confirmed
     revealed: S3E10
     source: src-wiki-s3e10
-  - key: p-s3e12-nilda-name
-    subject: p-s3e12-nilda
-    predicate: name
-    value: Nilda
-    revealed: S3E12
-    source: src-wiki-s3e12
   - key: s3e12-nilda-perp
-    subject: p-s3e12-nilda
+    subject: p-nilda
     predicate: role_in_case
     object: c-s3e12
     value: perpetrator
     status: confirmed
-    revealed: S3E12
-    source: src-wiki-s3e12
-  - key: p-s3e12-esther-name
-    subject: p-s3e12-esther
-    predicate: name
-    value: Esther
     revealed: S3E12
     source: src-wiki-s3e12
   - key: s3e12-esther-perp
-    subject: p-s3e12-esther
+    subject: p-esther
     predicate: role_in_case
     object: c-s3e12
     value: perpetrator
     status: confirmed
     revealed: S3E12
     source: src-wiki-s3e12
-  - key: p-s3e15-puttock-name
-    subject: p-s3e15-puttock
-    predicate: name
-    value: Dean Puttock
-    revealed: S3E15
-    source: src-wiki-s3e15
   - key: s3e15-puttock-perp
-    subject: p-s3e15-puttock
+    subject: p-dean-puttock
     predicate: role_in_case
     object: c-s3e15
     value: perpetrator
     status: confirmed
     revealed: S3E15
     source: src-wiki-s3e15
-  - key: p-s3e18-cook-name
-    subject: p-s3e18-cook
-    predicate: name
-    value: Elspeth Cook
-    revealed: S3E18
-    source: src-wiki-s3e18
   - key: s3e18-cook-perp
-    subject: p-s3e18-cook
+    subject: p-elspeth-cook
     predicate: role_in_case
     object: c-s3e18
     value: perpetrator
     status: confirmed
     revealed: S3E18
     source: src-wiki-s3e18
-  - key: p-s3e19-erica-name
-    subject: p-s3e19-erica
-    predicate: name
-    value: Erica Flynn
-    revealed: S3E19
-    source: src-wiki-s3e19
   - key: s3e19-erica-perp
-    subject: p-s3e19-erica
+    subject: p-erica-flynn
     predicate: role_in_case
     object: c-s3e19
     value: perpetrator
     status: confirmed
     revealed: S3E19
     source: src-wiki-s3e19
-  - key: p-s3e22-carruthers-name
-    subject: p-s3e22-carruthers
-    predicate: name
-    value: Kieran Carruthers
-    revealed: S3E22
-    source: src-wiki-s3e22
   - key: s3e22-carruthers-perp
-    subject: p-s3e22-carruthers
+    subject: p-kieran-carruthers
     predicate: role_in_case
     object: c-s3e22
     value: perpetrator
     status: confirmed
     revealed: S3E22
     source: src-wiki-s3e22
-sources:
-  - key: src-wiki-s3e1
-    kind: wiki
-    episode: S3E1
-    url: https://thementalist.fandom.com/wiki/Red_Sky_At_Night
-  - key: src-wiki-s3e2
-    kind: wiki
-    episode: S3E2
-    url: https://thementalist.fandom.com/wiki/Cackle-bladder_Blood
-  - key: src-wiki-s3e3
-    kind: wiki
-    episode: S3E3
-    url: https://thementalist.fandom.com/wiki/The_Blood_On_His_Hands
-  - key: src-wiki-s3e4
-    kind: wiki
-    episode: S3E4
-    url: https://thementalist.fandom.com/wiki/Red_Carpet_Treatment
-  - key: src-wiki-s3e5
-    kind: wiki
-    episode: S3E5
-    url: https://thementalist.fandom.com/wiki/The_Red_Ponies
-  - key: src-wiki-s3e6
-    kind: wiki
-    episode: S3E6
-    url: https://thementalist.fandom.com/wiki/Pink_Chanel_Suit
-  - key: src-wiki-s3e7
-    kind: wiki
-    episode: S3E7
-    url: https://thementalist.fandom.com/wiki/Red_Hot
-  - key: src-wiki-s3e10
-    kind: wiki
-    episode: S3E10
-    url: https://thementalist.fandom.com/wiki/Jolly_Red_Elf
-  - key: src-wiki-s3e12
-    kind: wiki
-    episode: S3E12
-    url: https://thementalist.fandom.com/wiki/Bloodhounds
-  - key: src-wiki-s3e15
-    kind: wiki
-    episode: S3E15
-    url: https://thementalist.fandom.com/wiki/Red_Gold
-  - key: src-wiki-s3e18
-    kind: wiki
-    episode: S3E18
-    url: https://thementalist.fandom.com/wiki/The_Red_Mile
-  - key: src-wiki-s3e19
-    kind: wiki
-    episode: S3E19
-    url: https://thementalist.fandom.com/wiki/Every_Rose_Has_Its_Thorn
-  - key: src-wiki-s3e22
-    kind: wiki
-    episode: S3E22
-    url: https://thementalist.fandom.com/wiki/Rhapsody_in_Red

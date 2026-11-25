@@ -6,9 +6,6 @@ entities:
   - key: c-s1e1
     kind: case
     introduced: S1E1
-  - key: p-s1e1-wagner
-    kind: person
-    introduced: S1E1
   - key: c-s1e2
     kind: case
     introduced: S1E2
@@ -27,17 +24,8 @@ entities:
   - key: c-s1e5
     kind: case
     introduced: S1E5
-  - key: p-s1e5-kara
-    kind: person
-    introduced: S1E5
-  - key: p-s1e5-nicole
-    kind: person
-    introduced: S1E5
   - key: c-s1e6
     kind: case
-    introduced: S1E6
-  - key: p-s1e6-meier
-    kind: person
     introduced: S1E6
   - key: l-s1e6-casino
     kind: location
@@ -45,35 +33,14 @@ entities:
   - key: c-s1e7
     kind: case
     introduced: S1E7
-  - key: p-s1e7-tennant
-    kind: person
-    introduced: S1E7
   - key: c-s1e8
     kind: case
-    introduced: S1E8
-  - key: p-s1e8-matigan
-    kind: person
     introduced: S1E8
   - key: c-s1e9
     kind: case
     introduced: S1E9
-  - key: p-s1e9-garcia
-    kind: person
-    introduced: S1E9
-  - key: p-s1e9-martin
-    kind: person
-    introduced: S1E9
-  - key: p-s1e9-machado
-    kind: person
-    introduced: S1E9
   - key: c-s1e10
     kind: case
-    introduced: S1E10
-  - key: p-s1e10-nelson
-    kind: person
-    introduced: S1E10
-  - key: p-s1e10-miller
-    kind: person
     introduced: S1E10
   - key: l-s1e10-university
     kind: location
@@ -81,44 +48,23 @@ entities:
   - key: c-s1e11
     kind: case
     introduced: S1E11
-  - key: p-s1e11-renfrew
-    kind: person
-    introduced: S1E11
   - key: c-s1e12
     kind: case
     introduced: S1E12
-  - key: p-s1e12-elkins
-    kind: person
-    introduced: S1E12
   - key: p-s1e12-dove
-    kind: person
-    introduced: S1E12
-  - key: p-s1e12-brad
     kind: person
     introduced: S1E12
   - key: c-s1e13
     kind: case
     introduced: S1E13
-  - key: p-s1e13-lashley
-    kind: person
-    introduced: S1E13
   - key: c-s1e14
     kind: case
-    introduced: S1E14
-  - key: p-s1e14-wolcott
-    kind: person
     introduced: S1E14
   - key: c-s1e15
     kind: case
     introduced: S1E15
-  - key: p-s1e15-marquesa
-    kind: person
-    introduced: S1E15
   - key: c-s1e16
     kind: case
-    introduced: S1E16
-  - key: p-s1e16-medina
-    kind: person
     introduced: S1E16
   - key: c-s1e17
     kind: case
@@ -144,20 +90,11 @@ entities:
   - key: c-s1e21
     kind: case
     introduced: S1E21
-  - key: p-s1e21-gulbrand
-    kind: person
-    introduced: S1E21
-  - key: p-s1e21-brooke
-    kind: person
-    introduced: S1E21
   - key: l-s1e21-cove
     kind: location
     introduced: S1E21
   - key: c-s1e22
     kind: case
-    introduced: S1E22
-  - key: p-s1e22-prentiss
-    kind: person
     introduced: S1E22
   - key: l-s1e22-brightarch
     kind: location
@@ -165,93 +102,15 @@ entities:
   - key: c-s1e23
     kind: case
     introduced: S1E23
-  - key: p-s1e23-plaskett
-    kind: person
-    introduced: S1E23
   - key: l-s1e23-stateland
     kind: location
     introduced: S1E23
-  - key: p-s1e2-boatwright-malcolm
-    kind: person
-    introduced: S1E2
-  - key: p-s1e2-boatwright-sandra
-    kind: person
-    introduced: S1E2
-  - key: p-s1e3-hope
-    kind: person
-    introduced: S1E3
-  - key: p-s1e3-kurtik
-    kind: person
-    introduced: S1E3
-  - key: p-s1e3-andy
-    kind: person
-    introduced: S1E3
-  - key: p-s1e3-win
-    kind: person
-    introduced: S1E3
-  - key: p-s1e4-sands
-    kind: person
-    introduced: S1E4
-  - key: p-s1e4-bennett
-    kind: person
-    introduced: S1E4
-  - key: p-s1e5-kyle
-    kind: person
-    introduced: S1E5
-  - key: p-s1e6-cardeira
-    kind: person
-    introduced: S1E6
-  - key: p-s1e7-clara
-    kind: person
-    introduced: S1E7
-  - key: p-s1e8-blakely
-    kind: person
-    introduced: S1E8
-  - key: p-s1e9-olds
-    kind: person
-    introduced: S1E9
-  - key: p-s1e10-stern
-    kind: person
-    introduced: S1E10
   - key: p-s1e11-mrs-renfrew
     kind: person
     introduced: S1E11
-  - key: p-s1e12-michael
-    kind: person
-    introduced: S1E12
-  - key: p-s1e13-hawkes
-    kind: person
-    introduced: S1E13
-  - key: p-s1e14-haightly
-    kind: person
-    introduced: S1E14
-  - key: p-s1e15-prentiss
-    kind: person
-    introduced: S1E15
-  - key: p-s1e16-hollenbeck
-    kind: person
-    introduced: S1E16
-  - key: p-s1e17-faulk
-    kind: person
-    introduced: S1E17
-  - key: p-s1e18-hendrix
-    kind: person
-    introduced: S1E18
-  - key: p-s1e19-fulton
-    kind: person
-    introduced: S1E19
-  - key: p-s1e19-scott
-    kind: person
-    introduced: S1E19
   - key: p-s1e20-russo
     kind: person
     introduced: S1E20
-  - key: p-s1e21-hanson
-    kind: person
-    introduced: S1E21
-  - key: p-s1e22-elliot
-    kind: person
-    introduced: S1E22
 
 claims:
   - key: cl-s1e1-name
@@ -263,17 +122,13 @@ claims:
   - key: cl-s1e1-desc
     subject: c-s1e1
     predicate: description
-    value: "Jane exposes the guilt behind a teenage girl's murder, then the team faces a double homicide with a Red John-style smiley that Jane judges the work of a copycat."
-    revealed: S1E1
-    source: src-s1e1
-  - key: cl-s1e1-wagner-name
-    subject: p-s1e1-wagner
-    predicate: name
-    value: "Linus Wagner"
+    value: "Jane exposes the guilt behind a teenage girl's murder, then the team
+      faces a double homicide with a Red John-style smiley that Jane judges the
+      work of a copycat."
     revealed: S1E1
     source: src-s1e1
   - key: cl-s1e1-wagner-role
-    subject: p-s1e1-wagner
+    subject: p-linus-wagner
     predicate: role_in_case
     object: c-s1e1
     value: "perpetrator"
@@ -288,7 +143,8 @@ claims:
   - key: cl-s1e2-desc
     subject: c-s1e2
     predicate: description
-    value: "The body of an 18-year-old girl is found in a Napa County vineyard and the team hunts a predator who uses silver duct tape on red-haired women."
+    value: "The body of an 18-year-old girl is found in a Napa County vineyard and
+      the team hunts a predator who uses silver duct tape on red-haired women."
     revealed: S1E2
     source: src-s1e2
   - key: cl-s1e2-mcallister-name
@@ -325,7 +181,8 @@ claims:
   - key: cl-s1e3-desc
     subject: c-s1e3
     predicate: description
-    value: "A high school girl's body washes up on a state beach and a security guard is found hidden in cement the same night."
+    value: "A high school girl's body washes up on a state beach and a security
+      guard is found hidden in cement the same night."
     revealed: S1E3
     source: src-s1e3
   - key: cl-s1e4-name
@@ -337,7 +194,8 @@ claims:
   - key: cl-s1e4-desc
     subject: c-s1e4
     predicate: description
-    value: "A wealthy investment banker is found tortured inside his hidden safe room, and his daughter is later kidnapped for his hidden fortune."
+    value: "A wealthy investment banker is found tortured inside his hidden safe
+      room, and his daughter is later kidnapped for his hidden fortune."
     revealed: S1E4
     source: src-s1e4
   - key: cl-s1e5-name
@@ -349,30 +207,19 @@ claims:
   - key: cl-s1e5-desc
     subject: c-s1e5
     predicate: description
-    value: "A bloodstained car leads to the stabbing of one of two missing girls, while the other turns up with the weapon and no memory of what happened."
-    revealed: S1E5
-    source: src-s1e5
-  - key: cl-s1e5-kara-name
-    subject: p-s1e5-kara
-    predicate: name
-    value: "Kara Palmer"
+    value: "A bloodstained car leads to the stabbing of one of two missing girls,
+      while the other turns up with the weapon and no memory of what happened."
     revealed: S1E5
     source: src-s1e5
   - key: cl-s1e5-kara-role
-    subject: p-s1e5-kara
+    subject: p-kara-palmer
     predicate: role_in_case
     object: c-s1e5
     value: "victim"
     revealed: S1E5
     source: src-s1e5
-  - key: cl-s1e5-nicole-name
-    subject: p-s1e5-nicole
-    predicate: name
-    value: "Nicole Gilbert"
-    revealed: S1E5
-    source: src-s1e5
   - key: cl-s1e5-nicole-role
-    subject: p-s1e5-nicole
+    subject: p-nicole-gilbert
     predicate: role_in_case
     object: c-s1e5
     value: "witness"
@@ -387,17 +234,12 @@ claims:
   - key: cl-s1e6-desc
     subject: c-s1e6
     predicate: description
-    value: "The manager of operations of a resort casino is murdered and his right hand is found on the California-Nevada border."
-    revealed: S1E6
-    source: src-s1e6
-  - key: cl-s1e6-meier-name
-    subject: p-s1e6-meier
-    predicate: name
-    value: "James Meier"
+    value: "The manager of operations of a resort casino is murdered and his right
+      hand is found on the California-Nevada border."
     revealed: S1E6
     source: src-s1e6
   - key: cl-s1e6-meier-role
-    subject: p-s1e6-meier
+    subject: p-jim-meier
     predicate: role_in_case
     object: c-s1e6
     value: "victim"
@@ -424,24 +266,19 @@ claims:
   - key: cl-s1e7-desc
     subject: c-s1e7
     predicate: description
-    value: "A wealthy heiress is killed in a hit and run moments after her psychic predicted her death."
-    revealed: S1E7
-    source: src-s1e7
-  - key: cl-s1e7-tennant-name
-    subject: p-s1e7-tennant
-    predicate: name
-    value: "Rosemary Tennant"
+    value: "A wealthy heiress is killed in a hit and run moments after her psychic
+      predicted her death."
     revealed: S1E7
     source: src-s1e7
   - key: cl-s1e7-tennant-role
-    subject: p-s1e7-tennant
+    subject: p-rosemary-tennant
     predicate: role_in_case
     object: c-s1e7
     value: "victim"
     revealed: S1E7
     source: src-s1e7
   - key: cl-s1e7-frye-role
-    subject: p-frye
+    subject: p-kristina-frye
     predicate: role_in_case
     object: c-s1e7
     value: "suspect"
@@ -456,17 +293,12 @@ claims:
   - key: cl-s1e8-desc
     subject: c-s1e8
     predicate: description
-    value: "A State's witness in a narcotics case and his girlfriend are shot dead in a motel room."
-    revealed: S1E8
-    source: src-s1e8
-  - key: cl-s1e8-matigan-name
-    subject: p-s1e8-matigan
-    predicate: name
-    value: "Patrice Matigan"
+    value: "A State's witness in a narcotics case and his girlfriend are shot dead
+      in a motel room."
     revealed: S1E8
     source: src-s1e8
   - key: cl-s1e8-matigan-role
-    subject: p-s1e8-matigan
+    subject: p-patrice-madigan
     predicate: role_in_case
     object: c-s1e8
     value: "victim"
@@ -481,43 +313,26 @@ claims:
   - key: cl-s1e9-desc
     subject: c-s1e9
     predicate: description
-    value: "A National Guard veteran is killed in an arson fire, and his unit turns out to have been picked off by fire one by one."
-    revealed: S1E9
-    source: src-s1e9
-  - key: cl-s1e9-garcia-name
-    subject: p-s1e9-garcia
-    predicate: name
-    value: "Rich Garcia"
+    value: "A National Guard veteran is killed in an arson fire, and his unit turns
+      out to have been picked off by fire one by one."
     revealed: S1E9
     source: src-s1e9
   - key: cl-s1e9-garcia-role
-    subject: p-s1e9-garcia
+    subject: p-rich-garcia
     predicate: role_in_case
     object: c-s1e9
     value: "victim"
-    revealed: S1E9
-    source: src-s1e9
-  - key: cl-s1e9-martin-name
-    subject: p-s1e9-martin
-    predicate: name
-    value: "Dave Martin"
     revealed: S1E9
     source: src-s1e9
   - key: cl-s1e9-martin-role
-    subject: p-s1e9-martin
+    subject: p-dave-martin
     predicate: role_in_case
     object: c-s1e9
     value: "victim"
     revealed: S1E9
     source: src-s1e9
-  - key: cl-s1e9-machado-name
-    subject: p-s1e9-machado
-    predicate: name
-    value: "Ben Machado"
-    revealed: S1E9
-    source: src-s1e9
   - key: cl-s1e9-machado-role
-    subject: p-s1e9-machado
+    subject: p-ben-machado
     predicate: role_in_case
     object: c-s1e9
     value: "suspect"
@@ -532,30 +347,19 @@ claims:
   - key: cl-s1e10-desc
     subject: c-s1e10
     predicate: description
-    value: "A leading researcher at Leyland University is poisoned and the lead suspect is his ex-wife, Jane's former psychiatrist."
-    revealed: S1E10
-    source: src-s1e10
-  - key: cl-s1e10-nelson-name
-    subject: p-s1e10-nelson
-    predicate: name
-    value: "Alex Nelson"
+    value: "A leading researcher at Leyland University is poisoned and the lead
+      suspect is his ex-wife, Jane's former psychiatrist."
     revealed: S1E10
     source: src-s1e10
   - key: cl-s1e10-nelson-role
-    subject: p-s1e10-nelson
+    subject: p-alex-nelson
     predicate: role_in_case
     object: c-s1e10
     value: "victim"
     revealed: S1E10
     source: src-s1e10
-  - key: cl-s1e10-miller-name
-    subject: p-s1e10-miller
-    predicate: name
-    value: "Sophie Miller"
-    revealed: S1E10
-    source: src-s1e10
   - key: cl-s1e10-miller-role
-    subject: p-s1e10-miller
+    subject: p-sophie-miller
     predicate: role_in_case
     object: c-s1e10
     value: "suspect"
@@ -582,17 +386,12 @@ claims:
   - key: cl-s1e11-desc
     subject: c-s1e11
     predicate: description
-    value: "A Red John case: an inmate offers Jane information on Red John in exchange for proving his innocence of a murder."
-    revealed: S1E11
-    source: src-s1e11
-  - key: cl-s1e11-renfrew-name
-    subject: p-s1e11-renfrew
-    predicate: name
-    value: "Jared Renfrew"
+    value: "A Red John case: an inmate offers Jane information on Red John in
+      exchange for proving his innocence of a murder."
     revealed: S1E11
     source: src-s1e11
   - key: cl-s1e11-renfrew-role
-    subject: p-s1e11-renfrew
+    subject: p-jared-renfrew
     predicate: role_in_case
     object: c-s1e11
     value: "informant"
@@ -607,17 +406,12 @@ claims:
   - key: cl-s1e12-desc
     subject: c-s1e12
     predicate: description
-    value: "A high school football star is found dead beside a pentacle and burning candles, and a self-proclaimed witch confesses to casting a death spell."
-    revealed: S1E12
-    source: src-s1e12
-  - key: cl-s1e12-elkins-name
-    subject: p-s1e12-elkins
-    predicate: name
-    value: "Cody Elkins"
+    value: "A high school football star is found dead beside a pentacle and burning
+      candles, and a self-proclaimed witch confesses to casting a death spell."
     revealed: S1E12
     source: src-s1e12
   - key: cl-s1e12-elkins-role
-    subject: p-s1e12-elkins
+    subject: p-cody-elkins
     predicate: role_in_case
     object: c-s1e12
     value: "victim"
@@ -636,14 +430,8 @@ claims:
     value: "suspect"
     revealed: S1E12
     source: src-s1e12
-  - key: cl-s1e12-brad-name
-    subject: p-s1e12-brad
-    predicate: name
-    value: "Brad Elkins"
-    revealed: S1E12
-    source: src-s1e12
   - key: cl-s1e12-brad-role
-    subject: p-s1e12-brad
+    subject: p-brad-elkins
     predicate: role_in_case
     object: c-s1e12
     value: "suspect"
@@ -658,17 +446,12 @@ claims:
   - key: cl-s1e13-desc
     subject: c-s1e13
     predicate: description
-    value: "A fifty million dollar painting is stolen from an oil tycoon's office and his son-in-law is found dead nearby."
-    revealed: S1E13
-    source: src-s1e13
-  - key: cl-s1e13-lashley-name
-    subject: p-s1e13-lashley
-    predicate: name
-    value: "Harry Lashley"
+    value: "A fifty million dollar painting is stolen from an oil tycoon's office
+      and his son-in-law is found dead nearby."
     revealed: S1E13
     source: src-s1e13
   - key: cl-s1e13-lashley-role
-    subject: p-s1e13-lashley
+    subject: p-harry-lashley
     predicate: role_in_case
     object: c-s1e13
     value: "victim"
@@ -683,17 +466,12 @@ claims:
   - key: cl-s1e14-desc
     subject: c-s1e14
     predicate: description
-    value: "A millionaire's wife is shot after a rendezvous with a local pick-up artist who has plenty of scorned exes."
-    revealed: S1E14
-    source: src-s1e14
-  - key: cl-s1e14-wolcott-name
-    subject: p-s1e14-wolcott
-    predicate: name
-    value: "Claire Wolcott"
+    value: "A millionaire's wife is shot after a rendezvous with a local pick-up
+      artist who has plenty of scorned exes."
     revealed: S1E14
     source: src-s1e14
   - key: cl-s1e14-wolcott-role
-    subject: p-s1e14-wolcott
+    subject: p-claire-wolcott
     predicate: role_in_case
     object: c-s1e14
     value: "victim"
@@ -708,17 +486,12 @@ claims:
   - key: cl-s1e15-desc
     subject: c-s1e15
     predicate: description
-    value: "The queen bee of a country club is poisoned with rat poison at a cocktail party in her own home."
-    revealed: S1E15
-    source: src-s1e15
-  - key: cl-s1e15-marquesa-name
-    subject: p-s1e15-marquesa
-    predicate: name
-    value: "Scarlett Marquesa"
+    value: "The queen bee of a country club is poisoned with rat poison at a
+      cocktail party in her own home."
     revealed: S1E15
     source: src-s1e15
   - key: cl-s1e15-marquesa-role
-    subject: p-s1e15-marquesa
+    subject: p-scarlett-marquesa
     predicate: role_in_case
     object: c-s1e15
     value: "victim"
@@ -733,17 +506,12 @@ claims:
   - key: cl-s1e16-desc
     subject: c-s1e16
     predicate: description
-    value: "A bomb threat sent to Jane turns out to be a real murder of a stockbroker, and the explosion leaves Jane temporarily blind."
-    revealed: S1E16
-    source: src-s1e16
-  - key: cl-s1e16-medina-name
-    subject: p-s1e16-medina
-    predicate: name
-    value: "James Medina"
+    value: "A bomb threat sent to Jane turns out to be a real murder of a
+      stockbroker, and the explosion leaves Jane temporarily blind."
     revealed: S1E16
     source: src-s1e16
   - key: cl-s1e16-medina-role
-    subject: p-s1e16-medina
+    subject: p-james-medina
     predicate: role_in_case
     object: c-s1e16
     value: "victim"
@@ -758,7 +526,8 @@ claims:
   - key: cl-s1e17-desc
     subject: c-s1e17
     predicate: description
-    value: "An anonymous campaign against a corporation threatens a murder at a set time and place, leading to killings at a corporate retreat."
+    value: "An anonymous campaign against a corporation threatens a murder at a set
+      time and place, leading to killings at a corporate retreat."
     revealed: S1E17
     source: src-s1e17
   - key: cl-s1e17-retreat-name
@@ -782,7 +551,8 @@ claims:
   - key: cl-s1e18-desc
     subject: c-s1e18
     predicate: description
-    value: "A man delivers a corpse to the police believing it is a sack of potatoes, pointing to a mastermind who hypnotizes people into killing."
+    value: "A man delivers a corpse to the police believing it is a sack of
+      potatoes, pointing to a mastermind who hypnotizes people into killing."
     revealed: S1E18
     source: src-s1e18
   - key: cl-s1e19-name
@@ -825,7 +595,8 @@ claims:
   - key: cl-s1e20-desc
     subject: c-s1e20
     predicate: description
-    value: "A mafia member turned informant, living in witness protection, is found shot dead by a river."
+    value: "A mafia member turned informant, living in witness protection, is found
+      shot dead by a river."
     revealed: S1E20
     source: src-s1e20
   - key: cl-s1e20-didrikson-name
@@ -850,30 +621,19 @@ claims:
   - key: cl-s1e21-desc
     subject: c-s1e21
     predicate: description
-    value: "The CEO of a software company vanishes from an exclusive harbor and is found dead, bound to the anchor of his yacht."
-    revealed: S1E21
-    source: src-s1e21
-  - key: cl-s1e21-gulbrand-name
-    subject: p-s1e21-gulbrand
-    predicate: name
-    value: "Jim Gulbrand"
+    value: "The CEO of a software company vanishes from an exclusive harbor and is
+      found dead, bound to the anchor of his yacht."
     revealed: S1E21
     source: src-s1e21
   - key: cl-s1e21-gulbrand-role
-    subject: p-s1e21-gulbrand
+    subject: p-jim-gulbrand
     predicate: role_in_case
     object: c-s1e21
     value: "victim"
     revealed: S1E21
     source: src-s1e21
-  - key: cl-s1e21-brooke-name
-    subject: p-s1e21-brooke
-    predicate: name
-    value: "Brooke Harper"
-    revealed: S1E21
-    source: src-s1e21
   - key: cl-s1e21-brooke-role
-    subject: p-s1e21-brooke
+    subject: p-brooke-harper
     predicate: role_in_case
     object: c-s1e21
     value: "suspect"
@@ -900,17 +660,12 @@ claims:
   - key: cl-s1e22-desc
     subject: c-s1e22
     predicate: description
-    value: "A student dies at a wilderness program for troubled youth, tied to a secret group of students and the legend of an ax man."
-    revealed: S1E22
-    source: src-s1e22
-  - key: cl-s1e22-prentiss-name
-    subject: p-s1e22-prentiss
-    predicate: name
-    value: "Justin Prentiss"
+    value: "A student dies at a wilderness program for troubled youth, tied to a
+      secret group of students and the legend of an ax man."
     revealed: S1E22
     source: src-s1e22
   - key: cl-s1e22-prentiss-role
-    subject: p-s1e22-prentiss
+    subject: p-justin-prentiss
     predicate: role_in_case
     object: c-s1e22
     value: "victim"
@@ -937,24 +692,19 @@ claims:
   - key: cl-s1e23-desc
     subject: c-s1e23
     predicate: description
-    value: "A Red John case: a woman is found dead on state land, Red John's smiley appears in skywriting, and Jane is drawn into a trap."
-    revealed: S1E23
-    source: src-s1e23
-  - key: cl-s1e23-plaskett-name
-    subject: p-s1e23-plaskett
-    predicate: name
-    value: "Emma Plaskett"
+    value: "A Red John case: a woman is found dead on state land, Red John's smiley
+      appears in skywriting, and Jane is drawn into a trap."
     revealed: S1E23
     source: src-s1e23
   - key: cl-s1e23-plaskett-role
-    subject: p-s1e23-plaskett
+    subject: p-emma-plaskett
     predicate: role_in_case
     object: c-s1e23
     value: "victim"
     revealed: S1E23
     source: src-s1e23
   - key: cl-s1e23-harker-role
-    subject: p-harker
+    subject: p-rosalind-harker
     predicate: role_in_case
     object: c-s1e23
     value: "informant"
@@ -978,196 +728,112 @@ claims:
     value: "true"
     revealed: S1E23
     source: src-s1e23
-  - key: cl-s1e2-boatwright-malcolm-name
-    subject: p-s1e2-boatwright-malcolm
-    predicate: name
-    value: Malcolm Boatwright
-    revealed: S1E2
-    source: src-wiki-s1e2
   - key: cl-s1e2-boatwright-malcolm-role
-    subject: p-s1e2-boatwright-malcolm
+    subject: p-malcolm-boatwright
     predicate: role_in_case
     object: c-s1e2
     value: perpetrator
     revealed: S1E2
     source: src-wiki-s1e2
     status: confirmed
-  - key: cl-s1e2-boatwright-sandra-name
-    subject: p-s1e2-boatwright-sandra
-    predicate: name
-    value: Sandra Boatwright
-    revealed: S1E2
-    source: src-wiki-s1e2
   - key: cl-s1e2-boatwright-sandra-role
-    subject: p-s1e2-boatwright-sandra
+    subject: p-sandra-boatwright
     predicate: role_in_case
     object: c-s1e2
     value: accomplice
     revealed: S1E2
     source: src-wiki-s1e2
     status: confirmed
-  - key: cl-s1e3-hope-name
-    subject: p-s1e3-hope
-    predicate: name
-    value: Hope
-    revealed: S1E3
-    source: src-wiki-s1e3
   - key: cl-s1e3-hope-role
-    subject: p-s1e3-hope
+    subject: p-hope
     predicate: role_in_case
     object: c-s1e3
     value: perpetrator
     revealed: S1E3
     source: src-wiki-s1e3
     status: confirmed
-  - key: cl-s1e3-kurtik-name
-    subject: p-s1e3-kurtik
-    predicate: name
-    value: Danny Kurtik
-    revealed: S1E3
-    source: src-wiki-s1e3
   - key: cl-s1e3-kurtik-role
-    subject: p-s1e3-kurtik
+    subject: p-danny-kurtik
     predicate: role_in_case
     object: c-s1e3
     value: perpetrator
     revealed: S1E3
     source: src-wiki-s1e3
     status: confirmed
-  - key: cl-s1e3-andy-name
-    subject: p-s1e3-andy
-    predicate: name
-    value: Andy
-    revealed: S1E3
-    source: src-wiki-s1e3
   - key: cl-s1e3-andy-role
-    subject: p-s1e3-andy
+    subject: p-andy
     predicate: role_in_case
     object: c-s1e3
     value: accomplice
     revealed: S1E3
     source: src-wiki-s1e3
     status: confirmed
-  - key: cl-s1e3-win-name
-    subject: p-s1e3-win
-    predicate: name
-    value: Win
-    revealed: S1E3
-    source: src-wiki-s1e3
   - key: cl-s1e3-win-role
-    subject: p-s1e3-win
+    subject: p-win
     predicate: role_in_case
     object: c-s1e3
     value: accomplice
     revealed: S1E3
     source: src-wiki-s1e3
     status: confirmed
-  - key: cl-s1e4-sands-name
-    subject: p-s1e4-sands
-    predicate: name
-    value: Jennifer Sands
-    revealed: S1E4
-    source: src-wiki-s1e4
   - key: cl-s1e4-sands-role
-    subject: p-s1e4-sands
+    subject: p-jennifer-sands
     predicate: role_in_case
     object: c-s1e4
     value: perpetrator
     revealed: S1E4
     source: src-wiki-s1e4
     status: confirmed
-  - key: cl-s1e4-bennett-name
-    subject: p-s1e4-bennett
-    predicate: name
-    value: Michael Bennett
-    revealed: S1E4
-    source: src-wiki-s1e4
   - key: cl-s1e4-bennett-role
-    subject: p-s1e4-bennett
+    subject: p-michael-bennett
     predicate: role_in_case
     object: c-s1e4
     value: accomplice
     revealed: S1E4
     source: src-wiki-s1e4
     status: confirmed
-  - key: cl-s1e5-kyle-name
-    subject: p-s1e5-kyle
-    predicate: name
-    value: Kyle
-    revealed: S1E5
-    source: src-wiki-s1e5
   - key: cl-s1e5-kyle-role
-    subject: p-s1e5-kyle
+    subject: p-ranger-kyle
     predicate: role_in_case
     object: c-s1e5
     value: perpetrator
     revealed: S1E5
     source: src-wiki-s1e5
     status: confirmed
-  - key: cl-s1e6-cardeira-name
-    subject: p-s1e6-cardeira
-    predicate: name
-    value: Daniel Cardeira
-    revealed: S1E6
-    source: src-wiki-s1e6
   - key: cl-s1e6-cardeira-role
-    subject: p-s1e6-cardeira
+    subject: p-daniel-cardeira
     predicate: role_in_case
     object: c-s1e6
     value: perpetrator
     revealed: S1E6
     source: src-wiki-s1e6
     status: confirmed
-  - key: cl-s1e7-clara-name
-    subject: p-s1e7-clara
-    predicate: name
-    value: Clara Tennant
-    revealed: S1E7
-    source: src-wiki-s1e7
   - key: cl-s1e7-clara-role
-    subject: p-s1e7-clara
+    subject: p-clara-tennant
     predicate: role_in_case
     object: c-s1e7
     value: perpetrator
     revealed: S1E7
     source: src-wiki-s1e7
     status: confirmed
-  - key: cl-s1e8-blakely-name
-    subject: p-s1e8-blakely
-    predicate: name
-    value: Sam Blakely
-    revealed: S1E8
-    source: src-wiki-s1e8
   - key: cl-s1e8-blakely-role
-    subject: p-s1e8-blakely
+    subject: p-sam-blakely
     predicate: role_in_case
     object: c-s1e8
     value: perpetrator
     revealed: S1E8
     source: src-wiki-s1e8
     status: confirmed
-  - key: cl-s1e9-olds-name
-    subject: p-s1e9-olds
-    predicate: name
-    value: Tommy Olds
-    revealed: S1E9
-    source: src-wiki-s1e9
   - key: cl-s1e9-olds-role
-    subject: p-s1e9-olds
+    subject: p-tommy-olds
     predicate: role_in_case
     object: c-s1e9
     value: perpetrator
     revealed: S1E9
     source: src-wiki-s1e9
     status: confirmed
-  - key: cl-s1e10-stern-name
-    subject: p-s1e10-stern
-    predicate: name
-    value: Chancellor Stern
-    revealed: S1E10
-    source: src-wiki-s1e10
   - key: cl-s1e10-stern-role
-    subject: p-s1e10-stern
+    subject: p-chancellor-stern
     predicate: role_in_case
     object: c-s1e10
     value: perpetrator
@@ -1188,126 +854,72 @@ claims:
     revealed: S1E11
     source: src-wiki-s1e11
     status: confirmed
-  - key: cl-s1e12-michael-name
-    subject: p-s1e12-michael
-    predicate: name
-    value: Michael Elkins
-    revealed: S1E12
-    source: src-wiki-s1e12
   - key: cl-s1e12-michael-role
-    subject: p-s1e12-michael
+    subject: p-michael-elkins
     predicate: role_in_case
     object: c-s1e12
     value: perpetrator
     revealed: S1E12
     source: src-wiki-s1e12
     status: confirmed
-  - key: cl-s1e13-hawkes-name
-    subject: p-s1e13-hawkes
-    predicate: name
-    value: Kathryn Hawkes
-    revealed: S1E13
-    source: src-wiki-s1e13
   - key: cl-s1e13-hawkes-role
-    subject: p-s1e13-hawkes
+    subject: p-kathryn-hawkes
     predicate: role_in_case
     object: c-s1e13
     value: perpetrator
     revealed: S1E13
     source: src-wiki-s1e13
     status: confirmed
-  - key: cl-s1e14-haightly-name
-    subject: p-s1e14-haightly
-    predicate: name
-    value: Kevin Haightly
-    revealed: S1E14
-    source: src-wiki-s1e14
   - key: cl-s1e14-haightly-role
-    subject: p-s1e14-haightly
+    subject: p-kevin-haightly
     predicate: role_in_case
     object: c-s1e14
     value: perpetrator
     revealed: S1E14
     source: src-wiki-s1e14
     status: confirmed
-  - key: cl-s1e15-prentiss-name
-    subject: p-s1e15-prentiss
-    predicate: name
-    value: Heather Prentiss
-    revealed: S1E15
-    source: src-wiki-s1e15
   - key: cl-s1e15-prentiss-role
-    subject: p-s1e15-prentiss
+    subject: p-heather-prentiss
     predicate: role_in_case
     object: c-s1e15
     value: perpetrator
     revealed: S1E15
     source: src-wiki-s1e15
     status: confirmed
-  - key: cl-s1e16-hollenbeck-name
-    subject: p-s1e16-hollenbeck
-    predicate: name
-    value: Dan Hollenbeck
-    revealed: S1E16
-    source: src-wiki-s1e16
   - key: cl-s1e16-hollenbeck-role
-    subject: p-s1e16-hollenbeck
+    subject: p-dan-hollenbeck
     predicate: role_in_case
     object: c-s1e16
     value: perpetrator
     revealed: S1E16
     source: src-wiki-s1e16
     status: confirmed
-  - key: cl-s1e17-faulk-name
-    subject: p-s1e17-faulk
-    predicate: name
-    value: Randall Faulk
-    revealed: S1E17
-    source: src-wiki-s1e17
   - key: cl-s1e17-faulk-role
-    subject: p-s1e17-faulk
+    subject: p-randall-faulk
     predicate: role_in_case
     object: c-s1e17
     value: perpetrator
     revealed: S1E17
     source: src-wiki-s1e17
     status: confirmed
-  - key: cl-s1e18-hendrix-name
-    subject: p-s1e18-hendrix
-    predicate: name
-    value: Lindsay Hendrix
-    revealed: S1E18
-    source: src-wiki-s1e18
   - key: cl-s1e18-hendrix-role
-    subject: p-s1e18-hendrix
+    subject: p-lindsay-hendrix
     predicate: role_in_case
     object: c-s1e18
     value: perpetrator
     revealed: S1E18
     source: src-wiki-s1e18
     status: confirmed
-  - key: cl-s1e19-fulton-name
-    subject: p-s1e19-fulton
-    predicate: name
-    value: Brandon Fulton
-    revealed: S1E19
-    source: src-wiki-s1e19
   - key: cl-s1e19-fulton-role
-    subject: p-s1e19-fulton
+    subject: p-brandon-fulton
     predicate: role_in_case
     object: c-s1e19
     value: perpetrator
     revealed: S1E19
     source: src-wiki-s1e19
     status: confirmed
-  - key: cl-s1e19-scott-name
-    subject: p-s1e19-scott
-    predicate: name
-    value: Felicia Scott
-    revealed: S1E19
-    source: src-wiki-s1e19
   - key: cl-s1e19-scott-role
-    subject: p-s1e19-scott
+    subject: p-felicia-scott
     predicate: role_in_case
     object: c-s1e19
     value: accomplice
@@ -1328,116 +940,19 @@ claims:
     revealed: S1E20
     source: src-wiki-s1e20
     status: confirmed
-  - key: cl-s1e21-hanson-name
-    subject: p-s1e21-hanson
-    predicate: name
-    value: Stuart Hanson
-    revealed: S1E21
-    source: src-wiki-s1e21
   - key: cl-s1e21-hanson-role
-    subject: p-s1e21-hanson
+    subject: p-stuart-hanson
     predicate: role_in_case
     object: c-s1e21
     value: perpetrator
     revealed: S1E21
     source: src-wiki-s1e21
     status: confirmed
-  - key: cl-s1e22-elliot-name
-    subject: p-s1e22-elliot
-    predicate: name
-    value: Elliot
-    revealed: S1E22
-    source: src-wiki-s1e22
   - key: cl-s1e22-elliot-role
-    subject: p-s1e22-elliot
+    subject: p-elliot
     predicate: role_in_case
     object: c-s1e22
     value: perpetrator
     revealed: S1E22
     source: src-wiki-s1e22
     status: confirmed
-sources:
-  - key: src-wiki-s1e2
-    kind: wiki
-    episode: S1E2
-    url: https://thementalist.fandom.com/wiki/Red_Hair_and_Silver_Tape
-  - key: src-wiki-s1e3
-    kind: wiki
-    episode: S1E3
-    url: https://thementalist.fandom.com/wiki/Red_Tide
-  - key: src-wiki-s1e4
-    kind: wiki
-    episode: S1E4
-    url: https://thementalist.fandom.com/wiki/Ladies_in_Red
-  - key: src-wiki-s1e5
-    kind: wiki
-    episode: S1E5
-    url: https://thementalist.fandom.com/wiki/Redwood
-  - key: src-wiki-s1e6
-    kind: wiki
-    episode: S1E6
-    url: https://thementalist.fandom.com/wiki/Red_Handed
-  - key: src-wiki-s1e7
-    kind: wiki
-    episode: S1E7
-    url: https://thementalist.fandom.com/wiki/Seeing_Red
-  - key: src-wiki-s1e8
-    kind: wiki
-    episode: S1E8
-    url: https://thementalist.fandom.com/wiki/The_Thin_Red_Line
-  - key: src-wiki-s1e9
-    kind: wiki
-    episode: S1E9
-    url: https://thementalist.fandom.com/wiki/Flame_Red
-  - key: src-wiki-s1e10
-    kind: wiki
-    episode: S1E10
-    url: https://thementalist.fandom.com/wiki/Red_Brick_and_Ivy
-  - key: src-wiki-s1e11
-    kind: wiki
-    episode: S1E11
-    url: https://thementalist.fandom.com/wiki/Red_John's_Friends
-  - key: src-wiki-s1e12
-    kind: wiki
-    episode: S1E12
-    url: https://thementalist.fandom.com/wiki/Red_Rum
-  - key: src-wiki-s1e13
-    kind: wiki
-    episode: S1E13
-    url: https://thementalist.fandom.com/wiki/Paint_It_Red
-  - key: src-wiki-s1e14
-    kind: wiki
-    episode: S1E14
-    url: https://thementalist.fandom.com/wiki/Crimson_Casanova
-  - key: src-wiki-s1e15
-    kind: wiki
-    episode: S1E15
-    url: https://thementalist.fandom.com/wiki/Scarlett_Fever
-  - key: src-wiki-s1e16
-    kind: wiki
-    episode: S1E16
-    url: https://thementalist.fandom.com/wiki/Bloodshot
-  - key: src-wiki-s1e17
-    kind: wiki
-    episode: S1E17
-    url: https://thementalist.fandom.com/wiki/Carnelian,_Inc.
-  - key: src-wiki-s1e18
-    kind: wiki
-    episode: S1E18
-    url: https://thementalist.fandom.com/wiki/Russet_Potatoes
-  - key: src-wiki-s1e19
-    kind: wiki
-    episode: S1E19
-    url: https://thementalist.fandom.com/wiki/A_Dozen_Red_Roses
-  - key: src-wiki-s1e20
-    kind: wiki
-    episode: S1E20
-    url: https://thementalist.fandom.com/wiki/Red_Sauce
-  - key: src-wiki-s1e21
-    kind: wiki
-    episode: S1E21
-    url: https://thementalist.fandom.com/wiki/Miss_Red
-  - key: src-wiki-s1e22
-    kind: wiki
-    episode: S1E22
-    url: https://thementalist.fandom.com/wiki/Blood_Brothers

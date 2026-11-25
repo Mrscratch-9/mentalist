@@ -11,10 +11,6 @@ entities:
     kind: person
     introduced: S5E1
 
-  - key: p-s5e1-rex
-    kind: person
-    introduced: S5E1
-
   - key: p-s5e1-nicola
     kind: person
     introduced: S5E1
@@ -31,24 +27,8 @@ entities:
     kind: person
     introduced: S5E2
 
-  - key: p-s5e2-betty
-    kind: person
-    introduced: S5E2
-
   - key: c-s5e3
     kind: case
-    introduced: S5E3
-
-  - key: p-s5e3-ernie
-    kind: person
-    introduced: S5E3
-
-  - key: p-s5e3-nancy
-    kind: person
-    introduced: S5E3
-
-  - key: p-s5e3-hutten
-    kind: person
     introduced: S5E3
 
   - key: c-s5e4
@@ -64,10 +44,6 @@ entities:
     introduced: S5E4
 
   - key: p-s5e4-samantha
-    kind: person
-    introduced: S5E4
-
-  - key: p-s5e4-moss
     kind: person
     introduced: S5E4
 
@@ -103,10 +79,6 @@ entities:
     kind: person
     introduced: S5E10
 
-  - key: p-s5e10-francesca
-    kind: person
-    introduced: S5E10
-
   - key: c-s5e11
     kind: case
     introduced: S5E11
@@ -120,10 +92,6 @@ entities:
     introduced: S5E12
 
   - key: p-s5e12-milk
-    kind: person
-    introduced: S5E12
-
-  - key: p-s5e12-clyde
     kind: person
     introduced: S5E12
 
@@ -159,20 +127,12 @@ entities:
     kind: case
     introduced: S5E14
 
-  - key: p-s5e14-linda
-    kind: person
-    introduced: S5E14
-
   - key: c-s5e15
     kind: case
     introduced: S5E15
 
   - key: c-s5e16
     kind: case
-    introduced: S5E16
-
-  - key: p-s5e16-lennon
-    kind: person
     introduced: S5E16
 
   - key: l-s5e16-scene
@@ -184,10 +144,6 @@ entities:
     introduced: S5E17
 
   - key: p-s5e17-lucy
-    kind: person
-    introduced: S5E17
-
-  - key: p-s5e17-bowman
     kind: person
     introduced: S5E17
 
@@ -211,10 +167,6 @@ entities:
     kind: person
     introduced: S5E18
 
-  - key: p-s5e18-dodge
-    kind: person
-    introduced: S5E18
-
   - key: p-s5e18-miranda
     kind: person
     introduced: S5E18
@@ -228,10 +180,6 @@ entities:
     introduced: S5E19
 
   - key: p-s5e19-hollis
-    kind: person
-    introduced: S5E19
-
-  - key: p-s5e19-ian
     kind: person
     introduced: S5E19
 
@@ -259,61 +207,19 @@ entities:
     kind: case
     introduced: S5E22
 
-  - key: p-s5e22-eileen
-    kind: person
-    introduced: S5E22
-
   - key: p-s5e22-roddy
-    kind: person
-    introduced: S5E22
-
-  - key: p-s5e22-miriam
-    kind: person
-    introduced: S5E22
-
-  - key: p-s5e22-barlow
     kind: person
     introduced: S5E22
 
   - key: l-s5e22-motel
     kind: location
     introduced: S5E22
-  - key: p-s5e1-yannick
-    kind: person
-    introduced: S5E1
-  - key: p-s5e5-kim
-    kind: person
-    introduced: S5E5
-  - key: p-s5e6-sloan
-    kind: person
-    introduced: S5E6
-  - key: p-s5e9-dilmer
-    kind: person
-    introduced: S5E9
   - key: p-s5e9-bosch
     kind: person
     introduced: S5E9
-  - key: p-s5e9-phipps
-    kind: person
-    introduced: S5E9
-  - key: p-s5e10-gold
-    kind: person
-    introduced: S5E10
   - key: p-s5e11-lyle
     kind: person
     introduced: S5E11
-  - key: p-s5e13-holly
-    kind: person
-    introduced: S5E13
-  - key: p-s5e14-paul
-    kind: person
-    introduced: S5E14
-  - key: p-s5e15-elise
-    kind: person
-    introduced: S5E15
-  - key: p-s5e20-elizabeth
-    kind: person
-    introduced: S5E20
 
 claims:
   - key: c-s5e1-name
@@ -346,15 +252,8 @@ claims:
     revealed: S5E1
     source: src-s5e1
 
-  - key: p-s5e1-rex-name
-    subject: p-s5e1-rex
-    predicate: name
-    value: "Rex"
-    revealed: S5E1
-    source: src-s5e1
-
   - key: p-s5e1-rex-role
-    subject: p-s5e1-rex
+    subject: p-rex-lango
     predicate: role_in_case
     object: c-s5e1
     value: "victim"
@@ -421,15 +320,8 @@ claims:
     revealed: S5E2
     source: src-s5e2
 
-  - key: p-s5e2-betty-name
-    subject: p-s5e2-betty
-    predicate: name
-    value: "Betty"
-    revealed: S5E2
-    source: src-s5e2
-
   - key: p-s5e2-betty-role
-    subject: p-s5e2-betty
+    subject: p-betty-fulford
     predicate: role_in_case
     object: c-s5e2
     value: "perpetrator"
@@ -451,45 +343,24 @@ claims:
     revealed: S5E3
     source: src-s5e3
 
-  - key: p-s5e3-ernie-name
-    subject: p-s5e3-ernie
-    predicate: name
-    value: "Ernie"
-    revealed: S5E3
-    source: src-s5e3
-
   - key: p-s5e3-ernie-role
-    subject: p-s5e3-ernie
+    subject: p-ernie-wright
     predicate: role_in_case
     object: c-s5e3
     value: "victim"
     revealed: S5E3
     source: src-s5e3
 
-  - key: p-s5e3-nancy-name
-    subject: p-s5e3-nancy
-    predicate: name
-    value: "Nancy"
-    revealed: S5E3
-    source: src-s5e3
-
   - key: p-s5e3-nancy-role
-    subject: p-s5e3-nancy
+    subject: p-nancy-sterling
     predicate: role_in_case
     object: c-s5e3
     value: "perpetrator"
     revealed: S5E3
     source: src-s5e3
 
-  - key: p-s5e3-hutten-name
-    subject: p-s5e3-hutten
-    predicate: name
-    value: "John Hutten"
-    revealed: S5E3
-    source: src-s5e3
-
   - key: p-s5e3-hutten-role
-    subject: p-s5e3-hutten
+    subject: p-john-hutten
     predicate: role_in_case
     object: c-s5e3
     value: "suspect"
@@ -556,15 +427,8 @@ claims:
     revealed: S5E4
     source: src-s5e4
 
-  - key: p-s5e4-moss-name
-    subject: p-s5e4-moss
-    predicate: name
-    value: "Fletcher Moss"
-    revealed: S5E4
-    source: src-s5e4
-
   - key: p-s5e4-moss-role
-    subject: p-s5e4-moss
+    subject: p-fletcher-moss
     predicate: role_in_case
     object: c-s5e4
     value: "perpetrator"
@@ -691,15 +555,8 @@ claims:
     revealed: S5E10
     source: src-s5e10
 
-  - key: p-s5e10-francesca-name
-    subject: p-s5e10-francesca
-    predicate: name
-    value: "Francesca"
-    revealed: S5E10
-    source: src-s5e10
-
   - key: p-s5e10-francesca-role
-    subject: p-s5e10-francesca
+    subject: p-francesca-ehrlich
     predicate: role_in_case
     object: c-s5e10
     value: "suspect"
@@ -766,15 +623,8 @@ claims:
     revealed: S5E12
     source: src-s5e12
 
-  - key: p-s5e12-clyde-name
-    subject: p-s5e12-clyde
-    predicate: name
-    value: "Don Clyde"
-    revealed: S5E12
-    source: src-s5e12
-
   - key: p-s5e12-clyde-role
-    subject: p-s5e12-clyde
+    subject: p-donald-clyde
     predicate: role_in_case
     object: c-s5e12
     value: "suspect"
@@ -797,7 +647,7 @@ claims:
     source: src-s5e12
 
   - key: c-s5e12-core0-role
-    subject: p-shettrick
+    subject: p-brenda-shettrick
     predicate: role_in_case
     object: c-s5e12
     value: "informant"
@@ -881,7 +731,7 @@ claims:
     source: src-s5e13
 
   - key: c-s5e13-core0-role
-    subject: p-cooper
+    subject: p-jason-cooper
     predicate: role_in_case
     object: c-s5e13
     value: "witness"
@@ -925,15 +775,8 @@ claims:
     revealed: S5E14
     source: src-s5e14
 
-  - key: p-s5e14-linda-name
-    subject: p-s5e14-linda
-    predicate: name
-    value: "Linda"
-    revealed: S5E14
-    source: src-s5e14
-
   - key: p-s5e14-linda-role
-    subject: p-s5e14-linda
+    subject: p-linda-parfey
     predicate: role_in_case
     object: c-s5e14
     value: "victim"
@@ -970,15 +813,8 @@ claims:
     revealed: S5E16
     source: src-s5e16
 
-  - key: p-s5e16-lennon-name
-    subject: p-s5e16-lennon
-    predicate: name
-    value: "Jason Lennon"
-    revealed: S5E16
-    source: src-s5e16
-
   - key: p-s5e16-lennon-role
-    subject: p-s5e16-lennon
+    subject: p-jason-lennon
     predicate: role_in_case
     object: c-s5e16
     value: "victim"
@@ -1045,15 +881,8 @@ claims:
     revealed: S5E17
     source: src-s5e17
 
-  - key: p-s5e17-bowman-name
-    subject: p-s5e17-bowman
-    predicate: name
-    value: "Dr. Bowman"
-    revealed: S5E17
-    source: src-s5e17
-
   - key: p-s5e17-bowman-role
-    subject: p-s5e17-bowman
+    subject: p-wilson-bowman
     predicate: role_in_case
     object: c-s5e17
     value: "perpetrator"
@@ -1135,15 +964,8 @@ claims:
     revealed: S5E18
     source: src-s5e18
 
-  - key: p-s5e18-dodge-name
-    subject: p-s5e18-dodge
-    predicate: name
-    value: "Dodge"
-    revealed: S5E18
-    source: src-s5e18
-
   - key: p-s5e18-dodge-role
-    subject: p-s5e18-dodge
+    subject: p-warren-dodge
     predicate: role_in_case
     object: c-s5e18
     value: "perpetrator"
@@ -1210,15 +1032,8 @@ claims:
     revealed: S5E19
     source: src-s5e19
 
-  - key: p-s5e19-ian-name
-    subject: p-s5e19-ian
-    predicate: name
-    value: "Ian Percy"
-    revealed: S5E19
-    source: src-s5e19
-
   - key: p-s5e19-ian-role
-    subject: p-s5e19-ian
+    subject: p-ian-percy
     predicate: role_in_case
     object: c-s5e19
     value: "perpetrator"
@@ -1300,7 +1115,7 @@ claims:
     source: src-s5e21
 
   - key: c-s5e21-core0-role
-    subject: p-laroche
+    subject: p-j-j-laroche
     predicate: role_in_case
     object: c-s5e21
     value: "victim"
@@ -1308,7 +1123,7 @@ claims:
     source: src-s5e21
 
   - key: c-s5e21-core1-role
-    subject: p-shettrick
+    subject: p-brenda-shettrick
     predicate: role_in_case
     object: c-s5e21
     value: "perpetrator"
@@ -1330,15 +1145,8 @@ claims:
     revealed: S5E22
     source: src-s5e22
 
-  - key: p-s5e22-eileen-name
-    subject: p-s5e22-eileen
-    predicate: name
-    value: "Eileen Turner"
-    revealed: S5E22
-    source: src-s5e22
-
   - key: p-s5e22-eileen-role
-    subject: p-s5e22-eileen
+    subject: p-eileen-barlow-turner
     predicate: role_in_case
     object: c-s5e22
     value: "victim"
@@ -1360,30 +1168,16 @@ claims:
     revealed: S5E22
     source: src-s5e22
 
-  - key: p-s5e22-miriam-name
-    subject: p-s5e22-miriam
-    predicate: name
-    value: "Miriam"
-    revealed: S5E22
-    source: src-s5e22
-
   - key: p-s5e22-miriam-role
-    subject: p-s5e22-miriam
+    subject: p-miriam-gottlieb
     predicate: role_in_case
     object: c-s5e22
     value: "accomplice"
     revealed: S5E22
     source: src-s5e22
 
-  - key: p-s5e22-barlow-name
-    subject: p-s5e22-barlow
-    predicate: name
-    value: "Sean Barlow"
-    revealed: S5E22
-    source: src-s5e22
-
   - key: p-s5e22-barlow-role
-    subject: p-s5e22-barlow
+    subject: p-sean-barlow
     predicate: role_in_case
     object: c-s5e22
     value: "suspect"
@@ -1403,56 +1197,32 @@ claims:
     object: c-s5e22
     revealed: S5E22
     source: src-s5e22
-  - key: s5e1-yannick-name
-    subject: p-s5e1-yannick
-    predicate: name
-    value: Tom Yannick
-    revealed: S5E1
-    source: src-wiki-s5e1
   - key: s5e1-yannick-role
-    subject: p-s5e1-yannick
+    subject: p-tom-yannick
     predicate: role_in_case
     object: c-s5e1
     value: perpetrator
     status: confirmed
     revealed: S5E1
     source: src-wiki-s5e1
-  - key: s5e5-kim-name
-    subject: p-s5e5-kim
-    predicate: name
-    value: Nathaniel Kim
-    revealed: S5E5
-    source: src-wiki-s5e5
   - key: s5e5-kim-role
-    subject: p-s5e5-kim
+    subject: p-nathaniel-kim
     predicate: role_in_case
     object: c-s5e5
     value: perpetrator
     status: confirmed
     revealed: S5E5
     source: src-wiki-s5e5
-  - key: s5e6-sloan-name
-    subject: p-s5e6-sloan
-    predicate: name
-    value: Sloan Dietz
-    revealed: S5E6
-    source: src-wiki-s5e6
   - key: s5e6-sloan-role
-    subject: p-s5e6-sloan
+    subject: p-sloan-dietz
     predicate: role_in_case
     object: c-s5e6
     value: perpetrator
     status: confirmed
     revealed: S5E6
     source: src-wiki-s5e6
-  - key: s5e9-dilmer-name
-    subject: p-s5e9-dilmer
-    predicate: name
-    value: Nathan Dilmer
-    revealed: S5E9
-    source: src-wiki-s5e9
   - key: s5e9-dilmer-role
-    subject: p-s5e9-dilmer
+    subject: p-nathan-dilmer
     predicate: role_in_case
     object: c-s5e9
     value: perpetrator
@@ -1473,28 +1243,16 @@ claims:
     status: confirmed
     revealed: S5E9
     source: src-wiki-s5e9
-  - key: s5e9-phipps-name
-    subject: p-s5e9-phipps
-    predicate: name
-    value: Victor Phipps
-    revealed: S5E9
-    source: src-wiki-s5e9
   - key: s5e9-phipps-role
-    subject: p-s5e9-phipps
+    subject: p-victor-phipps
     predicate: role_in_case
     object: c-s5e9
     value: perpetrator
     status: confirmed
     revealed: S5E9
     source: src-wiki-s5e9
-  - key: s5e10-gold-name
-    subject: p-s5e10-gold
-    predicate: name
-    value: Matthew Gold
-    revealed: S5E10
-    source: src-wiki-s5e10
   - key: s5e10-gold-role
-    subject: p-s5e10-gold
+    subject: p-matthew-gold
     predicate: role_in_case
     object: c-s5e10
     value: perpetrator
@@ -1515,100 +1273,35 @@ claims:
     status: confirmed
     revealed: S5E11
     source: src-wiki-s5e11
-  - key: s5e13-holly-name
-    subject: p-s5e13-holly
-    predicate: name
-    value: Holly Preston
-    revealed: S5E13
-    source: src-wiki-s5e13
   - key: s5e13-holly-role
-    subject: p-s5e13-holly
+    subject: p-holly-preston
     predicate: role_in_case
     object: c-s5e13
     value: perpetrator
     status: confirmed
     revealed: S5E13
     source: src-wiki-s5e13
-  - key: s5e14-paul-name
-    subject: p-s5e14-paul
-    predicate: name
-    value: Paul Friedman
-    revealed: S5E14
-    source: src-wiki-s5e14
   - key: s5e14-paul-role
-    subject: p-s5e14-paul
+    subject: p-paul-friedman
     predicate: role_in_case
     object: c-s5e14
     value: perpetrator
     status: confirmed
     revealed: S5E14
     source: src-wiki-s5e14
-  - key: s5e15-elise-name
-    subject: p-s5e15-elise
-    predicate: name
-    value: Elise Vogelson
-    revealed: S5E15
-    source: src-wiki-s5e15
   - key: s5e15-elise-role
-    subject: p-s5e15-elise
+    subject: p-elise-vogelsong
     predicate: role_in_case
     object: c-s5e15
     value: perpetrator
     status: confirmed
     revealed: S5E15
     source: src-wiki-s5e15
-  - key: s5e20-elizabeth-name
-    subject: p-s5e20-elizabeth
-    predicate: name
-    value: Elizabeth
-    revealed: S5E20
-    source: src-wiki-s5e20
   - key: s5e20-elizabeth-role
-    subject: p-s5e20-elizabeth
+    subject: p-elizabeth-hennings
     predicate: role_in_case
     object: c-s5e20
     value: perpetrator
     status: confirmed
     revealed: S5E20
     source: src-wiki-s5e20
-sources:
-  - key: src-wiki-s5e1
-    kind: wiki
-    episode: S5E1
-    url: https://thementalist.fandom.com/wiki/The_Crimson_Ticket
-  - key: src-wiki-s5e5
-    kind: wiki
-    episode: S5E5
-    url: https://thementalist.fandom.com/wiki/Red_Dawn
-  - key: src-wiki-s5e6
-    kind: wiki
-    episode: S5E6
-    url: https://thementalist.fandom.com/wiki/Cherry_Picked
-  - key: src-wiki-s5e9
-    kind: wiki
-    episode: S5E9
-    url: https://thementalist.fandom.com/wiki/Black_Cherry
-  - key: src-wiki-s5e10
-    kind: wiki
-    episode: S5E10
-    url: https://thementalist.fandom.com/wiki/Panama_Red
-  - key: src-wiki-s5e11
-    kind: wiki
-    episode: S5E11
-    url: https://thementalist.fandom.com/wiki/Days_of_Wine_and_Roses
-  - key: src-wiki-s5e13
-    kind: wiki
-    episode: S5E13
-    url: https://thementalist.fandom.com/wiki/The_Red_Barn
-  - key: src-wiki-s5e14
-    kind: wiki
-    episode: S5E14
-    url: https://thementalist.fandom.com/wiki/Red_in_Tooth_and_Claw
-  - key: src-wiki-s5e15
-    kind: wiki
-    episode: S5E15
-    url: https://thementalist.fandom.com/wiki/Red_Lacquer_Nail_Polish
-  - key: src-wiki-s5e20
-    kind: wiki
-    episode: S5E20
-    url: https://thementalist.fandom.com/wiki/Red_Velvet_Cupcakes

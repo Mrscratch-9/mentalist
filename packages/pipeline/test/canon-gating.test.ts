@@ -134,6 +134,22 @@ describe("real canon gating at S6E10 (counts only)", () => {
     expect(engine.entityCounts(p).case).toBe(126);
   });
 
+  it("keeps the curated case layer after the import: ≥103 confirmed-solved cases, recurring persons and fan items visible at S6E10", () => {
+    const solved = engine.listEntities(p, "case").filter((c) =>
+      engine.getCaseFile(p, c.id).roles.some((r) => r.state === "current" && r.role === "perpetrator" && r.status === "confirmed"),
+    ).length;
+    expect(solved).toBeGreaterThanOrEqual(103);
+    const persons = new Set(data.entities.filter((e) => e.kind === "person").map((e) => e.id as string));
+    const recurring = engine.listClaims(p, { predicate: "recurring" }).filter((c) => c.value === "true" && persons.has(c.subject as string));
+    const visible = new Set(engine.listEntities(p, "person").map((e) => e.id as string));
+    expect(recurring.length).toBeGreaterThan(0);
+    expect(recurring.filter((c) => !visible.has(c.subject as string)).length).toBe(0);
+    const theories = engine.listTheories(p);
+    expect(theories.length).toBeGreaterThan(0);
+    expect(theories.filter((t) => t.spoilsUpTo > p.epIndex).length).toBe(0);
+    expect(data.theories.length).toBeGreaterThan(theories.length);
+  });
+
   it("peek adds exactly the entities introduced at p+1", () => {
     const before = new Set<EntityId>(engine.listEntities(p).map((e) => e.id));
     const after = engine.listEntities(q);
