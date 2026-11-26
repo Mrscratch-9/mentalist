@@ -207,12 +207,6 @@ claims:
     revealed: S1E1
     source: src-s1e1
     superseded: { in: S6E12, by: c-p-grace-van-pelt-role-2 }
-  - key: c-p-brett-partridge-role
-    subject: p-brett-partridge
-    predicate: role
-    value: "Bureau of Forensic Science lead agent"
-    revealed: S1E1
-    source: src-s1e1
   - key: c-p-virgil-minelli-role
     subject: p-virgil-minelli
     predicate: role

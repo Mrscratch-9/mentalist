@@ -8,7 +8,7 @@ import {
 import { compile, loadDir, validate } from "../src/index.ts";
 import { nodeDriver } from "../src/driver.ts";
 
-// Spoiler gating of the REAL canon at progress S6E10, by counts only.
+// Spoiler gating of the REAL canon at the owner's progress (S6E12), by counts only.
 // Assertions compare numbers/booleans; no canon text is ever part of a failure message.
 const dir = fileURLToPath(new URL("../../../data/canon/", import.meta.url));
 
@@ -31,7 +31,7 @@ beforeAll(() => {
   db = nodeDriver(raw);
   loadDataset(db, data);
   engine = new KnowledgeEngine(db);
-  p = resolveProgress(db, { season: 6, episode: 10 });
+  p = resolveProgress(db, { season: 6, episode: 12 });
   q = peek(p);
   for (const e of data.entities) entIntro.set(e.id, e.introducedIn);
   for (const c of data.claims) claimRev.set(c.id, c.revealedIn);
@@ -39,10 +39,10 @@ beforeAll(() => {
 
 afterAll(() => raw?.close());
 
-describe("real canon gating at S6E10 (counts only)", () => {
-  it("resolves S6E10 to the 126th episode and peek to the next one", () => {
-    expect(p.epIndex).toBe(126);
-    expect(q.epIndex).toBe(127);
+describe("real canon gating at S6E12 (counts only)", () => {
+  it("resolves S6E12 to the 128th episode and peek to the next one", () => {
+    expect(p.epIndex).toBe(128);
+    expect(q.epIndex).toBe(129);
     expect(data.episodes.length).toBe(151);
   });
 
@@ -129,12 +129,12 @@ describe("real canon gating at S6E10 (counts only)", () => {
     expect(watched.filter((e) => !("details" in e)).length).toBe(0);
   });
 
-  it("shows 126 cases at S6E10", () => {
-    expect(engine.listEntities(p, "case").length).toBe(126);
-    expect(engine.entityCounts(p).case).toBe(126);
+  it("shows 128 cases at S6E12 (one case per watched episode)", () => {
+    expect(engine.listEntities(p, "case").length).toBe(128);
+    expect(engine.entityCounts(p).case).toBe(128);
   });
 
-  it("keeps the curated case layer after the import: ≥103 confirmed-solved cases, recurring persons and fan items visible at S6E10", () => {
+  it("keeps the curated case layer after the import: ≥103 confirmed-solved cases, recurring persons and fan items visible at S6E12", () => {
     const solved = engine.listEntities(p, "case").filter((c) =>
       engine.getCaseFile(p, c.id).roles.some((r) => r.state === "current" && r.role === "perpetrator" && r.status === "confirmed"),
     ).length;
@@ -167,13 +167,13 @@ describe("real canon gating at S6E10 (counts only)", () => {
   });
 
   it("does not mutate the progress value when peeking", () => {
-    expect(p.epIndex).toBe(126);
+    expect(p.epIndex).toBe(128);
     expect(engine.listEntities(p).length).toBe(engine.listEntities(p).length);
     expect(engine.listEpisodes(q).filter((e) => e.watched).length).toBe(q.epIndex);
   });
 });
 
-describe("fan theories at S6E10 do not name later episodes (counts only)", () => {
+describe("fan theories at S6E12 do not name later episodes (counts only)", () => {
   it("no visible theory body contains a later episode title (len > 4) or a later season/episode code", () => {
     const norm = (s: string) => ` ${s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()} `;
     const later = data.episodes.filter((e) => e.epIndex > p.epIndex);
