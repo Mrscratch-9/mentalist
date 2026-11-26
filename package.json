@@ -13,7 +13,8 @@
     "dev": "pnpm --filter @mentalist/desktop dev",
     "tauri": "pnpm --filter @mentalist/desktop tauri",
     "data:build": "pnpm --filter @mentalist/pipeline build-data",
-    "data:import": "pnpm --filter @mentalist/importer run import"
+    "data:import": "pnpm --filter @mentalist/importer run import",
+    "build:installer": "pnpm --filter @mentalist/desktop tauri build"
   },
   "devDependencies": {
     "typescript": "~6.0.3",

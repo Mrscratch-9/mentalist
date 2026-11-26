@@ -72,15 +72,25 @@ Strict by default; the only additions over the plain app policy:
 
 `img-src data:` was already there (inline SVG). 
 
-## Build the Windows app
+## Build the Windows installer
 
-Prerequisites: both map extracts present in `public/tiles/` (`california.pmtiles`, `austin.pmtiles`; they are gitignored), Rust, and the Windows toolchain. The Tauri CLI downloads the NSIS/WiX tools into its own cache on first use.
+Prerequisites: both map extracts present in `public/tiles/` (`california.pmtiles`, `austin.pmtiles`; they are gitignored), Rust, and the Windows toolchain. The Tauri CLI downloads the NSIS tool into its own cache on first use.
 
 ```
 pnpm --filter @mentalist/desktop tauri build
 ```
 
-`prebuild` compiles the canon first. Outputs land in `src-tauri/target/release/`: `mentalist.exe` (binary name set by `mainBinaryName`) and `bundle/nsis/The Mentalist Archive_0.1.0_x64-setup.exe` (per-user installer, supports `/S /D=<dir>`) plus `bundle/msi/*.msi`. The installer bundles both extracts as the `tiles` resource (about 267 MB); it is the main deliverable. `mentalist.exe` alone does not run correctly: it needs the `tiles/` folder next to it (the resource dir of an unbundled exe is its own folder). A copy of the deliverables is kept in the gitignored top-level `release/`. `scripts/smoke-installed.ps1` installs silently into a temp dir, launches the app and samples RAM.
+`prebuild` compiles the canon first. The only target is NSIS (no MSI): the output is `src-tauri/target/release/bundle/nsis/The Mentalist Archive_0.1.0_x64-setup.exe` (about 268 MB: it carries the app and both map extracts as the `tiles` resource). Copy that single file to the gitignored top-level `release/`; that is the only thing to hand out. The bare `mentalist.exe` does not run correctly without the `tiles/` folder next to it, so it is not distributed.
+
+What the installer does (Spanish UI, per-user, no admin; config in `tauri.conf.json` `bundle.windows.nsis`):
+
+1. Welcome page.
+2. "Qué se instalará" page: the Tauri `licenseFile` page showing `src-tauri/installer/que-se-instala.txt` (contents with sizes, the credits and licences: Fandom CC BY-SA, TMDB notice, OpenStreetMap/Protomaps, OFL fonts). Edit that file when the contents change. It is the license page, so the button reads "Acepto".
+3. Folder page (shows the required disk space). Default `%LOCALAPPDATA%\The Mentalist Archive`.
+4. Copy files, then a start-menu shortcut "The Mentalist Archive" and an uninstaller (registered in Windows "Apps" with the icon and publisher "The Mentalist Archive").
+5. Finish page with two checkboxes: create a desktop shortcut, and launch the app.
+
+`/S /D=<dir>` installs silently (this also creates the desktop shortcut, since there is no finish page; interactively it is the finish-page checkbox). Branding bitmaps `src-tauri/installer/sidebar.bmp` (164x314) and `header.bmp` (150x57) are generated from `assets/icon.svg` by `node scripts/make-installer-images.mjs` (headless Chromium, no npm deps) and committed. `scripts/smoke-installed.ps1` installs silently into a temp dir, checks the files, shortcut and "Apps" entry, launches the app, samples RAM, uninstalls and verifies the cleanup.
 
 ## Geek / Fans and About / Credits
 

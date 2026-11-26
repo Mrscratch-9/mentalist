@@ -22,7 +22,20 @@
   "bundle": {
     "active": true,
     "resources": { "../public/tiles/california.*": "tiles/", "../public/tiles/austin.*": "tiles/" },
-    "targets": "all",
+    "targets": ["nsis"],
+    "licenseFile": "installer/que-se-instala.txt",
+    "publisher": "The Mentalist Archive",
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["Spanish"],
+        "displayLanguageSelector": false,
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico",
+        "sidebarImage": "installer/sidebar.bmp",
+        "headerImage": "installer/header.bmp"
+      }
+    },
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",

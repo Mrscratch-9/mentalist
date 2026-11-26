@@ -19,8 +19,16 @@ function Get-Tree([int]$rootId) {
 }
 # /D must be the last argument and unquoted
 Start-Process -FilePath $Installer -ArgumentList "/S", "/D=$InstallDir" -Wait
+# the NSIS stub can return before the registry/shortcut writes finish
+Start-Sleep -Seconds 3
 $exe = Join-Path $InstallDir "mentalist.exe"
 "installed exe exists: $(Test-Path $exe); tiles: $((Get-ChildItem (Join-Path $InstallDir 'tiles') -ErrorAction SilentlyContinue | ForEach-Object Name) -join ', ')"
+$lnk = Join-Path $env:APPDATA "Microsoft\Windows\Start Menu\Programs\The Mentalist Archive.lnk"
+$reg = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\The Mentalist Archive"
+$ent = Get-ItemProperty $reg -ErrorAction SilentlyContinue
+"uninstaller exists: $(Test-Path (Join-Path $InstallDir 'uninstall.exe'))"
+"start-menu shortcut: $(Test-Path $lnk)"
+"Apps entry: name='$($ent.DisplayName)' publisher='$($ent.Publisher)' icon=$($ent.DisplayIcon)"
 $app = Start-Process -FilePath $exe -PassThru
 try {
   Start-Sleep -Seconds $WaitSeconds
@@ -43,4 +51,6 @@ try {
   if (Test-Path $un) { Start-Process -FilePath $un -ArgumentList "/S", "_?=$InstallDir" -Wait }
   Remove-Item -Recurse -Force $InstallDir -ErrorAction SilentlyContinue
   "install dir removed: $(-not (Test-Path $InstallDir))"
+  "start-menu shortcut removed: $(-not (Test-Path $lnk))"
+  "Apps entry removed: $(-not (Test-Path $reg))"
 }

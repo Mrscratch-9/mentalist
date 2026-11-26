@@ -1,0 +1,32 @@
+﻿QUÉ SE INSTALARÁ
+
+The Mentalist Archive es una guía offline de la serie, sin conexión a internet. Este instalador copia en tu carpeta de usuario (sin permisos de administrador) todo lo que la aplicación necesita:
+
+  The Mentalist Archive (mentalist.exe) ........ aprox. 7 MB
+  Mapa de California (z0-z13) .................. aprox. 255 MB
+  Mapa de Austin (z0-z13) ...................... aprox. 8 MB
+  Base de datos de la serie (canon) ............ aprox. 1,3 MB
+  Fuentes, iconos, etiquetas y logotipos ....... aprox. 6 MB
+  Desinstalador ................................ menos de 1 MB
+
+Espacio total necesario: aprox. 280 MB (el instalador lo calcula y lo muestra en la página de carpeta).
+
+En la siguiente página eliges la carpeta de instalación. Por defecto: %LOCALAPPDATA%\The Mentalist Archive. Se crea un acceso directo en el menú Inicio, y al final puedes añadir otro en el escritorio y abrir la aplicación. El desinstalador aparece en "Aplicaciones" de Windows.
+
+Al pulsar "Acepto" confirmas que has leído esta lista y los créditos y licencias de abajo.
+
+CRÉDITOS Y LICENCIAS
+
+Datos de la serie y notas de fans
+  Contenido de Fandom (The Mentalist Wiki), de sus colaboradores, bajo licencia Creative Commons Atribución-CompartirIgual 3.0 (CC BY-SA 3.0). Cada nota conserva el enlace a su página y revisión de origen.
+
+Metadatos de episodios y personajes
+  Este producto usa la API de TMDB pero no está respaldado ni certificado por TMDB. Logotipo de TMDB incluido según sus normas de atribución.
+
+Mapas
+  Datos de OpenStreetMap (© colaboradores de OpenStreetMap, licencia ODbL) en forma de teselas vectoriales de Protomaps, almacenadas localmente. Estilo e iconos basados en Protomaps (sprites derivados de tangrams/icons, licencia MIT).
+
+Fuentes
+  Noto Sans (etiquetas del mapa), Inter y Courier Prime, bajo la licencia SIL Open Font License 1.1 (OFL).
+
+Esta aplicación es un proyecto de aficionados, sin relación con los creadores, productores ni la cadena de The Mentalist. Todas las marcas pertenecen a sus propietarios.
