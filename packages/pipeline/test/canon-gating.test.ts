@@ -172,3 +172,36 @@ describe("real canon gating at S6E10 (counts only)", () => {
     expect(engine.listEpisodes(q).filter((e) => e.watched).length).toBe(q.epIndex);
   });
 });
+
+describe("fan theories at S6E10 do not name later episodes (counts only)", () => {
+  it("no visible theory body contains a later episode title (len > 4) or a later season/episode code", () => {
+    const norm = (s: string) => ` ${s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()} `;
+    const later = data.episodes.filter((e) => e.epIndex > p.epIndex);
+    const seasonOf = new Map<number, number>();
+    for (const e of data.episodes) seasonOf.set(e.season, Math.max(seasonOf.get(e.season) ?? 0, e.epIndex));
+    const idx = (s: number, n: number) => data.episodes.find((e) => e.season === s && e.number === n)?.epIndex ?? Infinity;
+    const titles = later.map((e) => norm(e.title)).filter((t) => t.trim().length > 4);
+    const ordinals: Record<string, number> = { first: 1, second: 2, third: 3, fourth: 4, fifth: 5, sixth: 6, seventh: 7 };
+    let visible = 0;
+    let bad = 0;
+    for (const t of engine.listTheories(p)) {
+      visible++;
+      const text = `${t.title} ${t.body}`;
+      const n = norm(text);
+      let leak = titles.some((x) => n.includes(x));
+      const check = (s: number, e: number | null) => {
+        const i = e === null ? (seasonOf.get(s) ?? Infinity) : idx(s, e);
+        if (i > p.epIndex) leak = true;
+      };
+      for (const m of text.matchAll(/season[^0-9]{0,4}(\d+)[^0-9]{0,4}episode[^0-9]{0,4}(\d+)/gi)) check(Number(m[1]), Number(m[2]));
+      for (const m of text.matchAll(/episode[^0-9]{0,4}(\d+)\s+of\s+(?:the\s+)?season[^0-9]{0,4}(\d+)/gi)) check(Number(m[2]), Number(m[1]));
+      for (const m of text.matchAll(/\bS(\d+)E(\d+)\b|\b(\d+)x(\d+)\b/gi)) check(Number(m[1] ?? m[3]), Number(m[2] ?? m[4]));
+      for (const m of text.matchAll(/\bseason[^0-9]{0,4}(\d+)/gi)) check(Number(m[1]), null);
+      for (const m of text.matchAll(/\b(\d+)(?:st|nd|rd|th)\s+season/gi)) check(Number(m[1]), null);
+      for (const m of text.matchAll(/\b(first|second|third|fourth|fifth|sixth|seventh)\s+season/gi)) check(ordinals[m[1]!.toLowerCase()]!, null);
+      if (leak) bad++;
+    }
+    expect(visible).toBeGreaterThan(0);
+    expect(bad).toBe(0);
+  });
+});

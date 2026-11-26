@@ -174,3 +174,24 @@ describe("TmdbClient review fixes", () => {
     expect(sleeps).toEqual([3000]);
   });
 });
+
+describe("TmdbClient offline", () => {
+  it("throws on a cache miss without any network call, even with a key", async () => {
+    const f = (async () => {
+      throw new Error("fetch must not be called");
+    }) as unknown as typeof fetch;
+    const c = new TmdbClient({ apiKey: V4, showId: 5920, fetch: f, cacheDir: cacheDir(), offline: true });
+    await expect(c.getSeason(1, "en-US")).rejects.toThrow("offline: TMDB cache missing");
+    await expect(c.getAllSeasons("en-US")).rejects.toThrow("offline: TMDB cache missing");
+  });
+  it("serves cached seasons when offline", async () => {
+    const cd = cacheDir();
+    const a = fake(() => json(seasonBody));
+    await new TmdbClient({ apiKey: V4, showId: 5920, fetch: a.f, cacheDir: cd }).getSeason(1, "en-US");
+    const f = (async () => {
+      throw new Error("fetch must not be called");
+    }) as unknown as typeof fetch;
+    const eps = await new TmdbClient({ apiKey: undefined, showId: 5920, fetch: f, cacheDir: cd, offline: true }).getSeason(1, "en-US");
+    expect(eps).toHaveLength(2);
+  });
+});

@@ -17,6 +17,8 @@ export interface TmdbClientOptions {
   cacheDir?: string;
   sleep?: (ms: number) => Promise<void>;
   maxRetries?: number;
+  /** Never touch the network: a cache miss throws. */
+  offline?: boolean;
 }
 
 const BASE = "https://api.themoviedb.org/3";
@@ -54,6 +56,7 @@ export class TmdbClient {
   private readonly maxRetries: number;
   private readonly credential: string | undefined;
   private readonly showId: number;
+  private readonly offline: boolean;
   private mode: "bearer" | "query" = "bearer";
 
   constructor(o: TmdbClientOptions) {
@@ -63,6 +66,7 @@ export class TmdbClient {
     this.maxRetries = o.maxRetries ?? 5;
     this.credential = o.apiKey;
     this.showId = o.showId;
+    this.offline = o.offline === true;
   }
 
   /** v3 keys are short hex strings; v4 read tokens are long JWTs. */
@@ -84,6 +88,7 @@ export class TmdbClient {
     } catch {
       // cache miss or unreadable cache
     }
+    if (this.offline) throw new Error("offline: TMDB cache missing");
     if (!this.credential) throw new Error(INVALID_KEY);
     const body = await this.request(
       `${BASE}/tv/${this.showId}/season/${season}?language=${encodeURIComponent(language)}`,

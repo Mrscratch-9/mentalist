@@ -64,7 +64,7 @@ function printReport(r: Report, tmdbUsed: boolean): void {
 
 async function run(args: CliArgs): Promise<number> {
   const settings = loadSettings(undefined, { tmdb: !args.skipTmdb });
-  if (!args.skipTmdb && !settings.tmdbApiKey) {
+  if (!args.skipTmdb && !args.offline && !settings.tmdbApiKey) {
     throw new EnvError("TMDB_API_KEY is not set in data-sources.txt (use --skip-tmdb to import without TMDB)");
   }
   const cacheRoot = args.cacheDir ?? join(ROOT, "data", ".cache");
@@ -105,7 +105,7 @@ async function run(args: CliArgs): Promise<number> {
 
   let tmdb: TmdbEpisode[] | undefined;
   if (!args.skipTmdb) {
-    const t = new TmdbClient({ apiKey: settings.tmdbApiKey, showId: settings.tmdbShowId, cacheDir: join(cacheRoot, "tmdb") });
+    const t = new TmdbClient({ apiKey: settings.tmdbApiKey, showId: settings.tmdbShowId, cacheDir: join(cacheRoot, "tmdb"), offline: args.offline });
     tmdb = await t.getAllSeasons(settings.tmdbLanguage);
   }
 
@@ -136,6 +136,7 @@ async function run(args: CliArgs): Promise<number> {
 function safeMessage(e: unknown): string {
   const m = e instanceof Error ? e.message : "";
   if (/^offline mode/.test(m)) return "offline mode: cache miss";
+  if (m === "offline: TMDB cache missing") return m;
   if (/^(gave up after|HTTP|api error|TMDB|Settings file)/.test(m)) return m.slice(0, 160);
   return "unexpected error";
 }

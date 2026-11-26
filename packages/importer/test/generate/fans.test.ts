@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { generateFans } from "../../src/generate/fans.ts";
+import { buildPhrases, generateFans } from "../../src/generate/fans.ts";
 import { createLinkResolver } from "../../src/generate/links.ts";
-import { BASE, ep, page } from "./helpers.ts";
+import { BASE, ch, ep, page } from "./helpers.ts";
 
 const eps = [ep(1, 1, "Pilot"), ep(1, 2, "Two"), ep(2, 5, "Fifth")];
 const persons = new Map([["early person", { key: "p-early-person", introduced: "S1E2" }]]);
@@ -94,5 +94,53 @@ describe("generateFans spoiler gating of plain text", () => {
   it("episode bullets without those words stay at the page episode; last is ignored", () => {
     expect(run("episode", "S1E1", "* Plain fact about a lasting thing, wouldn't matter.", "S2E5")).toEqual(["S1E1"]);
     expect(run("episode", "S1E1", "* Mentions [[Early Person]].")).toEqual(["S1E2"]);
+  });
+});
+
+describe("generateFans explicit mentions and plain-text titles/names", () => {
+  const eps2 = [ep(1, 1, "Pilot"), ep(1, 2, "Second One"), ep(2, 5, "Fifth"), ep(6, 15, "Late Case"), ep(6, 24, "Season End"), ep(7, 13, "Finale Ep")];
+  const persons2 = new Map([["early person", { key: "p-early-person", introduced: "S1E2" }], ["late person", { key: "p-late", introduced: "S6E15" }]]);
+  const res = createLinkResolver({ episodes: eps2, persons: persons2 });
+  const chars = [ch("Late Person", { name: "Latia Person" }), ch("Early Person")];
+  const phrases = buildPhrases(
+    [{ ...eps2[3]!, title: "Quite Late Case" }, { ...eps2[0]!, title: "Pilot" }, { ...eps2[1]!, title: "Two" }, { ...eps2[2]!, title: "Fifth Wheel" }],
+    chars,
+    persons2,
+  );
+  const run = (body: string, own = "S1E1") =>
+    generateFans([{ page: page("Pilot", wiki(`* ${body}`)), kind: "episode", own }], res, { wikiBase: BASE, phrases }).theories[0]!.spoils_up_to;
+
+  it.each([
+    ["In season, 6 episode 15 it ends.", "S6E15"],
+    ["In Season 6, Episode 15.", "S6E15"],
+    ["See episode 15 of season 6.", "S6E15"],
+    ["See S6E15 here.", "S6E15"],
+    ["See 6x15 here.", "S6E15"],
+    ["Happens in the sixth season.", "S6E24"],
+    ["Happens in the 6th season.", "S6E24"],
+    ["Happens in season 2.", "S2E5"],
+    ["In season 6 episode 3 it ends.", "S6E3"],
+  ])("explicit mention %s gates at %s", (b, code) => {
+    expect(run(b)).toBe(code);
+  });
+  it("a season beyond the series gates at the finale", () => {
+    expect(run("Happens in season 9.")).toBe("S7E13");
+  });
+  it("episode titles as plain text gate at that episode (whole phrase, any case)", () => {
+    expect(run("It foreshadows quite LATE case somehow.")).toBe("S6E15");
+    expect(run("It foreshadows fifth wheel somehow.")).toBe("S2E5");
+    expect(run("It foreshadows the quite late cases.")).toBe("S1E1");
+  });
+  it("short or common titles are ignored", () => {
+    expect(run("Compare two things.")).toBe("S1E1");
+    expect(run("A pilot light.")).toBe("S1E1");
+  });
+  it("character names as plain text gate at their introduction", () => {
+    expect(run("Looks like latia person was there.")).toBe("S6E15");
+    expect(run("Looks like early person was there.")).toBe("S1E2");
+  });
+  it("character-page bullets with future words gate at the finale", () => {
+    const r = generateFans([{ page: page("Early Person", wiki("* Later implied something.")), kind: "character", own: "S1E2", last: "S1E2" }], res, { wikiBase: BASE });
+    expect(r.theories[0]!.spoils_up_to).toBe("S7E13");
   });
 });

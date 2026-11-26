@@ -6,7 +6,7 @@ import type { TmdbEpisode } from "../tmdb/client.ts";
 import { generateCharacters } from "./characters.ts";
 import { normTitle } from "./common.ts";
 import { generateEpisodes } from "./episodes.ts";
-import { generateFans, triviaText, type FanPage } from "./fans.ts";
+import { buildPhrases, generateFans, triviaText, type FanPage } from "./fans.ts";
 import { generateGuests } from "./guests.ts";
 import { createLinkResolver } from "./links.ts";
 
@@ -84,7 +84,7 @@ export function assemble(input: AssembleInput): Assembled {
     own: kind === "episode" ? (resolver.episode(page.title)?.last ?? null) : (resolver.person(page.title)?.introduced ?? null),
     last: kind === "character" ? (chars.lastByTitle.get(normTitle(page.title)) ?? null) : null,
   }));
-  const fans = generateFans(fanPages, resolver, opts);
+  const fans = generateFans(fanPages, resolver, { ...opts, phrases: buildPhrases(input.episodes, input.characters, chars.personsByTitle) });
 
   return {
     docs: {
