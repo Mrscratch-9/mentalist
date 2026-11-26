@@ -11,6 +11,7 @@
  *   part_of_case                   pin -> case link (object = case entity)
  *   role_in_case                   case file roles (core predicate)
  *   recurring                      "true" on a person puts them in the characters strip
+ *   actor                          shown on the characters strip when the person has no current role (never the Fandom job)
  *   team_base                      "true" on a location marks the team's current base (map camera, see currentBase)
  */
 import {
@@ -47,6 +48,8 @@ export interface CharacterModel {
   id: string;
   name: string;
   role: string | null;
+  /** Actor claim (safe: the actor of a character is not a spoiler); shown when there is no current role. */
+  actor: string | null;
   initials: string;
 }
 
@@ -138,7 +141,7 @@ export function buildHomeModel(engine: KnowledgeEngine, p: CoreProgress): HomeMo
     .sort(byIntro)
     .map((e) => {
       const name = val(e.id, "name") ?? "Unnamed";
-      return { id: e.id, name, role: val(e.id, "role"), initials: initialsOf(name) };
+      return { id: e.id, name, role: val(e.id, "role"), actor: val(e.id, "actor"), initials: initialsOf(name) };
     });
 
   const legend: LegendItem[] = [];
@@ -272,4 +275,10 @@ export function resolveHome(
     console.error("Series data query failed:", e instanceof Error ? e.name : "unknown error");
     return { kind: "error" };
   }
+}
+
+/** Second line of a character card: the current curated role, else "Actor: …", else nothing. */
+export function characterSubtitle(c: Pick<CharacterModel, "role" | "actor">): string | null {
+  if (c.role) return c.role;
+  return c.actor ? `Actor: ${c.actor}` : null;
 }

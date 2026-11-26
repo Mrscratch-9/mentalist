@@ -1218,14 +1218,6 @@ theories:
     title: Among the twelve suspects for the CBI murders…
     url: https://thementalist.fandom.com/wiki/Grey_Water?oldid=49367
   - author: Fandom contributors
-    body: The house that Patrick Jane bought is a popular film location for many shows. Not only has it appeared on The Mentalist before ("Black Gold and Red Blood" - as Roddy Gerber's house), but it has also been used in Stargate SG-1 [[]]. in a Geico commercial and in the House's seventh season episode "The Dig".
-    key: t-710d5d122a36
-    spoils_up_to: S7E13
-    tags:
-      - trivia
-    title: The house that Patrick Jane bought is a…
-    url: https://thementalist.fandom.com/wiki/Brown_Shag_Carpet?oldid=50970
-  - author: Fandom contributors
     body: He's an expert hypnotist. In "Russet Potatoes" he alludes to having hypnotized Minelli to stop smoking. He has hypnotized many suspects and witnesses though Lisbon frowns on this calling it unethical and illegal. In "Red Badge" he hypnotizes Lisbon (at her request) so she can recall what she did on the night that she's accused of a murder.
     key: t-7183eab2b035
     spoils_up_to: S7E13
@@ -2337,6 +2329,14 @@ theories:
       - trivia
     title: She used to drink a Tequila shot with…
     url: https://thementalist.fandom.com/wiki/Teresa_Lisbon?oldid=50804
+  - author: Fandom contributors
+    body: The house that Patrick Jane bought is a popular film location for many shows. Not only has it appeared on The Mentalist before ("Black Gold and Red Blood" - as Roddy Gerber's house), but it has also been used in Stargate SG-1 . in a Geico commercial and in the House's seventh season episode "The Dig".
+    key: t-ccd80b797f75
+    spoils_up_to: S7E13
+    tags:
+      - trivia
+    title: The house that Patrick Jane bought is a…
+    url: https://thementalist.fandom.com/wiki/Brown_Shag_Carpet?oldid=50970
   - author: Fandom contributors
     body: "The actor who plays him, Michael B. Silver, is well known for his roles in several criminal television series: his best known roles were in NYPD Blue as Assistant District Attorney Leo Cohen and in CSI: Miami as Special Service Agent Peter Elliott"
     key: t-cd6fa9681ffb

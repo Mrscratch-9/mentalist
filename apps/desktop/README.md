@@ -8,7 +8,7 @@ episode list is under the **Episodes** tab.
 - `pnpm test`: Vitest (progress store, canon loading, home view models)
 - App icon: source `assets/icon.svg` (original red smiley, also `public/favicon.svg`); rasterize to a 1024 PNG and run `pnpm tauri icon <png>` to regenerate `src-tauri/icons/*`.
 - Fonts (Inter 300/400/500/600, Courier Prime) are bundled via @fontsource, no network.
-- Progress lives in `src/state/progress.ts` (owner configured: season 6, episode 10). Peek (`core.peek()`,
+- Progress lives in `src/state/progress.ts` (owner configured: season 6, episode 12). Peek (`core.peek()`,
   p+1) is React state only and is never written to storage.
 
 ## Data flow (no UI code touches tables)
@@ -17,7 +17,7 @@ episode list is under the **Episodes** tab.
 character models. Map pins come from `getMap(p)`, cases from `getCaseFile(p, …)`, characters from visible
 `person` entities with a current `recurring` claim; counts are lengths of visible rows. With no entities or claims the surfaces render
 designed empty states. Claim conventions the home reads: `name`, `description`, `role` (value claims),
-`coordinates`, `red_john_smiley` (marks a Red John pin), `part_of_case` (pin → case), `role_in_case`
+`actor` (shown as "Actor: …" on the card when the person has no current `role`), `coordinates`, `red_john_smiley` (marks a Red John pin), `part_of_case` (pin → case), `role_in_case`
 (a visible `perpetrator` marks a case solved), `recurring` (value `"true"` on a person lists them in the characters strip; one-off victims and suspects stay case people),
 `team_base` (value `"true"` on a `location`: the team's base; the camera opens on the visible location whose `team_base` claim is current and that has valid `coordinates`, and moves when progress or peek changes it. A move is a new `team_base` claim that supersedes the old one, never an edit; with no base the camera opens on Sacramento. Implemented by `currentBase` in `viewModel.ts`). Smileys and solved-case silhouettes appear only when backed by visible claims.
 
@@ -96,3 +96,7 @@ What the installer does (Spanish UI, per-user, no admin; config in `tauri.conf.j
 
 - **Geek / Fans** tab: non-canon theories and trivia from `engine.listTheories(p)` (gated by `spoils_up_to`, peek applies, never persisted). Each note shows its source page/revision URL, "Fandom contributors" and the CC BY-SA 3.0 line. View model: `buildFansModel` in `src/home/viewModel.ts`.
 - **About / Credits** tab (`src/home/Credits.tsx`): Fandom (CC BY-SA 3.0), TMDB notice and logo, OpenStreetMap/Protomaps, fonts. The TMDB logo (`public/credits/tmdb-logo.svg`, "blue short" from https://www.themoviedb.org/about/logos-attribution) is bundled locally; no runtime network.
+
+## Characters strip
+
+Each recurring person is a fixed-width card (124px): the name on one line with an ellipsis (the full name is in the `title` tooltip), then the current visible curated `role`, else `Actor: <actor>` (`characterSubtitle` in `viewModel.ts`). The strip scrolls horizontally when there are more cards than fit; cards never shrink or overlap. A `role` is never imported: it is a curated, dated claim in `data/canon/core.yaml` that supersedes the previous one per episode.

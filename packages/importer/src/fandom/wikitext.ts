@@ -149,8 +149,10 @@ export function stripMarkup(text: string): string {
     keep.push(inner);
     return `\u0000${keep.length - 1}\u0000`;
   });
+  s = s.replace(/<ref\b[^>]*\/>/gi, "").replace(/<ref\b[^>]*>[\s\S]*?<\/ref>/gi, "").replace(/<ref\b[^>]*>[\s\S]*$/i, "");
   s = s.replace(/<br\s*\/?>/gi, " ");
-  s = s.replace(/<\/?(small|big|b|i|u|s|span|sup|sub|center)\b[^>]*>/gi, "");
+  // Every remaining HTML tag, including an unterminated one at the end of the text.
+  s = s.replace(/<\/?[A-Za-z][^>]*>/g, "").replace(/<\/?[A-Za-z][^>]*$/, "");
   s = s.replace(/\[\[(?:File|Image|Category):[^\]]*\]\]/gi, "");
   s = s.replace(/\[\[([^\[\]|]+)\|([^\[\]]*)\]\]/g, (_m, t: string, l: string) => l || t);
   s = s.replace(/\[\[([^\[\]]+)\]\]/g, "$1");
@@ -188,4 +190,24 @@ export function extractBullets(text: string): Bullet[] {
     if (m && m[2]!.trim()) out.push({ depth: m[1]!.length, text: m[2]!.trim() });
   }
   return out;
+}
+
+const ENTITIES: Record<string, string> = { "&nbsp;": " ", "&amp;": "&", "&quot;": '"', "&#39;": "'", "&lt;": "<", "&gt;": ">" };
+
+/**
+ * Plain display text for any imported value: templates, refs, comments, every HTML tag, links, quotes
+ * and entities removed, so no angle bracket, double brace, double square bracket, doubled apostrophe or
+ * mw- sequence can remain (even from nowiki content).
+ */
+export function plainText(text: string): string {
+  let s = text.replace(/&(?:nbsp|amp|quot|lt|gt|#39);/g, (m) => ENTITIES[m] ?? m);
+  for (let prev = ""; prev !== s; ) {
+    prev = s;
+    s = s.replace(/\{\{[^{}]*\}\}/g, "");
+  }
+  s = stripMarkup(s);
+  // Entities may have produced tags; nowiki content may carry markup literally.
+  s = s.replace(/<\/?[A-Za-z][^>]*>/g, "").replace(/<\/?[A-Za-z][^>]*$/, "");
+  s = s.replace(/mw-[\w-]*/gi, "").replace(/\{\{|\}\}|\[\[|\]\]|'{2,}|[<>]/g, "");
+  return s.replace(/\s+/g, " ").trim();
 }

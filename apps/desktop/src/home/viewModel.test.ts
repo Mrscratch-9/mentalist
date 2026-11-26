@@ -6,7 +6,7 @@ import {
   type Claim, type Dataset, type Entity, type EntityKind, type SqlDriver, type SqlValue,
 } from "@mentalist/core";
 import { createProgressStore, memoryStorage, PROGRESS_KEY } from "../state/progress";
-import { buildHomeModel, currentBase, resolveHome } from "./viewModel";
+import { characterSubtitle, buildHomeModel, currentBase, resolveHome } from "./viewModel";
 
 function nodeDriver(): SqlDriver {
   const raw = new DatabaseSync(":memory:");
@@ -50,6 +50,7 @@ function synthetic(): Dataset {
       clm("rec_pa", "p_a", "recurring", 1, { value: "true" }),
       clm("rec_pb", "p_b", "recurring", 3, { value: "true" }),
       clm("n_pb", "p_b", "name", 3, { value: "Mara Quill CANARY_EP_3" }),
+      clm("a_pb", "p_b", "actor", 3, { value: "Actor CANARY_EP_3" }),
       clm("n_ca", "case_a", "name", 2, { value: "Case A CANARY_EP_2" }),
       clm("n_cb", "case_b", "name", 4, { value: "Case B CANARY_EP_4" }),
       clm("n_la", "loc_a", "name", 2, { value: "Dock CANARY_EP_2" }),
@@ -98,7 +99,7 @@ describe("buildHomeModel: synthetic dataset", () => {
   it("p=1: only the first character", () => {
     const { engine } = setup();
     const m = buildHomeModel(engine, progress(1));
-    expect(m.characters).toEqual([{ id: "p_a", name: "Person CANARY_EP_1", role: "Consultant CANARY_EP_1", initials: "PC" }]);
+    expect(m.characters).toEqual([{ id: "p_a", name: "Person CANARY_EP_1", role: "Consultant CANARY_EP_1", actor: null, initials: "PC" }]);
     expect(m.cases).toEqual([]);
     expect(m.pins).toEqual([]);
   });
@@ -382,5 +383,27 @@ describe("currentBase: camera follows the current team_base claim", () => {
     const d = base();
     d.claims = d.claims.filter((c) => c.id !== "tb_new");
     expect(at(d, 4)).toBeNull();
+  });
+});
+
+describe("buildHomeModel: character subtitle data", () => {
+  it("exposes the actor next to the current curated role; a person without a role keeps only the actor", () => {
+    const m = buildHomeModel(setup().engine, progress(3));
+    expect(m.characters.map((c) => [c.id, c.role, c.actor])).toEqual([
+      ["p_a", "Consultant CANARY_EP_1", null],
+      ["p_b", null, "Actor CANARY_EP_3"],
+    ]);
+  });
+  it("never shows the actor before its reveal episode", () => {
+    const m = buildHomeModel(setup().engine, progress(1));
+    expect(JSON.stringify(m)).not.toContain("Actor CANARY_EP_3");
+  });
+});
+
+describe("characterSubtitle", () => {
+  it("prefers the current role, falls back to 'Actor: …', else null", () => {
+    expect(characterSubtitle({ role: "R", actor: "A" })).toBe("R");
+    expect(characterSubtitle({ role: null, actor: "A" })).toBe("Actor: A");
+    expect(characterSubtitle({ role: null, actor: null })).toBeNull();
   });
 });

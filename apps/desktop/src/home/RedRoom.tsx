@@ -4,7 +4,7 @@ import { parseProgressInput, type Progress } from "../state/progress";
 import { Check, Open, SilCbi, SilJane, Smiley } from "./art";
 import { Credits } from "./Credits";
 import { RedMap } from "./RedMap";
-import { resolveHome } from "./viewModel";
+import { characterSubtitle, resolveHome } from "./viewModel";
 import "./redroom.css";
 
 type View = "board" | "episodes" | "fans" | "credits";
@@ -243,11 +243,11 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
             <ul>
               {characters.map((c) => (
                 <li key={c.id}>
-                  <button>
+                  <button title={c.name}>
                     <span className="rr-mono" aria-hidden="true">{c.initials}</span>
-                    <span>
-                      <span className="rr-nm">{c.name}</span>
-                      {c.role && <><br /><span className="rr-rl">{c.role}</span></>}
+                    <span className="rr-txt">
+                      <span className="rr-nm" title={c.name}>{c.name}</span>
+                      {characterSubtitle(c) && <span className="rr-rl" title={characterSubtitle(c) ?? undefined}>{characterSubtitle(c)}</span>}
                     </span>
                   </button>
                 </li>

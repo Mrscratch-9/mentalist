@@ -51,9 +51,6 @@ entities:
   - key: c-s1e12
     kind: case
     introduced: S1E12
-  - key: p-s1e12-dove
-    kind: person
-    introduced: S1E12
   - key: c-s1e13
     kind: case
     introduced: S1E13
@@ -105,9 +102,6 @@ entities:
   - key: l-s1e23-stateland
     kind: location
     introduced: S1E23
-  - key: p-s1e11-mrs-renfrew
-    kind: person
-    introduced: S1E11
   - key: p-s1e20-russo
     kind: person
     introduced: S1E20
@@ -417,14 +411,8 @@ claims:
     value: "victim"
     revealed: S1E12
     source: src-s1e12
-  - key: cl-s1e12-dove-name
-    subject: p-s1e12-dove
-    predicate: name
-    value: "Tamzin Dove"
-    revealed: S1E12
-    source: src-s1e12
   - key: cl-s1e12-dove-role
-    subject: p-s1e12-dove
+    subject: p-tamzin-dove
     predicate: role_in_case
     object: c-s1e12
     value: "suspect"
@@ -840,14 +828,8 @@ claims:
     revealed: S1E10
     source: src-wiki-s1e10
     status: confirmed
-  - key: cl-s1e11-mrs-renfrew-name
-    subject: p-s1e11-mrs-renfrew
-    predicate: name
-    value: Mrs. Renfrew
-    revealed: S1E11
-    source: src-wiki-s1e11
   - key: cl-s1e11-mrs-renfrew-role
-    subject: p-s1e11-mrs-renfrew
+    subject: p-mrs-renfrew
     predicate: role_in_case
     object: c-s1e11
     value: perpetrator

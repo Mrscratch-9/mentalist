@@ -1,3 +1,4 @@
+import { plainText } from "../fandom/wikitext.ts";
 import type { EpisodeRecord } from "../fandom/episodes.ts";
 import type { TmdbEpisode } from "../tmdb/client.ts";
 import { cleanEpisodeTitle, codeOf, compareCodes, srcKey, tmdbSrcKey, wikiSrcKey, wikiUrl, type OutSource } from "./common.ts";
@@ -42,9 +43,9 @@ export function generateEpisodes(
     }
     seen.add(code);
     const t = tmdbBy.get(code);
-    const synopsis = t?.overview.trim() ?? "";
+    const synopsis = plainText(t?.overview ?? "");
     if (synopsis === "") missingSynopsis++;
-    episodes.push({ code, title: cleanEpisodeTitle(r.pageTitle), synopsis, details: "" });
+    episodes.push({ code, title: plainText(cleanEpisodeTitle(r.pageTitle)), synopsis, details: "" });
     const url = wikiUrl(opts.wikiBase, r.pageTitle, r.revid);
     sources.push({ key: srcKey(code), kind: "episode", episode: code, url });
     sources.push({ key: wikiSrcKey(code), kind: "wiki", episode: code, url });

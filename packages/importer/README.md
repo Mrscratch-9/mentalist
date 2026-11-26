@@ -11,11 +11,13 @@ node packages/importer/src/cli.ts [--skip-tmdb] [--offline] [--cache-dir <dir>]
 - `--skip-tmdb`: no TMDB request; episode synopses stay empty and are counted in the report. Without it a `TMDB_API_KEY` is required.
 - `--offline`: serve everything from the cache (Fandom and TMDB; no network, no key needed); fails with `offline mode: cache miss` (Fandom) or `offline: TMDB cache missing` (TMDB) otherwise.
 - `--cache-dir <dir>`: cache root with `fandom/` and `tmdb/` inside (default `data/.cache`, gitignored).
-- Output: `episodes.yaml` (episodes + `src-sNeM`, `src-wiki-sNeM`, `src-tmdb-sNeM` sources), `characters.yaml` (persons + `name`/`actor`/`role`/`recurring` claims), `guests.yaml` (`appears_in` claims), `fans.yaml` (trivia as theories). Deterministic: re-running on the same cache gives identical files.
+- Output: `episodes.yaml` (episodes + `src-sNeM`, `src-wiki-sNeM`, `src-tmdb-sNeM` sources), `characters.yaml` (persons + `name`/`actor`/`recurring` claims; never `role`), `guests.yaml` (`appears_in` claims), `fans.yaml` (trivia as theories). Deterministic: re-running on the same cache gives identical files.
 - The generated set is validated with the pipeline (in a temp dir) before anything is written. Exit 0 ok, 1 validation errors (spoiler-safe `file: path: rule`), 2 usage/environment error. The report prints counts only.
 
 ## Rules
 
+- Text: every imported text value (names, actor, trivia bodies and titles, synopses) goes through `plainText` (`src/fandom/wikitext.ts`): templates, `<ref>`, comments, every HTML tag, links, quotes and entities are removed; no `<`, `{{`, `[[`, `''` or `mw-` sequence can remain.
+- Names: the person `name` claim is the page title cleaned (no disambiguation like " (character)", no markup). The infobox `name`, alias, real name and `job` hold the character's FINAL values and are never emitted (the infobox name is kept only as a gating alias for fan text). `role` is never imported; dated roles are curated in `data/canon/core.yaml`.
 - Persons are created only for character pages with an infobox whose `first` resolves to an episode; `status` and `family` are never imported, and `last` is read only to gate fan trivia (never emitted as a claim or text).
 - Every claim is revealed at the person's first episode (or, for `appears_in`, at that episode) and sourced to that episode's wiki source; the character page URL + revision is in the claim `note`.
 - Trivia bullet `spoils_up_to` = latest of the page's own episode, every linked episode/character introduction and explicit text mentions; any unresolvable link gates the bullet at the series finale (`S7E13`). Explicit mentions: `season N episode M` (up to 4 non-digits between), `episode M of season N`, `SNEM`, `NxM`, and bare `season N` / `Nth season` / `sixth season` (= the last episode of season N; beyond S7 = finale). Plain text can describe later events, so more rules apply:

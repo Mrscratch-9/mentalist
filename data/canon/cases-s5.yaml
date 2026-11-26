@@ -217,9 +217,6 @@ entities:
   - key: p-s5e9-bosch
     kind: person
     introduced: S5E9
-  - key: p-s5e11-lyle
-    kind: person
-    introduced: S5E11
 
 claims:
   - key: c-s5e1-name
@@ -1259,14 +1256,8 @@ claims:
     status: confirmed
     revealed: S5E10
     source: src-wiki-s5e10
-  - key: s5e11-lyle-name
-    subject: p-s5e11-lyle
-    predicate: name
-    value: Joanna Lyle
-    revealed: S5E11
-    source: src-wiki-s5e11
   - key: s5e11-lyle-role
-    subject: p-s5e11-lyle
+    subject: p-joanna-lyle
     predicate: role_in_case
     object: c-s5e11
     value: perpetrator

@@ -18,7 +18,7 @@ const episodes = [
   ep(7, 13, "Finale", 14),
 ];
 const characters = [
-  ch("Pat Person", { actor: "Act", job: "Cop, later chief", categories: ["Recurring characters"] }),
+  ch("Pat Person", { actor: "Act", categories: ["Recurring characters"] }),
   ch("Late One", { first: "Three" }),
   ch("Lost", { first: "Nowhere" }),
 ];

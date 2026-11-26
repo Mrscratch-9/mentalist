@@ -24,6 +24,11 @@ describe("generateEpisodes", () => {
     expect(g.sources).toContainEqual({ key: "src-tmdb-s1e1", kind: "other", url: "https://www.themoviedb.org/tv/5920/season/1/episode/1" });
     expect(g.stats.missingSynopsis).toBe(2);
   });
+  it("strips markup from the TMDB overview", () => {
+    const g = generateEpisodes(S1, [tm(1, 1, "A <b>b</b> [[c]] ''d'' {{e}}<ref>r</ref> mw-x")], { wikiBase: BASE, tmdbShowId: 5920 });
+    expect(g.episodes[0]!.synopsis).not.toMatch(/<|\{\{|\[\[|''|mw-/);
+    expect(g.episodes[0]!.synopsis).toContain("A b c d");
+  });
   it("splits a double page into two episodes and counts duplicate codes once", () => {
     const g = generateEpisodes([ep(3, 23, "Dbl", 5), ep(3, 24, "Dbl", 5), ep(3, 23, "Other", 6)], undefined, { wikiBase: BASE });
     expect(g.episodes.map((e) => e.code)).toEqual(["S3E23", "S3E24"]);

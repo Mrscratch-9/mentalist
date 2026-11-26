@@ -10,7 +10,7 @@ export const ep = (season: number, episode: number, pageTitle: string, revid = 1
 });
 
 export const ch = (pageTitle: string, extra: Partial<CharacterRecord> = {}): CharacterRecord => ({
-  pageTitle, name: pageTitle, actor: null, first: "Pilot", lastEpisode: null, job: null, categories: [], revid: 7, ...extra,
+  pageTitle, name: pageTitle, actor: null, gatingAlias: null, first: "Pilot", lastEpisode: null, categories: [], revid: 7, ...extra,
 });
 
 export const page = (title: string, wikitext: string, revid = 9): FandomPage => ({

@@ -6,6 +6,7 @@ import {
   findTemplate,
   parseTemplates,
   splitSections,
+  plainText,
   stripMarkup,
 } from "../../src/fandom/wikitext.ts";
 
@@ -48,6 +49,16 @@ describe("links and markup", () => {
   });
   it("strips markup to plain text", () => {
     expect(stripMarkup("'''[[A|b]]''' <small>(x)</small><br>y <nowiki>[[z]]</nowiki><!-- c -->")).toBe("b (x) y [[z]]");
+  });
+  it("strips every tag and refs; plainText also strips templates", () => {
+    expect(stripMarkup('<div class="mw-collapsible mw-collapsed">A<ref name="r">src</ref><ref name=q /> B</div>')).toBe("A B");
+    expect(stripMarkup('x <div class="mw-collapsible')).toBe("x");
+    expect(plainText("a {{t|{{u}}}} b")).toBe("a b");
+  });
+  it("plainText leaves no markup sequence at all", () => {
+    const out = plainText("<p>It's ''odd'' [[x]] {{y}} <nowiki>[[z]] ''q''</nowiki> mw-body &lt;b&gt; mw-</p>");
+    expect(out).not.toMatch(/<|\{\{|\[\[|''|mw-/);
+    expect(out).toContain("odd");
   });
 });
 

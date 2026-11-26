@@ -9,9 +9,6 @@ entities:
   - key: c-s3e2
     kind: case
     introduced: S3E2
-  - key: p-s3e2-ruskin
-    kind: person
-    introduced: S3E2
   - key: c-s3e3
     kind: case
     introduced: S3E3
@@ -204,15 +201,9 @@ claims:
     revealed: S3E2
     source: src-s3e2
 
-  - key: p-s3e2-ruskin-name
-    subject: p-s3e2-ruskin
-    predicate: name
-    value: "Danny Ruskin"
-    revealed: S3E2
-    source: src-s3e2
 
   - key: p-s3e2-ruskin-role
-    subject: p-s3e2-ruskin
+    subject: p-danny-ruskin
     predicate: role_in_case
     object: c-s3e2
     value: "suspect"

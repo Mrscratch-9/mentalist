@@ -1,28 +1,15 @@
 import { describe, expect, it } from "vitest";
-import { generateCharacters, roleFromJob } from "../../src/generate/characters.ts";
+import { generateCharacters, personName } from "../../src/generate/characters.ts";
 import { createLinkResolver } from "../../src/generate/links.ts";
 import { BASE, ch, S1 } from "./helpers.ts";
 
 const resolver = createLinkResolver({ episodes: S1 });
 
-describe("roleFromJob", () => {
-  it.each([
-    ["Consultant, later agent", "Consultant"],
-    ["Detective (retired in S5)", "Detective"],
-    ["CBI Agent; then FBI", "CBI Agent"],
-    ["Agent / Boss", "Agent"],
-    ["Analyst then manager", "Analyst"],
-    ["Plain Job", "Plain Job"],
-    ["", null],
-    [null, null],
-  ])("%s", (job, want) => expect(roleFromJob(job)).toBe(want));
-});
-
 describe("generateCharacters", () => {
   const recs = [
-    ch("Patrick Jane", { actor: "A B", job: "Consultant, later other", categories: ["Main characters"] }),
+    ch("Patrick Jane", { gatingAlias: "Final Name", actor: "A B", categories: ["Main characters"] }),
     ch("Lee Minor", { first: "Second One", categories: ["Minor Characters"] }),
-    ch("Rec One", { first: "Third (episode)", categories: ["Recurring characters"], job: null }),
+    ch("Rec One", { first: "Third (episode)", categories: ["Recurring characters"] }),
     ch("Lost", { first: "Unknown Page" }),
     ch("NoFirst", { first: null }),
   ];
@@ -35,10 +22,10 @@ describe("generateCharacters", () => {
       { key: "p-rec-one", kind: "person", introduced: "S1E3" },
     ]);
   });
-  it("emits name/actor/role/recurring claims revealed at introduction with an episode-bound wiki source and page note", () => {
+  it("emits name/actor/recurring claims (never role) revealed at introduction with an episode-bound wiki source and page note", () => {
     const jane = g.claims.filter((c) => c.subject === "p-patrick-jane");
     expect(jane.map((c) => [c.predicate, c.value]).sort()).toEqual([
-      ["actor", "A B"], ["name", "Patrick Jane"], ["recurring", "true"], ["role", "Consultant"],
+      ["actor", "A B"], ["name", "Patrick Jane"], ["recurring", "true"],
     ]);
     for (const c of jane) {
       expect(c).toMatchObject({ revealed: "S1E1", source: "src-wiki-s1e1", note: `${BASE}Patrick_Jane?oldid=7` });
@@ -58,6 +45,22 @@ describe("generateCharacters", () => {
     const c = generateCharacters([ch("A-B"), ch("A B")], resolver, { wikiBase: BASE });
     expect(c.entities).toHaveLength(1);
     expect(c.stats.keyCollisions).toBe(1);
+  });
+});
+
+describe("person names and cleaned text", () => {
+  it("personName strips disambiguation and markup from the page title", () => {
+    expect(personName("Rec One (character)")).toBe("Rec One");
+    expect(personName("[[A]] <b>B</b> ''C''")).toBe("A B C");
+  });
+  it("name claim is the cleaned page title, actor is cleaned, and no role claim is ever emitted", () => {
+    const g = generateCharacters(
+      [ch("Rec One (character)", { gatingAlias: "Other Final", actor: "<div class=\"mw-x\">Act</div> [[Or]]", categories: ["Main characters"] })],
+      resolver, { wikiBase: BASE },
+    );
+    const v = Object.fromEntries(g.claims.map((c) => [c.predicate, c.value]));
+    expect(v).toMatchObject({ name: "Rec One", actor: "Act Or" });
+    expect(g.claims.some((c) => c.predicate === "role" || c.value === "Other Final")).toBe(false);
   });
 });
 

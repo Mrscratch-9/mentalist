@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import type { FandomPage } from "../fandom/client.ts";
-import { extractLinks, splitSections, stripMarkup } from "../fandom/wikitext.ts";
+import { extractLinks, plainText, splitSections } from "../fandom/wikitext.ts";
 import type { CharacterRecord } from "../fandom/characters.ts";
 import type { EpisodeRecord } from "../fandom/episodes.ts";
 import { FINALE, cleanEpisodeTitle, codeOf, compareCodes, maxCode, parseCode, wikiUrl } from "./common.ts";
@@ -53,6 +53,7 @@ export function buildPhrases(episodes: EpisodeRecord[], characters: CharacterRec
     const p = persons.get(c.pageTitle.replace(/_/g, " ").replace(/\s+/g, " ").trim().toLowerCase());
     if (!p) continue;
     add(c.name, p.introduced);
+    if (c.gatingAlias) add(c.gatingAlias, p.introduced);
     add(c.pageTitle.replace(/\s*\([^)]*\)\s*$/, ""), p.introduced);
   }
   return [...best].map(([phrase, code]) => ({ phrase, code })).sort((a, b) => (a.phrase < b.phrase ? -1 : 1));
@@ -139,8 +140,6 @@ function bulletGroups(text: string): string[] {
   return groups.map((g) => g.join(" "));
 }
 
-const ENTITIES: Record<string, string> = { "&nbsp;": " ", "&amp;": "&", "&quot;": '"', "&#39;": "'", "&lt;": "<", "&gt;": ">" };
-
 /** Plain text of a bullet: refs, templates, tags and link markup removed. */
 export function cleanBody(raw: string): string {
   let s = raw.replace(/<ref\b[^>]*\/>/gi, "").replace(/<ref\b[^>]*>[\s\S]*?<\/ref>/gi, "");
@@ -149,9 +148,7 @@ export function cleanBody(raw: string): string {
     s = s.replace(/\{\{[^{}]*\}\}/g, "");
   }
   s = s.replace(/\[(?:https?:)?\/\/\S+\s+([^\]]+)\]/g, "$1").replace(/\[(?:https?:)?\/\/\S+\]/g, "");
-  s = stripMarkup(s).replace(/<[^>]+>/g, "");
-  s = s.replace(/&(?:nbsp|amp|quot|lt|gt|#39);/g, (m) => ENTITIES[m] ?? m);
-  return s.replace(/\s+/g, " ").trim();
+  return plainText(s);
 }
 
 function makeTitle(body: string): string {

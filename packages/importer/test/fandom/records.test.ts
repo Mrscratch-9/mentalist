@@ -41,13 +41,14 @@ describe("parseEpisodePage", () => {
 });
 
 describe("parseCharacterPage", () => {
-  const src = "{{Infobox character|name=Synth Person|actor=[[Some Actor]]|first=[[Pilot]]|last=[[Secret]]|status=Deceased|job=<small>Agent</small>|family=[[Kin]]}}";
-  it("returns only the safe fields", () => {
-    const c = parseCharacterPage(page("Synth Person", src, ["Main characters"]));
+  const src = "{{Infobox character|name=Final Name|actor=[[Some Actor]]|first=[[Pilot]]|last=[[Secret]]|status=Deceased|job=<small>Agent</small>|family=[[Kin]]}}";
+  it("returns only the safe fields; name is the cleaned page title, never the infobox name or job", () => {
+    const c = parseCharacterPage(page("Synth Person (character)", src, ["Main characters"]));
     expect(c).toEqual({
-      pageTitle: "Synth Person", name: "Synth Person", actor: "Some Actor", first: "Pilot",
-      lastEpisode: "Secret", job: "Agent", categories: ["Main characters"], revid: 42,
+      pageTitle: "Synth Person (character)", name: "Synth Person", actor: "Some Actor", gatingAlias: "Final Name", first: "Pilot",
+      lastEpisode: "Secret", categories: ["Main characters"], revid: 42,
     });
+    expect(Object.keys(c!)).not.toContain("job");
     expect(Object.keys(c!)).not.toContain("status");
     expect(Object.keys(c!)).not.toContain("last");
     expect(parseCharacterPage(page("N", "{{Infobox character|name=Z|first=[[Pilot]]}}"))!.lastEpisode).toBeNull();
@@ -55,6 +56,6 @@ describe("parseCharacterPage", () => {
   });
   it("returns null without infobox and nulls for missing fields", () => {
     expect(parseCharacterPage(page("N", "x"))).toBeNull();
-    expect(parseCharacterPage(page("N", "{{Infobox_character|name=Z}}"))).toMatchObject({ actor: null, first: null, job: null });
+    expect(parseCharacterPage(page("N", "{{Infobox_character|name=Z}}"))).toMatchObject({ name: "N", actor: null, first: null });
   });
 });

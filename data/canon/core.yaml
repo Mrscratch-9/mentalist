@@ -172,3 +172,276 @@ claims:
       larger network."
     revealed: S7E2
     source: src-s7e2
+
+  # Curated, dated roles for main/recurring characters (restored from the earlier curated canon, repointed to the imported person keys).
+  - key: c-p-patrick-jane-role
+    subject: p-patrick-jane
+    predicate: role
+    value: "CBI consultant"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-p-teresa-lisbon-role
+    subject: p-teresa-lisbon
+    predicate: role
+    value: "CBI senior agent"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-p-kimball-cho-role
+    subject: p-kimball-cho
+    predicate: role
+    value: "CBI special agent"
+    revealed: S1E1
+    source: src-s1e1
+    superseded: { in: S7E9, by: c-p-kimball-cho-role-2 }
+  - key: c-p-wayne-rigsby-role
+    subject: p-wayne-rigsby
+    predicate: role
+    value: "CBI special agent"
+    revealed: S1E1
+    source: src-s1e1
+    superseded: { in: S6E12, by: c-p-wayne-rigsby-role-2 }
+  - key: c-p-grace-van-pelt-role
+    subject: p-grace-van-pelt
+    predicate: role
+    value: "CBI special agent"
+    revealed: S1E1
+    source: src-s1e1
+    superseded: { in: S6E12, by: c-p-grace-van-pelt-role-2 }
+  - key: c-p-brett-partridge-role
+    subject: p-brett-partridge
+    predicate: role
+    value: "Bureau of Forensic Science lead agent"
+    revealed: S1E1
+    source: src-s1e1
+  - key: c-p-virgil-minelli-role
+    subject: p-virgil-minelli
+    predicate: role
+    value: "CBI director"
+    revealed: S1E11
+    source: src-s1e11
+  - key: c-p-kristina-frye-role
+    subject: p-kristina-frye
+    predicate: role
+    value: "Psychic"
+    revealed: S1E7
+    source: src-s1e7
+  - key: c-p-sam-bosco-role
+    subject: p-sam-bosco
+    predicate: role
+    value: "CBI senior agent"
+    revealed: S2E1
+    source: src-s2e1
+  - key: c-p-rebecca-anderson-role
+    subject: p-rebecca-anderson
+    predicate: role
+    value: "CBI assistant"
+    revealed: S2E2
+    source: src-s2e2
+  - key: c-p-brenda-shettrick-role
+    subject: p-brenda-shettrick
+    predicate: role
+    value: "Head of CBI Media Relations"
+    revealed: S2E12
+    source: src-s2e12
+  - key: c-p-walter-mashburn-role
+    subject: p-walter-mashburn
+    predicate: role
+    value: "Billionaire businessman"
+    revealed: S2E13
+    source: src-s2e13
+  - key: c-p-madeleine-hightower-role
+    subject: p-madeleine-hightower
+    predicate: role
+    value: "CBI supervising agent"
+    revealed: S2E17
+    source: src-s2e17
+  - key: c-p-bret-stiles-role
+    subject: p-bret-stiles
+    predicate: role
+    value: "Leader of Visualize"
+    revealed: S2E20
+    source: src-s2e20
+  - key: c-p-gale-bertram-role
+    subject: p-gale-bertram
+    predicate: role
+    value: "CBI director"
+    revealed: S3E1
+    source: src-s3e1
+  - key: c-p-craig-o-laughlin-role
+    subject: p-craig-o-laughlin
+    predicate: role
+    value: "FBI special agent"
+    revealed: S3E3
+    source: src-s3e3
+  - key: c-p-j-j-laroche-role
+    subject: p-j-j-laroche
+    predicate: role
+    value: "CBI Professional Standards Unit investigator"
+    revealed: S3E10
+    source: src-s3e10
+  - key: c-p-erica-flynn-role
+    subject: p-erica-flynn
+    predicate: role
+    value: "Matchmaking company employee"
+    revealed: S3E19
+    source: src-s3e19
+  - key: c-p-sarah-harrigan-role
+    subject: p-sarah-harrigan
+    predicate: role
+    value: "Public defender"
+    revealed: S3E19
+    source: src-s3e19
+  - key: c-p-osvaldo-ardiles-role
+    subject: p-osvaldo-ardiles
+    predicate: role
+    value: "Deputy district attorney"
+    revealed: S3E22
+    source: src-s3e22
+  - key: c-p-luther-wainwright-role
+    subject: p-luther-wainwright
+    predicate: role
+    value: "CBI supervising agent"
+    revealed: S4E4
+    source: src-s4e4
+  - key: c-p-ray-haffner-role
+    subject: p-ray-haffner
+    predicate: role
+    value: "CBI agent"
+    revealed: S4E2
+    source: src-s4e2
+  - key: c-p-susan-darcy-role
+    subject: p-susan-darcy
+    predicate: role
+    value: "FBI agent"
+    revealed: S4E7
+    source: src-s4e7
+  - key: c-p-lorelei-martins-role
+    subject: p-lorelei-martins
+    predicate: role
+    value: "Cocktail waitress"
+    revealed: S4E24
+    source: src-s4e24
+  - key: c-p-jason-cooper-role
+    subject: p-jason-cooper
+    predicate: role
+    value: "Visualize executive"
+    revealed: S5E13
+    source: src-s5e13
+  - key: c-p-reede-smith-role
+    subject: p-reede-smith
+    predicate: role
+    value: "FBI special agent"
+    revealed: S5E1
+    source: src-s5e1
+  - key: c-p-gabe-mancini-role
+    subject: p-gabe-mancini
+    predicate: role
+    value: "FBI special agent"
+    revealed: S5E1
+    source: src-s5e1
+  - key: c-p-tommy-volker-role
+    subject: p-tommy-volker
+    predicate: role
+    value: "Businessman"
+    revealed: S5E11
+    source: src-s5e11
+  - key: c-p-dennis-abbott-role
+    subject: p-dennis-abbott
+    predicate: role
+    value: "FBI supervisory special agent"
+    revealed: S6E7
+    source: src-s6e7
+    superseded: { in: S7E9, by: c-p-dennis-abbott-role-2 }
+  - key: c-p-jason-wylie-role
+    subject: p-jason-wylie
+    predicate: role
+    value: "FBI IT analyst"
+    revealed: S6E10
+    source: src-s6e10
+  - key: c-p-kim-fischer-role
+    subject: p-kim-fischer
+    predicate: role
+    value: "FBI senior special agent"
+    revealed: S6E9
+    source: src-wiki-s6e9
+    superseded: { in: S7E1, by: c-p-kim-fischer-role-2 }
+  - key: c-p-marcus-pike-role
+    subject: p-marcus-pike
+    predicate: role
+    value: "FBI art division agent"
+    revealed: S6E16
+    source: src-s6e16
+  - key: c-p-ken-spackman-role
+    subject: p-ken-spackman
+    predicate: role
+    value: "FBI special agent"
+    revealed: S7E1
+    source: src-s7e1
+  - key: c-p-michelle-vega-role
+    subject: p-michelle-vega
+    predicate: role
+    value: "FBI special agent"
+    revealed: S7E1
+    source: src-s7e1
+  - key: c-p-danitra-cass-role
+    subject: p-danitra-cass
+    predicate: role
+    value: "CIA agent"
+    revealed: S7E2
+    source: src-wiki-s7e2
+  - key: c-p-lena-abbott-role
+    subject: p-lena-abbott
+    predicate: role
+    value: "Dennis Abbott's wife"
+    revealed: S7E4
+    source: src-wiki-s7e4
+    superseded: { in: S7E9, by: c-p-lena-abbott-role-2 }
+  - key: c-p-bill-peterson-role
+    subject: p-bill-peterson
+    predicate: role
+    value: "DEA task force leader"
+    revealed: S7E6
+    source: src-s7e6
+    superseded: { in: S7E9, by: c-p-bill-peterson-role-2 }
+  - key: c-p-kim-fischer-role-2
+    subject: p-kim-fischer
+    predicate: role
+    value: "FBI senior special agent, transferred to Seattle"
+    revealed: S7E1
+    source: src-s7e1
+  - key: c-p-wayne-rigsby-role-2
+    subject: p-wayne-rigsby
+    predicate: role
+    value: "Co-owner of a digital security business"
+    revealed: S6E12
+    source: src-s6e12
+  - key: c-p-grace-van-pelt-role-2
+    subject: p-grace-van-pelt
+    predicate: role
+    value: "Co-owner of a digital security business"
+    revealed: S6E12
+    source: src-s6e12
+  - key: c-p-lena-abbott-role-2
+    subject: p-lena-abbott
+    predicate: role
+    value: "Under Secretary of Commerce (confirmed)"
+    revealed: S7E9
+    source: src-s7e9
+  - key: c-p-bill-peterson-role-2
+    subject: p-bill-peterson
+    predicate: role
+    value: "Former DEA agent, arrested"
+    revealed: S7E9
+    source: src-s7e9
+  - key: c-p-dennis-abbott-role-2
+    subject: p-dennis-abbott
+    predicate: role
+    value: "FBI supervisory special agent, moving to Washington"
+    revealed: S7E9
+    source: src-s7e9
+  - key: c-p-kimball-cho-role-2
+    subject: p-kimball-cho
+    predicate: role
+    value: "FBI special agent, taking over the team"
+    revealed: S7E9
+    source: src-s7e9

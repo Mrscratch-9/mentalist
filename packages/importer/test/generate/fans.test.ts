@@ -8,6 +8,15 @@ const persons = new Map([["early person", { key: "p-early-person", introduced: "
 const resolver = createLinkResolver({ episodes: eps, persons });
 const wiki = (body: string) => `Intro\n==Trivia==\n${body}\n==Gallery==\n* not trivia [[Fifth]]`;
 
+describe("generateFans markup", () => {
+  it("leaves no tag, template, link, quote or mw- sequence in bodies and titles", () => {
+    const body = "* <div class=\"mw-collapsible\">Odd</div> <nowiki>[[x]] ''y''</nowiki> {{t}} <ref>r</ref> [[Z]] fact.";
+    const g = generateFans([{ page: page("Pilot", wiki(body), 1), kind: "episode", own: "S1E1" }], resolver, { wikiBase: BASE });
+    expect(g.theories.length).toBe(1);
+    for (const t of g.theories) expect(`${t.title} ${t.body}`).not.toMatch(/<|\{\{|\[\[|''|mw-/);
+  });
+});
+
 describe("generateFans", () => {
   const g = generateFans(
     [
@@ -101,7 +110,7 @@ describe("generateFans explicit mentions and plain-text titles/names", () => {
   const eps2 = [ep(1, 1, "Pilot"), ep(1, 2, "Second One"), ep(2, 5, "Fifth"), ep(6, 15, "Late Case"), ep(6, 24, "Season End"), ep(7, 13, "Finale Ep")];
   const persons2 = new Map([["early person", { key: "p-early-person", introduced: "S1E2" }], ["late person", { key: "p-late", introduced: "S6E15" }]]);
   const res = createLinkResolver({ episodes: eps2, persons: persons2 });
-  const chars = [ch("Late Person", { name: "Latia Person" }), ch("Early Person")];
+  const chars = [ch("Late Person", { gatingAlias: "Latia Person" }), ch("Early Person")];
   const phrases = buildPhrases(
     [{ ...eps2[3]!, title: "Quite Late Case" }, { ...eps2[0]!, title: "Pilot" }, { ...eps2[1]!, title: "Two" }, { ...eps2[2]!, title: "Fifth Wheel" }],
     chars,
