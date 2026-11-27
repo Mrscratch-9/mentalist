@@ -54,6 +54,9 @@ function printReport(r: Report, tmdbUsed: boolean, tr: (EpisodeTranslations & { 
   line("characters skipped (no first)", r.skippedNoFirst);
   line("characters skipped (first unresolved)", r.skippedUnresolved);
   line("person key collisions", r.keyCollisions);
+  line("actor claims at introduction", r.actorsKept);
+  line("actor claims moved to a later credit", r.actorsMoved);
+  line("actor claims dropped (never credited)", r.actorsDropped);
   line("guest appears_in claims", r.guestClaims);
   line("guest credits without page", r.guestUnlinked);
   line("guest credits unknown person", r.guestUnknownPerson);

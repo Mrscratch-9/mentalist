@@ -31,6 +31,9 @@ export interface Report {
   skippedNoFirst: number;
   skippedUnresolved: number;
   keyCollisions: number;
+  actorsKept: number;
+  actorsMoved: number;
+  actorsDropped: number;
   guestClaims: number;
   guestUnlinked: number;
   guestUnknownPerson: number;
@@ -70,7 +73,7 @@ export function assemble(input: AssembleInput): Assembled {
     ...(input.tmdbShowId !== undefined ? { tmdbShowId: input.tmdbShowId } : {}),
   });
   const base = createLinkResolver({ episodes: input.episodes, ...(input.redirects ? { redirects: input.redirects } : {}) });
-  const chars = generateCharacters(input.characters, base, opts);
+  const chars = generateCharacters(input.characters, base, { ...opts, episodes: input.episodes });
   const resolver = createLinkResolver({
     episodes: input.episodes,
     ...(input.redirects ? { redirects: input.redirects } : {}),
@@ -102,6 +105,9 @@ export function assemble(input: AssembleInput): Assembled {
       skippedNoFirst: chars.stats.skippedNoFirst,
       skippedUnresolved: chars.stats.skippedUnresolved,
       keyCollisions: chars.stats.keyCollisions,
+      actorsKept: chars.stats.actorsKept,
+      actorsMoved: chars.stats.actorsMoved,
+      actorsDropped: chars.stats.actorsDropped,
       guestClaims: guests.stats.claims,
       guestUnlinked: guests.stats.unlinked,
       guestUnknownPerson: guests.stats.unknownPerson,

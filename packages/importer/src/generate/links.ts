@@ -10,6 +10,8 @@ export interface LinkResolver {
   /** First and last code of the page of an episode (double episodes span two codes). */
   episode(title: string): { first: string; last: string } | null;
   person(title: string): PersonRef | null;
+  /** Normalized title after following one redirect (the title itself when none). */
+  canonical(title: string): string;
   /** Latest code a wiki link implies (episode, season finale, or person introduction); null when unknown. */
   code(title: string): string | null;
 }
@@ -60,6 +62,7 @@ export function createLinkResolver(input: LinkResolverInput): LinkResolver {
   return {
     episode,
     person,
+    canonical: (title) => normTitle(redirects.get(normTitle(title)) ?? title),
     code(title) {
       const e = episode(title);
       if (e) return e.last;
