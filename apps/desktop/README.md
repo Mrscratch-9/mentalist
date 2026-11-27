@@ -100,3 +100,12 @@ What the installer does (Spanish UI, per-user, no admin; config in `tauri.conf.j
 ## Characters strip
 
 Each recurring person is a fixed-width card (124px): the name on one line with an ellipsis (the full name is in the `title` tooltip), then the current visible curated `role`, else `Actor: <actor>` (`characterSubtitle` in `viewModel.ts`). The strip scrolls horizontally when there are more cards than fit; cards never shrink or overlap. A `role` is never imported: it is a curated, dated claim in `data/canon/core.yaml` that supersedes the previous one per episode.
+
+## Language and Settings (T1c)
+
+- UI strings live in `src/i18n/strings.ts`: a typed catalogue with `es` (Latin American Spanish, default) and `en`; `en` defines the keys and `es` must have the same ones (type + `i18n.test.ts`, which also scans `RedRoom.tsx` and `Credits.tsx` for hard-coded UI text; proper names are allow-listed). Placeholders are `{name}`; use `t(lang, key, params)` or `translator(lang)`. No i18n library.
+- **Settings** tab ("Configuración"): language selector (Español / English). Stored in `localStorage` under `mentalist.settings.v1` (`src/state/settings.ts`, separate from progress; an invalid or corrupt value gives the default, Spanish). The change is immediate: UI strings and canon texts (`inLanguage`, translation when it exists, English otherwise) and `<html lang>`. Phase 3 map options (2D/3D, style) go in the same tab.
+- Numbers and dates use the selected locale (es-MX / en-US): `src/i18n/format.ts`.
+- The progress form accepts `fin` as well as `end` for the end of a season.
+- Map labels (vector tiles) stay in the tile language; the map's accessible name is translated.
+- The episode title/synopsis translations come from the TMDB secondary-language import (`data/canon/i18n/es/episodes.yaml`, see `packages/importer/README.md`).

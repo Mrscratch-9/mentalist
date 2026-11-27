@@ -105,7 +105,7 @@ export function createProgressStore(
 
 /**
  * Parse the home form's text fields. Episode accepts a positive whole number or
- * "end" (case-insensitive). Returns null for anything else.
+ * "end" or "fin" (case-insensitive). Returns null for anything else.
  */
 export function parseProgressInput(
   season: string,
@@ -113,7 +113,8 @@ export function parseProgressInput(
 ): Progress | null {
   const toInt = (s: string): number | null =>
     /^\d+$/.test(s.trim()) ? Number(s.trim()) : null;
-  const e = episode.trim().toLowerCase() === "end" ? "end" : toInt(episode);
+  const word = episode.trim().toLowerCase();
+  const e = word === "end" || word === "fin" ? "end" : toInt(episode);
   const p = { season: toInt(season), episode: e };
   return isValidProgress(p) ? p : null;
 }

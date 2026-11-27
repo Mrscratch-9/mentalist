@@ -171,13 +171,15 @@ interface Props {
   selectedPin: string | null;
   linkedCase: string | null;
   reducedMotion: boolean;
+  /** Accessible name of the map (already translated). */
+  ariaLabel: string;
   /** [lon, lat] of the team's current base at the viewer's progress; null falls back to Sacramento. */
   base: [number, number] | null;
   onUnavailable: () => void;
   onSelectPin: (id: string) => void;
 }
 
-export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, base, onUnavailable, onSelectPin }: Props) {
+export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, ariaLabel, base, onUnavailable, onSelectPin }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const overlay = useRef<MapboxOverlay | null>(null);
   const [ready, setReady] = useState(false);
@@ -329,5 +331,5 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, base, onU
     };
   }, []);
 
-  return <div ref={box} className="rr-map" role="group" aria-label="3D map of California and Austin, opening on the team's current base. Pins are listed in the legend panel." />;
+  return <div ref={box} className="rr-map" role="group" aria-label={ariaLabel} />;
 }

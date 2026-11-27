@@ -146,3 +146,10 @@ button.rr-case:hover { background: rgba(236,228,216,.08); border-color: rgba(236
 .rr-credits p { font-size: 13px; color: var(--muted); }
 .rr-credits strong { color: var(--text); }
 .rr-tmdb-logo { width: 120px; height: auto; opacity: .85; align-self: flex-start; }
+
+/* settings */
+.rr-settings { display: flex; flex-direction: column; gap: 22px; max-width: 640px; }
+.rr-settings h3 { margin: 0 0 10px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; }
+.rr-settings select { background: transparent; color: var(--text); border: 1px solid var(--line); border-radius: 3px; padding: 7px 10px; font: inherit; font-size: 13px; max-width: 16rem; }
+.rr-settings select:hover { border-color: rgba(236,228,216,.5); }
+.rr-settings select option { background: #141212; color: var(--text); }

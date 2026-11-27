@@ -25,6 +25,10 @@ import {
 } from "@mentalist/core";
 import { listBySeason, toCoreProgress, type SeasonGroup } from "../state/coreProgress";
 import type { Progress } from "../state/progress";
+import { DEFAULT_UI_LANG, t, type UiLang } from "../i18n/strings";
+
+/** Canon language -> UI language (placeholder texts); anything but Spanish reads as English. */
+const uiOf = (lang: Lang): UiLang => (lang === "es" ? "es" : lang === "en" ? "en" : DEFAULT_UI_LANG);
 
 /** Language of the app texts read from the canon unless the caller says otherwise (owner decision S2: Spanish). */
 export const DEFAULT_LANG: Lang = "es";
@@ -122,7 +126,7 @@ export function buildHomeModel(base: KnowledgeEngine, p: CoreProgress, lang: Lan
     .sort((a, b) => byIntro(a.e, b.e))
     .map(({ pin }) => ({
       id: pin.entityId,
-      label: val(pin.entityId, "name") ?? "Unnamed place",
+      label: val(pin.entityId, "name") ?? t(uiOf(lang), "pin.unnamed"),
       kind: smileyEntities.has(pin.entityId) ? ("smiley" as const) : ("landmark" as const),
       position: [pin.lon, pin.lat] as [number, number],
       caseId: pinCase.get(pin.entityId) ?? null,
@@ -139,7 +143,7 @@ export function buildHomeModel(base: KnowledgeEngine, p: CoreProgress, lang: Lan
       return {
         id: e.id,
         code: ep ? episodeCode(ep.season, ep.number) : "",
-        title: val(e.id, "name") ?? "Untitled case",
+        title: val(e.id, "name") ?? t(uiOf(lang), "cases.unnamed"),
         // A case is solved only when the show confirms who did it, not on a suspicion.
         solved: current.some((r) => r.role === "perpetrator" && r.status === "confirmed"),
         silhouette: current.filter((r) => r.role === "investigator").length >= 2 ? "cbi" : "jane",
@@ -150,7 +154,7 @@ export function buildHomeModel(base: KnowledgeEngine, p: CoreProgress, lang: Lan
     .filter((e) => e.kind === "person" && val(e.id, "recurring") === "true")
     .sort(byIntro)
     .map((e) => {
-      const name = val(e.id, "name") ?? "Unnamed";
+      const name = val(e.id, "name") ?? t(uiOf(lang), "cast.unnamed");
       return { id: e.id, name, role: val(e.id, "role"), actor: val(e.id, "actor"), initials: initialsOf(name) };
     });
 
@@ -249,9 +253,9 @@ export type HomeResult =
   | { kind: "not-found" }
   | { kind: "error" };
 
-function labelAt(engine: KnowledgeEngine, p: CoreProgress): string {
+function labelAt(engine: KnowledgeEngine, p: CoreProgress, lang: Lang): string {
   const ep = engine.listEpisodes(p)[p.epIndex - 1];
-  return ep && ep.watched ? episodeCode(ep.season, ep.number) : "Nothing yet";
+  return ep && ep.watched ? episodeCode(ep.season, ep.number) : t(uiOf(lang), "gate.nothingYet");
 }
 
 /**
@@ -278,10 +282,10 @@ export function resolveHome(
       base: currentBase(engine, eff),
       fans: buildFansModel(engine, eff, lang),
       gate: {
-        label: labelAt(engine, base),
+        label: labelAt(engine, base, lang),
         peeking,
         canPeek,
-        peekLabel: peeking ? labelAt(engine, eff) : null,
+        peekLabel: peeking ? labelAt(engine, eff, lang) : null,
       },
     };
   } catch (e) {
@@ -292,7 +296,7 @@ export function resolveHome(
 }
 
 /** Second line of a character card: the current curated role, else "Actor: …", else nothing. */
-export function characterSubtitle(c: Pick<CharacterModel, "role" | "actor">): string | null {
+export function characterSubtitle(c: Pick<CharacterModel, "role" | "actor">, lang: Lang = DEFAULT_LANG): string | null {
   if (c.role) return c.role;
-  return c.actor ? `Actor: ${c.actor}` : null;
+  return c.actor ? t(uiOf(lang), "cast.actor", { actor: c.actor }) : null;
 }

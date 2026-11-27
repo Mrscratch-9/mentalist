@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { Canon } from "../data/canon";
+import { formatNumber } from "../i18n/format";
+import { isUiLang, translator, type StringKey, type UiLang } from "../i18n/strings";
 import { parseProgressInput, type Progress } from "../state/progress";
 import { Check, Open, SilCbi, SilJane, Smiley } from "./art";
 import { Credits } from "./Credits";
@@ -7,7 +9,7 @@ import { RedMap } from "./RedMap";
 import { characterSubtitle, resolveHome } from "./viewModel";
 import "./redroom.css";
 
-type View = "board" | "episodes" | "fans" | "credits";
+type View = "board" | "episodes" | "fans" | "credits" | "settings";
 
 function useReducedMotion() {
   const [reduced, setReduced] = useState(() => matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -24,18 +26,24 @@ interface Props {
   canon: Canon | null;
   loadError: boolean;
   progress: Progress;
-  /** Persist new progress. Returns an error message, or null on success. */
-  onChangeProgress: (next: Progress) => string | null;
+  /** UI and canon language (Settings). */
+  lang: UiLang;
+  /** Persist the language. Returns false when it could not be saved (the UI still switches for this session). */
+  onChangeLang: (next: UiLang) => boolean;
+  /** Persist new progress. Returns an error key, or null on success. */
+  onChangeProgress: (next: Progress) => "error.progressInvalid" | "error.progressSave" | null;
 }
 
-const LEGEND_TEXT = {
-  smiley: "Red John smiley — where he appeared",
-  landmark: "Landmark — place from a watched episode",
-  linked: "Gold ring — linked to the selected case",
-  hover: "Dashed ring — hover",
-} as const;
+const LEGEND_KEY = {
+  smiley: "legend.smiley",
+  landmark: "legend.landmark",
+  linked: "legend.linked",
+  hover: "legend.hover",
+} as const satisfies Record<string, StringKey>;
 
-export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props) {
+export function RedRoom({ canon, loadError, progress, lang, onChangeLang, onChangeProgress }: Props) {
+  const t = useMemo(() => translator(lang), [lang]);
+  const num = (n: number) => formatNumber(lang, n);
   // Peek is React state only: never persisted, reset on reload and on any progress change.
   const [peekWanted, setPeekWanted] = useState(false);
   const [view, setView] = useState<View>("board");
@@ -43,13 +51,14 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
   const [selPin, setSelPin] = useState<string | null>(null);
   const [season, setSeason] = useState(String(progress.season));
   const [episode, setEpisode] = useState(String(progress.episode));
-  const [formError, setFormError] = useState<string | null>(null);
+  const [formError, setFormError] = useState<StringKey | null>(null);
+  const [langError, setLangError] = useState(false);
   const [mapDown, setMapDown] = useState(false);
   const reduced = useReducedMotion();
 
   const result = useMemo(
-    () => (canon ? resolveHome(canon, progress, peekWanted) : null),
-    [canon, progress, peekWanted],
+    () => (canon ? resolveHome(canon, progress, peekWanted, lang) : null),
+    [canon, progress, peekWanted, lang],
   );
   const ok = result?.kind === "ok" ? result : null;
   const pins = ok?.model.pins ?? [];
@@ -67,7 +76,7 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
   function save() {
     const next = parseProgressInput(season, episode);
     if (next === null) {
-      setFormError("Season and episode must be positive whole numbers (or end of season).");
+      setFormError("error.progressInvalid");
       return;
     }
     const err = onChangeProgress(next);
@@ -79,66 +88,67 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
     <div className="redroom">
       <header className="rr-top">
         <div className="rr-brand">
-          <Smiley role="img" aria-label="Red John smiley mark" />
+          <Smiley role="img" aria-label={t("brand.smileyAria")} />
           <h1 className="rr-wordmark">
             <span className="rr-title-light">The</span> <span className="rr-title-medium">Mentalist</span>
             <small>Archive</small>
           </h1>
         </div>
-        <section className="rr-gate" aria-label="Progress gate">
+        <section className="rr-gate" aria-label={t("gate.aria")}>
           <div className="rr-gate-val">
-            <span className="rr-label">Watched through</span>
+            <span className="rr-label">{t("gate.watchedThrough")}</span>
             <b>{gate ? gate.label : "…"}</b>
           </div>
           <form className="rr-change" onSubmit={(e) => { e.preventDefault(); save(); }}>
             <div className="rr-field">
-              <label className="rr-label" htmlFor="rr-season">Season</label>
+              <label className="rr-label" htmlFor="rr-season">{t("gate.season")}</label>
               <input id="rr-season" inputMode="numeric" value={season} onChange={(e) => setSeason(e.target.value)} />
             </div>
             <div className="rr-field">
-              <label className="rr-label" htmlFor="rr-episode">Episode or “end”</label>
+              <label className="rr-label" htmlFor="rr-episode">{t("gate.episodeOrEnd")}</label>
               <input id="rr-episode" value={episode} onChange={(e) => setEpisode(e.target.value)} />
             </div>
-            <button className="rr-btn" type="submit">Change</button>
+            <button className="rr-btn" type="submit">{t("gate.change")}</button>
           </form>
           <button
             className="rr-btn" type="button" aria-pressed={peeking} aria-describedby="gateNote"
             disabled={!gate || (!gate.canPeek && !peeking)}
             onClick={() => setPeekWanted(!peekWanted)}
           >
-            {peeking ? "End peek" : "Peek next episode"}
+            {peeking ? t("gate.endPeek") : t("gate.peek")}
           </button>
-          {gate?.peeking && <span className="rr-peek-tag">Peek · temporary</span>}
+          {gate?.peeking && <span className="rr-peek-tag">{t("gate.peekTag")}</span>}
           <p className="rr-gate-note" id="gateNote" aria-live="polite">
-            <strong>Everything here is limited to your progress.</strong>{" "}
+            <strong>{t("gate.limited")}</strong>{" "}
             {gate?.peeking
-              ? `Peeking at ${gate.peekLabel} — resets on reload, progress unchanged.`
-              : "Peek is temporary and never saved."}
+              ? t("gate.peekingNote", { label: gate.peekLabel ?? "" })
+              : t("gate.peekNote")}
           </p>
-          {formError && <p className="rr-error" role="alert">{formError}</p>}
+          {formError && <p className="rr-error" role="alert">{t(formError)}</p>}
         </section>
       </header>
 
-      <nav className="rr-nav" aria-label="Browse">
+      <nav className="rr-nav" aria-label={t("nav.aria")}>
         <ul>
-          <li><button aria-current={view === "board" ? "page" : undefined} onClick={() => setView("board")}>Board</button></li>
-          <li><button aria-current={view === "episodes" ? "page" : undefined} onClick={() => setView("episodes")}>Episodes</button></li>
+          <li><button aria-current={view === "board" ? "page" : undefined} onClick={() => setView("board")}>{t("nav.board")}</button></li>
+          <li><button aria-current={view === "episodes" ? "page" : undefined} onClick={() => setView("episodes")}>{t("nav.episodes")}</button></li>
           <li>
             <button aria-current={view === "fans" ? "page" : undefined} onClick={() => setView("fans")}>
-              Geek / Fans <span className="rr-noncanon">NON-CANON</span>
+              {t("nav.fans")} <span className="rr-noncanon">{t("nonCanon")}</span>
             </button>
           </li>
-          <li><button aria-current={view === "credits" ? "page" : undefined} onClick={() => setView("credits")}>About / Credits</button></li>
+          <li><button aria-current={view === "credits" ? "page" : undefined} onClick={() => setView("credits")}>{t("nav.credits")}</button></li>
+          <li><button aria-current={view === "settings" ? "page" : undefined} onClick={() => setView("settings")}>{t("nav.settings")}</button></li>
         </ul>
       </nav>
 
       <main>
-        <h2 className="rr-sr">Investigation board: cases, California and Austin map and characters</h2>
+        <h2 className="rr-sr">{t("board.heading")}</h2>
         <RedMap
           base={result?.kind === "ok" ? result.base?.position ?? null : null} pins={pins} selectedPin={pin?.id ?? null} linkedCase={caseSel}
-          reducedMotion={reduced} onUnavailable={() => setMapDown(true)} onSelectPin={setSelPin}
+          reducedMotion={reduced} ariaLabel={t("map.aria")} onUnavailable={() => setMapDown(true)} onSelectPin={setSelPin}
         />
-        {mapDown && <p className="rr-map-down" role="status">The basemap could not be loaded. Pins are listed in the legend panel.</p>}
+        {mapDown && <p className="rr-map-down" role="status">{t("map.down")}</p>}
         <svg className="rr-grain" aria-hidden="true" focusable="false">
           <filter id="rr-noise"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" /><feColorMatrix type="saturate" values="0" /></filter>
           <rect width="100%" height="100%" filter="url(#rr-noise)" />
@@ -146,24 +156,24 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
         <div className="rr-vignette" />
 
         {loadError ? (
-          <p className="rr-banner" role="alert">The series data could not be loaded.</p>
+          <p className="rr-banner" role="alert">{t("error.load")}</p>
         ) : result?.kind === "not-found" ? (
-          <p className="rr-banner" role="alert">That season and episode are not in the series data.</p>
+          <p className="rr-banner" role="alert">{t("error.notFound")}</p>
         ) : result?.kind === "error" ? (
-          <p className="rr-banner" role="alert">Could not read the series data.</p>
+          <p className="rr-banner" role="alert">{t("error.read")}</p>
         ) : null}
 
-        <aside className="rr-rail rr-glass" aria-label="Case list">
+        <aside className="rr-rail rr-glass" aria-label={t("cases.aria")}>
           <div className="rr-panel-head">
-            <h2>Case board</h2>
-            <span>{ok ? `${ok.model.watchedEpisodes} of ${ok.model.totalEpisodes} episodes watched` : ""}</span>
+            <h2>{t("cases.heading")}</h2>
+            <span>{ok ? t("episodes.watchedCount", { n: num(ok.model.watchedEpisodes), total: num(ok.model.totalEpisodes) }) : ""}</span>
           </div>
           {!ok ? (
-            <p className="rr-empty">{canon || loadError ? "No data to show." : "Loading series data…"}</p>
+            <p className="rr-empty">{canon || loadError ? t("common.noData") : t("common.loading")}</p>
           ) : cases.length === 0 ? (
             <div className="rr-empty">
-              <strong>No cases on the board yet</strong>
-              <p>Cases appear here once a watched episode introduces them.</p>
+              <strong>{t("cases.emptyTitle")}</strong>
+              <p>{t("cases.emptyBody")}</p>
             </div>
           ) : (
             <ol className="rr-cases">
@@ -176,8 +186,8 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
                     <span>
                       <span className="rr-ep">{c.code}</span>
                       <span className="rr-title">{c.title}</span>
-                      <span className="rr-status">{c.solved ? <><Check aria-hidden="true" />Solved</> : "Open"}</span>
-                      {peeking && c.code === gate?.peekLabel && <span className="rr-status rr-peeking">Peeking · temporary</span>}
+                      <span className="rr-status">{c.solved ? <><Check aria-hidden="true" />{t("cases.solved")}</> : t("cases.open")}</span>
+                      {peeking && c.code === gate?.peekLabel && <span className="rr-status rr-peeking">{t("gate.peekTag")}</span>}
                     </span>
                   </button>
                 </li>
@@ -186,17 +196,17 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
           )}
         </aside>
 
-        <aside className="rr-legend rr-glass" aria-label="Map legend and selection">
-          <div className="rr-panel-head"><h2>California · Austin · 3D map</h2><span>Tilt 58°</span></div>
+        <aside className="rr-legend rr-glass" aria-label={t("legend.aria")}>
+          <div className="rr-panel-head"><h2>{t("legend.heading")}</h2><span>{t("legend.tilt")}</span></div>
           <div className="rr-body">
             {legend.length === 0 ? (
               <div className="rr-empty rr-inline">
-                <strong>No places on the map yet</strong>
-                <p>Pins appear when a watched episode places something on the map.</p>
+                <strong>{t("legend.emptyTitle")}</strong>
+                <p>{t("legend.emptyBody")}</p>
               </div>
             ) : (
               <>
-                <ul aria-label="Legend">
+                <ul aria-label={t("legend.list")}>
                   {legend.map((l) => (
                     <li key={l.kind}>
                       {l.kind === "smiley" && <Smiley aria-hidden="true" />}
@@ -205,18 +215,18 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
                       )}
                       {l.kind === "linked" && <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="#d9b25a" strokeWidth="1.6" /></svg>}
                       {l.kind === "hover" && <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="#ece4d8" strokeWidth="1.6" strokeDasharray="3 3" /></svg>}
-                      {LEGEND_TEXT[l.kind]}
+                      {t(LEGEND_KEY[l.kind])}
                     </li>
                   ))}
                 </ul>
                 {pin && (
                   <div className="rr-info" aria-live="polite">
-                    <span className="rr-label">Selected pin</span>
+                    <span className="rr-label">{t("legend.selected")}</span>
                     <h3>{pin.label}</h3>
                     {pin.description && <p>{pin.description}</p>}
                   </div>
                 )}
-                <ul className="rr-pinlist" aria-label="Pins on the map">
+                <ul className="rr-pinlist" aria-label={t("legend.pins")}>
                   {pins.map((p) => (
                     <li key={p.id}><button aria-pressed={p.id === pin?.id} onClick={() => setSelPin(p.id)}>{p.label}</button></li>
                   ))}
@@ -224,20 +234,20 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
               </>
             )}
             <p className="rr-note">
-              <strong>Pins follow your progress.</strong> Only places from episodes you have watched appear
-              {gate ? ` (now ${gate.peekLabel ?? gate.label})` : ""}.
+              <strong>{t("legend.noteStrong")}</strong>{" "}
+              {t("legend.noteBody", { now: gate ? t("legend.now", { label: gate.peekLabel ?? gate.label }) : "" })}
             </p>
           </div>
         </aside>
 
-        <section className="rr-cast rr-glass" aria-label="Characters">
+        <section className="rr-cast rr-glass" aria-label={t("cast.aria")}>
           <div className="rr-cast-title">
-            <div className="rr-label">Characters</div>
-            <span>{ok ? `${characters.length} known` : ""}</span>
+            <div className="rr-label">{t("cast.title")}</div>
+            <span>{ok ? t("cast.known", { n: num(characters.length) }) : ""}</span>
           </div>
           {characters.length === 0 ? (
             <p className="rr-empty rr-inline">
-              {ok ? "No characters on file yet. They appear once a watched episode introduces them." : ""}
+              {ok ? t("cast.empty") : ""}
             </p>
           ) : (
             <ul>
@@ -247,7 +257,7 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
                     <span className="rr-mono" aria-hidden="true">{c.initials}</span>
                     <span className="rr-txt">
                       <span className="rr-nm" title={c.name}>{c.name}</span>
-                      {characterSubtitle(c) && <span className="rr-rl" title={characterSubtitle(c) ?? undefined}>{characterSubtitle(c)}</span>}
+                      {characterSubtitle(c, lang) && <span className="rr-rl" title={characterSubtitle(c, lang) ?? undefined}>{characterSubtitle(c, lang)}</span>}
                     </span>
                   </button>
                 </li>
@@ -257,26 +267,26 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
         </section>
 
         {view === "episodes" && (
-          <section className="rr-episodes rr-glass" aria-label="Episodes">
+          <section className="rr-episodes rr-glass" aria-label={t("episodes.aria")}>
             <div className="rr-panel-head">
-              <h2>Episodes</h2>
-              <button className="rr-btn" onClick={() => setView("board")}>Back to the board</button>
+              <h2>{t("nav.episodes")}</h2>
+              <button className="rr-btn" onClick={() => setView("board")}>{t("common.back")}</button>
             </div>
             <div className="rr-episodes-body">
               {!ok ? (
-                <p className="rr-empty">{canon ? "No data to show." : "Loading series data…"}</p>
+                <p className="rr-empty">{canon ? t("common.noData") : t("common.loading")}</p>
               ) : (
                 <div className="episodes">
                   {ok.groups.map((g) => (
                     <div key={g.season} className="season">
-                      <h2>Season {g.season}</h2>
+                      <h2>{t("episodes.season", { n: num(g.season) })}</h2>
                       <ol>
                         {g.episodes.map((e) => (
                           <li key={e.number} className={e.watched ? "ep" : "ep unwatched"}>
                             <span className="ep-num">{e.season}x{String(e.number).padStart(2, "0")}</span>
                             <span className="ep-body">
                               <span className="ep-title">{e.title}</span>
-                              {!e.watched && <span className="ep-flag">Not watched yet</span>}
+                              {!e.watched && <span className="ep-flag">{t("episodes.notWatched")}</span>}
                               <span className="ep-synopsis">{e.synopsis}</span>
                             </span>
                           </li>
@@ -291,34 +301,34 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
         )}
 
         {view === "fans" && (
-          <section className="rr-episodes rr-glass" aria-label="Geek and fans">
+          <section className="rr-episodes rr-glass" aria-label={t("fans.aria")}>
             <div className="rr-panel-head">
-              <h2>Geek / Fans <span className="rr-noncanon">NON-CANON</span></h2>
-              <button className="rr-btn" onClick={() => setView("board")}>Back to the board</button>
+              <h2>{t("nav.fans")} <span className="rr-noncanon">{t("nonCanon")}</span></h2>
+              <button className="rr-btn" onClick={() => setView("board")}>{t("common.back")}</button>
             </div>
             <div className="rr-episodes-body">
               {!ok ? (
-                <p className="rr-empty">{canon ? "No data to show." : "Loading series data…"}</p>
+                <p className="rr-empty">{canon ? t("common.noData") : t("common.loading")}</p>
               ) : ok.fans.count === 0 ? (
                 <div className="rr-empty">
-                  <strong>No fan notes up to your progress yet</strong>
-                  <p>Fan theories and trivia appear once the episodes they discuss are watched.</p>
+                  <strong>{t("fans.emptyTitle")}</strong>
+                  <p>{t("fans.emptyBody")}</p>
                 </div>
               ) : (
                 <div className="rr-fans">
-                  <p className="rr-note">{ok.fans.count} fan {ok.fans.count === 1 ? "note" : "notes"} up to your progress. Fan content is not canon and may be wrong.</p>
+                  <p className="rr-note">{t(ok.fans.count === 1 ? "fans.countOne" : "fans.countMany", { n: num(ok.fans.count) })}</p>
                   <ul>
                     {ok.fans.notes.map((n) => (
                       <li key={n.id} className="rr-fan">
                         <div className="rr-fan-head">
-                          <span className="rr-noncanon">NON-CANON</span>
+                          <span className="rr-noncanon">{t("nonCanon")}</span>
                           <span className="rr-ep">{n.code}</span>
                         </div>
                         <h3>{n.title}</h3>
                         <p className="rr-fan-body">{n.body}</p>
                         <p className="rr-fan-meta">
-                          Source: <span className="rr-url">{n.sourceUrl}</span><br />
-                          Author: {n.author} · {n.licence}
+                          {t("fans.source")} <span className="rr-url">{n.sourceUrl}</span><br />
+                          {t("fans.author")} {t("fans.authorName")} · {t("fans.licence")}
                         </p>
                       </li>
                     ))}
@@ -330,12 +340,48 @@ export function RedRoom({ canon, loadError, progress, onChangeProgress }: Props)
         )}
 
         {view === "credits" && (
-          <section className="rr-episodes rr-glass" aria-label="About and credits">
+          <section className="rr-episodes rr-glass" aria-label={t("credits.aria")}>
             <div className="rr-panel-head">
-              <h2>About / Credits</h2>
-              <button className="rr-btn" onClick={() => setView("board")}>Back to the board</button>
+              <h2>{t("nav.credits")}</h2>
+              <button className="rr-btn" onClick={() => setView("board")}>{t("common.back")}</button>
             </div>
-            <div className="rr-episodes-body"><Credits /></div>
+            <div className="rr-episodes-body"><Credits lang={lang} /></div>
+          </section>
+        )}
+
+        {view === "settings" && (
+          <section className="rr-episodes rr-glass" aria-label={t("settings.aria")}>
+            <div className="rr-panel-head">
+              <h2>{t("settings.heading")}</h2>
+              <button className="rr-btn" onClick={() => setView("board")}>{t("common.back")}</button>
+            </div>
+            <div className="rr-episodes-body">
+              <div className="rr-settings">
+                <section aria-labelledby="st-lang">
+                  <h3 id="st-lang">{t("settings.languageHead")}</h3>
+                  <div className="rr-field">
+                    <label className="rr-label" htmlFor="rr-lang">{t("settings.languageLabel")}</label>
+                    <select
+                      id="rr-lang" value={lang}
+                      onChange={(e) => {
+                        const next = e.target.value;
+                        if (isUiLang(next)) setLangError(!onChangeLang(next));
+                      }}
+                    >
+                      <option value="es">{t("settings.langEs")}</option>
+                      <option value="en">{t("settings.langEn")}</option>
+                    </select>
+                  </div>
+                  <p className="rr-note">{t("settings.languageHelp")}</p>
+                  {langError && <p className="rr-error" role="alert">{t("settings.saveError")}</p>}
+                </section>
+                {/* Phase 3: map options (2D/3D, style) go in their own section here. */}
+                <section aria-labelledby="st-more">
+                  <h3 id="st-more">{t("settings.moreHead")}</h3>
+                  <p className="rr-note">{t("settings.moreBody")}</p>
+                </section>
+              </div>
+            </div>
           </section>
         )}
       </main>

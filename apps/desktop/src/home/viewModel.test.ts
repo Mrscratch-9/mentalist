@@ -227,7 +227,7 @@ describe("buildHomeModel: superseded and discarded claims", () => {
     ],
     arcItems: [], theories: [],
   });
-  const at = (n: number, d: Dataset = data()) => buildHomeModel(setup(d).engine, progress(n));
+  const at = (n: number, d: Dataset = data(), lang?: string) => buildHomeModel(setup(d).engine, progress(n), lang);
 
   it("before the supersession the old claims drive values", () => {
     const m = at(1);
@@ -244,7 +244,11 @@ describe("buildHomeModel: superseded and discarded claims", () => {
   });
 
   it("discarded names fall back to the placeholders", () => {
-    const m = at(2);
+    const es = at(2);
+    expect(es.characters[1]).toMatchObject({ name: "Sin nombre" });
+    expect(es.cases[0]?.title).toBe("Caso sin título");
+    expect(es.pins[0]?.label).toBe("Lugar sin nombre");
+    const m = at(2, data(), "en");
     expect(m.characters[1]).toMatchObject({ id: "p_b", name: "Unnamed", initials: "U" });
     expect(m.cases[0]?.title).toBe("Untitled case");
     expect(m.pins[0]?.label).toBe("Unnamed place");
@@ -404,7 +408,7 @@ describe("buildHomeModel: character subtitle data", () => {
 describe("characterSubtitle", () => {
   it("prefers the current role, falls back to 'Actor: …', else null", () => {
     expect(characterSubtitle({ role: "R", actor: "A" })).toBe("R");
-    expect(characterSubtitle({ role: null, actor: "A" })).toBe("Actor: A");
+    expect(characterSubtitle({ role: null, actor: "A" }, "en")).toBe("Actor: A");
     expect(characterSubtitle({ role: null, actor: null })).toBeNull();
   });
 });
