@@ -16,10 +16,12 @@ Feature: fix the character spoilers and overlapping texts (Phase 0, first), then
 - T1a [S1-S3] Bilingual canon: translations stored in `data/canon/i18n/es/*.yaml` keyed by the English item key + a hash of the English text (stale → English fallback, counted); TMDB `title`/`synopsis` in es-MX as a second language; core engine queries take a language and return the translated text with fallback; gating unchanged (translations of hidden items never returned). Route: worker. Commit: pending.
 - T1b [S1-S3] Translations es-MX of curated case names/descriptions, curated roles, organizations and fan trivia (names of people never translated). Route: workers in parallel (after T1a). Commit: pending.
 - T1c [S1-S3] App UI in Spanish and English (string catalogue), Settings tab with the language (default Spanish); TMDB es-MX import run. Route: worker (after T1a, parallel with T1b). Commit: pending.
-- T2 [S1-S3] Phase 2 curated places per case, chronology mode, red-string overlay combinable with any style, click/keyboard to fly, progress pickers. Planned after T1.
+- T2a [S1-S3] Curated places per case, season by season (S1..S7): every real place an episode's sources name for its case → `location` + `part_of_case` + `coordinates` (Wikipedia API, `city-level`/`landmark` note), primary place of each case flagged (`case_site: "true"`), sourced per reveal episode; Spanish for descriptive place names in `data/canon/i18n/es/places-sN.yaml`. Route: one worker per season, 4 at a time. Commit: pending.
+- T2b [S1] App: progress pickers (season / episode with title), click/Enter on a case flies to its place and selects it, full keyboard navigation, chronology mode (timeline over watched episodes, camera moves case to case, path line), red-string overlay toggle combinable with any style (chronological thread + links between cases that share people or an arc). Route: worker (parallel with T2a). Commit: pending.
 - T3 [S1-S3] Phase 3 settings: language, 2D/3D, styles (realistic light with terrain, night, high-detail satellite, investigation board). Planned after T2.
 - T4 [S2-S3] Phase 4 photos (first Fandom image, else TMDB actor photo with attribution; not in git). Planned after T3.
 
 ## Log
 
 - L1: Owner messages and decisions quoted in S1-S3; screenshots analysed in S4. The leak is an importer defect: only status/last/family were excluded, not name/job.
+- L2: Owner on the longer Spanish TMDB synopses: "usarla tal cual".
