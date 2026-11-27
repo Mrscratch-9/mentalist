@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ENTITY_KINDS, CLAIM_STATUSES } from "@mentalist/core";
+import { ENTITY_KINDS, CLAIM_STATUSES, TRANSLATION_FIELDS } from "@mentalist/core";
 
 const str = z.string().min(1);
 
@@ -38,3 +38,14 @@ export const Doc = z.strictObject({
   })).default([]),
 });
 export type Doc = z.infer<typeof Doc>;
+
+/** Translations of one language (`data/canon/i18n/<lang>/*.yaml`): keyed by the English item key (T1a). */
+export const I18nDoc = z.strictObject({
+  translations: z.array(z.strictObject({
+    key: str, // claim key, theory key or episode code
+    field: z.enum(TRANSLATION_FIELDS),
+    hash: z.string().regex(/^[0-9a-f]{12}$/, "12 lowercase hex characters"),
+    text: str,
+  })).default([]),
+});
+export type I18nDoc = z.infer<typeof I18nDoc>;

@@ -2,11 +2,11 @@
 import { DatabaseSync } from "node:sqlite";
 import { describe, expect, it, vi } from "vitest";
 import {
-  KnowledgeEngine, loadDataset, peek, progress,
+  KnowledgeEngine, inLanguage, loadDataset, peek, progress,
   type Claim, type Dataset, type Entity, type EntityKind, type SqlDriver, type SqlValue,
 } from "@mentalist/core";
 import { createProgressStore, memoryStorage, PROGRESS_KEY } from "../state/progress";
-import { characterSubtitle, buildHomeModel, currentBase, resolveHome } from "./viewModel";
+import { characterSubtitle, buildFansModel, buildHomeModel, currentBase, DEFAULT_LANG, resolveHome } from "./viewModel";
 
 function nodeDriver(): SqlDriver {
   const raw = new DatabaseSync(":memory:");
@@ -312,7 +312,8 @@ describe("resolveHome: error branch", () => {
     const { db, engine } = setup();
     const spy = vi.spyOn(console, "error").mockImplementation(() => {});
     try {
-      const boom = Object.create(engine, {
+      // Derived from the engine already in the default language, so resolveHome uses it as is.
+      const boom = Object.create(inLanguage(engine, DEFAULT_LANG), {
         listEpisodes: { value: () => { throw new Error("CANARY_EP_9 secret"); } },
       }) as KnowledgeEngine;
       expect(resolveHome({ db, engine: boom }, { season: 1, episode: 2 }, false)).toEqual({ kind: "error" });
@@ -405,5 +406,76 @@ describe("characterSubtitle", () => {
     expect(characterSubtitle({ role: "R", actor: "A" })).toBe("R");
     expect(characterSubtitle({ role: null, actor: "A" })).toBe("Actor: A");
     expect(characterSubtitle({ role: null, actor: null })).toBeNull();
+  });
+});
+
+describe("T1a: language passes through (default Spanish, English fallback)", () => {
+  const tr = (targetId: string, field: "value" | "title" | "synopsis" | "body", text: string) =>
+    ({ targetId, field, lang: "es", text }) as const;
+  const withTr = (): Dataset => ({
+    ...synthetic(),
+    translations: [
+      tr("n_ca", "value", "Caso A CANARY_EP_2"),
+      tr("n_cb", "value", "Caso B CANARY_EP_4"), // revealed at 4: hidden at p=2
+      tr("d_la", "value", "Un muelle tranquilo CANARY_EP_2"),
+      tr("r_pa", "value", "Consultor CANARY_EP_1"),
+      tr("2", "title", "Titulo 2"),
+      tr("4", "title", "Titulo 4"),
+    ],
+  });
+
+  it("buildHomeModel defaults to es: translated where present, English elsewhere", () => {
+    const { engine } = setup(withTr());
+    const m = buildHomeModel(engine, progress(2));
+    expect(m.cases.map((c) => c.title)).toEqual(["Caso A CANARY_EP_2"]);
+    expect(m.characters[0]!.role).toBe("Consultor CANARY_EP_1");
+    expect(m.characters[0]!.name).toBe("Person CANARY_EP_1"); // no translation: English fallback
+    expect(m.pins[0]!.description).toBe("Un muelle tranquilo CANARY_EP_2");
+    expect(m.pins[0]!.label).toBe("Dock CANARY_EP_2");
+    expect(m.lang).toBe("es");
+  });
+
+  it("an explicit en returns the English texts", () => {
+    const { engine } = setup(withTr());
+    const m = buildHomeModel(engine, progress(2), "en");
+    expect(m.cases.map((c) => c.title)).toEqual(["Case A CANARY_EP_2"]);
+    expect(m.lang).toBe("en");
+  });
+
+  it("the engine passed in is never changed (its own language stays)", () => {
+    const { engine } = setup(withTr());
+    buildHomeModel(engine, progress(2), "es");
+    expect(engine.lang).toBe("en");
+    expect(buildHomeModel(engine, progress(2), "en").cases[0]!.title).toBe("Case A CANARY_EP_2");
+  });
+
+  it("translations of hidden items are never part of the model", () => {
+    const { engine } = setup(withTr());
+    expect(dump(buildHomeModel(engine, progress(2)))).not.toContain("CANARY_EP_4");
+    expect(dump(buildHomeModel(engine, progress(2)))).not.toContain("Titulo 4 ");
+  });
+
+  it("resolveHome: es by default, en on request; episode titles follow the language", () => {
+    const { db, engine } = setup(withTr());
+    const es = resolveHome({ db, engine }, { season: 1, episode: 2 }, false);
+    if (es.kind !== "ok") throw new Error("expected ok");
+    expect(es.model.cases[0]!.title).toBe("Caso A CANARY_EP_2");
+    expect(es.groups[0]!.episodes.map((e) => e.title)).toEqual(["Title 1", "Titulo 2", "Title 3", "Title 4", "Title 5"].map((t, i) => (i === 3 ? "Titulo 4" : t)));
+    const en = resolveHome({ db, engine }, { season: 1, episode: 2 }, false, "en");
+    if (en.kind !== "ok") throw new Error("expected ok");
+    expect(en.model.cases[0]!.title).toBe("Case A CANARY_EP_2");
+    expect(en.groups[0]!.episodes[1]!.title).toBe("Title 2");
+  });
+
+  it("fan notes follow the language", () => {
+    const d: Dataset = {
+      ...synthetic(),
+      theories: [{ id: "t1", title: "Theory", body: "Body", sourceUrl: "https://x.example/t", authorHandle: null, spoilsUpTo: 1, tags: [] } as never],
+      translations: [tr("t1", "title", "Teoria")],
+    };
+    const { engine } = setup(d);
+    const n = buildFansModel(engine, progress(1)).notes[0]!;
+    expect([n.title, n.body]).toEqual(["Teoria", "Body"]);
+    expect(buildFansModel(engine, progress(1), "en").notes[0]!.title).toBe("Theory");
   });
 });

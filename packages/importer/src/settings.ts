@@ -6,6 +6,8 @@ export interface Settings {
   tmdbApiKey: string | undefined;
   tmdbShowId: number;
   tmdbLanguage: string;
+  /** Second TMDB language for episode title/synopsis translations (`TMDB_LANGUAGE_SECONDARY`, default es-MX). */
+  tmdbLanguageSecondary: string;
 }
 
 export const DEFAULT_SETTINGS_PATH = fileURLToPath(new URL("../../../data-sources.txt", import.meta.url));
@@ -13,6 +15,7 @@ export const DEFAULT_SETTINGS_PATH = fileURLToPath(new URL("../../../data-source
 const DEFAULT_FANDOM_API = "https://thementalist.fandom.com/api.php";
 const DEFAULT_SHOW_ID = 5920;
 const DEFAULT_LANGUAGE = "en-US";
+const DEFAULT_LANGUAGE_SECONDARY = "es-MX";
 
 function unquote(v: string): string {
   if (v.length >= 2) {
@@ -54,6 +57,7 @@ export function parseSettings(text: string, opts: ParseOptions = {}): Settings {
     tmdbApiKey: get("TMDB_API_KEY"),
     tmdbShowId,
     tmdbLanguage: get("TMDB_LANGUAGE") ?? DEFAULT_LANGUAGE,
+    tmdbLanguageSecondary: get("TMDB_LANGUAGE_SECONDARY") ?? DEFAULT_LANGUAGE_SECONDARY,
   };
 }
 

@@ -215,10 +215,13 @@ describe("L12 episodes", () => {
     expect(eps).toHaveLength(6);
     expect(eps[0]).toEqual({
       watched: true, epIndex: 1, season: 1, number: 1, title: "Title 1", synopsis: "Synopsis 1", details: "Details 1",
+      titleLang: "en", synopsisLang: "en",
     });
-    expect(eps[2]).toEqual({ watched: false, season: 1, number: 3, title: "Title 3", synopsis: "Synopsis 3" });
+    expect(eps[2]).toEqual({
+      watched: false, season: 1, number: 3, title: "Title 3", synopsis: "Synopsis 3", titleLang: "en", synopsisLang: "en",
+    });
     expect(Object.keys(e.getEpisode(P(0), { season: 2, number: 3 })).sort())
-      .toEqual(["number", "season", "synopsis", "title", "watched"]);
+      .toEqual(["number", "season", "synopsis", "synopsisLang", "title", "titleLang", "watched"]);
     expect(e.getEpisode(P(6), { season: 2, number: 3 })).toMatchObject({ watched: true, epIndex: 6 });
     expect(() => e.getEpisode(P(6), { season: 8, number: 8 })).toThrow(NotFoundError);
   });

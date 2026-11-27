@@ -24,6 +24,7 @@ describe("loadSettings", () => {
           'TMDB_API_KEY="fake-key-123"',
           "TMDB_SHOW_ID='42'",
           "TMDB_LANGUAGE=es-AR",
+          "TMDB_LANGUAGE_SECONDARY=fr-CA",
           "UNKNOWN=zzz",
           "no equals line",
         ].join("\n"),
@@ -34,6 +35,7 @@ describe("loadSettings", () => {
       tmdbApiKey: "fake-key-123",
       tmdbShowId: 42,
       tmdbLanguage: "es-AR",
+      tmdbLanguageSecondary: "fr-CA",
     });
   });
 
@@ -42,6 +44,7 @@ describe("loadSettings", () => {
     expect(s.fandomApi).toBe("https://thementalist.fandom.com/api.php");
     expect(s.tmdbShowId).toBe(5920);
     expect(s.tmdbLanguage).toBe("en-US");
+    expect(s.tmdbLanguageSecondary).toBe("es-MX");
     expect(s.tmdbApiKey).toBeUndefined();
   });
 

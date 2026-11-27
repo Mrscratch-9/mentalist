@@ -12,19 +12,25 @@
  *  - episode: unwatched (ep_index > p) exposes only season, number, title, synopsis
  *  - arc item: revealed_in <= p AND its referenced claim/entity visible; positions are renumbered
  *  - theory:  spoils_up_to <= p (always flagged non-canon)
+ *  - translations (T1a): a text field is returned in the engine's language when a translation exists, else in
+ *    English, and the *Lang flag of each text says which. A translation is read only through the row it
+ *    belongs to, so it is exactly as visible as that row (translations of hidden items are never returned)
  *  - not-found is uniform for hidden and nonexistent (NotFoundError, constant message)
  *  - search ranks by reveal order, not bm25 (bm25 uses corpus-wide statistics that
- *    would depend on hidden rows)
+ *    would depend on hidden rows); in a non-English language it also matches the translated text
  */
 import type { SqlDriver, SqlValue } from "./driver.ts";
 import { InvalidInputError, NotFoundError } from "./errors.ts";
 import { assertProgress, progress, type Progress } from "./progress.ts";
 import {
   COORDINATES, ENTITY_KINDS, ROLE_IN_CASE,
-  type CaseRole, type ClaimId, type ClaimStatus, type EntityId, type EntityKind, type TheoryId,
+  BASE_LANG, NON_TEXT_PREDICATES, type CaseRole, type ClaimId, type ClaimStatus, type EntityId, type EntityKind, type TheoryId,
 } from "./types.ts";
 
 // ---------- views (what callers receive) ----------
+
+/** Language code of a text ("en", "es"). */
+export type Lang = string;
 
 export interface EntityView { id: EntityId; kind: EntityKind; introducedIn: number }
 
@@ -43,18 +49,25 @@ export interface ClaimView {
   supersession: { discardedIn: number; replacedBy: ClaimId | null } | null;
   sourceId: string;
   note: string;
+  /** Language of `value` / `note` as returned ("en" when no translation exists). */
+  valueLang: Lang;
+  noteLang: Lang;
 }
 
 export interface EntityDetail extends EntityView { claims: ClaimView[] }
 
 export type EpisodeView =
-  | { watched: true; epIndex: number; season: number; number: number; title: string; synopsis: string; details: string }
-  | { watched: false; season: number; number: number; title: string; synopsis: string };
+  | ({ watched: true; epIndex: number; season: number; number: number; title: string; synopsis: string; details: string } & EpisodeLangs)
+  | ({ watched: false; season: number; number: number; title: string; synopsis: string } & EpisodeLangs);
+
+/** Language of the returned title / synopsis (`details` is never translated). */
+export interface EpisodeLangs { titleLang: Lang; synopsisLang: Lang }
 
 export interface SearchResult {
   /** Number of VISIBLE hits (ignores `limit`). */
   total: number;
-  hits: Array<{ claimId: ClaimId; subject: EntityId; snippet: string }>;
+  /** `lang`: language of the snippet. */
+  hits: Array<{ claimId: ClaimId; subject: EntityId; snippet: string; lang: Lang }>;
 }
 
 export interface GraphView {
@@ -92,6 +105,8 @@ export interface ArcView {
 export interface TheoryView {
   id: TheoryId; title: string; body: string; sourceUrl: string; authorHandle: string | null;
   spoilsUpTo: number; tags: string[];
+  /** Language of `title` / `body` as returned. */
+  titleLang: Lang; bodyLang: Lang;
   /** Always false: theories are never canon. */
   canon: false;
 }
@@ -106,7 +121,20 @@ const CLAIM_VISIBLE = (a: string) =>
     AND (${a}.object_id IS NULL
          OR EXISTS (SELECT 1 FROM entity vo WHERE vo.id = ${a}.object_id AND ${ENTITY_VISIBLE("vo")})))`;
 
-const CLAIM_COLS = `c.id, c.subject, c.predicate, c.object_id, c.value, c.revealed_in, c.status, c.source_id, c.note,
+/** Language codes are validated (`normalizeLang`) before they reach SQL, so inlining them is safe. */
+const trText = (lang: Lang, targetId: string, field: string): string =>
+  lang === BASE_LANG
+    ? "NULL"
+    : `(SELECT x.text FROM translation x WHERE x.target_id = ${targetId} AND x.field = '${field}' AND x.lang = '${lang}')`;
+
+const NON_TEXT_SQL = NON_TEXT_PREDICATES.map((x) => `'${x}'`).join(",");
+const trValue = (lang: Lang): string =>
+  lang === BASE_LANG ? "NULL" : `CASE WHEN c.predicate IN (${NON_TEXT_SQL}) THEN NULL ELSE ${trText(lang, "c.id", "value")} END`;
+
+const claimCols = (lang: Lang) => `c.id, c.subject, c.predicate, c.object_id,
+  COALESCE(${trValue(lang)}, c.value) AS value, (${trValue(lang)}) IS NOT NULL AS value_tr,
+  c.revealed_in, c.status, c.source_id,
+  COALESCE(${trText(lang, "c.id", "note")}, c.note) AS note, (${trText(lang, "c.id", "note")}) IS NOT NULL AS note_tr,
   CASE WHEN c.superseded_in IS NOT NULL AND c.superseded_in <= ?1 THEN c.superseded_in END AS sup_in,
   CASE WHEN c.superseded_in IS NOT NULL AND c.superseded_in <= ?1
        THEN (SELECT b.id FROM claim b WHERE b.id = c.superseded_by AND ${CLAIM_VISIBLE("b")}) END AS sup_by`;
@@ -114,10 +142,11 @@ const CLAIM_COLS = `c.id, c.subject, c.predicate, c.object_id, c.value, c.reveal
 interface ClaimRow {
   id: string; subject: string; predicate: string; object_id: string | null; value: string | null;
   revealed_in: number; status: ClaimStatus; source_id: string; note: string;
+  value_tr: number; note_tr: number;
   sup_in: number | null; sup_by: string | null;
 }
 
-const toClaim = (r: ClaimRow): ClaimView => ({
+const toClaim = (r: ClaimRow, lang: Lang): ClaimView => ({
   id: r.id as ClaimId,
   subject: r.subject as EntityId,
   predicate: r.predicate,
@@ -129,7 +158,16 @@ const toClaim = (r: ClaimRow): ClaimView => ({
   supersession: r.sup_in === null ? null : { discardedIn: r.sup_in, replacedBy: r.sup_by as ClaimId | null },
   sourceId: r.source_id,
   note: r.note,
+  valueLang: r.value_tr ? lang : BASE_LANG,
+  noteLang: r.note_tr ? lang : BASE_LANG,
 });
+
+/** "es", "es-MX", "ES" -> "es". Anything else is invalid (the code is inlined in SQL, so it must be strict). */
+function normalizeLang(lang: unknown): Lang {
+  const m = typeof lang === "string" ? /^([A-Za-z]{2,3})(?:[-_][A-Za-z0-9]{2,8})*$/.exec(lang) : null;
+  if (!m) throw new InvalidInputError("argument");
+  return m[1]!.toLowerCase();
+}
 
 interface EntityRow { id: string; kind: EntityKind; introduced_in: number }
 const toEntity = (r: EntityRow): EntityView => ({
@@ -164,9 +202,20 @@ export function endOfSeason(db: SqlDriver, season: number): Progress {
 
 export class KnowledgeEngine {
   private readonly db: SqlDriver;
+  private readonly language: Lang;
 
-  constructor(db: SqlDriver) {
+  /**
+   * `lang` (default "en") is the language of every text this engine returns; a region tag is reduced to its base
+   * language ("es-MX" -> "es"). Use `inLanguage(engine, lang)` to get a sibling engine on the same database.
+   */
+  constructor(db: SqlDriver, lang: Lang = BASE_LANG) {
     this.db = db;
+    this.language = normalizeLang(lang);
+  }
+
+  /** The language of the texts this engine returns. */
+  get lang(): Lang {
+    return this.language;
   }
 
   private all<T>(p: Progress, sql: string, params: SqlValue[] = []): T[] {
@@ -212,20 +261,20 @@ export class KnowledgeEngine {
   listClaims(p: Progress, filter: { subject?: EntityId; predicate?: string } = {}): ClaimView[] {
     const rows = this.all<ClaimRow>(
       p,
-      `SELECT ${CLAIM_COLS} FROM claim c
+      `SELECT ${claimCols(this.language)} FROM claim c
        WHERE ${CLAIM_VISIBLE("c")} AND (?2 IS NULL OR c.subject = ?2) AND (?3 IS NULL OR c.predicate = ?3)
        ORDER BY c.id`,
       [filter.subject ?? null, filter.predicate ?? null],
     );
-    return rows.map(toClaim);
+    return rows.map((r) => toClaim(r, this.language));
   }
 
   /** One visible claim. NotFoundError if hidden or nonexistent. */
   getClaim(p: Progress, id: ClaimId): ClaimView {
     const row = this.one<ClaimRow>(
-      p, `SELECT ${CLAIM_COLS} FROM claim c WHERE c.id = ?2 AND ${CLAIM_VISIBLE("c")}`, [id],
+      p, `SELECT ${claimCols(this.language)} FROM claim c WHERE c.id = ?2 AND ${CLAIM_VISIBLE("c")}`, [id],
     );
-    return row ? toClaim(row) : notFound();
+    return row ? toClaim(row, this.language) : notFound();
   }
 
   /** Number of visible claims. */
@@ -242,41 +291,56 @@ export class KnowledgeEngine {
     const q = ftsQuery(String(text));
     const lim = Math.max(0, Math.min(1000, Math.trunc(Number(limit)) || 0));
     if (assertProgress(p) < 0 || q === null) return { total: 0, hits: [] };
-    const from = `FROM claim_fts f JOIN claim c ON c.id = f.claim_id
-                  WHERE claim_fts MATCH ?2 AND ${CLAIM_VISIBLE("c")}`;
+    const lang = this.language;
+    const english = "c.id IN (SELECT claim_id FROM claim_fts WHERE claim_fts MATCH ?2)";
+    const translated = lang === BASE_LANG
+      ? ""
+      : ` OR c.id IN (SELECT claim_id FROM translation_fts WHERE translation_fts MATCH ?2 AND lang = '${lang}')`;
+    const from = `FROM claim c WHERE (${english}${translated}) AND ${CLAIM_VISIBLE("c")}`;
     const total = this.one<{ n: number }>(p, `SELECT COUNT(*) AS n ${from}`, [q])?.n ?? 0;
-    const hits = this.all<{ id: string; subject: string; snippet: string }>(
-      p,
-      `SELECT c.id, c.subject, snippet(claim_fts, 1, '[', ']', '…', 12) AS snippet ${from}
-       ORDER BY c.revealed_in, c.id LIMIT ?3`,
-      [q, lim],
+    const hits = this.all<{ id: string; subject: string }>(
+      p, `SELECT c.id, c.subject ${from} ORDER BY c.revealed_in, c.id LIMIT ?3`, [q, lim],
     );
+    // Snippets are built only for rows that already passed the visibility filter above.
+    const snippetOf = (id: string): { snippet: string; lang: Lang } => {
+      if (lang !== BASE_LANG) {
+        const t = this.db.get<{ s: string }>(
+          `SELECT snippet(translation_fts, 2, '[', ']', '…', 12) AS s FROM translation_fts
+           WHERE translation_fts MATCH ?1 AND claim_id = ?2 AND lang = '${lang}'`, [q, id],
+        );
+        if (t) return { snippet: t.s, lang };
+      }
+      const e = this.db.get<{ s: string }>(
+        "SELECT snippet(claim_fts, 1, '[', ']', '…', 12) AS s FROM claim_fts WHERE claim_fts MATCH ?1 AND claim_id = ?2", [q, id],
+      );
+      return { snippet: e?.s ?? "", lang: BASE_LANG };
+    };
     return {
       total,
-      hits: hits.map((h) => ({ claimId: h.id as ClaimId, subject: h.subject as EntityId, snippet: h.snippet })),
+      hits: hits.map((h) => ({ claimId: h.id as ClaimId, subject: h.subject as EntityId, ...snippetOf(h.id) })),
     };
   }
 
   /** All episodes in order; unwatched ones expose only season, number, title, synopsis. */
   listEpisodes(p: Progress): EpisodeView[] {
-    const rows = this.all<EpRow>(p, `${EP_SELECT} ORDER BY ep_index`);
-    return rows.map(toEpisode);
+    const rows = this.all<EpRow>(p, `${epSelect(this.language)} ORDER BY ep_index`);
+    return rows.map((r) => toEpisode(r, this.language));
   }
 
   /** One episode by its public season/number. NotFoundError if it does not exist. */
   getEpisode(p: Progress, ref: { season: number; number: number }): EpisodeView {
-    const row = this.one<EpRow>(p, `${EP_SELECT} WHERE season = ?2 AND number = ?3`, [ref.season, ref.number]);
-    return row ? toEpisode(row) : notFound();
+    const row = this.one<EpRow>(p, `${epSelect(this.language)} WHERE season = ?2 AND number = ?3`, [ref.season, ref.number]);
+    return row ? toEpisode(row, this.language) : notFound();
   }
 
   /** Relation graph from visible claims that have an object. */
   getGraph(p: Progress): GraphView {
     const rows = this.all<ClaimRow>(
       p,
-      `SELECT ${CLAIM_COLS} FROM claim c WHERE c.object_id IS NOT NULL AND ${CLAIM_VISIBLE("c")} ORDER BY c.id`,
+      `SELECT ${claimCols(this.language)} FROM claim c WHERE c.object_id IS NOT NULL AND ${CLAIM_VISIBLE("c")} ORDER BY c.id`,
     );
     const edges = rows.map((r) => {
-      const c = toClaim(r);
+      const c = toClaim(r, this.language);
       return { claimId: c.id, from: c.subject, to: c.object as EntityId, predicate: c.predicate, state: c.state };
     });
     const degree = new Map<string, number>();
@@ -350,46 +414,66 @@ export class KnowledgeEngine {
   /** Non-canon fan theories with spoils_up_to <= p, optionally filtered by tag. */
   listTheories(p: Progress, tag?: string): TheoryView[] {
     const rows = this.all<TheoryRow>(
-      p, `SELECT * FROM theory t WHERE t.spoils_up_to <= ?1 ORDER BY t.id`,
+      p, `${theorySelect(this.language)} WHERE t.spoils_up_to <= ?1 ORDER BY t.id`,
     );
-    return rows.map(toTheory).filter((t) => tag === undefined || t.tags.includes(tag));
+    return rows.map((r) => toTheory(r, this.language)).filter((t) => tag === undefined || t.tags.includes(tag));
   }
 
   /** One visible theory. NotFoundError if hidden or nonexistent. */
   getTheory(p: Progress, id: TheoryId): TheoryView {
-    const row = this.one<TheoryRow>(p, `SELECT * FROM theory t WHERE t.id = ?2 AND t.spoils_up_to <= ?1`, [id]);
-    return row ? toTheory(row) : notFound();
+    const row = this.one<TheoryRow>(p, `${theorySelect(this.language)} WHERE t.id = ?2 AND t.spoils_up_to <= ?1`, [id]);
+    return row ? toTheory(row, this.language) : notFound();
   }
+}
+
+/**
+ * A sibling engine on the same database that returns texts in `lang` (fallback English).
+ * The engine itself is returned when it already has that language.
+ */
+export function inLanguage(engine: KnowledgeEngine, lang: Lang): KnowledgeEngine {
+  const l = normalizeLang(lang);
+  return engine.lang === l ? engine : new KnowledgeEngine(engine["db"], l);
 }
 
 // ---------- row mappers declared after the class are hoisted-safe consts below ----------
 
 interface EpRow {
   ep_index: number; season: number; number: number; title: string; synopsis: string; watched: number;
-  details: string | null;
+  details: string | null; title_tr: number; synopsis_tr: number;
 }
-const EP_SELECT = `SELECT ep_index, season, number, title, synopsis,
+const EP_ID = "CAST(episode.ep_index AS TEXT)";
+const epSelect = (lang: Lang) => `SELECT ep_index, season, number,
+    COALESCE(${trText(lang, EP_ID, "title")}, title) AS title,
+    COALESCE(${trText(lang, EP_ID, "synopsis")}, synopsis) AS synopsis,
+  (${trText(lang, EP_ID, "title")}) IS NOT NULL AS title_tr,
+  (${trText(lang, EP_ID, "synopsis")}) IS NOT NULL AS synopsis_tr,
   (ep_index <= ?1) AS watched,
   CASE WHEN ep_index <= ?1 THEN details END AS details FROM episode`;
 
-function toEpisode(r: EpRow): EpisodeView {
+function toEpisode(r: EpRow, lang: Lang): EpisodeView {
+  const langs = { titleLang: r.title_tr ? lang : BASE_LANG, synopsisLang: r.synopsis_tr ? lang : BASE_LANG };
   if (r.watched) {
     return {
       watched: true, epIndex: r.ep_index, season: r.season, number: r.number,
-      title: r.title, synopsis: r.synopsis, details: r.details ?? "",
+      title: r.title, synopsis: r.synopsis, details: r.details ?? "", ...langs,
     };
   }
-  return { watched: false, season: r.season, number: r.number, title: r.title, synopsis: r.synopsis };
+  return { watched: false, season: r.season, number: r.number, title: r.title, synopsis: r.synopsis, ...langs };
 }
 
 interface TheoryRow {
   id: string; title: string; body: string; source_url: string; author_handle: string | null;
-  spoils_up_to: number; tags: string;
+  spoils_up_to: number; tags: string; title_tr: number; body_tr: number;
 }
-function toTheory(r: TheoryRow): TheoryView {
+const theorySelect = (lang: Lang) => `SELECT t.id, t.source_url, t.author_handle, t.spoils_up_to, t.tags,
+    COALESCE(${trText(lang, "t.id", "title")}, t.title) AS title, COALESCE(${trText(lang, "t.id", "body")}, t.body) AS body,
+  (${trText(lang, "t.id", "title")}) IS NOT NULL AS title_tr, (${trText(lang, "t.id", "body")}) IS NOT NULL AS body_tr
+  FROM theory t`;
+function toTheory(r: TheoryRow, lang: Lang): TheoryView {
   return {
     id: r.id as TheoryId, title: r.title, body: r.body, sourceUrl: r.source_url,
     authorHandle: r.author_handle, spoilsUpTo: r.spoils_up_to, tags: JSON.parse(r.tags) as string[],
+    titleLang: r.title_tr ? lang : BASE_LANG, bodyLang: r.body_tr ? lang : BASE_LANG,
     canon: false,
   };
 }

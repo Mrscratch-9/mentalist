@@ -13,14 +13,21 @@
  *   recurring                      "true" on a person puts them in the characters strip
  *   actor                          shown on the characters strip when the person has no current role (never the Fandom job)
  *   team_base                      "true" on a location marks the team's current base (map camera, see currentBase)
+ *
+ * Language (T1a): every builder takes an optional `lang` (default DEFAULT_LANG = "es") and reads the engine through
+ * `inLanguage(engine, lang)`, so texts are the translation when one exists and English otherwise. The engine passed
+ * in is never changed. Gating is the engine's: a translation is exactly as visible as the item it translates.
  */
 import {
-  NotFoundError, peek,
-  type ClaimView, type EntityId, type EntityView, type KnowledgeEngine, type Progress as CoreProgress,
+  NotFoundError, inLanguage, peek,
+  type Lang, type ClaimView, type EntityId, type EntityView, type KnowledgeEngine, type Progress as CoreProgress,
   type SqlDriver,
 } from "@mentalist/core";
 import { listBySeason, toCoreProgress, type SeasonGroup } from "../state/coreProgress";
 import type { Progress } from "../state/progress";
+
+/** Language of the app texts read from the canon unless the caller says otherwise (owner decision S2: Spanish). */
+export const DEFAULT_LANG: Lang = "es";
 
 export type PinKind = "smiley" | "landmark";
 export type Silhouette = "jane" | "cbi";
@@ -63,6 +70,8 @@ export interface HomeModel {
   legend: LegendItem[];
   watchedEpisodes: number;
   totalEpisodes: number;
+  /** Language the texts were requested in (an individual text falls back to English when it has no translation). */
+  lang: Lang;
 }
 
 const byIntro = (a: EntityView, b: EntityView) =>
@@ -86,7 +95,8 @@ export function episodeCode(season: number, number: number): string {
   return `${season}x${String(number).padStart(2, "0")}`;
 }
 
-export function buildHomeModel(engine: KnowledgeEngine, p: CoreProgress): HomeModel {
+export function buildHomeModel(base: KnowledgeEngine, p: CoreProgress, lang: Lang = DEFAULT_LANG): HomeModel {
+  const engine = inLanguage(base, lang);
   const episodes = engine.listEpisodes(p);
   const claims = engine.listClaims(p);
   const values = valueIndex(claims);
@@ -154,6 +164,7 @@ export function buildHomeModel(engine: KnowledgeEngine, p: CoreProgress): HomeMo
     pins, cases, characters, legend,
     watchedEpisodes: episodes.filter((e) => e.watched).length,
     totalEpisodes: episodes.length,
+    lang,
   };
 }
 
@@ -182,7 +193,8 @@ export interface FansModel {
 }
 
 /** Non-canon fan notes visible at `p` (the engine gates by spoils_up_to), ordered by spoils_up_to then title. */
-export function buildFansModel(engine: KnowledgeEngine, p: CoreProgress): FansModel {
+export function buildFansModel(base: KnowledgeEngine, p: CoreProgress, lang: Lang = DEFAULT_LANG): FansModel {
+  const engine = inLanguage(base, lang);
   const eps = engine.listEpisodes(p);
   const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
   // Copy before sorting: never reorder an array the engine may share.
@@ -250,24 +262,26 @@ export function resolveHome(
   canon: { db: SqlDriver; engine: KnowledgeEngine },
   stored: Progress,
   wantPeek: boolean,
+  lang: Lang = DEFAULT_LANG,
 ): HomeResult {
   try {
+    const engine = inLanguage(canon.engine, lang);
     const base = toCoreProgress(canon.db, stored);
-    const total = canon.engine.listEpisodes(base).length;
+    const total = engine.listEpisodes(base).length;
     const canPeek = base.epIndex < total;
     const peeking = wantPeek && canPeek;
     const eff = peeking ? peek(base) : base;
     return {
       kind: "ok",
-      model: buildHomeModel(canon.engine, eff),
-      groups: listBySeason(canon.engine, eff),
-      base: currentBase(canon.engine, eff),
-      fans: buildFansModel(canon.engine, eff),
+      model: buildHomeModel(engine, eff, lang),
+      groups: listBySeason(engine, eff),
+      base: currentBase(engine, eff),
+      fans: buildFansModel(engine, eff, lang),
       gate: {
-        label: labelAt(canon.engine, base),
+        label: labelAt(engine, base),
         peeking,
         canPeek,
-        peekLabel: peeking ? labelAt(canon.engine, eff) : null,
+        peekLabel: peeking ? labelAt(engine, eff) : null,
       },
     };
   } catch (e) {

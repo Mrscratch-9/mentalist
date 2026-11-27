@@ -12,3 +12,5 @@ TMDB_API_KEY=
 TMDB_SHOW_ID=
 # Language for titles and synopses (e.g. en-US, es-AR).
 TMDB_LANGUAGE=en-US
+# Second language for titles and synopses (stored as a translation). Leave as is for Latin American Spanish.
+TMDB_LANGUAGE_SECONDARY=es-MX

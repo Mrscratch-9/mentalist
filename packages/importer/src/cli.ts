@@ -10,6 +10,8 @@ import { FandomClient, type FandomPage } from "./fandom/client.ts";
 import { parseEpisodePage, type EpisodeRecord } from "./fandom/episodes.ts";
 import { assemble, collectLinkTargets, type Report } from "./generate/assemble.ts";
 import { DEFAULT_WIKI_BASE } from "./generate/common.ts";
+import type { OutEpisode } from "./generate/episodes.ts";
+import { fetchEpisodeTranslations, type EpisodeTranslations } from "./generate/translations.ts";
 import { FILE_NAMES, renderYaml, writeGenerated } from "./generate/write.ts";
 import { loadSettings } from "./settings.ts";
 import { MAX_SEASON, MIN_SEASON, TmdbClient, type TmdbEpisode } from "./tmdb/client.ts";
@@ -42,7 +44,7 @@ function wikiBaseOf(api: string): string {
   return api.endsWith("/api.php") ? `${api.slice(0, -"api.php".length)}wiki/` : DEFAULT_WIKI_BASE;
 }
 
-function printReport(r: Report, tmdbUsed: boolean): void {
+function printReport(r: Report, tmdbUsed: boolean, tr: (EpisodeTranslations & { lang: string }) | undefined): void {
   const line = (k: string, v: unknown): void => console.log(`${k}: ${typeof v === "string" ? v : JSON.stringify(v)}`);
   line("episodes", r.episodes);
   line("episodes without synopsis", `${r.missingSynopsis}${tmdbUsed ? "" : " (TMDB skipped)"}`);
@@ -60,6 +62,8 @@ function printReport(r: Report, tmdbUsed: boolean): void {
   line("fans spoils_up_to per season", r.fansBySeason);
   line("fans items with unresolved links", r.fanUnresolvedLinkItems);
   line("fans items without own episode", r.fanNoOwnEpisodeItems);
+  if (tr) line(`episode translations (${tr.lang}): titles/synopses/missing`, `${tr.stats.titles}/${tr.stats.synopses}/${tr.stats.missing}`);
+  else if (tmdbUsed) line("episode translations", "skipped (no secondary-language data)");
 }
 
 async function run(args: CliArgs): Promise<number> {
@@ -104,20 +108,26 @@ async function run(args: CliArgs): Promise<number> {
   for (const [from, to] of await client.resolveRedirects(targets)) if (from !== to) redirects.set(from, to);
 
   let tmdb: TmdbEpisode[] | undefined;
-  if (!args.skipTmdb) {
+  let translations: (EpisodeTranslations & { lang: string }) | undefined;
+  const { docs, report } = await (async () => {
+    if (args.skipTmdb) return assemble({ ...base, redirects, tmdb });
     const t = new TmdbClient({ apiKey: settings.tmdbApiKey, showId: settings.tmdbShowId, cacheDir: join(cacheRoot, "tmdb"), offline: args.offline });
     tmdb = await t.getAllSeasons(settings.tmdbLanguage);
-  }
-
-  const { docs, report } = assemble({ ...base, redirects, tmdb });
+    const out = assemble({ ...base, redirects, tmdb });
+    // Second language: hashes are of the English episodes just generated. Offline without its cache: skipped.
+    translations = await fetchEpisodeTranslations(t, out.docs["episodes.yaml"]!["episodes"] as OutEpisode[], settings.tmdbLanguageSecondary, settings.tmdbLanguage);
+    return out;
+  })();
   const files: Record<string, string> = {};
   for (const name of FILE_NAMES) files[name] = renderYaml(docs[name]!);
+  const i18nFiles = translations ? { "episodes.yaml": renderYaml(translations.doc) } : undefined;
 
   const tmp = mkdtempSync(join(tmpdir(), "mentalist-import-"));
   try {
     writeGenerated(tmp, files);
-    const { docs: loaded, errors: loadErrors } = loadDir(tmp);
-    const errors = loadErrors.length ? loadErrors : validate(loaded);
+    if (i18nFiles && translations) writeGenerated(join(tmp, "i18n", translations.lang), i18nFiles);
+    const { docs: loaded, i18n, errors: loadErrors } = loadDir(tmp);
+    const errors = loadErrors.length ? loadErrors : validate(loaded, i18n);
     if (errors.length) {
       for (const e of errors.slice(0, 50)) console.error(formatError(e));
       console.error(`${errors.length} error(s); nothing written`);
@@ -127,8 +137,10 @@ async function run(args: CliArgs): Promise<number> {
     rmSync(tmp, { recursive: true, force: true });
   }
   writeGenerated(join(ROOT, "data", "canon", "generated"), files);
-  printReport(report, tmdb !== undefined);
+  if (i18nFiles && translations) writeGenerated(join(ROOT, "data", "canon", "i18n", translations.lang), i18nFiles);
+  printReport(report, tmdb !== undefined, translations);
   console.log(`wrote ${FILE_NAMES.length} files to data/canon/generated`);
+  if (translations) console.log(`wrote episodes.yaml to data/canon/i18n/${translations.lang}`);
   return 0;
 }
 

@@ -1,5 +1,5 @@
 /** Table layer. Internal: never exported from index.ts (UI must not touch tables). */
-import { CLAIM_STATUSES, ENTITY_KINDS } from "./types.ts";
+import { CLAIM_STATUSES, ENTITY_KINDS, TRANSLATION_FIELDS } from "./types.ts";
 
 const list = (xs: readonly string[]) => xs.map((x) => `'${x}'`).join(",");
 
@@ -50,4 +50,12 @@ export const SCHEMA_STATEMENTS: readonly string[] = [
     spoils_up_to INTEGER NOT NULL,
     tags TEXT NOT NULL
   )`,
+  `CREATE TABLE translation (
+    target_id TEXT NOT NULL,
+    field TEXT NOT NULL CHECK (field IN (${list(TRANSLATION_FIELDS)})),
+    lang TEXT NOT NULL,
+    text TEXT NOT NULL,
+    PRIMARY KEY (target_id, field, lang)
+  )`,
+  `CREATE VIRTUAL TABLE translation_fts USING fts5(claim_id UNINDEXED, lang UNINDEXED, body, tokenize = 'unicode61')`,
 ];

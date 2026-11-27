@@ -27,6 +27,23 @@ export function loadDataset(db: SqlDriver, data: Dataset): void {
       a.arc, a.order, a.refClaim, a.refEntity, a.narrativeText, a.revealedIn,
     ]);
   }
+  const translations = data.translations ?? [];
+  for (const t of translations) {
+    db.exec("INSERT INTO translation VALUES (?1,?2,?3,?4)", [t.targetId, t.field, t.lang, t.text]);
+  }
+  // Per (claim, language) search body: translated value/note, English where a field has no translation.
+  const trOf = new Map(translations.map((t) => [`${t.targetId}\u0000${t.field}\u0000${t.lang}`, t.text]));
+  const langs = [...new Set(translations.map((t) => t.lang))].sort();
+  for (const c of data.claims) {
+    for (const lang of langs) {
+      const v = trOf.get(`${c.id}\u0000value\u0000${lang}`);
+      const n = trOf.get(`${c.id}\u0000note\u0000${lang}`);
+      if (v === undefined && n === undefined) continue;
+      db.exec("INSERT INTO translation_fts (claim_id, lang, body) VALUES (?1, ?2, ?3)", [
+        c.id, lang, `${v ?? c.value ?? ""} ${n ?? c.note}`,
+      ]);
+    }
+  }
   for (const t of data.theories) {
     db.exec("INSERT INTO theory VALUES (?1,?2,?3,?4,?5,?6,?7)", [
       t.id, t.title, t.body, t.sourceUrl, t.authorHandle, t.spoilsUpTo, JSON.stringify(t.tags),

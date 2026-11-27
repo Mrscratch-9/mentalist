@@ -23,10 +23,10 @@ const entIntro = new Map<string, number>();
 const claimRev = new Map<string, number>();
 
 beforeAll(() => {
-  const { docs, errors: loadErrors } = loadDir(dir);
+  const { docs, i18n, errors: loadErrors } = loadDir(dir);
   expect(loadErrors.length).toBe(0);
-  expect(validate(docs).length).toBe(0);
-  data = compile(docs);
+  expect(validate(docs, i18n).length).toBe(0);
+  data = compile(docs, i18n);
   raw = new DatabaseSync(":memory:");
   db = nodeDriver(raw);
   loadDataset(db, data);
@@ -122,7 +122,7 @@ describe("real canon gating at S6E12 (counts only)", () => {
     const watched = eps.filter((e) => e.watched);
     expect(watched.length).toBe(p.epIndex);
     expect(unwatched.length).toBe(151 - p.epIndex);
-    const shape = unwatched.filter((e) => Object.keys(e).sort().join() !== "number,season,synopsis,title,watched").length;
+    const shape = unwatched.filter((e) => Object.keys(e).sort().join() !== "number,season,synopsis,synopsisLang,title,titleLang,watched").length;
     expect(shape).toBe(0);
     // Watched episodes carry their details; unwatched ones carry no details field at all.
     expect(unwatched.filter((e) => "details" in e || "epIndex" in e).length).toBe(0);

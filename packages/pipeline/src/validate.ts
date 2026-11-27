@@ -1,6 +1,7 @@
 import { CASE_ROLES, COORDINATES, ROLE_IN_CASE } from "@mentalist/core";
 import type { PipelineError } from "./errors.ts";
-import type { LoadedDoc } from "./load.ts";
+import { validateI18n } from "./i18n.ts";
+import type { LoadedDoc, LoadedI18n } from "./load.ts";
 import type { Doc } from "./schema.ts";
 
 export const CODE_RE = /^S(\d+)E(\d+)$/;
@@ -19,8 +20,8 @@ export function episodeIndex(docs: LoadedDoc[]): Map<string, number> {
   return m;
 }
 
-/** Consistency rules (design §5). Returns every error found. */
-export function validate(docs: LoadedDoc[]): PipelineError[] {
+/** Consistency rules (design §5), plus the translation rules when `i18n` files are given. Returns every error found. */
+export function validate(docs: LoadedDoc[], i18n: LoadedI18n[] = []): PipelineError[] {
   const errs: PipelineError[] = [];
   const bad = (l: { file: string; path: string }, field: string, rule: string, detail?: string) =>
     errs.push({ file: l.file, path: field ? `${l.path}.${field}` : l.path, rule, ...(detail ? { detail } : {}) });
@@ -130,5 +131,6 @@ export function validate(docs: LoadedDoc[]): PipelineError[] {
   for (const [, l] of index(collect(docs, "theories"))) {
     if (l.r.spoils_up_to !== undefined) ep(l, "spoils_up_to", l.r.spoils_up_to);
   }
+  errs.push(...validateI18n(docs, i18n));
   return errs;
 }

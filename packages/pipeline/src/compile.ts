@@ -1,14 +1,18 @@
 import { createHash } from "node:crypto";
 import { claimId, entityId, theoryId, type Dataset } from "@mentalist/core";
-import type { LoadedDoc } from "./load.ts";
+import { resolveI18n } from "./i18n.ts";
+import type { LoadedDoc, LoadedI18n } from "./load.ts";
 import { CODE_RE, collect, episodeIndex } from "./validate.ts";
 
 /** Opaque, deterministic, non-sequential id: prefix + truncated SHA-256 of a namespaced author key (S3). */
 export const opaque = (ns: "e" | "c" | "s" | "t", authorKey: string): string =>
   `${ns}_${createHash("sha256").update(`mentalist:${ns}:${authorKey}`).digest("hex").slice(0, 12)}`;
 
-/** Compile validated docs into a Dataset. Call only when `validate` returned no errors. */
-export function compile(docs: LoadedDoc[]): Dataset {
+/**
+ * Compile validated docs into a Dataset. Call only when `validate` returned no errors.
+ * Translations (`i18n`) whose hash no longer matches the English text are left out (see `resolveI18n`).
+ */
+export function compile(docs: LoadedDoc[], i18n: LoadedI18n[] = []): Dataset {
   const eps = episodeIndex(docs);
   const ep = (code: string) => eps.get(code)!;
   return {
@@ -44,5 +48,6 @@ export function compile(docs: LoadedDoc[]): Dataset {
       id: theoryId(opaque("t", r.key)), title: r.title, body: r.body, sourceUrl: r.url,
       authorHandle: r.author ?? null, spoilsUpTo: r.spoils_up_to === undefined ? 0 : ep(r.spoils_up_to), tags: r.tags,
     })),
+    translations: resolveI18n(docs, i18n).translations,
   };
 }

@@ -80,6 +80,32 @@ export interface Theory {
   tags: string[];
 }
 
+/** Text fields that can carry a translation, per target: claim value|note, theory title|body, episode title|synopsis. */
+export const TRANSLATION_FIELDS = ["value", "note", "title", "body", "synopsis"] as const;
+export type TranslationField = (typeof TRANSLATION_FIELDS)[number];
+
+/**
+ * Predicates whose `value` is read by code (not shown as prose); their values are never translated:
+ * role enum, "lat,lon", and the "true" flags the app keys on.
+ */
+export const NON_TEXT_PREDICATES: readonly string[] = [ROLE_IN_CASE, COORDINATES, "recurring", "team_base", "red_john_smiley"];
+
+/** The language every canon text is authored in; the fallback of every translated field. */
+export const BASE_LANG = "en";
+
+/**
+ * A translation of one text field. `targetId` is the opaque claim / theory id, or, for episodes
+ * (which have no opaque id), `episodeTargetId(epIndex)`. `lang` is a lowercase base language ("es").
+ */
+export interface Translation {
+  targetId: string;
+  field: TranslationField;
+  lang: string;
+  text: string;
+}
+
+export const episodeTargetId = (epIndex: number): string => String(epIndex);
+
 /** Everything needed to populate a database (used by the data pipeline and tests). */
 export interface Dataset {
   episodes: Episode[];
@@ -87,4 +113,6 @@ export interface Dataset {
   claims: Claim[];
   arcItems: ArcItem[];
   theories: Theory[];
+  /** Optional: absent = no translations (English only). */
+  translations?: Translation[];
 }

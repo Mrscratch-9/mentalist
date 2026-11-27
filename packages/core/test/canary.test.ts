@@ -1,7 +1,7 @@
 import fc from "fast-check";
 import { describe, expect, it } from "vitest";
 import {
-  ENTITY_KINDS, KnowledgeEngine, claimId, entityId, loadDataset, progress, theoryId,
+  ENTITY_KINDS, KnowledgeEngine, claimId, entityId, episodeTargetId, inLanguage, loadDataset, progress, theoryId,
   type Dataset, type EntityKind,
 } from "../src/index.ts";
 import { nodeDriver } from "./helpers.ts";
@@ -90,13 +90,34 @@ function canaryDataset(): Dataset {
       sourceUrl: `https://example.invalid/${tok(n)}`, authorHandle: `h_${tok(n)}`, spoilsUpTo: n, tags: [`tag_${tok(n)}`, "shared"],
     });
   }
+  // T1a: Spanish translations of every translatable text; the tokens follow the row they translate.
+  d.translations = [];
+  const trs = d.translations;
+  for (const c of d.claims) {
+    const n = Number(/CANARY_EP_(\d+)/.exec(c.id)![1]);
+    if (c.value !== null && c.predicate !== "coordinates" && c.predicate !== "role_in_case") {
+      trs.push({ targetId: c.id, field: "value", lang: "es", text: `traducido valor ${tok(n)} compartido` });
+    }
+    trs.push({ targetId: c.id, field: "note", lang: "es", text: `traducido nota ${tok(n)} compartida` });
+  }
+  for (const e of d.episodes) {
+    trs.push({ targetId: episodeTargetId(e.epIndex), field: "title", lang: "es", text: `título PUBLIC_EP_${e.epIndex}` });
+    trs.push({ targetId: episodeTargetId(e.epIndex), field: "synopsis", lang: "es", text: `sinopsis PUBLIC_EP_${e.epIndex}` });
+  }
+  for (const t of d.theories) {
+    const n = t.spoilsUpTo;
+    trs.push({ targetId: t.id, field: "title", lang: "es", text: `teoría ${tok(n)}` });
+    trs.push({ targetId: t.id, field: "body", lang: "es", text: `cuerpo ${tok(n)} compartido` });
+  }
   return d;
 }
 
 const data = canaryDataset();
 const db = nodeDriver();
 loadDataset(db, data);
-const engine = new KnowledgeEngine(db);
+const english = new KnowledgeEngine(db);
+const spanish = inLanguage(english, "es");
+let engine = english;
 
 const maxToken = (text: string): number => {
   let m = 0;
@@ -105,7 +126,8 @@ const maxToken = (text: string): number => {
 };
 
 /** Calls every public read query of the engine for p; returns {name, json}. */
-function everything(pn: number): Array<{ name: string; json: string }> {
+function everything(pn: number, eng: KnowledgeEngine = english): Array<{ name: string; json: string }> {
+  engine = eng;
   const p = progress(pn);
   const out: Array<{ name: string; json: string }> = [];
   const rec = (name: string, f: () => unknown) => {
@@ -125,7 +147,7 @@ function everything(pn: number): Array<{ name: string; json: string }> {
   rec("listTheories:shared", () => engine.listTheories(p, "shared"));
   for (const t of data.theories) rec("getTheory", () => engine.getTheory(p, t.id));
   for (const t of data.episodes) rec("getEpisode", () => engine.getEpisode(p, { season: t.season, number: t.number }));
-  for (const q of ["canary", "shared", "name", "alias", "belief truth", "ep", "9", "CANARY_EP_12", "note early"]) {
+  for (const q of ["canary", "shared", "name", "alias", "belief truth", "ep", "9", "CANARY_EP_12", "note early", "traducido", "valor", "nota compartida", "teoría", "cuerpo"]) {
     rec(`search:${q}`, () => engine.search(p, q, 1000));
   }
   for (const e of data.entities) {
@@ -137,6 +159,24 @@ function everything(pn: number): Array<{ name: string; json: string }> {
   for (const c of data.claims) rec("getClaim", () => engine.getClaim(p, c.id));
   return out;
 }
+
+describe("S4 canary, Spanish engine (T1a: translations obey the same gating)", () => {
+  it("the Spanish fixture really returns translated tokens above any p (the test can fail)", () => {
+    const all = everything(N, spanish).filter((r) => /traducido|teoría|cuerpo/.test(r.json));
+    expect(all.length).toBeGreaterThan(5);
+    expect(Math.max(...all.map((r) => maxToken(r.json)))).toBe(N);
+    expect(everything(N, english).some((r) => /traducido/.test(r.json))).toBe(false);
+  });
+
+  it("no public query in es returns a token with n > p, for any p (and peek p+1)", () => {
+    fc.assert(
+      fc.property(fc.integer({ min: 0, max: N + 2 }), (pn) => {
+        expect(everything(pn, spanish).filter((r) => maxToken(r.json) > pn).map((r) => r.name)).toEqual([]);
+      }),
+      { numRuns: 100 },
+    );
+  });
+});
 
 describe("S4 canary (docs/design.md §6)", () => {
   it("the fixture really carries tokens above any p (the test can fail)", () => {
