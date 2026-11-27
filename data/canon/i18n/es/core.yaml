@@ -1,0 +1,229 @@
+translations:
+  - key: c-cbi-name
+    field: value
+    hash: "7450e21425d1"
+    text: "Oficina de Investigación de California (CBI)"
+  - key: c-cbi-description
+    field: value
+    hash: "2f31adc99661"
+    text: "La agencia estatal de investigación en Sacramento que emplea al equipo de Lisbon y consulta a Jane."
+  - key: c-fbi-name
+    field: value
+    hash: "30d25985d219"
+    text: "Buró Federal de Investigaciones (FBI)"
+  - key: c-fbi-description
+    field: value
+    hash: "5195e1f8a4e0"
+    text: "La agencia federal del orden público cuyos agentes a veces trabajan junto con la CBI."
+  - key: c-visualize-description
+    field: value
+    hash: "b9758943634e"
+    text: "Un grupo religioso de tipo sectario dirigido por Bret Stiles."
+  - key: c-blake-name
+    field: value
+    hash: "fec4726b0b87"
+    text: "Asociación Blake"
+  - key: c-blake-description
+    field: value
+    hash: "951cf83907c7"
+    text: "Una organización secreta cuyos miembros Jane ha estado rastreando."
+  - key: c-red-john-description
+    field: value
+    hash: "ef358d310e09"
+    text: "El asesino en serie que mató a la esposa y a la hija de Patrick Jane, y a quien Jane está decidido a encontrar."
+  - key: c-cbi-hq-name
+    field: value
+    hash: "7c524c6f545e"
+    text: "Sede de la CBI, Sacramento"
+  - key: c-fbi-austin-name
+    field: value
+    hash: "6800d4a411b1"
+    text: "Oficina del FBI, Austin"
+  - key: c-o-s6e11-a-name
+    field: value
+    hash: "51299ca36ce3"
+    text: "Administración para el Control de Drogas (DEA)"
+  - key: c-o-s6e11-a-description
+    field: value
+    hash: "7bf06fc7780f"
+    text: "La agencia federal que combate el narcotráfico y con cuyos agentes trabaja el equipo del FBI."
+  - key: c-o-s7e2-a-name
+    field: value
+    hash: "8a0ecbd308bb"
+    text: "Agencia Central de Inteligencia (CIA)"
+  - key: c-o-s7e2-a-description
+    field: value
+    hash: "0b1e817f41e5"
+    text: "La agencia de inteligencia que colabora con el equipo del FBI para rastrear una red más grande."
+  - key: c-p-patrick-jane-role
+    field: value
+    hash: "5673399b8aae"
+    text: "Consultor de la CBI"
+  - key: c-p-teresa-lisbon-role
+    field: value
+    hash: "6f387c0f0fe7"
+    text: "Agente superior de la CBI"
+  - key: c-p-kimball-cho-role
+    field: value
+    hash: "ec1ad798ca32"
+    text: "Agente especial de la CBI"
+  - key: c-p-wayne-rigsby-role
+    field: value
+    hash: "ec1ad798ca32"
+    text: "Agente especial de la CBI"
+  - key: c-p-grace-van-pelt-role
+    field: value
+    hash: "ec1ad798ca32"
+    text: "Agente especial de la CBI"
+  - key: c-p-virgil-minelli-role
+    field: value
+    hash: "3241171b4b11"
+    text: "Director de la CBI"
+  - key: c-p-kristina-frye-role
+    field: value
+    hash: "2c73e325cb1f"
+    text: "Psíquica"
+  - key: c-p-sam-bosco-role
+    field: value
+    hash: "6f387c0f0fe7"
+    text: "Agente superior de la CBI"
+  - key: c-p-rebecca-anderson-role
+    field: value
+    hash: "22aa3caf7c4d"
+    text: "Asistente de la CBI"
+  - key: c-p-brenda-shettrick-role
+    field: value
+    hash: "b4158e2ed9ea"
+    text: "Jefa de Relaciones con los Medios de la CBI"
+  - key: c-p-walter-mashburn-role
+    field: value
+    hash: "cc33a21aaa1d"
+    text: "Empresario multimillonario"
+  - key: c-p-madeleine-hightower-role
+    field: value
+    hash: "4e5a710dde8e"
+    text: "Agente supervisora de la CBI"
+  - key: c-p-bret-stiles-role
+    field: value
+    hash: "b321a738b73b"
+    text: "Líder de Visualize"
+  - key: c-p-gale-bertram-role
+    field: value
+    hash: "3241171b4b11"
+    text: "Director de la CBI"
+  - key: c-p-craig-o-laughlin-role
+    field: value
+    hash: "d5e62fd0c69c"
+    text: "Agente especial del FBI"
+  - key: c-p-j-j-laroche-role
+    field: value
+    hash: "09c01fc19cf8"
+    text: "Investigador de la Unidad de Normas Profesionales de la CBI"
+  - key: c-p-erica-flynn-role
+    field: value
+    hash: "d200e8061de3"
+    text: "Empleada de una agencia de matrimonios"
+  - key: c-p-sarah-harrigan-role
+    field: value
+    hash: "449eff838737"
+    text: "Defensora pública"
+  - key: c-p-osvaldo-ardiles-role
+    field: value
+    hash: "1e38a32e7dbb"
+    text: "Fiscal de distrito adjunto"
+  - key: c-p-luther-wainwright-role
+    field: value
+    hash: "4e5a710dde8e"
+    text: "Agente supervisor de la CBI"
+  - key: c-p-ray-haffner-role
+    field: value
+    hash: "53a737c4c816"
+    text: "Agente de la CBI"
+  - key: c-p-susan-darcy-role
+    field: value
+    hash: "971caa783c8e"
+    text: "Agente del FBI"
+  - key: c-p-lorelei-martins-role
+    field: value
+    hash: "398841532f84"
+    text: "Mesera de coctelería"
+  - key: c-p-jason-cooper-role
+    field: value
+    hash: "5d83d6f81f66"
+    text: "Ejecutivo de Visualize"
+  - key: c-p-reede-smith-role
+    field: value
+    hash: "d5e62fd0c69c"
+    text: "Agente especial del FBI"
+  - key: c-p-gabe-mancini-role
+    field: value
+    hash: "d5e62fd0c69c"
+    text: "Agente especial del FBI"
+  - key: c-p-tommy-volker-role
+    field: value
+    hash: "5e7461474e87"
+    text: "Empresario"
+  - key: c-p-dennis-abbott-role
+    field: value
+    hash: "09623d9764fe"
+    text: "Agente especial supervisor del FBI"
+  - key: c-p-jason-wylie-role
+    field: value
+    hash: "23201ddcc11b"
+    text: "Analista de TI del FBI"
+  - key: c-p-kim-fischer-role
+    field: value
+    hash: "8d5339326110"
+    text: "Agente especial superior del FBI"
+  - key: c-p-marcus-pike-role
+    field: value
+    hash: "e1193dce0aeb"
+    text: "Agente de la división de arte del FBI"
+  - key: c-p-ken-spackman-role
+    field: value
+    hash: "d5e62fd0c69c"
+    text: "Agente especial del FBI"
+  - key: c-p-michelle-vega-role
+    field: value
+    hash: "d5e62fd0c69c"
+    text: "Agente especial del FBI"
+  - key: c-p-danitra-cass-role
+    field: value
+    hash: "ecf95a2f15f7"
+    text: "Agente de la CIA"
+  - key: c-p-lena-abbott-role
+    field: value
+    hash: "890a522e63fa"
+    text: "Esposa de Dennis Abbott"
+  - key: c-p-bill-peterson-role
+    field: value
+    hash: "539b46853d60"
+    text: "Líder del grupo de trabajo de la DEA"
+  - key: c-p-kim-fischer-role-2
+    field: value
+    hash: "0880a05f66da"
+    text: "Agente especial superior del FBI, transferida a Seattle"
+  - key: c-p-wayne-rigsby-role-2
+    field: value
+    hash: "e314239d25dc"
+    text: "Copropietario de una empresa de seguridad digital"
+  - key: c-p-grace-van-pelt-role-2
+    field: value
+    hash: "e314239d25dc"
+    text: "Copropietaria de una empresa de seguridad digital"
+  - key: c-p-lena-abbott-role-2
+    field: value
+    hash: "e79040f31e17"
+    text: "Subsecretaria de Comercio (confirmada)"
+  - key: c-p-bill-peterson-role-2
+    field: value
+    hash: "9421b8678e6f"
+    text: "Ex agente de la DEA, arrestado"
+  - key: c-p-dennis-abbott-role-2
+    field: value
+    hash: "f3e27402e8cb"
+    text: "Agente especial supervisor del FBI, que se muda a Washington"
+  - key: c-p-kimball-cho-role-2
+    field: value
+    hash: "4aefb77f0b8d"
+    text: "Agente especial del FBI, que toma el mando del equipo"

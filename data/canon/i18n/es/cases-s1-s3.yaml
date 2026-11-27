@@ -1,0 +1,622 @@
+# Spanish (es-MX) translations: cases S1-S3 (names and descriptions).
+translations:
+  - key: cl-s1e1-name
+    field: value
+    hash: 3734cb40a167
+    text: "Los asesinatos del piloto"
+  - key: cl-s1e1-desc
+    field: value
+    hash: bb7a8139f4de
+    text: "Jane expone la culpa detrás del asesinato de una adolescente y luego el equipo enfrenta un doble homicidio con una carita sonriente al estilo de Red John, que Jane juzga obra de un imitador."
+  - key: cl-s1e2-name
+    field: value
+    hash: f0371777fcc3
+    text: "El asesinato en el viñedo"
+  - key: cl-s1e2-desc
+    field: value
+    hash: 80f4d08ff4db
+    text: "El cuerpo de una chica de 18 años aparece en un viñedo del condado de Napa y el equipo busca a un depredador que usa cinta adhesiva plateada contra mujeres pelirrojas."
+  - key: cl-s1e2-vineyard-name
+    field: value
+    hash: c1f1f6137262
+    text: "Viñedos del condado de Napa"
+  - key: cl-s1e3-name
+    field: value
+    hash: 60dbf36f65ba
+    text: "El asesinato del surfista"
+  - key: cl-s1e3-desc
+    field: value
+    hash: 4c25ef58b525
+    text: "El cuerpo de una estudiante de preparatoria aparece en una playa estatal y esa misma noche un guardia de seguridad es hallado oculto en cemento."
+  - key: cl-s1e4-name
+    field: value
+    hash: a32881dc22fb
+    text: "El cuarto seguro del banquero de inversiones"
+  - key: cl-s1e4-desc
+    field: value
+    hash: 754381b10de8
+    text: "Un rico banquero de inversiones es hallado torturado dentro de su cuarto seguro oculto, y más tarde su hija es secuestrada por su fortuna escondida."
+  - key: cl-s1e5-name
+    field: value
+    hash: 85cefb9eef17
+    text: "El asesinato del pueblo maderero"
+  - key: cl-s1e5-desc
+    field: value
+    hash: b883fd70ec75
+    text: "Un auto manchado de sangre lleva a la puñalada de una de dos chicas desaparecidas, mientras la otra aparece con el arma y sin recuerdo de lo ocurrido."
+  - key: cl-s1e6-name
+    field: value
+    hash: 123934eab379
+    text: "La mano cercenada del casino"
+  - key: cl-s1e6-desc
+    field: value
+    hash: 76583a997abc
+    text: "El gerente de operaciones de un casino resort es asesinado y su mano derecha aparece en la frontera entre California y Nevada."
+  - key: cl-s1e6-casino-name
+    field: value
+    hash: ae2005030246
+    text: "Casino resort en la frontera entre California y Nevada"
+  - key: cl-s1e7-name
+    field: value
+    hash: b6204e41cab6
+    text: "La predicción de la psíquica"
+  - key: cl-s1e7-desc
+    field: value
+    hash: 0ad8e1272afe
+    text: "Una rica heredera muere atropellada, con el conductor dándose a la fuga, momentos después de que su psíquica predijera su muerte."
+  - key: cl-s1e8-name
+    field: value
+    hash: a62bf2095d99
+    text: "El tiroteo en el motel"
+  - key: cl-s1e8-desc
+    field: value
+    hash: 50539b450532
+    text: "Un testigo del Estado en un caso de narcóticos y su novia son hallados muertos a tiros en la habitación de un motel."
+  - key: cl-s1e9-name
+    field: value
+    hash: 1bfb6bd5fff1
+    text: "Los veteranos del incendio"
+  - key: cl-s1e9-desc
+    field: value
+    hash: d9af7b8b16b9
+    text: "Un veterano de la Guardia Nacional muere en un incendio provocado, y resulta que su unidad ha sido eliminada por fuego uno a uno."
+  - key: cl-s1e10-name
+    field: value
+    hash: 8257cda6398c
+    text: "El envenenamiento en la universidad"
+  - key: cl-s1e10-desc
+    field: value
+    hash: 999c5dd35ee7
+    text: "Un destacado investigador de la Universidad Leyland es envenenado y la principal sospechosa es su exesposa, antigua psiquiatra de Jane."
+  - key: cl-s1e11-name
+    field: value
+    hash: 9aa4ce53d61d
+    text: "El recluso con una pista de Red John"
+  - key: cl-s1e11-desc
+    field: value
+    hash: 46e63bc1df9f
+    text: "Un caso de Red John: un recluso ofrece a Jane información sobre Red John a cambio de que pruebe su inocencia en un asesinato."
+  - key: cl-s1e12-name
+    field: value
+    hash: ca6c323eec9d
+    text: "El hechizo de la bruja"
+  - key: cl-s1e12-desc
+    field: value
+    hash: 232ff94ecfdc
+    text: "Una estrella del futbol americano de preparatoria aparece muerta junto a un pentáculo y velas encendidas, y una autoproclamada bruja confiesa haber lanzado un hechizo de muerte."
+  - key: cl-s1e13-name
+    field: value
+    hash: 2fe94c22cd2c
+    text: "La pintura robada"
+  - key: cl-s1e13-desc
+    field: value
+    hash: 75579a2a77e2
+    text: "Una pintura de cincuenta millones de dólares es robada de la oficina de un magnate petrolero y su yerno aparece muerto cerca."
+  - key: cl-s1e14-name
+    field: value
+    hash: 50e06e8ff520
+    text: "La amante del seductor"
+  - key: cl-s1e14-desc
+    field: value
+    hash: ea257cf6af0c
+    text: "La esposa de un millonario recibe un disparo tras una cita con un seductor local que tiene muchas exnovias despechadas."
+  - key: cl-s1e15-name
+    field: value
+    hash: 73af6e8f8aff
+    text: "El envenenamiento en el club campestre"
+  - key: cl-s1e15-desc
+    field: value
+    hash: c33cb3a0e8b9
+    text: "La reina de un club campestre es envenenada con raticida en una fiesta de cócteles en su propia casa."
+  - key: cl-s1e16-name
+    field: value
+    hash: 0045b440a212
+    text: "La amenaza de bomba"
+  - key: cl-s1e16-desc
+    field: value
+    hash: 6f6401f6d41e
+    text: "Una amenaza de bomba enviada a Jane resulta ser el asesinato real de un corredor de bolsa, y la explosión deja a Jane ciego temporalmente."
+  - key: cl-s1e17-name
+    field: value
+    hash: 66776820d3e7
+    text: "Los asesinatos del retiro corporativo"
+  - key: cl-s1e17-desc
+    field: value
+    hash: 825ba1ad0deb
+    text: "Una campaña anónima contra una corporación amenaza con un asesinato a una hora y en un lugar determinados, lo que desemboca en crímenes en un retiro corporativo."
+  - key: cl-s1e17-retreat-name
+    field: value
+    hash: dff2b93b603c
+    text: "Retiro corporativo en las faldas de la Sierra Nevada"
+  - key: cl-s1e18-name
+    field: value
+    hash: 064e2def4dae
+    text: "Los asesinatos del hipnotista"
+  - key: cl-s1e18-desc
+    field: value
+    hash: f5e8dc88ab6a
+    text: "Un hombre entrega un cadáver a la policía creyendo que es un costal de papas, lo que apunta a una mente maestra que hipnotiza a la gente para que mate."
+  - key: cl-s1e19-name
+    field: value
+    hash: fd472e35263f
+    text: "El asesinato del productor de Hollywood"
+  - key: cl-s1e19-desc
+    field: value
+    hash: 18879af03cbe
+    text: "El equipo viaja a Hollywood para investigar el asesinato de un productor de cine."
+  - key: cl-s1e20-name
+    field: value
+    hash: d9ee8aa24b1b
+    text: "El informante junto al río"
+  - key: cl-s1e20-desc
+    field: value
+    hash: 965dfd9393d6
+    text: "Un miembro de la mafia convertido en informante, que vive bajo protección de testigos, es hallado muerto a tiros junto a un río."
+  - key: cl-s1e21-name
+    field: value
+    hash: 79a54d994baf
+    text: "El asesinato del ancla del yate"
+  - key: cl-s1e21-desc
+    field: value
+    hash: 3af81d2e9600
+    text: "El director general de una empresa de software desaparece de un puerto exclusivo y es hallado muerto, atado al ancla de su yate."
+  - key: cl-s1e22-name
+    field: value
+    hash: 477296a81390
+    text: "La muerte en el programa de supervivencia"
+  - key: cl-s1e22-desc
+    field: value
+    hash: 0e20c04e0ab5
+    text: "Un estudiante muere en un programa de supervivencia para jóvenes problemáticos, relacionado con un grupo secreto de estudiantes y la leyenda de un hombre del hacha."
+  - key: cl-s1e22-brightarch-name
+    field: value
+    hash: 9fac2a70e968
+    text: "Programa de supervivencia Bright Arch"
+  - key: cl-s1e23-name
+    field: value
+    hash: 19baea32e672
+    text: "La carita sonriente en el cielo"
+  - key: cl-s1e23-desc
+    field: value
+    hash: 754c996d6e2b
+    text: "Un caso de Red John: una mujer es hallada muerta en terreno estatal, la carita sonriente de Red John aparece escrita en el cielo con humo y Jane es arrastrado a una trampa."
+  - key: cl-s1e23-stateland-name
+    field: value
+    hash: 42c5ab2800b9
+    text: "Terreno estatal donde se halló el cuerpo"
+  - key: k-s2e1-name
+    field: value
+    hash: 5adcdadfafa8
+    text: "La mujer en la pobreza"
+  - key: k-s2e1-desc
+    field: value
+    hash: e11e0597f723
+    text: "El último caso declarado de Jane: una mujer es hallada asfixiada tras ser acusada de robar una fortuna, aunque vivía en la pobreza."
+  - key: k-s2e2-name
+    field: value
+    hash: 41728a90dc0f
+    text: "La asistente de la senadora"
+  - key: k-s2e2-desc
+    field: value
+    hash: 8bc162ec2209
+    text: "El asesinato de la joven asistente de una senadora estatal, de quien se rumoraba que tenía una relación con el esposo de la senadora, con Jane corriendo para resolverlo en un día."
+  - key: k-s2e3-name
+    field: value
+    hash: 4ab8859f184d
+    text: "La agente incriminada"
+  - key: k-s2e3-desc
+    field: value
+    hash: cae9a25068a3
+    text: "Un pederasta condenado es hallado asesinado con las huellas de Lisbon en el arma y un vacío en su memoria, lo que la convierte en la principal sospechosa."
+  - key: k-s2e4-name
+    field: value
+    hash: a7847a9efa52
+    text: "El abogado de los motociclistas"
+  - key: k-s2e4-desc
+    field: value
+    hash: 77d94b0ec6fc
+    text: "El asesinato en la carretera de un abogado cuyo único cliente era una notoria pandilla de motociclistas, con sospechosos entre la pandilla y su familia."
+  - key: k-s2e5-name
+    field: value
+    hash: b25b46c285aa
+    text: "La mansión embrujada"
+  - key: k-s2e5-desc
+    field: value
+    hash: 3638bc9bb53b
+    text: "El nuevo dueño de una vieja mansión es hallado asesinado ahí, y los testigos culpan al fantasma de su antiguo dueño."
+  - key: k-s2e5-nephew-name
+    field: value
+    hash: 5cdc2e654f13
+    text: "El sobrino del antiguo dueño"
+  - key: k-s2e6-name
+    field: value
+    hash: 557ea1e3dc05
+    text: "El asesinato en el sitio petrolero"
+  - key: k-s2e6-desc
+    field: value
+    hash: 171c6feb5324
+    text: "Un joven es asesinado por saber que un sitio planeado para perforación petrolera albergaba una especie protegida, mientras Jane trabaja el caso desde la cárcel."
+  - key: k-s2e7-name
+    field: value
+    hash: 44efb0ad21b3
+    text: "La hermana secuestrada"
+  - key: k-s2e7-desc
+    field: value
+    hash: 1796b7b5dd7e
+    text: "El equipo de Bosco y la unidad de Lisbon unen fuerzas en el secuestro de la hermana de una mujer adinerada, y Jane descubre que alguien de adentro ayudó a los secuestradores."
+  - key: k-s2e7-nanny-name
+    field: value
+    hash: 5265fb259931
+    text: "La niñera"
+  - key: k-s2e8-name
+    field: value
+    hash: a9c68c602346
+    text: "El tiroteo en la sede"
+  - key: k-s2e8-desc
+    field: value
+    hash: 3e634c6e8e95
+    text: "Un tiroteo mortal en la sede del CBI mata a miembros del equipo de Bosco, y es un caso de Red John, pues él está detrás de los ataques y asesinó a uno de los agentes."
+  - key: k-s2e8-workplace-name
+    field: value
+    hash: 7116c5f50f72
+    text: "Lugar de trabajo del tercer agente"
+  - key: k-s2e9-name
+    field: value
+    hash: 1209520d646a
+    text: "El tiroteo del joyero"
+  - key: k-s2e9-desc
+    field: value
+    hash: c24dad85bd77
+    text: "Un rico joyero recibe un disparo durante un robo en su tienda, y la pista lleva a un abrecajas y a un sobrino de la esposa del dueño."
+  - key: k-s2e10-name
+    field: value
+    hash: c71381c9bb99
+    text: "El fundador de la academia de beisbol"
+  - key: k-s2e10-desc
+    field: value
+    hash: 81a6731b733d
+    text: "Un exjugador profesional de beisbol es hallado muerto en su jardín zen, y su academia de exploración de talentos esconde el motivo."
+  - key: k-s2e10-father-name
+    field: value
+    hash: 0da206146a3b
+    text: "El padre de un jugador"
+  - key: k-s2e10-garden-name
+    field: value
+    hash: dc668bfda1bd
+    text: "Jardín zen de Sloop"
+  - key: k-s2e11-name
+    field: value
+    hash: 614d186fa8f4
+    text: "Los asesinatos de la reunión de generación"
+  - key: k-s2e11-desc
+    field: value
+    hash: 416396e9be6d
+    text: "Una pareja es asesinada camino a la reunión de preparatoria de él, y una vieja broma vincula el crimen con el grupo."
+  - key: k-s2e12-name
+    field: value
+    hash: 53c8cefb3a3f
+    text: "La asistente enterrada"
+  - key: k-s2e12-desc
+    field: value
+    hash: ba6b0f9dca20
+    text: "La asistente de un alcalde es hallada enterrada en el arranque de una obra de urbanización, y el caso involucra a ecoterroristas y a una reportera."
+  - key: k-s2e12-site-name
+    field: value
+    hash: 65cb50e27ed7
+    text: "Obra de urbanización Granton"
+  - key: k-s2e13-name
+    field: value
+    hash: 1efddf5acaa3
+    text: "El asesinato en la agencia de autos"
+  - key: k-s2e13-desc
+    field: value
+    hash: 31a241c18a95
+    text: "Una joven vendedora es hallada muerta en la cajuela de un auto de lujo en una agencia de autos elitista."
+  - key: k-s2e14-name
+    field: value
+    hash: 0838e4c75cc9
+    text: "El amigo de la pandilla"
+  - key: k-s2e14-desc
+    field: value
+    hash: 973ce9990490
+    text: "Cho ayuda a investigar el asesinato de un antiguo amigo de su vieja pandilla callejera, con Jane acompañándolo."
+  - key: k-s2e15-name
+    field: value
+    hash: 738c4beb3e4f
+    text: "El chef envenenado"
+  - key: k-s2e15-desc
+    field: value
+    hash: 4280f308f6c1
+    text: "Un destacado chef es envenenado en plena competencia de cocina."
+  - key: k-s2e15-competition-name
+    field: value
+    hash: 7491e45b2cd4
+    text: "Competencia de cocina del Valle de Napa"
+  - key: k-s2e16-name
+    field: value
+    hash: a3b1d888030d
+    text: "El laboratorio de virus"
+  - key: k-s2e16-desc
+    field: value
+    hash: 3b4732206f2c
+    text: "Una investigadora del gobierno expuesta a un virus mortal recurre al CBI para descubrir quién la saboteó antes de morir."
+  - key: k-s2e16-lab-name
+    field: value
+    hash: b11b20688274
+    text: "Instalación de investigación de virus"
+  - key: k-s2e17-name
+    field: value
+    hash: 8ea5e255e999
+    text: "La caja roja"
+  - key: k-s2e17-desc
+    field: value
+    hash: b91daa57d496
+    text: "El asesinato de un tutor se convierte en la búsqueda de un anillo de valor incalculable robado de un famoso museo."
+  - key: k-s2e18-name
+    field: value
+    hash: 0f3e7e528c49
+    text: "La sobreviviente amnésica"
+  - key: k-s2e18-desc
+    field: value
+    hash: 299b4caac0d1
+    text: "Una mujer ensangrentada y con amnesia tropieza frente al auto del equipo, y tres cuerpos aparecen en un granero cercano."
+  - key: k-s2e19-name
+    field: value
+    hash: 235b8ae5e99f
+    text: "El asesino de la fiscal"
+  - key: k-s2e19-desc
+    field: value
+    hash: be0cdfb40c5e
+    text: "Un subfiscal de distrito es asesinado en su casa, y el CBI persigue a un sicario a sueldo cuya identidad no se puede demostrar."
+  - key: k-s2e20-name
+    field: value
+    hash: 8defc9c95e18
+    text: "El magnate de los medios"
+  - key: k-s2e20-desc
+    field: value
+    hash: c16873e5e01a
+    text: "Un magnate de los medios es asesinado, y la pista lleva a un grupo de tipo secta con rencor contra su empresa."
+  - key: k-s2e21-name
+    field: value
+    hash: 882939aa6970
+    text: "El asesino payaso"
+  - key: k-s2e21-desc
+    field: value
+    hash: 6f30d214bf5c
+    text: "Un hombre recibe un disparo de un pistolero disfrazado de payaso que le corta un dedo, y está en juego un dispositivo secreto."
+  - key: k-s2e22-name
+    field: value
+    hash: 774ab9bf610d
+    text: "La organizadora benéfica"
+  - key: k-s2e22-desc
+    field: value
+    hash: a69945dea286
+    text: "El asesinato de la directora de una organización benéfica contra la trata de personas reúne a Jane con una autodenominada psíquica."
+  - key: k-s2e23-name
+    field: value
+    hash: a460015091f8
+    text: "La película snuff imitadora"
+  - key: k-s2e23-desc
+    field: value
+    hash: d196b74d2d0e
+    text: "Un imitador de Red John publica en línea un video del asesinato de una estudiante, y el contacto de una psíquica con el verdadero Red John tiene graves consecuencias."
+  - key: k-s2e23-victim-name
+    field: value
+    hash: 5b99e6c70c7c
+    text: "Una estudiante sin nombre"
+  - key: c-s3e1-name
+    field: value
+    hash: 394f3461146c
+    text: "Secuestro de un cabildero y asesinato de un chofer"
+  - key: c-s3e1-description
+    field: value
+    hash: dad7bf4e19f2
+    text: "El equipo investiga el secuestro de un cabildero y el asesinato de su chofer mientras Jane duda de su futuro en el CBI."
+  - key: c-s3e2-name
+    field: value
+    hash: a7dec547b7e6
+    text: "El fraude del cuñado"
+  - key: c-s3e2-description
+    field: value
+    hash: cff35e1bb515
+    text: "El cuñado de Jane regresa y se convierte en el aparente asesino de un empresario al que estaba estafando."
+  - key: c-s3e3-name
+    field: value
+    hash: df2abe3fa84c
+    text: "Muerte en Visualize"
+  - key: c-s3e3-description
+    field: value
+    hash: c772946d415d
+    text: "Una joven vinculada a Visualize es hallada muerta, lo que mete al CBI y al FBI en los asuntos del grupo."
+  - key: c-s3e4-name
+    field: value
+    hash: b97e58d375de
+    text: "Hombre en libertad condicional asesinado tras ser liberado por ADN"
+  - key: c-s3e4-description
+    field: value
+    hash: 30a795984bc5
+    text: "Un convicto liberado por evidencia de ADN es asesinado, y dos hombres se atribuyen cada uno un golpe contra él."
+  - key: c-s3e5-name
+    field: value
+    hash: 981b48f9b5da
+    text: "Asesinato de un jinete en el hipódromo"
+  - key: c-s3e5-description
+    field: value
+    hash: 8a95f82da751
+    text: "Un jinete muy conocido es asesinado y la pista lleva a un hipódromo."
+  - key: c-s3e6-name
+    field: value
+    hash: 41f51b9d1382
+    text: "La hija desaparecida de una jueza"
+  - key: c-s3e6-description
+    field: value
+    hash: d3c67876236b
+    text: "La hija de una jueza federal desaparece y su novio es hallado muerto dentro del complejo familiar vigilado."
+  - key: c-s3e7-name
+    field: value
+    hash: 9b89c88124fe
+    text: "Amenaza y explosión"
+  - key: c-s3e7-description
+    field: value
+    hash: da7188347b7f
+    text: "Un edificio explota durante la investigación de una amenaza de muerte contra un empresario, y un multimillonario se vuelve sospechoso."
+  - key: c-s3e8-name
+    field: value
+    hash: c82c58734c17
+    text: "El secuestro de Jane"
+  - key: c-s3e8-description
+    field: value
+    hash: f6b681a6c950
+    text: "Jane es secuestrado en un puesto de fruta por una mujer empeñada en vengarse y es retenido en el sótano de una cabaña."
+  - key: c-s3e9-name
+    field: value
+    hash: 1a1fbb2ce4d3
+    text: "Asesinatos de policías en luna llena"
+  - key: c-s3e9-description
+    field: value
+    hash: d688ce6e3f21
+    text: "Una serie de asesinatos de policías y de la prometida de un paramédico lleva al equipo a un astrólogo y luego al propio paramédico."
+  - key: c-s3e10-name
+    field: value
+    hash: 4c378ac4defe
+    text: "El Santa asesinado"
+  - key: c-s3e10-description
+    field: value
+    hash: c921d8b50309
+    text: "Un Santa Claus es asesinado, lo que lleva al CBI a un grupo de Alcohólicos Anónimos y a una sociedad de Santas auténticos."
+  - key: c-s3e11-name
+    field: value
+    hash: 0ae20a447199
+    text: "Asesinato en la pelea en jaula"
+  - key: c-s3e11-description
+    field: value
+    hash: 4bda41ac310f
+    text: "Un periodista es asesinado debajo de las gradas durante una pelea profesional de artes marciales."
+  - key: c-s3e12-name
+    field: value
+    hash: 633f5fbc7759
+    text: "El perfil del Troglodita"
+  - key: c-s3e12-description
+    field: value
+    hash: c3503db15314
+    text: "Un perfilador criminal ayuda con un doble asesinato que parece obra de un asesino en serie."
+  - key: c-s3e13-name
+    field: value
+    hash: 72f46a9d75c5
+    text: "Crisis de rehenes en el Ayuntamiento"
+  - key: c-s3e13-description
+    field: value
+    hash: 596d984df257
+    text: "Un documentalista es hallado muerto, y un sospechoso toma rehenes en el Ayuntamiento."
+  - key: l-s3e13-cityhall-name
+    field: value
+    hash: 832b98f35603
+    text: "Ayuntamiento"
+  - key: c-s3e14-name
+    field: value
+    hash: 5c11cda41025
+    text: "El testigo que fue asesinado"
+  - key: c-s3e14-description
+    field: value
+    hash: 0c5f92839988
+    text: "Un testigo clave contra un capo de la droga es asesinado mientras Van Pelt queda inconsciente al custodiarlo."
+  - key: c-s3e15-name
+    field: value
+    hash: 84e69b31a547
+    text: "El asesinato del buscador de oro"
+  - key: c-s3e15-description
+    field: value
+    hash: 0758ad4a1fed
+    text: "Un buscador de oro de la época moderna es asesinado y Lisbon resulta herida, así que Hightower trabaja en campo con Jane."
+  - key: c-s3e16-name
+    field: value
+    hash: 16bdd89aae30
+    text: "Profesor apuñalado"
+  - key: c-s3e16-description
+    field: value
+    hash: 6d9e52d9c1d7
+    text: "Un profesor universitario de arte antiguo es apuñalado, y la evidencia en la escena podría implicar a Hightower."
+  - key: c-s3e17-name
+    field: value
+    hash: b6617a969708
+    text: "Asesinato con placa de radiación"
+  - key: c-s3e17-description
+    field: value
+    hash: 8e9cc0437bde
+    text: "Un administrador de hospital es hallado asesinado en un campo de práctica de golf con una placa de radiación que marca por encima del límite seguro."
+  - key: c-s3e18-name
+    field: value
+    hash: 3ee58047198c
+    text: "Cuerpo robado"
+  - key: c-s3e18-description
+    field: value
+    hash: 83012a87b581
+    text: "Un cuerpo es robado de camino a la morgue y Jane incorpora al caso a un forense con una enfermedad terminal."
+  - key: c-s3e19-name
+    field: value
+    hash: aa1917d3fdb1
+    text: "Asesinato de la directora de una agencia de citas"
+  - key: c-s3e19-description
+    field: value
+    hash: fc0ced6b2727
+    text: "La directora general de una empresa de citas es hallada asesinada en San Francisco y Jane está convencido de que su viuda lo hizo."
+  - key: c-s3e20-name
+    field: value
+    hash: 20c65a7840f2
+    text: "Asesinato en el taller de reparaciones"
+  - key: c-s3e20-description
+    field: value
+    hash: be8d6725329b
+    text: "El dueño de un taller de reparación de electrónicos es hallado asesinado y varias personas quieren el dinero que escondió."
+  - key: c-s3e21-name
+    field: value
+    hash: 1c2bcc9e7eea
+    text: "Oficial de custodia apuñalado"
+  - key: c-s3e21-description
+    field: value
+    hash: c37da2d47356
+    text: "Un oficial de custodia es apuñalado a muerte cerca de una joyería en un pequeño pueblo de California, con un cuchillo improvisado de prisión como arma."
+  - key: c-s3e22-name
+    field: value
+    hash: e5302c414069
+    text: "Violinista baleada en una parada de autobús"
+  - key: c-s3e22-description
+    field: value
+    hash: e314c92ad0fb
+    text: "La primera violinista de una orquesta sinfónica es asesinada a tiros en una parada de autobús, con un pétalo de hortensia dejado en la escena."
+  - key: c-s3e23-name
+    field: value
+    hash: 4753daa921a2
+    text: "Chaleco bomba"
+  - key: c-s3e23-description
+    field: value
+    hash: 5f23cf60c13e
+    text: "Un hombre con un chaleco suicida muere en una gasolinera, y el caso arrastra a Jane y Lisbon a una trama ligada a Hightower."
+  - key: c-s3e24-name
+    field: value
+    hash: 69fae7ae31de
+    text: "La caza del topo"
+  - key: c-s3e24-description
+    field: value
+    hash: 17c1dc2a8c27
+    text: "Jane busca al topo de Red John en el CBI entre una lista de sospechosos mientras Hightower es perseguida."

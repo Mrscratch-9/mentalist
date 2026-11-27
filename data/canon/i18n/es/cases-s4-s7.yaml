@@ -1,0 +1,709 @@
+translations:
+  - key: c-s4e1-name
+    field: value
+    hash: "45a5389429f2"
+    text: "El juicio de Jane y una cautiva oculta"
+  - key: l-s4e1-carter-home-name
+    field: value
+    hash: "f4bc44a196d1"
+    text: "La casa de los Carter"
+  - key: c-s4e2-name
+    field: value
+    hash: "20bc44a54212"
+    text: "Instructor de gimnasio muerto a golpes con un objeto pesado"
+  - key: l-s4e2-gym-name
+    field: value
+    hash: "f17d86b2df9a"
+    text: "El gimnasio de Kuzmenko"
+  - key: c-s4e3-name
+    field: value
+    hash: "3e61001f6aeb"
+    text: "Niño secuestrado y un falso psíquico"
+  - key: c-s4e4-name
+    field: value
+    hash: "9f0548ca4e40"
+    text: "Fotógrafo muerto y un desconocido armado"
+  - key: c-s4e5-name
+    field: value
+    hash: "13c9f85969cd"
+    text: "Asesinato en una isla de una adolescente de acogida"
+  - key: c-s4e6-name
+    field: value
+    hash: "1aec0a85b79c"
+    text: "Jefe de policía baleado en el bosque"
+  - key: l-s4e7-panzer-scene-name
+    field: value
+    hash: "49e76f18a511"
+    text: "La escena del asesinato de Panzer"
+  - key: c-s4e7-name
+    field: value
+    hash: "46986574db7a"
+    text: "Asesino en serie de adolescentes"
+  - key: c-s4e8-name
+    field: value
+    hash: "13ec2d9fc906"
+    text: "Oficial encubierto baleado dos veces"
+  - key: c-s4e9-name
+    field: value
+    hash: "9c77c55d592f"
+    text: "Coche bomba contra un mariscal de campo"
+  - key: c-s4e10-name
+    field: value
+    hash: "f70f5d27df13"
+    text: "Asesinato de un bombero y la pérdida de memoria de Jane"
+  - key: c-s4e11-name
+    field: value
+    hash: "9b7a292b1687"
+    text: "Abogado volado en pedazos en su barco"
+  - key: c-s4e12-name
+    field: value
+    hash: "f6355b7dce1e"
+    text: "Heredero de la mafia baleado en un jacuzzi"
+  - key: l-s4e12-porchetto-home-name
+    field: value
+    hash: "cf1df1abd34b"
+    text: "La casa de Porchetto"
+  - key: c-s4e13-name
+    field: value
+    hash: "c39e2cac47a2"
+    text: "Diseñador apuñalado con una pluma dorada"
+  - key: l-s4e13-loft-name
+    field: value
+    hash: "4e1205ca92cd"
+    text: "El loft de Theissens"
+  - key: c-s4e14-name
+    field: value
+    hash: "5d39a9f3b5e9"
+    text: "Dueña de un viñedo juzgada por asesinato"
+  - key: c-s4e15-name
+    field: value
+    hash: "fa378694fc77"
+    text: "Consejera asesinada rumbo a una cita secreta"
+  - key: c-s4e16-name
+    field: value
+    hash: "3c23d1bda7af"
+    text: "Activista contra las sectas hallado muerto"
+  - key: c-s4e17-name
+    field: value
+    hash: "c2dd1014af78"
+    text: "Asesinato en un chat y la desaparición de una esposa"
+  - key: c-s4e18-name
+    field: value
+    hash: "00c2d4670ad6"
+    text: "Cuerpo de un paciente con cáncer desenterrado por tigres"
+  - key: c-s4e19-name
+    field: value
+    hash: "dd80a6d5e0eb"
+    text: "Empleado de casino baleado cerca de su coche"
+  - key: c-s4e20-name
+    field: value
+    hash: "5f8020949fbd"
+    text: "Maestro hallado muerto en el campo de béisbol"
+  - key: l-s4e20-field-name
+    field: value
+    hash: "a261235ec8db"
+    text: "El campo de béisbol de la escuela"
+  - key: c-s4e21-name
+    field: value
+    hash: "0763738a16ea"
+    text: "Coche en llamas y una compañía de cabaret drag"
+  - key: c-s4e22-name
+    field: value
+    hash: "39c6914c79f1"
+    text: "Asesinato de un surfista"
+  - key: c-s4e23-name
+    field: value
+    hash: "0b45869e2267"
+    text: "Hombre abandonado a morir en una caja cerrada"
+  - key: c-s4e24-name
+    field: value
+    hash: "c02f8ef7270f"
+    text: "Jane en Las Vegas"
+  - key: c-s5e1-name
+    field: value
+    hash: "e0c0cadf8190"
+    text: "Asesinato por un billete de lotería"
+  - key: c-s5e2-name
+    field: value
+    hash: "09d912100b0e"
+    text: "El tallador de diamantes y la belladona"
+  - key: c-s5e3-name
+    field: value
+    hash: "242445f28c48"
+    text: "Robo a un banco con un cómplice interno"
+  - key: c-s5e4-name
+    field: value
+    hash: "7c59a9034865"
+    text: "El padre de Rigsby y la guerra de pandillas"
+  - key: c-s5e5-name
+    field: value
+    hash: "bdb909cdee6d"
+    text: "El primer día de Jane en la CBI"
+  - key: c-s5e6-name
+    field: value
+    hash: "b29d915a15e6"
+    text: "Secuestro por confusión de identidad"
+  - key: c-s5e7-name
+    field: value
+    hash: "3c34712cafec"
+    text: "La periodista de televisión y el magnate"
+  - key: c-s5e8-name
+    field: value
+    hash: "be009ed2e257"
+    text: "La fuga de Lorelei de la prisión"
+  - key: c-s5e9-name
+    field: value
+    hash: "d296269a6f61"
+    text: "El agente inmobiliario y la vieja pandilla"
+  - key: c-s5e10-name
+    field: value
+    hash: "a4a60717bfc8"
+    text: "Semillas de mariguana medicinal"
+  - key: c-s5e11-name
+    field: value
+    hash: "fd4268e71fe4"
+    text: "La muerte de la modelo"
+  - key: c-s5e12-name
+    field: value
+    hash: "ce02a4d0a4e9"
+    text: "Los restos del geólogo"
+  - key: c-s5e13-name
+    field: value
+    hash: "f178eac90e0a"
+    text: "El triple homicidio de la granja Elliston"
+  - key: c-s5e14-name
+    field: value
+    hash: "03b94af17110"
+    text: "La polilla y la estudiante de posgrado"
+  - key: c-s5e15-name
+    field: value
+    hash: "563901af958e"
+    text: "La mansión de la heredera"
+  - key: c-s5e16-name
+    field: value
+    hash: "9e53ac129663"
+    text: "Lorelei da caza a Red John"
+  - key: l-s5e16-scene-name
+    field: value
+    hash: "80fbe82ea96f"
+    text: "La escena del asesinato de Lorelei"
+  - key: c-s5e17-name
+    field: value
+    hash: "3e380d7cbb90"
+    text: "El asesinato del paramédico del ejército"
+  - key: c-s5e18-name
+    field: value
+    hash: "1acb0fe6283e"
+    text: "Asesinato en el musical"
+  - key: c-s5e19-name
+    field: value
+    hash: "5cc0f2668c80"
+    text: "El hombre que era dueño de un pueblo"
+  - key: c-s5e20-name
+    field: value
+    hash: "454b5931c7d1"
+    text: "La consejera de radio y el matrimonio"
+  - key: c-s5e21-name
+    field: value
+    hash: "fb0583bd1bb7"
+    text: "La caja robada de LaRoche"
+  - key: c-s5e22-name
+    field: value
+    hash: "194bbebfb28f"
+    text: "Red John y el motel"
+  - key: l-s5e22-motel-name
+    field: value
+    hash: "e1c5570ffc47"
+    text: "El motel donde mataron a Eileen"
+  - key: cl-s6e1-name
+    field: value
+    hash: "a00b09416885"
+    text: "El hombre desaparecido por dos años"
+  - key: cl-s6e2-name
+    field: value
+    hash: "ff51cb8961c9"
+    text: "El asesinato de la antigua psiquiatra de Jane"
+  - key: cl-s6e2-scene-name
+    field: value
+    hash: "686e0c15662c"
+    text: "Escena del crimen de Sophie Miller"
+  - key: cl-s6e3-name
+    field: value
+    hash: "3b163b0abb7a"
+    text: "El caso de Napa"
+  - key: cl-s6e4-name
+    field: value
+    hash: "d26a3cfb7e56"
+    text: "La lista de falsos sospechosos"
+  - key: cl-s6e5-name
+    field: value
+    hash: "9eccbfc6d0cd"
+    text: "El asesinato de Visualize"
+  - key: cl-s6e6-name
+    field: value
+    hash: "d9a675e13d31"
+    text: "La reunión de los sospechosos"
+  - key: cl-s6e6-home-name
+    field: value
+    hash: "97d37e0ee3a6"
+    text: "La casa de la familia de Jane"
+  - key: cl-s6e7-name
+    field: value
+    hash: "56e93fce5a7b"
+    text: "Las secuelas de la explosión"
+  - key: cl-s6e8-name
+    field: value
+    hash: "6ee47283e722"
+    text: "El enfrentamiento con Red John"
+  - key: cl-s6e8-chapel-name
+    field: value
+    hash: "445db4146703"
+    text: "La capilla del cementerio"
+  - key: cl-s6e9-name
+    field: value
+    hash: "18da69257381"
+    text: "La oferta de consultoría del FBI"
+  - key: cl-s6e10-name
+    field: value
+    hash: "6acd89b459a9"
+    text: "El programador desaparecido en Brooklyn"
+  - key: cl-s6e11-name
+    field: value
+    hash: "f63137f16034"
+    text: "El asesinato de cinco agentes de la DEA"
+  - key: cl-s6e12-name
+    field: value
+    hash: "52a5a86c9f47"
+    text: "El asesinato del cartógrafo"
+  - key: cl-s6e13-name
+    field: value
+    hash: "0f28bf73d6b9"
+    text: "La fiscal federal hallada muerta en México"
+  - key: cl-l-s6e13-a-name
+    field: value
+    hash: "4e4b43761a68"
+    text: "La comuna separatista"
+  - key: cl-s6e14-name
+    field: value
+    hash: "1e3097559be7"
+    text: "La muerte de la activista contra el fracking"
+  - key: cl-l-s6e14-a-name
+    field: value
+    hash: "74e108a53fd2"
+    text: "El sitio de fracking"
+  - key: cl-s6e15-name
+    field: value
+    hash: "54fab966afbc"
+    text: "El secuestro de Grace"
+  - key: cl-l-s6e15-a-name
+    field: value
+    hash: "7d4f08db18c3"
+    text: "La cabaña aislada en la montaña"
+  - key: cl-s6e16-name
+    field: value
+    hash: "7af302b97a9b"
+    text: "El asesinato durante el robo a la galería de arte"
+  - key: cl-s6e17-name
+    field: value
+    hash: "9771a88768cf"
+    text: "El caso del condenado a muerte"
+  - key: cl-s6e18-name
+    field: value
+    hash: "64f37b55db9e"
+    text: "El asesinato cerca del club de hombres"
+  - key: cl-s6e19-name
+    field: value
+    hash: "ddd5c30d7758"
+    text: "La banda de trata de mujeres"
+  - key: cl-l-s6e19-a-name
+    field: value
+    hash: "6e49349802d2"
+    text: "La casa de seguridad en una choza abandonada"
+  - key: cl-s6e20-name
+    field: value
+    hash: "4ec5baf5de5c"
+    text: "La trampa al gran jurado"
+  - key: cl-s6e21-name
+    field: value
+    hash: "fd3f3598d7fd"
+    text: "El jefe de la red de secuestros"
+  - key: cl-s6e22-name
+    field: value
+    hash: "8ce70d4f3dfa"
+    text: "El caso antiguo reabierto"
+  - key: c-s7e1-name
+    field: value
+    hash: "ee24371e0489"
+    text: "Asesinato en la bolera"
+  - key: c-s7e2-name
+    field: value
+    hash: "a15ad78cf1e1"
+    text: "Ladrones de autos e infiltración en una prisión"
+  - key: c-s7e3-name
+    field: value
+    hash: "c039937627b7"
+    text: "El mensajero en Beirut"
+  - key: c-s7e4-name
+    field: value
+    hash: "0dbf98d4e58a"
+    text: "Asesinato en la exposición de gemas"
+  - key: c-s7e5-name
+    field: value
+    hash: "69227636d719"
+    text: "La esposa del coronel"
+  - key: c-s7e6-name
+    field: value
+    hash: "f8b84a2d7aa2"
+    text: "El operativo fallido de la DEA"
+  - key: c-s7e7-name
+    field: value
+    hash: "bb110c536018"
+    text: "El abogado y la partida de póquer"
+  - key: c-s7e8-name
+    field: value
+    hash: "db4aa6edb8c7"
+    text: "El testigo protegido"
+  - key: c-s7e9-name
+    field: value
+    hash: "3469d55ee630"
+    text: "La bala contra Abbott"
+  - key: c-s7e10-name
+    field: value
+    hash: "146b344f9768"
+    text: "Los ladrones de camiones blindados"
+  - key: c-s7e11-name
+    field: value
+    hash: "872fbeaa3db5"
+    text: "El psíquico y las fosas poco profundas"
+  - key: c-s7e12-name
+    field: value
+    hash: "104f4a05d3b1"
+    text: "Jane como carnada"
+  - key: c-s7e13-name
+    field: value
+    hash: "cc4ed5339087"
+    text: "La venganza del asesino"
+  - key: c-s4e1-description
+    field: value
+    hash: "cdac8ded7ddf"
+    text: "Jane es detenido por matar a un hombre que creía que era Red John, mientras el equipo busca pruebas y descubre a una niña cautiva."
+  - key: c-s4e2-description
+    field: value
+    hash: "c915fb4ebad1"
+    text: "El equipo investiga el asesinato de un instructor de gimnasio mientras Jane es asignado a un equipo rival."
+  - key: c-s4e3-description
+    field: value
+    hash: "eef66684e4aa"
+    text: "El equipo busca al secuestrador de un niño de nueve años cuya madre cree que Jane tiene un vínculo psíquico con él."
+  - key: c-s4e4-description
+    field: value
+    hash: "8d0577cca3f1"
+    text: "El equipo protege el mitin de un alcalde e investiga el cuerpo de un fotógrafo hallado en un callejón, mientras Jane teme que haya un pistolero entre la multitud."
+  - key: c-s4e5-description
+    field: value
+    hash: "95288b1f7037"
+    text: "El equipo viaja a una isla frente a la costa de California para resolver el asesinato de una joven de diecinueve años hallada en una playa."
+  - key: c-s4e6-description
+    field: value
+    hash: "4c528baf4a84"
+    text: "El equipo investiga el disparo contra un jefe de policía, mientras el hermano de Lisbon persigue a un fugitivo que no se presentó a su audiencia."
+  - key: c-s4e7-description
+    field: value
+    hash: "8982b76f75be"
+    text: "El equipo persigue al Asesino de San Joaquín, un asesino en serie de adolescentes, y el caso termina siendo un caso de Red John cuando un asesinato lleva las marcas distintivas de Red John."
+  - key: c-s4e8-description
+    field: value
+    hash: "98441c396521"
+    text: "El equipo investiga la muerte de un oficial antinarcóticos encubierto que investigaba a un narcotraficante."
+  - key: c-s4e9-description
+    field: value
+    hash: "f4e9d414849d"
+    text: "Un coche bomba destinado a un mariscal de campo de futbol americano mata a su asistente, así que Jane hace que el mariscal se haga el muerto para atrapar al asesino."
+  - key: c-s4e10-description
+    field: value
+    hash: "400dd554edbe"
+    text: "Jane casi se ahoga mientras investiga el asesinato de un bombero y pierde la memoria."
+  - key: c-s4e11-description
+    field: value
+    hash: "aa772eb26355"
+    text: "El equipo investiga a un abogado muerto en la explosión de un barco, mientras Jane lidia con un agente del FBI y con la atención de Red John."
+  - key: c-s4e12-description
+    field: value
+    hash: "a4528ecebcca"
+    text: "El equipo investiga el atentado contra el hijo mayor de un mafioso, mientras Van Pelt queda varada en el bosque."
+  - key: c-s4e13-description
+    field: value
+    hash: "211f17f226e5"
+    text: "El equipo investiga el apuñalamiento de un diseñador de modas hallado con una pluma pintada de dorado en la boca."
+  - key: c-s4e14-description
+    field: value
+    hash: "c4f4a947197d"
+    text: "Jane cree que la dueña de un viñedo juzgada por asesinato es inocente y el equipo investiga a pesar de las pruebas en su contra."
+  - key: c-s4e15-description
+    field: value
+    hash: "d53d0b5103c0"
+    text: "El equipo investiga el asesinato de una consejera juvenil con la ayuda de una casamentera encarcelada."
+  - key: c-s4e16-description
+    field: value
+    hash: "5d3f05010490"
+    text: "El equipo investiga la muerte de un activista contra las sectas, con el fundador de un grupo de autoayuda como principal sospechoso."
+  - key: c-s4e17-description
+    field: value
+    hash: "4f031cec437d"
+    text: "La CBI investiga el asesinato de una mujer vinculada a un chat en línea sobre Shakespeare, mientras Jane y un agente del FBI indagan la desaparición de la nuera de una familia adinerada."
+  - key: c-s4e18-description
+    field: value
+    hash: "ff4ec76b0c74"
+    text: "La CBI investiga la muerte de un paciente con cáncer cuyo cuerpo enterrado fue desenterrado por tigres que se habían escapado."
+  - key: c-s4e19-description
+    field: value
+    hash: "ee0a9ef7a068"
+    text: "El equipo investiga el disparo contra un empleado de casino hallado junto a su coche en una carretera."
+  - key: c-s4e20-description
+    field: value
+    hash: "b2f14aec40c1"
+    text: "El equipo investiga el asesinato de un maestro de inglés cuyo cuerpo es hallado en el campo de béisbol de su escuela."
+  - key: c-s4e21-description
+    field: value
+    hash: "015ad435b21d"
+    text: "El equipo investiga a un joven de diecinueve años hallado esposado en un coche en llamas, y el tacón de un zapato los lleva a una compañía de cabaret drag."
+  - key: c-s4e22-description
+    field: value
+    hash: "af7c756dcb3d"
+    text: "El equipo investiga el asesinato de un surfista cuyo último empleador resulta ser el exprometido de Lisbon."
+  - key: c-s4e23-description
+    field: value
+    hash: "8a63c81344e1"
+    text: "Tras el mensaje de aniversario de Red John, el equipo de Jane investiga a un hombre atado y abandonado a morir en una caja cerrada once meses antes."
+  - key: c-s4e24-description
+    field: value
+    hash: "e49912d3ae2d"
+    text: "Seis meses después de ser despedido, Jane está en Las Vegas, donde Lorelei Martins lo atrae hacia Red John."
+  - key: c-s5e1-description
+    field: value
+    hash: "e32e57c1ea92"
+    text: "Una mujer y un técnico de reparaciones son hallados muertos en un doble homicidio, y el equipo descubre que el móvil fue un billete de lotería ganador."
+  - key: c-s5e2-description
+    field: value
+    hash: "1fbfecdc7ae0"
+    text: "Un tallador de diamantes es asesinado y un gran diamante azul desaparece, mientras Jane, drogado con belladona, reconstruye las pistas."
+  - key: c-s5e3-description
+    field: value
+    hash: "d5b19dda2ad5"
+    text: "Un empleado de banco es baleado durante un robo y Jane sospecha que él era el cómplice interno."
+  - key: c-s5e4-description
+    field: value
+    hash: "c105063bbe34"
+    text: "Un hombre sin antecedentes es asesinado, el padre de Rigsby es hallado herido en la escena y se sospecha de una guerra de pandillas."
+  - key: c-s5e5-description
+    field: value
+    hash: "3c10ef70bba7"
+    text: "En un flashback al día en que Jane se une por primera vez a la CBI, acompaña la investigación del disparo contra el hijo de un juez de apelaciones y expone a un policía corrupto."
+  - key: c-s5e6-description
+    field: value
+    hash: "65479271cf4f"
+    text: "El equipo investiga el asesinato de un guardia de seguridad de una comunidad y descubre un secuestro que podría ser un caso de confusión de identidad."
+  - key: c-s5e7-description
+    field: value
+    hash: "bd518f8c48c6"
+    text: "Una periodista de televisión especializada en historias de interés humano es asesinada, y la pista lleva hacia un poderoso magnate empresarial."
+  - key: c-s5e8-description
+    field: value
+    hash: "d4152f57d14a"
+    text: "Jane organiza la fuga de Lorelei Martins de la prisión, con la esperanza de que ella lo lleve hasta Red John."
+  - key: c-s5e9-description
+    field: value
+    hash: "86cf9a7ca432"
+    text: "El equipo investiga el asesinato de un agente inmobiliario que fue miembro de una pandilla hasta dos años antes."
+  - key: c-s5e10-description
+    field: value
+    hash: "2eaec039162e"
+    text: "La muerte de un joven botánico lleva al equipo al mundo de la mariguana medicinal y las semillas robadas."
+  - key: c-s5e11-description
+    field: value
+    hash: "5f14fe6c19c2"
+    text: "Jane y el equipo investigan la muerte de una modelo, mientras Lisbon reúne más pruebas contra Tommy Volker."
+  - key: c-s5e12-description
+    field: value
+    hash: "108b17b6374a"
+    text: "El equipo encuentra los restos de un geólogo que iba a testificar contra Tommy Volker y busca a un niño que pudo haber presenciado el asesinato."
+  - key: c-s5e13-description
+    field: value
+    hash: "1931cf02e6bc"
+    text: "Un caso de Red John: un triple homicidio de hace 25 años en una granja vinculada al grupo Visualize, donde se cree que Red John pintó su primera carita sonriente."
+  - key: c-s5e14-description
+    field: value
+    hash: "1bce5da5084f"
+    text: "Una estudiante de posgrado es asesinada en un museo de historia natural en medio de una feroz rivalidad académica."
+  - key: c-s5e15-description
+    field: value
+    hash: "159efc6e73cd"
+    text: "Los restos hallados en la mansión de una anciana heredera resultan pertenecer a un veterano desaparecido."
+  - key: c-s5e16-description
+    field: value
+    hash: "32c98922c36b"
+    text: "Un caso de Red John: Lorelei Martins actúa por su cuenta para encontrar a quien mató a su hermana, y Jane es arrastrado a la búsqueda."
+  - key: c-s5e17-description
+    field: value
+    hash: "76b01a68210d"
+    text: "Un paramédico de una base del ejército es hallado muerto y el único testigo es un paciente con deterioro de la memoria a corto plazo."
+  - key: c-s5e18-description
+    field: value
+    hash: "f60458a778af"
+    text: "Una actriz es asesinada la noche antes del estreno de su musical y varios miembros del elenco son sospechosos."
+  - key: c-s5e19-description
+    field: value
+    hash: "d1cec45429e5"
+    text: "El dueño de todo un pueblo es hallado muerto y salen a la luz las tensiones familiares por la venta del pueblo."
+  - key: c-s5e20-description
+    field: value
+    hash: "6e9bd9d08456"
+    text: "Una mujer es asesinada y el equipo descubre que su matrimonio tenía problemas y que su esposo tenía una aventura."
+  - key: c-s5e21-description
+    field: value
+    hash: "901f673fd34e"
+    text: "Ladrones armados roban una preciada caja de la caja fuerte de LaRoche y él le pide a Jane que la encuentre."
+  - key: c-s5e22-description
+    field: value
+    hash: "5d28a70973f7"
+    text: "Un caso de Red John: una joven es asesinada en un motel y la pista lleva a un niño desaparecido y al pasado de Jane."
+  - key: cl-s6e1-desc
+    field: value
+    hash: "97802e5c6b34"
+    text: "El equipo investiga la muerte de un hombre que llevaba dos años desaparecido, mientras Jane y Lisbon trabajan para reducir la lista de sospechosos de ser Red John."
+  - key: cl-s6e2-desc
+    field: value
+    hash: "f84522f91726"
+    text: "Un caso de Red John: Red John asesina a la antigua psiquiatra de Jane, Sophie Miller, y deja su carita sonriente, y Jane encuentra pistas sobre su identidad."
+  - key: cl-s6e3-desc
+    field: value
+    hash: "f16c626f9c8e"
+    text: "Jane involucra a la CBI en un caso en Napa para que el equipo pueda centrarse en el sheriff McAllister."
+  - key: cl-s6e4-desc
+    field: value
+    hash: "8373b756a8e2"
+    text: "El equipo investiga después de que una lista de falsos sospechosos de ser Red John es robada y los hombres inocentes nombrados en ella corren peligro, y sale a la luz una conspiración de miembros de las fuerzas del orden que usan la frase \"Tyger, Tyger\"."
+  - key: cl-s6e5-desc
+    field: value
+    hash: "9e856abc34b7"
+    text: "El equipo investiga el asesinato de un miembro de Visualize, en el que el asesino parece haber estado en dos lugares al mismo tiempo."
+  - key: cl-s6e6-desc
+    field: value
+    hash: "a17665db44cd"
+    text: "Jane reúne a los sospechosos restantes de ser Red John en la casa de su familia para saber quién es el asesino, y sigue una explosión."
+  - key: cl-s6e7-desc
+    field: value
+    hash: "bdbc1f55fb65"
+    text: "Tras la explosión, Bertram y Smith se dan a la fuga, Jane señala a Bertram como Red John y el FBI cierra la CBI."
+  - key: cl-s6e8-desc
+    field: value
+    hash: "885712249a15"
+    text: "Un caso de Red John: Jane se reúne con Bertram en una capilla del cementerio y se revela que Red John es el sheriff McAllister."
+  - key: cl-s6e9-desc
+    field: value
+    hash: "0a94c3811f3c"
+    text: "Dos años después, a Jane le ofrecen un trabajo de consultor con el FBI y negocia sus condiciones con el agente Abbott."
+  - key: cl-s6e10-desc
+    field: value
+    hash: "b52104011c74"
+    text: "Jane y Lisbon ayudan al FBI en un caso sobre un programador de computadoras desaparecido en Brooklyn."
+  - key: cl-s6e11-desc
+    field: value
+    hash: "1a4e52c1fc8d"
+    text: "El equipo del FBI investiga el asesinato de varios agentes de la DEA en Corpus Christi, mientras Jane sale en una cita con una mujer vinculada al caso."
+  - key: cl-s6e12-desc
+    field: value
+    hash: "5c3264aa4796"
+    text: "Un cartógrafo de alta tecnología que pudo haber descubierto una red de espionaje es asesinado en Houston, mientras un antiguo colega de Lisbon teme estar siendo espiado con micrófonos."
+  - key: cl-s6e13-desc
+    field: value
+    hash: "a81afcb775ed"
+    text: "El equipo del FBI rastrea al asesino de un fiscal federal cuyo cuerpo aparece en México, y Jane se une a una comuna separatista para encontrar al culpable."
+  - key: cl-s6e14-desc
+    field: value
+    hash: "208ddd554eea"
+    text: "El equipo del FBI investiga la muerte de una activista contra el fracking, mientras la amenaza contra doce ex agentes de la CBI se intensifica."
+  - key: cl-s6e15-desc
+    field: value
+    hash: "c7819e9a8db0"
+    text: "Tras el secuestro de Grace, el equipo del FBI intenta encontrarla, mientras su principal sospechoso tiene una coartada y un abogado que lo protege."
+  - key: cl-s6e16-desc
+    field: value
+    hash: "1c9293b4bafd"
+    text: "El FBI consulta a su división de arte sobre el asesinato del dueño de una galería de arte durante un robo, y Jane monta una elaborada trampa para atrapar al líder de los ladrones."
+  - key: cl-s6e17-desc
+    field: value
+    hash: "0d83e67931ef"
+    text: "El equipo debe encontrar al verdadero asesino de un crimen antiguo mientras el hombre condenado por él está a punto de ser ejecutado."
+  - key: cl-s6e18-desc
+    field: value
+    hash: "012142248974"
+    text: "Una mujer es hallada asesinada cerca de un club social de hombres aislado, y Jane debe encontrar la manera de entrar en el hermético grupo para dar con el asesino."
+  - key: cl-s6e19-desc
+    field: value
+    hash: "32955716e687"
+    text: "Después de que una mujer muere frente a Jane, el FBI descubre una banda que trafica con mujeres."
+  - key: cl-s6e20-desc
+    field: value
+    hash: "e5ea6f3f2f3b"
+    text: "Jane es aparentemente arrestado por el asesinato de Red John como parte de una trampa para saber cuál miembro de un gran jurado fue sobornado, mientras se descubre que los traficantes extraen órganos."
+  - key: cl-s6e21-desc
+    field: value
+    hash: "bc96aab25a07"
+    text: "Jane y Lisbon buscan al jefe de una red de secuestros mientras a las víctimas se les acaba el tiempo, y Lisbon decide si se muda a Washington."
+  - key: cl-s6e22-desc
+    field: value
+    hash: "333c38aab5ea"
+    text: "Para evitar que Lisbon se vaya, Jane hace que se reabra un caso antiguo y se atrapa a los verdaderos asesinos."
+  - key: c-s7e1-description
+    field: value
+    hash: "550d79682575"
+    text: "Un agente federal encubierto es asesinado a tiros detrás de una bolera que se cree es la base de una red de tráfico de armas."
+  - key: c-s7e2-description
+    field: value
+    hash: "e7de95ef471b"
+    text: "Un par de ladrones de autos asaltan una gala, y el equipo infiltra a un agente en la prisión para encontrar el escondite."
+  - key: c-s7e3-description
+    field: value
+    hash: "ec6294e665a8"
+    text: "Jane y Lisbon viajan a Beirut para atrapar a un criminal que contrabandea chips de pasaportes falsos para grupos terroristas."
+  - key: c-s7e4-description
+    field: value
+    hash: "585168785dbe"
+    text: "Un hombre es golpeado hasta la muerte en una exposición de gemas vinculada a una operación de diamantes falsificados, mientras Jane está demasiado enfermo para salir de la oficina."
+  - key: c-s7e5-description
+    field: value
+    hash: "5e96cc5c6760"
+    text: "El FBI reabre el asesinato de la esposa de un coronel después de que Jane empieza a sospechar del coronel."
+  - key: c-s7e6-description
+    field: value
+    hash: "ecb916372773"
+    text: "El equipo colabora como consultor en un operativo de la DEA que no encuentra drogas, y Jane busca a un topo dentro del grupo de trabajo."
+  - key: c-s7e7-description
+    field: value
+    hash: "20130dbcf48f"
+    text: "El FBI investiga el asesinato de un abogado vinculado a una partida de póquer a la que asistió el hermano de Lisbon."
+  - key: c-s7e8-description
+    field: value
+    hash: "861c45d4b521"
+    text: "El equipo protege al testigo sobreviviente de un asesinato brutal contra un sicario contratado por la familia del acusado."
+  - key: c-s7e9-description
+    field: value
+    hash: "dde703e6f166"
+    text: "Un antiguo jefe desentierra pruebas de un viejo asesinato para arruinar a Abbott, y Jane tiende una trampa para protegerlo."
+  - key: c-s7e10-description
+    field: value
+    hash: "68cef6863c64"
+    text: "Una banda de ladrones de camiones blindados mata a un agente y toma rehenes en una casa mientras el equipo les cierra el cerco."
+  - key: c-s7e11-description
+    field: value
+    hash: "7870cbc4a11e"
+    text: "Un joven que dice tener poderes psíquicos lleva al FBI hasta víctimas enterradas, y el equipo sospecha que él es el asesino."
+  - key: c-s7e12-description
+    field: value
+    hash: "cdb2ec330089"
+    text: "Jane se hace pasar por un famoso psíquico para atraer al asesino en serie que el equipo está persiguiendo."
+  - key: c-s7e13-description
+    field: value
+    hash: "d2b275ea765c"
+    text: "Un asesino busca venganza mientras se acerca la boda, y el FBI lo espera en el lugar."
