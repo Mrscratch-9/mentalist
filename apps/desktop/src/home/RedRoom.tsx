@@ -1,10 +1,12 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { Canon } from "../data/canon";
 import { formatNumber } from "../i18n/format";
 import { isUiLang, translator, type StringKey, type UiLang } from "../i18n/strings";
 import { parseProgressInput, type Progress } from "../state/progress";
 import { Check, Open, SilCbi, SilJane, Smiley } from "./art";
 import { Credits } from "./Credits";
+import { chronologyPath, flyTarget, redString, type Pos } from "./caseMap";
+import { moveIndex, pickerModel } from "./navigation";
 import { RedMap } from "./RedMap";
 import { characterSubtitle, resolveHome } from "./viewModel";
 import "./redroom.css";
@@ -20,6 +22,23 @@ function useReducedMotion() {
     return () => q.removeEventListener("change", on);
   }, []);
   return reduced;
+}
+
+/** Roving tabindex for a list of buttons: one tab stop, arrows/Home/End move focus, Enter activates (native click). */
+function useRoving(count: number, selected: number) {
+  const refs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [cursor, setCursor] = useState<number | null>(null);
+  // The tab stop is the item last moved to; before any move, the selected item (else the first).
+  const stop = Math.min(cursor ?? (selected >= 0 ? selected : 0), Math.max(count - 1, 0));
+  function onKeyDown(e: React.KeyboardEvent) {
+    const i = refs.current.findIndex((b) => b === document.activeElement);
+    if (i < 0) return;
+    const next = moveIndex(e.key, i, count);
+    if (next === null) return;
+    e.preventDefault();
+    refs.current[next]?.focus(); // onFocus moves the tab stop
+  }
+  return { refs, tabIndexOf: (i: number) => (i === stop ? 0 : -1), onKeyDown, setCursor };
 }
 
 interface Props {
@@ -54,6 +73,10 @@ export function RedRoom({ canon, loadError, progress, lang, onChangeLang, onChan
   const [formError, setFormError] = useState<StringKey | null>(null);
   const [langError, setLangError] = useState(false);
   const [mapDown, setMapDown] = useState(false);
+  const [chronoOn, setChronoOn] = useState(false);
+  const [chronoStep, setChronoStep] = useState(0);
+  const [redOn, setRedOn] = useState(false);
+  const [focus, setFocus] = useState<{ position: Pos; seq: number } | null>(null);
   const reduced = useReducedMotion();
 
   const result = useMemo(
@@ -72,6 +95,40 @@ export function RedRoom({ canon, loadError, progress, lang, onChangeLang, onChan
   const baseId = result?.kind === "ok" ? result.base?.id ?? null : null;
   const pin = pins.find((p) => p.id === selPin) ?? pins.find((p) => p.id === baseId) ?? pins[0] ?? null;
   const caseSel = cases.find((c) => c.id === selCase)?.id ?? null;
+
+  const caseMap = ok?.caseMap ?? null;
+  const stops = caseMap?.stops ?? [];
+  const step = Math.min(chronoStep, Math.max(stops.length - 1, 0));
+  const stop = chronoOn ? stops[step] ?? null : null;
+  const path = caseMap && chronoOn ? chronologyPath(caseMap, step) : [];
+  const red = caseMap && redOn ? redString(caseMap, chronoOn ? step : null) : { thread: [], links: [] };
+  const pickers = useMemo(() => pickerModel(ok?.groups ?? []), [ok?.groups]);
+  const caseRoving = useRoving(cases.length, cases.findIndex((c) => c.id === caseSel));
+  const chronoRoving = useRoving(stops.length, step);
+
+  /** Select a case and fly to its place; a case without a place keeps the camera where it is (selection still changes). */
+  function goToCase(id: string) {
+    setSelCase(id);
+    const position = caseMap ? flyTarget(caseMap, id) : null;
+    if (position) setFocus({ position, seq: (focus?.seq ?? 0) + 1 });
+  }
+  function goToStep(i: number) {
+    const next = Math.min(Math.max(i, 0), Math.max(stops.length - 1, 0));
+    setChronoStep(next);
+    const target = stops[next];
+    if (target) goToCase(target.caseId);
+  }
+  function toggleChrono() {
+    const on = !chronoOn;
+    setChronoOn(on);
+    if (on) goToStep(0);
+  }
+  function changeSeason(next: string) {
+    setSeason(next);
+    // keep the episode when the new season has it; otherwise start at its first episode
+    const eps = pickers.episodes(Number(next));
+    if (episode !== "end" && !eps.some((o) => o.value === episode)) setEpisode(eps[0]?.value ?? "1");
+  }
 
   function save() {
     const next = parseProgressInput(season, episode);
@@ -102,11 +159,17 @@ export function RedRoom({ canon, loadError, progress, lang, onChangeLang, onChan
           <form className="rr-change" onSubmit={(e) => { e.preventDefault(); save(); }}>
             <div className="rr-field">
               <label className="rr-label" htmlFor="rr-season">{t("gate.season")}</label>
-              <input id="rr-season" inputMode="numeric" value={season} onChange={(e) => setSeason(e.target.value)} />
+              <select id="rr-season" value={season} onChange={(e) => changeSeason(e.target.value)}>
+                {!pickers.seasons.includes(Number(season)) && <option value={season}>{season}</option>}
+                {pickers.seasons.map((n) => <option key={n} value={String(n)}>{num(n)}</option>)}
+              </select>
             </div>
             <div className="rr-field">
-              <label className="rr-label" htmlFor="rr-episode">{t("gate.episodeOrEnd")}</label>
-              <input id="rr-episode" value={episode} onChange={(e) => setEpisode(e.target.value)} />
+              <label className="rr-label" htmlFor="rr-episode">{t("gate.episode")}</label>
+              <select id="rr-episode" value={episode} onChange={(e) => setEpisode(e.target.value)}>
+                {pickers.episodes(Number(season)).map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
+                <option value="end">{t("gate.endOfSeason")}</option>
+              </select>
             </div>
             <button className="rr-btn" type="submit">{t("gate.change")}</button>
           </form>
@@ -146,8 +209,43 @@ export function RedRoom({ canon, loadError, progress, lang, onChangeLang, onChan
         <h2 className="rr-sr">{t("board.heading")}</h2>
         <RedMap
           base={result?.kind === "ok" ? result.base?.position ?? null : null} pins={pins} selectedPin={pin?.id ?? null} linkedCase={caseSel}
+          focus={focus} path={path} thread={red.thread} links={red.links}
           reducedMotion={reduced} ariaLabel={t("map.aria")} onUnavailable={() => setMapDown(true)} onSelectPin={setSelPin}
         />
+        <div className="rr-tools rr-glass" role="group" aria-label={t("tools.aria")}>
+          <button className="rr-btn" type="button" aria-pressed={chronoOn} onClick={toggleChrono}>{t("tools.chronology")}</button>
+          <button className="rr-btn rr-btn-red" type="button" aria-pressed={redOn} onClick={() => setRedOn(!redOn)}>{t("tools.redString")}</button>
+          {redOn && <span className="rr-tools-note">{t("redString.note")}</span>}
+        </div>
+        {chronoOn && (
+          <section className="rr-chrono rr-glass" aria-label={t("chrono.aria")}>
+            {stops.length === 0 ? (
+              <p className="rr-empty rr-inline">{t("chrono.empty")}</p>
+            ) : (
+              <>
+                <button className="rr-btn" type="button" disabled={step === 0} onClick={() => goToStep(step - 1)}>{t("chrono.prev")}</button>
+                <ol className="rr-chrono-list" aria-label={t("chrono.list")} onKeyDown={chronoRoving.onKeyDown}>
+                  {stops.map((s, i) => (
+                    <li key={s.caseId}>
+                      <button
+                        ref={(el) => { chronoRoving.refs.current[i] = el; }} onFocus={() => chronoRoving.setCursor(i)} tabIndex={chronoRoving.tabIndexOf(i)}
+                        aria-current={i === step ? "step" : undefined} title={s.title} onClick={() => goToStep(i)}
+                      >
+                        <span className="rr-ep">{s.code}</span>
+                        <span className="rr-chrono-title">{s.title}</span>
+                      </button>
+                    </li>
+                  ))}
+                </ol>
+                <button className="rr-btn" type="button" disabled={step >= stops.length - 1} onClick={() => goToStep(step + 1)}>{t("chrono.next")}</button>
+                <span className="rr-chrono-step" role="status">
+                  {t("chrono.step", { n: num(step + 1), total: num(stops.length) })}
+                  {stop && !stop.place && <> · {t("chrono.noPlace")}</>}
+                </span>
+              </>
+            )}
+          </section>
+        )}
         {mapDown && <p className="rr-map-down" role="status">{t("map.down")}</p>}
         <svg className="rr-grain" aria-hidden="true" focusable="false">
           <filter id="rr-noise"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch" /><feColorMatrix type="saturate" values="0" /></filter>
@@ -176,10 +274,13 @@ export function RedRoom({ canon, loadError, progress, lang, onChangeLang, onChan
               <p>{t("cases.emptyBody")}</p>
             </div>
           ) : (
-            <ol className="rr-cases">
-              {cases.map((c) => (
+            <ol className="rr-cases" aria-describedby="casesHint" onKeyDown={caseRoving.onKeyDown}>
+              {cases.map((c, i) => (
                 <li key={c.id}>
-                  <button className="rr-case" aria-current={caseSel === c.id} onClick={() => setSelCase(caseSel === c.id ? null : c.id)}>
+                  <button
+                    className="rr-case" aria-current={caseSel === c.id} onClick={() => (caseSel === c.id ? setSelCase(null) : goToCase(c.id))}
+                    ref={(el) => { caseRoving.refs.current[i] = el; }} onFocus={() => caseRoving.setCursor(i)} tabIndex={caseRoving.tabIndexOf(i)}
+                  >
                     <span className={c.solved ? "rr-plate" : "rr-plate rr-open"} aria-hidden="true">
                       {c.solved ? (c.silhouette === "cbi" ? <SilCbi /> : <SilJane />) : <Open />}
                     </span>
@@ -187,6 +288,7 @@ export function RedRoom({ canon, loadError, progress, lang, onChangeLang, onChan
                       <span className="rr-ep">{c.code}</span>
                       <span className="rr-title">{c.title}</span>
                       <span className="rr-status">{c.solved ? <><Check aria-hidden="true" />{t("cases.solved")}</> : t("cases.open")}</span>
+                      {caseMap && !flyTarget(caseMap, c.id) && <span className="rr-status rr-noplace">{t("cases.noPlace")}</span>}
                       {peeking && c.code === gate?.peekLabel && <span className="rr-status rr-peeking">{t("gate.peekTag")}</span>}
                     </span>
                   </button>
@@ -194,6 +296,7 @@ export function RedRoom({ canon, loadError, progress, lang, onChangeLang, onChan
               ))}
             </ol>
           )}
+          <p className="rr-sr" id="casesHint">{t("cases.listHint")}</p>
         </aside>
 
         <aside className="rr-legend rr-glass" aria-label={t("legend.aria")}>

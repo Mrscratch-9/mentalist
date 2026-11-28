@@ -26,6 +26,7 @@ import {
 import { listBySeason, toCoreProgress, type SeasonGroup } from "../state/coreProgress";
 import type { Progress } from "../state/progress";
 import { DEFAULT_UI_LANG, t, type UiLang } from "../i18n/strings";
+import { buildCaseMap, type CaseMapModel } from "./caseMap";
 
 /** Canon language -> UI language (placeholder texts); anything but Spanish reads as English. */
 const uiOf = (lang: Lang): UiLang => (lang === "es" ? "es" : lang === "en" ? "en" : DEFAULT_UI_LANG);
@@ -82,7 +83,7 @@ const byIntro = (a: EntityView, b: EntityView) =>
   a.introducedIn - b.introducedIn || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
 
 /** Current (not discarded) visible value claims, first per subject and predicate. */
-function valueIndex(claims: ClaimView[]): Map<string, string> {
+export function valueIndex(claims: ClaimView[]): Map<string, string> {
   const out = new Map<string, string>();
   for (const c of claims) {
     if (c.state !== "current" || c.value === null) continue;
@@ -249,7 +250,7 @@ export interface GateModel {
 }
 
 export type HomeResult =
-  | { kind: "ok"; model: HomeModel; gate: GateModel; groups: SeasonGroup[]; base: BaseModel | null; fans: FansModel }
+  | { kind: "ok"; model: HomeModel; gate: GateModel; groups: SeasonGroup[]; base: BaseModel | null; fans: FansModel; caseMap: CaseMapModel }
   | { kind: "not-found" }
   | { kind: "error" };
 
@@ -281,6 +282,7 @@ export function resolveHome(
       groups: listBySeason(engine, eff),
       base: currentBase(engine, eff),
       fans: buildFansModel(engine, eff, lang),
+      caseMap: buildCaseMap(engine, eff, lang),
       gate: {
         label: labelAt(engine, base, lang),
         peeking,

@@ -7,11 +7,12 @@ import { convertFileSrc } from "@tauri-apps/api/core";
 import { FetchSource, PMTiles, Protocol } from "pmtiles";
 import { BLACK, layers as baseLayers } from "@protomaps/basemaps";
 import { MapboxOverlay } from "@deck.gl/mapbox";
-import { IconLayer, TextLayer } from "@deck.gl/layers";
+import { ArcLayer, IconLayer, PathLayer, TextLayer } from "@deck.gl/layers";
 import type { Layer } from "@deck.gl/core";
 import type { LayerSpecification } from "maplibre-gl";
 import { Glow, Landmark, Ring, Smiley, toDataUri } from "./art";
 import { isPmtilesHeader } from "./pmtilesBytes";
+import type { Pos } from "./caseMap";
 import type { PinModel } from "./viewModel";
 
 type Bounds = [number, number, number, number]; // west, south, east, north
@@ -175,11 +176,18 @@ interface Props {
   ariaLabel: string;
   /** [lon, lat] of the team's current base at the viewer's progress; null falls back to Sacramento. */
   base: [number, number] | null;
+  /** Fly the camera here when `seq` changes (a case was picked or the chronology stepped). */
+  focus: { position: Pos; seq: number } | null;
+  /** Chronology path (cream line) between consecutive case places. */
+  path: Pos[];
+  /** Red string: chronological thread and links between cases; drawn over any basemap style. */
+  thread: Pos[];
+  links: { from: Pos; to: Pos }[];
   onUnavailable: () => void;
   onSelectPin: (id: string) => void;
 }
 
-export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, ariaLabel, base, onUnavailable, onSelectPin }: Props) {
+export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, ariaLabel, base, focus, path, thread, links, onUnavailable, onSelectPin }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const overlay = useRef<MapboxOverlay | null>(null);
   const [ready, setReady] = useState(false);
@@ -266,6 +274,18 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, ariaLabel
       const rings = (id: string, url: IconId, data: PinModel[]) =>
         new IconLayer<PinModel>({ ...common, ...iconProps, id, data, getPosition: (d) => d.position, getIcon: () => url, getSize: 74, sizeUnits: "pixels", getPixelOffset: [0, -32] });
       return [
+        new PathLayer<{ path: Pos[] }>({
+          ...common, id: "chronology-path", data: path.length > 1 ? [{ path }] : [], getPath: (d) => d.path,
+          getColor: [236, 228, 216, 210], getWidth: 3, widthUnits: "pixels", capRounded: true, jointRounded: true,
+        }),
+        new ArcLayer<{ from: Pos; to: Pos }>({
+          ...common, id: "red-links", data: links, getSourcePosition: (d) => d.from, getTargetPosition: (d) => d.to,
+          getSourceColor: [224, 40, 58, 230], getTargetColor: [224, 40, 58, 230], getWidth: 2.5, widthUnits: "pixels", getHeight: 0.4,
+        }),
+        new PathLayer<{ path: Pos[] }>({
+          ...common, id: "red-thread", data: thread.length > 1 ? [{ path: thread }] : [], getPath: (d) => d.path,
+          getColor: [224, 40, 58, 235], getWidth: 3, widthUnits: "pixels", capRounded: true, jointRounded: true,
+        }),
         new IconLayer<PinModel>({
           ...common, ...iconProps, id: "glow", data: pins, getPosition: (d) => d.position, getPixelOffset: [0, -30],
           getIcon: (d) => (d.kind === "smiley" ? ICONS.glowRed : ICONS.glowGold), getSize: 120,
@@ -292,7 +312,7 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, ariaLabel
         }),
       ];
     };
-  }, [pins, selectedPin, linkedCase, hover, atlas]);
+  }, [pins, selectedPin, linkedCase, hover, atlas, path, thread, links]);
 
   useEffect(() => {
     const o = overlay.current;
@@ -322,6 +342,16 @@ export function RedMap({ pins, selectedPin, linkedCase, reducedMotion, ariaLabel
     if (reduced.current) m.jumpTo({ center });
     else m.flyTo({ center, duration: 1600, essential: false });
   }, [center[0], center[1]]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // A case was picked or the chronology stepped: fly to its place (zoom in to at least city level). Nothing on first run.
+  const seq = focus?.seq;
+  useEffect(() => {
+    const m = mapRef.current;
+    if (!m || !focus) return;
+    const zoom = Math.max(m.getZoom(), 11);
+    if (reduced.current) m.jumpTo({ center: focus.position, zoom });
+    else m.flyTo({ center: focus.position, zoom, duration: 1800, essential: false });
+  }, [seq]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     let cancelled = false;

@@ -153,3 +153,20 @@ button.rr-case:hover { background: rgba(236,228,216,.08); border-color: rgba(236
 .rr-settings select { background: transparent; color: var(--text); border: 1px solid var(--line); border-radius: 3px; padding: 7px 10px; font: inherit; font-size: 13px; max-width: 16rem; }
 .rr-settings select:hover { border-color: rgba(236,228,216,.5); }
 .rr-settings select option { background: #141212; color: var(--text); }
+
+/* map tools, chronology and keyboard focus (T2b) */
+.rr-tools { position: absolute; left: 384px; top: 14px; z-index: 3; display: flex; align-items: center; gap: 10px; padding: 8px 10px; }
+.rr-tools-note { font-size: 12px; color: var(--muted); max-width: 30rem; }
+.redroom .rr-btn-red[aria-pressed="true"] { background: var(--red); border-color: var(--red); color: #fff; }
+.rr-chrono { position: absolute; left: 384px; right: 334px; top: 66px; z-index: 3; display: flex; align-items: center; gap: 10px; padding: 8px 10px; }
+.rr-chrono-list { list-style: none; display: flex; gap: 6px; flex: 1; min-width: 0; overflow-x: auto; padding: 4px 2px; scrollbar-width: thin; }
+.rr-chrono-list li { flex: none; }
+.rr-chrono-list button { display: flex; flex-direction: column; width: 132px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 3px; }
+.rr-chrono-list button:hover { background: rgba(236,228,216,.08); border-color: rgba(236,228,216,.4); }
+.rr-chrono-list button[aria-current="step"] { background: var(--gold-dim); border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+.rr-chrono-title { font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rr-chrono-step { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.rr-noplace { color: var(--muted); font-style: italic; }
+.rr-gate select { max-width: 17rem; }
+.redroom select:focus-visible, .redroom button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.rr-case:focus-visible { outline-offset: -2px; background: rgba(236,228,216,.1); }

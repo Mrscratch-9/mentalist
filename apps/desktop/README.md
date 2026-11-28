@@ -109,3 +109,11 @@ Each recurring person is a fixed-width card (124px): the name on one line with a
 - The progress form accepts `fin` as well as `end` for the end of a season.
 - Map labels (vector tiles) stay in the tile language; the map's accessible name is translated.
 - The episode title/synopsis translations come from the TMDB secondary-language import (`data/canon/i18n/es/episodes.yaml`, see `packages/importer/README.md`).
+
+## Case map, chronology and red string (T2b)
+
+- **Progress pickers**: season and episode `<select>`s (episode shows `N · title` in the UI language, plus "End of season"); `pickerModel` in `src/home/navigation.ts`. Apply with **Change** as before.
+- **Case list → place**: click or Enter on a case selects it and flies the camera to its place (`flyTarget` in `src/home/caseMap.ts`). The place is the location linked by a current `part_of_case` that has `case_site: "true"` and `coordinates`, else the first linked location with coordinates. A case without a place keeps the selection, does not move the camera and shows "No place on the map".
+- **Keyboard**: Tab reaches the pickers, buttons, the case list (one tab stop, roving) and the chronology list; arrow keys, Home and End move inside a list (`moveIndex`), Enter activates; focus is always outlined.
+- **Chronology** (map tools): a timeline over the visible (watched) cases in episode order; stepping flies the camera case to case and draws a cream path through the places up to the current step (`chronologyPath`).
+- **Red string** (map tools, independent of chronology and of any basemap style): a red thread through the case places in chronological order plus red links between cases that share a person (current `role_in_case`) or an arc (arc item pointing at the case). In chronology mode it only reaches the current step (`redString`). Everything is built from engine views at the current progress, so hidden claims produce no thread or link; links to cases without a place are not drawn.
