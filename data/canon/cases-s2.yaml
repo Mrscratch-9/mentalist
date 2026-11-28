@@ -132,6 +132,27 @@ entities:
   - key: p-s2e23-victim
     kind: person
     introduced: S2E23
+  - key: l-s2e3-pelican-bay
+    kind: location
+    introduced: S2E3
+  - key: l-s2e5-sf
+    kind: location
+    introduced: S2E5
+  - key: l-s2e7-oakland
+    kind: location
+    introduced: S2E7
+  - key: l-s2e14-oakland
+    kind: location
+    introduced: S2E14
+  - key: l-s2e15-napa-valley
+    kind: location
+    introduced: S2E15
+  - key: l-s2e21-pacific-park
+    kind: location
+    introduced: S2E21
+  - key: l-s2e22-oakland
+    kind: location
+    introduced: S2E22
 
 claims:
   - key: k-s2e1-name
@@ -1049,3 +1070,165 @@ claims:
     status: confirmed
     revealed: S2E22
     source: src-wiki-s2e22
+  - key: k-s2e3-pelican-bay-name
+    subject: l-s2e3-pelican-bay
+    predicate: name
+    value: "Pelican Bay State Prison"
+    revealed: S2E3
+    source: src-wiki-s2e3
+  - key: k-s2e3-pelican-bay-case
+    subject: l-s2e3-pelican-bay
+    predicate: part_of_case
+    object: c-s2e3
+    revealed: S2E3
+    source: src-wiki-s2e3
+  - key: k-s2e3-pelican-bay-coords
+    subject: l-s2e3-pelican-bay
+    predicate: coordinates
+    value: "41.8550,-124.1500"
+    revealed: S2E3
+    source: src-wiki-s2e3
+    note: "landmark"
+  - key: k-s2e5-sf-name
+    subject: l-s2e5-sf
+    predicate: name
+    value: "San Francisco"
+    revealed: S2E5
+    source: src-wiki-s2e5
+  - key: k-s2e5-sf-case
+    subject: l-s2e5-sf
+    predicate: part_of_case
+    object: c-s2e5
+    revealed: S2E5
+    source: src-wiki-s2e5
+  - key: k-s2e5-sf-coords
+    subject: l-s2e5-sf
+    predicate: coordinates
+    value: "37.7775,-122.4164"
+    revealed: S2E5
+    source: src-wiki-s2e5
+    note: "city-level"
+  - key: k-s2e5-sf-site
+    subject: l-s2e5-sf
+    predicate: case_site
+    value: "true"
+    revealed: S2E5
+    source: src-wiki-s2e5
+  - key: k-s2e7-oakland-name
+    subject: l-s2e7-oakland
+    predicate: name
+    value: "Kidnappers' house, Oakland"
+    revealed: S2E7
+    source: src-wiki-s2e7
+  - key: k-s2e7-oakland-case
+    subject: l-s2e7-oakland
+    predicate: part_of_case
+    object: c-s2e7
+    revealed: S2E7
+    source: src-wiki-s2e7
+  - key: k-s2e7-oakland-coords
+    subject: l-s2e7-oakland
+    predicate: coordinates
+    value: "37.8044,-122.2708"
+    revealed: S2E7
+    source: src-wiki-s2e7
+    note: "city-level"
+  - key: k-s2e7-oakland-site
+    subject: l-s2e7-oakland
+    predicate: case_site
+    value: "true"
+    revealed: S2E7
+    source: src-wiki-s2e7
+  - key: k-s2e14-oakland-name
+    subject: l-s2e14-oakland
+    predicate: name
+    value: "Oakland"
+    revealed: S2E14
+    source: src-wiki-s2e14
+  - key: k-s2e14-oakland-case
+    subject: l-s2e14-oakland
+    predicate: part_of_case
+    object: c-s2e14
+    revealed: S2E14
+    source: src-wiki-s2e14
+  - key: k-s2e14-oakland-coords
+    subject: l-s2e14-oakland
+    predicate: coordinates
+    value: "37.8044,-122.2708"
+    revealed: S2E14
+    source: src-wiki-s2e14
+    note: "city-level"
+  - key: k-s2e14-oakland-site
+    subject: l-s2e14-oakland
+    predicate: case_site
+    value: "true"
+    revealed: S2E14
+    source: src-wiki-s2e14
+  - key: k-s2e15-napa-valley-name
+    subject: l-s2e15-napa-valley
+    predicate: name
+    value: "Napa Valley"
+    revealed: S2E15
+    source: src-s2e15
+  - key: k-s2e15-napa-valley-case
+    subject: l-s2e15-napa-valley
+    predicate: part_of_case
+    object: c-s2e15
+    revealed: S2E15
+    source: src-s2e15
+  - key: k-s2e21-pacific-park-name
+    subject: l-s2e21-pacific-park
+    predicate: name
+    value: "Pacific Park"
+    revealed: S2E21
+    source: src-wiki-s2e21
+  - key: k-s2e21-pacific-park-case
+    subject: l-s2e21-pacific-park
+    predicate: part_of_case
+    object: c-s2e21
+    revealed: S2E21
+    source: src-wiki-s2e21
+  - key: k-s2e21-pacific-park-coords
+    subject: l-s2e21-pacific-park
+    predicate: coordinates
+    value: "34.0083,-118.4981"
+    revealed: S2E21
+    source: src-wiki-s2e21
+    note: "landmark"
+  - key: k-s2e21-pacific-park-site
+    subject: l-s2e21-pacific-park
+    predicate: case_site
+    value: "true"
+    revealed: S2E21
+    source: src-wiki-s2e21
+  - key: k-s2e22-oakland-name
+    subject: l-s2e22-oakland
+    predicate: name
+    value: "Oakland townhouse"
+    revealed: S2E22
+    source: src-wiki-s2e22
+  - key: k-s2e22-oakland-case
+    subject: l-s2e22-oakland
+    predicate: part_of_case
+    object: c-s2e22
+    revealed: S2E22
+    source: src-wiki-s2e22
+  - key: k-s2e22-oakland-coords
+    subject: l-s2e22-oakland
+    predicate: coordinates
+    value: "37.8044,-122.2708"
+    revealed: S2E22
+    source: src-wiki-s2e22
+    note: "city-level"
+  - key: k-s2e22-oakland-site
+    subject: l-s2e22-oakland
+    predicate: case_site
+    value: "true"
+    revealed: S2E22
+    source: src-wiki-s2e22
+  - key: k-s2e17-museum-site
+    subject: l-s2e17-museum
+    predicate: case_site
+    value: "true"
+    revealed: S2E17
+    source: src-wiki-s2e17

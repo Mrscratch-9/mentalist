@@ -1,0 +1,10 @@
+# Spanish (es-MX) translations: season 2 places (descriptive names only; proper names are not translated).
+translations:
+  - key: k-s2e7-oakland-name
+    field: value
+    hash: f75a60e2bf88
+    text: "Casa de los secuestradores, Oakland"
+  - key: k-s2e22-oakland-name
+    field: value
+    hash: b904736195f6
+    text: "Casa adosada en Oakland"

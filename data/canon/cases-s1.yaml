@@ -106,6 +106,54 @@ entities:
     kind: person
     introduced: S1E20
 
+  - key: l-s1e1-los-angeles
+    kind: location
+    introduced: S1E1
+  - key: l-s1e2-napa
+    kind: location
+    introduced: S1E2
+  - key: l-s1e2-fairfield
+    kind: location
+    introduced: S1E2
+  - key: l-s1e4-sausalito
+    kind: location
+    introduced: S1E4
+  - key: l-s1e4-oakland
+    kind: location
+    introduced: S1E4
+  - key: l-s1e8-davis
+    kind: location
+    introduced: S1E8
+  - key: l-s1e11-tijuana
+    kind: location
+    introduced: S1E11
+  - key: l-s1e13-los-angeles
+    kind: location
+    introduced: S1E13
+  - key: l-s1e14-napa-county
+    kind: location
+    introduced: S1E14
+  - key: l-s1e15-marysville
+    kind: location
+    introduced: S1E15
+  - key: l-s1e16-sacramento
+    kind: location
+    introduced: S1E16
+  - key: l-s1e17-mojave
+    kind: location
+    introduced: S1E17
+  - key: l-s1e18-sacramento
+    kind: location
+    introduced: S1E18
+  - key: l-s1e18-san-francisco
+    kind: location
+    introduced: S1E18
+  - key: l-s1e19-burbank
+    kind: location
+    introduced: S1E19
+  - key: l-s1e21-sausalito
+    kind: location
+    introduced: S1E21
 claims:
   - key: cl-s1e1-name
     subject: c-s1e1
@@ -938,3 +986,488 @@ claims:
     revealed: S1E22
     source: src-wiki-s1e22
     status: confirmed
+  - key: l-s1e1-los-angeles-name
+    subject: l-s1e1-los-angeles
+    predicate: name
+    value: "Los Angeles"
+    revealed: S1E1
+    source: src-wiki-s1e1
+  - key: l-s1e1-los-angeles-description
+    subject: l-s1e1-los-angeles
+    predicate: description
+    value: "City where the team goes to investigate a double homicide made to look like the work of Red John."
+    revealed: S1E1
+    source: src-wiki-s1e1
+  - key: l-s1e1-los-angeles-case
+    subject: l-s1e1-los-angeles
+    predicate: part_of_case
+    object: c-s1e1
+    revealed: S1E1
+    source: src-wiki-s1e1
+  - key: l-s1e1-los-angeles-coordinates
+    subject: l-s1e1-los-angeles
+    predicate: coordinates
+    value: "34.05,-118.25"
+    revealed: S1E1
+    source: src-wiki-s1e1
+    note: "city-level"
+  - key: l-s1e1-los-angeles-case-site
+    subject: l-s1e1-los-angeles
+    predicate: case_site
+    value: "true"
+    revealed: S1E1
+    source: src-wiki-s1e1
+  - key: l-s1e2-napa-name
+    subject: l-s1e2-napa
+    predicate: name
+    value: "Napa"
+    revealed: S1E2
+    source: src-wiki-s1e2
+  - key: l-s1e2-napa-description
+    subject: l-s1e2-napa
+    predicate: description
+    value: "City where the team and the sheriff's department gather to pursue the suspect."
+    revealed: S1E2
+    source: src-wiki-s1e2
+  - key: l-s1e2-napa-case
+    subject: l-s1e2-napa
+    predicate: part_of_case
+    object: c-s1e2
+    revealed: S1E2
+    source: src-wiki-s1e2
+  - key: l-s1e2-napa-coordinates
+    subject: l-s1e2-napa
+    predicate: coordinates
+    value: "38.30472222,-122.29888889"
+    revealed: S1E2
+    source: src-wiki-s1e2
+    note: "city-level"
+  - key: l-s1e2-fairfield-name
+    subject: l-s1e2-fairfield
+    predicate: name
+    value: "Fairfield"
+    revealed: S1E2
+    source: src-wiki-s1e2
+  - key: l-s1e2-fairfield-description
+    subject: l-s1e2-fairfield
+    predicate: description
+    value: "City where a red-haired woman was abducted at a bus stop and later found bound with duct tape in a motel room."
+    revealed: S1E2
+    source: src-wiki-s1e2
+  - key: l-s1e2-fairfield-case
+    subject: l-s1e2-fairfield
+    predicate: part_of_case
+    object: c-s1e2
+    revealed: S1E2
+    source: src-wiki-s1e2
+  - key: l-s1e2-fairfield-coordinates
+    subject: l-s1e2-fairfield
+    predicate: coordinates
+    value: "38.25777778,-122.05416667"
+    revealed: S1E2
+    source: src-wiki-s1e2
+    note: "city-level"
+  - key: l-s1e4-sausalito-name
+    subject: l-s1e4-sausalito
+    predicate: name
+    value: "Sausalito"
+    revealed: S1E4
+    source: src-wiki-s1e4
+  - key: l-s1e4-sausalito-description
+    subject: l-s1e4-sausalito
+    predicate: description
+    value: "Bay town whose marina docks hold a luxury boat tied to the victim's paper supply company."
+    revealed: S1E4
+    source: src-wiki-s1e4
+  - key: l-s1e4-sausalito-case
+    subject: l-s1e4-sausalito
+    predicate: part_of_case
+    object: c-s1e4
+    revealed: S1E4
+    source: src-wiki-s1e4
+  - key: l-s1e4-sausalito-coordinates
+    subject: l-s1e4-sausalito
+    predicate: coordinates
+    value: "37.85916667,-122.48527778"
+    revealed: S1E4
+    source: src-wiki-s1e4
+    note: "city-level"
+  - key: l-s1e4-sausalito-case-site
+    subject: l-s1e4-sausalito
+    predicate: case_site
+    value: "true"
+    revealed: S1E4
+    source: src-wiki-s1e4
+  - key: l-s1e4-oakland-name
+    subject: l-s1e4-oakland
+    predicate: name
+    value: "Oakland"
+    revealed: S1E4
+    source: src-wiki-s1e4
+  - key: l-s1e4-oakland-description
+    subject: l-s1e4-oakland
+    predicate: description
+    value: "City linked to the victim through a company that bought his paper and two nightclub owners who used him to launder money."
+    revealed: S1E4
+    source: src-wiki-s1e4
+  - key: l-s1e4-oakland-case
+    subject: l-s1e4-oakland
+    predicate: part_of_case
+    object: c-s1e4
+    revealed: S1E4
+    source: src-wiki-s1e4
+  - key: l-s1e4-oakland-coordinates
+    subject: l-s1e4-oakland
+    predicate: coordinates
+    value: "37.80444444,-122.27083333"
+    revealed: S1E4
+    source: src-wiki-s1e4
+    note: "city-level"
+  - key: l-s1e8-davis-name
+    subject: l-s1e8-davis
+    predicate: name
+    value: "Davis"
+    revealed: S1E8
+    source: src-wiki-s1e8
+  - key: l-s1e8-davis-description
+    subject: l-s1e8-davis
+    predicate: description
+    value: "City whose police department handles the motel double murder alongside the CBI."
+    revealed: S1E8
+    source: src-wiki-s1e8
+  - key: l-s1e8-davis-case
+    subject: l-s1e8-davis
+    predicate: part_of_case
+    object: c-s1e8
+    revealed: S1E8
+    source: src-wiki-s1e8
+  - key: l-s1e8-davis-coordinates
+    subject: l-s1e8-davis
+    predicate: coordinates
+    value: "38.55388889,-121.73805556"
+    revealed: S1E8
+    source: src-wiki-s1e8
+    note: "city-level"
+  - key: l-s1e8-davis-case-site
+    subject: l-s1e8-davis
+    predicate: case_site
+    value: "true"
+    revealed: S1E8
+    source: src-wiki-s1e8
+  - key: l-s1e11-tijuana-name
+    subject: l-s1e11-tijuana
+    predicate: name
+    value: "Tijuana"
+    revealed: S1E11
+    source: src-wiki-s1e11
+  - key: l-s1e11-tijuana-description
+    subject: l-s1e11-tijuana
+    predicate: description
+    value: "Mexican city where the inmate's call is traced and where he is later found murdered."
+    revealed: S1E11
+    source: src-wiki-s1e11
+  - key: l-s1e11-tijuana-case
+    subject: l-s1e11-tijuana
+    predicate: part_of_case
+    object: c-s1e11
+    revealed: S1E11
+    source: src-wiki-s1e11
+  - key: l-s1e11-tijuana-coordinates
+    subject: l-s1e11-tijuana
+    predicate: coordinates
+    value: "32.525,-117.03333333"
+    revealed: S1E11
+    source: src-wiki-s1e11
+    note: "city-level"
+  - key: l-s1e11-tijuana-case-site
+    subject: l-s1e11-tijuana
+    predicate: case_site
+    value: "true"
+    revealed: S1E11
+    source: src-wiki-s1e11
+  - key: l-s1e13-los-angeles-name
+    subject: l-s1e13-los-angeles
+    predicate: name
+    value: "Los Angeles"
+    revealed: S1E13
+    source: src-wiki-s1e13
+  - key: l-s1e13-los-angeles-description
+    subject: l-s1e13-los-angeles
+    predicate: description
+    value: "City the team heads to in order to confront the Russian oil baron outbid for the painting."
+    revealed: S1E13
+    source: src-wiki-s1e13
+  - key: l-s1e13-los-angeles-case
+    subject: l-s1e13-los-angeles
+    predicate: part_of_case
+    object: c-s1e13
+    revealed: S1E13
+    source: src-wiki-s1e13
+  - key: l-s1e13-los-angeles-coordinates
+    subject: l-s1e13-los-angeles
+    predicate: coordinates
+    value: "34.05,-118.25"
+    revealed: S1E13
+    source: src-wiki-s1e13
+    note: "city-level"
+  - key: l-s1e13-los-angeles-case-site
+    subject: l-s1e13-los-angeles
+    predicate: case_site
+    value: "true"
+    revealed: S1E13
+    source: src-wiki-s1e13
+  - key: l-s1e14-napa-county-name
+    subject: l-s1e14-napa-county
+    predicate: name
+    value: "Napa County"
+    revealed: S1E14
+    source: src-wiki-s1e14
+  - key: l-s1e14-napa-county-description
+    subject: l-s1e14-napa-county
+    predicate: description
+    value: "County where the resort and spa in which the millionaire's wife was murdered is located."
+    revealed: S1E14
+    source: src-wiki-s1e14
+  - key: l-s1e14-napa-county-case
+    subject: l-s1e14-napa-county
+    predicate: part_of_case
+    object: c-s1e14
+    revealed: S1E14
+    source: src-wiki-s1e14
+  - key: l-s1e14-napa-county-coordinates
+    subject: l-s1e14-napa-county
+    predicate: coordinates
+    value: "38.5,-122.32"
+    revealed: S1E14
+    source: src-wiki-s1e14
+    note: "city-level"
+  - key: l-s1e14-napa-county-case-site
+    subject: l-s1e14-napa-county
+    predicate: case_site
+    value: "true"
+    revealed: S1E14
+    source: src-wiki-s1e14
+  - key: l-s1e15-marysville-name
+    subject: l-s1e15-marysville
+    predicate: name
+    value: "Marysville"
+    revealed: S1E15
+    source: src-wiki-s1e15
+  - key: l-s1e15-marysville-description
+    subject: l-s1e15-marysville
+    predicate: description
+    value: "City of a regular appointment in the victim's datebook, where the team finds a dirt bike race and a drug dealer."
+    revealed: S1E15
+    source: src-wiki-s1e15
+  - key: l-s1e15-marysville-case
+    subject: l-s1e15-marysville
+    predicate: part_of_case
+    object: c-s1e15
+    revealed: S1E15
+    source: src-wiki-s1e15
+  - key: l-s1e15-marysville-coordinates
+    subject: l-s1e15-marysville
+    predicate: coordinates
+    value: "39.15,-121.58333333"
+    revealed: S1E15
+    source: src-wiki-s1e15
+    note: "city-level"
+  - key: l-s1e15-marysville-case-site
+    subject: l-s1e15-marysville
+    predicate: case_site
+    value: "true"
+    revealed: S1E15
+    source: src-wiki-s1e15
+  - key: l-s1e16-sacramento-name
+    subject: l-s1e16-sacramento
+    predicate: name
+    value: "Sacramento"
+    revealed: S1E16
+    source: src-wiki-s1e16
+  - key: l-s1e16-sacramento-description
+    subject: l-s1e16-sacramento
+    predicate: description
+    value: "City where the stockbroker's family residence is located."
+    revealed: S1E16
+    source: src-wiki-s1e16
+  - key: l-s1e16-sacramento-case
+    subject: l-s1e16-sacramento
+    predicate: part_of_case
+    object: c-s1e16
+    revealed: S1E16
+    source: src-wiki-s1e16
+  - key: l-s1e16-sacramento-coordinates
+    subject: l-s1e16-sacramento
+    predicate: coordinates
+    value: "38.58111111,-121.49388889"
+    revealed: S1E16
+    source: src-wiki-s1e16
+    note: "city-level"
+  - key: l-s1e16-sacramento-case-site
+    subject: l-s1e16-sacramento
+    predicate: case_site
+    value: "true"
+    revealed: S1E16
+    source: src-wiki-s1e16
+  - key: l-s1e17-mojave-name
+    subject: l-s1e17-mojave
+    predicate: name
+    value: "Mojave Desert"
+    revealed: S1E17
+    source: src-wiki-s1e17
+  - key: l-s1e17-mojave-description
+    subject: l-s1e17-mojave
+    predicate: description
+    value: "Desert named in the anonymous threat as the place, given by coordinates, where a person would die at a set time."
+    revealed: S1E17
+    source: src-wiki-s1e17
+  - key: l-s1e17-mojave-case
+    subject: l-s1e17-mojave
+    predicate: part_of_case
+    object: c-s1e17
+    revealed: S1E17
+    source: src-wiki-s1e17
+  - key: l-s1e17-mojave-case-site
+    subject: l-s1e17-mojave
+    predicate: case_site
+    value: "true"
+    revealed: S1E17
+    source: src-wiki-s1e17
+  - key: l-s1e17-mojave-coordinates
+    subject: l-s1e17-mojave
+    predicate: coordinates
+    value: "35,-116"
+    revealed: S1E17
+    source: src-wiki-s1e17
+    note: "city-level"
+  - key: l-s1e18-sacramento-name
+    subject: l-s1e18-sacramento
+    predicate: name
+    value: "Sacramento"
+    revealed: S1E18
+    source: src-wiki-s1e18
+  - key: l-s1e18-sacramento-description
+    subject: l-s1e18-sacramento
+    predicate: description
+    value: "Downtown streets where a man drags a corpse he believes is a sack of potatoes."
+    revealed: S1E18
+    source: src-wiki-s1e18
+  - key: l-s1e18-sacramento-case
+    subject: l-s1e18-sacramento
+    predicate: part_of_case
+    object: c-s1e18
+    revealed: S1E18
+    source: src-wiki-s1e18
+  - key: l-s1e18-sacramento-coordinates
+    subject: l-s1e18-sacramento
+    predicate: coordinates
+    value: "38.58111111,-121.49388889"
+    revealed: S1E18
+    source: src-wiki-s1e18
+    note: "city-level"
+  - key: l-s1e18-sacramento-case-site
+    subject: l-s1e18-sacramento
+    predicate: case_site
+    value: "true"
+    revealed: S1E18
+    source: src-wiki-s1e18
+  - key: l-s1e18-san-francisco-name
+    subject: l-s1e18-san-francisco
+    predicate: name
+    value: "San Francisco"
+    revealed: S1E18
+    source: src-wiki-s1e18
+  - key: l-s1e18-san-francisco-description
+    subject: l-s1e18-san-francisco
+    predicate: description
+    value: "City the victim's sister had just visited before the murder."
+    revealed: S1E18
+    source: src-wiki-s1e18
+  - key: l-s1e18-san-francisco-case
+    subject: l-s1e18-san-francisco
+    predicate: part_of_case
+    object: c-s1e18
+    revealed: S1E18
+    source: src-wiki-s1e18
+  - key: l-s1e18-san-francisco-coordinates
+    subject: l-s1e18-san-francisco
+    predicate: coordinates
+    value: "37.7775,-122.41638889"
+    revealed: S1E18
+    source: src-wiki-s1e18
+    note: "city-level"
+  - key: l-s1e19-burbank-name
+    subject: l-s1e19-burbank
+    predicate: name
+    value: "Burbank"
+    revealed: S1E19
+    source: src-wiki-s1e19
+  - key: l-s1e19-burbank-description
+    subject: l-s1e19-burbank
+    predicate: description
+    value: "City where the team visits Poseidon Studios to question the director."
+    revealed: S1E19
+    source: src-wiki-s1e19
+  - key: l-s1e19-burbank-case
+    subject: l-s1e19-burbank
+    predicate: part_of_case
+    object: c-s1e19
+    revealed: S1E19
+    source: src-wiki-s1e19
+  - key: l-s1e19-burbank-coordinates
+    subject: l-s1e19-burbank
+    predicate: coordinates
+    value: "34.18027778,-118.32833333"
+    revealed: S1E19
+    source: src-wiki-s1e19
+    note: "city-level"
+  - key: l-s1e21-sausalito-name
+    subject: l-s1e21-sausalito
+    predicate: name
+    value: "Sausalito"
+    revealed: S1E21
+    source: src-wiki-s1e21
+  - key: l-s1e21-sausalito-description
+    subject: l-s1e21-sausalito
+    predicate: description
+    value: "Town where the exclusive marina from which the software CEO vanished is located."
+    revealed: S1E21
+    source: src-wiki-s1e21
+  - key: l-s1e21-sausalito-case
+    subject: l-s1e21-sausalito
+    predicate: part_of_case
+    object: c-s1e21
+    revealed: S1E21
+    source: src-wiki-s1e21
+  - key: l-s1e21-sausalito-coordinates
+    subject: l-s1e21-sausalito
+    predicate: coordinates
+    value: "37.85916667,-122.48527778"
+    revealed: S1E21
+    source: src-wiki-s1e21
+    note: "city-level"
+  - key: l-s1e21-sausalito-case-site
+    subject: l-s1e21-sausalito
+    predicate: case_site
+    value: "true"
+    revealed: S1E21
+    source: src-wiki-s1e21
+  - key: l-s1e2-vineyard-coordinates
+    subject: l-s1e2-vineyard
+    predicate: coordinates
+    value: "38.5,-122.32"
+    revealed: S1E2
+    source: src-s1e2
+    note: "city-level"
+  - key: l-s1e2-vineyard-case-site
+    subject: l-s1e2-vineyard
+    predicate: case_site
+    value: "true"
+    revealed: S1E2
+    source: src-s1e2
+  - key: l-s1e19-hollywood-case-site
+    subject: l-s1e19-hollywood
+    predicate: case_site
+    value: "true"
+    revealed: S1E19
+    source: src-s1e19

@@ -12,6 +12,9 @@ entities:
   - key: c-s3e3
     kind: case
     introduced: S3E3
+  - key: l-s3e3-sacramento-river
+    kind: location
+    introduced: S3E3
   - key: c-s3e4
     kind: case
     introduced: S3E4
@@ -1332,3 +1335,46 @@ claims:
     status: confirmed
     revealed: S3E22
     source: src-wiki-s3e22
+  - key: l-s3e3-sacramento-river-name
+    subject: l-s3e3-sacramento-river
+    predicate: name
+    value: "Sacramento River"
+    revealed: S3E3
+    source: src-wiki-s3e3
+  - key: l-s3e3-sacramento-river-description
+    subject: l-s3e3-sacramento-river
+    predicate: description
+    value: "River bank where the body of the case's victim was found by a jogger."
+    revealed: S3E3
+    source: src-wiki-s3e3
+  - key: l-s3e3-sacramento-river-case
+    subject: l-s3e3-sacramento-river
+    predicate: part_of_case
+    object: c-s3e3
+    revealed: S3E3
+    source: src-wiki-s3e3
+  - key: l-s3e3-sacramento-river-coordinates
+    subject: l-s3e3-sacramento-river
+    predicate: coordinates
+    value: "38.06333333,-121.85277778"
+    revealed: S3E3
+    source: src-wiki-s3e3
+    note: "landmark"
+  - key: l-s3e3-sacramento-river-case-site
+    subject: l-s3e3-sacramento-river
+    predicate: case_site
+    value: "true"
+    revealed: S3E3
+    source: src-wiki-s3e3
+  - key: l-s3e8-clarksburg-case-site
+    subject: l-s3e8-clarksburg
+    predicate: case_site
+    value: "true"
+    revealed: S3E8
+    source: src-s3e8
+  - key: l-s3e19-sf-case-site
+    subject: l-s3e19-sf
+    predicate: case_site
+    value: "true"
+    revealed: S3E19
+    source: src-s3e19

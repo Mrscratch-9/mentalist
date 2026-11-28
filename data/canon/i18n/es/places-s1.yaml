@@ -1,0 +1,66 @@
+# Spanish (es-MX) translations: season 1 case places (descriptions; proper names are not translated).
+translations:
+  - key: l-s1e1-los-angeles-description
+    field: value
+    hash: "8c0aedc7c1e1"
+    text: "Ciudad adonde viaja el equipo para investigar un doble homicidio hecho para parecer obra de Red John."
+  - key: l-s1e2-napa-description
+    field: value
+    hash: "90fc9e03ca4e"
+    text: "Ciudad donde el equipo y el departamento del sheriff se reúnen para perseguir al sospechoso."
+  - key: l-s1e2-fairfield-description
+    field: value
+    hash: "e6ad90c8634c"
+    text: "Ciudad donde una mujer pelirroja fue secuestrada en una parada de autobús y luego hallada atada con cinta adhesiva en un cuarto de motel."
+  - key: l-s1e4-sausalito-description
+    field: value
+    hash: "407fb09c1803"
+    text: "Pueblo de la bahía cuyos muelles de la marina albergan un yate de lujo vinculado a la empresa de suministro de papel de la víctima."
+  - key: l-s1e4-oakland-description
+    field: value
+    hash: "aa29e02bfaa3"
+    text: "Ciudad vinculada con la víctima por una empresa que le compraba papel y por dos dueños de clubes nocturnos que lo usaban para lavar dinero."
+  - key: l-s1e8-davis-description
+    field: value
+    hash: "ef5be4ca80a0"
+    text: "Ciudad cuyo departamento de policía lleva el doble asesinato del motel junto con el CBI."
+  - key: l-s1e11-tijuana-description
+    field: value
+    hash: "28643da3143b"
+    text: "Ciudad mexicana donde se rastrea la llamada del recluso y donde más tarde lo encuentran asesinado."
+  - key: l-s1e13-los-angeles-description
+    field: value
+    hash: "7cdb68780462"
+    text: "Ciudad a la que se dirige el equipo para enfrentar al magnate petrolero ruso que perdió la puja por el cuadro."
+  - key: l-s1e14-napa-county-description
+    field: value
+    hash: "da324e5243ef"
+    text: "Condado donde se encuentra el resort con spa donde fue asesinada la esposa del millonario."
+  - key: l-s1e15-marysville-description
+    field: value
+    hash: "3bed568d3745"
+    text: "Ciudad de una cita regular en la agenda de la víctima, donde el equipo encuentra una carrera de motos de cross y a un narcotraficante."
+  - key: l-s1e16-sacramento-description
+    field: value
+    hash: "af7763a2f225"
+    text: "Ciudad donde se encuentra la residencia familiar del corredor de bolsa."
+  - key: l-s1e17-mojave-description
+    field: value
+    hash: "006360c606ca"
+    text: "Desierto señalado en la amenaza anónima como el lugar, dado por coordenadas, donde una persona moriría a una hora fijada."
+  - key: l-s1e18-sacramento-description
+    field: value
+    hash: "215797657406"
+    text: "Calles del centro donde un hombre arrastra un cadáver que cree que es un saco de papas."
+  - key: l-s1e18-san-francisco-description
+    field: value
+    hash: "4ddaec426374"
+    text: "Ciudad que la hermana de la víctima acababa de visitar antes del asesinato."
+  - key: l-s1e19-burbank-description
+    field: value
+    hash: "fd730ed4b83c"
+    text: "Ciudad donde el equipo visita los estudios Poseidon para interrogar al director."
+  - key: l-s1e21-sausalito-description
+    field: value
+    hash: "825b0583198e"
+    text: "Pueblo donde se encuentra la exclusiva marina de la que desapareció el director ejecutivo de la empresa de software."

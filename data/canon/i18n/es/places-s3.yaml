@@ -1,0 +1,6 @@
+# Spanish (es-MX) translations: season 3 case places (descriptions; proper names are not translated).
+translations:
+  - key: l-s3e3-sacramento-river-description
+    field: value
+    hash: f35441650c5c
+    text: "Orilla del río donde un corredor encontró el cuerpo de la víctima del caso."
