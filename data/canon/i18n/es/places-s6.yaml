@@ -1,0 +1,38 @@
+# Spanish (es-MX) season 6 case places: descriptions only; place names are proper names and stay untranslated.
+translations:
+  - key: cl-s6e1-salton-desc
+    field: value
+    hash: "75a596fef20e"
+    text: "Área recreativa estatal en el desierto donde hallan enterrado a un hombre desaparecido hace dos años."
+  - key: cl-s6e6-malibu-desc
+    field: value
+    hash: "02a9cf146ba3"
+    text: "Ciudad costera que Jane atraviesa en su camino a la casa de la familia Jane, donde reúne a los sospechosos de Red John."
+  - key: cl-l-s6e18-b-desc
+    field: value
+    hash: "a164dfeaa541"
+    text: "Bosque nacional de Texas donde hallan muerta, con el cuello roto, a una mujer cerca de un club remoto para hombres."
+  - key: cl-l-s6e19-b-desc
+    field: value
+    hash: "5faa4d0f4616"
+    text: "Ciudad de California donde hallan muerto al cazatalentos de modelos vinculado con la red de trata."
+  - key: cl-s6e3-napa-desc
+    field: value
+    hash: "0dc78b52f021"
+    text: "Población del valle de Napa donde hallan el cuerpo de un repartidor en un estanque de patos y Jane involucra al CBI para centrarse en el sheriff McAllister."
+  - key: cl-s6e10-brooklyn-desc
+    field: value
+    hash: "710f466423f4"
+    text: "Distrito de la ciudad de Nueva York donde vive el programador desaparecido y donde encuentran a Jane."
+  - key: cl-l-s6e11-a-desc
+    field: value
+    hash: "80b4244e030d"
+    text: "Ciudad de Texas donde asesinan a cinco agentes de la DEA y el equipo del FBI investiga."
+  - key: cl-l-s6e12-a-desc
+    field: value
+    hash: "91c8cbd0cb90"
+    text: "Ciudad de Texas donde asesinan a un cartógrafo de alta tecnología que pudo haber descubierto una red de espionaje."
+  - key: cl-l-s6e22-a-desc
+    field: value
+    hash: "8d7c5882787c"
+    text: "Ciudad de Florida donde Jane y Lisbon buscan a los sospechosos de un caso sin resolver que se reabre."

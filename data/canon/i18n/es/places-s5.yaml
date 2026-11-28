@@ -1,0 +1,26 @@
+# Spanish (es-MX) translations: season 5 case places (descriptions; proper names are not translated).
+translations:
+  - key: l-s5e1-bakersfield-description
+    field: value
+    hash: "38d54c7b5a58"
+    text: "Ciudad donde Cho y Rigsby interrogan al primo y al tío del técnico asesinado, quienes cuentan que se cambió el nombre antes de mudarse."
+  - key: l-s5e2-san-francisco-description
+    field: value
+    hash: "90c51bec2a73"
+    text: "Ciudad cuyo barrio St. Francis Wood es el escenario del asesinato del tallador de diamantes en su casa."
+  - key: l-s5e3-sacramento-description
+    field: value
+    hash: "f71c1a34eb77"
+    text: "Ciudad que da nombre al Sacramento Federal Bank, donde un subgerente muere a tiros durante un robo."
+  - key: l-s5e10-clearlake-description
+    field: value
+    hash: "8c18a13e5260"
+    text: "Ciudad donde encuentran al joven botánico baleado, colgado en la pared de un gimnasio de escalada."
+  - key: l-s5e16-davis-description
+    field: value
+    hash: "6780b29e46aa"
+    text: "Ciudad a las afueras de Sacramento donde la directora del refugio tenía una casa; allí Jane encuentra un trozo de alambre de pesca y se encuentra con Lorelei."
+  - key: l-s5e18-sacramento-description
+    field: value
+    hash: "cb9886402143"
+    text: "Ciudad cuyo hotel del centro es el lugar desde donde la actriz cae del piso nueve sobre un auto."

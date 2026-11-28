@@ -140,6 +140,42 @@ entities:
     kind: case
     introduced: S7E13
 
+  - key: l-s7e4-a
+    kind: location
+    introduced: S7E4
+
+  - key: l-s7e4-b
+    kind: location
+    introduced: S7E4
+
+  - key: l-s7e4-c
+    kind: location
+    introduced: S7E4
+
+  - key: l-s7e6-a
+    kind: location
+    introduced: S7E6
+
+  - key: l-s7e7-b
+    kind: location
+    introduced: S7E7
+
+  - key: l-s7e8-a
+    kind: location
+    introduced: S7E8
+
+  - key: l-s7e9-a
+    kind: location
+    introduced: S7E9
+
+  - key: l-s7e9-b
+    kind: location
+    introduced: S7E9
+
+  - key: l-s7e10-a
+    kind: location
+    introduced: S7E10
+
 claims:
   - key: c-s7e1-name
     subject: c-s7e1
@@ -774,3 +810,306 @@ claims:
     status: confirmed
     revealed: S7E13
     source: src-wiki-s7e13
+  - key: l-s7e1-a-description
+    subject: l-s7e1-a
+    predicate: description
+    value: "Bowling alley where an undercover FBI agent is shot dead in the back alley and where its owner and a bartender run a gun-selling operation."
+    revealed: S7E1
+    source: src-wiki-s7e1
+  - key: l-s7e2-a-description
+    subject: l-s7e2-a
+    predicate: description
+    value: "Texas city where a charity gala is held and a car thief holds up the guests and steals a high-end car, leading the police on a chase."
+    revealed: S7E2
+    source: src-wiki-s7e2
+  - key: l-s7e2-a-case-site
+    subject: l-s7e2-a
+    predicate: case_site
+    value: "true"
+    revealed: S7E2
+    source: src-wiki-s7e2
+  - key: l-s7e3-a-description
+    subject: l-s7e3-a
+    predicate: description
+    value: "Lebanese city where Jane and Lisbon work with Erica Flynn to get close to a courier for terrorist groups."
+    revealed: S7E3
+    source: src-wiki-s7e3
+  - key: l-s7e3-a-case-site
+    subject: l-s7e3-a
+    predicate: case_site
+    value: "true"
+    revealed: S7E3
+    source: src-wiki-s7e3
+  - key: l-s7e3-b-description
+    subject: l-s7e3-b
+    predicate: description
+    value: "US city where the courier's message is to be delivered; the team sets up the meeting at a roadhouse and the contact dies in a shootout."
+    revealed: S7E3
+    source: src-wiki-s7e3
+  - key: l-s7e4-a-name
+    subject: l-s7e4-a
+    predicate: name
+    value: "Houston, Texas"
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: l-s7e4-a-description
+    subject: l-s7e4-a
+    predicate: description
+    value: "Texas city where the gem show is held and where a vendor is found beaten to death on an outdoor staircase."
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: l-s7e4-a-case
+    subject: l-s7e4-a
+    predicate: part_of_case
+    object: c-s7e4
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: l-s7e4-a-coordinates
+    subject: l-s7e4-a
+    predicate: coordinates
+    value: "29.75666667,-95.36527778"
+    revealed: S7E4
+    source: src-wiki-s7e4
+    note: "city-level"
+  - key: l-s7e4-a-case-site
+    subject: l-s7e4-a
+    predicate: case_site
+    value: "true"
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: l-s7e4-b-name
+    subject: l-s7e4-b
+    predicate: name
+    value: "Galveston, Texas"
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: l-s7e4-b-description
+    subject: l-s7e4-b
+    predicate: description
+    value: "Texas coastal city whose airplane hangar is where the agents catch up with a gem dealer who flees the show."
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: l-s7e4-b-case
+    subject: l-s7e4-b
+    predicate: part_of_case
+    object: c-s7e4
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: l-s7e4-b-coordinates
+    subject: l-s7e4-b
+    predicate: coordinates
+    value: "29.30138889,-94.795"
+    revealed: S7E4
+    source: src-wiki-s7e4
+    note: "city-level"
+  - key: l-s7e4-c-name
+    subject: l-s7e4-c
+    predicate: name
+    value: "Fort Worth, Texas"
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: l-s7e4-c-description
+    subject: l-s7e4-c
+    predicate: description
+    value: "Texas city outside of which two security guards are killed after transporting half a million dollars in diamonds."
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: l-s7e4-c-case
+    subject: l-s7e4-c
+    predicate: part_of_case
+    object: c-s7e4
+    revealed: S7E4
+    source: src-wiki-s7e4
+  - key: l-s7e4-c-coordinates
+    subject: l-s7e4-c
+    predicate: coordinates
+    value: "32.75638889,-97.3325"
+    revealed: S7E4
+    source: src-wiki-s7e4
+    note: "city-level"
+  - key: l-s7e6-a-name
+    subject: l-s7e6-a
+    predicate: name
+    value: "San Antonio, Texas"
+    revealed: S7E6
+    source: src-wiki-s7e6
+  - key: l-s7e6-a-description
+    subject: l-s7e6-a
+    predicate: description
+    value: "Texas city where the DEA office is based and where the team goes to question the dead agent's colleagues."
+    revealed: S7E6
+    source: src-wiki-s7e6
+  - key: l-s7e6-a-case
+    subject: l-s7e6-a
+    predicate: part_of_case
+    object: c-s7e6
+    revealed: S7E6
+    source: src-wiki-s7e6
+  - key: l-s7e6-a-coordinates
+    subject: l-s7e6-a
+    predicate: coordinates
+    value: "29.425,-98.4939"
+    revealed: S7E6
+    source: src-wiki-s7e6
+    note: "city-level"
+  - key: l-s7e6-a-case-site
+    subject: l-s7e6-a
+    predicate: case_site
+    value: "true"
+    revealed: S7E6
+    source: src-wiki-s7e6
+  - key: l-s7e7-a-description
+    subject: l-s7e7-a
+    predicate: description
+    value: "Lisbon's hometown, where she and Jane go to find her brother, who is wanted as a witness."
+    revealed: S7E7
+    source: src-wiki-s7e7
+  - key: l-s7e7-b-name
+    subject: l-s7e7-b
+    predicate: name
+    value: "Dallas, Texas"
+    revealed: S7E7
+    source: src-wiki-s7e7
+  - key: l-s7e7-b-description
+    subject: l-s7e7-b
+    predicate: description
+    value: "Texas city where the lawyer is found beaten to death behind a hotel after a poker game."
+    revealed: S7E7
+    source: src-wiki-s7e7
+  - key: l-s7e7-b-case
+    subject: l-s7e7-b
+    predicate: part_of_case
+    object: c-s7e7
+    revealed: S7E7
+    source: src-wiki-s7e7
+  - key: l-s7e7-b-coordinates
+    subject: l-s7e7-b
+    predicate: coordinates
+    value: "32.77916667,-96.80888889"
+    revealed: S7E7
+    source: src-wiki-s7e7
+    note: "city-level"
+  - key: l-s7e7-b-case-site
+    subject: l-s7e7-b
+    predicate: case_site
+    value: "true"
+    revealed: S7E7
+    source: src-wiki-s7e7
+  - key: l-s7e8-a-name
+    subject: l-s7e8-a
+    predicate: name
+    value: "Lafitte, Louisiana"
+    revealed: S7E8
+    source: src-wiki-s7e8
+  - key: l-s7e8-a-description
+    subject: l-s7e8-a
+    predicate: description
+    value: "Louisiana community where the team traces a woman linked to the hitman and where an FBI agent is shot at her house."
+    revealed: S7E8
+    source: src-wiki-s7e8
+  - key: l-s7e8-a-case
+    subject: l-s7e8-a
+    predicate: part_of_case
+    object: c-s7e8
+    revealed: S7E8
+    source: src-wiki-s7e8
+  - key: l-s7e8-a-coordinates
+    subject: l-s7e8-a
+    predicate: coordinates
+    value: "29.6775,-90.10527778"
+    revealed: S7E8
+    source: src-wiki-s7e8
+    note: "city-level"
+  - key: l-s7e8-a-case-site
+    subject: l-s7e8-a
+    predicate: case_site
+    value: "true"
+    revealed: S7E8
+    source: src-wiki-s7e8
+  - key: l-s7e9-a-name
+    subject: l-s7e9-a
+    predicate: name
+    value: "Rio Bravo, Mexico"
+    revealed: S7E9
+    source: src-wiki-s7e9
+  - key: l-s7e9-a-description
+    subject: l-s7e9-a
+    predicate: description
+    value: "Mexican border town where a coffin is dug up so the bullet can be taken from the skeleton's skull."
+    revealed: S7E9
+    source: src-wiki-s7e9
+  - key: l-s7e9-a-case
+    subject: l-s7e9-a
+    predicate: part_of_case
+    object: c-s7e9
+    revealed: S7E9
+    source: src-wiki-s7e9
+  - key: l-s7e9-a-coordinates
+    subject: l-s7e9-a
+    predicate: coordinates
+    value: "25.98611111,-98.08888889"
+    revealed: S7E9
+    source: src-wiki-s7e9
+    note: "city-level"
+  - key: l-s7e9-b-name
+    subject: l-s7e9-b
+    predicate: name
+    value: "San Antonio, Texas"
+    revealed: S7E9
+    source: src-wiki-s7e9
+  - key: l-s7e9-b-description
+    subject: l-s7e9-b
+    predicate: description
+    value: "Texas city where the team tracks Peterson and searches his house for hidden money."
+    revealed: S7E9
+    source: src-wiki-s7e9
+  - key: l-s7e9-b-case
+    subject: l-s7e9-b
+    predicate: part_of_case
+    object: c-s7e9
+    revealed: S7E9
+    source: src-wiki-s7e9
+  - key: l-s7e9-b-coordinates
+    subject: l-s7e9-b
+    predicate: coordinates
+    value: "29.425,-98.4939"
+    revealed: S7E9
+    source: src-wiki-s7e9
+    note: "city-level"
+  - key: l-s7e9-b-case-site
+    subject: l-s7e9-b
+    predicate: case_site
+    value: "true"
+    revealed: S7E9
+    source: src-wiki-s7e9
+  - key: l-s7e10-a-name
+    subject: l-s7e10-a
+    predicate: name
+    value: "Windsor Park"
+    revealed: S7E10
+    source: src-wiki-s7e10
+  - key: l-s7e10-a-description
+    subject: l-s7e10-a
+    predicate: description
+    value: "Austin neighborhood near which the robbers stop at a gas station looking for bandages."
+    revealed: S7E10
+    source: src-wiki-s7e10
+  - key: l-s7e10-a-case
+    subject: l-s7e10-a
+    predicate: part_of_case
+    object: c-s7e10
+    revealed: S7E10
+    source: src-wiki-s7e10
+  - key: l-s7e10-a-coordinates
+    subject: l-s7e10-a
+    predicate: coordinates
+    value: "30.31406,-97.69009"
+    revealed: S7E10
+    source: src-wiki-s7e10
+    note: "city-level"
+  - key: l-s7e10-a-case-site
+    subject: l-s7e10-a
+    predicate: case_site
+    value: "true"
+    revealed: S7E10
+    source: src-wiki-s7e10

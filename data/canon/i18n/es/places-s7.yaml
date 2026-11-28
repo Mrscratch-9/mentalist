@@ -1,0 +1,58 @@
+# Spanish (es-MX) translations: season 7 case places (descriptions; proper names are not translated).
+translations:
+  - key: l-s7e1-a-description
+    field: value
+    hash: "ca652cc7ea16"
+    text: "Boliche donde un agente encubierto del FBI muere baleado en el callejón trasero y cuyo dueño y una cantinera manejan un negocio de venta de armas."
+  - key: l-s7e2-a-description
+    field: value
+    hash: "4b3e229c8f60"
+    text: "Ciudad de Texas donde se celebra una gala benéfica y una ladrona asalta a los invitados y roba un auto de lujo, lo que desata una persecución policiaca."
+  - key: l-s7e3-a-description
+    field: value
+    hash: "b2199201e285"
+    text: "Ciudad libanesa donde Jane y Lisbon trabajan con Erica Flynn para acercarse a un mensajero de grupos terroristas."
+  - key: l-s7e3-b-description
+    field: value
+    hash: "b573c8848433"
+    text: "Ciudad estadounidense donde debe entregarse el mensaje del mensajero; el equipo organiza el encuentro en un bar de carretera y el contacto muere en un tiroteo."
+  - key: l-s7e4-a-description
+    field: value
+    hash: "777398de68c2"
+    text: "Ciudad de Texas donde se celebra la exposición de gemas y donde un vendedor aparece golpeado hasta la muerte en una escalera exterior."
+  - key: l-s7e4-b-description
+    field: value
+    hash: "01501d804c7a"
+    text: "Ciudad costera de Texas cuyo hangar de aviones es donde los agentes alcanzan a un joyero que huye de la exposición."
+  - key: l-s7e4-c-description
+    field: value
+    hash: "0c4bc367e981"
+    text: "Ciudad de Texas en cuyas afueras matan a dos guardias de seguridad tras transportar diamantes por medio millón de dólares."
+  - key: l-s7e6-a-description
+    field: value
+    hash: "c89ae2c9b8fd"
+    text: "Ciudad de Texas donde tiene su sede la oficina de la DEA y adonde viaja el equipo para interrogar a los colegas del agente muerto."
+  - key: l-s7e7-a-description
+    field: value
+    hash: "bdf30670d290"
+    text: "Ciudad natal de Lisbon, adonde ella y Jane van a buscar a su hermano, requerido como testigo."
+  - key: l-s7e7-b-description
+    field: value
+    hash: "3ff568156bc6"
+    text: "Ciudad de Texas donde el abogado aparece golpeado hasta la muerte detrás de un hotel después de una partida de póquer."
+  - key: l-s7e8-a-description
+    field: value
+    hash: "e430731b50b2"
+    text: "Comunidad de Luisiana donde el equipo rastrea a una mujer ligada al sicario y donde un agente del FBI recibe disparos en la casa de ella."
+  - key: l-s7e9-a-description
+    field: value
+    hash: "2ab997a01043"
+    text: "Localidad fronteriza de México donde desentierran un ataúd para sacar la bala del cráneo del esqueleto."
+  - key: l-s7e9-b-description
+    field: value
+    hash: "7b90528cebe6"
+    text: "Ciudad de Texas donde el equipo sigue a Peterson y registra su casa en busca de dinero oculto."
+  - key: l-s7e10-a-description
+    field: value
+    hash: "44578b369322"
+    text: "Barrio de Austin cerca del cual los ladrones se detienen en una gasolinera en busca de vendas."

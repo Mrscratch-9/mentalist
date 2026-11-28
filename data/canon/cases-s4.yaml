@@ -95,6 +95,10 @@ entities:
     kind: location
     introduced: S4E7
 
+  - key: l-s4e7-fresno
+    kind: location
+    introduced: S4E7
+
   - key: c-s4e8
     kind: case
     introduced: S4E8
@@ -109,6 +113,10 @@ entities:
 
   - key: p-s4e9-jake
     kind: person
+    introduced: S4E9
+
+  - key: l-s4e9-sacramento
+    kind: location
     introduced: S4E9
 
   - key: c-s4e10
@@ -1691,3 +1699,80 @@ claims:
     revealed: S4E22
     status: confirmed
     source: src-wiki-s4e22
+
+  - key: l-s4e7-fresno-name
+    subject: l-s4e7-fresno
+    predicate: name
+    value: "Fresno"
+    revealed: S4E7
+    source: src-wiki-s4e7
+  - key: l-s4e7-fresno-description
+    subject: l-s4e7-fresno
+    predicate: description
+    value: "The Fresno police department holds four earlier murders that match the San Joaquin Killer's method."
+    revealed: S4E7
+    source: src-wiki-s4e7
+  - key: l-s4e7-fresno-case
+    subject: l-s4e7-fresno
+    predicate: part_of_case
+    object: c-s4e7
+    revealed: S4E7
+    source: src-wiki-s4e7
+  - key: l-s4e7-fresno-coordinates
+    subject: l-s4e7-fresno
+    predicate: coordinates
+    value: "36.75,-119.76666667"
+    revealed: S4E7
+    source: src-wiki-s4e7
+    note: "city-level"
+  - key: l-s4e7-fresno-case-site
+    subject: l-s4e7-fresno
+    predicate: case_site
+    value: "true"
+    revealed: S4E7
+    source: src-wiki-s4e7
+
+  - key: l-s4e9-sacramento-name
+    subject: l-s4e9-sacramento
+    predicate: name
+    value: "Sacramento"
+    revealed: S4E9
+    source: src-wiki-s4e9
+  - key: l-s4e9-sacramento-description
+    subject: l-s4e9-sacramento
+    predicate: description
+    value: "Retired quarterback Doc Dugan's bar, where he trades stories with his fans, is in Sacramento."
+    revealed: S4E9
+    source: src-wiki-s4e9
+  - key: l-s4e9-sacramento-case
+    subject: l-s4e9-sacramento
+    predicate: part_of_case
+    object: c-s4e9
+    revealed: S4E9
+    source: src-wiki-s4e9
+  - key: l-s4e9-sacramento-coordinates
+    subject: l-s4e9-sacramento
+    predicate: coordinates
+    value: "38.58111111,-121.49388889"
+    revealed: S4E9
+    source: src-wiki-s4e9
+    note: "city-level"
+  - key: l-s4e9-sacramento-case-site
+    subject: l-s4e9-sacramento
+    predicate: case_site
+    value: "true"
+    revealed: S4E9
+    source: src-wiki-s4e9
+
+  - key: l-s4e24-vegas-description
+    subject: l-s4e24-vegas
+    predicate: description
+    value: "Where Jane has been living and drinking in the months after leaving the CBI."
+    revealed: S4E24
+    source: src-wiki-s4e24
+  - key: l-s4e24-vegas-case-site
+    subject: l-s4e24-vegas
+    predicate: case_site
+    value: "true"
+    revealed: S4E24
+    source: src-s4e24

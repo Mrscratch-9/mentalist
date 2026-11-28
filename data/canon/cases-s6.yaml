@@ -247,6 +247,22 @@ entities:
     kind: location
     introduced: S6E22
 
+  - key: l-s6e1-salton-sea
+    kind: location
+    introduced: S6E1
+
+  - key: l-s6e6-malibu
+    kind: location
+    introduced: S6E6
+
+  - key: l-s6e18-b
+    kind: location
+    introduced: S6E18
+
+  - key: l-s6e19-b
+    kind: location
+    introduced: S6E19
+
 claims:
   - key: cl-s6e1-name
     subject: c-s6e1
@@ -1487,5 +1503,219 @@ claims:
     predicate: role_in_case
     object: c-s6e22
     value: "perpetrator"
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+  - key: cl-s6e1-salton-name
+    subject: l-s6e1-salton-sea
+    predicate: name
+    value: "Salton Sea State Recreation Area"
+    revealed: S6E1
+    source: src-wiki-s6e1
+
+  - key: cl-s6e1-salton-desc
+    subject: l-s6e1-salton-sea
+    predicate: description
+    value: "State recreation area in the desert where a man missing for two years is found buried."
+    revealed: S6E1
+    source: src-wiki-s6e1
+
+  - key: cl-s6e1-salton-case
+    subject: l-s6e1-salton-sea
+    predicate: part_of_case
+    object: c-s6e1
+    revealed: S6E1
+    source: src-wiki-s6e1
+
+  - key: cl-s6e1-salton-coords
+    subject: l-s6e1-salton-sea
+    predicate: coordinates
+    value: "33.47416667,-115.889"
+    revealed: S6E1
+    source: src-wiki-s6e1
+    note: "landmark"
+
+  - key: cl-s6e1-salton-site
+    subject: l-s6e1-salton-sea
+    predicate: case_site
+    value: "true"
+    revealed: S6E1
+    source: src-wiki-s6e1
+
+  - key: cl-s6e6-malibu-name
+    subject: l-s6e6-malibu
+    predicate: name
+    value: "Malibu"
+    revealed: S6E6
+    source: src-wiki-s6e6
+
+  - key: cl-s6e6-malibu-desc
+    subject: l-s6e6-malibu
+    predicate: description
+    value: "Coastal city Jane drives through on his way to the Jane family home, where he gathers the Red John suspects."
+    revealed: S6E6
+    source: src-wiki-s6e6
+
+  - key: cl-s6e6-malibu-case
+    subject: l-s6e6-malibu
+    predicate: part_of_case
+    object: c-s6e6
+    revealed: S6E6
+    source: src-wiki-s6e6
+
+  - key: cl-s6e6-malibu-coords
+    subject: l-s6e6-malibu
+    predicate: coordinates
+    value: "34.035,-118.695"
+    revealed: S6E6
+    source: src-wiki-s6e6
+    note: "city-level"
+
+  - key: cl-s6e6-malibu-site
+    subject: l-s6e6-malibu
+    predicate: case_site
+    value: "true"
+    revealed: S6E6
+    source: src-wiki-s6e6
+
+  - key: cl-l-s6e18-b-name
+    subject: l-s6e18-b
+    predicate: name
+    value: "Sam Houston National Forest"
+    revealed: S6E18
+    source: src-wiki-s6e18
+
+  - key: cl-l-s6e18-b-desc
+    subject: l-s6e18-b
+    predicate: description
+    value: "Texas national forest where a woman is found dead with a broken neck near a remote men's club."
+    revealed: S6E18
+    source: src-wiki-s6e18
+
+  - key: cl-l-s6e18-b-case
+    subject: l-s6e18-b
+    predicate: part_of_case
+    object: c-s6e18
+    revealed: S6E18
+    source: src-wiki-s6e18
+
+  - key: cl-l-s6e18-b-coords
+    subject: l-s6e18-b
+    predicate: coordinates
+    value: "30.58444444,-95.1325"
+    revealed: S6E18
+    source: src-wiki-s6e18
+    note: "landmark"
+
+  - key: cl-l-s6e18-b-site
+    subject: l-s6e18-b
+    predicate: case_site
+    value: "true"
+    revealed: S6E18
+    source: src-wiki-s6e18
+
+  - key: cl-l-s6e19-b-name
+    subject: l-s6e19-b
+    predicate: name
+    value: "San Diego"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-l-s6e19-b-desc
+    subject: l-s6e19-b
+    predicate: description
+    value: "California city where the modeling scout linked to the trafficking ring is found dead."
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-l-s6e19-b-case
+    subject: l-s6e19-b
+    predicate: part_of_case
+    object: c-s6e19
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-l-s6e19-b-coords
+    subject: l-s6e19-b
+    predicate: coordinates
+    value: "32.715,-117.1625"
+    revealed: S6E19
+    source: src-wiki-s6e19
+    note: "city-level"
+
+  - key: cl-l-s6e19-b-site
+    subject: l-s6e19-b
+    predicate: case_site
+    value: "true"
+    revealed: S6E19
+    source: src-wiki-s6e19
+
+  - key: cl-s6e3-napa-desc
+    subject: l-s6e3-napa
+    predicate: description
+    value: "Napa Valley town where a delivery man's body is found in a duck pond and Jane brings the CBI in to focus on Sheriff McAllister."
+    revealed: S6E3
+    source: src-s6e3
+
+  - key: cl-s6e3-napa-site
+    subject: l-s6e3-napa
+    predicate: case_site
+    value: "true"
+    revealed: S6E3
+    source: src-s6e3
+
+  - key: cl-s6e10-brooklyn-desc
+    subject: l-s6e10-brooklyn
+    predicate: description
+    value: "New York City borough where the missing computer programmer lives and Jane is found."
+    revealed: S6E10
+    source: src-s6e10
+
+  - key: cl-s6e10-brooklyn-site
+    subject: l-s6e10-brooklyn
+    predicate: case_site
+    value: "true"
+    revealed: S6E10
+    source: src-s6e10
+
+  - key: cl-l-s6e11-a-desc
+    subject: l-s6e11-a
+    predicate: description
+    value: "Texas city where five DEA agents are murdered and the FBI team investigates."
+    revealed: S6E11
+    source: src-wiki-s6e11
+
+  - key: cl-l-s6e11-a-site
+    subject: l-s6e11-a
+    predicate: case_site
+    value: "true"
+    revealed: S6E11
+    source: src-wiki-s6e11
+
+  - key: cl-l-s6e12-a-desc
+    subject: l-s6e12-a
+    predicate: description
+    value: "Texas city where a high-tech cartographer who may have uncovered a spy ring is murdered."
+    revealed: S6E12
+    source: src-wiki-s6e12
+
+  - key: cl-l-s6e12-a-site
+    subject: l-s6e12-a
+    predicate: case_site
+    value: "true"
+    revealed: S6E12
+    source: src-wiki-s6e12
+
+  - key: cl-l-s6e22-a-desc
+    subject: l-s6e22-a
+    predicate: description
+    value: "Florida city where Jane and Lisbon track down the suspects of a reopened cold case."
+    revealed: S6E22
+    source: src-wiki-s6e22
+
+  - key: cl-l-s6e22-a-site
+    subject: l-s6e22-a
+    predicate: case_site
+    value: "true"
     revealed: S6E22
     source: src-wiki-s6e22

@@ -1,0 +1,14 @@
+# Spanish (es-MX) season 4 case places: descriptions only; place names are proper names and stay untranslated.
+translations:
+  - key: l-s4e7-fresno-description
+    field: value
+    hash: "927449cb40d6"
+    text: "La policía de Fresno tiene cuatro asesinatos anteriores que coinciden con el método del Asesino de San Joaquín."
+  - key: l-s4e9-sacramento-description
+    field: value
+    hash: "79c2e81d8b61"
+    text: "El bar del mariscal de campo retirado Doc Dugan, donde cuenta historias a sus fans, está en Sacramento."
+  - key: l-s4e24-vegas-description
+    field: value
+    hash: "d8eddb25b579"
+    text: "Donde Jane ha vivido y bebido en los meses posteriores a dejar el CBI."

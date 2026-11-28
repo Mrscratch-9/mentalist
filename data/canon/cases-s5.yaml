@@ -218,6 +218,30 @@ entities:
     kind: person
     introduced: S5E9
 
+  - key: l-s5e1-bakersfield
+    kind: location
+    introduced: S5E1
+
+  - key: l-s5e2-san-francisco
+    kind: location
+    introduced: S5E2
+
+  - key: l-s5e3-sacramento
+    kind: location
+    introduced: S5E3
+
+  - key: l-s5e10-clearlake
+    kind: location
+    introduced: S5E10
+
+  - key: l-s5e16-davis
+    kind: location
+    introduced: S5E16
+
+  - key: l-s5e18-sacramento
+    kind: location
+    introduced: S5E18
+
 claims:
   - key: c-s5e1-name
     subject: c-s5e1
@@ -1296,3 +1320,183 @@ claims:
     status: confirmed
     revealed: S5E20
     source: src-wiki-s5e20
+  - key: l-s5e1-bakersfield-name
+    subject: l-s5e1-bakersfield
+    predicate: name
+    value: "Bakersfield"
+    revealed: S5E1
+    source: src-wiki-s5e1
+  - key: l-s5e1-bakersfield-description
+    subject: l-s5e1-bakersfield
+    predicate: description
+    value: "City where Cho and Rigsby question the cousin and the uncle of the murdered repairman, who say he changed his name before moving."
+    revealed: S5E1
+    source: src-wiki-s5e1
+  - key: l-s5e1-bakersfield-case
+    subject: l-s5e1-bakersfield
+    predicate: part_of_case
+    object: c-s5e1
+    revealed: S5E1
+    source: src-wiki-s5e1
+  - key: l-s5e1-bakersfield-coordinates
+    subject: l-s5e1-bakersfield
+    predicate: coordinates
+    value: "35.3733,-119.0189"
+    revealed: S5E1
+    source: src-wiki-s5e1
+    note: "city-level"
+  - key: l-s5e2-san-francisco-name
+    subject: l-s5e2-san-francisco
+    predicate: name
+    value: "San Francisco"
+    revealed: S5E2
+    source: src-wiki-s5e2
+  - key: l-s5e2-san-francisco-description
+    subject: l-s5e2-san-francisco
+    predicate: description
+    value: "City whose St. Francis Wood neighborhood is the setting of the diamond cutter's murder at his home."
+    revealed: S5E2
+    source: src-wiki-s5e2
+  - key: l-s5e2-san-francisco-case
+    subject: l-s5e2-san-francisco
+    predicate: part_of_case
+    object: c-s5e2
+    revealed: S5E2
+    source: src-wiki-s5e2
+  - key: l-s5e2-san-francisco-coordinates
+    subject: l-s5e2-san-francisco
+    predicate: coordinates
+    value: "37.7775,-122.41638889"
+    revealed: S5E2
+    source: src-wiki-s5e2
+    note: "city-level"
+  - key: l-s5e2-san-francisco-case-site
+    subject: l-s5e2-san-francisco
+    predicate: case_site
+    value: "true"
+    revealed: S5E2
+    source: src-wiki-s5e2
+  - key: l-s5e3-sacramento-name
+    subject: l-s5e3-sacramento
+    predicate: name
+    value: "Sacramento"
+    revealed: S5E3
+    source: src-wiki-s5e3
+  - key: l-s5e3-sacramento-description
+    subject: l-s5e3-sacramento
+    predicate: description
+    value: "City named in the Sacramento Federal Bank, where an assistant manager is shot dead during a robbery."
+    revealed: S5E3
+    source: src-wiki-s5e3
+  - key: l-s5e3-sacramento-case
+    subject: l-s5e3-sacramento
+    predicate: part_of_case
+    object: c-s5e3
+    revealed: S5E3
+    source: src-wiki-s5e3
+  - key: l-s5e3-sacramento-coordinates
+    subject: l-s5e3-sacramento
+    predicate: coordinates
+    value: "38.58111111,-121.49388889"
+    revealed: S5E3
+    source: src-wiki-s5e3
+    note: "city-level"
+  - key: l-s5e3-sacramento-case-site
+    subject: l-s5e3-sacramento
+    predicate: case_site
+    value: "true"
+    revealed: S5E3
+    source: src-wiki-s5e3
+  - key: l-s5e10-clearlake-name
+    subject: l-s5e10-clearlake
+    predicate: name
+    value: "Clearlake"
+    revealed: S5E10
+    source: src-wiki-s5e10
+  - key: l-s5e10-clearlake-description
+    subject: l-s5e10-clearlake
+    predicate: description
+    value: "City where the young botanist is found shot, hanging on the wall of a rock-climbing gym."
+    revealed: S5E10
+    source: src-wiki-s5e10
+  - key: l-s5e10-clearlake-case
+    subject: l-s5e10-clearlake
+    predicate: part_of_case
+    object: c-s5e10
+    revealed: S5E10
+    source: src-wiki-s5e10
+  - key: l-s5e10-clearlake-coordinates
+    subject: l-s5e10-clearlake
+    predicate: coordinates
+    value: "38.95833333,-122.62638889"
+    revealed: S5E10
+    source: src-wiki-s5e10
+    note: "city-level"
+  - key: l-s5e10-clearlake-case-site
+    subject: l-s5e10-clearlake
+    predicate: case_site
+    value: "true"
+    revealed: S5E10
+    source: src-wiki-s5e10
+  - key: l-s5e16-davis-name
+    subject: l-s5e16-davis
+    predicate: name
+    value: "Davis"
+    revealed: S5E16
+    source: src-wiki-s5e16
+  - key: l-s5e16-davis-description
+    subject: l-s5e16-davis
+    predicate: description
+    value: "City outside Sacramento where the shelter manager owned a home; Jane finds a piece of fishing wire there and meets Lorelei."
+    revealed: S5E16
+    source: src-wiki-s5e16
+  - key: l-s5e16-davis-case
+    subject: l-s5e16-davis
+    predicate: part_of_case
+    object: c-s5e16
+    revealed: S5E16
+    source: src-wiki-s5e16
+  - key: l-s5e16-davis-coordinates
+    subject: l-s5e16-davis
+    predicate: coordinates
+    value: "38.55388889,-121.73805556"
+    revealed: S5E16
+    source: src-wiki-s5e16
+    note: "city-level"
+  - key: l-s5e16-davis-case-site
+    subject: l-s5e16-davis
+    predicate: case_site
+    value: "true"
+    revealed: S5E16
+    source: src-wiki-s5e16
+  - key: l-s5e18-sacramento-name
+    subject: l-s5e18-sacramento
+    predicate: name
+    value: "Sacramento"
+    revealed: S5E18
+    source: src-wiki-s5e18
+  - key: l-s5e18-sacramento-description
+    subject: l-s5e18-sacramento
+    predicate: description
+    value: "City whose downtown hotel is where the actress falls from the ninth floor onto a car."
+    revealed: S5E18
+    source: src-wiki-s5e18
+  - key: l-s5e18-sacramento-case
+    subject: l-s5e18-sacramento
+    predicate: part_of_case
+    object: c-s5e18
+    revealed: S5E18
+    source: src-wiki-s5e18
+  - key: l-s5e18-sacramento-coordinates
+    subject: l-s5e18-sacramento
+    predicate: coordinates
+    value: "38.58111111,-121.49388889"
+    revealed: S5E18
+    source: src-wiki-s5e18
+    note: "city-level"
+  - key: l-s5e18-sacramento-case-site
+    subject: l-s5e18-sacramento
+    predicate: case_site
+    value: "true"
+    revealed: S5E18
+    source: src-wiki-s5e18
